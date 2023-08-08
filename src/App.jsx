@@ -1,34 +1,24 @@
+import styled, { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme } from "./styles/themes";
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import { ThemeToggle } from "./components/ThemeToggle/ThemeToggle";
 
-function App() {
-	const [count, setCount] = useState(0);
+const AppContainer = styled.div`
+	background-color: ${(props) => props.theme.backgroundColor};
+`;
+
+export const App = () => {
+	const [theme, setTheme] = useState(lightTheme);
+
+	const handleThemeToggle = () => {
+		setTheme(theme === lightTheme ? darkTheme : lightTheme);
+	};
+
 	return (
-		<>
-			<div>
-				<a href="https://vitejs.dev" target="_blank">
-					<img src={viteLogo} className="logo" alt="Vite logo" />
-				</a>
-				<a href="https://react.dev" target="_blank">
-					<img src={reactLogo} className="logo react" alt="React logo" />
-				</a>
-			</div>
-			<h1>Vite + React</h1>
-			<div className="card">
-				<button onClick={() => setCount((count) => count + 1)}>
-					count is {count}
-				</button>
-				<p>
-					Edit <code>src/App.jsx</code> and save to test HMR
-				</p>
-			</div>
-			<p className="read-the-docs">
-				Click on the Vite and React logos to learn more
-			</p>
-		</>
+		<ThemeProvider theme={lightTheme}>
+			<AppContainer>
+				<ThemeToggle theme={theme} toggleTheme={handleThemeToggle} />
+			</AppContainer>
+		</ThemeProvider>
 	);
-}
-
-export default App;
+};
