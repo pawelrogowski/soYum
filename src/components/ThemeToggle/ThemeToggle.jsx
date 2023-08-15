@@ -1,10 +1,5 @@
-import PropTypes from "prop-types";
+import { StyledButton } from "./ThemeToggle.styled";
 
-export const ThemeToggle = ({ toggleTheme }) => {
-	return <button onClick={toggleTheme}>Switch Theme</button>;
-};
-
-ThemeToggle.propTypes = {
-	theme: PropTypes.object.isRequired,
-	toggleTheme: PropTypes.func.isRequired,
+export const ThemeToggle = (onClick) => {
+	return <StyledButton onClick={onClick}>ThemeToggle</StyledButton>;
 };
