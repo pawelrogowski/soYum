@@ -8,12 +8,33 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
+	html, body {
+		margin: 0;
+		padding: 0;
+	}
+
 	body {	
   	min-height: 100vh;
   	scroll-behavior: smooth;
   	text-rendering: optimizeSpeed;
 		font-family: 'poppins';
-	}	
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+		outline: none;
+	}
+
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+	
+	td,
+	th {
+		padding: 0;
+	}
 
 	blockquote,
 	dl, 
@@ -47,6 +68,11 @@ const GlobalStyles = createGlobalStyle`
 	textarea,
 	select {
   	font: inherit;
+	}
+
+	input::placeholder,
+	textarea::placeholder {
+		color: #999;
 	}
 
 	@media (prefers-reduced-motion: reduce) {
