@@ -1,24 +1,19 @@
-import styled, { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme } from "./styles/themes";
-import { useState } from "react";
-import { ThemeToggle } from "./components/ThemeToggle/ThemeToggle";
+import { ThemeProvider } from "styled-components";
+import { useTheme } from "./hooks/useTheme";
+import styled from "styled-components";
 
-const AppContainer = styled.div`
+const ToggleButton = styled.button`
 	background-color: ${(props) => props.theme.backgroundColor};
 `;
 
 export const App = () => {
-	const [theme, setTheme] = useState(lightTheme);
-
-	const handleThemeToggle = () => {
-		setTheme(theme === lightTheme ? darkTheme : lightTheme);
-	};
+	const { theme, toggleTheme } = useTheme();
 
 	return (
-		<ThemeProvider theme={lightTheme}>
-			<AppContainer>
-				<ThemeToggle theme={theme} toggleTheme={handleThemeToggle} />
-			</AppContainer>
+		<ThemeProvider theme={theme}>
+			<div>
+				<ToggleButton onClick={toggleTheme}>Toggle Theme</ToggleButton>
+			</div>
 		</ThemeProvider>
 	);
 };
