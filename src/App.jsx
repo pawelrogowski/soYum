@@ -4,6 +4,8 @@ import { useContext } from "react";
 import { Container } from "./components/Container/Container";
 import { lightTheme, darkTheme, GlobalStyles } from "./styles/themes";
 import { ThemeSwitch } from "./components/ThemeToggle/ThemeSwitch";
+import { Button } from "./components/Button/Buttons";
+import { Logo } from "./components/Logo/Logo";
 
 export const App = () => {
 	const { theme } = useContext(ThemeContext);
@@ -13,6 +15,8 @@ export const App = () => {
 			<GlobalStyles />
 			<Container>
 				<ThemeSwitch />
+				<Logo />
+				<Button />
 			</Container>
 		</ThemeProvider>
 	);

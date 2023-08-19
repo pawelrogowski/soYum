@@ -9,6 +9,21 @@ const media = {
 	},
 };
 
+const typography = {
+	family: {
+		primary: "Poppins",
+		secondary: "Poppins",
+		Accent: "Poppins",
+	},
+};
+
+const brand = {
+	brand: {
+		primary: "#8BAA36",
+		secondary: "#FAFAFA",
+	},
+};
+
 export const lightTheme = {
 	color: {
 		background: {
@@ -17,27 +32,28 @@ export const lightTheme = {
 			accent: "#D9D9D9",
 			accent2: "transparent",
 		},
-		buttons: {
-			primary: "#8BAA36",
-			secondary: "#22252A",
+		button: {
+			primary: "#22252A",
+			secondary: "#8BAA36",
 			accent: "#D9D9D9",
 			accent2: "transparent",
 		},
-		icons: {
+		icon: {
 			primary: "#8BAA36",
 			secondary: "#FFFFFF",
 		},
-		text: {
-			color: {
-				primary: "#23262A",
-				secondary: "#FAFAFA",
-				accent: "#8BAA36",
-				accent2: "#3E4462",
-				placeholder: "#BDBDBD",
-			},
+		font: {
+			main: "#23262A",
+			secondary: "#FAFAFA",
+			accent: "#8BAA36",
+			accent2: "#000",
+			placeholder: "#BDBDBD",
 		},
+		...brand,
 	},
+
 	...media,
+	...typography,
 };
 
 export const darkTheme = {
@@ -48,27 +64,28 @@ export const darkTheme = {
 			accent: "#2A2C36",
 			accent2: "#D9D9D9",
 		},
-		buttons: {
+		button: {
 			primary: "#8BAA36",
 			secondary: "#22252A",
 			accent: "#D9D9D9",
 			accent2: "transparent",
 		},
-		icons: {
+		icon: {
 			primary: "#FFFFFF",
 			secondary: "#1E1F28",
 		},
-		text: {
-			color: {
-				primary: "#FAFAFA",
-				secondary: "#FAFAFA99",
-				accent: "#8BAA36",
-				accent2: "#FAFAFA",
-				placeholder: "#FAFAFA80",
-			},
+		font: {
+			main: "#FAFAFA",
+			secondary: "#FAFAFA",
+			accent: "#8BAA36",
+			accent2: "#FAFAFA99",
+			placeholder: "#FAFAFA80",
 		},
+		...brand,
 	},
+
 	...media,
+	...typography,
 };
 
 export const GlobalStyles = createGlobalStyle`
@@ -85,7 +102,7 @@ export const GlobalStyles = createGlobalStyle`
 	}
 
 	body {	
-		background-color: ${(props) => props.theme.color.backgroundColor};
+		background-color: ${(props) => props.theme.color.background.accent};
   		min-height: 100vh;
   		scroll-behavior: smooth;
   		text-rendering: optimizeSpeed;
