@@ -13,7 +13,7 @@ const typography = {
 	family: {
 		primary: "Poppins",
 		secondary: "Poppins",
-		Accent: "Poppins",
+		accent: "Poppins",
 	},
 };
 
@@ -27,25 +27,30 @@ const brand = {
 export const lightTheme = {
 	color: {
 		background: {
-			primary: "#8BAA36",
+			primary: brand.brand.primary,
 			secondary: "#22252A",
 			accent: "#D9D9D9",
 			accent2: "transparent",
 		},
 		button: {
 			primary: "#22252A",
-			secondary: "#8BAA36",
+			secondary: brand.brand.primary,
 			accent: "#D9D9D9",
 			accent2: "transparent",
+			font: {
+				primary: "#FAFAFA",
+				secondary: "#FAFAFA",
+				accent: brand.brand.primary,
+			},
 		},
 		icon: {
-			primary: "#8BAA36",
+			primary: brand.brand.primary,
 			secondary: "#FFFFFF",
 		},
 		font: {
-			main: "#23262A",
+			primary: "#23262A",
 			secondary: "#FAFAFA",
-			accent: "#8BAA36",
+			accent: brand.brand.primary,
 			accent2: "#000",
 			placeholder: "#BDBDBD",
 		},
@@ -60,24 +65,29 @@ export const darkTheme = {
 	color: {
 		background: {
 			primary: "#1E1F28",
-			secondary: "#8BAA36",
+			secondary: brand.brand.primary,
 			accent: "#2A2C36",
 			accent2: "#D9D9D9",
 		},
 		button: {
-			primary: "#8BAA36",
+			primary: brand.brand.primary,
 			secondary: "#22252A",
 			accent: "#D9D9D9",
 			accent2: "transparent",
+			font: {
+				primary: "#FAFAFA",
+				secondary: "#FAFAFA",
+				accent: brand.brand.primary,
+			},
 		},
 		icon: {
 			primary: "#FFFFFF",
 			secondary: "#1E1F28",
 		},
 		font: {
-			main: "#FAFAFA",
+			primary: "#FAFAFA",
 			secondary: "#FAFAFA",
-			accent: "#8BAA36",
+			accent: brand.brand.primary,
 			accent2: "#FAFAFA99",
 			placeholder: "#FAFAFA80",
 		},
@@ -106,7 +116,7 @@ export const GlobalStyles = createGlobalStyle`
   		min-height: 100vh;
   		scroll-behavior: smooth;
   		text-rendering: optimizeSpeed;
-		font-family: 'poppins';
+		font-family: 'Poppins';
 	}
 
 	a {
