@@ -17,3 +17,48 @@ export const font = ({
 	font-weight: ${weight};
 	font-style: ${style};
 `;
+
+export const flexContainer = ({
+	direction = "row",
+	justify = "flex-start",
+	align = "stretch",
+	wrap = "nowrap",
+	gap = "0",
+}) => css`
+	display: flex;
+	flex-direction: ${direction};
+	justify-content: ${justify};
+	align-items: ${align};
+	flex-wrap: ${wrap};
+	gap: ${gap};
+`;
+
+export const flexItem = ({
+	flex = "1",
+	grow = "0",
+	shrink = "1",
+	basis = "auto",
+	order = "0",
+}) => css`
+	flex: ${flex} ${grow} ${shrink};
+	flex-basis: ${basis};
+	order: ${order};
+`;
+
+export const media = {
+	mobile: (...args) => css`
+		@media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+			${css(...args)};
+		}
+	`,
+	tablet: (...args) => css`
+		@media (min-width: ${(props) => props.theme.breakpoints.mobile}) {
+			${css(...args)};
+		}
+	`,
+	desktop: (...args) => css`
+		@media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
+			${css(...args)};
+		}
+	`,
+};

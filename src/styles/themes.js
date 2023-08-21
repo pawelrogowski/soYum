@@ -17,7 +17,7 @@ const typography = {
 	},
 };
 
-const brand = {
+const brandColors = {
 	brand: {
 		primary: "#8BAA36",
 		secondary: "#FAFAFA",
@@ -27,34 +27,34 @@ const brand = {
 export const lightTheme = {
 	color: {
 		background: {
-			primary: brand.brand.primary,
+			primary: brandColors.brand.primary,
 			secondary: "#22252A",
 			accent: "#D9D9D9",
 			accent2: "transparent",
 		},
 		button: {
 			primary: "#22252A",
-			secondary: brand.brand.primary,
+			secondary: brandColors.brand.primary,
 			accent: "#D9D9D9",
 			accent2: "transparent",
 			font: {
 				primary: "#FAFAFA",
 				secondary: "#FAFAFA",
-				accent: brand.brand.primary,
+				accent: brandColors.brand.primary,
 			},
 		},
 		icon: {
-			primary: brand.brand.primary,
+			primary: brandColors.brand.primary,
 			secondary: "#FFFFFF",
 		},
 		font: {
 			primary: "#23262A",
 			secondary: "#FAFAFA",
-			accent: brand.brand.primary,
+			accent: brandColors.brand.primary,
 			accent2: "#000",
 			placeholder: "#BDBDBD",
 		},
-		...brand,
+		...brandColors,
 	},
 
 	...media,
@@ -65,19 +65,19 @@ export const darkTheme = {
 	color: {
 		background: {
 			primary: "#1E1F28",
-			secondary: brand.brand.primary,
+			secondary: brandColors.brand.primary,
 			accent: "#2A2C36",
 			accent2: "#D9D9D9",
 		},
 		button: {
-			primary: brand.brand.primary,
+			primary: brandColors.brand.primary,
 			secondary: "#22252A",
 			accent: "#D9D9D9",
 			accent2: "transparent",
 			font: {
 				primary: "#FAFAFA",
 				secondary: "#FAFAFA",
-				accent: brand.brand.primary,
+				accent: brandColors.brand.primary,
 			},
 		},
 		icon: {
@@ -87,11 +87,11 @@ export const darkTheme = {
 		font: {
 			primary: "#FAFAFA",
 			secondary: "#FAFAFA",
-			accent: brand.brand.primary,
+			accent: brandColors.brand.primary,
 			accent2: "#FAFAFA99",
 			placeholder: "#FAFAFA80",
 		},
-		...brand,
+		...brandColors,
 	},
 
 	...media,

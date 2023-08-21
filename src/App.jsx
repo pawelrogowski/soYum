@@ -16,7 +16,8 @@ export const App = () => {
 			<Container>
 				<ThemeSwitch />
 				<Logo />
-				<Button />
+				<Button $variant="normal" />
+				<Button $variant="square" />
 			</Container>
 		</ThemeProvider>
 	);
