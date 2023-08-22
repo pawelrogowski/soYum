@@ -57,7 +57,7 @@ export const Button = styled.button`
 				border: none;
 
 				&:hover {
-					background-color: ${props.theme.color.button.accent3};
+					background-color: ${props.theme.color.button.accent4};
 					color: ${props.theme.color.brand.secondary};
 					border: none;
 				}`

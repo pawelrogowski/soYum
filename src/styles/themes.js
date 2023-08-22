@@ -38,6 +38,7 @@ export const lightTheme = {
 			accent: "#FAFAFA",
 			accent2: "transparent",
 			accent3: "#1E1F28",
+			accent4: "#22252A",
 			disabled: "#D9D9D9",
 			font: {
 				primary: "#FAFAFA",
@@ -81,6 +82,7 @@ export const darkTheme = {
 			accent: "#FAFAFA",
 			accent2: "transparent",
 			accent3: brandColors.brand.primary,
+			accent4: "#22252A",
 			disabled: "#D9D9D9",
 			font: {
 				primary: "#FAFAFA",
