@@ -46,11 +46,6 @@ export const flexItem = ({
 `;
 
 export const media = {
-	mobile: (...args) => css`
-		@media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
-			${css(...args)};
-		}
-	`,
 	tablet: (...args) => css`
 		@media (min-width: ${(props) => props.theme.breakpoints.mobile}) {
 			${css(...args)};

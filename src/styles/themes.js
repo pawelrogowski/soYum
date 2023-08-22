@@ -35,12 +35,18 @@ export const lightTheme = {
 		button: {
 			primary: "#22252A",
 			secondary: brandColors.brand.primary,
-			accent: "#D9D9D9",
+			accent: "#FAFAFA",
 			accent2: "transparent",
+			accent3: "#1E1F28",
+			disabled: "#D9D9D9",
 			font: {
 				primary: "#FAFAFA",
 				secondary: "#FAFAFA",
 				accent: brandColors.brand.primary,
+				accent2: brandColors.brand.primary,
+				hero: "#22252A",
+				heroHover: "#FAFAFA",
+				disabled: "#23262A",
 			},
 		},
 		icon: {
@@ -72,12 +78,18 @@ export const darkTheme = {
 		button: {
 			primary: brandColors.brand.primary,
 			secondary: "#22252A",
-			accent: "#D9D9D9",
+			accent: "#FAFAFA",
 			accent2: "transparent",
+			accent3: brandColors.brand.primary,
+			disabled: "#D9D9D9",
 			font: {
 				primary: "#FAFAFA",
 				secondary: "#FAFAFA",
 				accent: brandColors.brand.primary,
+				accent2: "#1E1F28",
+				hero: "#22252A",
+				heroHover: "#FAFAFA",
+				disabled: "#23262A",
 			},
 		},
 		icon: {
