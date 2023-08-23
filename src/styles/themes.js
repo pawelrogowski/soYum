@@ -18,98 +18,132 @@ const typography = {
 };
 
 const brandColors = {
-	brand: {
-		primary: "#8BAA36",
-		secondary: "#FAFAFA",
-	},
+	main: "#8BAA36",
+	secondary: "#FAFAFA",
 };
 
 export const lightTheme = {
-	color: {
-		background: {
-			primary: brandColors.brand.primary,
-			secondary: "#22252A",
-			accent: "#D9D9D9",
-			accent2: "transparent",
-		},
-		button: {
-			primary: "#22252A",
-			secondary: brandColors.brand.primary,
-			accent: "#FAFAFA",
-			accent2: "transparent",
-			accent3: "#1E1F28",
-			accent4: "#22252A",
-			disabled: "#D9D9D9",
-			font: {
-				primary: "#FAFAFA",
-				secondary: "#FAFAFA",
-				accent: brandColors.brand.primary,
-				accent2: brandColors.brand.primary,
-				hero: "#22252A",
-				heroHover: "#FAFAFA",
-				disabled: "#23262A",
-			},
-		},
-		icon: {
-			primary: brandColors.brand.primary,
-			secondary: "#FFFFFF",
-		},
-		font: {
-			primary: "#23262A",
-			secondary: "#FAFAFA",
-			accent: brandColors.brand.primary,
-			accent2: "#000",
-			placeholder: "#BDBDBD",
-		},
-		...brandColors,
+	media,
+	bg: {
+		main: "#FAFAFA",
+		secondary: "#22252A",
+		form: "#2A2C36",
 	},
-
-	...media,
-	...typography,
+	button: {
+		font: typography.family.primary,
+		base: {
+			bgIdle: "#22252A",
+			bgHover: brandColors.main,
+			bgActive: "#748d2e",
+			borderIdle: "#22252A",
+			borderHover: brandColors.main,
+			borderActive: "#748d2e",
+			fontColorIdle: "#FAFAFA",
+			fontColorHover: "#FAFAFA",
+		},
+		outline: {
+			bgIdle: "transparent",
+			bgHover: "transparent",
+			bgActive: "transparent",
+			borderIdle: "#FAFAFA",
+			borderHover: brandColors.main,
+			borderActive: "#748d2e",
+			fontColorIdle: "#FAFAFA",
+			fontColorHover: brandColors.main,
+		},
+		rectBig: {
+			bgIdle: brandColors.main,
+			bgHover: brandColors.main,
+			bgActive: "#748d2e",
+			borderIdle: brandColors.main,
+			borderHover: brandColors.main,
+			borderActive: "#748d2e",
+			fontColorIdle: "#FAFAFA",
+			fontColorHover: "#22252A",
+		},
+		rectSmall: {
+			bgIdle: brandColors.main,
+			bgHover: "#22252A",
+			bgActive: "#22252A",
+			borderIdle: brandColors.main,
+			borderHover: "#22252A",
+			borderActive: "#22252A",
+			fontColorIdle: "#FAFAFA",
+			fontColorHover: "#FAFAFA",
+		},
+		rectSmallDisabled: {
+			bgIdle: "#D9D9D9",
+			bgHover: "#FFFFFF",
+			bgActive: brandColors.main,
+			borderIdle: "#D9D9D9",
+			borderHover: "#23262A",
+			borderActive: brandColors.main,
+			fontColorIdle: "#23262A",
+			fontColorHover: "#23262A",
+		},
+	},
 };
 
 export const darkTheme = {
-	color: {
-		background: {
-			primary: "#1E1F28",
-			secondary: brandColors.brand.primary,
-			accent: "#2A2C36",
-			accent2: "#D9D9D9",
-		},
-		button: {
-			primary: brandColors.brand.primary,
-			secondary: "#22252A",
-			accent: "#FAFAFA",
-			accent2: "transparent",
-			accent3: brandColors.brand.primary,
-			accent4: "#22252A",
-			disabled: "#D9D9D9",
-			font: {
-				primary: "#FAFAFA",
-				secondary: "#FAFAFA",
-				accent: brandColors.brand.primary,
-				accent2: "#1E1F28",
-				hero: "#22252A",
-				heroHover: "#FAFAFA",
-				disabled: "#23262A",
-			},
-		},
-		icon: {
-			primary: "#FFFFFF",
-			secondary: "#1E1F28",
-		},
-		font: {
-			primary: "#FAFAFA",
-			secondary: "#FAFAFA",
-			accent: brandColors.brand.primary,
-			accent2: "#FAFAFA99",
-			placeholder: "#FAFAFA80",
-		},
-		...brandColors,
+	media,
+	bg: {
+		main: "#2A2C36",
+		secondary: "#1d2024",
+		form: "#2A2C36",
 	},
-
-	...media,
-	...typography,
+	button: {
+		font: typography.family.primary,
+		base: {
+			bgIdle: brandColors.main,
+			bgHover: "#22252A",
+			bgActive: "#2c3036",
+			borderIdle: brandColors.main,
+			borderHover: "#22252A",
+			borderActive: "#2c3036",
+			fontColorIdle: "#FAFAFA",
+			fontColorHover: "#FAFAFA",
+		},
+		outline: {
+			bgIdle: "transparent",
+			bgHover: "transparent",
+			bgActive: "transparent",
+			borderIdle: "#FAFAFA",
+			borderHover: brandColors.main,
+			borderActive: "#748d2e",
+			fontColorIdle: "#FAFAFA",
+			fontColorHover: brandColors.main,
+		},
+		rectBig: {
+			bgIdle: "#1d2024",
+			bgHover: "#1d2024",
+			bgActive: "#2c3036",
+			borderIdle: "#1d2024",
+			borderHover: "#1d2024",
+			borderActive: "#2c3036",
+			fontColorIdle: "#FAFAFA",
+			fontColorHover: brandColors.main,
+		},
+		rectSmall: {
+			bgIdle: brandColors.main,
+			bgHover: "#22252A",
+			bgActive: "#22252A",
+			borderIdle: brandColors.main,
+			borderHover: "#22252A",
+			borderActive: "#22252A",
+			fontColorIdle: "#FAFAFA",
+			fontColorHover: "#FAFAFA",
+		},
+		rectSmallDisabled: {
+			bgIdle: "#D9D9D9",
+			bgHover: "#FFFFFF",
+			bgActive: brandColors.main,
+			borderIdle: "#D9D9D9",
+			borderHover: "#23262A",
+			borderActive: brandColors.main,
+			fontColorIdle: "#23262A",
+			fontColorHover: "#23262A",
+		},
+	},
 };
 
 export const GlobalStyles = createGlobalStyle`
@@ -123,10 +157,11 @@ export const GlobalStyles = createGlobalStyle`
 	html, body {
 		margin: 0;
 		padding: 0;
+		font-size: 10px;
 	}
 
 	body {	
-		background-color: ${(props) => props.theme.color.background.accent};
+		background-color: ${(props) => props.theme.bg.main};
   		min-height: 100vh;
   		scroll-behavior: smooth;
   		text-rendering: optimizeSpeed;
