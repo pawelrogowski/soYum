@@ -15,12 +15,11 @@ export const App = () => {
 			<Container>
 				<ThemeSwitch />
 				<Logo />
-				<Button $variant="normal">normal</Button>
-				<Button $variant="outline">outline</Button>
-				<Button $variant="squareBig">squareBig</Button>
-				<Button $variant="squareSmall">squareSmall</Button>
-				<Button $variant="disabled">Disabled</Button>
-				<Button $variant="hero">hero</Button>
+				<Button>Search</Button>
+				<Button $variant="outline">Sign in</Button>
+				<Button $variant="rectBig">Subscribe</Button>
+				<Button $variant="rectSmall">Log out</Button>
+				<Button $variant="rectSmallDisabled">Cancel</Button>
 			</Container>
 		</ThemeProvider>
 	);
