@@ -45,9 +45,9 @@ export const flexItem = ({
 	order: ${order};
 `;
 
-export const media = {
+export const breakpoint = {
 	tablet: (...args) => css`
-		@media (min-width: ${(props) => props.theme.breakpoints.mobile}) {
+		@media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
 			${css(...args)};
 		}
 	`,

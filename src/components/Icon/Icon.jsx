@@ -1,18 +1,16 @@
 import sprite from "../../assets/icons/sprite.svg";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import { StyledSvg } from "./Icon.styled";
 
-const IconBase = ({ icon, className }) => {
+export const Icon = ({ variant, className }) => {
 	return (
-		<svg className={className}>
-			<use href={sprite + `#${icon}`} />
-		</svg>
+		<StyledSvg className={className} variant={variant}>
+			<use href={sprite + `#${variant}`} />
+		</StyledSvg>
 	);
 };
 
-export const Icon = styled(IconBase)``;
-
-IconBase.propTypes = {
-	icon: PropTypes.string.isRequired,
+Icon.propTypes = {
+	variant: PropTypes.string.isRequired,
 	className: PropTypes.string,
 };
