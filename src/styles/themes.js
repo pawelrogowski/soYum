@@ -1,12 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
-const media = {
-	breakpoints: {
-		mobile: "320px",
-		tablet: "768px",
-		desktop: "1024px",
-		maxDesktop: "1400px",
-	},
+const breakpoints = {
+	mobile: "320px",
+	tablet: "768px",
+	desktop: "1024px",
+	maxDesktop: "1400px",
 };
 
 const typography = {
@@ -23,11 +21,16 @@ const brandColors = {
 };
 
 export const lightTheme = {
-	media,
+	breakpoints,
 	bg: {
 		main: "#FAFAFA",
 		secondary: "#22252A",
 		form: "#2A2C36",
+	},
+
+	logo: {
+		bg: brandColors.main,
+		icon: brandColors.secondary,
 	},
 	button: {
 		font: typography.family.primary,
@@ -95,11 +98,15 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
-	media,
+	breakpoints,
 	bg: {
 		main: "#2A2C36",
 		secondary: "#1d2024",
 		form: "#2A2C36",
+	},
+	logo: {
+		bg: brandColors.main,
+		icon: brandColors.secondary,
 	},
 	button: {
 		font: typography.family.primary,
