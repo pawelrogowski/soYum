@@ -16,7 +16,8 @@ export const App = () => {
 				<ThemeSwitch />
 				<Logo />
 				<Button>Search</Button>
-				<Button $variant="outline">Sign in</Button>
+				<Button $variant="outlineSmall">Sign in</Button>
+				<Button $variant="outlineBig">Other categories</Button>
 				<Button $variant="rectBig">Subscribe</Button>
 				<Button $variant="rectSmall">Log out</Button>
 				<Button $variant="rectSmallDisabled">Cancel</Button>

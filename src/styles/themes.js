@@ -41,7 +41,7 @@ export const lightTheme = {
 			fontColorIdle: "#FAFAFA",
 			fontColorHover: "#FAFAFA",
 		},
-		outline: {
+		outlineSmall: {
 			bgIdle: "transparent",
 			bgHover: "transparent",
 			bgActive: "transparent",
@@ -50,6 +50,16 @@ export const lightTheme = {
 			borderActive: "#748d2e",
 			fontColorIdle: "#FAFAFA",
 			fontColorHover: brandColors.main,
+		},
+		outlineBig: {
+			bgIdle: "transparent",
+			bgHover: brandColors.main,
+			bgActive: "transparent",
+			borderIdle: brandColors.main,
+			borderHover: brandColors.main,
+			borderActive: "#748d2e",
+			fontColorIdle: "#22252A",
+			fontColorHover: "#FAFAFA",
 		},
 		rectBig: {
 			bgIdle: brandColors.main,
@@ -103,7 +113,7 @@ export const darkTheme = {
 			fontColorIdle: "#FAFAFA",
 			fontColorHover: "#FAFAFA",
 		},
-		outline: {
+		outlineSmall: {
 			bgIdle: "transparent",
 			bgHover: "transparent",
 			bgActive: "transparent",
@@ -112,6 +122,16 @@ export const darkTheme = {
 			borderActive: "#748d2e",
 			fontColorIdle: "#FAFAFA",
 			fontColorHover: brandColors.main,
+		},
+		outlineBig: {
+			bgIdle: "transparent",
+			bgHover: brandColors.main,
+			bgActive: "transparent",
+			borderIdle: brandColors.main,
+			borderHover: brandColors.main,
+			borderActive: "#748d2e",
+			fontColorIdle: "#22252A",
+			fontColorHover: "#FAFAFA",
 		},
 		rectBig: {
 			bgIdle: "#1d2024",

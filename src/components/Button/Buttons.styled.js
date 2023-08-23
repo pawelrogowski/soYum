@@ -30,38 +30,58 @@ export const Button = styled.button`
 		border: 0.1rem solid ${({ theme }) => theme.button.base.borderActive};
 	}
 
-	${(props) =>
-		props.$variant === "outline"
+	${({ $variant, theme }) =>
+		$variant === "outlineSmall"
 			? css`
-					background-color: ${props.theme.button.outline.bgIdle};
-					border: 0.2rem solid ${props.theme.button.outline.borderIdle};
-					color: ${props.theme.button.outline.fontColorIdle};
+					background-color: ${theme.button.outlineSmall.bgIdle};
+					border: 0.2rem solid ${theme.button.outlineSmall.borderIdle};
+					color: ${theme.button.outlineSmall.fontColorIdle};
 					&:hover,
 					&:focus {
-						background-color: ${props.theme.button.outline.bgIdle};
-						color: ${props.theme.button.outline.fontColorHover};
-						border: 0.2rem solid ${props.theme.button.outline.borderHover};
+						background-color: ${theme.button.outlineSmall.bgHover};
+						color: ${theme.button.outlineSmall.fontColorHover};
+						border: 0.2rem solid ${theme.button.outlineSmall.borderHover};
 					}
 					&:active {
 						background-color: ${({ theme }) =>
-							theme.button.outline.bgActive};
+							theme.button.outlineSmall.bgActive};
 						border: 0.2rem solid
-							${({ theme }) => theme.button.outline.borderActive};
+							${({ theme }) => theme.button.outlineSmall.borderActive};
 					}
 			  `
-			: props.$variant === "rectBig"
+			: $variant === "outlineBig"
 			? css`
-					background-color: ${props.theme.button.rectBig.bgIdle};
-					border: 0.2rem solid ${props.theme.button.rectBig.borderIdle};
-					color: ${props.theme.button.rectBig.fontColorIdle};
+					background-color: ${theme.button.outlineBig.bgIdle};
+					border: 0.2rem solid ${theme.button.outlineBig.borderIdle};
+					color: ${theme.button.outlineBig.fontColorIdle};
+					min-width: 23.9rem;
+					max-height: 6.1rem;
+					&:hover,
+					&:focus {
+						background-color: ${theme.button.outlineBig.bgHover};
+						color: ${theme.button.outlineBig.fontColorHover};
+						border: 0.2rem solid ${theme.button.outlineBig.borderHover};
+					}
+					&:active {
+						background-color: ${({ theme }) =>
+							theme.button.outlineBig.bgActive};
+						border: 0.2rem solid
+							${({ theme }) => theme.button.outlineBig.borderActive};
+					}
+			  `
+			: $variant === "rectBig"
+			? css`
+					background-color: ${theme.button.rectBig.bgIdle};
+					border: 0.2rem solid ${theme.button.rectBig.borderIdle};
+					color: ${theme.button.rectBig.fontColorIdle};
 					border-radius: 0.6rem;
 					min-width: 33.9rem;
 					height: 6rem;
 					&:hover,
 					&:focus {
-						background-color: ${props.theme.button.rectBig.bgHover};
-						color: ${props.theme.button.rectBig.fontColorHover};
-						border: 0.2rem solid ${props.theme.button.rectBig.borderHover};
+						background-color: ${theme.button.rectBig.bgHover};
+						color: ${theme.button.rectBig.fontColorHover};
+						border: 0.2rem solid ${theme.button.rectBig.borderHover};
 					}
 					&:active {
 						background-color: ${({ theme }) =>
@@ -70,20 +90,19 @@ export const Button = styled.button`
 							${({ theme }) => theme.button.rectBig.borderActive};
 					}
 			  `
-			: props.$variant === "rectSmall"
+			: $variant === "rectSmall"
 			? css`
-					background-color: ${props.theme.button.rectSmall.bgIdle};
-					border: 0.2rem solid ${props.theme.button.rectSmall.borderIdle};
-					color: ${props.theme.button.rectSmall.fontColorIdle};
+					background-color: ${theme.button.rectSmall.bgIdle};
+					border: 0.2rem solid ${theme.button.rectSmall.borderIdle};
+					color: ${theme.button.rectSmall.fontColorIdle};
 					border-radius: 0.6rem;
 					min-width: 19.2rem;
 					height: 5.9rem;
 					&:hover,
 					&:focus {
-						background-color: ${props.theme.button.rectSmall.bgHover};
-						color: ${props.theme.button.rectSmall.fontColorHover};
-						border: 0.2rem solid
-							${props.theme.button.rectSmall.borderHover};
+						background-color: ${theme.button.rectSmall.bgHover};
+						color: ${theme.button.rectSmall.fontColorHover};
+						border: 0.2rem solid ${theme.button.rectSmall.borderHover};
 					}
 					&:active {
 						background-color: ${({ theme }) =>
@@ -92,22 +111,20 @@ export const Button = styled.button`
 							${({ theme }) => theme.button.rectSmall.borderActive};
 					}
 			  `
-			: props.$variant === "rectSmallDisabled"
+			: $variant === "rectSmallDisabled"
 			? css`
-					background-color: ${props.theme.button.rectSmallDisabled.bgIdle};
-					border: 0.2rem solid
-						${props.theme.button.rectSmallDisabled.borderIdle};
-					color: ${props.theme.button.rectSmallDisabled.fontColorIdle};
+					background-color: ${theme.button.rectSmallDisabled.bgIdle};
+					border: 0.2rem solid ${theme.button.rectSmallDisabled.borderIdle};
+					color: ${theme.button.rectSmallDisabled.fontColorIdle};
 					border-radius: 0.6rem;
 					min-width: 19.2rem;
 					height: 5.9rem;
 					&:hover,
 					&:focus {
-						background-color: ${props.theme.button.rectSmallDisabled
-							.bgHover};
-						color: ${props.theme.button.rectSmallDisabled.fontColorHover};
+						background-color: ${theme.button.rectSmallDisabled.bgHover};
+						color: ${theme.button.rectSmallDisabled.fontColorHover};
 						border: 0.2rem solid
-							${props.theme.button.rectSmallDisabled.borderHover};
+							${theme.button.rectSmallDisabled.borderHover};
 					}
 					&:active {
 						background-color: ${({ theme }) =>
