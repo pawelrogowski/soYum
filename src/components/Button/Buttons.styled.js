@@ -1,94 +1,115 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { font } from "../../styles/mixins";
 
 export const Button = styled.button`
 	${font({
-		family: ({ theme }) => theme.family.primary,
-		color: ({ theme }) => theme.color.button.font.primary,
-		size: "16px",
+		family: ({ theme }) => theme.button.font,
+		color: ({ theme }) => theme.button.base.fontColorIdle,
+		size: "1.6rem",
 		weight: "400",
 	})}
 
-	background-color: ${({ theme }) => theme.color.button.primary};
-	border-radius: 24px 44px;
-	min-width: 161px;
-	height: 70px;
-	border: 1px solid ${({ theme }) => theme.color.button.primary};
+	background-color: ${({ theme }) => theme.button.base.bgIdle};
+	border-radius: 2.4rem 4.4rem;
+	min-width: 16.1rem;
+	height: 7rem;
+	border: 0.1rem solid ${({ theme }) => theme.button.base.borderIdle};
 	transition: background-color 100ms, color 100ms, border 100ms;
 	cursor: pointer;
 
 	&:hover {
 		transition: background-color 100ms, color 100ms, border 100ms;
-		background-color: ${({ theme }) => theme.color.button.secondary};
-		border: 1px solid ${({ theme }) => theme.color.button.secondary};
+		background-color: ${({ theme }) => theme.button.base.bgHover};
+		border: 0.1rem solid ${({ theme }) => theme.button.base.borderHover};
+	}
+	&:active {
+		transition: background-color 100ms, color 100ms, border 100ms;
+		background-color: ${({ theme }) => theme.button.base.bgActive};
+		border: 0.1rem solid ${({ theme }) => theme.button.base.borderActive};
 	}
 
 	${(props) =>
 		props.$variant === "outline"
-			? `
-				background-color: transparent;
-				border: 2px solid ${props.theme.color.button.accent};
-
-				&:hover {
-					background-color: transparent;
-					color: ${props.theme.color.button.primary};
-					border: 2px solid ${props.theme.color.button.primary};
-				}`
-			: props.$variant === "squareBig"
-			? `
-				background-color: ${props.theme.color.button.accent3};
-				border-radius: 6px;
-				min-width: 114px;
-				width: 339px; 
-				height: 60px;
-				border: none;
-
-				&:hover {
-					background-color: ${props.theme.color.button.accent3};
-					color: ${props.theme.color.button.font.accent2};
-					border: none;
-				}`
-			: props.$variant === "squareSmall"
-			? `
-				background-color: ${props.theme.color.brand.primary};
-				border-radius: 6px;
-				min-width: 114px;
-				height: 60px;
-				border: none;
-
-				&:hover {
-					background-color: ${props.theme.color.button.accent4};
-					color: ${props.theme.color.brand.secondary};
-					border: none;
-				}`
-			: props.$variant === "disabled"
-			? `
-				background-color: ${props.theme.color.button.disabled};
-				color: ${props.theme.color.button.font.disabled};
-				border-radius: 6px;
-				min-width: 114px;
-				height: 60px;
-				border: none;
-
-				&:hover {
-					background-color: ${props.theme.color.button.accent2};
-					color: ${props.theme.color.button.font.disabled};
-					border: 1px solid ${props.theme.color.button.font.disabled};
-				}`
-			: props.$variant === "hero"
-			? `
-				background-color: transparent;
-				color: ${props.theme.color.button.font.hero};
-				border: 2px solid ${props.theme.color.brand.primary};
-				border-radius: 24px 44px;
-				min-width: 239px;
-				height: 60px;
-
-
-				&:hover {
-					background-color: ${props.theme.color.brand.primary};
-					color: ${props.theme.color.button.font.heroHover};
-					border: 2px solid ${props.theme.color.brand.primary};
-				}`
+			? css`
+					background-color: ${props.theme.button.outline.bgIdle};
+					border: 0.2rem solid ${props.theme.button.outline.borderIdle};
+					color: ${props.theme.button.outline.fontColorIdle};
+					&:hover {
+						background-color: ${props.theme.button.outline.bgIdle};
+						color: ${props.theme.button.outline.fontColorHover};
+						border: 0.2rem solid ${props.theme.button.outline.borderHover};
+					}
+					&:active {
+						background-color: ${({ theme }) =>
+							theme.button.outline.bgActive};
+						border: 0.2rem solid
+							${({ theme }) => theme.button.outline.borderActive};
+					}
+			  `
+			: props.$variant === "rectBig"
+			? css`
+					background-color: ${props.theme.button.rectBig.bgIdle};
+					border: 0.2rem solid ${props.theme.button.rectBig.borderIdle};
+					color: ${props.theme.button.rectBig.fontColorIdle};
+					border-radius: 0.6rem;
+					min-width: 33.9rem;
+					height: 6rem;
+					&:hover {
+						background-color: ${props.theme.button.rectBig.bgHover};
+						color: ${props.theme.button.rectBig.fontColorHover};
+						border: 0.2rem solid ${props.theme.button.rectBig.borderHover};
+					}
+					&:active {
+						background-color: ${({ theme }) =>
+							theme.button.rectBig.bgActive};
+						border: 0.2rem solid
+							${({ theme }) => theme.button.rectBig.borderActive};
+					}
+			  `
+			: props.$variant === "rectSmall"
+			? css`
+					background-color: ${props.theme.button.rectSmall.bgIdle};
+					border: 0.2rem solid ${props.theme.button.rectSmall.borderIdle};
+					color: ${props.theme.button.rectSmall.fontColorIdle};
+					border-radius: 0.6rem;
+					min-width: 19.2rem;
+					height: 5.9rem;
+					&:hover {
+						background-color: ${props.theme.button.rectSmall.bgHover};
+						color: ${props.theme.button.rectSmall.fontColorHover};
+						border: 0.2rem solid
+							${props.theme.button.rectSmall.borderHover};
+					}
+					&:active {
+						background-color: ${({ theme }) =>
+							theme.button.rectSmall.bgActive};
+						border: 0.2rem solid
+							${({ theme }) => theme.button.rectSmall.borderActive};
+					}
+			  `
+			: props.$variant === "rectSmallDisabled"
+			? css`
+					background-color: ${props.theme.button.rectSmallDisabled.bgIdle};
+					border: 0.2rem solid
+						${props.theme.button.rectSmallDisabled.borderIdle};
+					color: ${props.theme.button.rectSmallDisabled.fontColorIdle};
+					border-radius: 0.6rem;
+					min-width: 19.2rem;
+					height: 5.9rem;
+					&:hover {
+						background-color: ${props.theme.button.rectSmallDisabled
+							.bgHover};
+						color: ${props.theme.button.rectSmallDisabled.fontColorHover};
+						border: 0.2rem solid
+							${props.theme.button.rectSmallDisabled.borderHover};
+					}
+					&:active {
+						background-color: ${({ theme }) =>
+							theme.button.rectSmallDisabled.bgActive};
+						border: 0.2rem solid
+							${({ theme }) =>
+								theme.button.rectSmallDisabled.borderActive};
+					}
+			  `
 			: null};
 `;
