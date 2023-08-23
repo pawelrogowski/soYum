@@ -16,8 +16,10 @@ export const Button = styled.button`
 	border: 0.1rem solid ${({ theme }) => theme.button.base.borderIdle};
 	transition: background-color 100ms, color 100ms, border 100ms;
 	cursor: pointer;
+	outline: none;
 
-	&:hover {
+	&:hover,
+	&:focus {
 		transition: background-color 100ms, color 100ms, border 100ms;
 		background-color: ${({ theme }) => theme.button.base.bgHover};
 		border: 0.1rem solid ${({ theme }) => theme.button.base.borderHover};
@@ -34,7 +36,8 @@ export const Button = styled.button`
 					background-color: ${props.theme.button.outline.bgIdle};
 					border: 0.2rem solid ${props.theme.button.outline.borderIdle};
 					color: ${props.theme.button.outline.fontColorIdle};
-					&:hover {
+					&:hover,
+					&:focus {
 						background-color: ${props.theme.button.outline.bgIdle};
 						color: ${props.theme.button.outline.fontColorHover};
 						border: 0.2rem solid ${props.theme.button.outline.borderHover};
@@ -54,7 +57,8 @@ export const Button = styled.button`
 					border-radius: 0.6rem;
 					min-width: 33.9rem;
 					height: 6rem;
-					&:hover {
+					&:hover,
+					&:focus {
 						background-color: ${props.theme.button.rectBig.bgHover};
 						color: ${props.theme.button.rectBig.fontColorHover};
 						border: 0.2rem solid ${props.theme.button.rectBig.borderHover};
@@ -74,7 +78,8 @@ export const Button = styled.button`
 					border-radius: 0.6rem;
 					min-width: 19.2rem;
 					height: 5.9rem;
-					&:hover {
+					&:hover,
+					&:focus {
 						background-color: ${props.theme.button.rectSmall.bgHover};
 						color: ${props.theme.button.rectSmall.fontColorHover};
 						border: 0.2rem solid
@@ -96,7 +101,8 @@ export const Button = styled.button`
 					border-radius: 0.6rem;
 					min-width: 19.2rem;
 					height: 5.9rem;
-					&:hover {
+					&:hover,
+					&:focus {
 						background-color: ${props.theme.button.rectSmallDisabled
 							.bgHover};
 						color: ${props.theme.button.rectSmallDisabled.fontColorHover};
