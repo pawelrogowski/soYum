@@ -1,5 +1,9 @@
 import { LogoIcon } from "./Logo.styled";
+import PropTypes from "prop-types";
+export const Logo = ({ variant }) => {
+	return <LogoIcon icon="logo" variant={variant || "header"} />;
+};
 
-export const Logo = () => {
-	return <LogoIcon icon="logo" />;
+Logo.propTypes = {
+	variant: PropTypes.string,
 };
