@@ -4,7 +4,7 @@ import { StyledSvg } from "./Icon.styled";
 
 export const Icon = ({ icon, className }) => {
 	return (
-		<StyledSvg className={className} icon={icon}>
+		<StyledSvg className={className} $icon={icon}>
 			<use href={sprite + `#${icon}`} />
 		</StyledSvg>
 	);

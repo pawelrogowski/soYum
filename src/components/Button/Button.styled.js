@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { font } from "../../styles/mixins";
 
-export const Button = styled.button`
+export const StyledButton = styled.button`
 	${font({
 		family: ({ theme }) => theme.button.font,
 		color: ({ theme }) => theme.button.base.fontColorIdle,
@@ -84,8 +84,7 @@ export const Button = styled.button`
 						border: 0.2rem solid ${theme.button.rectBig.borderHover};
 					}
 					&:active {
-						background-color: ${({ theme }) =>
-							theme.button.rectBig.bgActive};
+						background-color: ${({ theme }) => theme.button.rectBig.bgActive};
 						border: 0.2rem solid
 							${({ theme }) => theme.button.rectBig.borderActive};
 					}
@@ -105,8 +104,7 @@ export const Button = styled.button`
 						border: 0.2rem solid ${theme.button.rectSmall.borderHover};
 					}
 					&:active {
-						background-color: ${({ theme }) =>
-							theme.button.rectSmall.bgActive};
+						background-color: ${({ theme }) => theme.button.rectSmall.bgActive};
 						border: 0.2rem solid
 							${({ theme }) => theme.button.rectSmall.borderActive};
 					}
@@ -123,15 +121,13 @@ export const Button = styled.button`
 					&:focus {
 						background-color: ${theme.button.rectSmallDisabled.bgHover};
 						color: ${theme.button.rectSmallDisabled.fontColorHover};
-						border: 0.2rem solid
-							${theme.button.rectSmallDisabled.borderHover};
+						border: 0.2rem solid ${theme.button.rectSmallDisabled.borderHover};
 					}
 					&:active {
 						background-color: ${({ theme }) =>
 							theme.button.rectSmallDisabled.bgActive};
 						border: 0.2rem solid
-							${({ theme }) =>
-								theme.button.rectSmallDisabled.borderActive};
+							${({ theme }) => theme.button.rectSmallDisabled.borderActive};
 					}
 			  `
 			: null};
