@@ -18,6 +18,7 @@ const typography = {
 const brandColors = {
 	main: "#8BAA36",
 	secondary: "#FAFAFA",
+	accent: "#EBF3D4",
 };
 
 export const lightTheme = {
@@ -27,10 +28,21 @@ export const lightTheme = {
 		secondary: "#22252A",
 		form: "#2A2C36",
 	},
-
 	logo: {
-		bg: brandColors.main,
-		icon: brandColors.secondary,
+		header: {
+			bg: brandColors.main,
+			icon: brandColors.secondary,
+		},
+		footer: {
+			bg: brandColors.accent,
+			icon: brandColors.main,
+		},
+	},
+	icon: {
+		social: {
+			fill: "#FAFAFA",
+			fillHover: "#1E1F28",
+		},
 	},
 	button: {
 		font: typography.family.primary,
@@ -105,8 +117,20 @@ export const darkTheme = {
 		form: "#2A2C36",
 	},
 	logo: {
-		bg: brandColors.main,
-		icon: brandColors.secondary,
+		header: {
+			bg: brandColors.main,
+			icon: brandColors.secondary,
+		},
+		footer: {
+			bg: brandColors.accent,
+			icon: brandColors.main,
+		},
+	},
+	icon: {
+		social: {
+			fill: "#FAFAFA",
+			fillHover: "#1E1F28",
+		},
 	},
 	button: {
 		font: typography.family.primary,
