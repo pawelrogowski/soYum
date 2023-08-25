@@ -8,6 +8,7 @@ import { Logo } from "./components/Logo/Logo";
 import { Button } from "./components/Button/Button";
 import { SocialIcons } from "./components/SocialIcons/SocialIcons";
 import { BrowserRouter } from "react-router-dom";
+import { Navigation } from "./components/Navigation/Navigation";
 export const App = () => {
 	const { theme } = useContext(ThemeContext);
 
@@ -28,6 +29,11 @@ export const App = () => {
 				</Container>
 				<div>
 					<SocialIcons />
+				</div>
+				<div>
+					<Navigation variant="footer" />
+					<Navigation variant="header" />
+					<Navigation variant="hamburger" />
 				</div>
 			</BrowserRouter>
 		</ThemeProvider>
