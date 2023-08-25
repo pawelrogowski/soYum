@@ -8,6 +8,9 @@ export const StyledUl = styled.ul`
 			justify: "center",
 			align: "center",
 		})}
+	}
+	a {
+		&:hover,
 		&:focus {
 			svg {
 				fill: ${({ theme }) => theme.icon.social.fillHover};
@@ -20,15 +23,14 @@ export const StyledUl = styled.ul`
 		height: 1.8rem;
 		fill: ${({ theme }) => theme.icon.social.fill};
 		transition: fill 100ms;
-		&:hover,
-		&:focus {
-			fill: ${({ theme }) => theme.icon.social.fillHover};
-			transition: fill 100ms;
-		}
 	}
 	${flexContainer({
 		justify: "center",
 		align: "center",
-		gap: "1.6rem",
+		gap: "1.4rem",
 	})}
+
+	@media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+		gap: 1.8rem;
+	}
 `;
