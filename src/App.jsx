@@ -9,6 +9,7 @@ import { Button } from "./components/Button/Button";
 import { SocialIcons } from "./components/SocialIcons/SocialIcons";
 import { BrowserRouter } from "react-router-dom";
 import { Navigation } from "./components/Navigation/Navigation";
+import { SearchForm } from "./components/SearchForm/SearchForm";
 export const App = () => {
 	const { theme } = useContext(ThemeContext);
 
@@ -27,6 +28,9 @@ export const App = () => {
 					<Button variant="rectSmall">Log out</Button>
 					<Button variant="rectSmallDisabled">Cancel</Button>
 				</Container>
+				<div>
+					<SearchForm name="search" placeholder="Beef" variant="Search" />
+				</div>
 				<div>
 					<SocialIcons />
 				</div>
