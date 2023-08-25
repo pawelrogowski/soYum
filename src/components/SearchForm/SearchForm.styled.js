@@ -20,9 +20,16 @@ export const StyledForm = styled.form`
 		border-radius: 2.4rem 0rem 0rem 4.4rem;
 		padding: 0 6rem 0rem 4.9rem;
 		outline: none;
+		transition: border-color 150ms;
+		&:not(:placeholder-shown) ~ Button {
+			border: 0.1rem solid ${(props) => props.theme.button.base.bgHover};
+			background-color: ${(props) => props.theme.button.base.bgHover};
+		}
+
 		&:focus,
 		&:hover,
 		&:focus-within {
+			transition: border-color 150ms;
 			border: 0.1rem solid #0000005e;
 		}
 		&::placeholder {
