@@ -44,6 +44,22 @@ export const lightTheme = {
 			fillHover: "#1E1F28",
 		},
 	},
+	navigation: {
+		font: typography.family.primary,
+		header: {
+			colorIdle: "#23262A",
+			colorHover: brandColors.main,
+			icon: "#23262A",
+		},
+		footer: {
+			colorIdle: "#FAFAFA",
+			colorHover: "#23262A",
+		},
+		hamburger: {
+			colorIdle: "#22252A",
+			colorHover: brandColors.main,
+		},
+	},
 	button: {
 		font: typography.family.primary,
 		base: {
@@ -132,6 +148,21 @@ export const darkTheme = {
 			fillHover: "#1E1F28",
 		},
 	},
+	navigation: {
+		font: typography.family.primary,
+		header: {
+			colorIdle: "#FAFAFA",
+			colorHover: brandColors.main,
+		},
+		footer: {
+			colorIdle: "#FAFAFA",
+			colorHover: "#23262A",
+		},
+		hamburger: {
+			colorIdle: "#FAFAFA",
+			colorHover: brandColors.main,
+		},
+	},
 	button: {
 		font: typography.family.primary,
 		base: {
@@ -212,7 +243,7 @@ export const GlobalStyles = createGlobalStyle`
 	}
 
 	body {	
-		background-color: ${(props) => props.theme.bg.main};
+		background-color: darkkhaki;
   		min-height: 100vh;
   		scroll-behavior: smooth;
   		text-rendering: optimizeSpeed;
