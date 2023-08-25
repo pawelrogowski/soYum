@@ -95,8 +95,8 @@ export const StyledNav = styled.nav`
 							wrap: "nowrap",
 							gap: "4rem",
 						})}
-						a,
-					span {
+
+						li,a {
 							display: flex;
 							align-items: center;
 							${font({
@@ -126,11 +126,6 @@ export const StyledNav = styled.nav`
 							padding: 0.4rem;
 							transition: stroke 100ms;
 							margin-right: 0.4rem;
-							&:hover,
-							&:focus {
-								stroke: ${theme.navigation.hamburger.colorHover};
-								transition: stroke 100ms;
-							}
 						}
 					}
 			  `
