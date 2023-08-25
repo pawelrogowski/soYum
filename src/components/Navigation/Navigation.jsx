@@ -4,7 +4,6 @@ import { Icon } from "../Icon/Icon";
 import PropTypes from "prop-types";
 
 export const Navigation = ({ variant }) => {
-	console.log(variant);
 	return (
 		<StyledNav $variant={variant}>
 			<ul>
