@@ -44,6 +44,15 @@ export const lightTheme = {
 			fillHover: "#1E1F28",
 		},
 	},
+	form: {
+		font: typography.family.primary,
+		search: {
+			font: "#23262A",
+			placeholder: "#bdbdbd",
+			borderIdle: "#f0f0f0",
+			borderFocus: "#0000005e",
+		},
+	},
 	navigation: {
 		font: typography.family.primary,
 		header: {
@@ -146,6 +155,15 @@ export const darkTheme = {
 		social: {
 			fill: "#FAFAFA",
 			fillHover: "#1E1F28",
+		},
+	},
+	form: {
+		font: typography.family.primary,
+		search: {
+			font: "#23262A",
+			placeholder: "#bdbdbd",
+			borderIdle: "#f0f0f0",
+			borderFocus: "#0000005e",
 		},
 	},
 	navigation: {

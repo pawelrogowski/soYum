@@ -7,20 +7,23 @@ export const StyledForm = styled.form`
 	p {
 		display: none;
 	}
+
 	input {
 		${font({
-			family: ({ theme }) => theme.navigation.font,
-			color: ({ theme }) => theme.navigation.footer.colorHover,
+			family: ({ theme }) => theme.form.font,
+			color: ({ theme }) => theme.form.search.font,
 			size: "1.6rem",
 			weight: "400",
 		})}
+
 		height: 7rem;
-		border: 0.1rem solid #f0f0f0;
+		border: 0.1rem solid ${({ theme }) => theme.form.search.borderIdle};
 		width: 39rem;
 		border-radius: 2.4rem 0rem 0rem 4.4rem;
 		padding: 0 6rem 0rem 4.9rem;
 		outline: none;
 		transition: border-color 150ms;
+
 		&:not(:placeholder-shown) ~ Button {
 			border: 0.1rem solid ${(props) => props.theme.button.base.bgHover};
 			background-color: ${(props) => props.theme.button.base.bgHover};
@@ -30,10 +33,10 @@ export const StyledForm = styled.form`
 		&:hover,
 		&:focus-within {
 			transition: border-color 150ms;
-			border: 0.1rem solid #0000005e;
+			border: 0.1rem solid ${({ theme }) => theme.form.search.borderFocus};
 		}
 		&::placeholder {
-			color: #bdbdbd;
+			color: ${({ theme }) => theme.form.search.placeholder};
 		}
 	}
 	button {
