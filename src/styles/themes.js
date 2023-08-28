@@ -28,6 +28,17 @@ export const lightTheme = {
 		secondary: "#22252A",
 		form: "#2A2C36",
 	},
+	textInput: {
+		font: typography.family.primary,
+		bgIdle: "transparent",
+		bgActive: "transparent",
+		fontIdle: "#ffffffcc",
+		fontActive: "#fff",
+		borderIdle: "#ffffff99",
+		borderActive: "#fff",
+		iconIdle: "ffffffcc",
+		iconActive: "fff",
+	},
 	logo: {
 		header: {
 			bg: brandColors.main,
@@ -140,6 +151,17 @@ export const darkTheme = {
 		main: "#2A2C36",
 		secondary: "#1d2024",
 		form: "#2A2C36",
+	},
+	textInput: {
+		font: typography.family.primary,
+		bgIdle: "transparent",
+		bgActive: "transparent",
+		fontIdle: "#ffffffcc",
+		fontActive: "#fff",
+		borderIdle: "",
+		borderActive: "",
+		iconIdle: "ffffffcc",
+		iconActive: "fff",
 	},
 	logo: {
 		header: {
