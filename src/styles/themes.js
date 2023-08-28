@@ -28,16 +28,21 @@ export const lightTheme = {
 		secondary: "#22252A",
 		form: "#2A2C36",
 	},
+	registerForm: {
+		font: typography.family.primary,
+		header: "#FAFAFA",
+		bg: "#2A2C36",
+	},
 	textInput: {
 		font: typography.family.primary,
 		bgIdle: "transparent",
 		bgActive: "transparent",
 		fontIdle: "#ffffffcc",
 		fontActive: "#fff",
-		borderIdle: "#ffffff99",
+		borderIdle: "#ffffff33",
 		borderActive: "#fff",
-		iconIdle: "ffffffcc",
-		iconActive: "fff",
+		iconIdle: "#ffffffcc",
+		iconActive: "#fff",
 	},
 	logo: {
 		header: {
@@ -152,16 +157,20 @@ export const darkTheme = {
 		secondary: "#1d2024",
 		form: "#2A2C36",
 	},
+	registerForm: {
+		font: typography.family.primary,
+		bg: "#2A2C36",
+	},
 	textInput: {
 		font: typography.family.primary,
 		bgIdle: "transparent",
 		bgActive: "transparent",
 		fontIdle: "#ffffffcc",
 		fontActive: "#fff",
-		borderIdle: "",
-		borderActive: "",
-		iconIdle: "ffffffcc",
-		iconActive: "fff",
+		borderIdle: "#ffffff33",
+		borderActive: "#fff",
+		iconIdle: "#ffffffcc",
+		iconActive: "#fff",
 	},
 	logo: {
 		header: {

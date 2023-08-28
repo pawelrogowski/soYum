@@ -10,7 +10,7 @@ import { SocialIcons } from "./components/SocialIcons/SocialIcons";
 import { BrowserRouter } from "react-router-dom";
 import { Navigation } from "./components/Navigation/Navigation";
 import { SearchForm } from "./components/SearchForm/SearchForm";
-import { TextInput } from "./components/TextInput/TextInput";
+import { RegisterForm } from "./components/Forms/RegisterForm/RegisterForm";
 export const App = () => {
 	const { theme } = useContext(ThemeContext);
 
@@ -40,11 +40,7 @@ export const App = () => {
 					<Navigation variant="header" />
 					<Navigation variant="hamburger" />
 				</div>
-				<TextInput
-					placeholder="Name"
-					iconLeft="envelope"
-					iconRight="envelope"
-				></TextInput>
+				<RegisterForm />
 			</BrowserRouter>
 		</ThemeProvider>
 	);

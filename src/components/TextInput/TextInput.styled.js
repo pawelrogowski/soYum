@@ -6,7 +6,7 @@ export const StyledInput = styled.input`
 	${font({
 		family: ({ theme }) => theme.textInput.font,
 		color: ({ theme }) => theme.textInput.font,
-		size: "1.6rem",
+		size: "1.8rem",
 		weight: "400",
 	})}
 
@@ -23,16 +23,21 @@ export const StyledInput = styled.input`
 		width: 2.4rem;
 		height: 2.4rem;
 		top: 50%;
-		transform: translateX(-50%);
+		transform: translateY(-50%);
+
 		&:nth-of-type(1) {
+			stroke: white;
+			fill: none;
 			left: 1.8rem;
 		}
 		&:nth-of-type(2) {
+			fill: #e74a3b;
 			right: 1.9rem;
 		}
 	}
 
-	height: 100%;
+	height: 6rem;
+	max-height: 6rem;
 	width: 100%;
 	padding: 1.6rem 5rem;
 	outline: none;
@@ -40,13 +45,16 @@ export const StyledInput = styled.input`
 	border: 0.1rem solid ${({ theme }) => theme.textInput.borderIdle};
 	color: ${({ theme }) => theme.textInput.fontIdle};
 	background-color: ${({ theme }) => theme.textInput.bgIdle};
-	transition: color 100ms, background-color 100ms, border 100ms;
-	&:focus {
+	transition: color 100ms, background-color 100ms, border 100ms, fill 100ms;
+	&:focus,
+	&:hover {
 		border: 0.1rem solid ${({ theme }) => theme.textInput.borderActive};
 		${({ theme }) => theme.textInput.fontActive};
 	}
 	&:focus,
 	&:not(:placeholder-shown) ~ svg {
-		color: ${({ theme }) => theme.textInput.fontActive};
+		&:nth-of-type(1) {
+			stroke: ${({ theme }) => theme.textInput.iconActive};
+		}
 	}
 `;
