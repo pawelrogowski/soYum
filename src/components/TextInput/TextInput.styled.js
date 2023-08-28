@@ -1,12 +1,8 @@
 import styled from "styled-components";
 import { font, flexContainer } from "../../styles/mixins";
 
-export const StyledDiv = styled.div`
+export const StyledInput = styled.input`
 	position: relative;
-	height: 6rem;
-	width: 40rem;
-	max-height: 6rem;
-	max-width: 40rem;
 	${font({
 		family: ({ theme }) => theme.textInput.font,
 		color: ({ theme }) => theme.textInput.font,
@@ -22,35 +18,35 @@ export const StyledDiv = styled.div`
 		gap: 0,
 	})}
 
-	svg {
+	~ svg {
 		position: absolute;
 		width: 2.4rem;
 		height: 2.4rem;
+		top: 50%;
+		transform: translateX(-50%);
 		&:nth-of-type(1) {
-			left: 1.6rem;
+			left: 1.8rem;
 		}
 		&:nth-of-type(2) {
-			right: 1.6rem;
+			right: 1.9rem;
 		}
 	}
 
-	input {
-		height: 100%;
-		width: 100%;
-		padding: 1.6rem 5rem;
-		outline: none;
-		border-radius: 5px;
-		border: 1px solid ${({ theme }) => theme.textInput.borderIdle};
-		color: ${({ theme }) => theme.textInput.fontIdle};
-		background-color: ${({ theme }) => theme.textInput.bgIdle};
-		transition: color 100ms, background-color 100ms, border 100ms;
-		&:focus {
-			border: 1px solid ${({ theme }) => theme.textInput.borderActive};
-			${({ theme }) => theme.textInput.fontActive};
-		}
-		&:focus,
-		&:not(:placeholder-shown) ~ svg {
-			color: ${({ theme }) => theme.textInput.fontActive};
-		}
+	height: 100%;
+	width: 100%;
+	padding: 1.6rem 5rem;
+	outline: none;
+	border-radius: 5px;
+	border: 0.1rem solid ${({ theme }) => theme.textInput.borderIdle};
+	color: ${({ theme }) => theme.textInput.fontIdle};
+	background-color: ${({ theme }) => theme.textInput.bgIdle};
+	transition: color 100ms, background-color 100ms, border 100ms;
+	&:focus {
+		border: 0.1rem solid ${({ theme }) => theme.textInput.borderActive};
+		${({ theme }) => theme.textInput.fontActive};
+	}
+	&:focus,
+	&:not(:placeholder-shown) ~ svg {
+		color: ${({ theme }) => theme.textInput.fontActive};
 	}
 `;

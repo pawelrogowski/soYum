@@ -1,14 +1,14 @@
-import { StyledDiv } from "./TextInput.styled";
+import { StyledInput } from "./TextInput.styled";
 import { Icon } from "../Icon/Icon";
 import PropTypes from "prop-types";
 
 export const TextInput = ({ iconLeft, iconRight, placeholder }) => {
 	return (
-		<StyledDiv>
+		<>
+			<StyledInput placeholder={placeholder} type="text" />
 			{iconLeft && <Icon icon={iconLeft} />}
-			<input placeholder={placeholder} type="text" />
 			{iconRight && <Icon icon={iconRight} />}
-		</StyledDiv>
+		</>
 	);
 };
 

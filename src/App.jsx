@@ -40,9 +40,11 @@ export const App = () => {
 					<Navigation variant="header" />
 					<Navigation variant="hamburger" />
 				</div>
-				<TextInput placeholder="Name" iconLeft="envelope" iconRight="envelope">
-					asdasdasd
-				</TextInput>
+				<TextInput
+					placeholder="Name"
+					iconLeft="envelope"
+					iconRight="envelope"
+				></TextInput>
 			</BrowserRouter>
 		</ThemeProvider>
 	);
