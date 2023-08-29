@@ -46,6 +46,16 @@ export const lightTheme = {
 			warrning: "#F6C23E",
 			correct: "#3CBC81",
 		},
+		button: {
+			bgIdle: brandColors.main,
+			bgHover: brandColors.main,
+			bgActive: "#748d2e",
+			borderIdle: brandColors.main,
+			borderHover: brandColors.main,
+			borderActive: "#748d2e",
+			fontColorIdle: "#FAFAFA",
+			fontColorHover: "#22252A",
+		},
 	},
 	logo: {
 		header: {
@@ -161,23 +171,7 @@ export const darkTheme = {
 		form: "#2A2C36",
 	},
 	registerForm: {
-		font: typography.family.primary,
-		header: "#FAFAFA",
-		bg: "#2A2C36",
-		textInput: {
-			font: typography.family.primary,
-			bgIdle: "transparent",
-			bgActive: "transparent",
-			fontIdle: "#ffffffcc",
-			fontActive: "#fff",
-			borderIdle: "#ffffff33",
-			borderActive: "#fff",
-			iconIdle: "#ffffffcc",
-			iconActive: "#fff",
-			error: "#E74A3B",
-			warrning: "#F6C23E",
-			correct: "#3CBC81",
-		},
+		...lightTheme.registerForm,
 	},
 	logo: {
 		header: {
@@ -299,7 +293,7 @@ export const GlobalStyles = createGlobalStyle`
 	}
 
 	body {	
-		background-color: darkkhaki;
+		background-color: ${({ theme }) => theme.bg.main};
   		min-height: 100vh;
   		scroll-behavior: smooth;
   		text-rendering: optimizeSpeed;

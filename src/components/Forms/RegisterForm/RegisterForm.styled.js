@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import { Form } from "formik";
 import { flexContainer, font } from "../../../styles/mixins";
-
+import { StyledButton } from "../../Button/Button.styled";
 export const StyledForm = styled(Form)`
 	width: 50rem;
 	height: 48.4rem;
@@ -22,6 +22,9 @@ export const StyledForm = styled(Form)`
 	}
 
 	ul {
+		margin-top: 3.2rem;
+		margin-bottom: 5rem;
+
 		${flexContainer({
 			direction: "column",
 			justify: "flex-start",
@@ -29,9 +32,6 @@ export const StyledForm = styled(Form)`
 			wrap: "nowrap",
 			gap: "2.4rem",
 		})}
-
-		margin-top:3.2rem;
-		margin-bottom: 5rem;
 
 		li {
 			position: relative;
@@ -48,7 +48,7 @@ export const StyledForm = styled(Form)`
 					left: 1.8rem;
 				}
 				&:nth-of-type(2) {
-					fill: #e74a3b;
+					fill: ${({ theme }) => theme.registerForm.textInput.error};
 					right: 1.9rem;
 				}
 			}
@@ -65,8 +65,26 @@ export const StyledForm = styled(Form)`
 		}
 	}
 
-	button {
+	${StyledButton} {
 		width: 100%;
+		background-color: ${({ theme }) => theme.registerForm.button.bgIdle};
+		border: 0.2rem solid ${({ theme }) => theme.registerForm.button.borderIdle};
+		color: ${({ theme }) => theme.registerForm.button.fontColorIdle};
+		border-radius: 0.6rem;
+		min-width: 33.9rem;
+		height: 6rem;
+		&:hover,
+		&:focus {
+			background-color: ${({ theme }) => theme.registerForm.button.bgHover};
+			color: ${({ theme }) => theme.registerForm.button.fontColorHover};
+			border: 0.2rem solid
+				${({ theme }) => theme.registerForm.button.borderHover};
+		}
+		&:active {
+			background-color: ${({ theme }) => theme.registerForm.button.bgActive};
+			border: 0.2rem solid
+				${({ theme }) => theme.registerForm.button.borderActive};
+		}
 	}
 
 	p {
