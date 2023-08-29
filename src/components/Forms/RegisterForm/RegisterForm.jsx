@@ -2,6 +2,7 @@ import { Button } from "../../Button/Button";
 import { StyledForm } from "./RegisterForm.styled";
 import { Formik, Field } from "formik";
 import { Icon } from "../../Icon/Icon";
+
 export const RegisterForm = () => {
 	return (
 		<Formik
@@ -21,6 +22,7 @@ export const RegisterForm = () => {
 						<li>
 							<label htmlFor="name">name</label>
 							<Icon icon="user" />
+							<Icon icon="envelope" />
 							<Field
 								id="name"
 								name="name"
@@ -33,6 +35,7 @@ export const RegisterForm = () => {
 						</li>
 						<li>
 							<label htmlFor="email">email</label>
+							<Icon icon="envelope" />
 							<Icon icon="envelope" />
 							<Field
 								id="email"
@@ -47,6 +50,7 @@ export const RegisterForm = () => {
 						<li>
 							<label htmlFor="password">password</label>
 							<Icon icon="lock" />
+							<Icon icon="envelope" />
 							<Field
 								id="password"
 								name="password"
