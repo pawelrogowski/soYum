@@ -1,8 +1,12 @@
 import PropTypes from "prop-types";
 import { StyledButton } from "./Button.styled";
 
-export const Button = ({ variant, children }) => {
-	return <StyledButton $variant={variant}>{children}</StyledButton>;
+export const Button = ({ variant, type, children }) => {
+	return (
+		<StyledButton $variant={variant} type={type}>
+			{children}
+		</StyledButton>
+	);
 };
 
 Button.propTypes = {
