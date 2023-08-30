@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import { Form } from "formik";
 import { flexContainer, font } from "../../../styles/mixins";
 import { StyledButton } from "../../Button/Button.styled";
+
 export const StyledForm = styled(Form)`
 	width: 50rem;
 	height: 48.4rem;
@@ -87,7 +88,7 @@ export const StyledForm = styled(Form)`
 		}
 	}
 
-	p {
+	span {
 		${font({
 			family: ({ theme }) => theme.registerForm.font,
 			color: ({ theme }) => theme.registerForm.header,
@@ -97,13 +98,12 @@ export const StyledForm = styled(Form)`
 		})}
 		position: absolute;
 		left: 0.1rem;
-		bottom: -23px;
+		bottom: -20px;
 	}
 
 	label {
 		display: none;
 	}
-
 	input {
 		position: relative;
 		${font({
@@ -129,6 +129,13 @@ export const StyledForm = styled(Form)`
 		border-radius: 5px;
 		border: 0.1rem solid
 			${({ theme }) => theme.registerForm.textInput.borderIdle};
+		${({ hasError, errorType }) => {
+			if (hasError && errorType === "email") {
+				return `
+        border: 1px solid red; 
+      `;
+			}
+		}}
 		color: ${({ theme }) => theme.registerForm.textInput.fontIdle};
 		background-color: ${({ theme }) => theme.registerForm.textInput.bgIdle};
 		transition: color 100ms, background-color 100ms, border 100ms, fill 100ms;

@@ -1,5 +1,5 @@
-import styled, { css } from "styled-components";
 import { font } from "../../styles/mixins";
+import styled, { css } from "styled-components";
 
 export const StyledButton = styled.button`
 	${font({
