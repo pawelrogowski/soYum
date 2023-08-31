@@ -292,7 +292,7 @@ export const GlobalStyles = createGlobalStyle`
 		font-size: 10px;
 	}
 
-	body {	
+	body {
 		background-color: ${({ theme }) => theme.bg.main};
   		min-height: 100vh;
   		scroll-behavior: smooth;
@@ -310,14 +310,14 @@ export const GlobalStyles = createGlobalStyle`
 		border-collapse: collapse;
 		border-spacing: 0;
 	}
-	
+
 	td,
 	th {
 		padding: 0;
 	}
 
 	blockquote,
-	dl, 
+	dl,
 	dd,
 	h1,
 	h2,
@@ -360,7 +360,24 @@ export const GlobalStyles = createGlobalStyle`
     	animation-duration: 0.01ms !important;
     	animation-iteration-count: 1 !important;
     	transition-duration: 0.01ms !important;
-    	scroll-behavior: auto !important; 
+    	scroll-behavior: auto !important;
   	}
 	}
+
+	// this is for autofil on webkit browsers
+	input:-webkit-autofill,
+	input:-webkit-autofill:hover,
+	input:-webkit-autofill:focus,
+	textarea:-webkit-autofill,
+	textarea:-webkit-autofill:hover,
+	textarea:-webkit-autofill:focus,
+	select:-webkit-autofill,
+	select:-webkit-autofill:hover,
+	select:-webkit-autofill:focus {
+	  border: 1px solid green;
+	  -webkit-text-fill-color: #fafafa;
+	  transition: background-color 50000s ease-in-out 0s;
+	}
+
+
 `;

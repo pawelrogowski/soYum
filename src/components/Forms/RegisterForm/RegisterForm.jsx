@@ -22,11 +22,17 @@ export const RegisterForm = () => {
 				let $nameInfo = errors.name;
 				let $emailInfo = errors.email;
 				let $passwordInfo = errors.password;
+				let $nameTouched = touched.name;
+				let $emailTouched = touched.email;
+				let $passwordTouched = touched.password;
 
 				const styledFormProps = {
 					$nameInfo,
 					$emailInfo,
 					$passwordInfo,
+					$nameTouched,
+					$emailTouched,
+					$passwordTouched,
 				};
 
 				return (
@@ -35,20 +41,13 @@ export const RegisterForm = () => {
 						<ul>
 							<li>
 								<label htmlFor="name">name</label>
-								<Field
-									id="name"
-									name="name"
-									type="text"
-									placeholder="Name"
-								/>
+								<Field id="name" name="name" type="text" placeholder="Name" />
 								<Icon icon="user" />
 								{touched.name &&
 									($nameInfo ? (
 										<Icon
 											icon={
-												$nameInfo.includes("required")
-													? "error"
-													: "warrning"
+												$nameInfo.includes("required") ? "error" : "warrning"
 											}
 										/>
 									) : (
@@ -70,9 +69,7 @@ export const RegisterForm = () => {
 									($emailInfo ? (
 										<Icon
 											icon={
-												$emailInfo.includes("required")
-													? "error"
-													: "warrning"
+												$emailInfo.includes("required") ? "error" : "warrning"
 											}
 										/>
 									) : (
@@ -94,9 +91,7 @@ export const RegisterForm = () => {
 									($passwordInfo ? (
 										<Icon
 											icon={
-												$passwordInfo.includes(
-													"required"
-												)
+												$passwordInfo.includes("required")
 													? "error"
 													: "warrning"
 											}
@@ -104,17 +99,10 @@ export const RegisterForm = () => {
 									) : (
 										<Icon icon="no-error" />
 									))}
-								<ErrorMessage
-									name="password"
-									component="span"
-								/>
+								<ErrorMessage name="password" component="span" />
 							</li>
 						</ul>
-						<Button
-							variant="rectBig"
-							type="submit"
-							aria-label="Submit form"
-						>
+						<Button variant="rectBig" type="submit" aria-label="Submit form">
 							Sign up
 						</Button>
 					</StyledForm>
