@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled, css } from "styled-components";
 import { Form } from "formik";
 import { flexContainer, font } from "../../../styles/mixins";
 import { StyledButton } from "../../Button/Button.styled";
@@ -44,7 +44,8 @@ export const StyledForm = styled(Form)`
 				transform: translateY(-50%);
 
 				&:nth-of-type(1) {
-					stroke: ${({ theme }) => theme.registerForm.textInput.iconIdle};
+					stroke: ${({ theme }) =>
+						theme.registerForm.textInput.iconIdle};
 					fill: none;
 					left: 1.8rem;
 				}
@@ -59,7 +60,8 @@ export const StyledForm = styled(Form)`
 			&:focus {
 				svg {
 					&:nth-of-type(1) {
-						stroke: ${({ theme }) => theme.registerForm.textInput.iconActive};
+						stroke: ${({ theme }) =>
+							theme.registerForm.textInput.iconActive};
 					}
 				}
 			}
@@ -69,20 +71,23 @@ export const StyledForm = styled(Form)`
 	${StyledButton} {
 		width: 100%;
 		background-color: ${({ theme }) => theme.registerForm.button.bgIdle};
-		border: 0.2rem solid ${({ theme }) => theme.registerForm.button.borderIdle};
+		border: 0.2rem solid
+			${({ theme }) => theme.registerForm.button.borderIdle};
 		color: ${({ theme }) => theme.registerForm.button.fontColorIdle};
 		border-radius: 0.6rem;
 		min-width: 33.9rem;
 		height: 6rem;
 		&:hover,
 		&:focus {
-			background-color: ${({ theme }) => theme.registerForm.button.bgHover};
+			background-color: ${({ theme }) =>
+				theme.registerForm.button.bgHover};
 			color: ${({ theme }) => theme.registerForm.button.fontColorHover};
 			border: 0.2rem solid
 				${({ theme }) => theme.registerForm.button.borderHover};
 		}
 		&:active {
-			background-color: ${({ theme }) => theme.registerForm.button.bgActive};
+			background-color: ${({ theme }) =>
+				theme.registerForm.button.bgActive};
 			border: 0.2rem solid
 				${({ theme }) => theme.registerForm.button.borderActive};
 		}
@@ -126,19 +131,13 @@ export const StyledForm = styled(Form)`
 		width: 100%;
 		padding: 1.6rem 5rem;
 		outline: none;
-		border-radius: 5px;
+		border-radius: 0.5rem;
 		border: 0.1rem solid
 			${({ theme }) => theme.registerForm.textInput.borderIdle};
-		${({ hasError, errorType }) => {
-			if (hasError && errorType === "email") {
-				return `
-        border: 1px solid red; 
-      `;
-			}
-		}}
 		color: ${({ theme }) => theme.registerForm.textInput.fontIdle};
 		background-color: ${({ theme }) => theme.registerForm.textInput.bgIdle};
-		transition: color 100ms, background-color 100ms, border 100ms, fill 100ms;
+		transition: color 100ms, background-color 100ms, border 100ms,
+			fill 100ms;
 		&:focus,
 		&:hover {
 			border: 0.1rem solid
@@ -146,4 +145,93 @@ export const StyledForm = styled(Form)`
 			${({ theme }) => theme.registerForm.textInput.fontActive};
 		}
 	}
+	${(props) =>
+		props.$passwordInfo === "Password is required"
+			? css`
+					li {
+						input[type="password"] {
+							color: ${props.theme.registerForm.textInput.error};
+							border-color: ${props.theme.registerForm.textInput
+								.error};
+						}
+						input[type="password"] ~ svg {
+							stroke: ${props.theme.registerForm.textInput
+								.error} !important;
+						}
+						input[type="password"] ~ span {
+							color: ${props.theme.registerForm.textInput
+								.error} !important;
+						}
+					}
+			  `
+			: props.$passwordInfo === "Password must be at least 8 characters"
+			? css`
+					li {
+						input[type="password"] {
+							color: ${props.theme.registerForm.textInput
+								.warrning};
+							border-color: ${props.theme.registerForm.textInput
+								.warrning};
+						}
+						input[type="password"] ~ svg {
+							stroke: ${props.theme.registerForm.textInput
+								.warrning} !important;
+						}
+						input[type="password"] ~ span {
+							color: ${props.theme.registerForm.textInput
+								.warrning} !important;
+						}
+					}
+			  `
+			: props.$passwordInfo === undefined
+			? css`
+					li {
+						input[type="password"]:not(:placeholder-shown) {
+							color: ${props.theme.registerForm.textInput
+								.correct};
+							border-color: ${props.theme.registerForm.textInput
+								.correct};
+						}
+						input[type="password"]:not(:placeholder-shown) ~ svg {
+							stroke: ${props.theme.registerForm.textInput
+								.correct} !important;
+						}
+					}
+			  `
+			: null}
+	${(props) =>
+		props.$nameInfo === "Name is required"
+			? css`
+					li {
+						input[type="name"] {
+							color: ${props.theme.registerForm.textInput.error};
+							border-color: ${props.theme.registerForm.textInput
+								.error};
+						}
+						input[type="name"] ~ svg {
+							stroke: ${props.theme.registerForm.textInput
+								.error} !important;
+						}
+						input[type="name"] ~ span {
+							color: ${props.theme.registerForm.textInput
+								.error} !important;
+						}
+					}
+			  `
+			: props.$nameInfo === undefined
+			? css`
+					li {
+						input[type="name"]:not(:placeholder-shown) {
+							color: ${props.theme.registerForm.textInput
+								.correct};
+							border-color: ${props.theme.registerForm.textInput
+								.correct};
+						}
+						input[type="name"]:not(:placeholder-shown) ~ svg {
+							stroke: ${props.theme.registerForm.textInput
+								.correct} !important;
+						}
+					}
+			  `
+			: null}
 `;
