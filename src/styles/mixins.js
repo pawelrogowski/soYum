@@ -1,13 +1,13 @@
 import { css } from "styled-components";
 
 export const font = ({
-  color = "#000",
-  size,
-  family,
-  height,
-  spacing = "normal",
-  weight = "normal",
-  style,
+  color = "inherit",
+  size = "inherit",
+  family = "inherit",
+  height = "inherit",
+  spacing = "inherit",
+  weight = "inherit",
+  style = "inherit",
 }) => css`
   color: ${color};
   font-size: ${size};
@@ -46,14 +46,19 @@ export const flexItem = ({
 `;
 
 export const breakpoint = {
-  tablet: (...args) => css`
-    @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
-      ${css(...args)};
-    }
-  `,
-  desktop: (...args) => css`
-    @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
-      ${css(...args)};
-    }
-  `,
+  tablet: (...styles) => {
+    return css`
+      @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+        ${css(...styles)}
+      }
+    `;
+  },
+
+  desktop: (...styles) => {
+    return css`
+      @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
+        ${css(...styles)}
+      }
+    `;
+  },
 };

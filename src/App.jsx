@@ -6,7 +6,6 @@ import { lightTheme, darkTheme, GlobalStyles } from "./styles/themes";
 import { ThemeSwitch } from "./components/ThemeToggle/ThemeSwitch";
 import { Container } from "./components/Container/Container";
 import { RegisterForm } from "./components/Forms/RegisterForm/RegisterForm";
-import "/src/assets/icons/404.svg";
 import { Icon } from "./components/Icon/Icon";
 export const App = () => {
   const { theme } = useContext(ThemeContext);

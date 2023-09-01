@@ -1,47 +1,56 @@
 import { styled, css } from "styled-components";
 import { Form } from "formik";
-import { flexContainer, font } from "../../../styles/mixins";
+import { flexContainer, font, breakpoint } from "../../../styles/mixins";
 import { StyledButton } from "../../Button/Button.styled";
 
 export const StyledForm = styled(Form)`
-  width: 50rem;
-  height: 48.4rem;
-  padding: 4.4rem 5rem;
+  width: 100%;
+  max-width: 50rem;
+  min-width: 33.5rem;
+  padding: 3.2rem 2.8rem 4rem 2.8rem;
   border-radius: 3rem;
   background-color: ${({ theme }) => theme.registerForm.bg};
-  transition: color 200ms, background-color 200ms, border 200ms, fill 200ms;
+  transition: color 200ms, background-color 200ms, border 200ms, fill 200ms,
+    height 200ms;
+
+  ${breakpoint.tablet(css`
+    padding: 4.4rem 5rem;
+  `)}
 
   h1 {
     ${font({
       family: ({ theme }) => theme.registerForm.font,
       color: ({ theme }) => theme.registerForm.header,
-      size: "2.8rem",
+      size: "2.4rem",
       weight: "600",
-      height: "3rem",
-      spacing: "-0.056rem",
+      height: "2.8rem",
+      spacing: "-0.048rem",
     })}
+
+    ${breakpoint.tablet(css`
+      ${font({
+        size: "2.8rem",
+        height: "3rem",
+        spacing: "-0.056rem",
+      })}
+    `)}
   }
 
   ul {
     margin-top: 3.2rem;
     margin-bottom: 5rem;
 
-    ${flexContainer({
-      direction: "column",
-      justify: "flex-start",
-      align: "normal",
-      wrap: "nowrap",
-      gap: "2.4rem",
-    })}
-
     li {
       position: relative;
+      margin-bottom: 2.1rem;
+      ${breakpoint.tablet(css`
+        margin-bottom: 2.4rem;
+      `)}
       svg {
         position: absolute;
         width: 2.4rem;
         height: 2.4rem;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 1.9rem;
         transition: stroke 200ms, fill 200ms;
         &:nth-of-type(1) {
           stroke: ${({ theme }) => theme.registerForm.textInput.iconIdle};
@@ -64,6 +73,59 @@ export const StyledForm = styled(Form)`
         }
       }
     }
+
+    span {
+      ${font({
+        family: ({ theme }) => theme.registerForm.font,
+        color: ({ theme }) => theme.registerForm.header,
+        size: "1.4rem",
+        weight: "400",
+        height: "1.4rem",
+      })}
+      transition: color 200ms;
+      position: absolute;
+      left: 0.1rem;
+      bottom: -1.9rem;
+    }
+
+    label {
+      display: none;
+    }
+    input {
+      position: relative;
+      ${font({
+        family: ({ theme }) => theme.registerForm.textInput.font,
+        color: ({ theme }) => theme.registerForm.textInput.font,
+        size: "1.8rem",
+        weight: "400",
+      })}
+
+      ${flexContainer({
+        direction: "row",
+        justify: "flex-start",
+        align: "center",
+        wrap: "nowrap",
+        gap: 0,
+      })}
+
+		height: 6rem;
+      max-height: 6rem;
+      width: 100%;
+      padding: 1.6rem 5rem;
+      outline: none;
+      border-radius: 0.5rem;
+      border: 0.1rem solid
+        ${({ theme }) => theme.registerForm.textInput.borderIdle};
+      color: ${({ theme }) => theme.registerForm.textInput.fontIdle};
+      background-color: ${({ theme }) => theme.registerForm.textInput.bgIdle};
+      transition: color 200ms, background-color 200ms, border 200ms;
+      &:focus,
+      &:hover {
+        border: 0.1rem solid
+          ${({ theme }) => theme.registerForm.textInput.borderActive};
+        ${({ theme }) => theme.registerForm.textInput.fontActive};
+      }
+    }
   }
 
   ${StyledButton} {
@@ -72,8 +134,9 @@ export const StyledForm = styled(Form)`
     border: 0.2rem solid ${({ theme }) => theme.registerForm.button.borderIdle};
     color: ${({ theme }) => theme.registerForm.button.fontColorIdle};
     border-radius: 0.6rem;
-    min-width: 33.9rem;
+    min-width: 23.5rem;
     height: 6rem;
+
     &:hover,
     &:focus {
       background-color: ${({ theme }) => theme.registerForm.button.bgHover};
@@ -88,64 +151,13 @@ export const StyledForm = styled(Form)`
     }
   }
 
-  span {
-    ${font({
-      family: ({ theme }) => theme.registerForm.font,
-      color: ({ theme }) => theme.registerForm.header,
-      size: "1.4rem",
-      weight: "400",
-      height: "2.1rem",
-    })}
-    transition: color 200ms;
-    position: absolute;
-    left: 0.1rem;
-    bottom: -20px;
-  }
-
-  label {
-    display: none;
-  }
-  input {
-    position: relative;
-    ${font({
-      family: ({ theme }) => theme.registerForm.textInput.font,
-      color: ({ theme }) => theme.registerForm.textInput.font,
-      size: "1.8rem",
-      weight: "400",
-    })}
-
-    ${flexContainer({
-      direction: "row",
-      justify: "flex-start",
-      align: "center",
-      wrap: "nowrap",
-      gap: 0,
-    })}
-
-		height: 6rem;
-    max-height: 6rem;
-    width: 100%;
-    padding: 1.6rem 5rem;
-    outline: none;
-    border-radius: 0.5rem;
-    border: 0.1rem solid
-      ${({ theme }) => theme.registerForm.textInput.borderIdle};
-    color: ${({ theme }) => theme.registerForm.textInput.fontIdle};
-    background-color: ${({ theme }) => theme.registerForm.textInput.bgIdle};
-    transition: color 200ms, background-color 200ms, border 200ms;
-    &:focus,
-    &:hover {
-      border: 0.1rem solid
-        ${({ theme }) => theme.registerForm.textInput.borderActive};
-      ${({ theme }) => theme.registerForm.textInput.fontActive};
-    }
-  }
   ${(props) =>
     props.$passwordTouched
       ? props.$passwordInfo === "Password is required"
         ? css`
             li {
               input[name="password"] {
+                margin-bottom: 2.8rem;
                 -webkit-text-fill-color: ${props.theme.registerForm.textInput
                   .error};
                 color: ${props.theme.registerForm.textInput.error};
@@ -163,6 +175,7 @@ export const StyledForm = styled(Form)`
         ? css`
             li {
               input[name="password"] {
+                margin-bottom: 2.8rem;
                 -webkit-text-fill-color: ${props.theme.registerForm.textInput
                   .warning};
                 color: ${props.theme.registerForm.textInput.warning};
@@ -200,6 +213,7 @@ export const StyledForm = styled(Form)`
         ? css`
             li {
               input[name="name"] {
+                margin-bottom: 2.8rem;
                 -webkit-text-fill-color: ${props.theme.registerForm.textInput
                   .error};
                 color: ${props.theme.registerForm.textInput.error};
@@ -236,6 +250,7 @@ export const StyledForm = styled(Form)`
         ? css`
             li {
               input[name="email"] {
+                margin-bottom: 2.8rem;
                 -webkit-text-fill-color: ${props.theme.registerForm.textInput
                   .error};
                 color: ${props.theme.registerForm.textInput.error};
@@ -253,6 +268,7 @@ export const StyledForm = styled(Form)`
         ? css`
             li {
               input[name="email"] {
+                margin-bottom: 2.8rem;
                 -webkit-text-fill-color: ${props.theme.registerForm.textInput
                   .warning};
                 color: ${props.theme.registerForm.textInput.warning};
