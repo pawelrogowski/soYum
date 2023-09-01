@@ -1,21 +1,14 @@
 import styled, { css } from "styled-components";
 
 export const StyledSvg = styled.svg`
-  fill: gray;
-
-  ${({ variant }) =>
-    variant === "!round"
+  ${({ $icon }) =>
+    $icon === "404"
       ? css`
-          use {
-            fill: yellow;
-            stroke-width: 0;
-          }
+          fill: none;
+          width: 498px;
+          height: 300px;
         `
-      : variant === "arrow_long"
-      ? css`
-          use {
-            stroke: blue;
-          }
-        `
+      : $icon === "arrow_long"
+      ? css``
       : null}
 `;

@@ -6,7 +6,7 @@ import { lightTheme, darkTheme, GlobalStyles } from "./styles/themes";
 import { ThemeSwitch } from "./components/ThemeToggle/ThemeSwitch";
 import { Container } from "./components/Container/Container";
 import { RegisterForm } from "./components/Forms/RegisterForm/RegisterForm";
-import { Button } from "./components/Button/Button";
+import "/src/assets/icons/404.svg";
 import { Icon } from "./components/Icon/Icon";
 export const App = () => {
   const { theme } = useContext(ThemeContext);
@@ -18,6 +18,7 @@ export const App = () => {
         <ThemeSwitch />
         <Container>
           <RegisterForm />
+          <Icon icon="404" />
         </Container>
       </BrowserRouter>
     </ThemeProvider>
