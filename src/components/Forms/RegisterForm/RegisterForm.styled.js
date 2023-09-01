@@ -9,7 +9,7 @@ export const StyledForm = styled(Form)`
 	padding: 4.4rem 5rem;
 	border-radius: 3rem;
 	background-color: ${({ theme }) => theme.registerForm.bg};
-	transition: color 100ms, background-color 100ms, border 100ms, fill 100ms;
+	transition: color 200ms, background-color 200ms, border 200ms, fill 200ms;
 
 	h1 {
 		${font({
@@ -42,7 +42,7 @@ export const StyledForm = styled(Form)`
 				height: 2.4rem;
 				top: 50%;
 				transform: translateY(-50%);
-
+				transition: stroke 200ms, fill 200ms;
 				&:nth-of-type(1) {
 					stroke: ${({ theme }) => theme.registerForm.textInput.iconIdle};
 					fill: none;
@@ -96,6 +96,7 @@ export const StyledForm = styled(Form)`
 			weight: "400",
 			height: "2.1rem",
 		})}
+		transition: color 200ms;
 		position: absolute;
 		left: 0.1rem;
 		bottom: -20px;
@@ -131,7 +132,7 @@ export const StyledForm = styled(Form)`
 			${({ theme }) => theme.registerForm.textInput.borderIdle};
 		color: ${({ theme }) => theme.registerForm.textInput.fontIdle};
 		background-color: ${({ theme }) => theme.registerForm.textInput.bgIdle};
-		transition: color 100ms, background-color 100ms, border 100ms, fill 100ms;
+		transition: color 200ms, background-color 200ms, border 200ms;
 		&:focus,
 		&:hover {
 			border: 0.1rem solid
@@ -163,17 +164,16 @@ export const StyledForm = styled(Form)`
 						li {
 							input[name="password"] {
 								-webkit-text-fill-color: ${props.theme.registerForm.textInput
-									.warrning};
-								color: ${props.theme.registerForm.textInput.warrning};
-								border-color: ${props.theme.registerForm.textInput.warrning};
+									.warning};
+								color: ${props.theme.registerForm.textInput.warning};
+								border-color: ${props.theme.registerForm.textInput.warning};
 							}
 							input[name="password"] ~ svg {
 								stroke: ${props.theme.registerForm.textInput
-									.warrning} !important;
+									.warning} !important;
 							}
 							input[name="password"] ~ span {
-								color: ${props.theme.registerForm.textInput
-									.warrning} !important;
+								color: ${props.theme.registerForm.textInput.warning} !important;
 							}
 						}
 				  `
@@ -254,17 +254,16 @@ export const StyledForm = styled(Form)`
 						li {
 							input[name="email"] {
 								-webkit-text-fill-color: ${props.theme.registerForm.textInput
-									.warrning};
-								color: ${props.theme.registerForm.textInput.warrning};
-								border-color: ${props.theme.registerForm.textInput.warrning};
+									.warning};
+								color: ${props.theme.registerForm.textInput.warning};
+								border-color: ${props.theme.registerForm.textInput.warning};
 							}
 							input[name="email"] ~ svg {
 								stroke: ${props.theme.registerForm.textInput
-									.warrning} !important;
+									.warning} !important;
 							}
 							input[name="email"] ~ span {
-								color: ${props.theme.registerForm.textInput
-									.warrning} !important;
+								color: ${props.theme.registerForm.textInput.warning} !important;
 							}
 						}
 				  `

@@ -43,7 +43,7 @@ export const lightTheme = {
 			iconIdle: "#ffffffcc",
 			iconActive: "#fff",
 			error: "#E74A3B",
-			warrning: "#F6C23E",
+			warning: "#F6C23E",
 			correct: "#3CBC81",
 		},
 		button: {
@@ -374,7 +374,7 @@ export const GlobalStyles = createGlobalStyle`
 	select:-webkit-autofill,
 	select:-webkit-autofill:hover,
 	select:-webkit-autofill:focus {
-	  border: 1px solid green;
+	  border: 0.1rem solid SlateBlue;
 	  -webkit-text-fill-color: #fafafa;
 	  transition: background-color 50000s ease-in-out 0s;
 	}

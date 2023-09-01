@@ -47,7 +47,7 @@ export const RegisterForm = () => {
 									($nameInfo ? (
 										<Icon
 											icon={
-												$nameInfo.includes("required") ? "error" : "warrning"
+												$nameInfo.includes("required") ? "error" : "warning"
 											}
 										/>
 									) : (
@@ -69,7 +69,7 @@ export const RegisterForm = () => {
 									($emailInfo ? (
 										<Icon
 											icon={
-												$emailInfo.includes("required") ? "error" : "warrning"
+												$emailInfo.includes("required") ? "error" : "warning"
 											}
 										/>
 									) : (
@@ -91,9 +91,7 @@ export const RegisterForm = () => {
 									($passwordInfo ? (
 										<Icon
 											icon={
-												$passwordInfo.includes("required")
-													? "error"
-													: "warrning"
+												$passwordInfo.includes("required") ? "error" : "warning"
 											}
 										/>
 									) : (
