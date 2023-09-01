@@ -21,7 +21,7 @@ export const StyledNav = styled.nav`
             }
           }
           a,
-          span {
+          wwww span {
             ${font({
               family: ({ theme }) => theme.navigation.font,
               color: ({ theme }) => theme.navigation.footer.colorIdle,
