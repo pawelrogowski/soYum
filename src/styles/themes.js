@@ -1,4 +1,7 @@
 import { createGlobalStyle } from "styled-components";
+import "../assets/fonts/Poppins-Regular.woff";
+import "../assets/fonts/Poppins-SemiBold.woff";
+import "modern-normalize/modern-normalize.css";
 
 const breakpoints = {
   mobile: "320px",
@@ -297,7 +300,7 @@ export const GlobalStyles = createGlobalStyle`
   		min-height: 100vh;
   		scroll-behavior: smooth;
   		text-rendering: optimizeSpeed;
-		font-family: 'Poppins';
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	}
 
 	a {
