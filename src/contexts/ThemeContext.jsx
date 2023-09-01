@@ -3,29 +3,29 @@ import propTypes from "prop-types";
 export const ThemeContext = createContext();
 
 export const ThemeContextProvider = ({ children }) => {
-	const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
 
-	const toggleTheme = () => {
-		const newTheme = theme === "light" ? "dark" : "light";
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
 
-		setTheme(newTheme);
+    setTheme(newTheme);
 
-		localStorage.setItem("theme", newTheme);
-	};
+    localStorage.setItem("theme", newTheme);
+  };
 
-	useEffect(() => {
-		localStorage.setItem("theme", theme);
-	}, [theme]);
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
-	return (
-		<ThemeContext.Provider value={{ theme, toggleTheme }}>
-			{children}
-		</ThemeContext.Provider>
-	);
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
 };
 
 export default ThemeContext;
 
 ThemeContextProvider.propTypes = {
-	children: propTypes.node,
+  children: propTypes.node,
 };

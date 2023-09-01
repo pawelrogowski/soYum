@@ -7,17 +7,17 @@ import { ThemeSwitch } from "./components/ThemeToggle/ThemeSwitch";
 import { Container } from "./components/Container/Container";
 import { RegisterForm } from "./components/Forms/RegisterForm/RegisterForm";
 export const App = () => {
-	const { theme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
-	return (
-		<ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-			<GlobalStyles />
-			<BrowserRouter>
-				<ThemeSwitch />
-				<Container>
-					<RegisterForm />
-				</Container>
-			</BrowserRouter>
-		</ThemeProvider>
-	);
+  return (
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+      <GlobalStyles />
+      <BrowserRouter>
+        <ThemeSwitch />
+        <Container>
+          <RegisterForm />
+        </Container>
+      </BrowserRouter>
+    </ThemeProvider>
+  );
 };
