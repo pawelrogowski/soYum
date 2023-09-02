@@ -10,12 +10,10 @@ export const StyledForm = styled(Form)`
   padding: 3.2rem 2.8rem 4rem 2.8rem;
   border-radius: 3rem;
   background-color: ${({ theme }) => theme.registerForm.bg};
-  transition: color 200ms, background-color 200ms, border 200ms, fill 200ms,
-    height 200ms;
-
+  transition: color 200ms, background-color 200ms, border 200ms, fill 200ms;
   ${breakpoint.tablet(css`
     padding: 4.4rem 5rem;
-  `)}
+  `)};
 
   h1 {
     ${font({
@@ -39,10 +37,9 @@ export const StyledForm = styled(Form)`
   ul {
     margin-top: 3.2rem;
     margin-bottom: 5rem;
-
     li {
       position: relative;
-      margin-bottom: 2.1rem;
+      margin-bottom: 1.2rem;
       ${breakpoint.tablet(css`
         margin-bottom: 2.4rem;
       `)}

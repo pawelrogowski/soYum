@@ -301,7 +301,8 @@ export const GlobalStyles = createGlobalStyle`
   		scroll-behavior: smooth;
   		text-rendering: optimizeSpeed;
       font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	}
+      min-width: 37.5rem;
+  }
 
 	a {
 		text-decoration: none;

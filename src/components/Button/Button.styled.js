@@ -11,7 +11,7 @@ export const StyledButton = styled.button`
 
   background-color: ${({ theme }) => theme.button.base.bgIdle};
   border-radius: 2.4rem 4.4rem;
-  min-width: 16.1rem;
+  width: 16.1rem;
   height: 7rem;
   border: 0.1rem solid ${({ theme }) => theme.button.base.borderIdle};
   transition: background-color 100ms, color 100ms, border 100ms;
@@ -54,7 +54,7 @@ export const StyledButton = styled.button`
           background-color: ${theme.button.outlineBig.bgIdle};
           border: 0.2rem solid ${theme.button.outlineBig.borderIdle};
           color: ${theme.button.outlineBig.fontColorIdle};
-          min-width: 23.9rem;
+          width: 23.9rem;
           max-height: 6.1rem;
           &:hover,
           &:focus {
@@ -75,7 +75,7 @@ export const StyledButton = styled.button`
           border: 0.2rem solid ${theme.button.rectBig.borderIdle};
           color: ${theme.button.rectBig.fontColorIdle};
           border-radius: 0.6rem;
-          min-width: 33.9rem;
+          width: 33.9rem;
           height: 6rem;
           &:hover,
           &:focus {
@@ -95,7 +95,7 @@ export const StyledButton = styled.button`
           border: 0.2rem solid ${theme.button.rectSmall.borderIdle};
           color: ${theme.button.rectSmall.fontColorIdle};
           border-radius: 0.6rem;
-          min-width: 19.2rem;
+          width: 19.2rem;
           height: 5.9rem;
           &:hover,
           &:focus {
@@ -115,10 +115,10 @@ export const StyledButton = styled.button`
           border: 0.2rem solid ${theme.button.rectSmallDisabled.borderIdle};
           color: ${theme.button.rectSmallDisabled.fontColorIdle};
           border-radius: 0.6rem;
-          min-width: 19.2rem;
+          width: 19.2rem;
           height: 5.9rem;
           &:hover,
-          &:focus {
+          n &:focus {
             background-color: ${theme.button.rectSmallDisabled.bgHover};
             color: ${theme.button.rectSmallDisabled.fontColorHover};
             border: 0.2rem solid ${theme.button.rectSmallDisabled.borderHover};
