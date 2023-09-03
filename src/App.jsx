@@ -4,9 +4,8 @@ import { useContext } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { lightTheme, darkTheme, GlobalStyles } from "./styles/themes";
 import { ThemeSwitch } from "./components/ThemeToggle/ThemeSwitch";
-import { Container } from "./components/Container/Container";
-import { RegisterForm } from "./components/Forms/RegisterForm/RegisterForm";
-import { Button } from "./components/Button/Button";
+import { RegistrationPage } from "./pages/RegistrationPage";
+
 export const App = () => {
   const { theme } = useContext(ThemeContext);
 
@@ -15,15 +14,7 @@ export const App = () => {
       <GlobalStyles />
       <BrowserRouter>
         <ThemeSwitch />
-        <Container>
-          <RegisterForm />
-          <Button>asd</Button>
-          <Button variant="outlineSmall">asd</Button>
-          <Button variant="outlineBig">asd</Button>
-          <Button variant="rectBig">asd</Button>
-          <Button variant="rectSmall">asd</Button>
-          <Button variant="rectSmallDisabled">asd</Button>
-        </Container>
+        <RegistrationPage />
       </BrowserRouter>
     </ThemeProvider>
   );

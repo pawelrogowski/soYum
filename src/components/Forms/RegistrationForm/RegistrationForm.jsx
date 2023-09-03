@@ -1,10 +1,10 @@
 import { Button } from "../../Button/Button";
-import { StyledForm } from "./RegisterForm.styled";
+import { StyledForm } from "./RegistrationForm.styled";
 import { Formik, Field, ErrorMessage } from "formik";
 import { Icon } from "../../Icon/Icon";
 import { validationSchema } from "./validationSchema";
 
-export const RegisterForm = () => {
+export const RegistrationForm = () => {
   const initialFormValues = { name: "", email: "", password: "" };
 
   const handleSubmit = (values) => {

@@ -13,9 +13,11 @@ export const StyledForm = styled(Form)`
   transition: color 200ms, background-color 200ms, border 200ms, fill 200ms;
   ${breakpoint.tablet(css`
     padding: 4.4rem 5rem;
+    min-width: 50rem;
   `)};
 
   h1 {
+    display: inline-block;
     ${font({
       family: ({ theme }) => theme.registerForm.font,
       color: ({ theme }) => theme.registerForm.header,
@@ -24,14 +26,13 @@ export const StyledForm = styled(Form)`
       height: "2.8rem",
       spacing: "-0.048rem",
     })}
-
     ${breakpoint.tablet(css`
       ${font({
         size: "2.8rem",
         height: "3rem",
         spacing: "-0.056rem",
       })}
-    `)}
+    `)};
   }
 
   ul {

@@ -8,7 +8,10 @@ export const StyledSvg = styled.svg`
           width: 498px;
           height: 300px;
         `
-      : $icon === "arrow_long"
-      ? css``
+      : $icon === "hero-login-register"
+      ? css`
+          width: 285px;
+          height: 250px;
+        `
       : null}
 `;

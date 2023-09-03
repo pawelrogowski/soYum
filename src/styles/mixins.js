@@ -1,13 +1,13 @@
 import { css } from "styled-components";
 
 export const font = ({
-  color = "inherit",
-  size = "inherit",
-  family = "inherit",
-  height = "inherit",
-  spacing = "inherit",
-  weight = "inherit",
-  style = "inherit",
+  color,
+  size,
+  family,
+  height,
+  spacing,
+  weight,
+  style,
 }) => css`
   color: ${color};
   font-size: ${size};
@@ -18,13 +18,7 @@ export const font = ({
   font-style: ${style};
 `;
 
-export const flexContainer = ({
-  direction = "row",
-  justify = "flex-start",
-  align = "center",
-  wrap = "nowrap",
-  gap = "0",
-}) => css`
+export const flexContainer = ({ direction, justify, align, wrap, gap }) => css`
   display: flex;
   flex-direction: ${direction};
   justify-content: ${justify};
