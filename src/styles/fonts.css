@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Poppins";
   src: local("Poppins-Regular"),
-    url("../assets/fonts/Poppins-Regular.woff") format("woff");
+    url("../assets/fonts/Poppins-Regular.woff2") format("woff2");
   font-weight: 400;
   font-display: swap;
 }
@@ -9,7 +9,7 @@
 @font-face {
   font-family: "Poppins";
   src: local("Poppins-SemiBold"),
-    url("../assets/fonts/Poppins-SemiBold.woff") format("woff");
+    url("../assets/fonts/Poppins-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-display: swap;
 }
