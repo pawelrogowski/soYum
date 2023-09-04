@@ -13,7 +13,6 @@ export const App = () => {
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
       <BrowserRouter>
-        <ThemeSwitch />
         <RegistrationPage />
       </BrowserRouter>
     </ThemeProvider>

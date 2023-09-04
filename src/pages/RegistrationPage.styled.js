@@ -8,21 +8,22 @@ export const StyledDiv = styled.main`
     direction: "column",
     align: "center",
   })}
-  padding: 0 2rem;
+  padding: 9.6rem 2rem 10rem 2rem;
   background: url(${icon});
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center bottom;
   min-height: 100vh;
-
+  height: 100vh;
+  width: 100vw;
   > svg {
     min-width: 35.8rem;
     max-width: 50rem;
     width: 100%;
     min-height: 35.1rem;
-    aspect-ratio: 1.14;
+    aspect-ratio: 1;
     padding: 0 2.5rem;
-    margin-bottom: -5.6rem;
+    margin-bottom: -5.8rem;
     ${breakpoint.tablet`
     `}
   }
