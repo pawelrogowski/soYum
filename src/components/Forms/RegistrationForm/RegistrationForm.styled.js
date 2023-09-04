@@ -37,7 +37,10 @@ export const StyledForm = styled(Form)`
 
   ul {
     margin-top: 3.2rem;
-    margin-bottom: 5rem;
+    margin-bottom: 2.8rem;
+    ${breakpoint.tablet(css`
+      margin-bottom: 5rem;
+    `)}
     li {
       position: relative;
       margin-bottom: 1.2rem;
@@ -46,9 +49,10 @@ export const StyledForm = styled(Form)`
       `)}
       svg {
         position: absolute;
-        width: 2.4rem;
-        height: 2.4rem;
-        top: 1.9rem;
+
+        width: 1.8rem;
+        height: 1.8rem;
+        top: 1.4rem;
         transition: stroke 200ms, fill 200ms;
         &:nth-of-type(1) {
           stroke: ${({ theme }) => theme.registerForm.textInput.iconIdle};
@@ -59,6 +63,11 @@ export const StyledForm = styled(Form)`
           fill: ${({ theme }) => theme.registerForm.textInput.error};
           right: 1.9rem;
         }
+        ${breakpoint.tablet(css`
+          width: 2.4rem;
+          height: 2.4rem;
+          top: 1.9rem;
+        `)}
       }
 
       &:focus-within,
@@ -76,14 +85,20 @@ export const StyledForm = styled(Form)`
       ${font({
         family: ({ theme }) => theme.registerForm.font,
         color: ({ theme }) => theme.registerForm.header,
-        size: "1.4rem",
+        size: "1rem",
         weight: "400",
-        height: "1.4rem",
+        height: "1rem",
       })}
+
       transition: color 200ms;
       position: absolute;
       left: 0.1rem;
-      bottom: -1.9rem;
+      bottom: -1.5rem;
+      ${breakpoint.tablet(css`
+        bottom: -1.9rem;
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+      `)}
     }
 
     label {
@@ -94,9 +109,17 @@ export const StyledForm = styled(Form)`
       ${font({
         family: ({ theme }) => theme.registerForm.textInput.font,
         color: ({ theme }) => theme.registerForm.textInput.font,
-        size: "1.8rem",
+        size: "1.4rem",
         weight: "400",
       })}
+      ${breakpoint.tablet(css`
+        ${font({
+          family: ({ theme }) => theme.registerForm.textInput.font,
+          color: ({ theme }) => theme.registerForm.textInput.font,
+          size: "1.8rem",
+          weight: "400",
+        })}
+      `)}
 
       ${flexContainer({
         direction: "row",
@@ -106,7 +129,7 @@ export const StyledForm = styled(Form)`
         gap: 0,
       })}
 
-		height: 6rem;
+		  height: 4.5rem;
       max-height: 6rem;
       width: 100%;
       padding: 1.6rem 5rem;
@@ -123,6 +146,11 @@ export const StyledForm = styled(Form)`
           ${({ theme }) => theme.registerForm.textInput.borderActive};
         ${({ theme }) => theme.registerForm.textInput.fontActive};
       }
+      ${breakpoint.tablet(
+        css`
+          height: 6rem;
+        `
+      )}
     }
   }
 
@@ -133,7 +161,7 @@ export const StyledForm = styled(Form)`
     color: ${({ theme }) => theme.registerForm.button.fontColorIdle};
     border-radius: 0.6rem;
     min-width: 23.5rem;
-    height: 6rem;
+    height: 4.5rem;
 
     &:hover,
     &:focus {
@@ -147,6 +175,11 @@ export const StyledForm = styled(Form)`
       border: 0.2rem solid
         ${({ theme }) => theme.registerForm.button.borderActive};
     }
+    ${breakpoint.tablet(
+      css`
+        height: 6rem;
+      `
+    )}
   }
 
   ${(props) =>
@@ -155,7 +188,12 @@ export const StyledForm = styled(Form)`
         ? css`
             li {
               input[name="password"] {
-                margin-bottom: 2.8rem;
+                margin-bottom: 2rem;
+                ${breakpoint.tablet(
+                  css`
+                    margin-bottom: 2.8rem;
+                  `
+                )}
                 -webkit-text-fill-color: ${props.theme.registerForm.textInput
                   .error};
                 color: ${props.theme.registerForm.textInput.error};
@@ -173,7 +211,12 @@ export const StyledForm = styled(Form)`
         ? css`
             li {
               input[name="password"] {
-                margin-bottom: 2.8rem;
+                margin-bottom: 2rem;
+                ${breakpoint.tablet(
+                  css`
+                    margin-bottom: 2.8rem;
+                  `
+                )}
                 -webkit-text-fill-color: ${props.theme.registerForm.textInput
                   .warning};
                 color: ${props.theme.registerForm.textInput.warning};
@@ -211,7 +254,12 @@ export const StyledForm = styled(Form)`
         ? css`
             li {
               input[name="name"] {
-                margin-bottom: 2.8rem;
+                margin-bottom: 2rem;
+                ${breakpoint.tablet(
+                  css`
+                    margin-bottom: 2.8rem;
+                  `
+                )}
                 -webkit-text-fill-color: ${props.theme.registerForm.textInput
                   .error};
                 color: ${props.theme.registerForm.textInput.error};
@@ -248,7 +296,12 @@ export const StyledForm = styled(Form)`
         ? css`
             li {
               input[name="email"] {
-                margin-bottom: 2.8rem;
+                margin-bottom: 2rem;
+                ${breakpoint.tablet(
+                  css`
+                    margin-bottom: 2.8rem;
+                  `
+                )}
                 -webkit-text-fill-color: ${props.theme.registerForm.textInput
                   .error};
                 color: ${props.theme.registerForm.textInput.error};
@@ -266,7 +319,12 @@ export const StyledForm = styled(Form)`
         ? css`
             li {
               input[name="email"] {
-                margin-bottom: 2.8rem;
+                margin-bottom: 2rem;
+                ${breakpoint.tablet(
+                  css`
+                    margin-bottom: 2.8rem;
+                  `
+                )}
                 -webkit-text-fill-color: ${props.theme.registerForm.textInput
                   .warning};
                 color: ${props.theme.registerForm.textInput.warning};

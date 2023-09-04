@@ -1,13 +1,12 @@
 import { RegistrationForm } from "../components/Forms/RegistrationForm/RegistrationForm";
-import { Container } from "../components/Container/Container";
-import { Icon } from "../components/Icon/Icon";
-import Hero from "../assets/icons/hero_login.svg";
+import { ReactComponent as HeroIcon } from "../assets/icons/auth-hero/hero.svg";
+
+import { StyledDiv } from "./RegistrationPage.styled";
 export const RegistrationPage = () => {
   return (
-    <Container variant="Registration" as="main">
-      {/* <Icon icon="hero-login-register" /> */}
-      <Hero />
+    <StyledDiv>
+      <HeroIcon />
       <RegistrationForm />
-    </Container>
+    </StyledDiv>
   );
 };
