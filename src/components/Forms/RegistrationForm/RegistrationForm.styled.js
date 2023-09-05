@@ -26,6 +26,7 @@ export const StyledForm = styled(Form)`
       height: "2.8rem",
       spacing: "-0.048rem",
     })}
+
     ${breakpoint.tablet(css`
       ${font({
         size: "2.8rem",
@@ -38,22 +39,32 @@ export const StyledForm = styled(Form)`
   ul {
     margin-top: 3.2rem;
     margin-bottom: 2.8rem;
+
     ${breakpoint.tablet(css`
       margin-bottom: 5rem;
     `)}
+
     li {
       position: relative;
       margin-bottom: 1.2rem;
+
       ${breakpoint.tablet(css`
         margin-bottom: 2.4rem;
       `)}
+
       svg {
         position: absolute;
-
         width: 1.8rem;
         height: 1.8rem;
         top: 1.4rem;
         transition: stroke 200ms, fill 200ms;
+
+        ${breakpoint.tablet(css`
+          width: 2.4rem;
+          height: 2.4rem;
+          top: 1.9rem;
+        `)}
+
         &:nth-of-type(1) {
           stroke: ${({ theme }) => theme.registerForm.textInput.iconIdle};
           fill: none;
@@ -63,11 +74,6 @@ export const StyledForm = styled(Form)`
           fill: ${({ theme }) => theme.registerForm.textInput.error};
           right: 1.9rem;
         }
-        ${breakpoint.tablet(css`
-          width: 2.4rem;
-          height: 2.4rem;
-          top: 1.9rem;
-        `)}
       }
 
       &:focus-within,
@@ -82,6 +88,11 @@ export const StyledForm = styled(Form)`
     }
 
     span {
+      transition: color 200ms;
+      position: absolute;
+      left: 0.1rem;
+      bottom: -1.5rem;
+
       ${font({
         family: ({ theme }) => theme.registerForm.font,
         color: ({ theme }) => theme.registerForm.header,
@@ -90,10 +101,6 @@ export const StyledForm = styled(Form)`
         height: "1rem",
       })}
 
-      transition: color 200ms;
-      position: absolute;
-      left: 0.1rem;
-      bottom: -1.5rem;
       ${breakpoint.tablet(css`
         bottom: -1.9rem;
         font-size: 1.4rem;
@@ -104,6 +111,7 @@ export const StyledForm = styled(Form)`
     label {
       display: none;
     }
+
     input {
       position: relative;
       ${font({
@@ -112,6 +120,15 @@ export const StyledForm = styled(Form)`
         size: "1.4rem",
         weight: "400",
       })}
+
+      ${flexContainer({
+        direction: "row",
+        justify: "flex-start",
+        align: "center",
+        wrap: "nowrap",
+        gap: 0,
+      })}
+
       ${breakpoint.tablet(css`
         ${font({
           family: ({ theme }) => theme.registerForm.textInput.font,
@@ -121,13 +138,6 @@ export const StyledForm = styled(Form)`
         })}
       `)}
 
-      ${flexContainer({
-        direction: "row",
-        justify: "flex-start",
-        align: "center",
-        wrap: "nowrap",
-        gap: 0,
-      })}
 
 		  height: 4.5rem;
       max-height: 6rem;
@@ -140,12 +150,14 @@ export const StyledForm = styled(Form)`
       color: ${({ theme }) => theme.registerForm.textInput.fontIdle};
       background-color: ${({ theme }) => theme.registerForm.textInput.bgIdle};
       transition: color 200ms, background-color 200ms, border 200ms;
+
       &:focus,
       &:hover {
         border: 0.1rem solid
           ${({ theme }) => theme.registerForm.textInput.borderActive};
         ${({ theme }) => theme.registerForm.textInput.fontActive};
       }
+
       ${breakpoint.tablet(
         css`
           height: 6rem;
@@ -175,6 +187,7 @@ export const StyledForm = styled(Form)`
       border: 0.2rem solid
         ${({ theme }) => theme.registerForm.button.borderActive};
     }
+
     ${breakpoint.tablet(
       css`
         height: 6rem;
@@ -199,9 +212,11 @@ export const StyledForm = styled(Form)`
                 color: ${props.theme.registerForm.textInput.error};
                 border-color: ${props.theme.registerForm.textInput.error};
               }
+
               input[name="password"] ~ svg {
                 stroke: ${props.theme.registerForm.textInput.error} !important;
               }
+
               input[name="password"] ~ span {
                 color: ${props.theme.registerForm.textInput.error} !important;
               }
@@ -222,10 +237,12 @@ export const StyledForm = styled(Form)`
                 color: ${props.theme.registerForm.textInput.warning};
                 border-color: ${props.theme.registerForm.textInput.warning};
               }
+
               input[name="password"] ~ svg {
                 stroke: ${props.theme.registerForm.textInput
                   .warning} !important;
               }
+
               input[name="password"] ~ span {
                 color: ${props.theme.registerForm.textInput.warning} !important;
               }
@@ -240,6 +257,7 @@ export const StyledForm = styled(Form)`
                 color: ${props.theme.registerForm.textInput.correct};
                 border-color: ${props.theme.registerForm.textInput.correct};
               }
+
               input[name="password"]:not(:placeholder-shown) ~ svg {
                 stroke: ${props.theme.registerForm.textInput
                   .correct} !important;
@@ -265,9 +283,11 @@ export const StyledForm = styled(Form)`
                 color: ${props.theme.registerForm.textInput.error};
                 border-color: ${props.theme.registerForm.textInput.error};
               }
+
               input[name="name"] ~ svg {
                 stroke: ${props.theme.registerForm.textInput.error} !important;
               }
+
               input[name="name"] ~ span {
                 color: ${props.theme.registerForm.textInput.error} !important;
               }
@@ -282,6 +302,7 @@ export const StyledForm = styled(Form)`
                 color: ${props.theme.registerForm.textInput.correct};
                 border-color: ${props.theme.registerForm.textInput.correct};
               }
+
               input[name="name"]:not(:placeholder-shown) ~ svg {
                 stroke: ${props.theme.registerForm.textInput
                   .correct} !important;
@@ -307,9 +328,11 @@ export const StyledForm = styled(Form)`
                 color: ${props.theme.registerForm.textInput.error};
                 border-color: ${props.theme.registerForm.textInput.error};
               }
+
               input[name="email"] ~ svg {
                 stroke: ${props.theme.registerForm.textInput.error} !important;
               }
+
               input[name="email"] ~ span {
                 color: ${props.theme.registerForm.textInput.error} !important;
               }
@@ -330,10 +353,12 @@ export const StyledForm = styled(Form)`
                 color: ${props.theme.registerForm.textInput.warning};
                 border-color: ${props.theme.registerForm.textInput.warning};
               }
+
               input[name="email"] ~ svg {
                 stroke: ${props.theme.registerForm.textInput
                   .warning} !important;
               }
+
               input[name="email"] ~ span {
                 color: ${props.theme.registerForm.textInput.warning} !important;
               }
@@ -348,6 +373,7 @@ export const StyledForm = styled(Form)`
                 -webkit-text-fill-color: ${props.theme.registerForm.textInput
                   .correct};
               }
+
               input[name="email"]:not(:placeholder-shown) ~ svg {
                 stroke: ${props.theme.registerForm.textInput
                   .correct} !important;
