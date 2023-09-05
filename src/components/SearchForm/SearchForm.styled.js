@@ -9,13 +9,6 @@ export const StyledForm = styled.form`
   }
 
   input {
-    ${font({
-      family: ({ theme }) => theme.form.font,
-      color: ({ theme }) => theme.form.search.font,
-      size: "1.6rem",
-      weight: "400",
-    })}
-
     height: 7rem;
     border: 0.1rem solid ${({ theme }) => theme.form.search.borderIdle};
     width: 39rem;
@@ -23,6 +16,13 @@ export const StyledForm = styled.form`
     padding: 0 6rem 0rem 4.9rem;
     outline: none;
     transition: border-color 150ms;
+
+    ${font({
+      family: ({ theme }) => theme.form.font,
+      color: ({ theme }) => theme.form.search.font,
+      size: "1.6rem",
+      weight: "400",
+    })}
 
     &:not(:placeholder-shown) ~ Button {
       border: 0.1rem solid ${(props) => props.theme.button.base.bgHover};
@@ -35,10 +35,12 @@ export const StyledForm = styled.form`
       transition: border-color 150ms;
       border: 0.1rem solid ${({ theme }) => theme.form.search.borderFocus};
     }
+
     &::placeholder {
       color: ${({ theme }) => theme.form.search.placeholder};
     }
   }
+
   button {
     position: absolute;
     top: 0;

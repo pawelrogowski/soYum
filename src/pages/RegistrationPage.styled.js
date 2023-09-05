@@ -3,11 +3,6 @@ import { flexContainer, breakpoint } from "../styles/mixins";
 import icon from "../assets/icons/login_background.svg";
 
 export const StyledDiv = styled.main`
-  ${flexContainer({
-    justify: "center",
-    direction: "column",
-    align: "center",
-  })}
   padding: 9.6rem 2rem 10rem 2rem;
   background: url(${icon});
   background-repeat: no-repeat;
@@ -16,6 +11,13 @@ export const StyledDiv = styled.main`
   min-height: 100vh;
   height: 100vh;
   width: 100vw;
+
+  ${flexContainer({
+    justify: "center",
+    direction: "column",
+    align: "center",
+  })}
+
   > svg {
     min-width: 35.8rem;
     max-width: 50rem;
