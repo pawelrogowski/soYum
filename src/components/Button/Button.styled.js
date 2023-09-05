@@ -36,12 +36,14 @@ export const StyledButton = styled.button`
           background-color: ${theme.button.outlineSmall.bgIdle};
           border: 0.2rem solid ${theme.button.outlineSmall.borderIdle};
           color: ${theme.button.outlineSmall.fontColorIdle};
+
           &:hover,
           &:focus {
             background-color: ${theme.button.outlineSmall.bgHover};
             color: ${theme.button.outlineSmall.fontColorHover};
             border: 0.2rem solid ${theme.button.outlineSmall.borderHover};
           }
+
           &:active {
             background-color: ${({ theme }) =>
               theme.button.outlineSmall.bgActive};
@@ -56,12 +58,14 @@ export const StyledButton = styled.button`
           color: ${theme.button.outlineBig.fontColorIdle};
           width: 23.9rem;
           max-height: 6.1rem;
+
           &:hover,
           &:focus {
             background-color: ${theme.button.outlineBig.bgHover};
             color: ${theme.button.outlineBig.fontColorHover};
             border: 0.2rem solid ${theme.button.outlineBig.borderHover};
           }
+
           &:active {
             background-color: ${({ theme }) =>
               theme.button.outlineBig.bgActive};
@@ -77,12 +81,14 @@ export const StyledButton = styled.button`
           border-radius: 0.6rem;
           width: 33.9rem;
           height: 6rem;
+
           &:hover,
           &:focus {
             background-color: ${theme.button.rectBig.bgHover};
             color: ${theme.button.rectBig.fontColorHover};
             border: 0.2rem solid ${theme.button.rectBig.borderHover};
           }
+
           &:active {
             background-color: ${({ theme }) => theme.button.rectBig.bgActive};
             border: 0.2rem solid
@@ -97,12 +103,14 @@ export const StyledButton = styled.button`
           border-radius: 0.6rem;
           width: 19.2rem;
           height: 5.9rem;
+
           &:hover,
           &:focus {
             background-color: ${theme.button.rectSmall.bgHover};
             color: ${theme.button.rectSmall.fontColorHover};
             border: 0.2rem solid ${theme.button.rectSmall.borderHover};
           }
+
           &:active {
             background-color: ${({ theme }) => theme.button.rectSmall.bgActive};
             border: 0.2rem solid
@@ -117,12 +125,14 @@ export const StyledButton = styled.button`
           border-radius: 0.6rem;
           width: 19.2rem;
           height: 5.9rem;
+
           &:hover,
-          n &:focus {
+          &:focus {
             background-color: ${theme.button.rectSmallDisabled.bgHover};
             color: ${theme.button.rectSmallDisabled.fontColorHover};
             border: 0.2rem solid ${theme.button.rectSmallDisabled.borderHover};
           }
+
           &:active {
             background-color: ${({ theme }) =>
               theme.button.rectSmallDisabled.bgActive};
