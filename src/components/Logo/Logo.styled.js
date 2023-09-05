@@ -20,6 +20,7 @@ export const LogoIcon = styled(Icon)`
       ? css`
           stroke: ${theme.logo.footer.icon};
           background-color: ${theme.logo.footer.bg};
+
           @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
             border-radius: 0.6rem;
             padding: 0.4rem 0.2rem 0.3rem 0.3rem;

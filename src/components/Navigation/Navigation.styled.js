@@ -13,6 +13,7 @@ export const StyledNav = styled.nav`
               wrap: "nowrap",
               gap: "1.4rem",
             })}
+
             @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
               gap: 2rem;
             }
@@ -21,7 +22,7 @@ export const StyledNav = styled.nav`
             }
           }
           a,
-          wwww span {
+          span {
             ${font({
               family: ({ theme }) => theme.navigation.font,
               color: ({ theme }) => theme.navigation.footer.colorIdle,
@@ -52,6 +53,7 @@ export const StyledNav = styled.nav`
 					span {
               display: flex;
               align-items: center;
+              transition: color 100ms;
               ${font({
                 family: ({ theme }) => theme.navigation.font,
                 color: ({ theme }) => theme.navigation.header.colorIdle,
@@ -59,17 +61,19 @@ export const StyledNav = styled.nav`
                 weight: "500",
                 height: "2.24rem",
               })}
-              transition: color 100ms;
+
               &:hover,
               &:focus {
                 color: ${theme.navigation.header.colorHover};
                 transition: color 100ms;
+
                 svg {
                   stroke: ${theme.navigation.header.colorHover};
                   transition: stroke 100ms;
                 }
               }
             }
+
             svg {
               fill: none;
               stroke: ${({ theme }) => theme.navigation.header.colorIdle};
@@ -77,6 +81,7 @@ export const StyledNav = styled.nav`
               height: 2.4rem;
               padding: 0.2rem;
               transition: stroke 100ms;
+
               &:hover,
               &:focus {
                 stroke: ${theme.navigation.header.colorHover};
@@ -99,6 +104,8 @@ export const StyledNav = styled.nav`
             li,a {
               display: flex;
               align-items: center;
+              transition: color 100ms;
+
               ${font({
                 family: ({ theme }) => theme.navigation.font,
                 color: ({ theme }) => theme.navigation.hamburger.colorIdle,
@@ -107,17 +114,19 @@ export const StyledNav = styled.nav`
                 height: "2.4rem",
                 spacing: "-0.048rem",
               })}
-              transition: color 100ms;
+
               &:hover,
               &:focus {
                 color: ${theme.navigation.hamburger.colorHover};
                 transition: color 100ms;
+
                 svg {
                   stroke: ${theme.navigation.hamburger.colorHover};
                   transition: stroke 100ms;
                 }
               }
             }
+
             svg {
               fill: none;
               stroke: ${({ theme }) => theme.navigation.hamburger.colorIdle};
