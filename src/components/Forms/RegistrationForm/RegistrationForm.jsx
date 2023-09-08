@@ -41,7 +41,13 @@ export const RegistrationForm = () => {
             <ul>
               <li>
                 <label htmlFor="name">name</label>
-                <Field id="name" name="name" type="text" placeholder="Name" />
+                <Field
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Name"
+                  autoComplete="false"
+                />
                 <Icon icon="user" />
                 {touched.name &&
                   ($nameInfo ? (
@@ -63,6 +69,7 @@ export const RegistrationForm = () => {
                   name="email"
                   type="email"
                   placeholder="Email"
+                  autoComplete="false"
                 />
                 <Icon icon="envelope" />
                 {touched.email &&
@@ -85,6 +92,7 @@ export const RegistrationForm = () => {
                   name="password"
                   type="password"
                   placeholder="Password"
+                  autoComplete="false"
                 />
                 <Icon icon="lock" />
                 {touched.password &&
