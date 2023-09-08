@@ -11,10 +11,19 @@ export const StyledDiv = styled.main`
   width: 100vw;
 
   ${flexContainer({
-    justify: "center",
+    justify: "initial",
     direction: "column",
     align: "center",
   })}
+
+  ${breakpoint.desktop`
+        ${flexContainer({
+          justify: "space-evenly",
+          direction: "row",
+          align: "center",
+        })}
+        padding: 0;
+    `}
 
   &::after {
     position: fixed;
@@ -22,9 +31,11 @@ export const StyledDiv = styled.main`
     background-image: url(${bgMobile});
     ${breakpoint.tablet`
       background-image: url(${bgTablet});
+      background-size: 100vw 65vh;
     `}
     ${breakpoint.desktop`
       background-image: url(${bgDesktop});
+      background-size: 100vw 40vh;
     `}
     background-repeat: no-repeat;
     background-size: 100vw 50vh;
@@ -43,6 +54,6 @@ export const StyledDiv = styled.main`
     min-height: 35.1rem;
     aspect-ratio: 1;
     padding: 0 2.5rem;
-    margin-bottom: -5.8rem;
+    /* margin-bottom: -5.8rem; */
   }
 `;

@@ -3,7 +3,7 @@ import "../assets/fonts/Poppins-Regular.woff2";
 import "../assets/fonts/Poppins-SemiBold.woff2";
 import "modern-normalize/modern-normalize.css";
 
-const breakpoints = {
+export const breakpoints = {
   mobile: "320px",
   tablet: "768px",
   desktop: "1024px",
