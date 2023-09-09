@@ -18,7 +18,10 @@ export const StyledDiv = styled.main`
     direction: "column",
     align: "center",
   })}
-
+  ${breakpoint.tablet`
+    @media (max-height: 1100px) {
+    padding-top: 2.5rem;
+  }`}
   ${breakpoint.desktop`
         ${flexContainer({
           justify: "space-evenly",
@@ -56,7 +59,7 @@ export const StyledDiv = styled.main`
     max-width: 47.5rem;
     width: 100%;
     ${breakpoint.tablet`
-
+    min-height: 40rem;
     `}
   }
 `;
