@@ -6,7 +6,7 @@ import { StyledButton } from "../../Button/Button.styled";
 export const StyledForm = styled(Form)`
   width: 100%;
   max-width: 50rem;
-  min-width: 33.5rem;
+  min-width: 28rem;
   padding: 3.2rem 2.8rem 4rem 2.8rem;
   border-radius: 3rem;
   background-color: ${({ theme }) => theme.registerForm.bg};
@@ -172,7 +172,6 @@ export const StyledForm = styled(Form)`
     border: 0.2rem solid ${({ theme }) => theme.registerForm.button.borderIdle};
     color: ${({ theme }) => theme.registerForm.button.fontColorIdle};
     border-radius: 0.6rem;
-    min-width: 23.5rem;
     height: 4.5rem;
 
     &:hover,

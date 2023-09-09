@@ -6,6 +6,9 @@ import bgDesktop from "../assets/icons/auth-backgrounds/bg-desktop.svg";
 
 export const StyledDiv = styled.main`
   padding: 9.6rem 2rem 10rem 2rem;
+  @media (max-height: 800px) {
+    padding-top: 2.5rem;
+  }
   min-height: 100vh;
   height: 100vh;
   width: 100vw;
@@ -48,12 +51,12 @@ export const StyledDiv = styled.main`
   }
 
   > svg {
-    min-width: 35.8rem;
-    max-width: 50rem;
+    min-width: 28rem;
+    min-height: 25rem;
+    max-width: 47.5rem;
     width: 100%;
-    min-height: 35.1rem;
-    aspect-ratio: 1;
-    padding: 0 2.5rem;
-    /* margin-bottom: -5.8rem; */
+    ${breakpoint.tablet`
+
+    `}
   }
 `;
