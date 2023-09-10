@@ -1,12 +1,13 @@
-FROM node:14
+FROM oven/bun
 WORKDIR /app
-COPY package*.json ./
-RUN npm install
+COPY package.json bun.lockb ./
+RUN bun install
 COPY . .
-RUN npm run build
-FROM node:14-alpine
+RUN bunx --bun vite build
+
+FROM oven/bun
 WORKDIR /app
-RUN npm install -g serve
-COPY --from=0 /app/dist .
+RUN bun add serve
+COPY --from=0 /app/dist ./
 EXPOSE 5000
 CMD ["serve", "-s", ".", "-l", "5000"]
