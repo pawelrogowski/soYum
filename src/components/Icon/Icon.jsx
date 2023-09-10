@@ -15,12 +15,16 @@ export const Icon = ({ icon, hero = false }) => {
     preserveAspectRatioAttr = "xMidYMax meet";
   }
 
-  return (
+  return hero ? (
     <StyledSvg
       $icon={icon}
       viewBox={viewBoxAttr}
       preserveAspectRatio={preserveAspectRatioAttr}
     >
+      <use href={path + `#${icon}`} />
+    </StyledSvg>
+  ) : (
+    <StyledSvg $icon={icon}>
       <use href={path + `#${icon}`} />
     </StyledSvg>
   );
