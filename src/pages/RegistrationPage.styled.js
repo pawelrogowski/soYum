@@ -59,7 +59,7 @@ export const StyledDiv = styled.main`
     max-width: 47.5rem;
     width: 100%;
     ${breakpoint.tablet`
-    min-height: 40rem;
+      min-height: 40rem;
     `}
   }
 `;
