@@ -1,7 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import "../assets/fonts/Poppins-Regular.woff2";
-import "../assets/fonts/Poppins-SemiBold.woff2";
-import "modern-normalize/modern-normalize.css";
 
 export const breakpoints = {
   mobile: "320px",
