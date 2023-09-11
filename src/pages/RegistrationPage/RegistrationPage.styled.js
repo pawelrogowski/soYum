@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { flexContainer, breakpoint } from "../styles/mixins";
-import bgMobile from "../assets/icons/auth-backgrounds/bg-mobile.svg";
-import bgTablet from "../assets/icons/auth-backgrounds/bg-tablet.svg";
-import bgDesktop from "../assets/icons/auth-backgrounds/bg-desktop.svg";
+import { flexContainer, breakpoint } from "../../styles/mixins";
+import bgMobile from "../../assets/icons/auth-backgrounds/bg-mobile.svg";
+import bgTablet from "../../assets/icons/auth-backgrounds/bg-tablet.svg";
+import bgDesktop from "../../assets/icons/auth-backgrounds/bg-desktop.svg";
 
 export const PageContent = styled.main`
   padding: 9.6rem 2rem 10rem 2rem;
@@ -69,6 +69,7 @@ export const PageContent = styled.main`
     gap: 1.8rem;
     align-items: center;
     width: 100%;
+    max-width: 50rem;
     > span {
       > a {
         font-size: 1.4rem;

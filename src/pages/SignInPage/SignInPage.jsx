@@ -1,11 +1,11 @@
 import { useMediaQuery } from "react-responsive";
-import { breakpoints } from "../styles/themes";
-import { RegistrationForm } from "../components/Forms/RegistrationForm/RegistrationForm";
-import { PageContent } from "./RegistrationPage.styled";
-import { Icon } from "../components/Icon/Icon";
+import { breakpoints } from "../../styles/themes";
+import { PageContent } from "./SignInPage.styled";
+import { Icon } from "../../components/Icon/Icon";
 import { Link } from "react-router-dom";
+import { SignInForm } from "../../components/Forms/SignInForm/SignInForm";
 
-export const RegistrationPage = () => {
+export const SignInPage = () => {
   const isDesktop = useMediaQuery({ minWidth: breakpoints.desktop });
   const isTablet = useMediaQuery({ minWidth: breakpoints.tablet });
 
@@ -18,11 +18,13 @@ export const RegistrationPage = () => {
         }
       />
       <div>
-        <RegistrationForm />
+        <SignInForm />
         <span>
-          <Link to="/signin">Sign in</Link>
+          <Link to="/register">Register</Link>
         </span>
       </div>
     </PageContent>
   );
 };
+
+export default SignInPage;

@@ -1,10 +1,10 @@
 import { Button } from "../../Button/Button";
-import { StyledForm } from "./RegistrationForm.styled";
+import { StyledForm } from "./SignInForm.styled";
 import { Formik, Field, ErrorMessage } from "formik";
 import { Icon } from "../../Icon/Icon";
-import { validationSchema } from "./registrationSchema";
+import { validationSchema } from "./singInSchema";
 
-export const RegistrationForm = () => {
+export const SignInForm = () => {
   const initialFormValues = { name: "", email: "", password: "" };
 
   const handleSubmit = (values) => {
@@ -19,48 +19,22 @@ export const RegistrationForm = () => {
       validateOnBlur
     >
       {({ errors, touched }) => {
-        let $nameInfo = errors.name;
         let $emailInfo = errors.email;
         let $passwordInfo = errors.password;
-        let $nameTouched = touched.name;
         let $emailTouched = touched.email;
         let $passwordTouched = touched.password;
 
         const styledFormProps = {
-          $nameInfo,
           $emailInfo,
           $passwordInfo,
-          $nameTouched,
           $emailTouched,
           $passwordTouched,
         };
 
         return (
           <StyledForm {...styledFormProps}>
-            <h1>Registration</h1>
+            <h1>Sign In</h1>
             <ul>
-              <li>
-                <label htmlFor="name">name</label>
-                <Field
-                  id="name"
-                  name="name"
-                  type="text"
-                  placeholder="Name"
-                  autoComplete="false"
-                />
-                <Icon icon="user" />
-                {touched.name &&
-                  ($nameInfo ? (
-                    <Icon
-                      icon={
-                        $nameInfo.includes("required") ? "error" : "warning"
-                      }
-                    />
-                  ) : (
-                    <Icon icon="no-error" />
-                  ))}
-                <ErrorMessage name="name" component="span" />
-              </li>
               <li>
                 <label htmlFor="email">email</label>
 
