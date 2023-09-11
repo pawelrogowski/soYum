@@ -4,7 +4,7 @@ import bgMobile from "../assets/icons/auth-backgrounds/bg-mobile.svg";
 import bgTablet from "../assets/icons/auth-backgrounds/bg-tablet.svg";
 import bgDesktop from "../assets/icons/auth-backgrounds/bg-desktop.svg";
 
-export const StyledDiv = styled.main`
+export const PageContent = styled.main`
   padding: 9.6rem 2rem 10rem 2rem;
   @media (max-height: 800px) {
     padding-top: 2.5rem;
@@ -56,10 +56,33 @@ export const StyledDiv = styled.main`
   > svg {
     min-width: 28rem;
     min-height: 25rem;
-    max-width: 47.5rem;
+    max-width: 50rem;
     width: 100%;
     ${breakpoint.tablet`
       min-height: 40rem;
-    `}
+    `};
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    align-items: center;
+    width: 100%;
+    > span {
+      > a {
+        font-size: 1.4rem;
+        ${breakpoint.tablet`
+          font-size: 1.6rem;
+        `};
+        text-decoration-line: underline;
+        color: ${({ theme }) => theme.link.authNav};
+        transition: color 100ms;
+        &:hover,
+        &:focus {
+          color: ${({ theme }) => theme.link.authNavActive};
+        }
+      }
+    }
   }
 `;

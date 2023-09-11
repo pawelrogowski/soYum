@@ -28,6 +28,10 @@ export const lightTheme = {
     secondary: "#22252A",
     form: "#2A2C36",
   },
+  link: {
+    authNav: "#fafafa",
+    authNavActive: brandColors.main,
+  },
   registerForm: {
     font: typography.family.primary,
     header: "#FAFAFA",
