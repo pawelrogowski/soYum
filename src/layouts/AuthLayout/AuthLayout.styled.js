@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { flexContainer, breakpoint } from "../styles/mixins";
-import bgMobile from "../assets/icons/auth-backgrounds/bg-mobile.svg";
-import bgTablet from "../assets/icons/auth-backgrounds/bg-tablet.svg";
-import bgDesktop from "../assets/icons/auth-backgrounds/bg-desktop.svg";
+import { flexContainer, breakpoint } from "../../styles/mixins";
+import bgMobile from "../../assets/icons/auth-backgrounds/bg-mobile.svg";
+import bgTablet from "../../assets/icons/auth-backgrounds/bg-tablet.svg";
+import bgDesktop from "../../assets/icons/auth-backgrounds/bg-desktop.svg";
 
 export const PageContent = styled.main`
   padding: 9.6rem 2rem 10rem 2rem;
@@ -69,19 +69,18 @@ export const PageContent = styled.main`
     gap: 1.8rem;
     align-items: center;
     width: 100%;
-    > span {
-      > a {
-        font-size: 1.4rem;
-        ${breakpoint.tablet`
+    max-width: 50rem;
+    > a {
+      font-size: 1.4rem;
+      ${breakpoint.tablet`
           font-size: 1.6rem;
         `};
-        text-decoration-line: underline;
-        color: ${({ theme }) => theme.link.authNav};
-        transition: color 100ms;
-        &:hover,
-        &:focus {
-          color: ${({ theme }) => theme.link.authNavActive};
-        }
+      text-decoration-line: underline;
+      color: ${({ theme }) => theme.link.authNav};
+      transition: color 100ms;
+      &:hover,
+      &:focus {
+        color: ${({ theme }) => theme.link.authNavActive};
       }
     }
   }
