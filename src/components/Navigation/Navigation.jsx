@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { StyledNav } from "./Navigation.styled";
 import { Icon } from "../Icon/Icon";
 import PropTypes from "prop-types";
@@ -8,26 +8,26 @@ export const Navigation = ({ variant }) => {
     <StyledNav $variant={variant}>
       <ul>
         <li>
-          <Link to="#">Categories</Link>
+          <NavLink to="#">Categories</NavLink>
         </li>
         <li>
-          <Link to="#">Add recipes</Link>
+          <NavLink to="#">Add recipes</NavLink>
         </li>
         <li>
-          <Link to="#">My Recipes</Link>
+          <NavLink to="#">My Recipes</NavLink>
         </li>
         <li>
-          <Link to="#">Favorites</Link>
+          <NavLink to="#">Favorites</NavLink>
         </li>
         <li>
-          <Link to="#">Shopping List</Link>
+          <NavLink to="#">Shopping List</NavLink>
         </li>
         {variant !== "footer" && (
           <li>
-            <Link to="#">
+            <NavLink to="#">
               <Icon icon="search" />
               {variant !== "header" && <span>Search</span>}
-            </Link>
+            </NavLink>
           </li>
         )}
       </ul>
