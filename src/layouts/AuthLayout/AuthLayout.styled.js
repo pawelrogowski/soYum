@@ -70,19 +70,17 @@ export const PageContent = styled.main`
     align-items: center;
     width: 100%;
     max-width: 50rem;
-    > span {
-      > a {
-        font-size: 1.4rem;
-        ${breakpoint.tablet`
+    > a {
+      font-size: 1.4rem;
+      ${breakpoint.tablet`
           font-size: 1.6rem;
         `};
-        text-decoration-line: underline;
-        color: ${({ theme }) => theme.link.authNav};
-        transition: color 100ms;
-        &:hover,
-        &:focus {
-          color: ${({ theme }) => theme.link.authNavActive};
-        }
+      text-decoration-line: underline;
+      color: ${({ theme }) => theme.link.authNav};
+      transition: color 100ms;
+      &:hover,
+      &:focus {
+        color: ${({ theme }) => theme.link.authNavActive};
       }
     }
   }
