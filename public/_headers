@@ -1,11 +1,9 @@
-/*
-  .svg
-  Cache-Control: public, max-age=31536000, immutable
+# _headers file
 
-/*
-  .woff2
-  Cache-Control: public, max-age=31536000, immutable
-
-/*
-  .jpg
-  Cache-Control: public, max-age=31536000, immutable
+# Cache .svg, .css, and .js files for 1 year
+/**/*.svg
+  Cache-Control: public, max-age=31536000
+/**/*.css
+  Cache-Control: public, max-age=31536000
+/**/*.js
+  Cache-Control: public, max-age=31536000
