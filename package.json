@@ -11,13 +11,17 @@
     "preview": "bunx --bun vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "formik": "^2.4.4",
+    "install": "^0.13.0",
     "modern-normalize": "^2.0.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.1.2",
     "react-responsive": "^9.0.2",
     "react-router-dom": "^6.15.0",
+    "redux-persist": "^6.0.0",
     "styled-components": "^6.0.7",
     "yup": "^1.2.0"
   },

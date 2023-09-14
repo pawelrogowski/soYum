@@ -1,6 +1,7 @@
 import ThemeContext from "./contexts/ThemeContext";
 import { ThemeProvider } from "styled-components";
 import { useContext, lazy, Suspense } from "react";
+
 import {
   createBrowserRouter,
   Route,
