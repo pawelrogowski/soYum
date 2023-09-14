@@ -1,7 +1,7 @@
 import ThemeContext from "./contexts/ThemeContext";
 import { ThemeProvider } from "styled-components";
 import { useContext, lazy, Suspense } from "react";
-
+import { StartPage } from "./pages/StartPage/StartPage";
 import {
   createBrowserRouter,
   Route,
@@ -27,20 +27,13 @@ export const App = () => {
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<AuthLayout />}>
-        <Route index path="signin" element={<SignInPage />} />
-        <Route
-          path="register"
-          element={
-            // this fallback is to prevent flashing of the form
-            // since the fallback is already cached at this point
-            // it guarantees smooth transition with virtually no cost
-            <Suspense fallback={<SignInPage />}>
-              <RegisterPage />
-            </Suspense>
-          }
-        />
-        <Route path="*" element={<Navigate to="/signin" />} />
+      <Route>
+        <Route path="/" element={<StartPage />} />
+        <Route path="/auth" element={<AuthLayout />}>
+          <Route path="signin" element={<SignInPage />} />
+          <Route path="register" element={<RegisterPage />} />
+        </Route>
+        <Route path="*" element={<Navigate to="/auth/signin" />} />
       </Route>
     )
   );
