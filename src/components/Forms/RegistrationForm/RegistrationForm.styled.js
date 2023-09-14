@@ -10,7 +10,7 @@ export const StyledForm = styled(Form)`
   padding: 3.2rem 2.8rem 4rem 2.8rem;
   border-radius: 3rem;
   background-color: ${({ theme }) => theme.registerForm.bg};
-  transition: color 200ms, background-color 200ms, border 200ms, fill 200ms;
+  transition: color 100ms, background-color 100ms, border 100ms, fill 100ms;
   ${breakpoint.tablet(css`
     padding: 4.4rem 5rem;
     min-width: 50rem;
@@ -57,7 +57,7 @@ export const StyledForm = styled(Form)`
         width: 1.8rem;
         height: 1.8rem;
         top: 1.4rem;
-        transition: stroke 200ms, fill 200ms;
+        transition: stroke 100ms, fill 100ms;
 
         ${breakpoint.tablet(css`
           width: 2.4rem;
@@ -88,7 +88,7 @@ export const StyledForm = styled(Form)`
     }
 
     span {
-      transition: color 200ms;
+      transition: color 100ms;
       position: absolute;
       left: 0.1rem;
       bottom: -1.5rem;
@@ -149,7 +149,7 @@ export const StyledForm = styled(Form)`
         ${({ theme }) => theme.registerForm.textInput.borderIdle};
       color: ${({ theme }) => theme.registerForm.textInput.fontIdle};
       background-color: ${({ theme }) => theme.registerForm.textInput.bgIdle};
-      transition: color 200ms, background-color 200ms, border 200ms;
+      transition: color 100ms, background-color 100ms, border 100ms;
 
       &:focus,
       &:hover {

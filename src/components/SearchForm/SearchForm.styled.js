@@ -15,7 +15,7 @@ export const StyledForm = styled.form`
     border-radius: 2.4rem 0rem 0rem 4.4rem;
     padding: 0 6rem 0rem 4.9rem;
     outline: none;
-    transition: border-color 150ms;
+    transition: border-color 100ms;
 
     ${font({
       family: ({ theme }) => theme.form.font,
@@ -32,7 +32,7 @@ export const StyledForm = styled.form`
     &:focus,
     &:hover,
     &:focus-within {
-      transition: border-color 150ms;
+      transition: border-color 100ms;
       border: 0.1rem solid ${({ theme }) => theme.form.search.borderFocus};
     }
 
