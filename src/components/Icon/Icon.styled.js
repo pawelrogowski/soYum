@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-
-export const StyledSvg = styled.svg`
+import { motion } from "framer-motion";
+export const StyledSvg = styled(motion.svg)`
   fill: none;
 `;
