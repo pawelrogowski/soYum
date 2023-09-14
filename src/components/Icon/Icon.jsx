@@ -1,8 +1,9 @@
 import sprite from "../../assets/icons/sprite.svg";
 import PropTypes from "prop-types";
 import { StyledSvg } from "./Icon.styled";
+import { AnimatePresence } from "framer-motion";
 
-export const Icon = ({ icon, hero = false }) => {
+export const Icon = ({ icon, hero = false, ...props }) => {
   let viewBoxAttr = "";
   let preserveAspectRatioAttr = "";
 
@@ -12,17 +13,22 @@ export const Icon = ({ icon, hero = false }) => {
   }
 
   return hero ? (
-    <StyledSvg
-      $icon={icon}
-      viewBox={viewBoxAttr}
-      preserveAspectRatio={preserveAspectRatioAttr}
-    >
-      <use href={sprite + `#${icon}`} />
-    </StyledSvg>
+    <AnimatePresence>
+      <StyledSvg
+        $icon={icon}
+        {...props}
+        viewBox={viewBoxAttr}
+        preserveAspectRatio={preserveAspectRatioAttr}
+      >
+        <use href={sprite + `#${icon}`} />
+      </StyledSvg>
+    </AnimatePresence>
   ) : (
-    <StyledSvg $icon={icon}>
-      <use href={sprite + `#${icon}`} />
-    </StyledSvg>
+    <AnimatePresence>
+      <StyledSvg $icon={icon} {...props}>
+        <use href={sprite + `#${icon}`} />
+      </StyledSvg>
+    </AnimatePresence>
   );
 };
 

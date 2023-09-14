@@ -13,6 +13,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "formik": "^2.4.4",
+    "framer-motion": "^10.16.4",
     "install": "^0.13.0",
     "modern-normalize": "^2.0.0",
     "prop-types": "^15.8.1",
