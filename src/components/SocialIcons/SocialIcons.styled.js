@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexContainer } from "../../styles/mixins";
+import { flexContainer } from "../../utils/mixins";
 
 export const StyledUl = styled.ul`
   display: inline-block;

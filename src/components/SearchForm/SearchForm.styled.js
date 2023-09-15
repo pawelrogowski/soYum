@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { font } from "../../styles/mixins";
+import { font } from "../../utils/mixins";
 export const StyledForm = styled.form`
   position: relative;
 

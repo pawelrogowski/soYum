@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexContainer, breakpoint } from "../../styles/mixins";
+import { flexContainer, breakpoint } from "../../utils/mixins";
 import bgMobile from "../../assets/icons/auth-backgrounds/bg-mobile.svg";
 import bgTablet from "../../assets/icons/auth-backgrounds/bg-tablet.svg";
 import bgDesktop from "../../assets/icons/auth-backgrounds/bg-desktop.svg";

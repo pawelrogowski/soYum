@@ -9,7 +9,7 @@ import bgImageDesktop1x from "../../assets/images/start-background-desktop@1x.jp
 import bgImageDesktop2x from "../../assets/images/start-background-desktop@2x.jpg";
 import bgImageDesktop3x from "../../assets/images/start-background-desktop@3x.jpg";
 
-import { responsiveBackgroundImage, breakpoint } from "../../styles/mixins";
+import { responsiveBackgroundImage, breakpoint } from "../../utils/mixins";
 export const StartPageContainer = styled.main`
   display: flex;
   flex-direction: column;
