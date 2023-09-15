@@ -194,9 +194,15 @@ export const lightTheme = {
 export const darkTheme = {
   breakpoints,
   bg: {
-    main: "#2A2C36",
-    secondary: "#1d2024",
+    main: "#FAFAFA",
+    secondary: "#22252A",
     form: "#2A2C36",
+  },
+  link: {
+    ...lightTheme.link,
+  },
+  startPage: {
+    ...lightTheme.startPage,
   },
   registerForm: {
     ...lightTheme.registerForm,
