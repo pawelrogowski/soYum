@@ -9,4 +9,5 @@ export const SignInPage = () => {
     </>
   );
 };
+
 export default SignInPage;

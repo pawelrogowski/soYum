@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "../../components/Button/Button";
 import { Logo } from "../../components/Logo/Logo";
 import { StartPageContainer } from "./StartPage.styled";
+
 export const StartPage = () => {
   return (
     <StartPageContainer>
@@ -15,12 +16,12 @@ export const StartPage = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/auth/register">
+            <Link to="/register">
               <Button variant="normal">Registration</Button>
             </Link>
           </li>
           <li>
-            <Link to="/auth/signin">
+            <Link to="/signin">
               <Button variant="outlineBig">Sign In</Button>
             </Link>
           </li>
@@ -29,3 +30,5 @@ export const StartPage = () => {
     </StartPageContainer>
   );
 };
+
+export default StartPage;
