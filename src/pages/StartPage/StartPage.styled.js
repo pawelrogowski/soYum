@@ -27,7 +27,7 @@ export const StartPageContainer = styled.main`
     bgImageMobile1x,
     bgImageMobile2x,
     bgImageMobile3x
-  )};
+  )}
 
   ${breakpoint.tablet`
       ${responsiveBackgroundImage(
@@ -35,15 +35,15 @@ export const StartPageContainer = styled.main`
         bgImageTablet2x,
         bgImageTablet3x
       )};
-  }`};
+  `};
 
-  ${breakpoint.tablet`
+  ${breakpoint.desktop`
       ${responsiveBackgroundImage(
         bgImageDesktop1x,
         bgImageDesktop2x,
         bgImageDesktop3x
       )};
-  }`};
+  `}
 
   a {
     > svg {
