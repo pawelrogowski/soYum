@@ -1,9 +1,15 @@
 import { styled } from "styled-components";
-import bgImage1x from "../../assets/images/start-backgroundx@1x.jpg";
-import bgImage2x from "../../assets/images/start-backgroundx@2x.jpg";
-import bgImage3x from "../../assets/images/start-backgroundx@3x.jpg";
+import bgImageMobile1x from "../../assets/images/start-background-mobile@1x.jpg";
+import bgImageMobile2x from "../../assets/images/start-background-mobile@2x.jpg";
+import bgImageMobile3x from "../../assets/images/start-background-mobile@3x.jpg";
+import bgImageTablet1x from "../../assets/images/start-background-tablet@1x.jpg";
+import bgImageTablet2x from "../../assets/images/start-background-tablet@2x.jpg";
+import bgImageTablet3x from "../../assets/images/start-background-tablet@3x.jpg";
+import bgImageDesktop1x from "../../assets/images/start-background-desktop@1x.jpg";
+import bgImageDesktop2x from "../../assets/images/start-background-desktop@2x.jpg";
+import bgImageDesktop3x from "../../assets/images/start-background-desktop@3x.jpg";
 
-import { responsiveBackgroundImage } from "../../styles/mixins";
+import { responsiveBackgroundImage, breakpoint } from "../../styles/mixins";
 export const StartPageContainer = styled.main`
   display: flex;
   flex-direction: column;
@@ -13,10 +19,31 @@ export const StartPageContainer = styled.main`
   height: 100vh;
   min-width: 28rem;
   padding: 3.5rem;
-  ${responsiveBackgroundImage(bgImage1x, bgImage2x, bgImage3x)}
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom;
+  background-position: center;
+
+  ${responsiveBackgroundImage(
+    bgImageMobile1x,
+    bgImageMobile2x,
+    bgImageMobile3x
+  )};
+
+  ${breakpoint.tablet`
+      ${responsiveBackgroundImage(
+        bgImageTablet1x,
+        bgImageTablet2x,
+        bgImageTablet3x
+      )};
+  }`};
+
+  ${breakpoint.tablet`
+      ${responsiveBackgroundImage(
+        bgImageDesktop1x,
+        bgImageDesktop2x,
+        bgImageDesktop3x
+      )};
+  }`};
 
   a {
     > svg {
