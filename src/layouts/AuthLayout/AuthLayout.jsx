@@ -22,3 +22,5 @@ export const AuthLayout = () => {
     </PageContent>
   );
 };
+
+export default AuthLayout;
