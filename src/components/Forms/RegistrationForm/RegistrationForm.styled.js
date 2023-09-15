@@ -1,6 +1,6 @@
 import { styled, css } from "styled-components";
 import { Form } from "formik";
-import { flexContainer, font, breakpoint } from "../../../styles/mixins";
+import { flexContainer, font, breakpoint } from "../../../utils/mixins";
 import { StyledButton } from "../../Button/Button.styled";
 
 export const StyledForm = styled(Form)`

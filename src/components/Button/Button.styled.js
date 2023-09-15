@@ -1,4 +1,4 @@
-import { font } from "../../styles/mixins";
+import { font } from "../../utils/mixins";
 import styled, { css } from "styled-components";
 
 export const StyledButton = styled.button`

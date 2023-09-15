@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { flexContainer, font } from "../../styles/mixins";
+import { flexContainer, font } from "../../utils/mixins";
 
 export const StyledNav = styled.nav`
   ${({ theme, $variant }) =>
