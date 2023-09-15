@@ -127,8 +127,9 @@ export const StartPageContainer = styled.main`
               theme.startPage.registerButton.borderActive};
           }
           ${breakpoint.tablet`
-            height: 6.7rem;
+            font-size: 1.6rem;
             width: 18.4rem;
+            height: 6.7rem;
           `};
         }
       }
@@ -151,8 +152,10 @@ export const StartPageContainer = styled.main`
               theme.startPage.signinButton.bgActive};
           }
           ${breakpoint.tablet`
+            font-size: 1.6rem;
             width: 14.1rem;
             height: 6.7rem;
+            max-height: 6.7rem;
           `};
         }
       }
