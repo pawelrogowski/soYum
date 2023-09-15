@@ -1,6 +1,9 @@
 import { styled } from "styled-components";
-import startBgx1 from "../../assets/images/start-page@1x.jpg";
+import bgImage1x from "../../assets/images/start-backgroundx@1x.jpg";
+import bgImage2x from "../../assets/images/start-backgroundx@2x.jpg";
+import bgImage3x from "../../assets/images/start-backgroundx@3x.jpg";
 
+import { responsiveBackgroundImage } from "../../styles/mixins";
 export const StartPageContainer = styled.main`
   display: flex;
   flex-direction: column;
@@ -10,7 +13,7 @@ export const StartPageContainer = styled.main`
   height: 100vh;
   min-width: 28rem;
   padding: 3.5rem;
-  background-image: url(${startBgx1});
+  ${responsiveBackgroundImage(bgImage1x, bgImage2x, bgImage3x)}
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
