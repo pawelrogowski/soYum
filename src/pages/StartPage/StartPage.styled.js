@@ -48,66 +48,112 @@ export const StartPageContainer = styled.main`
   a {
     > svg {
       margin-bottom: 2.8rem;
-      max-width: 54px;
-      max-height: 54px;
-      width: 54px;
-      height: 54px;
+      max-width: 5.4rem;
+      max-height: 5.4rem;
+      width: 5.4rem;
+      height: 5.4rem;
+      ${breakpoint.tablet`
+        max-width: 6.8rem;
+        max-height: 6.8rem;
+        width: 6.8rem;
+        height: 6.8rem;
+      `};
     }
   }
 
   h1 {
     margin-bottom: 1.4rem;
-    color: #fafafa;
+    color: ${({ theme }) => theme.startPage.header};
     font-size: 2.4rem;
     font-weight: 600;
     line-height: 2.4rem;
     letter-spacing: -0.048rem;
     text-align: center;
+    ${breakpoint.tablet`
+      font-size: 2.8rem;
+      line-height: 2.8rem;
+      letter-spacing: -0.056rem;
+    `};
   }
 
   p {
     margin-bottom: 4.4rem;
     max-width: 35rem;
     text-align: center;
-    color: #fafafa;
+    color: ${({ theme }) => theme.startPage.description};
     text-align: center;
     font-size: 1.4rem;
     font-weight: 400;
     line-height: 1.8rem;
     letter-spacing: -0.028rem;
+    ${breakpoint.tablet`
+      margin-bottom: 4rem;
+      max-width: 50.5rem;
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      letter-spacing: -0.036rem;
+    `};
   }
   nav {
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-right: 3rem;
+    margin-right: 1.5rem;
     > ul {
       display: flex;
       flex-direction: row;
       gap: 1.2rem;
       li:first-of-type {
         button {
-          color: #fafafa;
-          background-color: #8baa36;
+          color: ${({ theme }) => theme.startPage.registerButton.fontColorIdle};
+          background-color: ${({ theme }) =>
+            theme.startPage.registerButton.bgIdle};
           border-color: #8baa36;
           width: 13.2rem;
-          height: 45px;
-          &:hover {
-            background-color: #22252a;
-            border-color: #22252a;
-            color: #8baa36;
+          height: 4.5rem;
+          border: 0.2rem solid
+            ${({ theme }) => theme.startPage.registerButton.borderIdle};
+          &:hover,
+          &:focus {
+            background-color: ${({ theme }) =>
+              theme.startPage.registerButton.bgHover};
+            border-color: ${({ theme }) =>
+              theme.startPage.registerButton.borderHover};
+            color: ${({ theme }) =>
+              theme.startPage.registerButton.fontColorHover};
           }
+          &:active {
+            border-color: ${({ theme }) =>
+              theme.startPage.registerButton.borderActive};
+          }
+          ${breakpoint.tablet`
+            height: 6.7rem;
+            width: 18.4rem;
+          `};
         }
       }
       li:last-of-type {
         button {
-          color: #fafafa;
-          border-color: #fafafa;
+          color: ${({ theme }) => theme.startPage.signinButton.fontColorIdle};
+          border-color: ${({ theme }) =>
+            theme.startPage.signinButton.borderIdle};
           width: 9.5rem;
-          height: 45px;
-          &:hover {
-            border-color: #8baa36;
+          height: 4.5rem;
+          &:hover,
+          &:focus {
+            border-color: ${({ theme }) =>
+              theme.startPage.signinButton.borderHover};
           }
+          &:active {
+            border-color: ${({ theme }) =>
+              theme.startPage.signinButton.borderActive};
+            background-color: ${({ theme }) =>
+              theme.startPage.signinButton.bgActive};
+          }
+          ${breakpoint.tablet`
+            width: 14.1rem;
+            height: 6.7rem;
+          `};
         }
       }
     }
