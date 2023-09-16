@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components";
 import { useContext, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { lightTheme, darkTheme, GlobalStyles } from "./styles/themes";
-
+import { Loader } from "./components/Loader/Loader.styled";
 // layouts
 const AuthLayout = lazy(
   async () => await import("./layouts/AuthLayout/AuthLayout")
@@ -27,7 +27,7 @@ export const App = () => {
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
       <Router basename="/">
-        <Suspense>
+        <Suspense fallback={<Loader />}>
           <Routes>
             <Route path="/" element={<StartPage />} />
             <Route element={<AuthLayout />}>
