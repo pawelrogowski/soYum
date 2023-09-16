@@ -2,7 +2,7 @@ import { Button } from "../../Button/Button";
 import { StyledForm } from "./SignInForm.styled";
 import { Formik, Field, ErrorMessage } from "formik";
 import { Icon } from "../../Icon/Icon";
-import { validationSchema } from "./singInSchema";
+import { validationSchema } from "../../../schemas/singInSchema";
 
 export const SignInForm = () => {
   const initialFormValues = { name: "", email: "", password: "" };

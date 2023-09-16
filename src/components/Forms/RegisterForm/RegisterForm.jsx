@@ -2,7 +2,7 @@ import { Button } from "../../Button/Button";
 import { StyledForm } from "./RegistrationForm.styled";
 import { Formik, Field, ErrorMessage } from "formik";
 import { Icon } from "../../Icon/Icon";
-import { validationSchema } from "./registrationSchema";
+import { validationSchema } from "../../../schemas/registrationSchema";
 
 export const RegistrationForm = () => {
   const initialFormValues = { name: "", email: "", password: "" };
