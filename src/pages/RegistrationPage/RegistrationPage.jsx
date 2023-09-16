@@ -1,4 +1,4 @@
-import { RegistrationForm } from "../../components/Forms/RegistrationForm/RegistrationForm";
+import { RegistrationForm } from "../../components/Forms/RegisterForm/RegisterForm";
 import { NavLink } from "react-router-dom";
 
 export const RegistrationPage = () => {
