@@ -11,6 +11,16 @@ export const SignInForm = () => {
     console.log("Form Submitted", values);
   };
 
+  const warnIconMotion = {
+    initial: { scale: 0.2 },
+    animate: { scale: 1 },
+    transition: {
+      type: "spring",
+      stiffness: 260,
+      damping: 20,
+    },
+  };
+
   return (
     <Formik
       initialValues={initialFormValues}
@@ -49,12 +59,13 @@ export const SignInForm = () => {
                 {touched.email &&
                   ($emailInfo ? (
                     <Icon
+                      {...warnIconMotion}
                       icon={
                         $emailInfo.includes("required") ? "error" : "warning"
                       }
                     />
                   ) : (
-                    <Icon icon="no-error" />
+                    <Icon {...warnIconMotion} icon="no-error" />
                   ))}
                 <ErrorMessage name="email" component="span" />
               </li>
@@ -72,12 +83,13 @@ export const SignInForm = () => {
                 {touched.password &&
                   ($passwordInfo ? (
                     <Icon
+                      {...warnIconMotion}
                       icon={
                         $passwordInfo.includes("required") ? "error" : "warning"
                       }
                     />
                   ) : (
-                    <Icon icon="no-error" />
+                    <Icon {...warnIconMotion} icon="no-error" />
                   ))}
                 <ErrorMessage name="password" component="span" />
               </li>
