@@ -11,7 +11,7 @@ export const AuthLayout = () => {
   return (
     <PageContent>
       <Icon
-        hero="true"
+        hero
         icon={
           isDesktop ? "hero-desktop" : isTablet ? "hero-tablet" : "hero-mobile"
         }

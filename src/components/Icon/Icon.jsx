@@ -12,27 +12,27 @@ export const Icon = ({ icon, hero = false, ...props }) => {
     preserveAspectRatioAttr = "xMidYMax meet";
   }
 
-  return hero ? (
+  return (
     <AnimatePresence>
-      <StyledSvg
-        $icon={icon}
-        {...props}
-        viewBox={viewBoxAttr}
-        preserveAspectRatio={preserveAspectRatioAttr}
-      >
-        <use href={sprite + `#${icon}`} />
-      </StyledSvg>
-    </AnimatePresence>
-  ) : (
-    <AnimatePresence>
-      <StyledSvg $icon={icon} {...props}>
-        <use href={sprite + `#${icon}`} />
-      </StyledSvg>
+      {hero ? (
+        <StyledSvg
+          $icon={icon}
+          {...props}
+          viewBox={viewBoxAttr}
+          preserveAspectRatio={preserveAspectRatioAttr}
+        >
+          <use href={sprite + `#${icon}`} />
+        </StyledSvg>
+      ) : (
+        <StyledSvg $icon={icon} {...props}>
+          <use href={sprite + `#${icon}`} />
+        </StyledSvg>
+      )}
     </AnimatePresence>
   );
 };
 
 Icon.propTypes = {
   icon: PropTypes.string.isRequired,
-  hero: PropTypes.string,
+  hero: PropTypes.bool,
 };
