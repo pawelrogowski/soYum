@@ -27,6 +27,7 @@ export const RegistrationForm = () => {
       onSubmit={handleSubmit}
       validationSchema={validationSchema}
       validateOnBlur
+      validateOnChange
     >
       {({ errors, touched }) => {
         let $nameInfo = errors.name;
@@ -80,7 +81,6 @@ export const RegistrationForm = () => {
                   name="email"
                   type="email"
                   placeholder="Email"
-                  autoComplete="false"
                 />
                 <Icon icon="envelope" />
                 {touched.email &&

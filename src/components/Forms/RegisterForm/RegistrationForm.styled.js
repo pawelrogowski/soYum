@@ -9,7 +9,7 @@ export const StyledForm = styled(Form)`
   min-width: 28rem;
   padding: 3.2rem 2.8rem 4rem 2.8rem;
   border-radius: 3rem;
-  background-color: ${({ theme }) => theme.registerForm.bg};
+  background-color: ${({ theme }) => theme.authForm.bg};
   transition: color 100ms, background-color 100ms, border 100ms, fill 100ms;
   ${breakpoint.tablet(css`
     padding: 4.4rem 5rem;
@@ -19,8 +19,8 @@ export const StyledForm = styled(Form)`
   h1 {
     display: inline-block;
     ${font({
-      family: ({ theme }) => theme.registerForm.font,
-      color: ({ theme }) => theme.registerForm.header,
+      family: ({ theme }) => theme.authForm.font,
+      color: ({ theme }) => theme.authForm.header,
       size: "2.4rem",
       weight: "600",
       height: "2.8rem",
@@ -66,12 +66,12 @@ export const StyledForm = styled(Form)`
         `)}
 
         &:nth-of-type(1) {
-          stroke: ${({ theme }) => theme.registerForm.textInput.iconIdle};
+          stroke: ${({ theme }) => theme.authForm.textInput.iconIdle};
           fill: none;
           left: 1.8rem;
         }
         &:nth-of-type(2) {
-          fill: ${({ theme }) => theme.registerForm.textInput.error};
+          fill: ${({ theme }) => theme.authForm.textInput.error};
           right: 1.9rem;
         }
       }
@@ -81,7 +81,7 @@ export const StyledForm = styled(Form)`
       &:focus {
         svg {
           &:nth-of-type(1) {
-            stroke: ${({ theme }) => theme.registerForm.textInput.iconActive};
+            stroke: ${({ theme }) => theme.authForm.textInput.iconActive};
           }
         }
       }
@@ -94,8 +94,8 @@ export const StyledForm = styled(Form)`
       bottom: -1.5rem;
 
       ${font({
-        family: ({ theme }) => theme.registerForm.font,
-        color: ({ theme }) => theme.registerForm.header,
+        family: ({ theme }) => theme.authForm.font,
+        color: ({ theme }) => theme.authForm.header,
         size: "1rem",
         weight: "400",
         height: "1rem",
@@ -115,8 +115,8 @@ export const StyledForm = styled(Form)`
     input {
       position: relative;
       ${font({
-        family: ({ theme }) => theme.registerForm.textInput.font,
-        color: ({ theme }) => theme.registerForm.textInput.font,
+        family: ({ theme }) => theme.authForm.textInput.font,
+        color: ({ theme }) => theme.authForm.textInput.fontIdle,
         size: "1.4rem",
         weight: "400",
       })}
@@ -131,8 +131,8 @@ export const StyledForm = styled(Form)`
 
       ${breakpoint.tablet(css`
         ${font({
-          family: ({ theme }) => theme.registerForm.textInput.font,
-          color: ({ theme }) => theme.registerForm.textInput.font,
+          family: ({ theme }) => theme.authForm.textInput.font,
+          color: ({ theme }) => theme.authForm.textInput.font,
           size: "1.8rem",
           weight: "400",
         })}
@@ -145,17 +145,15 @@ export const StyledForm = styled(Form)`
       padding: 1.6rem 5rem;
       outline: none;
       border-radius: 0.5rem;
-      border: 0.1rem solid
-        ${({ theme }) => theme.registerForm.textInput.borderIdle};
-      color: ${({ theme }) => theme.registerForm.textInput.fontIdle};
-      background-color: ${({ theme }) => theme.registerForm.textInput.bgIdle};
+      border: 0.1rem solid ${({ theme }) => theme.authForm.textInput.borderIdle};
+      background-color: ${({ theme }) => theme.authForm.textInput.bgIdle};
       transition: color 100ms, background-color 100ms, border 100ms;
 
       &:focus,
       &:hover {
         border: 0.1rem solid
-          ${({ theme }) => theme.registerForm.textInput.borderActive};
-        ${({ theme }) => theme.registerForm.textInput.fontActive};
+          ${({ theme }) => theme.authForm.textInput.borderActive};
+        background: ${({ theme }) => theme.authForm.textInput.bgIdle};
       }
 
       ${breakpoint.tablet(
@@ -168,23 +166,21 @@ export const StyledForm = styled(Form)`
 
   ${StyledButton} {
     width: 100%;
-    background-color: ${({ theme }) => theme.registerForm.button.bgIdle};
-    border: 0.2rem solid ${({ theme }) => theme.registerForm.button.borderIdle};
-    color: ${({ theme }) => theme.registerForm.button.fontColorIdle};
+    background-color: ${({ theme }) => theme.authForm.button.bgIdle};
+    border: 0.2rem solid ${({ theme }) => theme.authForm.button.borderIdle};
+    color: ${({ theme }) => theme.authForm.button.fontColorIdle};
     border-radius: 0.6rem;
     height: 4.5rem;
 
     &:hover,
     &:focus {
-      background-color: ${({ theme }) => theme.registerForm.button.bgHover};
-      color: ${({ theme }) => theme.registerForm.button.fontColorHover};
-      border: 0.2rem solid
-        ${({ theme }) => theme.registerForm.button.borderHover};
+      background-color: ${({ theme }) => theme.authForm.button.bgHover};
+      color: ${({ theme }) => theme.authForm.button.fontColorHover};
+      border: 0.2rem solid ${({ theme }) => theme.authForm.button.borderHover};
     }
     &:active {
-      background-color: ${({ theme }) => theme.registerForm.button.bgActive};
-      border: 0.2rem solid
-        ${({ theme }) => theme.registerForm.button.borderActive};
+      background-color: ${({ theme }) => theme.authForm.button.bgActive};
+      border: 0.2rem solid ${({ theme }) => theme.authForm.button.borderActive};
     }
 
     ${breakpoint.tablet(
@@ -206,18 +202,18 @@ export const StyledForm = styled(Form)`
                     margin-bottom: 2.8rem;
                   `
                 )}
-                -webkit-text-fill-color: ${props.theme.registerForm.textInput
+                -webkit-text-fill-color: ${props.theme.authForm.textInput
                   .error};
-                color: ${props.theme.registerForm.textInput.error};
-                border-color: ${props.theme.registerForm.textInput.error};
+                color: ${props.theme.authForm.textInput.error};
+                border-color: ${props.theme.authForm.textInput.error};
               }
 
               input[name="password"] ~ svg {
-                stroke: ${props.theme.registerForm.textInput.error} !important;
+                stroke: ${props.theme.authForm.textInput.error} !important;
               }
 
               input[name="password"] ~ span {
-                color: ${props.theme.registerForm.textInput.error} !important;
+                color: ${props.theme.authForm.textInput.error} !important;
               }
             }
           `
@@ -231,19 +227,18 @@ export const StyledForm = styled(Form)`
                     margin-bottom: 2.8rem;
                   `
                 )}
-                -webkit-text-fill-color: ${props.theme.registerForm.textInput
+                -webkit-text-fill-color: ${props.theme.authForm.textInput
                   .warning};
-                color: ${props.theme.registerForm.textInput.warning};
-                border-color: ${props.theme.registerForm.textInput.warning};
+                color: ${props.theme.authForm.textInput.warning};
+                border-color: ${props.theme.authForm.textInput.warning};
               }
 
               input[name="password"] ~ svg {
-                stroke: ${props.theme.registerForm.textInput
-                  .warning} !important;
+                stroke: ${props.theme.authForm.textInput.warning} !important;
               }
 
               input[name="password"] ~ span {
-                color: ${props.theme.registerForm.textInput.warning} !important;
+                color: ${props.theme.authForm.textInput.warning} !important;
               }
             }
           `
@@ -251,15 +246,14 @@ export const StyledForm = styled(Form)`
         ? css`
             li {
               input[name="password"]:not(:placeholder-shown) {
-                -webkit-text-fill-color: ${props.theme.registerForm.textInput
+                -webkit-text-fill-color: ${props.theme.authForm.textInput
                   .correct};
-                color: ${props.theme.registerForm.textInput.correct};
-                border-color: ${props.theme.registerForm.textInput.correct};
+                color: ${props.theme.authForm.textInput.correct};
+                border-color: ${props.theme.authForm.textInput.correct};
               }
 
               input[name="password"]:not(:placeholder-shown) ~ svg {
-                stroke: ${props.theme.registerForm.textInput
-                  .correct} !important;
+                stroke: ${props.theme.authForm.textInput.correct} !important;
               }
             }
           `
@@ -277,18 +271,18 @@ export const StyledForm = styled(Form)`
                     margin-bottom: 2.8rem;
                   `
                 )}
-                -webkit-text-fill-color: ${props.theme.registerForm.textInput
+                -webkit-text-fill-color: ${props.theme.authForm.textInput
                   .error};
-                color: ${props.theme.registerForm.textInput.error};
-                border-color: ${props.theme.registerForm.textInput.error};
+                color: ${props.theme.authForm.textInput.error};
+                border-color: ${props.theme.authForm.textInput.error};
               }
 
               input[name="name"] ~ svg {
-                stroke: ${props.theme.registerForm.textInput.error} !important;
+                stroke: ${props.theme.authForm.textInput.error} !important;
               }
 
               input[name="name"] ~ span {
-                color: ${props.theme.registerForm.textInput.error} !important;
+                color: ${props.theme.authForm.textInput.error} !important;
               }
             }
           `
@@ -296,15 +290,14 @@ export const StyledForm = styled(Form)`
         ? css`
             li {
               input[name="name"]:not(:placeholder-shown) {
-                -webkit-text-fill-color: ${props.theme.registerForm.textInput
+                -webkit-text-fill-color: ${props.theme.authForm.textInput
                   .correct};
-                color: ${props.theme.registerForm.textInput.correct};
-                border-color: ${props.theme.registerForm.textInput.correct};
+                color: ${props.theme.authForm.textInput.correct};
+                border-color: ${props.theme.authForm.textInput.correct};
               }
 
               input[name="name"]:not(:placeholder-shown) ~ svg {
-                stroke: ${props.theme.registerForm.textInput
-                  .correct} !important;
+                stroke: ${props.theme.authForm.textInput.correct} !important;
               }
             }
           `
@@ -322,18 +315,18 @@ export const StyledForm = styled(Form)`
                     margin-bottom: 2.8rem;
                   `
                 )}
-                -webkit-text-fill-color: ${props.theme.registerForm.textInput
+                -webkit-text-fill-color: ${props.theme.authForm.textInput
                   .error};
-                color: ${props.theme.registerForm.textInput.error};
-                border-color: ${props.theme.registerForm.textInput.error};
+                color: ${props.theme.authForm.textInput.error};
+                border-color: ${props.theme.authForm.textInput.error};
               }
 
               input[name="email"] ~ svg {
-                stroke: ${props.theme.registerForm.textInput.error} !important;
+                stroke: ${props.theme.authForm.textInput.error} !important;
               }
 
               input[name="email"] ~ span {
-                color: ${props.theme.registerForm.textInput.error} !important;
+                color: ${props.theme.authForm.textInput.error} !important;
               }
             }
           `
@@ -347,19 +340,18 @@ export const StyledForm = styled(Form)`
                     margin-bottom: 2.8rem;
                   `
                 )}
-                -webkit-text-fill-color: ${props.theme.registerForm.textInput
+                -webkit-text-fill-color: ${props.theme.authForm.textInput
                   .warning};
-                color: ${props.theme.registerForm.textInput.warning};
-                border-color: ${props.theme.registerForm.textInput.warning};
+                color: ${props.theme.authForm.textInput.warning};
+                border-color: ${props.theme.authForm.textInput.warning};
               }
 
               input[name="email"] ~ svg {
-                stroke: ${props.theme.registerForm.textInput
-                  .warning} !important;
+                stroke: ${props.theme.authForm.textInput.warning} !important;
               }
 
               input[name="email"] ~ span {
-                color: ${props.theme.registerForm.textInput.warning} !important;
+                color: ${props.theme.authForm.textInput.warning} !important;
               }
             }
           `
@@ -367,15 +359,14 @@ export const StyledForm = styled(Form)`
         ? css`
             li {
               input[name="email"]:not(:placeholder-shown) {
-                color: ${props.theme.registerForm.textInput.correct};
-                border-color: ${props.theme.registerForm.textInput.correct};
-                -webkit-text-fill-color: ${props.theme.registerForm.textInput
+                color: ${props.theme.authForm.textInput.correct};
+                border-color: ${props.theme.authForm.textInput.correct};
+                -webkit-text-fill-color: ${props.theme.authForm.textInput
                   .correct};
               }
 
               input[name="email"]:not(:placeholder-shown) ~ svg {
-                stroke: ${props.theme.registerForm.textInput
-                  .correct} !important;
+                stroke: ${props.theme.authForm.textInput.correct} !important;
               }
             }
           `

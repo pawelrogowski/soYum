@@ -56,7 +56,7 @@ export const lightTheme = {
       fontColorHover: brandColors.main,
     },
   },
-  registerForm: {
+  authForm: {
     font: typography.family.primary,
     header: "#FAFAFA",
     bg: "#2A2C36",
@@ -204,8 +204,8 @@ export const darkTheme = {
   startPage: {
     ...lightTheme.startPage,
   },
-  registerForm: {
-    ...lightTheme.registerForm,
+  authForm: {
+    ...lightTheme.authForm,
   },
   logo: {
     header: {
@@ -412,8 +412,9 @@ export const GlobalStyles = createGlobalStyle`
 	select:-webkit-autofill:focus {
 	  border: 0.1rem solid SlateBlue;
 	  -webkit-text-fill-color: #fafafa;
-	  transition: background-color 50000s ease-in-out 0s;
+	  transition: background-color 0s 600000s, color 0s 600000s;
+    -webkit-box-shadow: 0 0 0px 10000px ${(props) =>
+      props.theme.authForm.bg} inset;
 	}
-
 
 `;
