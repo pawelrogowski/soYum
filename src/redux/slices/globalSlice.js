@@ -4,11 +4,11 @@ export const globalSlice = createSlice({
   name: "global",
   initialState: { isDarkTheme: false },
   reducers: {
-    changeTheme: (state, action) => {
+    toggleTheme: (state, action) => {
       state.isDarkTheme = action.payload;
     },
   },
 });
 
 export default globalSlice.reducer;
-export const { changeTheme } = globalSlice.actions;
+export const { toggleTheme } = globalSlice.actions;

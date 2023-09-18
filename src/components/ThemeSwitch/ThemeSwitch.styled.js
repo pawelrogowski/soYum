@@ -13,8 +13,7 @@ export const StyledLabel = styled.label`
   }
 
   > span {
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(rgba(75, 75, 75, 0), rgba(255, 255, 255, 0.1));
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.2);
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -22,12 +21,12 @@ export const StyledLabel = styled.label`
     right: 0;
     bottom: 0;
     background-color: lightgray;
-    transition: 0.4s;
+    transition: box-shadow 400ms, transform 400ms;
     border-radius: 34px;
   }
 
   > span:before {
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 1px 10px rgba(0, 0, 0, 0.4);
     position: absolute;
     content: "";
     height: 2.1rem;
@@ -35,15 +34,17 @@ export const StyledLabel = styled.label`
     left: 0.305rem;
     bottom: 0.3rem;
     background-color: #fafafa;
-    transition: 0.4s;
+    transition: box-shadow 400ms, transform 400ms;
     border-radius: 50%;
   }
 
   > input:checked + span {
     background-color: #8baa36;
+    box-shadow: inset 0px 3px 10px rgba(0, 0, 0, 0.4);
   }
 
   > input:checked + span:before {
+    box-shadow: -2px -1px 10px rgba(0, 0, 0, 0.4);
     transform: translateX(33px);
   }
 `;
