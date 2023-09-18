@@ -1,18 +1,24 @@
 import { StyledHeader } from "./Header.styled";
 import { Logo } from "../Logo/Logo";
-import { Icon } from "../Icon/Icon";
-
+import avatar from "../../assets/images/avatar.jpg";
+import avatarPlaceholder from "../../assets/images/avatar-placeholder.png";
+import { Avatar } from "../Avatar/Avatar";
+import { MobileMenu } from "../Menu/MobileMenu";
+import { Navigation } from "../Navigation/Navigation";
+import { useMediaQuery } from "react-responsive";
+import { breakpoints } from "../../styles/themes";
+import { ThemeSwitch } from "../ThemeSwitch/ThemeSwitch";
 export const Header = () => {
+  const isAtLeastTabletSize = useMediaQuery({ minWidth: breakpoints.tablet });
+  const isAtLeastDesktopSize = useMediaQuery({ minWidth: breakpoints.desktop });
+
   return (
     <StyledHeader>
       <Logo variant="header" />
-      <div>
-        <picture></picture>
-        <span>Name</span>
-      </div>
-      <button type="button">
-        <Icon icon="hamburger" />
-      </button>
+      {isAtLeastDesktopSize && <Navigation />}
+      <Avatar image={avatar} placeholder={avatarPlaceholder} />
+      {isAtLeastDesktopSize && <ThemeSwitch />}
+      {!isAtLeastTabletSize && <MobileMenu />}
     </StyledHeader>
   );
 };
