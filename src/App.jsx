@@ -1,9 +1,10 @@
-import ThemeContext from "./contexts/ThemeContext";
+import { useSelector } from "react-redux";
 import { ThemeProvider } from "styled-components";
-import { useContext, lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { lightTheme, darkTheme, GlobalStyles } from "./styles/themes";
 import { Loader } from "./components/Loader/Loader.styled";
+
 // layouts
 const AuthLayout = lazy(
   async () => await import("./layouts/AuthLayout/AuthLayout")
@@ -12,7 +13,7 @@ const MainLayout = lazy(
   async () => await import("./layouts/MainLayout/MainLayout")
 );
 
-//pages
+// pages
 const SignInPage = lazy(
   async () => await import("./pages/SignInPage/SignInPage.jsx")
 );
@@ -24,10 +25,10 @@ const StartPage = lazy(
 );
 
 export const App = () => {
-  const { theme } = useContext(ThemeContext);
+  const isDarkTheme = useSelector((state) => state.global.isDarkTheme);
 
   return (
-    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+    <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <GlobalStyles />
       <Router basename="/">
         <Suspense fallback={<Loader />}>
