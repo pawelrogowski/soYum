@@ -112,19 +112,9 @@ export const lightTheme = {
   },
   navigation: {
     font: typography.family.primary,
-    header: {
-      colorIdle: "#23262A",
-      colorHover: brandColors.main,
-      icon: "#23262A",
-    },
-    footer: {
-      colorIdle: "#FAFAFA",
-      colorHover: "#23262A",
-    },
-    hamburger: {
-      colorIdle: "#22252A",
-      colorHover: brandColors.main,
-    },
+    colorIdle: "#23262A",
+    colorHover: brandColors.main,
+    icon: "#23262A",
   },
   button: {
     font: typography.family.primary,
@@ -234,18 +224,9 @@ export const darkTheme = {
   },
   navigation: {
     font: typography.family.primary,
-    header: {
-      colorIdle: "#FAFAFA",
-      colorHover: brandColors.main,
-    },
-    footer: {
-      colorIdle: "#FAFAFA",
-      colorHover: "#23262A",
-    },
-    hamburger: {
-      colorIdle: "#FAFAFA",
-      colorHover: brandColors.main,
-    },
+    colorIdle: "#FAFAFA",
+    colorHover: brandColors.main,
+    icon: "#fafafa",
   },
   button: {
     font: typography.family.primary,
