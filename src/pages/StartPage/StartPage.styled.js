@@ -45,20 +45,18 @@ export const StartPageContainer = styled.main`
       )};
   `}
 
-  a {
-    > svg {
-      margin-bottom: 2.8rem;
-      max-width: 5.4rem;
-      max-height: 5.4rem;
-      width: 5.4rem;
-      height: 5.4rem;
-      ${breakpoint.tablet`
+  > svg {
+    margin-bottom: 2.8rem;
+    max-width: 5.4rem;
+    max-height: 5.4rem;
+    width: 5.4rem;
+    height: 5.4rem;
+    ${breakpoint.tablet`
         max-width: 6.8rem;
         max-height: 6.8rem;
         width: 6.8rem;
         height: 6.8rem;
       `};
-    }
   }
 
   h1 {

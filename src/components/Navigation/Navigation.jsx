@@ -1,11 +1,10 @@
 import { NavLink } from "react-router-dom";
 import { StyledNav } from "./Navigation.styled";
 import { Icon } from "../Icon/Icon";
-import PropTypes from "prop-types";
 
-export const Navigation = ({ variant }) => {
+export const Navigation = () => {
   return (
-    <StyledNav $variant={variant}>
+    <StyledNav>
       <ul>
         <li>
           <NavLink to="#">Categories</NavLink>
@@ -22,19 +21,12 @@ export const Navigation = ({ variant }) => {
         <li>
           <NavLink to="#">Shopping List</NavLink>
         </li>
-        {variant !== "footer" && (
-          <li>
-            <NavLink to="#">
-              <Icon icon="search" />
-              {variant !== "header" && <span>Search</span>}
-            </NavLink>
-          </li>
-        )}
+        <li>
+          <button type="button">
+            <Icon icon="search" />
+          </button>
+        </li>
       </ul>
     </StyledNav>
   );
-};
-
-Navigation.propTypes = {
-  variant: PropTypes.string.isRequired,
 };

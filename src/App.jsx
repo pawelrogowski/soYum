@@ -8,6 +8,9 @@ import { Loader } from "./components/Loader/Loader.styled";
 const AuthLayout = lazy(
   async () => await import("./layouts/AuthLayout/AuthLayout")
 );
+const MainLayout = lazy(
+  async () => await import("./layouts/MainLayout/MainLayout")
+);
 
 //pages
 const SignInPage = lazy(
@@ -34,7 +37,10 @@ export const App = () => {
               <Route path="/signin" element={<SignInPage />} />
               <Route path="/register" element={<RegisterPage />} />
             </Route>
-            <Route path="/home"></Route>
+            <Route element={<MainLayout />}>
+              <Route path="/home" element={null} />
+              <Route path="/404" element={null} />
+            </Route>
             <Route path="*"></Route>
           </Routes>
         </Suspense>
