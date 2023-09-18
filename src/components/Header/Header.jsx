@@ -16,7 +16,7 @@ export const Header = () => {
     <StyledHeader>
       <Logo variant="header" />
       {isAtLeastDesktopSize && <Navigation />}
-      <Avatar image={avatar} placeholder={avatarPlaceholder} />
+      <Avatar image={avatar} placeholder={avatarPlaceholder} name="No Data" />
       {isAtLeastDesktopSize && <ThemeSwitch />}
       {!isAtLeastTabletSize && <MobileMenu />}
     </StyledHeader>
