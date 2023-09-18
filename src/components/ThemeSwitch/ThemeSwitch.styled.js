@@ -26,7 +26,7 @@ export const StyledLabel = styled.label`
   }
 
   > span:before {
-    box-shadow: 2px 1px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
     position: absolute;
     content: "";
     height: 2.1rem;
@@ -44,7 +44,7 @@ export const StyledLabel = styled.label`
   }
 
   > input:checked + span:before {
-    box-shadow: -2px -1px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.4);
     transform: translateX(34px);
   }
 `;
