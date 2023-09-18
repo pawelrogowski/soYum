@@ -25,8 +25,8 @@ export const lightTheme = {
   breakpoints,
   bg: {
     main: "#FAFAFA",
-    secondary: "#22252A",
-    form: "#2A2C36",
+    secondary: "#1E1F28",
+    form: "#FAFAFA",
   },
   link: {
     authNav: "#fafafa",
@@ -184,9 +184,9 @@ export const lightTheme = {
 export const darkTheme = {
   breakpoints,
   bg: {
-    main: "#FAFAFA",
-    secondary: "#22252A",
-    form: "#2A2C36",
+    main: "#1E1F28",
+    secondary: "#8BAA36",
+    form: "#FAFAFA",
   },
   link: {
     ...lightTheme.link,
@@ -308,7 +308,7 @@ export const GlobalStyles = createGlobalStyle`
 	}
 
 	body {
-		background-color: ${({ theme }) => theme.bg.main};
+		  background-color: ${({ theme }) => theme.bg.main};
   		min-height: 100vh;
   		scroll-behavior: smooth;
   		text-rendering: optimizeSpeed;
