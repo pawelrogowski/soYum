@@ -35,6 +35,7 @@ export const PageContent = styled.main`
     position: fixed;
     content: "";
     background-image: url(${bgMobile});
+    background-color: ${({ theme }) => theme.bg.form};
     ${breakpoint.tablet`
       background-image: url(${bgTablet});
       background-size: 100vw 65vh;
