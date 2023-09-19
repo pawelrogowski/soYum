@@ -5,7 +5,6 @@ import avatarPlaceholder from "../../assets/images/avatar-placeholder.png";
 import { UserAvatar } from "../UserAvatar/UserAvatar";
 import { MobileMenuButton } from "../MobileMenuButton/MobileMenuButton";
 import { NavigationDesktop } from "../NavigationDesktop/NavigationDesktop";
-
 import { NavigationMobile } from "../NavigationMobile/NavigationMobile";
 import { useMediaQuery } from "react-responsive";
 import { breakpoints } from "../../styles/themes";
@@ -13,7 +12,7 @@ import { ThemeSwitch } from "../ThemeSwitch/ThemeSwitch";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMobileMenu } from "../../redux/slices/globalSlice";
-
+import { AnimatePresence } from "framer-motion";
 export const Header = () => {
   const dispatch = useDispatch();
   const isMobileMenuOpen = useSelector(
@@ -27,7 +26,9 @@ export const Header = () => {
 
   return (
     <StyledHeader>
-      {isMobileMenuOpen && !isAtLeastDesktopSize && <NavigationMobile />}
+      <AnimatePresence mode="wait">
+        {isMobileMenuOpen && !isAtLeastDesktopSize && <NavigationMobile />}{" "}
+      </AnimatePresence>
       <Link to="/home">
         <Logo variant="header" />
       </Link>
@@ -38,7 +39,10 @@ export const Header = () => {
         name="Feironnnnnnnnnnnn"
       />
       {isAtLeastDesktopSize && <ThemeSwitch />}
-      {!isAtLeastDesktopSize && <MobileMenuButton onClick={handleMenuToggle} />}
+
+      {!isAtLeastDesktopSize && (
+        <MobileMenuButton onClick={handleMenuToggle} variant="open" />
+      )}
     </StyledHeader>
   );
 };

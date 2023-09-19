@@ -2,7 +2,7 @@
   "name": "soyum",
   "private": true,
   "version": "0.0.0",
-  "homepage": "/signin",
+  "homepage": "/",
   "type": "module",
   "scripts": {
     "dev": "vite",

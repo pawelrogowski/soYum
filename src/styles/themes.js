@@ -191,6 +191,7 @@ export const lightTheme = {
     borderActive: brandColors.main,
   },
   mobileMenu: {
+    bg: "linear-gradient(200deg, rgba(235,243,212,1) 0%, rgba(235,243,212,1) 100%)",
     strokeIdle: "#22252A",
     strokeHover: brandColors.main,
     strokeActive: brandColors.main,
@@ -319,6 +320,7 @@ export const darkTheme = {
     borderActive: brandColors.main,
   },
   mobileMenu: {
+    bg: "#1E1F28",
     strokeIdle: "#FAFAFA",
     strokeHover: brandColors.main,
     strokeActive: brandColors.main,
