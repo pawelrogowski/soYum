@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
-import { StyledDiv } from "./Avatar.styled";
-export function Avatar({ image, placeholder, name = "No Data" }) {
+import { StyledDiv } from "./UserAvatar.styled";
+export function UserAvatar({ image, placeholder, name = "No Data" }) {
   return (
     <StyledDiv>
       <picture>
@@ -13,7 +13,7 @@ export function Avatar({ image, placeholder, name = "No Data" }) {
   );
 }
 
-Avatar.propTypes = {
+UserAvatar.propTypes = {
   image: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,

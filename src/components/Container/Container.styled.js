@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledDiv = styled.main`
-  min-width: 3.75rem;
+  max-width: ${({ theme }) => theme.breakpoints.maxContent};
+  min-width: ${({ theme }) => theme.breakpoints.minContent};
   padding: 0 2.1rem;
 `;
