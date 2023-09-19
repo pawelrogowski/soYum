@@ -2,7 +2,8 @@ export const breakpoints = {
   mobile: "320px",
   tablet: "768px",
   desktop: "1024px",
-  maxDesktop: "1400px",
+  maxContent: "1240px",
+  minContent: "280px",
 };
 
 const typography = {
@@ -181,6 +182,19 @@ export const lightTheme = {
     bgOff: "#fafafa",
     bgOn: brandColors.main,
   },
+  userAvatar: {
+    fontIdle: "#22252a",
+    fontHover: brandColors.main,
+    fontActive: brandColors.main,
+    borderIdle: "none",
+    borderHover: brandColors.main,
+    borderActive: brandColors.main,
+  },
+  mobileMenu: {
+    strokeIdle: "#22252A",
+    strokeHover: brandColors.main,
+    strokeActive: brandColors.main,
+  },
 };
 
 export const darkTheme = {
@@ -295,5 +309,18 @@ export const darkTheme = {
   },
   themeSwitch: {
     ...lightTheme.themeSwitch,
+  },
+  userAvatar: {
+    fontIdle: "#FAFAFA",
+    fontHover: brandColors.main,
+    fontActive: brandColors.main,
+    borderIdle: "none",
+    borderHover: brandColors.main,
+    borderActive: brandColors.main,
+  },
+  mobileMenu: {
+    strokeIdle: "#FAFAFA",
+    strokeHover: brandColors.main,
+    strokeActive: brandColors.main,
   },
 };
