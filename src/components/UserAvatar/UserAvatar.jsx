@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-
+import { shortenString } from "../../utils/stringManipulation";
 import { StyledDiv } from "./UserAvatar.styled";
 export function UserAvatar({ image, placeholder, name = "No Data" }) {
   return (
@@ -8,7 +8,7 @@ export function UserAvatar({ image, placeholder, name = "No Data" }) {
         <source srcSet={image} type="image/jpeg" />
         <img src={placeholder} alt="user avatar" />
       </picture>
-      <span>{name}</span>
+      <span>{shortenString(name, 10, "...")}</span>
     </StyledDiv>
   );
 }

@@ -10,7 +10,6 @@ import { breakpoints } from "../../styles/themes";
 import { ThemeSwitch } from "../ThemeSwitch/ThemeSwitch";
 import { Link } from "react-router-dom";
 export const Header = () => {
-  const isAtLeastTabletSize = useMediaQuery({ minWidth: breakpoints.tablet });
   const isAtLeastDesktopSize = useMediaQuery({ minWidth: breakpoints.desktop });
 
   return (
@@ -22,10 +21,10 @@ export const Header = () => {
       <UserAvatar
         image={avatar}
         placeholder={avatarPlaceholder}
-        name="No Data"
+        name="Feironnnnnnnnnnnn"
       />
       {isAtLeastDesktopSize && <ThemeSwitch />}
-      {!isAtLeastTabletSize && <MobileMenu />}
+      {!isAtLeastDesktopSize && <MobileMenu />}
     </StyledHeader>
   );
 };
