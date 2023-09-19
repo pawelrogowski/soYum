@@ -3,26 +3,19 @@ import { ThemeProvider } from "styled-components";
 import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { lightTheme, darkTheme } from "./styles/themes";
-import { Loader } from "./components/Loader/Loader.styled";
+import { LoaderDots } from "./components/LoaderDots/LoaderDots";
 import { GlobalStyles } from "./styles/globalStyles";
+
 // layouts
-const AuthLayout = lazy(
-  async () => await import("./layouts/AuthLayout/AuthLayout")
-);
-const MainLayout = lazy(
-  async () => await import("./layouts/MainLayout/MainLayout")
-);
+const AuthLayout = lazy(() => import("./layouts/AuthLayout/AuthLayout"));
+const MainLayout = lazy(() => import("./layouts/MainLayout/MainLayout"));
 
 // pages
-const SignInPage = lazy(
-  async () => await import("./pages/SignInPage/SignInPage.jsx")
+const SignInPage = lazy(() => import("./pages/SignInPage/SignInPage.jsx"));
+const RegisterPage = lazy(() =>
+  import("./pages/RegistrationPage/RegistrationPage.jsx")
 );
-const RegisterPage = lazy(
-  async () => await import("./pages/RegistrationPage/RegistrationPage.jsx")
-);
-const StartPage = lazy(
-  async () => await import("./pages/StartPage/StartPage.jsx")
-);
+const StartPage = lazy(() => import("./pages/StartPage/StartPage.jsx"));
 
 export const App = () => {
   const isDarkTheme = useSelector((state) => state.global.isDarkTheme);
@@ -31,12 +24,27 @@ export const App = () => {
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <GlobalStyles />
       <Router basename="/">
-        <Suspense fallback={<Loader />}>
+        <LoaderDots />
+        <Suspense fallback={<LoaderDots />}>
           <Routes>
             <Route path="/" element={<StartPage />} />
             <Route element={<AuthLayout />}>
-              <Route path="/signin" element={<SignInPage />} />
-              <Route path="/register" element={<RegisterPage />} />
+              <Route
+                path="/signin"
+                element={
+                  <Suspense fallback={<LoaderDots />}>
+                    <SignInPage />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="/register"
+                element={
+                  <Suspense fallback={<LoaderDots />}>
+                    <RegisterPage />
+                  </Suspense>
+                }
+              />
             </Route>
             <Route element={<MainLayout />}>
               <Route path="/home" element={null} />

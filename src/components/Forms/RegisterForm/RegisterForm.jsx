@@ -1,5 +1,5 @@
 import { Button } from "../../Button/Button";
-import { StyledForm } from "./RegistrationForm.styled";
+import { StyledForm } from "./RegisterForm.styled";
 import { Formik, Field, ErrorMessage } from "formik";
 import { Icon } from "../../Icon/Icon";
 import { validationSchema } from "../../../schemas/registrationSchema";
@@ -106,7 +106,7 @@ export const RegistrationForm = () => {
                   placeholder="Password"
                   autoComplete="false"
                 />
-                <Icon {...warnIconMotion} icon="lock" />
+                <Icon icon="lock" />
                 {touched.password &&
                   ($passwordInfo ? (
                     <Icon
