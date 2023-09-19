@@ -17,9 +17,6 @@ export const StyledDiv = styled.div`
   &:focus,
   &:focus-within {
     cursor: pointer;
-    img {
-      border: 0.1rem solid ${({ theme }) => theme.userAvatar.borderHover};
-    }
     span {
       color: ${({ theme }) => theme.userAvatar.fontHover};
     }
