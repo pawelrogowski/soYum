@@ -20,7 +20,7 @@ export const StyledLabel = styled.label`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: lightgray;
+    background-color: ${({ theme }) => theme.themeSwitch.bgOff};
     transition: box-shadow 400ms, transform 400ms;
     border-radius: 34px;
   }
@@ -39,12 +39,12 @@ export const StyledLabel = styled.label`
   }
 
   > input:checked + span {
-    background-color: #8baa36;
-    box-shadow: inset 0px 3px 10px rgba(0, 0, 0, 0.4);
+    background-color: ${({ theme }) => theme.themeSwitch.bgOn};
+    box-shadow: inset 0px 3px 10px rgba(0, 0, 0, 0.2);
   }
 
   > input:checked + span:before {
-    box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.3);
     transform: translateX(34px);
   }
 `;

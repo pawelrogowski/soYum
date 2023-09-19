@@ -2,9 +2,9 @@ import { useSelector } from "react-redux";
 import { ThemeProvider } from "styled-components";
 import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { lightTheme, darkTheme, GlobalStyles } from "./styles/themes";
+import { lightTheme, darkTheme } from "./styles/themes";
 import { Loader } from "./components/Loader/Loader.styled";
-
+import { GlobalStyles } from "./styles/globalStyles";
 // layouts
 const AuthLayout = lazy(
   async () => await import("./layouts/AuthLayout/AuthLayout")
