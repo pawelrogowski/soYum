@@ -17,7 +17,7 @@ export const StyledNav = styled(motion.nav)`
     justify-content: center;
     position: fixed;
     top: 1.4rem;
-    right: 3.2rem;
+    right: 1rem;
     height: 6.4rem;
     width: 6.4rem;
     > svg {
