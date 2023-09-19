@@ -5,6 +5,7 @@ export const StyledDiv = styled.div`
   top: 0;
   left: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100vw;
@@ -14,7 +15,7 @@ export const StyledDiv = styled.div`
   transition: background-color 200ms;
   z-index: 1;
 
-  animation: delayLoader 1s ease-in-out 1 forwards;
+  animation: delayLoader 1.5s ease-in-out 1 forwards;
 
   div {
     width: 140px;
@@ -54,12 +55,29 @@ export const StyledDiv = styled.div`
     }
   }
 
-  /* Define the delayLoader animation */
   @keyframes delayLoader {
     0% {
       opacity: 0;
     }
     50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  p {
+    margin-top: 30px;
+    font-size: 16px;
+    color: #fafafa;
+    opacity: 0;
+
+    animation: fadeInText 0.5s ease-in-out 5s 1 forwards;
+  }
+
+  @keyframes fadeInText {
+    0% {
       opacity: 0;
     }
     100% {
