@@ -3,7 +3,7 @@ import { Logo } from "../Logo/Logo";
 import avatar from "../../assets/images/avatar.jpg";
 import avatarPlaceholder from "../../assets/images/avatar-placeholder.png";
 import { UserAvatar } from "../UserAvatar/UserAvatar";
-import { MobileMenu } from "../Menu/MobileMenu";
+import { MobileMenu } from "../MobileMenuButton/MobileMenuButton";
 import { Navigation } from "../Navigation/Navigation";
 import { useMediaQuery } from "react-responsive";
 import { breakpoints } from "../../styles/themes";
