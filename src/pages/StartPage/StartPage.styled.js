@@ -1,13 +1,13 @@
 import { styled } from "styled-components";
-import bgImageMobile1x from "../../assets/images/start-background-mobile@1x.jpg";
-import bgImageMobile2x from "../../assets/images/start-background-mobile@2x.jpg";
-import bgImageMobile3x from "../../assets/images/start-background-mobile@3x.jpg";
-import bgImageTablet1x from "../../assets/images/start-background-tablet@1x.jpg";
-import bgImageTablet2x from "../../assets/images/start-background-tablet@2x.jpg";
-import bgImageTablet3x from "../../assets/images/start-background-tablet@3x.jpg";
-import bgImageDesktop1x from "../../assets/images/start-background-desktop@1x.jpg";
-import bgImageDesktop2x from "../../assets/images/start-background-desktop@2x.jpg";
-import bgImageDesktop3x from "../../assets/images/start-background-desktop@3x.jpg";
+import bgImageMobile1x from "../../assets/images/start-background-mobile@1x.webp";
+import bgImageMobile2x from "../../assets/images/start-background-mobile@2x.webp";
+import bgImageMobile3x from "../../assets/images/start-background-mobile@3x.webp";
+import bgImageTablet1x from "../../assets/images/start-background-tablet@1x.webp";
+import bgImageTablet2x from "../../assets/images/start-background-tablet@2x.webp";
+import bgImageTablet3x from "../../assets/images/start-background-tablet@3x.webp";
+import bgImageDesktop1x from "../../assets/images/start-background-desktop@1x.webp";
+import bgImageDesktop2x from "../../assets/images/start-background-desktop@2x.webp";
+import bgImageDesktop3x from "../../assets/images/start-background-desktop@3x.webp";
 
 import { responsiveBackgroundImage, breakpoint } from "../../utils/mixins";
 export const StartPageContainer = styled.main`

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { flexContainer, font } from "../../utils/mixins";
 import { motion } from "framer-motion";
-
+import leaves from "../../assets/images/leaves@1x.webp";
 export const StyledNav = styled(motion.nav)`
   position: fixed;
   top: 0;
@@ -12,6 +12,19 @@ export const StyledNav = styled(motion.nav)`
   justify-content: center;
   align-items: center;
   background: ${({ theme }) => theme.mobileMenu.bg};
+  &:after {
+    content: "";
+    position: fixed;
+    background-image: url(${leaves});
+    background-repeat: no-repeat;
+    width: 335px;
+    height: 517px;
+    bottom: -175px;
+    right: 9px;
+    rotate: 424deg;
+    filter: blur(4.5px);
+    z-index: -1;
+  }
   > button {
     display: flex;
     justify-content: center;

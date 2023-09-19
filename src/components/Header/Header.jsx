@@ -1,6 +1,6 @@
 import { StyledHeader } from "./Header.styled";
 import { Logo } from "../Logo/Logo";
-import avatar from "../../assets/images/avatar.jpg";
+import avatar from "../../assets/images/avatar.webp";
 import avatarPlaceholder from "../../assets/images/avatar-placeholder.png";
 import { UserAvatar } from "../UserAvatar/UserAvatar";
 import { MobileMenuButton } from "../MobileMenuButton/MobileMenuButton";
