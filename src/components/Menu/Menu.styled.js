@@ -6,20 +6,18 @@ export const StyledButton = styled.button`
   width: 3.2rem;
   height: 3.2rem;
   cursor: pointer;
-  svg:first-of-type {
-    width: 4.4rem;
-    height: 4.4rem;
-  }
-  svg:last-of-type {
-    stroke: #22252a;
+  > svg {
+    stroke: ${({ theme }) => theme.mobileMenu.strokeIdle};
     width: 3.2rem;
     height: 3.2rem;
+    transition: stroke 200ms;
   }
+
   &:focus,
   &:hover {
     outline: none;
     svg {
-      stroke: green;
+      stroke: ${({ theme }) => theme.mobileMenu.strokeHover};
     }
   }
 `;
