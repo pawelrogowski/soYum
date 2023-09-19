@@ -25,4 +25,9 @@ export const StyledHeader = styled.header`
   > a:first-of-type {
     margin-right: auto;
   }
+  > a:focus-within {
+    > svg {
+      outline: 2px solid black;
+    }
+  }
 `;

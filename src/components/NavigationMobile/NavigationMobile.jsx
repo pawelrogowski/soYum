@@ -3,7 +3,7 @@ import { StyledNav } from "./NavigationMobile.styled";
 import { Icon } from "../Icon/Icon";
 import { ThemeSwitch } from "../ThemeSwitch/ThemeSwitch";
 import { MobileMenuButton } from "../MobileMenuButton/MobileMenuButton";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { toggleMobileMenu } from "../../redux/slices/globalSlice";
 
 const navSlideMotion = {
@@ -15,20 +15,12 @@ const navSlideMotion = {
 
 export const NavigationMobile = () => {
   const dispatch = useDispatch();
-  const isMobileMenuOpen = useSelector(
-    (state) => state.global.isMobileMenuOpen
-  );
-
   const handleMenuToggle = () => {
-    if (isMobileMenuOpen) {
-      dispatch(toggleMobileMenu(false));
-    } else {
-      dispatch(toggleMobileMenu(true));
-    }
+    dispatch(toggleMobileMenu());
   };
 
   return (
-    <StyledNav key="menu" {...navSlideMotion}>
+    <StyledNav {...navSlideMotion}>
       <MobileMenuButton onClick={handleMenuToggle} variant="close" />
       <ul>
         <li>
