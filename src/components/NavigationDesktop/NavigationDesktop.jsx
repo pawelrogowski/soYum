@@ -22,7 +22,7 @@ export const NavigationDesktop = () => {
           <NavLink to="#">Shopping List</NavLink>
         </li>
         <li>
-          <button type="button">
+          <button type="button" aria-label="Search">
             <Icon icon="search" />
           </button>
         </li>

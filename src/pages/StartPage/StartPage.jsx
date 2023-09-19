@@ -17,12 +17,16 @@ export const StartPage = () => {
         <ul>
           <li>
             <Link to="/register">
-              <Button variant="normal">Registration</Button>
+              <Button variant="normal" aria-label="Registration">
+                Registration
+              </Button>
             </Link>
           </li>
           <li>
             <Link to="/signin">
-              <Button variant="outlineBig">Sign In</Button>
+              <Button variant="outlineBig" aria-label="Sign In">
+                Sign In
+              </Button>
             </Link>
           </li>
         </ul>
