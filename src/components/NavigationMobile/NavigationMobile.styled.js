@@ -84,6 +84,7 @@ export const StyledAside = styled(motion.aside)`
         })}
         ${breakpoint.tablet`
           ${font({
+            color: ({ theme }) => theme.navigation.colorIdle,
             size: "2.4rem",
             weight: "500",
             height: "2.4rem",
@@ -113,6 +114,7 @@ export const StyledAside = styled(motion.aside)`
           })}
           ${breakpoint.tablet`
             ${font({
+              color: ({ theme }) => theme.navigation.colorIdle,
               size: "2.4rem",
               weight: "500",
               height: "2.4rem",

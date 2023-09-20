@@ -1,13 +1,13 @@
 import { css } from "styled-components";
 
 export const font = ({
-  color,
-  size,
-  family,
-  height,
-  spacing,
-  weight,
-  style,
+  color = "inherit",
+  size = "inherit",
+  family = "inherit",
+  height = "inherit",
+  spacing = "normal",
+  weight = "normal",
+  style = "normal",
 }) => css`
   color: ${color};
   font-size: ${size};
@@ -18,25 +18,19 @@ export const font = ({
   font-style: ${style};
 `;
 
-export const flexContainer = ({ direction, justify, align, wrap, gap }) => css`
+export const flexContainer = ({
+  direction = "row",
+  justify = "flex-start",
+  align = "stretch",
+  wrap = "nowrap",
+  gap = "0",
+} = {}) => css`
   display: flex;
   flex-direction: ${direction};
   justify-content: ${justify};
   align-items: ${align};
   flex-wrap: ${wrap};
   gap: ${gap};
-`;
-
-export const flexItem = ({
-  flex = "1",
-  grow = "0",
-  shrink = "1",
-  basis = "auto",
-  order = "0",
-}) => css`
-  flex: ${flex} ${grow} ${shrink};
-  flex-basis: ${basis};
-  order: ${order};
 `;
 
 export const breakpoint = {
@@ -73,3 +67,4 @@ export const responsiveBackgroundImage = (image1x, image2x, image3x) => css`
     }
   `}
 `;
+("");
