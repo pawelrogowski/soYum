@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import { flexContainer, breakpoint } from "../../utils/mixins";
 
 export const StyledHeader = styled.header`
+  position: relative;
   max-width: ${({ theme }) => theme.breakpoints.maxContent};
   width: 100%;
   height: 4.6rem;
@@ -23,6 +24,7 @@ export const StyledHeader = styled.header`
   })}
 
   > a:first-of-type {
+    z-index: 1;
     margin-right: auto;
   }
   > a:focus-within {
