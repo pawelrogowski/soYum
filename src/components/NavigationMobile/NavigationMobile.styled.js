@@ -53,11 +53,13 @@ export const StyledAside = styled(motion.aside)`
         width: 2rem;
       }
     }
+
     > label {
       position: absolute;
       bottom: 1.8rem;
       left: 1.6rem;
     }
+
     > ul {
       ${flexContainer({
         direction: "column",
