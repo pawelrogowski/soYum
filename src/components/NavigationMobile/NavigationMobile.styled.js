@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import { flexContainer, font } from "../../utils/mixins";
+import { flexContainer, font, breakpoint } from "../../utils/mixins";
 import { motion } from "framer-motion";
 import leaves from "../../assets/images/leaves@1x.webp";
-import { breakpoint } from "../../utils/mixins";
 export const StyledAside = styled(motion.aside)`
   position: absolute;
   z-index: 1;
@@ -25,8 +24,8 @@ export const StyledAside = styled(motion.aside)`
       top: 2.3rem;
       left: 1.6rem;
       ${breakpoint.tablet`
-      top: 2.1rem
-    `}
+        top: 2.1rem
+      `}
     }
     &:after {
       content: "";
@@ -65,24 +64,65 @@ export const StyledAside = styled(motion.aside)`
         justify: "center",
         align: "center",
         wrap: "nowrap",
-        gap: "3rem",
+        gap: "3.6rem",
       })}
+      ${breakpoint.tablet`
+        gap: 4rem;
+      `}
 
       >li>a,
     >span {
         ${font({
           family: ({ theme }) => theme.navigation.font,
           color: ({ theme }) => theme.navigation.colorIdle,
-          size: "1.4rem",
+          size: "1.8rem",
           weight: "500",
           height: "1.8rem",
-          spacing: "-0.028rem",
+          spacing: "-0.036rem",
         })}
+        ${breakpoint.tablet`
+          ${font({
+            size: "2.4rem",
+            weight: "500",
+            height: "2.4rem",
+            spacing: "-0.048rem",
+          })}
+        `}
         transition: color 100ms;
         &:hover,
         &:focus {
           color: ${({ theme }) => theme.navigation.colorHover};
           transition: color 100ms;
+        }
+      }
+
+      > li > button {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        > span {
+          ${font({
+            family: ({ theme }) => theme.navigation.font,
+            color: ({ theme }) => theme.navigation.colorIdle,
+            size: "1.8rem",
+            weight: "500",
+            height: "1.8rem",
+            spacing: "-0.036rem",
+          })}
+          ${breakpoint.tablet`
+            ${font({
+              size: "2.4rem",
+              weight: "500",
+              height: "2.4rem",
+              spacing: "-0.048rem",
+            })}
+          `}
+          transition: color 100ms;
+          &:hover,
+          &:focus {
+            color: ${({ theme }) => theme.navigation.colorHover};
+            transition: color 100ms;
+          }
         }
       }
 
@@ -95,7 +135,11 @@ export const StyledAside = styled(motion.aside)`
 
       > li {
         &:focus,
-        &:hover {
+        &:hover,
+        &:focus-within {
+          span {
+            color: ${({ theme }) => theme.navigation.colorHover};
+          }
           svg {
             stroke: ${({ theme }) => theme.navigation.colorHover};
           }
@@ -103,8 +147,6 @@ export const StyledAside = styled(motion.aside)`
       }
 
       > li > button {
-        width: 2.4rem;
-        height: 2.4rem;
         background: none;
         border: none;
         outline: none;

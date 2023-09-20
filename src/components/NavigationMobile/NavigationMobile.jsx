@@ -41,6 +41,7 @@ export const NavigationMobile = () => {
           <li>
             <button type="button" aria-label="Search">
               <Icon icon="search" />
+              <span>Search</span>
             </button>
           </li>
         </ul>
