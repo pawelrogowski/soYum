@@ -29,22 +29,8 @@ export const App = () => {
           <Routes>
             <Route path="/" element={<StartPage />} />
             <Route element={<AuthLayout />}>
-              <Route
-                path="/signin"
-                element={
-                  <Suspense fallback={<LoaderDots />}>
-                    <SignInPage />
-                  </Suspense>
-                }
-              />
-              <Route
-                path="/register"
-                element={
-                  <Suspense fallback={<LoaderDots />}>
-                    <RegisterPage />
-                  </Suspense>
-                }
-              />
+              <Route path="/signin" element={<SignInPage />} />
+              <Route path="/register" element={<RegisterPage />} />
             </Route>
             <Route element={<MainLayout />}>
               <Route path="/home" element={null} />

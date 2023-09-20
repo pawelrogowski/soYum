@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMobileMenu } from "../../redux/slices/globalSlice";
 import { AnimatePresence } from "framer-motion";
+
 export const Header = () => {
   const dispatch = useDispatch();
   const isMobileMenuOpen = useSelector(
