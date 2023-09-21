@@ -6,6 +6,7 @@ export const StyledNav = styled.nav`
     display: flex;
     flex-direction: column;
     gap: 1.4rem;
+
     ${breakpoint.tablet`
       gap: 2rem;
     `}
