@@ -5,6 +5,7 @@ import SocialIcons from "../../SocialIcons/SocialIcons";
 import Container from "../../Container/Container";
 import { StyledFooter } from "./FooterTablet.styled";
 import { DescriptionFooter } from "../../DescriptionFooter/DescriptionFooter";
+import NewsletterForm from "../../Forms/NewsletterForm/NewsletterForm";
 
 export const FooterTablet = () => {
   return (
@@ -20,6 +21,7 @@ export const FooterTablet = () => {
           </div>
           <NavigationFooter />
         </div>
+        <NewsletterForm />
         <SocialIcons />
       </Container>
     </StyledFooter>
