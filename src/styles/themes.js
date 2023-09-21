@@ -1,6 +1,8 @@
 export const breakpoints = {
   mobile: "320px",
+  mobileMax: "767px",
   tablet: "768px",
+  tabletMax: "1023px",
   desktop: "1024px",
   maxContent: "1240px",
   minContent: "280px",
@@ -26,6 +28,7 @@ export const lightTheme = {
     main: "#FAFAFA",
     secondary: "#1E1F28",
     form: "#FAFAFA",
+    footer: "#22252A",
   },
   link: {
     authNav: "#fafafa",
@@ -96,8 +99,8 @@ export const lightTheme = {
   },
   icon: {
     social: {
-      fill: "#FAFAFA",
-      fillHover: "#1E1F28",
+      fill: brandColors.main,
+      fillHover: "#FAFAFA",
     },
   },
   form: {
@@ -114,6 +117,11 @@ export const lightTheme = {
     colorIdle: "#23262A",
     colorHover: brandColors.main,
     icon: "#23262A",
+    mobile: {
+      font: typography.family.primary,
+      colorIdle: "#FAFAFA",
+      colorHover: brandColors.main,
+    },
   },
   button: {
     font: typography.family.primary,
@@ -204,6 +212,7 @@ export const darkTheme = {
     main: "#1E1F28",
     secondary: "#8BAA36",
     form: "#FAFAFA",
+    footer: "#8BAA36",
   },
   link: {
     ...lightTheme.link,
@@ -227,7 +236,7 @@ export const darkTheme = {
   icon: {
     social: {
       fill: "#FAFAFA",
-      fillHover: "#1E1F28",
+      fillHover: brandColors.main,
     },
   },
   form: {
@@ -244,6 +253,10 @@ export const darkTheme = {
     colorIdle: "#FAFAFA",
     colorHover: brandColors.main,
     icon: "#fafafa",
+    mobile: {
+      colorIdle: "#FAFAFA",
+      colorHover: brandColors.main,
+    },
   },
   button: {
     font: typography.family.primary,
