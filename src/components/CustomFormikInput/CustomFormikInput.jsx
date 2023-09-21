@@ -10,6 +10,7 @@ export const CustomFormikInput = ({
   motionObject,
   errors,
   touched,
+  autocomplete,
 }) => {
   return (
     <>
@@ -19,7 +20,7 @@ export const CustomFormikInput = ({
         name={name}
         type={type}
         placeholder={placeholder}
-        autocomplete="off"
+        autocomplete={autocomplete}
       />
       <Icon icon={icon} />
       {touched[name] &&
@@ -44,4 +45,5 @@ CustomFormikInput.propTypes = {
   motionObject: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired,
   touched: PropTypes.object.isRequired,
+  autocomplete: PropTypes.string,
 };

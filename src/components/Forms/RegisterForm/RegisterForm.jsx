@@ -59,6 +59,7 @@ export const RegistrationForm = () => {
                   motionObject={warnIconMotion}
                   errors={errors}
                   touched={touched}
+                  autocomplete="off"
                 />
               </li>
               <li>
@@ -70,6 +71,7 @@ export const RegistrationForm = () => {
                   motionObject={warnIconMotion}
                   errors={errors}
                   touched={touched}
+                  autocomplete="off"
                 />
               </li>
               <li>
@@ -81,6 +83,7 @@ export const RegistrationForm = () => {
                   motionObject={warnIconMotion}
                   errors={errors}
                   touched={touched}
+                  autocomplete="off"
                 />
               </li>
             </ul>
