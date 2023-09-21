@@ -1,8 +1,8 @@
 import { Button } from "../../Button/Button";
 import { StyledForm } from "./RegisterForm.styled";
-import { Formik, Field, ErrorMessage } from "formik";
-import { Icon } from "../../Icon/Icon";
+import { Formik } from "formik";
 import { validationSchema } from "../../../schemas/registrationSchema";
+import { CustomFormikInput } from "../../CustomFormikInput/CustomFormikInput";
 
 export const RegistrationForm = () => {
   const initialFormValues = { name: "", email: "", password: "" };
@@ -51,74 +51,37 @@ export const RegistrationForm = () => {
             <h1>Registration</h1>
             <ul>
               <li>
-                <label htmlFor="name">name</label>
-                <Field
-                  id="name"
+                <CustomFormikInput
                   name="name"
                   type="text"
                   placeholder="Name"
-                  autoComplete="false"
+                  icon="user"
+                  motionObject={warnIconMotion}
+                  errors={errors}
+                  touched={touched}
                 />
-                <Icon icon="user" />
-                {touched.name &&
-                  ($nameInfo ? (
-                    <Icon
-                      {...warnIconMotion}
-                      icon={
-                        $nameInfo.includes("required") ? "error" : "warning"
-                      }
-                    />
-                  ) : (
-                    <Icon {...warnIconMotion} icon="no-error" />
-                  ))}
-                <ErrorMessage name="name" component="span" />
               </li>
               <li>
-                <label htmlFor="email">email</label>
-
-                <Field
-                  id="email"
+                <CustomFormikInput
                   name="email"
                   type="email"
                   placeholder="Email"
+                  icon="envelope"
+                  motionObject={warnIconMotion}
+                  errors={errors}
+                  touched={touched}
                 />
-                <Icon icon="envelope" />
-                {touched.email &&
-                  ($emailInfo ? (
-                    <Icon
-                      {...warnIconMotion}
-                      icon={
-                        $emailInfo.includes("required") ? "error" : "warning"
-                      }
-                    />
-                  ) : (
-                    <Icon {...warnIconMotion} icon="no-error" />
-                  ))}
-                <ErrorMessage name="email" component="span" />
               </li>
               <li>
-                <label htmlFor="password">password</label>
-
-                <Field
-                  id="password"
+                <CustomFormikInput
                   name="password"
                   type="password"
                   placeholder="Password"
-                  autoComplete="false"
+                  icon="lock"
+                  motionObject={warnIconMotion}
+                  errors={errors}
+                  touched={touched}
                 />
-                <Icon icon="lock" />
-                {touched.password &&
-                  ($passwordInfo ? (
-                    <Icon
-                      {...warnIconMotion}
-                      icon={
-                        $passwordInfo.includes("required") ? "error" : "warning"
-                      }
-                    />
-                  ) : (
-                    <Icon {...warnIconMotion} icon="no-error" />
-                  ))}
-                <ErrorMessage name="password" component="span" />
               </li>
             </ul>
             <Button variant="rectBig" type="submit" aria-label="Submit form">

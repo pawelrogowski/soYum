@@ -1,8 +1,8 @@
 import { Button } from "../../Button/Button";
 import { StyledForm } from "./SignInForm.styled";
-import { Formik, Field, ErrorMessage } from "formik";
-import { Icon } from "../../Icon/Icon";
+import { Formik } from "formik";
 import { validationSchema } from "../../../schemas/singInSchema";
+import { CustomFormikInput } from "../../CustomFormikInput/CustomFormikInput";
 
 export const SignInForm = () => {
   const initialFormValues = { name: "", email: "", password: "" };
@@ -46,52 +46,27 @@ export const SignInForm = () => {
             <h1>Sign In</h1>
             <ul>
               <li>
-                <label htmlFor="email">email</label>
-
-                <Field
-                  id="email"
+                <CustomFormikInput
                   name="email"
                   type="email"
                   placeholder="Email"
-                  autoComplete="false"
+                  icon="envelope"
+                  motionObject={warnIconMotion}
+                  errors={errors}
+                  touched={touched}
+                  autocomplete="off"
                 />
-                <Icon icon="envelope" />
-                {touched.email &&
-                  ($emailInfo ? (
-                    <Icon
-                      {...warnIconMotion}
-                      icon={
-                        $emailInfo.includes("required") ? "error" : "warning"
-                      }
-                    />
-                  ) : (
-                    <Icon {...warnIconMotion} icon="no-error" />
-                  ))}
-                <ErrorMessage name="email" component="span" />
               </li>
               <li>
-                <label htmlFor="password">password</label>
-
-                <Field
-                  id="password"
+                <CustomFormikInput
                   name="password"
                   type="password"
                   placeholder="Password"
-                  autoComplete="false"
+                  icon="lock"
+                  motionObject={warnIconMotion}
+                  errors={errors}
+                  touched={touched}
                 />
-                <Icon icon="lock" />
-                {touched.password &&
-                  ($passwordInfo ? (
-                    <Icon
-                      {...warnIconMotion}
-                      icon={
-                        $passwordInfo.includes("required") ? "error" : "warning"
-                      }
-                    />
-                  ) : (
-                    <Icon {...warnIconMotion} icon="no-error" />
-                  ))}
-                <ErrorMessage name="password" component="span" />
               </li>
             </ul>
             <Button variant="rectBig" type="submit" aria-label="Submit form">
