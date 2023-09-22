@@ -1,11 +1,11 @@
-import { styled } from "styled-components";
+import { styled, css } from "styled-components";
 import { font } from "../../../utils/mixins";
 export const StyledForm = styled.form`
   max-width: 1000px;
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: 37.5rem;
+  padding: 7.2rem 0 3.75rem 0;
 
   div {
     position: relative;
@@ -71,4 +71,55 @@ export const StyledForm = styled.form`
     width: 100%;
     max-width: 18.7rem;
   }
+
+  ${(props) =>
+    props.$emailTouched
+      ? props.$emailInfo === "Email is required"
+        ? css`
+            input[name="email"] {
+              -webkit-text-fill-color: ${props.theme.authForm.textInput.error};
+              color: ${props.theme.authForm.textInput.error};
+              border-color: ${props.theme.authForm.textInput.error};
+            }
+
+            input[name="email"] ~ svg {
+              stroke: ${props.theme.authForm.textInput.error} !important;
+            }
+
+            input[name="email"] ~ span {
+              color: ${props.theme.authForm.textInput.error} !important;
+            }
+          `
+        : props.$emailInfo === "Invalid email"
+        ? css`
+            input[name="email"] {
+              -webkit-text-fill-color: ${props.theme.authForm.textInput
+                .warning};
+              color: ${props.theme.authForm.textInput.warning};
+              border-color: ${props.theme.authForm.textInput.warning};
+            }
+
+            input[name="email"] ~ svg {
+              stroke: ${props.theme.authForm.textInput.warning} !important;
+            }
+
+            input[name="email"] ~ span {
+              color: ${props.theme.authForm.textInput.warning} !important;
+            }
+          `
+        : props.$emailInfo === undefined
+        ? css`
+            input[name="email"]:not(:placeholder-shown) {
+              color: ${props.theme.authForm.textInput.correct};
+              border-color: ${props.theme.authForm.textInput.correct};
+              -webkit-text-fill-color: ${props.theme.authForm.textInput
+                .correct};
+            }
+
+            input[name="email"]:not(:placeholder-shown) ~ svg {
+              stroke: ${props.theme.authForm.textInput.correct} !important;
+            }
+          `
+        : null
+      : null}
 `;
