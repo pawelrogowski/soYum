@@ -3,6 +3,11 @@ import { flexContainer, font, breakpoint } from "../../utils/mixins";
 import { motion } from "framer-motion";
 import leaves from "../../assets/images/leaves@1x.webp";
 export const StyledAside = styled(motion.aside)`
+  --font-family: ${({ theme }) => theme.navigation.font};
+  --color-idle: ${({ theme }) => theme.navigation.colorIdle};
+  --color-hover: ${({ theme }) => theme.navigation.colorHover};
+  --bg: ${({ theme }) => theme.mobileMenu.bg};
+
   position: absolute;
   z-index: 1;
   top: 0;
@@ -10,7 +15,7 @@ export const StyledAside = styled(motion.aside)`
   width: 100vw;
   height: 100vh;
 
-  background: ${({ theme }) => theme.mobileMenu.bg};
+  background: var(--bg);
   > div {
     width: 100%;
     height: 100%;
@@ -75,8 +80,8 @@ export const StyledAside = styled(motion.aside)`
       >li>a,
     >span {
         ${font({
-          family: ({ theme }) => theme.navigation.font,
-          color: ({ theme }) => theme.navigation.colorIdle,
+          family: "var(--font-family)",
+          color: "var(--color-idle)",
           size: "1.8rem",
           weight: "500",
           height: "1.8rem",
@@ -84,7 +89,7 @@ export const StyledAside = styled(motion.aside)`
         })}
         ${breakpoint.tablet`
           ${font({
-            color: ({ theme }) => theme.navigation.colorIdle,
+            color: "var(--color-idle)",
             size: "2.4rem",
             weight: "500",
             height: "2.4rem",
@@ -94,7 +99,7 @@ export const StyledAside = styled(motion.aside)`
         transition: color 100ms;
         &:hover,
         &:focus {
-          color: ${({ theme }) => theme.navigation.colorHover};
+          color: var(--color-hover);
           transition: color 100ms;
         }
       }
@@ -105,8 +110,8 @@ export const StyledAside = styled(motion.aside)`
         gap: 0.8rem;
         > span {
           ${font({
-            family: ({ theme }) => theme.navigation.font,
-            color: ({ theme }) => theme.navigation.colorIdle,
+            family: "var(--font-family)",
+            color: "var(--color-idle)",
             size: "1.8rem",
             weight: "500",
             height: "1.8rem",
@@ -114,7 +119,7 @@ export const StyledAside = styled(motion.aside)`
           })}
           ${breakpoint.tablet`
             ${font({
-              color: ({ theme }) => theme.navigation.colorIdle,
+              color: "var(--color-idle)",
               size: "2.4rem",
               weight: "500",
               height: "2.4rem",
@@ -124,14 +129,14 @@ export const StyledAside = styled(motion.aside)`
           transition: color 100ms;
           &:hover,
           &:focus {
-            color: ${({ theme }) => theme.navigation.colorHover};
+            color: var(--color-hover);
             transition: color 100ms;
           }
         }
       }
 
       > li > button > svg {
-        stroke: ${({ theme }) => theme.navigation.colorIdle};
+        stroke: var(--color-idle);
         width: 2.4rem;
         height: 2.4rem;
         transition: stroke 100ms;
@@ -142,10 +147,10 @@ export const StyledAside = styled(motion.aside)`
         &:hover,
         &:focus-within {
           span {
-            color: ${({ theme }) => theme.navigation.colorHover};
+            color: var(--color-hover);
           }
           svg {
-            stroke: ${({ theme }) => theme.navigation.colorHover};
+            stroke: var(--color-hover);
           }
         }
       }

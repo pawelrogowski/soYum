@@ -2,7 +2,11 @@ import styled from "styled-components";
 import { flexContainer, font } from "../../utils/mixins";
 
 export const StyledNav = styled.nav`
+  --font-family: ${({ theme }) => theme.navigation.font};
+  --color-idle: ${({ theme }) => theme.navigation.colorIdle};
+  --color-hover: ${({ theme }) => theme.navigation.colorHover};
   margin-right: auto;
+
   > ul {
     ${flexContainer({
       direction: "row",
@@ -12,26 +16,27 @@ export const StyledNav = styled.nav`
       gap: "3rem",
     })}
 
-    >li>a,
-    >span {
+    > li > a,
+    > span {
       ${font({
-        family: ({ theme }) => theme.navigation.font,
-        color: ({ theme }) => theme.navigation.colorIdle,
+        family: "var(--font-family)",
+        color: "var(--color-idle)",
         size: "1.4rem",
         weight: "500",
         height: "1.8rem",
         spacing: "-0.028rem",
       })}
       transition: color 100ms;
+
       &:hover,
       &:focus {
-        color: ${({ theme }) => theme.navigation.colorHover};
+        color: var(--color-hover);
         transition: color 100ms;
       }
     }
 
     > li > button > svg {
-      stroke: ${({ theme }) => theme.navigation.colorIdle};
+      stroke: var(--color-idle);
       width: 2.4rem;
       height: 2.4rem;
       transition: stroke 100ms;
@@ -41,7 +46,8 @@ export const StyledNav = styled.nav`
       &:focus,
       &:hover {
         svg {
-          stroke: ${({ theme }) => theme.navigation.colorHover};
+          stroke: var(--color-hover);
+          transition: color 100ms;
         }
       }
     }

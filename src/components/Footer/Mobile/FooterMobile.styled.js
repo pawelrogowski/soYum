@@ -31,7 +31,7 @@ export const StyledFooter = styled.footer`
       &:focus,
       &:focus-within {
         span {
-          color: #86aa43;
+          color: ${({ theme }) => theme.footer.logoTextActive};
         }
       }
       ${breakpoint.tablet`

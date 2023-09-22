@@ -16,15 +16,19 @@ export const StyledNav = styled.nav`
 
     >li {
       text-align: center;
-      color: #fafafa;
+      color: ${({ theme }) => theme.navigation.footer.colorIdle};
       font-size: 1.4rem;
       font-weight: 500;
       line-height: 128.571%;
       letter-spacing: -0.028rem;
       transition: color 100ms;
+
       &:hover,
       &:focus {
-        color: #86aa43;
+        color: ${({ theme }) => theme.navigation.footer.colorHover};
+      }
+      > a {
+        text-align: center;
       }
     }
   }

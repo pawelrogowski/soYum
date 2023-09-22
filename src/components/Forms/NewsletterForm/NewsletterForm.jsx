@@ -37,14 +37,13 @@ export const NewsletterForm = () => {
           $emailInfo,
           $emailTouched,
         };
-
         return (
           <StyledForm {...styledFormProps}>
             <div>
               <CustomFormikInput
                 name="email"
                 type="email"
-                placeholder="Email"
+                placeholder="Enter your email address"
                 icon="envelope"
                 motionObject={warnIconMotion}
                 errors={errors}

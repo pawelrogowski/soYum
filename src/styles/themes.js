@@ -76,6 +76,25 @@ export const lightTheme = {
       warning: "#F6C23E",
       correct: "#3CBC81",
     },
+  },
+  newsletterForm: {
+    font: typography.family.primary,
+    header: "#FAFAFA",
+    bg: "#2A2C36",
+    textInput: {
+      font: typography.family.primary,
+      bgIdle: "transparent",
+      bgActive: "transparent",
+      fontIdle: "#ffffffcc",
+      fontActive: "#fff",
+      borderIdle: "#ffffff33",
+      borderActive: "#fff",
+      iconIdle: "#ffffffcc",
+      iconActive: "#fff",
+      error: "#E74A3B",
+      warning: "#F6C23E",
+      correct: "#3CBC81",
+    },
     button: {
       bgIdle: brandColors.main,
       bgHover: brandColors.main,
@@ -119,6 +138,10 @@ export const lightTheme = {
     icon: "#23262A",
     mobile: {
       font: typography.family.primary,
+      colorIdle: "#FAFAFA",
+      colorHover: brandColors.main,
+    },
+    footer: {
       colorIdle: "#FAFAFA",
       colorHover: brandColors.main,
     },
@@ -204,6 +227,11 @@ export const lightTheme = {
     strokeHover: brandColors.main,
     strokeActive: brandColors.main,
   },
+  footer: {
+    logoTextIdle: "#FAFAFA",
+    logoTextActive: "#86aa43",
+    descriptionText: "#FAFAFA",
+  },
 };
 
 export const darkTheme = {
@@ -223,6 +251,22 @@ export const darkTheme = {
   authForm: {
     ...lightTheme.authForm,
   },
+  newsletterForm: {
+    textInput: {
+      font: typography.family.primary,
+      bgIdle: "transparent",
+      bgActive: "23262A",
+      fontIdle: "#ffffffcc",
+      fontActive: "#23262A",
+      borderIdle: "#ffffff33",
+      borderActive: "#23262A",
+      iconIdle: "#ffffffcc",
+      iconActive: "#fff",
+      error: "#E74A3B",
+      warning: "#F6C23E",
+      correct: "#3CBC81",
+    },
+  },
   logo: {
     header: {
       bg: brandColors.main,
@@ -236,7 +280,7 @@ export const darkTheme = {
   icon: {
     social: {
       fill: "#FAFAFA",
-      fillHover: brandColors.main,
+      fillHover: "#22252a",
     },
   },
   form: {
@@ -256,6 +300,10 @@ export const darkTheme = {
     mobile: {
       colorIdle: "#FAFAFA",
       colorHover: brandColors.main,
+    },
+    footer: {
+      colorIdle: "#FAFAFA",
+      colorHover: "#23262A",
     },
   },
   button: {
@@ -337,5 +385,10 @@ export const darkTheme = {
     strokeIdle: "#FAFAFA",
     strokeHover: brandColors.main,
     strokeActive: brandColors.main,
+  },
+  footer: {
+    logoTextIdle: "#FAFAFA",
+    logoTextActive: "#1E1F28",
+    descriptionText: "#FAFAFA",
   },
 };

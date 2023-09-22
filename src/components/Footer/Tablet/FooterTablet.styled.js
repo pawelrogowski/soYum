@@ -40,7 +40,7 @@ export const StyledFooter = styled.footer`
           &:focus,
           &:focus-within {
             span {
-              color: #86aa43;
+              color: ${({ theme }) => theme.footer.logoTextActive};
             }
           }
           ${breakpoint.tablet`
@@ -48,7 +48,7 @@ export const StyledFooter = styled.footer`
         `}
 
           > span {
-            color: #fafafa;
+            color: ${({ theme }) => theme.footer.logoTextIdle};
             font-size: 1.8rem;
             font-weight: 700;
             line-height: 1.8rem;
@@ -57,13 +57,13 @@ export const StyledFooter = styled.footer`
             &:hover,
             &:focus,
             &:focus-within {
-              color: #86aa43;
+              color: ${({ theme }) => theme.footer.logoTextActive};
             }
             ${breakpoint.tablet`
-          font-size: 2.8rem;
-          line-height: 100%
-          letter-spacing: 0.042rem;
-        `}
+              font-size: 2.8rem;
+              line-height: 100%
+              letter-spacing: 0.042rem;
+            `}
           }
         }
       }
