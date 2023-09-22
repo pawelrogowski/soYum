@@ -76,6 +76,16 @@ export const lightTheme = {
       warning: "#F6C23E",
       correct: "#3CBC81",
     },
+    button: {
+      bgIdle: brandColors.main,
+      bgHover: brandColors.main,
+      bgActive: "#748d2e",
+      borderIdle: brandColors.main,
+      borderHover: brandColors.main,
+      borderActive: "#748d2e",
+      fontColorIdle: "#FAFAFA",
+      fontColorHover: "#22252A",
+    },
   },
   newsletterForm: {
     font: typography.family.primary,
@@ -94,16 +104,6 @@ export const lightTheme = {
       error: "#E74A3B",
       warning: "#F6C23E",
       correct: "#3CBC81",
-    },
-    button: {
-      bgIdle: brandColors.main,
-      bgHover: brandColors.main,
-      bgActive: "#748d2e",
-      borderIdle: brandColors.main,
-      borderHover: brandColors.main,
-      borderActive: "#748d2e",
-      fontColorIdle: "#FAFAFA",
-      fontColorHover: "#22252A",
     },
   },
   logo: {

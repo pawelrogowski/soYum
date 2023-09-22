@@ -1,14 +1,10 @@
-import { font } from "../../utils/mixins";
 import styled, { css } from "styled-components";
 
 export const StyledButton = styled.button`
-  ${font({
-    family: ({ theme }) => theme.button.font,
-    color: ({ theme }) => theme.button.base.fontColorIdle,
-    size: "1.6rem",
-    weight: "400",
-  })}
-
+  color: ${({ theme }) => theme.button.base.fontColorIdle};
+  font-size: 1.6rem;
+  font-family: ${({ theme }) => theme.button.font};
+  font-weight: 400;
   background-color: ${({ theme }) => theme.button.base.bgIdle};
   border-radius: 2.4rem 4.4rem;
   width: 16.1rem;

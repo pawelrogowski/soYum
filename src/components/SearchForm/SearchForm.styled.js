@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { font } from "../../utils/mixins";
+
 export const StyledForm = styled.form`
   position: relative;
 
@@ -17,12 +17,13 @@ export const StyledForm = styled.form`
     outline: none;
     transition: border-color 100ms;
 
-    ${font({
-      family: ({ theme }) => theme.form.font,
-      color: ({ theme }) => theme.form.search.font,
-      size: "1.6rem",
-      weight: "400",
-    })}
+    color: ${({ theme }) => theme.form.search.font};
+    font-size: 1.6rem;
+    font-family: ${({ theme }) => theme.form.font};
+    line-height: inherit;
+    letter-spacing: normal;
+    font-weight: 400;
+    font-style: normal;
 
     &:not(:placeholder-shown) ~ Button {
       border: 0.1rem solid ${(props) => props.theme.button.base.bgHover};

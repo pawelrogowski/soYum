@@ -28,7 +28,7 @@ export const StyledDiv = styled.div`
     margin-right: 5rem;
   }
 
-  > picture > img {
+  > picture img {
     width: 3.4rem;
     height: 3.4rem;
     border-radius: 50%;

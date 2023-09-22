@@ -67,4 +67,3 @@ export const responsiveBackgroundImage = (image1x, image2x, image3x) => css`
     }
   `}
 `;
-("");

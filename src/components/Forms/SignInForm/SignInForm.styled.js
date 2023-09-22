@@ -1,6 +1,5 @@
 import { styled, css } from "styled-components";
 import { Form } from "formik";
-import { flexContainer, font, breakpoint } from "../../../utils/mixins";
 import { StyledButton } from "../../Button/Button.styled";
 
 export const StyledForm = styled(Form)`
@@ -11,80 +10,68 @@ export const StyledForm = styled(Form)`
   border-radius: 3rem;
   background-color: ${({ theme }) => theme.authForm.bg};
   transition: color 100ms, background-color 100ms, border 100ms, fill 100ms;
-  ${breakpoint.tablet(css`
+
+  @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
     padding: 4.4rem 5rem;
     min-width: 50rem;
-  `)};
+  }
 
   h1 {
     display: inline-block;
-    ${font({
-      family: ({ theme }) => theme.authForm.font,
-      color: ({ theme }) => theme.authForm.header,
-      size: "2.4rem",
-      weight: "600",
-      height: "2.8rem",
-      spacing: "-0.048rem",
-    })}
+    color: ${({ theme }) => theme.authForm.header};
+    font-size: 2.4rem;
+    font-family: ${({ theme }) => theme.authForm.font};
+    line-height: 2.8rem;
+    letter-spacing: -0.048rem;
+    font-weight: 600;
 
-    ${breakpoint.tablet(css`
-      ${font({
-        size: "2.8rem",
-        height: "3rem",
-        spacing: "-0.056rem",
-      })}
-    `)};
+    @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+      font-size: 2.8rem;
+      line-height: 3rem;
+      letter-spacing: -0.056rem;
+    }
   }
 
   ul {
     margin-top: 4rem;
     margin-bottom: 2.8rem;
 
-    ${breakpoint.tablet(css`
+    @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
       margin-top: 5rem;
       margin-bottom: 5rem;
-    `)}
+    }
+  }
 
-    li {
-      position: relative;
-      margin-bottom: 1.2rem;
+  li {
+    position: relative;
+    margin-bottom: 1.2rem;
 
-      ${breakpoint.tablet(css`
-        margin-bottom: 2.4rem;
-      `)}
+    @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+      margin-bottom: 2.4rem;
+    }
 
-      svg {
-        position: absolute;
-        width: 1.8rem;
-        height: 1.8rem;
-        top: 1.4rem;
-        transition: stroke 100ms, fill 100ms;
+    svg {
+      position: absolute;
+      width: 1.8rem;
+      height: 1.8rem;
+      top: 1.4rem;
+      transition: stroke 100ms, fill 100ms;
 
-        ${breakpoint.tablet(css`
-          width: 2.4rem;
-          height: 2.4rem;
-          top: 1.9rem;
-        `)}
-
-        &:nth-of-type(1) {
-          stroke: ${({ theme }) => theme.authForm.textInput.iconIdle};
-          fill: none;
-          left: 1.8rem;
-        }
-        &:nth-of-type(2) {
-          fill: ${({ theme }) => theme.authForm.textInput.error};
-          right: 1.9rem;
-        }
+      @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+        width: 2.4rem;
+        height: 2.4rem;
+        top: 1.9rem;
       }
 
-      &:focus-within,
-      &:hover,
-      &:focus {
-        svg {
-          &:nth-of-type(1) {
-            stroke: ${({ theme }) => theme.authForm.textInput.iconActive};
-          }
-        }
+      &:nth-of-type(1) {
+        stroke: ${({ theme }) => theme.authForm.textInput.iconIdle};
+        fill: none;
+        left: 1.8rem;
+      }
+
+      &:nth-of-type(2) {
+        fill: ${({ theme }) => theme.authForm.textInput.error};
+        right: 1.9rem;
       }
     }
 
@@ -93,20 +80,18 @@ export const StyledForm = styled(Form)`
       position: absolute;
       left: 0.1rem;
       bottom: -1.5rem;
+      color: ${({ theme }) => theme.authForm.header};
+      font-size: 1rem;
+      font-family: ${({ theme }) => theme.authForm.font};
+      line-height: 1rem;
+      font-weight: 400;
+      font-style: normal;
 
-      ${font({
-        family: ({ theme }) => theme.authForm.font,
-        color: ({ theme }) => theme.authForm.header,
-        size: "1rem",
-        weight: "400",
-        height: "1rem",
-      })}
-
-      ${breakpoint.tablet(css`
+      @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
         bottom: -1.9rem;
         font-size: 1.4rem;
         line-height: 1.4rem;
-      `)}
+      }
     }
 
     label {
@@ -115,32 +100,20 @@ export const StyledForm = styled(Form)`
 
     input {
       position: relative;
-      ${font({
-        family: ({ theme }) => theme.authForm.textInput.font,
-        color: ({ theme }) => theme.authForm.textInput.font,
-        size: "1.4rem",
-        weight: "400",
-      })}
-
-      ${flexContainer({
-        direction: "row",
-        justify: "flex-start",
-        align: "center",
-        wrap: "nowrap",
-        gap: 0,
-      })}
-
-      ${breakpoint.tablet(css`
-        ${font({
-          family: ({ theme }) => theme.authForm.textInput.font,
-          color: ({ theme }) => theme.authForm.textInput.font,
-          size: "1.8rem",
-          weight: "400",
-        })}
-      `)}
-
-
-		  height: 4.5rem;
+      color: ${({ theme }) => theme.authForm.textInput.font};
+      font-size: 1.4rem;
+      font-family: ${({ theme }) => theme.authForm.textInput.font};
+      line-height: inherit;
+      letter-spacing: normal;
+      font-weight: 400;
+      font-style: normal;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: stretch;
+      flex-wrap: nowrap;
+      gap: 0;
+      height: 4.5rem;
       max-height: 6rem;
       width: 100%;
       padding: 1.6rem 5rem;
@@ -155,14 +128,13 @@ export const StyledForm = styled(Form)`
       &:hover {
         border: 0.1rem solid
           ${({ theme }) => theme.authForm.textInput.borderActive};
-        ${({ theme }) => theme.authForm.textInput.fontActive};
+        color: ${({ theme }) => theme.authForm.textInput.fontActive};
       }
 
-      ${breakpoint.tablet(
-        css`
-          height: 6rem;
-        `
-      )}
+      @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+        font-size: 1.8rem;
+        height: 6rem;
+      }
     }
   }
 
@@ -180,16 +152,15 @@ export const StyledForm = styled(Form)`
       color: ${({ theme }) => theme.authForm.button.fontColorHover};
       border: 0.2rem solid ${({ theme }) => theme.authForm.button.borderHover};
     }
+
     &:active {
       background-color: ${({ theme }) => theme.authForm.button.bgActive};
       border: 0.2rem solid ${({ theme }) => theme.authForm.button.borderActive};
     }
 
-    ${breakpoint.tablet(
-      css`
-        height: 6rem;
-      `
-    )}
+    @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+      height: 6rem;
+    }
   }
 
   ${(props) =>
@@ -199,11 +170,10 @@ export const StyledForm = styled(Form)`
             li {
               input[name="password"] {
                 margin-bottom: 2rem;
-                ${breakpoint.tablet(
-                  css`
-                    margin-bottom: 2.8rem;
-                  `
-                )}
+                @media (min-width: ${(props) =>
+                    props.theme.breakpoints.tablet}) {
+                  margin-bottom: 2.8rem;
+                }
                 -webkit-text-fill-color: ${props.theme.authForm.textInput
                   .error};
                 color: ${props.theme.authForm.textInput.error};
@@ -224,11 +194,10 @@ export const StyledForm = styled(Form)`
             li {
               input[name="password"] {
                 margin-bottom: 2rem;
-                ${breakpoint.tablet(
-                  css`
-                    margin-bottom: 2.8rem;
-                  `
-                )}
+                @media (min-width: ${(props) =>
+                    props.theme.breakpoints.tablet}) {
+                  margin-bottom: 2.8rem;
+                }
                 -webkit-text-fill-color: ${props.theme.authForm.textInput
                   .warning};
                 color: ${props.theme.authForm.textInput.warning};
@@ -268,11 +237,10 @@ export const StyledForm = styled(Form)`
             li {
               input[name="name"] {
                 margin-bottom: 2rem;
-                ${breakpoint.tablet(
-                  css`
-                    margin-bottom: 2.8rem;
-                  `
-                )}
+                @media (min-width: ${(props) =>
+                    props.theme.breakpoints.tablet}) {
+                  margin-bottom: 2.8rem;
+                }
                 -webkit-text-fill-color: ${props.theme.authForm.textInput
                   .error};
                 color: ${props.theme.authForm.textInput.error};
@@ -312,11 +280,10 @@ export const StyledForm = styled(Form)`
             li {
               input[name="email"] {
                 margin-bottom: 2rem;
-                ${breakpoint.tablet(
-                  css`
-                    margin-bottom: 2.8rem;
-                  `
-                )}
+                @media (min-width: ${(props) =>
+                    props.theme.breakpoints.tablet}) {
+                  margin-bottom: 2.8rem;
+                }
                 -webkit-text-fill-color: ${props.theme.authForm.textInput
                   .error};
                 color: ${props.theme.authForm.textInput.error};
@@ -337,11 +304,10 @@ export const StyledForm = styled(Form)`
             li {
               input[name="email"] {
                 margin-bottom: 2rem;
-                ${breakpoint.tablet(
-                  css`
-                    margin-bottom: 2.8rem;
-                  `
-                )}
+                @media (min-width: ${(props) =>
+                    props.theme.breakpoints.tablet}) {
+                  margin-bottom: 2.8rem;
+                }
                 -webkit-text-fill-color: ${props.theme.authForm.textInput
                   .warning};
                 color: ${props.theme.authForm.textInput.warning};

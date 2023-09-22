@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { flexContainer, font } from "../../utils/mixins";
 
 export const StyledNav = styled.nav`
   --font-family: ${({ theme }) => theme.navigation.font};
@@ -8,24 +7,22 @@ export const StyledNav = styled.nav`
   margin-right: auto;
 
   > ul {
-    ${flexContainer({
-      direction: "row",
-      justify: "flex-start",
-      align: "center",
-      wrap: "nowrap",
-      gap: "3rem",
-    })}
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 3rem;
 
     > li > a,
     > span {
-      ${font({
-        family: "var(--font-family)",
-        color: "var(--color-idle)",
-        size: "1.4rem",
-        weight: "500",
-        height: "1.8rem",
-        spacing: "-0.028rem",
-      })}
+      color: var(--color-idle);
+      font-size: 1.4rem;
+      font-family: var(--font-family);
+      line-height: 1.8rem;
+      letter-spacing: -0.028rem;
+      font-weight: 500;
+      font-style: normal;
       transition: color 100ms;
 
       &:hover,

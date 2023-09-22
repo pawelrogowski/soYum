@@ -1,5 +1,4 @@
 import { styled } from "styled-components";
-import { breakpoint } from "../../utils/mixins";
 
 export const StyledNav = styled.nav`
   > ul {
@@ -7,14 +6,14 @@ export const StyledNav = styled.nav`
     flex-direction: column;
     gap: 1.4rem;
 
-    ${breakpoint.tablet`
+    @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
       gap: 2rem;
-    `}
-    ${breakpoint.desktop`
+    }
+    @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
       gap: 2.4rem;
-    `}
+    }
 
-    >li {
+    > li {
       text-align: center;
       color: ${({ theme }) => theme.navigation.footer.colorIdle};
       font-size: 1.4rem;

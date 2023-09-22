@@ -1,5 +1,4 @@
 import { styled } from "styled-components";
-import { breakpoint } from "../../../utils/mixins";
 
 export const StyledFooter = styled.footer`
   background-color: ${({ theme }) => theme.bg.footer};
@@ -11,18 +10,11 @@ export const StyledFooter = styled.footer`
     width: 100%;
     padding-top: 2.8rem;
     padding-bottom: 1.75rem;
-    ${breakpoint.tablet`
-        padding-top: 5rem;
-        padding-bottom: 2.35rem;
-    `}
-    ${breakpoint.desktop`
-        padding-top: 6.4rem;
-        padding-bottom: 4.95rem;
-    `}
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 3.2rem;
+
     a:first-of-type {
       display: flex;
       align-items: center;
@@ -34,9 +26,6 @@ export const StyledFooter = styled.footer`
           color: ${({ theme }) => theme.footer.logoTextActive};
         }
       }
-      ${breakpoint.tablet`
-        gap:1.2rem;
-      `}
 
       > span {
         color: #fafafa;
@@ -50,12 +39,31 @@ export const StyledFooter = styled.footer`
         &:focus-within {
           color: #86aa43;
         }
-        ${breakpoint.tablet`
-          font-size: 2.8rem;
-          line-height: 100%
-          letter-spacing: 0.042rem;
-        `}
       }
+    }
+  }
+
+  @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+    > div {
+      padding-top: 5rem;
+      padding-bottom: 2.35rem;
+
+      a:first-of-type {
+        gap: 1.2rem;
+
+        > span {
+          font-size: 2.8rem;
+          line-height: 100%;
+          letter-spacing: 0.042rem;
+        }
+      }
+    }
+  }
+
+  @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
+    > div {
+      padding-top: 6.4rem;
+      padding-bottom: 4.95rem;
     }
   }
 `;

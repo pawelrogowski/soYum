@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { flexContainer, font, breakpoint } from "../../utils/mixins";
 import { motion } from "framer-motion";
 import leaves from "../../assets/images/leaves@1x.webp";
+
 export const StyledAside = styled(motion.aside)`
   --font-family: ${({ theme }) => theme.navigation.font};
   --color-idle: ${({ theme }) => theme.navigation.colorIdle};
@@ -28,9 +28,10 @@ export const StyledAside = styled(motion.aside)`
       position: absolute;
       top: 2.3rem;
       left: 1.6rem;
-      ${breakpoint.tablet`
-        top: 2.1rem
-      `}
+
+      @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+        top: 2.1rem;
+      }
     }
     &:after {
       content: "";
@@ -66,36 +67,34 @@ export const StyledAside = styled(motion.aside)`
     }
 
     > ul {
-      ${flexContainer({
-        direction: "column",
-        justify: "center",
-        align: "center",
-        wrap: "nowrap",
-        gap: "3.6rem",
-      })}
-      ${breakpoint.tablet`
-        gap: 4rem;
-      `}
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 3.6rem;
 
-      >li>a,
-    >span {
-        ${font({
-          family: "var(--font-family)",
-          color: "var(--color-idle)",
-          size: "1.8rem",
-          weight: "500",
-          height: "1.8rem",
-          spacing: "-0.036rem",
-        })}
-        ${breakpoint.tablet`
-          ${font({
-            color: "var(--color-idle)",
-            size: "2.4rem",
-            weight: "500",
-            height: "2.4rem",
-            spacing: "-0.048rem",
-          })}
-        `}
+      @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+        gap: 4rem;
+      }
+
+      > li > a,
+      > li > span {
+        color: var(--color-idle);
+        font-size: 1.8rem;
+        font-family: var(--font-family);
+        line-height: 1.8rem;
+        letter-spacing: -0.036rem;
+        font-weight: 500;
+        font-style: normal;
+
+        @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+          color: var(--color-idle);
+          font-size: 2.4rem;
+          font-weight: 500;
+          line-height: 2.4rem;
+          letter-spacing: -0.048rem;
+        }
         transition: color 100ms;
         &:hover,
         &:focus {
@@ -109,23 +108,21 @@ export const StyledAside = styled(motion.aside)`
         align-items: center;
         gap: 0.8rem;
         > span {
-          ${font({
-            family: "var(--font-family)",
-            color: "var(--color-idle)",
-            size: "1.8rem",
-            weight: "500",
-            height: "1.8rem",
-            spacing: "-0.036rem",
-          })}
-          ${breakpoint.tablet`
-            ${font({
-              color: "var(--color-idle)",
-              size: "2.4rem",
-              weight: "500",
-              height: "2.4rem",
-              spacing: "-0.048rem",
-            })}
-          `}
+          color: var(--color-idle);
+          font-size: 1.8rem;
+          font-family: var(--font-family);
+          line-height: 1.8rem;
+          letter-spacing: -0.036rem;
+          font-weight: 500;
+          font-style: normal;
+
+          @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+            color: var(--color-idle);
+            font-size: 2.4rem;
+            font-weight: 500;
+            line-height: 2.4rem;
+            letter-spacing: -0.048rem;
+          }
           transition: color 100ms;
           &:hover,
           &:focus {

@@ -1,24 +1,20 @@
 import styled from "styled-components";
-import { flexContainer } from "../../utils/mixins";
 
 export const StyledUl = styled.ul`
   display: inline-block;
-
-  ${flexContainer({
-    justify: "center",
-    align: "center",
-    gap: "1.4rem",
-  })}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.4rem;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     gap: 1.8rem;
   }
 
   li {
-    ${flexContainer({
-      justify: "center",
-      align: "center",
-    })}
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   a {

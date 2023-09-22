@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { flexContainer, breakpoint } from "../../utils/mixins";
 import bgMobile from "../../assets/icons/auth-backgrounds/bg-mobile.svg";
 import bgTablet from "../../assets/icons/auth-backgrounds/bg-tablet.svg";
 import bgDesktop from "../../assets/icons/auth-backgrounds/bg-desktop.svg";
@@ -13,37 +12,40 @@ export const PageContent = styled.main`
   height: 100vh;
   width: 100vw;
 
-  ${flexContainer({
-    justify: "initial",
-    direction: "column",
-    align: "center",
-  })}
-  ${breakpoint.tablet`
+  display: flex;
+  flex-direction: column;
+  justify-content: initial;
+  align-items: center;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     @media (max-height: 1100px) {
-    padding-top: 2.5rem;
-  }`}
-  ${breakpoint.desktop`
-        ${flexContainer({
-          justify: "space-evenly",
-          direction: "row",
-          align: "center",
-        })}
-        padding: 0;
-    `}
+      padding-top: 2.5rem;
+    }
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0;
+  }
 
   &::after {
     position: fixed;
     content: "";
     background-image: url(${bgMobile});
     background-color: ${({ theme }) => theme.bg.form};
-    ${breakpoint.tablet`
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       background-image: url(${bgTablet});
       background-size: 100vw 65vh;
-    `}
-    ${breakpoint.desktop`
+    }
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       background-image: url(${bgDesktop});
       background-size: 100vw 40vh;
-    `}
+    }
     background-repeat: no-repeat;
     background-size: 100vw 50vh;
     background-position: bottom;
@@ -59,9 +61,10 @@ export const PageContent = styled.main`
     min-height: 25rem;
     max-width: 50rem;
     width: 100%;
-    ${breakpoint.tablet`
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       min-height: 40rem;
-    `};
+    }
   }
 
   > div {
@@ -73,9 +76,10 @@ export const PageContent = styled.main`
     max-width: 50rem;
     > a {
       font-size: 1.4rem;
-      ${breakpoint.tablet`
-          font-size: 1.6rem;
-        `};
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        font-size: 1.6rem;
+      }
       text-decoration-line: underline;
       color: ${({ theme }) => theme.link.authNav};
       transition: color 100ms;

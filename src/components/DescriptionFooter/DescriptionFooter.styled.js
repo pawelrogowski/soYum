@@ -1,15 +1,14 @@
-import { styled } from "styled-components";
-import { breakpoint } from "../../utils/mixins";
+import styled from "styled-components";
 
 export const StyledUl = styled.ul`
   display: none;
-  ${breakpoint.tablet`
-    display: flex
-  `}
-
   flex-direction: column;
   gap: 1.4rem;
   list-style: disc;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+    display: flex;
+  }
 
   > li {
     color: #fafafa;
