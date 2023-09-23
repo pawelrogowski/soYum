@@ -1,7 +1,13 @@
 import { styled } from "styled-components";
 
 export const StyledFooter = styled.footer`
-  background-color: ${({ theme }) => theme.bg.footer};
+  --footer-bg-color: ${({ theme }) => theme.bg.footer};
+  --tablet-breakpoint: ${({ theme }) => theme.breakpoints.tablet};
+  --desktop-breakpoint: ${({ theme }) => theme.breakpoints.desktop};
+  --logo-text-idle: ${({ theme }) => theme.footer.logoTextIdle};
+  --logo-text-active: ${({ theme }) => theme.footer.logoTextActive};
+
+  background-color: var(--footer-bg-color);
   transition: background-color 200ms;
   display: flex;
   justify-content: center;
@@ -11,12 +17,12 @@ export const StyledFooter = styled.footer`
     padding-top: 2.8rem;
     padding-bottom: 1.75rem;
 
-    @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+    @media (min-width: var(--tablet-breakpoint)) {
       padding-top: 5rem;
       padding-bottom: 2.35rem;
     }
 
-    @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
+    @media (min-width: var(--desktop-breakpoint)) {
       padding-top: 6.4rem;
       padding-bottom: 4.95rem;
     }
@@ -41,7 +47,7 @@ export const StyledFooter = styled.footer`
           gap: 0.8rem;
 
           span {
-            color: ${({ theme }) => theme.footer.logoTextIdle};
+            color: var(--logo-text-idle);
             font-size: 1.8rem;
             font-weight: 700;
             line-height: 1.8rem;
@@ -51,11 +57,11 @@ export const StyledFooter = styled.footer`
             &:hover,
             &:focus,
             &:focus-within {
-              color: ${({ theme }) => theme.footer.logoTextActive};
+              color: var(--logo-text-active);
             }
           }
 
-          @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+          @media (min-width: var(--tablet-breakpoint)) {
             gap: 1.2rem;
 
             span {
@@ -69,7 +75,7 @@ export const StyledFooter = styled.footer`
           &:focus,
           &:focus-within {
             span {
-              color: ${({ theme }) => theme.footer.logoTextActive};
+              color: var(--logo-text-active);
             }
           }
         }

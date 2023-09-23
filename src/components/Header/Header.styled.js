@@ -1,19 +1,23 @@
 import { styled } from "styled-components";
 
 export const StyledHeader = styled.header`
+  --breakpoint-maxContent: ${({ theme }) => theme.breakpoints.maxContent};
+  --breakpoint-tablet: ${({ theme }) => theme.breakpoints.tablet};
+  --breakpoint-desktop: ${({ theme }) => theme.breakpoints.desktop};
+
   position: relative;
-  max-width: ${({ theme }) => theme.breakpoints.maxContent};
+  max-width: var(--breakpoint-maxContent);
   width: 100%;
   height: 4.6rem;
   padding: 0 1.6rem;
   margin-top: 2.1rem;
   margin: 2.1rem auto 5rem auto;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media (min-width: var(--breakpoint-tablet)) {
     margin-bottom: 7.3rem;
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+  @media (min-width: var(--breakpoint-desktop)) {
     margin-bottom: 10.2rem;
   }
 

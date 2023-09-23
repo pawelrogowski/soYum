@@ -1,7 +1,11 @@
 import { styled } from "styled-components";
 
 export const StyledFooter = styled.footer`
-  background-color: ${({ theme }) => theme.bg.footer};
+  --bg-footer: ${({ theme }) => theme.bg.footer};
+  --breakpoints-tablet: ${({ theme }) => theme.breakpoints.tablet};
+  --breakpoints-desktop: ${({ theme }) => theme.breakpoints.desktop};
+
+  background-color: var(--bg-footer);
   transition: background-color 200ms;
   display: flex;
   justify-content: center;
@@ -11,12 +15,12 @@ export const StyledFooter = styled.footer`
     padding-top: 2.8rem;
     padding-bottom: 1.75rem;
 
-    @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+    @media (min-width: var(--breakpoints-tablet)) {
       padding-top: 5rem;
       padding-bottom: 2.35rem;
     }
 
-    @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
+    @media (min-width: var(--breakpoints-desktop)) {
       padding-top: 6.4rem;
       padding-bottom: 4.95rem;
     }
@@ -26,7 +30,7 @@ export const StyledFooter = styled.footer`
       flex-direction: row;
       justify-content: space-between;
 
-      > div {
+      div {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -49,11 +53,11 @@ export const StyledFooter = styled.footer`
             }
           }
 
-          @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+          @media (min-width: var(--breakpoints-tablet)) {
             gap: 1.2rem;
           }
 
-          > span {
+          span {
             color: #fafafa;
             font-size: 1.8rem;
             font-weight: 700;
@@ -67,7 +71,7 @@ export const StyledFooter = styled.footer`
               color: #86aa43;
             }
 
-            @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+            @media (min-width: var(--breakpoints-tablet)) {
               font-size: 2.8rem;
               line-height: 100%;
               letter-spacing: 0.042rem;

@@ -1,7 +1,12 @@
 import { styled } from "styled-components";
 
 export const StyledFooter = styled.footer`
-  background-color: ${({ theme }) => theme.bg.footer};
+  --tablet: ${(props) => props.theme.breakpoints.tablet};
+  --desktop: ${(props) => props.theme.breakpoints.desktop};
+  --bg-footer: ${({ theme }) => theme.bg.footer};
+  --logo-text-active: ${({ theme }) => theme.footer.logoTextActive};
+
+  background-color: var(--bg-footer);
   transition: background-color 200ms;
   display: flex;
   justify-content: center;
@@ -19,11 +24,12 @@ export const StyledFooter = styled.footer`
       display: flex;
       align-items: center;
       gap: 0.8rem;
+
       &:hover,
       &:focus,
       &:focus-within {
         span {
-          color: ${({ theme }) => theme.footer.logoTextActive};
+          color: var(--logo-text-active);
         }
       }
 
@@ -34,6 +40,7 @@ export const StyledFooter = styled.footer`
         line-height: 1.8rem;
         letter-spacing: 0.027rem;
         transition: color 200ms;
+
         &:hover,
         &:focus,
         &:focus-within {
@@ -43,7 +50,7 @@ export const StyledFooter = styled.footer`
     }
   }
 
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+  @media (min-width: var(--tablet)) {
     > div {
       padding-top: 5rem;
       padding-bottom: 2.35rem;
@@ -60,7 +67,7 @@ export const StyledFooter = styled.footer`
     }
   }
 
-  @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
+  @media (min-width: var(--desktop)) {
     > div {
       padding-top: 6.4rem;
       padding-bottom: 4.95rem;

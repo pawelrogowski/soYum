@@ -3,12 +3,36 @@ import { Form } from "formik";
 import { StyledButton } from "../../Button/Button.styled";
 
 export const StyledForm = styled(Form)`
+  --color-bg: ${({ theme }) => theme.authForm.bg};
+  --color-header: ${({ theme }) => theme.authForm.header};
+  --family-font: ${({ theme }) => theme.authForm.font};
+  --color-iconIdle: ${({ theme }) => theme.authForm.textInput.iconIdle};
+  --color-error: ${({ theme }) => theme.authForm.textInput.error};
+  --color-iconActive: ${({ theme }) => theme.authForm.textInput.iconActive};
+  --color-fontIdle: ${({ theme }) => theme.authForm.textInput.fontIdle};
+  --color-borderIdle: ${({ theme }) => theme.authForm.textInput.borderIdle};
+  --color-bgIdle: ${({ theme }) => theme.authForm.textInput.bgIdle};
+  --color-borderActive: ${({ theme }) => theme.authForm.textInput.borderActive};
+  --color-buttonBgIdle: ${({ theme }) => theme.authForm.button.bgIdle};
+  --color-buttonBorderIdle: ${({ theme }) => theme.authForm.button.borderIdle};
+  --color-buttonFontColorIdle: ${({ theme }) =>
+    theme.authForm.button.fontColorIdle};
+  --color-buttonBgHover: ${({ theme }) => theme.authForm.button.bgHover};
+  --color-buttonFontColorHover: ${({ theme }) =>
+    theme.authForm.button.fontColorHover};
+  --color-buttonBorderHover: ${({ theme }) =>
+    theme.authForm.button.borderHover};
+  --color-buttonBgActive: ${({ theme }) => theme.authForm.button.bgActive};
+  --color-buttonBorderActive: ${({ theme }) =>
+    theme.authForm.button.borderActive};
+  --color-warning: ${({ theme }) => theme.authForm.textInput.warning};
+  --color-correct: ${({ theme }) => theme.authForm.textInput.correct};
   width: 100%;
   max-width: 50rem;
   min-width: 28rem;
   padding: 3.2rem 2.8rem 4rem 2.8rem;
   border-radius: 3rem;
-  background-color: ${({ theme }) => theme.authForm.bg};
+  background-color: var(--color-bg);
   transition: color 100ms, background-color 100ms, border 100ms, fill 100ms;
 
   @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
@@ -18,9 +42,9 @@ export const StyledForm = styled(Form)`
 
   h1 {
     display: inline-block;
-    color: ${({ theme }) => theme.authForm.header};
+    color: var(--color-header);
     font-size: 2.4rem;
-    font-family: ${({ theme }) => theme.authForm.font};
+    font-family: var(--family-font);
     line-height: 2.8rem;
     letter-spacing: -0.048rem;
     font-weight: 600;
@@ -62,12 +86,12 @@ export const StyledForm = styled(Form)`
         }
 
         &:nth-of-type(1) {
-          stroke: ${({ theme }) => theme.authForm.textInput.iconIdle};
+          stroke: var(--color-iconIdle);
           fill: none;
           left: 1.8rem;
         }
         &:nth-of-type(2) {
-          fill: ${({ theme }) => theme.authForm.textInput.error};
+          fill: var(--color-error);
           right: 1.9rem;
         }
       }
@@ -77,7 +101,7 @@ export const StyledForm = styled(Form)`
       &:focus {
         svg {
           &:nth-of-type(1) {
-            stroke: ${({ theme }) => theme.authForm.textInput.iconActive};
+            stroke: var(--color-iconActive);
           }
         }
       }
@@ -88,9 +112,9 @@ export const StyledForm = styled(Form)`
       position: absolute;
       left: 0.1rem;
       bottom: -1.5rem;
-      color: ${({ theme }) => theme.authForm.header};
+      color: var(--color-header);
       font-size: 1rem;
-      font-family: ${({ theme }) => theme.authForm.font};
+      font-family: var(--family-font);
       line-height: 1rem;
       font-weight: 400;
 
@@ -107,7 +131,7 @@ export const StyledForm = styled(Form)`
 
     input {
       position: relative;
-      color: ${({ theme }) => theme.authForm.textInput.fontIdle};
+      color: var(--color-fontIdle);
       font-size: 1.4rem;
       font-family: ${({ theme }) => theme.authForm.textInput.font};
       font-weight: 400;
@@ -122,15 +146,14 @@ export const StyledForm = styled(Form)`
       padding: 1.6rem 5rem;
       outline: none;
       border-radius: 0.5rem;
-      border: 0.1rem solid ${({ theme }) => theme.authForm.textInput.borderIdle};
-      background-color: ${({ theme }) => theme.authForm.textInput.bgIdle};
+      border: 0.1rem solid var(--color-borderIdle);
+      background-color: var(--color-bgIdle);
       transition: color 100ms, background-color 100ms, border 100ms;
 
       &:focus,
       &:hover {
-        border: 0.1rem solid
-          ${({ theme }) => theme.authForm.textInput.borderActive};
-        background: ${({ theme }) => theme.authForm.textInput.bgIdle};
+        border: 0.1rem solid var(--color-borderActive);
+        background: var(--color-bgIdle);
       }
 
       @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
@@ -142,21 +165,21 @@ export const StyledForm = styled(Form)`
 
   ${StyledButton} {
     width: 100%;
-    background-color: ${({ theme }) => theme.authForm.button.bgIdle};
-    border: 0.2rem solid ${({ theme }) => theme.authForm.button.borderIdle};
-    color: ${({ theme }) => theme.authForm.button.fontColorIdle};
+    background-color: var(--color-buttonBgIdle);
+    border: 0.2rem solid var(--color-buttonBorderIdle);
+    color: var(--color-buttonFontColorIdle);
     border-radius: 0.6rem;
     height: 4.5rem;
 
     &:hover,
     &:focus {
-      background-color: ${({ theme }) => theme.authForm.button.bgHover};
-      color: ${({ theme }) => theme.authForm.button.fontColorHover};
-      border: 0.2rem solid ${({ theme }) => theme.authForm.button.borderHover};
+      background-color: var(--color-buttonBgHover);
+      color: var(--color-buttonFontColorHover);
+      border: 0.2rem solid var(--color-buttonBorderHover);
     }
     &:active {
-      background-color: ${({ theme }) => theme.authForm.button.bgActive};
-      border: 0.2rem solid ${({ theme }) => theme.authForm.button.borderActive};
+      background-color: var(--color-buttonBgActive);
+      border: 0.2rem solid var(--color-buttonBorderActive);
     }
 
     @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
@@ -175,18 +198,17 @@ export const StyledForm = styled(Form)`
                     props.theme.breakpoints.tablet}) {
                   margin-bottom: 2.8rem;
                 }
-                -webkit-text-fill-color: ${props.theme.authForm.textInput
-                  .error};
-                color: ${props.theme.authForm.textInput.error};
-                border-color: ${props.theme.authForm.textInput.error};
+                -webkit-text-fill-color: var(--color-error);
+                color: var(--color-error);
+                border-color: var(--color-error);
               }
 
               input[name="password"] ~ svg {
-                stroke: ${props.theme.authForm.textInput.error} !important;
+                stroke: var(--color-error) !important;
               }
 
               input[name="password"] ~ span {
-                color: ${props.theme.authForm.textInput.error} !important;
+                color: var(--color-error) !important;
               }
             }
           `
@@ -199,18 +221,20 @@ export const StyledForm = styled(Form)`
                     props.theme.breakpoints.tablet}) {
                   margin-bottom: 2.8rem;
                 }
-                -webkit-text-fill-color: ${props.theme.authForm.textInput
-                  .warning};
-                color: ${props.theme.authForm.textInput.warning};
-                border-color: ${props.theme.authForm.textInput.warning};
+                -webkit-text-fill-color: var(--color-warning);
+                color: var(--color-warning);
+                border-color: var(--color-warning);
               }
 
               input[name="password"] ~ svg {
-                stroke: ${props.theme.authForm.textInput.warning} !important;
+                stroke: var(--color-warning) !important;
+                &:last-of-type {
+                  fill: var(--color-warning) !important;
+                }
               }
 
               input[name="password"] ~ span {
-                color: ${props.theme.authForm.textInput.warning} !important;
+                color: var(--color-warning) !important;
               }
             }
           `
@@ -218,14 +242,16 @@ export const StyledForm = styled(Form)`
         ? css`
             li {
               input[name="password"]:not(:placeholder-shown) {
-                -webkit-text-fill-color: ${props.theme.authForm.textInput
-                  .correct};
-                color: ${props.theme.authForm.textInput.correct};
-                border-color: ${props.theme.authForm.textInput.correct};
+                -webkit-text-fill-color: var(--color-correct);
+                color: var(--color-correct);
+                border-color: var(--color-correct);
               }
 
               input[name="password"]:not(:placeholder-shown) ~ svg {
-                stroke: ${props.theme.authForm.textInput.correct} !important;
+                stroke: var(--color-correct) !important;
+                &:last-of-type {
+                  fill: var(--color-correct) !important;
+                }
               }
             }
           `
@@ -243,18 +269,20 @@ export const StyledForm = styled(Form)`
                     props.theme.breakpoints.tablet}) {
                   margin-bottom: 2.8rem;
                 }
-                -webkit-text-fill-color: ${props.theme.authForm.textInput
-                  .error};
-                color: ${props.theme.authForm.textInput.error};
-                border-color: ${props.theme.authForm.textInput.error};
+                -webkit-text-fill-color: var(--color-error);
+                color: var(--color-error);
+                border-color: var(--color-error);
               }
 
               input[name="name"] ~ svg {
-                stroke: ${props.theme.authForm.textInput.error} !important;
+                stroke: var(--color-error) !important;
+                &:last-of-type {
+                  fill: var(--color-error) !important;
+                }
               }
 
               input[name="name"] ~ span {
-                color: ${props.theme.authForm.textInput.error} !important;
+                color: var(--color-error) !important;
               }
             }
           `
@@ -262,14 +290,16 @@ export const StyledForm = styled(Form)`
         ? css`
             li {
               input[name="name"]:not(:placeholder-shown) {
-                -webkit-text-fill-color: ${props.theme.authForm.textInput
-                  .correct};
-                color: ${props.theme.authForm.textInput.correct};
-                border-color: ${props.theme.authForm.textInput.correct};
+                -webkit-text-fill-color: var(--color-correct);
+                color: var(--color-correct);
+                border-color: var(--color-correct);
               }
 
               input[name="name"]:not(:placeholder-shown) ~ svg {
-                stroke: ${props.theme.authForm.textInput.correct} !important;
+                stroke: var(--color-correct) !important;
+                &:last-of-type {
+                  fill: var(--color-correct) !important;
+                }
               }
             }
           `
@@ -287,18 +317,20 @@ export const StyledForm = styled(Form)`
                     props.theme.breakpoints.tablet}) {
                   margin-bottom: 2.8rem;
                 }
-                -webkit-text-fill-color: ${props.theme.authForm.textInput
-                  .error};
-                color: ${props.theme.authForm.textInput.error};
-                border-color: ${props.theme.authForm.textInput.error};
+                -webkit-text-fill-color: var(--color-error);
+                color: var(--color-error);
+                border-color: var(--color-error);
               }
 
               input[name="email"] ~ svg {
-                stroke: ${props.theme.authForm.textInput.error} !important;
+                stroke: var(--color-error) !important;
+                &:last-of-type {
+                  fill: var(--color-error) !important;
+                }
               }
 
               input[name="email"] ~ span {
-                color: ${props.theme.authForm.textInput.error} !important;
+                color: var(--color-error) !important;
               }
             }
           `
@@ -311,18 +343,20 @@ export const StyledForm = styled(Form)`
                     props.theme.breakpoints.tablet}) {
                   margin-bottom: 2.8rem;
                 }
-                -webkit-text-fill-color: ${props.theme.authForm.textInput
-                  .warning};
-                color: ${props.theme.authForm.textInput.warning};
-                border-color: ${props.theme.authForm.textInput.warning};
+                -webkit-text-fill-color: var(--color-warning);
+                color: var(--color-warning);
+                border-color: var(--color-warning);
               }
 
               input[name="email"] ~ svg {
-                stroke: ${props.theme.authForm.textInput.warning} !important;
+                stroke: var(--color-warning) !important;
+                &:last-of-type {
+                  fill: var(--color-warning) !important;
+                }
               }
 
               input[name="email"] ~ span {
-                color: ${props.theme.authForm.textInput.warning} !important;
+                color: var(--color-warning) !important;
               }
             }
           `
@@ -330,14 +364,16 @@ export const StyledForm = styled(Form)`
         ? css`
             li {
               input[name="email"]:not(:placeholder-shown) {
-                color: ${props.theme.authForm.textInput.correct};
-                border-color: ${props.theme.authForm.textInput.correct};
-                -webkit-text-fill-color: ${props.theme.authForm.textInput
-                  .correct};
+                color: var(--color-correct);
+                border-color: var(--color-correct);
+                -webkit-text-fill-color: var(--color-correct);
               }
 
               input[name="email"]:not(:placeholder-shown) ~ svg {
-                stroke: ${props.theme.authForm.textInput.correct} !important;
+                stroke: var(--color-correct) !important;
+                &:last-of-type {
+                  fill: var(--color-correct) !important;
+                }
               }
             }
           `

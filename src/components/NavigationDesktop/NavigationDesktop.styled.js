@@ -57,12 +57,5 @@ export const StyledNav = styled.nav`
       outline: none;
       cursor: pointer;
     }
-    .Block {
-      &__Element {
-        &--Modifier {
-          //Block__Element--Modifier
-        }
-      }
-    }
   }
 `;
