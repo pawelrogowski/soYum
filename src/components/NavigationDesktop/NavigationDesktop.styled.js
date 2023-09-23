@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const StyledNav = styled.nav`
-  --font-family: ${({ theme }) => theme.navigation.font};
-  --color-idle: ${({ theme }) => theme.navigation.colorIdle};
-  --color-hover: ${({ theme }) => theme.navigation.colorHover};
+  --font-navigation: ${({ theme }) => theme.navigation.font};
+  --color-navigation-idle: ${({ theme }) => theme.navigation.colorIdle};
+  --color-navigation-hover: ${({ theme }) => theme.navigation.colorHover};
   margin-right: auto;
 
   > ul {
@@ -16,9 +16,9 @@ export const StyledNav = styled.nav`
 
     > li > a,
     > span {
-      color: var(--color-idle);
+      color: var(--color-navigation-idle);
       font-size: 1.4rem;
-      font-family: var(--font-family);
+      font-family: var(--font-navigation);
       line-height: 1.8rem;
       letter-spacing: -0.028rem;
       font-weight: 500;
@@ -27,13 +27,13 @@ export const StyledNav = styled.nav`
 
       &:hover,
       &:focus {
-        color: var(--color-hover);
+        color: var(--color-navigation-hover);
         transition: color 100ms;
       }
     }
 
     > li > button > svg {
-      stroke: var(--color-idle);
+      stroke: var(--color-navigation-idle);
       width: 2.4rem;
       height: 2.4rem;
       transition: stroke 100ms;
@@ -43,8 +43,8 @@ export const StyledNav = styled.nav`
       &:focus,
       &:hover {
         svg {
-          stroke: var(--color-hover);
-          transition: color 100ms;
+          stroke: var(--color-navigation-hover);
+          transition: stroke 100ms;
         }
       }
     }

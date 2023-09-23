@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 export const StyledUl = styled.ul`
+  --breakpoint-tablet: ${({ theme }) => theme.breakpoints.tablet};
+  --color-social-fill: ${({ theme }) => theme.icon.social.fill};
+  --color-social-fillHover: ${({ theme }) => theme.icon.social.fillHover};
+
   display: inline-block;
   display: flex;
   justify-content: center;
@@ -21,7 +25,7 @@ export const StyledUl = styled.ul`
     &:hover,
     &:focus {
       svg {
-        fill: ${({ theme }) => theme.icon.social.fillHover};
+        fill: var(--color-social-fillHover);
         transition: fill 100ms;
       }
     }
@@ -30,7 +34,7 @@ export const StyledUl = styled.ul`
   svg {
     width: 1.8rem;
     height: 1.8rem;
-    fill: ${({ theme }) => theme.icon.social.fill};
+    fill: var(--color-social-fill);
     transition: fill 100ms;
   }
 `;

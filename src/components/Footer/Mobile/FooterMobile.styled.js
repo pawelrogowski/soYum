@@ -1,12 +1,12 @@
 import { styled } from "styled-components";
 
 export const StyledFooter = styled.footer`
-  --tablet: ${(props) => props.theme.breakpoints.tablet};
-  --desktop: ${(props) => props.theme.breakpoints.desktop};
-  --bg-footer: ${({ theme }) => theme.bg.footer};
-  --logo-text-active: ${({ theme }) => theme.footer.logoTextActive};
+  --breakpoint-tablet: ${(props) => props.theme.breakpoints.tablet};
+  --breakpoint-desktop: ${(props) => props.theme.breakpoints.desktop};
+  --color-bg-footer: ${({ theme }) => theme.bg.footer};
+  --color-footer-logoTextActive: ${({ theme }) => theme.footer.logoTextActive};
 
-  background-color: var(--bg-footer);
+  background-color: var(--color-bg-footer);
   transition: background-color 200ms;
   display: flex;
   justify-content: center;
@@ -29,7 +29,7 @@ export const StyledFooter = styled.footer`
       &:focus,
       &:focus-within {
         span {
-          color: var(--logo-text-active);
+          color: var(--color-footer-logoTextActive);
         }
       }
 
@@ -47,30 +47,6 @@ export const StyledFooter = styled.footer`
           color: #86aa43;
         }
       }
-    }
-  }
-
-  @media (min-width: var(--tablet)) {
-    > div {
-      padding-top: 5rem;
-      padding-bottom: 2.35rem;
-
-      a:first-of-type {
-        gap: 1.2rem;
-
-        > span {
-          font-size: 2.8rem;
-          line-height: 100%;
-          letter-spacing: 0.042rem;
-        }
-      }
-    }
-  }
-
-  @media (min-width: var(--desktop)) {
-    > div {
-      padding-top: 6.4rem;
-      padding-bottom: 4.95rem;
     }
   }
 `;

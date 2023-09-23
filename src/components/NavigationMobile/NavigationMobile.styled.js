@@ -3,10 +3,11 @@ import { motion } from "framer-motion";
 import leaves from "../../assets/images/leaves@1x.webp";
 
 export const StyledAside = styled(motion.aside)`
-  --font-family: ${({ theme }) => theme.navigation.font};
-  --color-idle: ${({ theme }) => theme.navigation.colorIdle};
-  --color-hover: ${({ theme }) => theme.navigation.colorHover};
-  --bg: ${({ theme }) => theme.mobileMenu.bg};
+  --font-navigation: ${({ theme }) => theme.navigation.font};
+  --color-navigation-idle: ${({ theme }) => theme.navigation.colorIdle};
+  --color-navigation-hover: ${({ theme }) => theme.navigation.colorHover};
+  --color-mobileMenu-bg: ${({ theme }) => theme.mobileMenu.bg};
+  --breakpoint-tablet: ${({ theme }) => theme.breakpoints.tablet};
 
   position: absolute;
   z-index: 1;
@@ -15,7 +16,7 @@ export const StyledAside = styled(motion.aside)`
   width: 100vw;
   height: 100vh;
 
-  background: var(--bg);
+  background: var(--color-mobileMenu-bg);
   > div {
     width: 100%;
     height: 100%;
@@ -29,7 +30,7 @@ export const StyledAside = styled(motion.aside)`
       top: 2.3rem;
       left: 1.6rem;
 
-      @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         top: 2.1rem;
       }
     }
@@ -74,22 +75,21 @@ export const StyledAside = styled(motion.aside)`
       flex-wrap: nowrap;
       gap: 3.6rem;
 
-      @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         gap: 4rem;
       }
 
       > li > a,
       > li > span {
-        color: var(--color-idle);
+        color: var(--color-navigation-idle);
         font-size: 1.8rem;
-        font-family: var(--font-family);
+        font-family: var(--font-navigation);
         line-height: 1.8rem;
         letter-spacing: -0.036rem;
         font-weight: 500;
         font-style: normal;
 
-        @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
-          color: var(--color-idle);
+        @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
           font-size: 2.4rem;
           font-weight: 500;
           line-height: 2.4rem;
@@ -98,7 +98,7 @@ export const StyledAside = styled(motion.aside)`
         transition: color 100ms;
         &:hover,
         &:focus {
-          color: var(--color-hover);
+          color: var(--color-navigation-hover);
           transition: color 100ms;
         }
       }
@@ -108,16 +108,15 @@ export const StyledAside = styled(motion.aside)`
         align-items: center;
         gap: 0.8rem;
         > span {
-          color: var(--color-idle);
+          color: var(--color-navigation-idle);
           font-size: 1.8rem;
-          font-family: var(--font-family);
+          font-family: var(--font-navigation);
           line-height: 1.8rem;
           letter-spacing: -0.036rem;
           font-weight: 500;
           font-style: normal;
 
-          @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
-            color: var(--color-idle);
+          @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
             font-size: 2.4rem;
             font-weight: 500;
             line-height: 2.4rem;
@@ -126,14 +125,14 @@ export const StyledAside = styled(motion.aside)`
           transition: color 100ms;
           &:hover,
           &:focus {
-            color: var(--color-hover);
+            color: var(--color-navigation-hover);
             transition: color 100ms;
           }
         }
       }
 
       > li > button > svg {
-        stroke: var(--color-idle);
+        stroke: var(--color-navigation-idle);
         width: 2.4rem;
         height: 2.4rem;
         transition: stroke 100ms;
@@ -144,10 +143,10 @@ export const StyledAside = styled(motion.aside)`
         &:hover,
         &:focus-within {
           span {
-            color: var(--color-hover);
+            color: var(--color-navigation-hover);
           }
           svg {
-            stroke: var(--color-hover);
+            stroke: var(--color-navigation-hover);
           }
         }
       }

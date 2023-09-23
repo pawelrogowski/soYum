@@ -1,21 +1,26 @@
 import { styled } from "styled-components";
 
 export const StyledNav = styled.nav`
+  --color-navigation-footer-idle: ${({ theme }) =>
+    theme.navigation.footer.colorIdle};
+  --color-navigation-footer-hover: ${({ theme }) =>
+    theme.navigation.footer.colorHover};
+
   > ul {
     display: flex;
     flex-direction: column;
     gap: 1.4rem;
 
-    @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       gap: 2rem;
     }
-    @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
+    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       gap: 2.4rem;
     }
 
     > li {
       text-align: center;
-      color: ${({ theme }) => theme.navigation.footer.colorIdle};
+      color: var(--color-navigation-footer-idle);
       font-size: 1.4rem;
       font-weight: 500;
       line-height: 128.571%;
@@ -24,7 +29,7 @@ export const StyledNav = styled.nav`
 
       &:hover,
       &:focus {
-        color: ${({ theme }) => theme.navigation.footer.colorHover};
+        color: var(--color-navigation-footer-hover);
       }
       > a {
         text-align: center;
