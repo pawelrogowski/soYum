@@ -1,32 +1,36 @@
 import styled from "styled-components";
-import { breakpoint } from "../../utils/mixins";
 
 export const StyledButton = styled.button`
+  --breakpoint-tablet: ${(props) => props.theme.breakpoints.tablet};
+  --color-mobileMenu-strokeIdle: ${({ theme }) => theme.mobileMenu.strokeIdle};
+
   background: none;
   border: none;
   width: 2.8rem;
   height: 100%;
   cursor: pointer;
-  ${breakpoint.tablet`
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     width: 3.2rem;
-  `};
+  }
 
   > svg {
-    stroke: ${({ theme }) => theme.mobileMenu.strokeIdle};
+    stroke: var(--color-mobileMenu-strokeIdle);
     width: 2.8rem;
     height: 2.8rem;
     transition: stroke 200ms;
-    ${breakpoint.tablet`
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       width: 3.2rem;
-      height:  3.2rem;
-    `};
+      height: 3.2rem;
+    }
   }
 
   &:focus,
   &:hover {
     outline: none;
     svg {
-      stroke: ${({ theme }) => theme.mobileMenu.strokeHover};
+      stroke: var(--color-mobileMenu-strokeIdle);
     }
   }
 `;

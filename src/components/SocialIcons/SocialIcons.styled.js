@@ -1,31 +1,31 @@
 import styled from "styled-components";
-import { flexContainer } from "../../utils/mixins";
 
 export const StyledUl = styled.ul`
-  display: inline-block;
+  --breakpoint-tablet: ${({ theme }) => theme.breakpoints.tablet};
+  --color-social-fill: ${({ theme }) => theme.icon.social.fill};
+  --color-social-fillHover: ${({ theme }) => theme.icon.social.fillHover};
 
-  ${flexContainer({
-    justify: "center",
-    align: "center",
-    gap: "1.4rem",
-  })}
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.4rem;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     gap: 1.8rem;
   }
 
   li {
-    ${flexContainer({
-      justify: "center",
-      align: "center",
-    })}
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   a {
     &:hover,
     &:focus {
       svg {
-        fill: ${({ theme }) => theme.icon.social.fillHover};
+        fill: var(--color-social-fillHover);
         transition: fill 100ms;
       }
     }
@@ -34,7 +34,11 @@ export const StyledUl = styled.ul`
   svg {
     width: 1.8rem;
     height: 1.8rem;
-    fill: ${({ theme }) => theme.icon.social.fill};
+    fill: var(--color-social-fill);
     transition: fill 100ms;
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      width: 2rem;
+      height: 2rem;
+    }
   }
 `;

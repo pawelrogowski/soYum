@@ -6,9 +6,7 @@ import { NavigationMobile } from "../../components/NavigationMobile/NavigationMo
 import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { breakpoints } from "../../styles/themes";
-import { FooterMobile } from "../../components/Footer/Mobile/FooterMobile";
-import { FooterTablet } from "../../components/Footer/Tablet/FooterTablet";
-import { FooterDesktop } from "../../components/Footer/Desktop/FooterDesktop";
+import Footer from "../../components/Footer/Footer";
 
 export const MainLayout = () => {
   const isMobileSize = useMediaQuery({ maxWidth: breakpoints.mobileMax });
@@ -29,11 +27,11 @@ export const MainLayout = () => {
         <Outlet />
       </Container>
       {isMobileSize ? (
-        <FooterMobile />
+        <Footer variant="mobile" />
       ) : isTabletSize ? (
-        <FooterTablet />
+        <Footer variant="tablet" />
       ) : (
-        <FooterDesktop />
+        <Footer variant="desktop" />
       )}
     </>
   );

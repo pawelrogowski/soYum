@@ -1,11 +1,23 @@
 import { styled, css } from "styled-components";
-import { font } from "../../../utils/mixins";
+
 export const StyledForm = styled.form`
+  --color-border-idle: ${({ theme }) =>
+    theme.newsletterForm.textInput.borderIdle};
+  --color-background-idle: ${({ theme }) =>
+    theme.newsletterForm.textInput.bgIdle};
+  --color-font-idle: ${({ theme }) => theme.newsletterForm.textInput.fontIdle};
+  --font-input: ${({ theme }) => theme.newsletterForm.textInput.font};
+  --color-border-active: ${({ theme }) =>
+    theme.newsletterForm.textInput.borderActive};
+  --color-icon-idle: ${({ theme }) => theme.newsletterForm.textInput.iconIdle};
+  --color-error: ${({ theme }) => theme.newsletterForm.textInput.error};
+  --color-warning: ${({ theme }) => theme.newsletterForm.textInput.warning};
+  --color-correct: ${({ theme }) => theme.newsletterForm.textInput.correct};
+
   max-width: 1000px;
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 7.2rem 0 3.75rem 0;
 
   div {
     position: relative;
@@ -13,31 +25,32 @@ export const StyledForm = styled.form`
     max-width: 25.9rem;
     width: 100%;
     margin-right: 1.2rem;
+
     > label {
       display: none;
     }
+
     > input {
       width: 100%;
       height: 100%;
-      padding: 1.45rem 4rem 1.45rem 5.1rem;
+      padding: 1.45rem 4rem 1.45rem 4.4rem;
       outline: none;
       border-radius: 0.5rem;
-      border: 0.1rem solid ${({ theme }) => theme.authForm.textInput.borderIdle};
-      background-color: ${({ theme }) => theme.authForm.textInput.bgIdle};
+      border: 0.1rem solid var(--color-border-idle);
+      background-color: var(--color-background-idle);
       transition: color 100ms, background-color 100ms, border 100ms;
-
-      ${font({
-        family: ({ theme }) => theme.authForm.textInput.font,
-        color: ({ theme }) => theme.authForm.textInput.fontIdle,
-        size: "1.4rem",
-        weight: "400",
-      })}
-
+      color: var(--color-font-idle);
+      font-size: 1.4rem;
+      font-weight: 400;
+      font-family: var(--font-input);
+      background-color: #22252a;
       &:focus,
       &:hover {
-        border: 0.1rem solid
-          ${({ theme }) => theme.authForm.textInput.borderActive};
-        background: ${({ theme }) => theme.authForm.textInput.bgIdle};
+        border: 0.1rem solid var(--color-border-active);
+        background-color: #22252a;
+      }
+      &::placeholder {
+        color: var(--color-font-idle);
       }
     }
     > span {
@@ -46,23 +59,22 @@ export const StyledForm = styled.form`
   }
   svg {
     position: absolute;
-
     width: 2.2rem;
     height: 2.2rem;
-    top: 1.4rem;
+    top: 1.45rem;
     transition: stroke 100ms, fill 100ms;
 
     &:nth-of-type(1) {
-      stroke: ${({ theme }) => theme.authForm.textInput.iconIdle};
+      stroke: var(--color-icon-idle);
       fill: none;
-      left: 1.8rem;
+      left: 1.4rem;
     }
+
     &:nth-of-type(2) {
       stroke: black;
-
       border-radius: 50%;
-      fill: ${({ theme }) => theme.authForm.textInput.error};
-      right: 1.9rem;
+      fill: var(--color-error);
+      right: 1.3rem;
     }
   }
 
@@ -72,52 +84,82 @@ export const StyledForm = styled.form`
     max-width: 18.7rem;
   }
 
+  ${({ $layout }) =>
+    $layout === "column" &&
+    css`
+      max-width: 33.9rem;
+      flex-direction: column;
+      > h2 {
+        margin-bottom: 1.4rem;
+        color: #fafafa;
+        font-family: Poppins;
+        font-size: 1.8rem;
+        font-weight: 700;
+      }
+      > p {
+        margin-bottom: 2.8rem;
+        color: #fafafa;
+        font-size: 1.4rem;
+        font-style: normal;
+        line-height: 128.57%
+        letter-spacing: -0.028rem;
+      }
+
+      > div {
+        margin-bottom: 1.6rem;
+        width: 100%;
+        max-width: 33.9rem;
+      }
+      > button {
+        max-width: 33.9rem;
+      }
+    `}
+
   ${(props) =>
     props.$emailTouched
       ? props.$emailInfo === "Email is required"
         ? css`
             input[name="email"] {
-              -webkit-text-fill-color: ${props.theme.authForm.textInput.error};
-              color: ${props.theme.authForm.textInput.error};
-              border-color: ${props.theme.authForm.textInput.error};
+              -webkit-text-fill-color: var(--color-error);
+              color: var(--color-error);
+              border-color: var(--color-error);
             }
-
             input[name="email"] ~ svg {
-              stroke: ${props.theme.authForm.textInput.error} !important;
+              stroke: var(--color-error);
             }
-
             input[name="email"] ~ span {
-              color: ${props.theme.authForm.textInput.error} !important;
+              color: var(--color-error);
             }
           `
         : props.$emailInfo === "Invalid email"
         ? css`
             input[name="email"] {
-              -webkit-text-fill-color: ${props.theme.authForm.textInput
-                .warning};
-              color: ${props.theme.authForm.textInput.warning};
-              border-color: ${props.theme.authForm.textInput.warning};
+              -webkit-text-fill-color: var(--color-warning);
+              color: var(--color-warning);
+              border-color: var(--color-warning);
             }
-
             input[name="email"] ~ svg {
-              stroke: ${props.theme.authForm.textInput.warning} !important;
+              stroke: var(--color-warning);
+              &:nth-of-type(2) {
+                fill: var(--color-warning);
+              }
             }
-
             input[name="email"] ~ span {
-              color: ${props.theme.authForm.textInput.warning} !important;
+              color: var(--color-warning);
             }
           `
         : props.$emailInfo === undefined
         ? css`
             input[name="email"]:not(:placeholder-shown) {
-              color: ${props.theme.authForm.textInput.correct};
-              border-color: ${props.theme.authForm.textInput.correct};
-              -webkit-text-fill-color: ${props.theme.authForm.textInput
-                .correct};
+              color: var(--color-correct);
+              border-color: var(--color-correct);
+              -webkit-text-fill-color: var(--color-correct);
             }
-
             input[name="email"]:not(:placeholder-shown) ~ svg {
-              stroke: ${props.theme.authForm.textInput.correct} !important;
+              stroke: var(--color-correct);
+              &:nth-of-type(2) {
+                fill: var(--color-correct);
+              }
             }
           `
         : null

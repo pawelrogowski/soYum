@@ -1,8 +1,14 @@
 import styled from "styled-components";
-import { flexContainer, font, breakpoint } from "../../utils/mixins";
 import { motion } from "framer-motion";
 import leaves from "../../assets/images/leaves@1x.webp";
+
 export const StyledAside = styled(motion.aside)`
+  --font-navigation: ${({ theme }) => theme.navigation.font};
+  --color-navigation-idle: ${({ theme }) => theme.navigation.colorIdle};
+  --color-navigation-hover: ${({ theme }) => theme.navigation.colorHover};
+  --color-mobileMenu-bg: ${({ theme }) => theme.mobileMenu.bg};
+  --breakpoint-tablet: ${({ theme }) => theme.breakpoints.tablet};
+
   position: absolute;
   z-index: 1;
   top: 0;
@@ -10,7 +16,7 @@ export const StyledAside = styled(motion.aside)`
   width: 100vw;
   height: 100vh;
 
-  background: ${({ theme }) => theme.mobileMenu.bg};
+  background: var(--color-mobileMenu-bg);
   > div {
     width: 100%;
     height: 100%;
@@ -23,9 +29,10 @@ export const StyledAside = styled(motion.aside)`
       position: absolute;
       top: 2.3rem;
       left: 1.6rem;
-      ${breakpoint.tablet`
-        top: 2.1rem
-      `}
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        top: 2.1rem;
+      }
     }
     &:after {
       content: "";
@@ -61,40 +68,37 @@ export const StyledAside = styled(motion.aside)`
     }
 
     > ul {
-      ${flexContainer({
-        direction: "column",
-        justify: "center",
-        align: "center",
-        wrap: "nowrap",
-        gap: "3.6rem",
-      })}
-      ${breakpoint.tablet`
-        gap: 4rem;
-      `}
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 3.6rem;
 
-      >li>a,
-    >span {
-        ${font({
-          family: ({ theme }) => theme.navigation.font,
-          color: ({ theme }) => theme.navigation.colorIdle,
-          size: "1.8rem",
-          weight: "500",
-          height: "1.8rem",
-          spacing: "-0.036rem",
-        })}
-        ${breakpoint.tablet`
-          ${font({
-            color: ({ theme }) => theme.navigation.colorIdle,
-            size: "2.4rem",
-            weight: "500",
-            height: "2.4rem",
-            spacing: "-0.048rem",
-          })}
-        `}
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        gap: 4rem;
+      }
+
+      > li > a,
+      > li > span {
+        color: var(--color-navigation-idle);
+        font-size: 1.8rem;
+        font-family: var(--font-navigation);
+        line-height: 1.8rem;
+        letter-spacing: -0.036rem;
+        font-weight: 500;
+        font-style: normal;
+
+        @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+          font-size: 2.4rem;
+          font-weight: 500;
+          line-height: 2.4rem;
+          letter-spacing: -0.048rem;
+        }
         transition: color 100ms;
         &:hover,
         &:focus {
-          color: ${({ theme }) => theme.navigation.colorHover};
+          color: var(--color-navigation-hover);
           transition: color 100ms;
         }
       }
@@ -104,34 +108,31 @@ export const StyledAside = styled(motion.aside)`
         align-items: center;
         gap: 0.8rem;
         > span {
-          ${font({
-            family: ({ theme }) => theme.navigation.font,
-            color: ({ theme }) => theme.navigation.colorIdle,
-            size: "1.8rem",
-            weight: "500",
-            height: "1.8rem",
-            spacing: "-0.036rem",
-          })}
-          ${breakpoint.tablet`
-            ${font({
-              color: ({ theme }) => theme.navigation.colorIdle,
-              size: "2.4rem",
-              weight: "500",
-              height: "2.4rem",
-              spacing: "-0.048rem",
-            })}
-          `}
+          color: var(--color-navigation-idle);
+          font-size: 1.8rem;
+          font-family: var(--font-navigation);
+          line-height: 1.8rem;
+          letter-spacing: -0.036rem;
+          font-weight: 500;
+          font-style: normal;
+
+          @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+            font-size: 2.4rem;
+            font-weight: 500;
+            line-height: 2.4rem;
+            letter-spacing: -0.048rem;
+          }
           transition: color 100ms;
           &:hover,
           &:focus {
-            color: ${({ theme }) => theme.navigation.colorHover};
+            color: var(--color-navigation-hover);
             transition: color 100ms;
           }
         }
       }
 
       > li > button > svg {
-        stroke: ${({ theme }) => theme.navigation.colorIdle};
+        stroke: var(--color-navigation-idle);
         width: 2.4rem;
         height: 2.4rem;
         transition: stroke 100ms;
@@ -142,10 +143,10 @@ export const StyledAside = styled(motion.aside)`
         &:hover,
         &:focus-within {
           span {
-            color: ${({ theme }) => theme.navigation.colorHover};
+            color: var(--color-navigation-hover);
           }
           svg {
-            stroke: ${({ theme }) => theme.navigation.colorHover};
+            stroke: var(--color-navigation-hover);
           }
         }
       }

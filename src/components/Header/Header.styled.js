@@ -1,5 +1,4 @@
 import { styled } from "styled-components";
-import { flexContainer, breakpoint } from "../../utils/mixins";
 
 export const StyledHeader = styled.header`
   position: relative;
@@ -9,24 +8,26 @@ export const StyledHeader = styled.header`
   padding: 0 1.6rem;
   margin-top: 2.1rem;
   margin: 2.1rem auto 5rem auto;
-  ${breakpoint.tablet`
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     margin-bottom: 7.3rem;
-  `}
-  ${breakpoint.desktop`
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     margin-bottom: 10.2rem;
-  `}
-  ${flexContainer({
-    direction: "row",
-    justify: "flex-start",
-    align: "center",
-    wrap: "nowrap",
-    gap: 0,
-  })}
+  }
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
 
   > a:first-of-type {
     z-index: 1;
     margin-right: auto;
   }
+
   > a:focus-within {
     > svg {
       outline: 2px solid black;

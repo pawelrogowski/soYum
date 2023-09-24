@@ -9,7 +9,7 @@ import bgImageDesktop1x from "../../assets/images/start-background-desktop@1x.we
 import bgImageDesktop2x from "../../assets/images/start-background-desktop@2x.webp";
 import bgImageDesktop3x from "../../assets/images/start-background-desktop@3x.webp";
 
-import { responsiveBackgroundImage, breakpoint } from "../../utils/mixins";
+import { responsiveBackgroundImage } from "../../utils/mixins";
 export const StartPageContainer = styled.main`
   display: flex;
   flex-direction: column;
@@ -29,21 +29,21 @@ export const StartPageContainer = styled.main`
     bgImageMobile3x
   )}
 
-  ${breakpoint.tablet`
-      ${responsiveBackgroundImage(
-        bgImageTablet1x,
-        bgImageTablet2x,
-        bgImageTablet3x
-      )};
-  `};
+  @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+    ${responsiveBackgroundImage(
+      bgImageTablet1x,
+      bgImageTablet2x,
+      bgImageTablet3x
+    )};
+  }
 
-  ${breakpoint.desktop`
-      ${responsiveBackgroundImage(
-        bgImageDesktop1x,
-        bgImageDesktop2x,
-        bgImageDesktop3x
-      )};
-  `}
+  @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
+    ${responsiveBackgroundImage(
+      bgImageDesktop1x,
+      bgImageDesktop2x,
+      bgImageDesktop3x
+    )};
+  }
 
   > svg {
     margin-bottom: 2.8rem;
@@ -51,12 +51,12 @@ export const StartPageContainer = styled.main`
     max-height: 5.4rem;
     width: 5.4rem;
     height: 5.4rem;
-    ${breakpoint.tablet`
-        max-width: 6.8rem;
-        max-height: 6.8rem;
-        width: 6.8rem;
-        height: 6.8rem;
-      `};
+    @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+      max-width: 6.8rem;
+      max-height: 6.8rem;
+      width: 6.8rem;
+      height: 6.8rem;
+    }
   }
 
   h1 {
@@ -67,11 +67,11 @@ export const StartPageContainer = styled.main`
     line-height: 2.4rem;
     letter-spacing: -0.048rem;
     text-align: center;
-    ${breakpoint.tablet`
+    @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
       font-size: 2.8rem;
       line-height: 2.8rem;
       letter-spacing: -0.056rem;
-    `};
+    }
   }
 
   p {
@@ -84,23 +84,24 @@ export const StartPageContainer = styled.main`
     font-weight: 400;
     line-height: 1.8rem;
     letter-spacing: -0.028rem;
-    ${breakpoint.tablet`
+    @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
       margin-bottom: 4rem;
       max-width: 50.5rem;
       font-size: 1.8rem;
       line-height: 2.4rem;
       letter-spacing: -0.036rem;
-    `};
+    }
   }
+
   nav {
     display: flex;
     justify-content: center;
     width: 100%;
+    gap: 1.2rem;
     margin-right: 1.5rem;
     > ul {
       display: flex;
       flex-direction: row;
-      gap: 1.2rem;
       li:first-of-type {
         button {
           color: ${({ theme }) => theme.startPage.registerButton.fontColorIdle};
@@ -124,11 +125,11 @@ export const StartPageContainer = styled.main`
             border-color: ${({ theme }) =>
               theme.startPage.registerButton.borderActive};
           }
-          ${breakpoint.tablet`
+          @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
             font-size: 1.6rem;
             width: 18.4rem;
             height: 6.7rem;
-          `};
+          }
         }
       }
       li:last-of-type {
@@ -149,12 +150,12 @@ export const StartPageContainer = styled.main`
             background-color: ${({ theme }) =>
               theme.startPage.signinButton.bgActive};
           }
-          ${breakpoint.tablet`
+          @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
             font-size: 1.6rem;
             width: 14.1rem;
             height: 6.7rem;
             max-height: 6.7rem;
-          `};
+          }
         }
       }
     }

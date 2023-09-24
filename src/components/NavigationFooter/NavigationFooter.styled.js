@@ -1,30 +1,39 @@
 import { styled } from "styled-components";
-import { breakpoint } from "../../utils/mixins";
 
 export const StyledNav = styled.nav`
+  --color-navigation-footer-idle: ${({ theme }) =>
+    theme.navigation.footer.colorIdle};
+  --color-navigation-footer-hover: ${({ theme }) =>
+    theme.navigation.footer.colorHover};
+
   > ul {
     display: flex;
     flex-direction: column;
     gap: 1.4rem;
 
-    ${breakpoint.tablet`
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       gap: 2rem;
-    `}
-    ${breakpoint.desktop`
+    }
+    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       gap: 2.4rem;
-    `}
+    }
 
-    >li {
-      text-align: center;
-      color: #fafafa;
+    > li {
+      display: flex;
+      justify-content: center;
+      color: var(--color-navigation-footer-idle);
       font-size: 1.4rem;
       font-weight: 500;
       line-height: 128.571%;
       letter-spacing: -0.028rem;
       transition: color 100ms;
+
       &:hover,
       &:focus {
-        color: #86aa43;
+        color: var(--color-navigation-footer-hover);
+      }
+      > a {
+        text-align: center;
       }
     }
   }

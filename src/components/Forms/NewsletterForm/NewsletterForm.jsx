@@ -3,8 +3,8 @@ import { Button } from "../../Button/Button";
 import { StyledForm } from "./NewsletterForm.styled";
 import { Formik } from "formik";
 import { validationSchema } from "../../../schemas/registrationSchema";
-
-export const NewsletterForm = () => {
+import PropTypes from "prop-types";
+export const NewsletterForm = ({ layout }) => {
   const initialFormValues = { email: "" };
 
   const handleSubmit = (values) => {
@@ -37,14 +37,22 @@ export const NewsletterForm = () => {
           $emailInfo,
           $emailTouched,
         };
-
         return (
-          <StyledForm {...styledFormProps}>
+          <StyledForm {...styledFormProps} $layout={layout}>
+            {layout === "column" && (
+              <>
+                <h2>Subscribe to our Newsletter</h2>
+                <p>
+                  Subscribe up to our newsletter. Be in touch with latest news
+                  and special offers.
+                </p>
+              </>
+            )}
             <div>
               <CustomFormikInput
                 name="email"
                 type="email"
-                placeholder="Email"
+                placeholder="Enter your email address"
                 icon="envelope"
                 motionObject={warnIconMotion}
                 errors={errors}
@@ -52,7 +60,6 @@ export const NewsletterForm = () => {
                 autocomplete="off"
               />
             </div>
-
             <Button variant="rectBig" type="submit" aria-label="Submit form">
               Subscribe
             </Button>
@@ -63,4 +70,7 @@ export const NewsletterForm = () => {
   );
 };
 
+NewsletterForm.propTypes = {
+  layout: PropTypes.string,
+};
 export default NewsletterForm;

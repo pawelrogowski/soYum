@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const StyledLabel = styled.label`
+  --color-themeSwitch-bgOff: ${({ theme }) => theme.themeSwitch.bgOff};
+  --color-themeSwitch-bgOn: ${({ theme }) => theme.themeSwitch.bgOn};
+
   position: relative;
   display: inline-block;
   width: 6.1rem;
@@ -20,7 +23,7 @@ export const StyledLabel = styled.label`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: ${({ theme }) => theme.themeSwitch.bgOff};
+    background-color: var(--color-themeSwitch-bgOff);
     transition: box-shadow 400ms, transform 400ms;
     border-radius: 34px;
   }
@@ -39,7 +42,7 @@ export const StyledLabel = styled.label`
   }
 
   > input:checked + span {
-    background-color: ${({ theme }) => theme.themeSwitch.bgOn};
+    background-color: var(--color-themeSwitch-bgOn);
     box-shadow: inset 0px 3px 10px rgba(0, 0, 0, 0.2);
   }
 
