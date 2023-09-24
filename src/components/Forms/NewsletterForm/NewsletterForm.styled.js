@@ -47,7 +47,7 @@ export const StyledForm = styled.form`
       &:focus,
       &:hover {
         border: 0.1rem solid var(--color-border-active);
-        bbackground-color: #22252a;
+        background-color: #22252a;
       }
       &::placeholder {
         color: var(--color-font-idle);
