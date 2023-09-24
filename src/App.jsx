@@ -6,7 +6,7 @@ import { lightTheme, darkTheme } from "./styles/themes";
 import { LoaderDots } from "./components/LoaderDots/LoaderDots";
 import { GlobalStyles } from "./styles/globalStyles";
 import { AnimatePresence } from "framer-motion";
-
+import { useState, useEffect } from "react";
 // layouts
 const AuthLayout = lazy(() => import("./layouts/AuthLayout/AuthLayout"));
 const MainLayout = lazy(() => import("./layouts/MainLayout/MainLayout"));
@@ -20,10 +20,17 @@ const StartPage = lazy(() => import("./pages/StartPage/StartPage.jsx"));
 
 export const App = () => {
   const isDarkTheme = useSelector((state) => state.global.isDarkTheme);
+  const [isTransitionEnabled, setIsTransitionEnabled] = useState(false);
+
+  // this is to prevent white bg flash on page refreshes
+  // without sacraficing smooth theme switching for body background
+  useEffect(() => {
+    setIsTransitionEnabled(true);
+  }, []);
 
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
-      <GlobalStyles />
+      <GlobalStyles isTransitionEnabled={isTransitionEnabled} />
       <Router basename="/">
         <AnimatePresence mode="wait">
           <Suspense fallback={<LoaderDots />}>

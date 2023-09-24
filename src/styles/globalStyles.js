@@ -15,6 +15,8 @@ export const GlobalStyles = createGlobalStyle`
 
 	body {
 		  background-color: ${({ theme }) => theme.bg.main};
+      transition: ${({ isTransitionEnabled }) =>
+        isTransitionEnabled ? "background-color 200ms" : "none"};
   		scroll-behavior: smooth;
   		text-rendering: optimizeSpeed;
       font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
