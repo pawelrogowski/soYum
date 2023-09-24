@@ -13,6 +13,7 @@ lerna-debug.log*
 # Dev Analytics
 bundle-size.html
 
+bun.lockb
 node_modules
 dist
 dist-ssr
