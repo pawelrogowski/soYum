@@ -6,6 +6,7 @@ import { NavigationFooter } from "../NavigationFooter/NavigationFooter";
 import { DescriptionFooter } from "../DescriptionFooter/DescriptionFooter";
 import { NewsletterForm } from "../Forms/NewsletterForm/NewsletterForm";
 import { SocialIcons } from "../SocialIcons/SocialIcons";
+import { LegalDisclaimer } from "../LegalDisclaimer/LegalDisclaimer";
 import PropTypes from "prop-types";
 
 const Footer = ({ variant }) => {
@@ -52,6 +53,7 @@ const Footer = ({ variant }) => {
         )}
         <SocialIcons />
       </Container>
+      <LegalDisclaimer>asdasd</LegalDisclaimer>
     </StyledFooter>
   );
 };

@@ -10,12 +10,14 @@ export const StyledFooter = styled.footer`
   background-color: var(--color-bg-footer);
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   transition: background-color 200ms;
 
   ${({ $variant }) =>
     $variant === "mobile"
       ? css`
-          > div {
+          > div:first-of-type {
             width: 100%;
             padding-top: 2.8rem;
             padding-bottom: 1.75rem;
@@ -24,7 +26,7 @@ export const StyledFooter = styled.footer`
             align-items: center;
             gap: 3.2rem;
 
-            a:first-of-type {
+            > a:first-of-type {
               display: flex;
               align-items: center;
               gap: 0.8rem;
@@ -56,7 +58,7 @@ export const StyledFooter = styled.footer`
         `
       : $variant === "tablet"
       ? css`
-          > div {
+          > div:first-of-type {
             width: 100%;
             padding-top: 5rem;
             padding-bottom: 2.35rem;
@@ -77,7 +79,7 @@ export const StyledFooter = styled.footer`
                 > a:first-of-type {
                   display: flex;
                   align-items: center;
-                  gap: 0.8rem;
+                  gap: 1.2rem;
 
                   > span {
                     color: var(--color-footer-logoTextIdle);
@@ -86,22 +88,14 @@ export const StyledFooter = styled.footer`
                     line-height: 1.8rem;
                     letter-spacing: 0.027rem;
                     transition: color 200ms;
+                    font-size: 2.8rem;
+                    line-height: 100%;
+                    letter-spacing: 0.042rem;
 
                     &:hover,
                     &:focus,
                     &:focus-within {
                       color: var(--color-footer-logoTextActive);
-                    }
-                  }
-
-                  @media (min-width: ${({ theme }) =>
-                      theme.breakpoints.tablet}) {
-                    gap: 1.2rem;
-
-                    > span {
-                      font-size: 2.8rem;
-                      line-height: 100%;
-                      letter-spacing: 0.042rem;
                     }
                   }
 
@@ -130,7 +124,7 @@ export const StyledFooter = styled.footer`
         `
       : $variant === "desktop"
       ? css`
-          > div {
+          > div:first-of-type {
             width: 100%;
             padding-top: 5rem;
             padding-bottom: 2.35rem;
@@ -150,7 +144,7 @@ export const StyledFooter = styled.footer`
                 > a:first-of-type {
                   display: flex;
                   align-items: center;
-                  gap: 0.8rem;
+                  gap: 1.2rem;
 
                   > span {
                     color: var(--color-footer-logoTextIdle);
@@ -159,22 +153,14 @@ export const StyledFooter = styled.footer`
                     line-height: 1.8rem;
                     letter-spacing: 0.027rem;
                     transition: color 200ms;
+                    font-size: 2.8rem;
+                    line-height: 100%;
+                    letter-spacing: 0.042rem;
 
                     &:hover,
                     &:focus,
                     &:focus-within {
                       color: var(--color-footer-logoTextActive);
-                    }
-                  }
-
-                  @media (min-width: ${({ theme }) =>
-                      theme.breakpoints.tablet}) {
-                    gap: 1.2rem;
-
-                    > span {
-                      font-size: 2.8rem;
-                      line-height: 100%;
-                      letter-spacing: 0.042rem;
                     }
                   }
 

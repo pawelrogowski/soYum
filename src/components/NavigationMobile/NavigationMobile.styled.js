@@ -44,7 +44,7 @@ export const StyledAside = styled(motion.aside)`
       bottom: -175px;
       right: 9px;
       rotate: 424deg;
-      filter: blur(4.5px);
+      filter: blur(8.5px);
       z-index: -1;
     }
     > button {
