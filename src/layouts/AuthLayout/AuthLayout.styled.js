@@ -2,8 +2,10 @@ import styled from "styled-components";
 import bgMobile from "../../assets/icons/auth-backgrounds/bg-mobile.svg";
 import bgTablet from "../../assets/icons/auth-backgrounds/bg-tablet.svg";
 import bgDesktop from "../../assets/icons/auth-backgrounds/bg-desktop.svg";
-
-export const PageContent = styled.main`
+import { StyledDiv } from "../../components/Container/Container.styled";
+export const PageContent = styled(StyledDiv)`
+  max-width: 1860px;
+  margin: 0 auto;
   padding: 9.6rem 2rem 10rem 2rem;
   @media (max-height: 800px) {
     padding-top: 2.5rem;

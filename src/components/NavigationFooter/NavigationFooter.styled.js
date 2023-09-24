@@ -19,7 +19,8 @@ export const StyledNav = styled.nav`
     }
 
     > li {
-      text-align: center;
+      display: flex;
+      justify-content: center;
       color: var(--color-navigation-footer-idle);
       font-size: 1.4rem;
       font-weight: 500;

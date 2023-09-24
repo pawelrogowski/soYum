@@ -18,7 +18,6 @@ export const StyledForm = styled.form`
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 7.2rem 0 3.75rem 0;
 
   div {
     position: relative;
@@ -44,10 +43,11 @@ export const StyledForm = styled.form`
       font-size: 1.4rem;
       font-weight: 400;
       font-family: var(--font-input);
+      background-color: #22252a;
       &:focus,
       &:hover {
         border: 0.1rem solid var(--color-border-active);
-        background-color: var(--color-background-idle);
+        bbackground-color: #22252a;
       }
       &::placeholder {
         color: var(--color-font-idle);
@@ -83,6 +83,37 @@ export const StyledForm = styled.form`
     width: 100%;
     max-width: 18.7rem;
   }
+
+  ${({ $layout }) =>
+    $layout === "column" &&
+    css`
+      max-width: 33.9rem;
+      flex-direction: column;
+      > h2 {
+        margin-bottom: 1.4rem;
+        color: #fafafa;
+        font-family: Poppins;
+        font-size: 1.8rem;
+        font-weight: 700;
+      }
+      > p {
+        margin-bottom: 2.8rem;
+        color: #fafafa;
+        font-size: 1.4rem;
+        font-style: normal;
+        line-height: 128.57%
+        letter-spacing: -0.028rem;
+      }
+
+      > div {
+        margin-bottom: 1.6rem;
+        width: 100%;
+        max-width: 33.9rem;
+      }
+      > button {
+        max-width: 33.9rem;
+      }
+    `}
 
   ${(props) =>
     props.$emailTouched

@@ -36,5 +36,9 @@ export const StyledUl = styled.ul`
     height: 1.8rem;
     fill: var(--color-social-fill);
     transition: fill 100ms;
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      width: 2rem;
+      height: 2rem;
+    }
   }
 `;

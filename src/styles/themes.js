@@ -229,7 +229,7 @@ export const lightTheme = {
   },
   footer: {
     logoTextIdle: "#FAFAFA",
-    logoTextActive: "#86aa43",
+    logoTextActive: brandColors.main,
     descriptionText: "#FAFAFA",
   },
 };
@@ -387,8 +387,6 @@ export const darkTheme = {
     strokeActive: brandColors.main,
   },
   footer: {
-    logoTextIdle: "#FAFAFA",
-    logoTextActive: "#1E1F28",
-    descriptionText: "#FAFAFA",
+    ...lightTheme.footer,
   },
 };
