@@ -17,6 +17,9 @@ const RegisterPage = lazy(() =>
   import("./pages/RegistrationPage/RegistrationPage.jsx")
 );
 const StartPage = lazy(() => import("./pages/StartPage/StartPage.jsx"));
+const NotFoundPage = lazy(() =>
+  import("./pages/NotFoundPage/NotFoundPage.jsx")
+);
 
 export const App = () => {
   const isDarkTheme = useSelector((state) => state.global.isDarkTheme);
@@ -43,8 +46,8 @@ export const App = () => {
               <Route element={<MainLayout />}>
                 <Route path="/home" element={null} />
                 <Route path="/404" element={null} />
+                <Route path="*" element={<NotFoundPage />} />
               </Route>
-              <Route path="*"></Route>
             </Routes>
           </Suspense>
         </AnimatePresence>

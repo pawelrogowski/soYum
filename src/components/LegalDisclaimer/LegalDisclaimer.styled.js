@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import leaves from "../../assets/images/leaves@1x.webp";
+import Container from "../Container/Container";
 
-export const StyledDiv = styled.div`
+export const StyledDiv = styled(Container)`
   --color-background: ${({ theme }) => theme.bg.main};
   --color-text: ${({ theme }) => theme.footer.legalText};
   position: relative;

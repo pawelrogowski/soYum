@@ -237,6 +237,9 @@ export const lightTheme = {
     primary: brandColors.main,
     secondary: "#1e1f28",
   },
+  notFound: {
+    text: "#000",
+  },
 };
 
 export const darkTheme = {
@@ -400,5 +403,8 @@ export const darkTheme = {
   backgroundDecoration: {
     primary: brandColors.main,
     secondary: "#fafafa",
+  },
+  notFound: {
+    text: "#FAFAFA",
   },
 };
