@@ -45,7 +45,7 @@ export const App = () => {
               </Route>
               <Route element={<MainLayout />}>
                 <Route path="/home" element={null} />
-                <Route path="/404" element={null} />
+                <Route path="/404" element={<NotFoundPage />} />
                 <Route path="*" element={<NotFoundPage />} />
               </Route>
             </Routes>
