@@ -3,23 +3,46 @@ import { styled } from "styled-components";
 export const StyledDiv = styled.div`
   --color-userAvatar-fontIdle: ${({ theme }) => theme.userAvatar.fontIdle};
   --color-userAvatar-fontHover: ${({ theme }) => theme.userAvatar.fontHover};
+  --color-decoration: ${({ theme }) => theme.backgroundDecoration.secondary};
 
   height: 100%;
+  max-height: 4.6rem;
   margin-right: 2.4rem;
-  overflow: hidden;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
   gap: 1.4rem;
+  position: relative;
 
   &:hover,
-  &:focus,
-  &:focus-within {
+  &:focus {
     cursor: pointer;
     span {
       color: var(--color-userAvatar-fontHover);
+    }
+  }
+  &::before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 0.3rem;
+    background-color: var(--color-decoration);
+    bottom: -8.35rem;
+    left: 3.8rem;
+    @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+      width: 1.2rem;
+      height: 1.2rem;
+      bottom: -10rem;
+      left: -10rem;
+      rotate: -25deg;
+    }
+    @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
+      bottom: -13.9rem;
+      left: -30.5rem;
     }
   }
 
@@ -44,7 +67,7 @@ export const StyledDiv = styled.div`
     color: var(--color-userAvatar-fontIdle);
     font-size: 1.2rem;
     font-family: "Poppins";
-    line-height: 20.4rem;
+    line-height: 2.34rem;
     letter-spacing: normal;
     font-weight: 600;
     font-style: normal;
@@ -52,7 +75,7 @@ export const StyledDiv = styled.div`
 
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       font-size: 1.4rem;
-      line-height: 23.8rem;
+      line-height: 2.38rem;
     }
   }
 `;

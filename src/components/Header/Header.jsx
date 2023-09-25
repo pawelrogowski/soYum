@@ -25,6 +25,7 @@ export const Header = () => {
 
   return (
     <StyledHeader>
+      <div className="square"></div>
       <Link to="/home">
         <Logo variant="header" />
       </Link>
