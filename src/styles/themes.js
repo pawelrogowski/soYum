@@ -27,7 +27,7 @@ export const lightTheme = {
   bg: {
     main: "#FAFAFA",
     secondary: "#1E1F28",
-    form: "#FAFAFA",
+    form: "#22252A",
     footer: "#22252A",
   },
   link: {
@@ -233,6 +233,10 @@ export const lightTheme = {
     logoTextActive: brandColors.main,
     descriptionText: "#FAFAFA",
   },
+  backgroundDecoration: {
+    primary: brandColors.main,
+    secondary: "#1e1f28",
+  },
 };
 
 export const darkTheme = {
@@ -240,7 +244,7 @@ export const darkTheme = {
   bg: {
     main: "#1E1F28",
     secondary: "#8BAA36",
-    form: "#FAFAFA",
+    form: "#22252A",
     footer: "#8BAA36",
   },
   link: {
@@ -392,5 +396,9 @@ export const darkTheme = {
     logoTextActive: "#22252a",
     descriptionText: "#FAFAFA",
     legalText: "#8e8f92",
+  },
+  backgroundDecoration: {
+    primary: brandColors.main,
+    secondary: "#fafafa",
   },
 };
