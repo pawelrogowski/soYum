@@ -1,7 +1,4 @@
 import styled from "styled-components";
-import bgMobile from "../../assets/icons/auth-backgrounds/bg-mobile.svg";
-import bgTablet from "../../assets/icons/auth-backgrounds/bg-tablet.svg";
-import bgDesktop from "../../assets/icons/auth-backgrounds/bg-desktop.svg";
 import { StyledDiv } from "../../components/Container/Container.styled";
 export const PageContent = styled(StyledDiv)`
   max-width: 1860px;
@@ -36,26 +33,14 @@ export const PageContent = styled(StyledDiv)`
   &::after {
     position: fixed;
     content: "";
-    background-image: url(${bgMobile});
     background-color: ${({ theme }) => theme.bg.form};
 
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-      background-image: url(${bgTablet});
-      background-size: 100vw 65vh;
-    }
-
-    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-      background-image: url(${bgDesktop});
-      background-size: 100vw 40vh;
-    }
-    background-repeat: no-repeat;
-    background-size: 100vw 50vh;
-    background-position: bottom;
     bottom: 0;
     left: 0;
     width: 100vw;
     height: 100%;
     z-index: -1;
+    clip-path: polygon(38% 54%, 57% 54%, 100% 50%, 100% 0%, 0% 0%, 0% 50%);
   }
 
   > svg {
