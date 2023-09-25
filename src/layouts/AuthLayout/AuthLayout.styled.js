@@ -40,7 +40,18 @@ export const PageContent = styled(StyledDiv)`
     width: 100vw;
     height: 100%;
     z-index: -1;
-    clip-path: polygon(38% 54%, 57% 54%, 100% 50%, 100% 0%, 0% 0%, 0% 50%);
+    clip-path: polygon(38% 54%, 57% 54%, 100% 50%, 100% 100%, 0% 100%, 0% 50%);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #fafafa;
+    z-index: -2;
   }
 
   > svg {

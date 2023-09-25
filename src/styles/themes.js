@@ -27,7 +27,7 @@ export const lightTheme = {
   bg: {
     main: "#FAFAFA",
     secondary: "#1E1F28",
-    form: "#FAFAFA",
+    form: "#22252A",
     footer: "#22252A",
   },
   link: {
@@ -240,7 +240,7 @@ export const darkTheme = {
   bg: {
     main: "#1E1F28",
     secondary: "#8BAA36",
-    form: "#FAFAFA",
+    form: "#22252A",
     footer: "#8BAA36",
   },
   link: {
