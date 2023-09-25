@@ -24,6 +24,12 @@ export const GlobalStyles = createGlobalStyle`
       overflow: auto;
   }
 
+  div[id="root"] {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+  }
+
 	a {
 		text-decoration: none;
 		color: inherit;
