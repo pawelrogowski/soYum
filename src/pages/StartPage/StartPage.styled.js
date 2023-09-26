@@ -102,6 +102,12 @@ export const StartPageContainer = styled.main`
     > ul {
       display: flex;
       flex-direction: row;
+      gap: 1.2rem;
+
+      @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+        gap: 1.8rem;
+      }
+
       li:first-of-type {
         button {
           color: ${({ theme }) => theme.startPage.registerButton.fontColorIdle};
