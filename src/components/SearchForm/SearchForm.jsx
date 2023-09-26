@@ -15,7 +15,7 @@ export const SearchForm = ({ onChange, onSubmit, placeholder, variant }) => {
         aria-labelledby="search"
         aria-describedby="search-instructions"
       />
-      <Button variant="normal" type="submit" aria-label="Submit Search">
+      <Button variant={variant} type="submit" aria-label="Submit Search">
         Search
       </Button>
       <p id="search-instructions">

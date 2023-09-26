@@ -24,6 +24,9 @@ const brandColors = {
 
 export const lightTheme = {
   breakpoints,
+  brandColors: {
+    ...brandColors,
+  },
   bg: {
     main: "#FAFAFA",
     secondary: "#1E1F28",
@@ -244,6 +247,9 @@ export const lightTheme = {
 
 export const darkTheme = {
   breakpoints,
+  brandColors: {
+    ...brandColors,
+  },
   bg: {
     main: "#1E1F28",
     secondary: "#8BAA36",
