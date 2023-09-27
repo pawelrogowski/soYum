@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledButton = styled.button`
   --breakpoint-tablet: ${(props) => props.theme.breakpoints.tablet};
   --color-mobileMenu-strokeIdle: ${({ theme }) => theme.mobileMenu.strokeIdle};
-
+  --blend-mode: ${({ theme }) => theme.mobileMenu.blend};
   background: none;
   border: none;
   width: 2.8rem;
@@ -19,6 +19,7 @@ export const StyledButton = styled.button`
     width: 2.8rem;
     height: 2.8rem;
     transition: stroke 200ms;
+    mix-blend-mode: var(--blend-mode);
 
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       width: 3.2rem;

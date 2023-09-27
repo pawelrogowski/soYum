@@ -4,7 +4,7 @@ export const StyledDiv = styled.div`
   --color-userAvatar-fontIdle: ${({ theme }) => theme.userAvatar.fontIdle};
   --color-userAvatar-fontHover: ${({ theme }) => theme.userAvatar.fontHover};
   --color-decoration: ${({ theme }) => theme.backgroundDecoration.secondary};
-
+  --blend-mode: ${({ theme }) => theme.userAvatar.blend};
   height: 100%;
   max-height: 4.6rem;
   margin-right: 2.4rem;
@@ -21,6 +21,7 @@ export const StyledDiv = styled.div`
     cursor: pointer;
     span {
       color: var(--color-userAvatar-fontHover);
+      mix-blend-mode: initial;
     }
   }
   &::before {
@@ -71,7 +72,7 @@ export const StyledDiv = styled.div`
     letter-spacing: normal;
     font-weight: 600;
     font-style: normal;
-    transition: color 250ms;
+    mix-blend-mode: var(--blend-mode);
 
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       font-size: 1.4rem;

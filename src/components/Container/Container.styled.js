@@ -6,6 +6,7 @@ export const StyledDiv = styled.main`
   padding: 0 2.1rem;
   position: relative;
   margin: 0 auto;
+  width: 100%;
 
   ${(props) =>
     props.as === "main" &&

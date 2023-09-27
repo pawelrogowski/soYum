@@ -144,6 +144,7 @@ export const lightTheme = {
     colorIdle: "#23262A",
     colorHover: brandColors.main,
     icon: "#23262A",
+    blend: "initial",
     mobile: {
       font: typography.family.primary,
       colorIdle: "#FAFAFA",
@@ -228,12 +229,14 @@ export const lightTheme = {
     borderIdle: "none",
     borderHover: brandColors.main,
     borderActive: brandColors.main,
+    blend: "initial",
   },
   mobileMenu: {
     bg: "linear-gradient(200deg, rgba(235,243,212,1) 0%, rgba(235,243,212,1) 100%)",
     strokeIdle: "#22252A",
     strokeHover: brandColors.main,
     strokeActive: brandColors.main,
+    blend: "initial",
   },
   footer: {
     legalText: "#8e8f92",
@@ -321,6 +324,7 @@ export const darkTheme = {
     colorIdle: "#FAFAFA",
     colorHover: brandColors.main,
     icon: "#fafafa",
+    blend: "difference",
     mobile: {
       colorIdle: "#FAFAFA",
       colorHover: brandColors.main,
@@ -403,12 +407,14 @@ export const darkTheme = {
     borderIdle: "none",
     borderHover: brandColors.main,
     borderActive: brandColors.main,
+    blend: "difference",
   },
   mobileMenu: {
     bg: "#1E1F28",
     strokeIdle: "#FAFAFA",
     strokeHover: brandColors.main,
     strokeActive: brandColors.main,
+    blend: "difference",
   },
   footer: {
     logoTextIdle: "#FAFAFA",
