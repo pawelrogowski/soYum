@@ -29,7 +29,7 @@ export const lightTheme = {
   },
   heading: {
     color: "#001833",
-  }
+  },
   hero: {
     text: "#22252a",
     bgDecoration: "#eaf3d6",
