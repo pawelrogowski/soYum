@@ -27,6 +27,10 @@ export const lightTheme = {
   brandColors: {
     ...brandColors,
   },
+  hero: {
+    text: "#22252a",
+    bgDecoration: "#eaf3d6",
+  },
   bg: {
     main: "#FAFAFA",
     secondary: "#1E1F28",
@@ -129,9 +133,10 @@ export const lightTheme = {
     font: typography.family.primary,
     search: {
       font: "#23262A",
+      background: "#fff",
       placeholder: "#bdbdbd",
       borderIdle: "#f0f0f0",
-      borderFocus: "#0000005e",
+      borderFocus: "#f0f0f0",
     },
   },
   navigation: {
@@ -256,6 +261,10 @@ export const darkTheme = {
     form: "#22252A",
     footer: "#8BAA36",
   },
+  hero: {
+    text: "#fafafa",
+    bgDecoration: "#eaf3d6",
+  },
   link: {
     ...lightTheme.link,
   },
@@ -300,10 +309,11 @@ export const darkTheme = {
   form: {
     font: typography.family.primary,
     search: {
-      font: "#23262A",
-      placeholder: "#bdbdbd",
-      borderIdle: "#f0f0f0",
-      borderFocus: "#0000005e",
+      font: "#FAFAFA",
+      background: "#1e1f28",
+      placeholder: "#8c8c91",
+      borderIdle: "#8c8c91",
+      borderFocus: "#8c8c91",
     },
   },
   navigation: {

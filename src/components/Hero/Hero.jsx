@@ -24,7 +24,7 @@ export const Hero = () => {
         />
         <img src={hero} alt="plate of delicious food" />
       </picture>
-      <SearchForm variant="outlineSmall" />
+      <SearchForm placeholder="beef" />
     </StyledSection>
   );
 };

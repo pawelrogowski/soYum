@@ -10,6 +10,8 @@ export const StyledForm = styled.form`
     theme.form.search.borderFocus};
   --color-form-search-placeholder: ${({ theme }) =>
     theme.form.search.placeholder};
+  --color-form-search-background: ${({ theme }) =>
+    theme.form.search.background};
 
   width: 100%;
   max-width: 50.1rem;
@@ -21,6 +23,7 @@ export const StyledForm = styled.form`
   }
 
   input {
+    background: var(--color-form-search-background);
     height: 7rem;
     width: 100%;
     border: 0.1rem solid var(--color-form-search-borderIdle);
@@ -38,8 +41,10 @@ export const StyledForm = styled.form`
     font-style: normal;
 
     &:not(:placeholder-shown) ~ Button {
-      border: 0.1rem solid var(--color-button-base-bgHover);
-      background-color: var(--color-button-base-bgHover);
+      &:hover {
+        border: 0.1rem solid var(--color-button-base-bgHover);
+        background-color: var(--color-button-base-bgHover);
+      }
     }
 
     &:focus,

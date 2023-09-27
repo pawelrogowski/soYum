@@ -28,6 +28,7 @@ export const GlobalStyles = createGlobalStyle`
       height: 100vh;
       display: flex;
       flex-direction: column;
+      overflow-x: hidden;
   }
 
 	a {
@@ -111,4 +112,7 @@ export const GlobalStyles = createGlobalStyle`
       props.theme.authForm.bg} inset;
 	}
 
+  .spacer {
+    height: 750px;
+  }
 `;

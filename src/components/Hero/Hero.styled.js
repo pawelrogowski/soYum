@@ -1,7 +1,9 @@
 import styled from "styled-components";
-
+import leaves from "../../assets/images/leaves@1x.webp";
 export const StyledSection = styled.section`
   --color-brand-highlight: ${({ theme }) => theme.brandColors.main};
+  --color-hero-text: ${({ theme }) => theme.hero.text};
+  --color-hero-bg-decoration: ${({ theme }) => theme.hero.bgDecoration};
 
   padding: 6.5rem 0;
   display: flex;
@@ -13,7 +15,7 @@ export const StyledSection = styled.section`
     flex-direction: column;
     align-items: center;
     h1 {
-      color: #22252a;
+      color: var(--color-hero-text);
       font-size: 6rem;
       line-height: 1;
       letter-spacing: -0.3rem;
@@ -37,12 +39,13 @@ export const StyledSection = styled.section`
       }
     }
     p {
-      color: #23262a;
+      color: var(--color-hero-text);
       text-align: center;
       font-size: 1.4rem;
       line-height: 1.28;
       letter-spacing: -0.028rem;
       margin-bottom: 4.4rem;
+      max-width: 25rem;
 
       @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
         font-size: 1.8rem;
@@ -57,14 +60,27 @@ export const StyledSection = styled.section`
     &:before {
       content: "";
       position: absolute;
-      background: #ebf3d4;
-      width: 300%;
-      height: 300%;
+      background: var(--color-hero-bg-decoration);
+      width: 150%;
+      height: 150%;
       top: 50%;
       left: 58%;
       border-radius: 100px;
       z-index: -1;
       transform: translate(0, -50%) rotate(45deg);
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 33%;
+      left: 50%;
+      background-image: url(${leaves});
+      background-size: contain;
+      width: 230%;
+      height: 230%;
+      transform: translate(-50%, -50%) rotate(60deg) scaleX(-1);
+      filter: blur(2px);
+      z-index: -1;
     }
   }
 `;
