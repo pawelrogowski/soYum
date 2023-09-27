@@ -19,7 +19,7 @@ export const Hero = () => {
         <>
           <div>
             <h1>
-              <span>So </span>Yummy
+              <span>So</span>Yummy
             </h1>
             <p>
               &quot;What to cook?&quot; is not only a recipe app, it is, in
