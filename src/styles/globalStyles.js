@@ -21,13 +21,14 @@ export const GlobalStyles = createGlobalStyle`
   		text-rendering: optimizeSpeed;
       font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       min-width: 28rem;
-      overflow: auto;
+      overflow-x: hidden;
   }
 
   div[id="root"] {
       height: 100vh;
       display: flex;
       flex-direction: column;
+      overflow-x: hidden;
   }
 
 	a {
@@ -111,4 +112,7 @@ export const GlobalStyles = createGlobalStyle`
       props.theme.authForm.bg} inset;
 	}
 
+  .spacer {
+    height: 750px;
+  }
 `;

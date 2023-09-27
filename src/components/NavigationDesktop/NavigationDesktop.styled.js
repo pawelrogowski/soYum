@@ -4,6 +4,7 @@ export const StyledNav = styled.nav`
   --font-navigation: ${({ theme }) => theme.navigation.font};
   --color-navigation-idle: ${({ theme }) => theme.navigation.colorIdle};
   --color-navigation-hover: ${({ theme }) => theme.navigation.colorHover};
+  --blend-mode: ${({ theme }) => theme.navigation.blend};
   margin-right: auto;
 
   > ul {
@@ -32,11 +33,17 @@ export const StyledNav = styled.nav`
       }
     }
 
-    > li > button > svg {
-      stroke: var(--color-navigation-idle);
-      width: 2.4rem;
-      height: 2.4rem;
-      transition: stroke 100ms;
+    > li {
+      &:focus-within {
+        mix-blend-mode: initial;
+      }
+      > button > svg {
+        stroke: var(--color-navigation-idle);
+        width: 2.4rem;
+        height: 2.4rem;
+        transition: stroke 100ms;
+        mix-blend-mode: var(--blend-mode);
+      }
     }
 
     > li {
@@ -44,7 +51,8 @@ export const StyledNav = styled.nav`
       &:hover {
         svg {
           stroke: var(--color-navigation-hover);
-          transition: stroke 100ms;
+          transition: none;
+          mix-blend-mode: initial;
         }
       }
     }

@@ -24,6 +24,13 @@ const brandColors = {
 
 export const lightTheme = {
   breakpoints,
+  brandColors: {
+    ...brandColors,
+  },
+  hero: {
+    text: "#22252a",
+    bgDecoration: "#eaf3d6",
+  },
   bg: {
     main: "#FAFAFA",
     secondary: "#1E1F28",
@@ -126,9 +133,10 @@ export const lightTheme = {
     font: typography.family.primary,
     search: {
       font: "#23262A",
+      background: "#fff",
       placeholder: "#bdbdbd",
       borderIdle: "#f0f0f0",
-      borderFocus: "#0000005e",
+      borderFocus: "#f0f0f0",
     },
   },
   navigation: {
@@ -136,6 +144,7 @@ export const lightTheme = {
     colorIdle: "#23262A",
     colorHover: brandColors.main,
     icon: "#23262A",
+    blend: "initial",
     mobile: {
       font: typography.family.primary,
       colorIdle: "#FAFAFA",
@@ -220,12 +229,14 @@ export const lightTheme = {
     borderIdle: "none",
     borderHover: brandColors.main,
     borderActive: brandColors.main,
+    blend: "initial",
   },
   mobileMenu: {
     bg: "linear-gradient(200deg, rgba(235,243,212,1) 0%, rgba(235,243,212,1) 100%)",
     strokeIdle: "#22252A",
     strokeHover: brandColors.main,
     strokeActive: brandColors.main,
+    blend: "initial",
   },
   footer: {
     legalText: "#8e8f92",
@@ -244,11 +255,18 @@ export const lightTheme = {
 
 export const darkTheme = {
   breakpoints,
+  brandColors: {
+    ...brandColors,
+  },
   bg: {
     main: "#1E1F28",
     secondary: "#8BAA36",
     form: "#22252A",
     footer: "#8BAA36",
+  },
+  hero: {
+    text: "#fafafa",
+    bgDecoration: "#eaf3d6",
   },
   link: {
     ...lightTheme.link,
@@ -294,10 +312,11 @@ export const darkTheme = {
   form: {
     font: typography.family.primary,
     search: {
-      font: "#23262A",
-      placeholder: "#bdbdbd",
-      borderIdle: "#f0f0f0",
-      borderFocus: "#0000005e",
+      font: "#FAFAFA",
+      background: "#1e1f28",
+      placeholder: "#8c8c91",
+      borderIdle: "#8c8c91",
+      borderFocus: "#8c8c91",
     },
   },
   navigation: {
@@ -305,6 +324,7 @@ export const darkTheme = {
     colorIdle: "#FAFAFA",
     colorHover: brandColors.main,
     icon: "#fafafa",
+    blend: "difference",
     mobile: {
       colorIdle: "#FAFAFA",
       colorHover: brandColors.main,
@@ -387,12 +407,14 @@ export const darkTheme = {
     borderIdle: "none",
     borderHover: brandColors.main,
     borderActive: brandColors.main,
+    blend: "difference",
   },
   mobileMenu: {
     bg: "#1E1F28",
     strokeIdle: "#FAFAFA",
     strokeHover: brandColors.main,
     strokeActive: brandColors.main,
+    blend: "difference",
   },
   footer: {
     logoTextIdle: "#FAFAFA",

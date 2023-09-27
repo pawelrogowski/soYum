@@ -17,6 +17,7 @@ const RegisterPage = lazy(() =>
   import("./pages/RegistrationPage/RegistrationPage.jsx")
 );
 const StartPage = lazy(() => import("./pages/StartPage/StartPage.jsx"));
+const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"));
 const NotFoundPage = lazy(() =>
   import("./pages/NotFoundPage/NotFoundPage.jsx")
 );
@@ -44,7 +45,7 @@ export const App = () => {
                 <Route path="/register" element={<RegisterPage />} />
               </Route>
               <Route element={<MainLayout />}>
-                <Route path="/home" element={null} />
+                <Route path="/home" element={<HomePage />} />
                 <Route path="/404" element={<NotFoundPage />} />
                 <Route path="*" element={<NotFoundPage />} />
               </Route>

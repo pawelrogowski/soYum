@@ -10,7 +10,11 @@ export const StyledForm = styled.form`
     theme.form.search.borderFocus};
   --color-form-search-placeholder: ${({ theme }) =>
     theme.form.search.placeholder};
+  --color-form-search-background: ${({ theme }) =>
+    theme.form.search.background};
 
+  width: 100%;
+  max-width: 50.1rem;
   position: relative;
 
   label,
@@ -19,11 +23,12 @@ export const StyledForm = styled.form`
   }
 
   input {
+    background: var(--color-form-search-background);
     height: 7rem;
+    width: 100%;
     border: 0.1rem solid var(--color-form-search-borderIdle);
-    width: 39rem;
-    border-radius: 2.4rem 0rem 0rem 4.4rem;
-    padding: 0 6rem 0rem 4.9rem;
+    border-radius: 2.4rem 4.4rem 2.4rem 4.4rem;
+    padding: 0 8rem 0rem 4.9rem;
     outline: none;
     transition: border-color 100ms;
 
@@ -36,8 +41,10 @@ export const StyledForm = styled.form`
     font-style: normal;
 
     &:not(:placeholder-shown) ~ Button {
-      border: 0.1rem solid var(--color-button-base-bgHover);
-      background-color: var(--color-button-base-bgHover);
+      &:hover {
+        border: 0.1rem solid var(--color-button-base-bgHover);
+        background-color: var(--color-button-base-bgHover);
+      }
     }
 
     &:focus,
@@ -54,8 +61,8 @@ export const StyledForm = styled.form`
 
   button {
     position: absolute;
+    right: 0rem;
     top: 0;
-    left: 349px;
     @media ${({ theme }) => theme.breakpoints.tablet} {
       position: relative;
       left: initial;

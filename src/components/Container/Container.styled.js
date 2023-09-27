@@ -6,7 +6,6 @@ export const StyledDiv = styled.main`
   padding: 0 2.1rem;
   position: relative;
   margin: 0 auto;
-  height: 100%;
   width: 100%;
 
   ${(props) =>
