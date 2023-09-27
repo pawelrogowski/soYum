@@ -27,6 +27,9 @@ export const lightTheme = {
   brandColors: {
     ...brandColors,
   },
+  heading: {
+    color: "#001833",
+  }
   hero: {
     text: "#22252a",
     bgDecoration: "#eaf3d6",
@@ -267,6 +270,9 @@ export const darkTheme = {
   hero: {
     text: "#fafafa",
     bgDecoration: "#eaf3d6",
+  },
+  heading: {
+    color: "#fafafa",
   },
   link: {
     ...lightTheme.link,
