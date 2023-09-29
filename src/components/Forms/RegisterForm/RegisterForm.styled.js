@@ -161,6 +161,9 @@ export const StyledForm = styled(Form)`
         height: 6rem;
       }
     }
+    input[name="password"]:not(:placeholder-shown) {
+      font-size: 4rem;
+    }
   }
 
   ${StyledButton} {
@@ -219,7 +222,6 @@ export const StyledForm = styled(Form)`
             li {
               input[name="password"] {
                 -webkit-text-security: square;
-                font-size: 4rem;
                 margin-bottom: 2rem;
                 @media (min-width: ${(props) =>
                     props.theme.breakpoints.tablet}) {
@@ -246,7 +248,6 @@ export const StyledForm = styled(Form)`
         ? css`
             li {
               input[name="password"]:not(:placeholder-shown) {
-                font-size: 4rem;
                 -webkit-text-fill-color: var(--color-correct);
                 color: var(--color-correct);
                 border-color: var(--color-correct);

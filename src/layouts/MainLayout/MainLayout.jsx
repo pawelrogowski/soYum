@@ -25,15 +25,11 @@ export const MainLayout = () => {
       <Header />
       <Container as="main">
         <Outlet />
-        <div className="spacer"></div>
       </Container>
-      {isMobileSize ? (
-        <Footer variant="mobile" />
-      ) : isTabletSize ? (
-        <Footer variant="tablet" />
-      ) : (
-        <Footer variant="desktop" />
-      )}
+
+      <Footer
+        variant={isMobileSize ? "mobile" : isTabletSize ? "tablet" : "desktop"}
+      />
     </>
   );
 };

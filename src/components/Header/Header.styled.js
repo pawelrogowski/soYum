@@ -12,7 +12,7 @@ export const StyledHeader = styled.header`
   flex-direction: row;
   align-items: center;
   flex-wrap: nowrap;
-  padding: 1.8rem 1.6rem 0 1.6rem;
+  padding: 1.8rem 1.8rem 0 1.8rem;
 
   &::before,
   &::after {

@@ -1,16 +1,14 @@
+import PropTypes from "prop-types";
 import { StyledGallery } from "./Gallery.styled";
 import { Card } from "../Card/Card";
+import { Heading } from "../Heading/Heading.jsx";
 
-const cards = [
-  { placeholder: "placeholder1", img: "img1", caption: "caption1" },
-  { placeholder: "placeholder2", img: "img2", caption: "caption2" },
-];
-
-export const Gallery = () => {
+export const Gallery = ({ data, heading }) => {
   return (
     <StyledGallery>
+      <Heading as="h2">{heading}</Heading>
       <ul>
-        {cards.map((item, index) => (
+        {data.map((item, index) => (
           <li key={index}>
             <Card
               img={item.img}
@@ -22,4 +20,9 @@ export const Gallery = () => {
       </ul>
     </StyledGallery>
   );
+};
+
+Gallery.propTypes = {
+  data: PropTypes.array.isRequired,
+  heading: PropTypes.string.isRequired,
 };
