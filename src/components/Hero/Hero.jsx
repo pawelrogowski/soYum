@@ -7,6 +7,7 @@ import herox2 from "../../assets/images/hero@x2.webp";
 import herox3 from "../../assets/images/hero@x3.webp";
 
 import { useMediaQuery } from "react-responsive";
+import { CallToAction } from "../CallToAction/CallToAction";
 
 export const Hero = () => {
   const isMobileSize = useMediaQuery({ maxWidth: breakpoints.mobileMax });
@@ -27,20 +28,28 @@ export const Hero = () => {
               the future.
             </p>
           </div>
-          <picture>
-            <source
-              srcSet={`${herox1} 1x, ${herox2} 2x, ${herox3} 3x`}
-              type="image/webp"
+          <div>
+            <picture>
+              <source
+                srcSet={`${herox1} 1x, ${herox2} 2x, ${herox3} 3x`}
+                type="image/webp"
+              />
+              <img src={hero} alt="plate of delicious food" />
+            </picture>
+            <CallToAction
+              text="way to enjoy a variety of fresh ingredients in one satisfying meal"
+              highlightedText="Delicious and healthy"
+              linkText="See recipes"
+              icon="arrow_long"
             />
-            <img src={hero} alt="plate of delicious food" />
-          </picture>
+          </div>
           <SearchForm placeholder="beef" />
         </>
       ) : isAtLeastTabletSize ? (
         <>
           <div>
             <h1>
-              <span>So </span>Yummy
+              <span>So</span>Yummy
             </h1>
             <p>
               &quot;What to cook?&quot; is not only a recipe app, it is, in
@@ -49,13 +58,21 @@ export const Hero = () => {
             </p>
             <SearchForm placeholder="beef" />
           </div>
-          <picture>
-            <source
-              srcSet={`${herox1} 1x, ${herox2} 2x, ${herox3} 3x`}
-              type="image/webp"
-            />
-            <img src={hero} alt="plate of delicious food" />
-          </picture>
+          <div>
+            <picture>
+              <source
+                srcSet={`${herox1} 1x, ${herox2} 2x, ${herox3} 3x`}
+                type="image/webp"
+              />
+              <img src={hero} alt="plate of delicious food" />{" "}
+              <CallToAction
+                text="way to enjoy a variety of fresh ingredients in one satisfying meal"
+                highlightedText="Delicious and healthy"
+                linkText="See recipes"
+                icon="arrow_long"
+              />
+            </picture>
+          </div>
         </>
       ) : null}
     </StyledSection>

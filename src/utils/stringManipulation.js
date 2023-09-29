@@ -1,10 +1,10 @@
 /**
  * Shortens a string to a maximum length and appends specified text if needed.
  *
- * @param {string} inputString - The input string to be shortened.
- * @param {number} maxLength - The maximum length allowed for the string.
- * @param {string} appendText - The text to append if the string is shortened.
- * @returns {string} The shortened string.
+ * @param {String} inputString - The input string to be shortened.
+ * @param {Number} maxLength - The maximum length allowed for the string.
+ * @param {String} appendText - The text to append if the string is shortened.
+ * @returns {String} The shortened string.
  */
 
 export const shortenString = (inputString, maxLength, appendText) => {
