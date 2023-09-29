@@ -9,6 +9,7 @@ export const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     flex-direction: row;
     padding: 9.5rem 0;
@@ -17,7 +18,7 @@ export const StyledSection = styled.section`
     gap: 7.4rem;
   }
 
-  > div {
+  > div:first-of-type {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -56,7 +57,7 @@ export const StyledSection = styled.section`
         color: var(--color-brand-highlight);
       }
     }
-    p {
+    > p {
       color: var(--color-hero-text);
       text-align: center;
       font-size: 1.4rem;
@@ -80,55 +81,58 @@ export const StyledSection = styled.section`
       }
     }
   }
-  picture {
-    margin-bottom: 2.4rem;
+  > div {
     position: relative;
-    &:before {
-      content: "";
-      position: absolute;
-      background: var(--color-hero-bg-decoration);
-      width: 150%;
-      height: 150%;
-      top: 50%;
-      left: 58%;
-      border-radius: 100px;
-      z-index: -1;
-      transform: translate(0, -50%) rotate(45deg);
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-        width: 200%;
-        height: 200%;
-        top: 40%;
-        left: 47%;
+    picture {
+      margin-bottom: 2.4rem;
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        background: var(--color-hero-bg-decoration);
+        width: 150%;
+        height: 150%;
+        top: 50%;
+        left: 58%;
         border-radius: 100px;
         z-index: -1;
-        transform: translate(0, -50%) rotate(21deg);
-      }
+        transform: translate(0, -50%) rotate(45deg);
+        @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+          width: 200%;
+          height: 200%;
+          top: 40%;
+          left: 47%;
+          border-radius: 100px;
+          z-index: -1;
+          transform: translate(0, -50%) rotate(21deg);
+        }
 
-      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-        width: 600%;
-        height: 600%;
-        top: -120%;
-        left: 65%;
-        border-radius: 100px;
-        z-index: -1;
-        transform: translate(0, -50%) rotate(15deg);
+        @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+          width: 600%;
+          height: 600%;
+          top: -120%;
+          left: 65%;
+          border-radius: 100px;
+          z-index: -1;
+          transform: translate(0, -50%) rotate(15deg);
+        }
       }
-    }
-    &:after {
-      content: "";
-      position: absolute;
-      top: 33%;
-      left: 50%;
-      background-image: url(${leaves});
-      background-size: contain;
-      width: 230%;
-      height: 230%;
-      transform: translate(-50%, -50%) rotate(60deg) scaleX(-1);
-      filter: blur(2px);
-      z-index: -1;
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-        width: 200%;
-        height: 200%;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 33%;
+        left: 50%;
+        background-image: url(${leaves});
+        background-size: contain;
+        width: 230%;
+        height: 230%;
+        transform: translate(-50%, -50%) rotate(60deg) scaleX(-1);
+        filter: blur(2px);
+        z-index: -1;
+        @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+          width: 200%;
+          height: 200%;
+        }
       }
     }
   }
