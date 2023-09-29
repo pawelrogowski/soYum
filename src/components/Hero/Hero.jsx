@@ -49,7 +49,7 @@ export const Hero = () => {
         <>
           <div>
             <h1>
-              <span>So </span>Yummy
+              <span>So</span>Yummy
             </h1>
             <p>
               &quot;What to cook?&quot; is not only a recipe app, it is, in
@@ -58,13 +58,21 @@ export const Hero = () => {
             </p>
             <SearchForm placeholder="beef" />
           </div>
-          <picture>
-            <source
-              srcSet={`${herox1} 1x, ${herox2} 2x, ${herox3} 3x`}
-              type="image/webp"
-            />
-            <img src={hero} alt="plate of delicious food" />
-          </picture>
+          <div>
+            <picture>
+              <source
+                srcSet={`${herox1} 1x, ${herox2} 2x, ${herox3} 3x`}
+                type="image/webp"
+              />
+              <img src={hero} alt="plate of delicious food" />{" "}
+              <CallToAction
+                text="way to enjoy a variety of fresh ingredients in one satisfying meal"
+                highlightedText="Delicious and healthy"
+                linkText="See recipes"
+                icon="arrow_long"
+              />
+            </picture>
+          </div>
         </>
       ) : null}
     </StyledSection>
