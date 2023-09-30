@@ -11,6 +11,10 @@ export const StyledDiv = styled.main`
   ${(props) =>
     props.as === "main" &&
     css`
+      padding-bottom: 10rem;
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        padding-bottom: 20rem;
+      }
       &:after {
         content: "";
         position: absolute;
