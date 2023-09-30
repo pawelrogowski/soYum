@@ -21,7 +21,7 @@ export const StyledDiv = styled.div`
     width: 29.8rem;
     padding: 1.6rem;
     bottom: 90px;
-    right: -50px;
+    right: -15px;
   }
 
   p {
