@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledHeading = styled.h1`
-  --color-text: ${({ theme }) => theme.heading.color}
+  --color-text: ${({ theme }) => theme.heading.color};
   color: var(--color-text);
   font-size: 2.8rem;
   font-weight: 600;
