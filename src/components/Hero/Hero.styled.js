@@ -89,7 +89,7 @@ export const StyledSection = styled.section`
       background: var(--color-hero-bg-decoration);
       width: 150%;
       height: 150%;
-      top: calc(150% - 0%);
+      top: 50%;
       left: 58%;
       border-radius: 100px;
       z-index: -1;
