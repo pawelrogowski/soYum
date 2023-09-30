@@ -81,59 +81,59 @@ export const StyledSection = styled.section`
       }
     }
   }
-  > div {
+  > div:nth-of-type(2) {
     position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      background: var(--color-hero-bg-decoration);
+      width: 150%;
+      height: 150%;
+      top: calc(150% - 0%);
+      left: 58%;
+      border-radius: 100px;
+      z-index: -1;
+      transform: translate(0, -50%) rotate(45deg);
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        width: 200%;
+        height: 200%;
+        top: 40%;
+        left: 47%;
+        border-radius: 100px;
+        z-index: -1;
+        transform: translate(0, -50%) rotate(21deg);
+      }
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        width: 600%;
+        height: 600%;
+        top: -120%;
+        left: 65%;
+        border-radius: 100px;
+        z-index: -1;
+        transform: translate(0, -50%) rotate(15deg);
+      }
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 33%;
+      left: 50%;
+      background-image: url(${leaves});
+      background-size: contain;
+      width: 230%;
+      height: 230%;
+      transform: translate(-50%, -50%) rotate(60deg) scaleX(-1);
+      filter: blur(2px);
+      z-index: -1;
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        width: 200%;
+        height: 200%;
+      }
+    }
     picture {
       margin-bottom: 2.4rem;
       position: relative;
-      &:before {
-        content: "";
-        position: absolute;
-        background: var(--color-hero-bg-decoration);
-        width: 150%;
-        height: 150%;
-        top: 50%;
-        left: 58%;
-        border-radius: 100px;
-        z-index: -1;
-        transform: translate(0, -50%) rotate(45deg);
-        @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-          width: 200%;
-          height: 200%;
-          top: 40%;
-          left: 47%;
-          border-radius: 100px;
-          z-index: -1;
-          transform: translate(0, -50%) rotate(21deg);
-        }
-
-        @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-          width: 600%;
-          height: 600%;
-          top: -120%;
-          left: 65%;
-          border-radius: 100px;
-          z-index: -1;
-          transform: translate(0, -50%) rotate(15deg);
-        }
-      }
-      &:after {
-        content: "";
-        position: absolute;
-        top: 33%;
-        left: 50%;
-        background-image: url(${leaves});
-        background-size: contain;
-        width: 230%;
-        height: 230%;
-        transform: translate(-50%, -50%) rotate(60deg) scaleX(-1);
-        filter: blur(2px);
-        z-index: -1;
-        @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-          width: 200%;
-          height: 200%;
-        }
-      }
     }
   }
 `;
