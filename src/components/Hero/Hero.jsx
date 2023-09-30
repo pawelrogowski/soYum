@@ -65,13 +65,13 @@ export const Hero = () => {
                 type="image/webp"
               />
               <img src={hero} alt="plate of delicious food" />{" "}
-              <CallToAction
-                text="way to enjoy a variety of fresh ingredients in one satisfying meal"
-                highlightedText="Delicious and healthy"
-                linkText="See recipes"
-                icon="arrow_long"
-              />
-            </picture>
+            </picture>{" "}
+            <CallToAction
+              text="way to enjoy a variety of fresh ingredients in one satisfying meal"
+              highlightedText="Delicious and healthy"
+              linkText="See recipes"
+              icon="arrow_long"
+            />
           </div>
         </>
       ) : null}
