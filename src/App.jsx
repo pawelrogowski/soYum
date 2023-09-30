@@ -7,6 +7,7 @@ import { LoaderDots } from "./components/LoaderDots/LoaderDots";
 import { GlobalStyles } from "./styles/globalStyles";
 import { AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { Icon } from "./components/Icon/Icon";
 // layouts
 const AuthLayout = lazy(() => import("./layouts/AuthLayout/AuthLayout"));
 const MainLayout = lazy(() => import("./layouts/MainLayout/MainLayout"));
@@ -37,6 +38,7 @@ export const App = () => {
       <GlobalStyles isTransitionEnabled={isTransitionEnabled} />
       <Router basename="/">
         <AnimatePresence mode="wait">
+          <Icon icon="squiggly_arrow" />
           <Suspense fallback={<LoaderDots />}>
             <Routes>
               <Route path="/" element={<StartPage />} />

@@ -75,4 +75,14 @@ export const StyledDiv = styled.div`
       transition: stroke 200ms;
     }
   }
+  > svg {
+    position: absolute;
+    width: 100%;
+    top: 6rem;
+    left: -1rem;
+    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      top: 7rem;
+      left: 1rem;
+    }
+  }
 `;
