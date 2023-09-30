@@ -3,12 +3,12 @@ import { StyledGallery } from "./Gallery.styled";
 import { Card } from "../Card/Card";
 import { Heading } from "../Heading/Heading.jsx";
 
-export const Gallery = ({ data, heading }) => {
+export const Gallery = ({ data, heading, limit = Infinity }) => {
   return (
     <StyledGallery>
       <Heading as="h2">{heading}</Heading>
       <ul>
-        {data.map((item, index) => (
+        {data.slice(0, limit).map((item, index) => (
           <li key={index}>
             <Card
               img={item.img}
@@ -25,4 +25,5 @@ export const Gallery = ({ data, heading }) => {
 Gallery.propTypes = {
   data: PropTypes.array.isRequired,
   heading: PropTypes.string.isRequired,
+  limit: PropTypes.number,
 };

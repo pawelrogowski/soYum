@@ -1,7 +1,17 @@
 import styled from "styled-components";
 
 export const StyledGallery = styled.section`
-  padding: 10rem 0;
+  margin-bottom: 3.2rem;
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    margin-bottom: 5rem;
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    gap: 1.4rem;
+    margin-bottom: 10rem;
+  }
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 
   ul {
     display: flex;
