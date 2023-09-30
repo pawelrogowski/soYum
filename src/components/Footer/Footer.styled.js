@@ -111,7 +111,7 @@ export const StyledFooter = styled.footer`
 
               > nav {
                 padding-right: 6.2rem;
-                min-width: 150px;
+                min-width: 15rem;
                 > ul > li {
                   justify-content: flex-start;
                 }
@@ -176,7 +176,7 @@ export const StyledFooter = styled.footer`
 
               > nav {
                 padding-right: 6.2rem;
-                min-width: 150px;
+                min-width: 15rem;
                 > ul > li {
                   justify-content: flex-start;
                 }

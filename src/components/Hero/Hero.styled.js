@@ -91,7 +91,7 @@ export const StyledSection = styled.section`
       height: 150%;
       top: 50%;
       left: 58%;
-      border-radius: 100px;
+      border-radius: 10rem;
       z-index: -1;
       transform: translate(0, -50%) rotate(45deg);
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
@@ -99,7 +99,7 @@ export const StyledSection = styled.section`
         height: 200%;
         top: 40%;
         left: 47%;
-        border-radius: 100px;
+        border-radius: 10rem;
         z-index: -1;
         transform: translate(0, -50%) rotate(21deg);
       }
@@ -109,7 +109,7 @@ export const StyledSection = styled.section`
         height: 600%;
         top: -120%;
         left: 65%;
-        border-radius: 100px;
+        border-radius: 10rem;
         z-index: -1;
         transform: translate(0, -50%) rotate(15deg);
       }
@@ -124,7 +124,7 @@ export const StyledSection = styled.section`
       width: 230%;
       height: 230%;
       transform: translate(-50%, -50%) rotate(60deg) scaleX(-1);
-      filter: blur(2px);
+      filter: blur(0.2rem);
       z-index: -1;
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         width: 200%;

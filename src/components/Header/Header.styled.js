@@ -57,7 +57,7 @@ export const StyledHeader = styled.header`
 
   > a:focus-within {
     > svg {
-      outline: 2px solid black;
+      outline: 0.2rem solid black;
     }
   }
 `;

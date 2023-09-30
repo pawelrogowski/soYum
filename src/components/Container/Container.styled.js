@@ -12,6 +12,7 @@ export const StyledDiv = styled.main`
     props.as === "main" &&
     css`
       padding-bottom: 10rem;
+
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         padding-bottom: 20rem;
       }
@@ -21,19 +22,19 @@ export const StyledDiv = styled.main`
         background-image: url(${leaves});
         background-repeat: no-repeat;
         background-size: cover;
-        width: 295px;
-        height: 468px;
-        bottom: -264px;
-        left: -101px;
+        width: 2.95rem;
+        height: 46.8rem;
+        bottom: -26.4rem;
+        left: -10rem;
         rotate: -217deg;
-        filter: blur(4.5px);
+        filter: blur(0.45rerm);
         transform: scaleX(-1);
         z-index: -1;
         @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-          width: 335px;
-          height: 517px;
-          bottom: -299px;
-          left: -101px;
+          width: 33.5rem;
+          height: 51.7rem;
+          bottom: -29.9rem;
+          left: -10.1rem;
           rotate: -217deg;
         }
       }

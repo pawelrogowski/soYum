@@ -14,7 +14,7 @@ export const StyledForm = styled.form`
   --color-warning: ${({ theme }) => theme.newsletterForm.textInput.warning};
   --color-correct: ${({ theme }) => theme.newsletterForm.textInput.correct};
 
-  max-width: 1000px;
+  max-width: 100rem;
   width: 100%;
   display: flex;
   justify-content: center;

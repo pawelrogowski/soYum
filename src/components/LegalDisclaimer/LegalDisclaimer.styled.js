@@ -51,25 +51,25 @@ export const StyledDiv = styled(Container)`
     background-image: url(${leaves});
     background-repeat: no-repeat;
     background-size: contain;
-    width: 181px;
-    height: 172px;
-    bottom: -38px;
-    right: -96px;
+    width: 18.1rem;
+    height: 17.2rem;
+    bottom: -3.8rem;
+    right: -9.6rem;
     rotate: -35deg;
-    filter: blur(4.5px);
+    filter: blur(0.45rem);
     @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
-      width: 213px;
-      height: 201px;
-      bottom: -24px;
-      right: -44px;
-      rotate: -89deg;
+      width: 21.3rem;
+      height: 20.1rem;
+      bottom: -2.4rem;
+      right: -4.4rem;
+      rotate: -8.9deg;
     }
     @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
-      width: 271px;
-      height: 267px;
-      bottom: -24px;
-      right: -44px;
-      rotate: -89deg;
+      width: 27.1rem;
+      height: 26.7rem;
+      bottom: -2.4rem;
+      right: -4.4rem;
+      rotate: -8.9deg;
     }
   }
 `;

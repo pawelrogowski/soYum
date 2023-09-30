@@ -10,7 +10,7 @@ export const StyledDiv = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(0.2rem);
   background-color: rgba(0, 0, 0, 0.8);
   transition: background-color 200ms;
   z-index: 1;
@@ -18,14 +18,14 @@ export const StyledDiv = styled.div`
   animation: delayLoader 1.5s ease-in-out 1 forwards;
 
   div {
-    width: 140px;
-    height: 52px;
+    width: 14rem;
+    height: 5.2rem;
     background: #8baa36;
-    border-radius: 50px;
+    border-radius: 5rem;
     --c: no-repeat radial-gradient(farthest-side, #000 92%, #0000);
-    --s: 36px 36px;
-    -webkit-mask: var(--c) left 4px top 50%, var(--c) center,
-      var(--c) right 4px top 50%, linear-gradient(#000 0 0);
+    --s: 3.6rem 3.6rem;
+    -webkit-mask: var(--c) left 0.4rem top 50%, var(--c) center,
+      var(--c) right 0.4rem top 50%, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     animation: l1 1.5s infinite;
@@ -68,8 +68,8 @@ export const StyledDiv = styled.div`
   }
 
   p {
-    margin-top: 30px;
-    font-size: 16px;
+    margin-top: 3rem;
+    font-size: 1.6rem;
     color: #fafafa;
     opacity: 0;
 

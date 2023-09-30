@@ -9,8 +9,8 @@ export const StyledDiv = styled.div`
     theme.callToAction.link.textActive};
 
   position: absolute;
-  bottom: 100px;
-  right: 9px;
+  bottom: 10rem;
+  right: 0.9rem;
   width: 22.5rem;
   padding: 0.8rem;
   display: flex;
@@ -21,14 +21,14 @@ export const StyledDiv = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     width: 26rem;
     padding: 1.2rem;
-    bottom: 24px;
-    right: 26px;
+    bottom: 2.4rem;
+    right: 2.6rem;
   }
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     width: 29.8rem;
     padding: 1.6rem;
-    bottom: 90px;
-    right: -15px;
+    bottom: 9rem;
+    right: -1.5rem;
   }
 
   p {
@@ -56,7 +56,7 @@ export const StyledDiv = styled.div`
     color: var(--color-text-link-idle);
     font-size: 1rem;
     line-height: 1.2;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.02rem;
     justify-content: flex-end;
     transition: color 200ms;
     cursor: pointer;

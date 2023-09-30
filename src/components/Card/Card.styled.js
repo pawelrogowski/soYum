@@ -11,16 +11,16 @@ export const StyledFigure = styled.figure`
   display: flex;
   border-radius: 1rem;
   overflow: hidden;
-  border: 2px solid var(--color-card-border-idle);
+  border: 0.2rem solid var(--color-card-border-idle);
   background-color: var(--color-card-bg);
   transition: border-color 200ms, color 200ms, background 200ms;
   &:hover,
   &:focus,
   &:focus-within {
-    border: 2px solid var(--color-card-border-active);
+    border: 0.2rem solid var(--color-card-border-active);
     > figcaption {
       color: var(--color-caption-text-active);
-      border: 1px solid var(--color-caption-text-active);
+      border: 0.1rem solid var(--color-caption-text-active);
     }
   }
   figcaption {
@@ -28,8 +28,8 @@ export const StyledFigure = styled.figure`
     bottom: 2.6rem;
     left: 1.8rem;
     background-color: var(--color-caption-bg-idle);
-    border: 1px solid var(--color-caption-bg-idle);
-    border-radius: 4px;
+    border: 0.1rem solid var(--color-caption-bg-idle);
+    border-radius: 0.4rem;
     padding: 1.6rem;
     width: calc(100% - 3.2rem);
     color: var(--color-caption-text-idle);
