@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
 export const StyledDiv = styled.div`
+  --color-call-bg: ${({ theme }) => theme.callToAction.bg};
+  --color-text-highlight: ${({ theme }) => theme.callToAction.textHightlight};
+  --color-text-idle: ${({ theme }) => theme.callToAction.text};
+  --color-text-link-idle: ${({ theme }) => theme.callToAction.link.textIdle};
+  --color-text-link-active: ${({ theme }) =>
+    theme.callToAction.link.textActive};
+
   position: absolute;
   bottom: 100px;
   right: 9px;
@@ -9,7 +16,7 @@ export const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  background-color: #fafafa;
+  background-color: var(--color-call-bg);
   border-radius: 0.8rem;
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     width: 26rem;
@@ -25,7 +32,7 @@ export const StyledDiv = styled.div`
   }
 
   p {
-    color: #3e4462;
+    color: var(--color-text-idle);
     font-size: 1.2rem;
     font-weight: 500;
     line-height: 1.5rem;
@@ -38,7 +45,7 @@ export const StyledDiv = styled.div`
       line-height: 1.43;
     }
     span {
-      color: #8baa36;
+      color: var(--color-text-highlight);
     }
   }
 
@@ -46,17 +53,26 @@ export const StyledDiv = styled.div`
     display: flex;
     gap: 0.4rem;
     align-items: center;
-    color: #3e4462;
+    color: var(--color-text-link-idle);
     font-size: 1rem;
     line-height: 1.2;
     letter-spacing: 0.2px;
     justify-content: flex-end;
+    transition: color 200ms;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      color: var(--color-text-link-active);
+      > svg {
+        stroke: var(--color-text-link-active);
+      }
+    }
 
     svg {
       width: 1.8rem;
       height: 1.8rem;
-      stroke: #3e4462;
-      fill: #3e4462;
+      stroke: var(--color-text-link-idle);
+      transition: stroke 200ms;
     }
   }
 `;

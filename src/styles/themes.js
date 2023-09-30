@@ -46,7 +46,15 @@ export const lightTheme = {
       borderActive: brandColors.main,
     },
   },
-
+  callToAction: {
+    bg: "#fff",
+    textHightlight: brandColors.main,
+    text: "#3E4462",
+    link: {
+      textIdle: "#3e4462",
+      textActive: brandColors.main,
+    },
+  },
   bg: {
     main: "#FAFAFA",
     secondary: "#1E1F28",
@@ -294,6 +302,15 @@ export const darkTheme = {
       textActive: brandColors.main,
       borderIdle: "#2A2C36",
       borderActive: brandColors.main,
+    },
+  },
+  callToAction: {
+    bg: "#2A2C36",
+    textHightlight: brandColors.main,
+    text: "#fafafa",
+    link: {
+      textIdle: "#fafafa",
+      textActive: brandColors.main,
     },
   },
   heading: {

@@ -1,6 +1,7 @@
 import { StyledDiv } from "./CallToAction.styled";
 import PropTypes from "prop-types";
 import { Icon } from "../Icon/Icon";
+import { Link } from "react-router-dom";
 
 export const CallToAction = ({ text, highlightedText, linkText, icon }) => {
   return (
@@ -9,10 +10,10 @@ export const CallToAction = ({ text, highlightedText, linkText, icon }) => {
         <span>{highlightedText} </span>
         {text}
       </p>
-      <a>
+      <Link to="#">
         <span>{linkText}</span>
         <Icon icon={icon} />
-      </a>
+      </Link>
     </StyledDiv>
   );
 };
