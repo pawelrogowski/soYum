@@ -34,6 +34,19 @@ export const lightTheme = {
     text: "#22252a",
     bgDecoration: "#eaf3d6",
   },
+  card: {
+    bg: "#fafafa",
+    borderIdle: "#fafafa",
+    borderActive: brandColors.main,
+    caption: {
+      bgIdle: "#ffffff",
+      textIdle: "#3E4462",
+      textActive: brandColors.main,
+      borderIdle: "#fafafa",
+      borderActive: brandColors.main,
+    },
+  },
+
   bg: {
     main: "#FAFAFA",
     secondary: "#1E1F28",
@@ -270,6 +283,18 @@ export const darkTheme = {
   hero: {
     text: "#fafafa",
     bgDecoration: "#eaf3d6",
+  },
+  card: {
+    bg: "#2A2C36",
+    borderIdle: "#2A2C36",
+    borderActive: brandColors.main,
+    caption: {
+      bgIdle: "#2A2C36",
+      textIdle: "#fafafa",
+      textActive: brandColors.main,
+      borderIdle: "#2A2C36",
+      borderActive: brandColors.main,
+    },
   },
   heading: {
     color: "#fafafa",
