@@ -11,8 +11,9 @@ export const ThemeSwitch = () => {
   };
 
   return (
-    <StyledLabel for="theme-switch">
+    <StyledLabel htmlFor="theme-switch">
       <input
+        id="theme-switch"
         name="theme-switch"
         type="checkbox"
         onChange={handleThemeChange}
