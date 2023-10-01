@@ -5,6 +5,8 @@ export const GlobalStyles = createGlobalStyle`
   *::after,
   *::before {
     box-sizing: border-box;
+    margin: 0;
+		padding: 0;
   }
 
 	html, body {
@@ -14,14 +16,14 @@ export const GlobalStyles = createGlobalStyle`
 	}
 
 	body {
-		  background-color: ${({ theme }) => theme.bg.main};
-      transition: ${({ isTransitionEnabled }) =>
-        isTransitionEnabled ? "background-color 200ms" : "none"};
-  		scroll-behavior: smooth;
-  		text-rendering: optimizeSpeed;
-      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      min-width: 28rem;
-      overflow-x: hidden;
+		background-color: ${({ theme }) => theme.bg.main};
+    transition: ${({ isTransitionEnabled }) =>
+      isTransitionEnabled ? "background-color 200ms" : "none"};
+  	scroll-behavior: smooth;
+  	text-rendering: optimizeSpeed;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    min-width: 28rem;
+    overflow-x: hidden;
   }
 
   div[id="root"] {
@@ -47,26 +49,11 @@ export const GlobalStyles = createGlobalStyle`
 		padding: 0;
 	}
 
-	blockquote,
-	dl,
-	dd,
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	figure,
-	p,
-	pre {
-  	margin: 0;
-	}
+
 
 	ol,
 	ul {
 	  list-style: none;
-	  margin: 0;
-	  padding: 0;
 	}
 
 	img {

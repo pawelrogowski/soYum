@@ -25,7 +25,6 @@ export const StyledSection = styled.section`
     flex-direction: column;
     align-items: center;
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-      padding-top: 4.5rem;
       align-items: start;
       max-width: 36.2rem;
     }
@@ -44,14 +43,14 @@ export const StyledSection = styled.section`
         font-size: 7.2rem;
         line-height: 0.72;
         letter-spacing: -0.036rem;
-        margin-bottom: 2.4rem;
+        margin-bottom: 3.6rem;
         text-align: start;
       }
       @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
         font-size: 10rem;
         line-height: 1;
         letter-spacing: -0.05rem;
-        margin-bottom: 1.4rem;
+        margin-bottom: 4.4rem;
       }
 
       > span {
@@ -71,7 +70,7 @@ export const StyledSection = styled.section`
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         max-width: 100%;
         text-align: start;
-        margin-bottom: 3.2rem;
+        margin-bottom: 4.2rem;
       }
 
       @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
@@ -84,6 +83,10 @@ export const StyledSection = styled.section`
   }
   > div:nth-of-type(2) {
     position: relative;
+    margin-bottom: 4.4rem;
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      margin-bottom: 0rem;
+    }
     &:before {
       content: "";
       position: absolute;
@@ -138,7 +141,8 @@ export const StyledSection = styled.section`
     picture {
       margin-bottom: 2.4rem;
       position: relative;
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+
+      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
         margin-bottom: 0rem;
       }
       > img {
@@ -148,6 +152,33 @@ export const StyledSection = styled.section`
           max-width: 110%;
           width: 110%;
         }
+      }
+    }
+  }
+  form {
+    height: 5.2rem;
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      height: 5.9rem;
+    }
+    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      height: 7rem;
+    }
+    > button {
+      height: 100%;
+      width: 11.3rem;
+      font-size: 1.4rem;
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        width: 16.1rem;
+        font-size: 1.6rem;
+      }
+    }
+    > input {
+      height: 100%;
+      padding-right: 12.3rem;
+      font-size: 1.2rem;
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        font-size: 1.6rem;
+        padding-right: 17.1rem;
       }
     }
   }

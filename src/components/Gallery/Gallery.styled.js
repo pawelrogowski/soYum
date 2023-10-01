@@ -6,10 +6,10 @@ export const StyledGallery = styled.section`
   margin-bottom: 3.2rem;
   gap: 2.4rem;
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    margin-bottom: 5rem;
+    gap: 4rem;
   }
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-    margin-bottom: 10rem;
+    gap: 5rem;
   }
   &:last-of-type {
     margin-bottom: 0;
