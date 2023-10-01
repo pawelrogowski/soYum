@@ -5,26 +5,26 @@ import { Link } from "react-router-dom";
 export const SocialIcons = () => {
   return (
     <StyledUl>
-      <Link to="#">
-        <li>
+      <li>
+        <Link to="#" aria-label="navigate to our facebook">
           <Icon icon="facebook" />
-        </li>
-      </Link>
-      <Link to="#">
-        <li>
+        </Link>
+      </li>
+      <li>
+        <Link to="#" aria-label="navigate to our youtube">
           <Icon icon="youtube" />
-        </li>
-      </Link>
-      <Link to="#">
-        <li>
+        </Link>
+      </li>
+      <li>
+        <Link to="#" aria-label="navigate to our twitter">
           <Icon icon="twitter" />
-        </li>
-      </Link>
-      <Link to="#">
-        <li>
+        </Link>
+      </li>
+      <li>
+        <Link to="#" aria-label="navigate to our instagram">
           <Icon icon="instagram" />
-        </li>
-      </Link>
+        </Link>
+      </li>
     </StyledUl>
   );
 };

@@ -16,15 +16,20 @@ export const StyledFigure = styled.figure`
   transition: border-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms,
     color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms,
     background cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
-  &:hover,
-  &:focus,
-  &:focus-within {
-    border: 0.2rem solid var(--color-card-border-active);
-    > figcaption {
-      color: var(--color-caption-text-active);
-      border: 0.1rem solid var(--color-caption-text-active);
+
+  a {
+    width: 100%;
+    &:hover,
+    &:focus,
+    &:focus-within {
+      border: 0.2rem solid var(--color-card-border-active);
+      > figcaption {
+        color: var(--color-caption-text-active);
+        border: 0.1rem solid var(--color-caption-text-active);
+      }
     }
   }
+
   figcaption {
     position: absolute;
     bottom: 2.6rem;
@@ -43,12 +48,17 @@ export const StyledFigure = styled.figure`
       color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms,
       background cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
   }
+
   picture {
     width: 100%;
   }
+
   img {
     transition: scale cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
+    width: 300px;
     width: 100%;
+    height: 300px;
+    height: auto;
     &:hover,
     &:focus {
       scale: 1.3;

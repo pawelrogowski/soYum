@@ -4,7 +4,7 @@ import { StyledButton } from "./MobileMenuButton.styled";
 
 export function MobileMenuButton({ onClick, variant }) {
   return (
-    <StyledButton type="button" onClick={onClick}>
+    <StyledButton type="button" onClick={onClick} aria-label="mobile menu">
       <Icon icon={variant === "close" ? "x" : "hamburger"} />
     </StyledButton>
   );

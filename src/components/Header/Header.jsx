@@ -26,7 +26,7 @@ export const Header = () => {
   return (
     <StyledHeader>
       <div className="square"></div>
-      <Link to="/home">
+      <Link to="/home" aria-label="navigate to homepage">
         <Logo variant="header" />
       </Link>
       {isAtLeastDesktopSize && <NavigationDesktop />}
