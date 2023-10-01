@@ -99,7 +99,4 @@ export const GlobalStyles = createGlobalStyle`
       props.theme.authForm.bg} inset;
 	}
 
-  .spacer {
-    height: 750px;
-  }
 `;

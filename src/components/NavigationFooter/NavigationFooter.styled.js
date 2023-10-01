@@ -26,7 +26,7 @@ export const StyledNav = styled.nav`
       font-weight: 500;
       line-height: 128.571%;
       letter-spacing: -0.028rem;
-      transition: color 100ms;
+      transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
 
       &:hover,
       &:focus {

@@ -33,7 +33,10 @@ export const StyledForm = styled(Form)`
   padding: 3.2rem 2.8rem 4rem 2.8rem;
   border-radius: 3rem;
   background-color: var(--color-bg);
-  transition: color 100ms, background-color 100ms, border 100ms, fill 100ms;
+  transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
+    background-color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
+    border cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
+    fill cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
 
   @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
     padding: 4.4rem 5rem;
@@ -77,7 +80,8 @@ export const StyledForm = styled(Form)`
         width: 1.8rem;
         height: 1.8rem;
         top: 1.4rem;
-        transition: stroke 100ms, fill 100ms;
+        transition: stroke cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
+          fill cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
 
         @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
           width: 2.4rem;
@@ -108,7 +112,7 @@ export const StyledForm = styled(Form)`
     }
 
     span {
-      transition: color 100ms;
+      transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
       position: absolute;
       left: 0.1rem;
       bottom: -1.5rem;
@@ -148,7 +152,9 @@ export const StyledForm = styled(Form)`
       border-radius: 0.5rem;
       border: 0.1rem solid var(--color-borderIdle);
       background-color: var(--color-bgIdle);
-      transition: color 100ms, background-color 100ms, border 100ms;
+      transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
+        background-color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
+        border cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
 
       &:focus,
       &:hover {

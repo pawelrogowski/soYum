@@ -56,7 +56,7 @@ export const StyledDiv = styled.div`
     width: 3.4rem;
     border-radius: 50%;
     background-color: lightgrey;
-    transition: border-color 250ms;
+    transition: border-color cubic-bezier(0.17, 0.67, 1, 1.23) 250ms;
 
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       height: 4.4rem;

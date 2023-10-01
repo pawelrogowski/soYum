@@ -18,7 +18,7 @@ export const StyledButton = styled.button`
     stroke: var(--color-mobileMenu-strokeIdle);
     width: 2.8rem;
     height: 2.8rem;
-    transition: stroke 200ms;
+    transition: stroke cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
     mix-blend-mode: var(--blend-mode);
 
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {

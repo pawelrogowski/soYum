@@ -24,12 +24,12 @@ export const StyledNav = styled.nav`
       letter-spacing: -0.028rem;
       font-weight: 500;
       font-style: normal;
-      transition: color 100ms;
+      transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
 
       &:hover,
       &:focus {
         color: var(--color-navigation-hover);
-        transition: color 100ms;
+        transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
       }
     }
 
@@ -41,7 +41,7 @@ export const StyledNav = styled.nav`
         stroke: var(--color-navigation-idle);
         width: 2.4rem;
         height: 2.4rem;
-        transition: stroke 100ms;
+        transition: stroke cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
         mix-blend-mode: var(--blend-mode);
       }
     }

@@ -294,13 +294,13 @@ export const darkTheme = {
   },
   card: {
     bg: "#2A2C36",
-    borderIdle: "#2A2C36",
+    borderIdle: "#000",
     borderActive: brandColors.main,
     caption: {
       bgIdle: "#2A2C36",
       textIdle: "#fafafa",
       textActive: brandColors.main,
-      borderIdle: "#2A2C36",
+      borderIdle: "#000",
       borderActive: brandColors.main,
     },
   },

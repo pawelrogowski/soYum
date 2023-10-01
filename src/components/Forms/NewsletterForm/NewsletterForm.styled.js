@@ -38,7 +38,9 @@ export const StyledForm = styled.form`
       border-radius: 0.5rem;
       border: 0.1rem solid var(--color-border-idle);
       background-color: var(--color-background-idle);
-      transition: color 100ms, background-color 100ms, border 100ms;
+      transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
+        background-color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
+        border cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
       color: var(--color-font-idle);
       font-size: 1.4rem;
       font-weight: 400;
@@ -62,7 +64,8 @@ export const StyledForm = styled.form`
     width: 2.2rem;
     height: 2.2rem;
     top: 1.45rem;
-    transition: stroke 100ms, fill 100ms;
+    transition: stroke cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
+      fill cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
 
     &:nth-of-type(1) {
       stroke: var(--color-icon-idle);

@@ -80,7 +80,7 @@ export const PageContent = styled(StyledDiv)`
       }
       text-decoration-line: underline;
       color: ${({ theme }) => theme.link.authNav};
-      transition: color 100ms;
+      transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
       &:hover,
       &:focus {
         color: ${({ theme }) => theme.link.authNavActive};

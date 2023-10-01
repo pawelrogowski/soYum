@@ -58,7 +58,7 @@ export const StyledDiv = styled.div`
     line-height: 1.2;
     letter-spacing: 0.02rem;
     justify-content: flex-end;
-    transition: color 200ms;
+    transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
     cursor: pointer;
     &:hover,
     &:focus {
@@ -72,7 +72,7 @@ export const StyledDiv = styled.div`
       width: 1.8rem;
       height: 1.8rem;
       stroke: var(--color-text-link-idle);
-      transition: stroke 200ms;
+      transition: stroke cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
     }
   }
   > svg {

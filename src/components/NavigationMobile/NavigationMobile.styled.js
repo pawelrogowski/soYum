@@ -95,11 +95,11 @@ export const StyledAside = styled(motion.aside)`
           line-height: 2.4rem;
           letter-spacing: -0.048rem;
         }
-        transition: color 100ms;
+        transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
         &:hover,
         &:focus {
           color: var(--color-navigation-hover);
-          transition: color 100ms;
+          transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
         }
       }
 
@@ -122,11 +122,11 @@ export const StyledAside = styled(motion.aside)`
             line-height: 2.4rem;
             letter-spacing: -0.048rem;
           }
-          transition: color 100ms;
+          transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
           &:hover,
           &:focus {
             color: var(--color-navigation-hover);
-            transition: color 100ms;
+            transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
           }
         }
       }
@@ -135,7 +135,7 @@ export const StyledAside = styled(motion.aside)`
         stroke: var(--color-navigation-idle);
         width: 2.4rem;
         height: 2.4rem;
-        transition: stroke 100ms;
+        transition: stroke cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
       }
 
       > li {

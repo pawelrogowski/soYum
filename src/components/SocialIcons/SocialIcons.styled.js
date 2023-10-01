@@ -26,7 +26,7 @@ export const StyledUl = styled.ul`
     &:focus {
       svg {
         fill: var(--color-social-fillHover);
-        transition: fill 100ms;
+        transition: fill cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
       }
     }
   }
@@ -35,7 +35,7 @@ export const StyledUl = styled.ul`
     width: 1.8rem;
     height: 1.8rem;
     fill: var(--color-social-fill);
-    transition: fill 100ms;
+    transition: fill cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       width: 2rem;
       height: 2rem;

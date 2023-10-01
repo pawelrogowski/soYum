@@ -12,7 +12,7 @@ export const StyledFooter = styled.footer`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  transition: background-color 200ms;
+  transition: background-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
 
   ${({ $variant }) =>
     $variant === "mobile"
@@ -45,7 +45,7 @@ export const StyledFooter = styled.footer`
                 font-weight: 700;
                 line-height: 1.8rem;
                 letter-spacing: 0.027rem;
-                transition: color 200ms;
+                transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
 
                 &:hover,
                 &:focus,
@@ -87,7 +87,7 @@ export const StyledFooter = styled.footer`
                     font-weight: 700;
                     line-height: 1.8rem;
                     letter-spacing: 0.027rem;
-                    transition: color 200ms;
+                    transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
                     font-size: 2.8rem;
                     line-height: 100%;
                     letter-spacing: 0.042rem;
@@ -152,7 +152,7 @@ export const StyledFooter = styled.footer`
                     font-weight: 700;
                     line-height: 1.8rem;
                     letter-spacing: 0.027rem;
-                    transition: color 200ms;
+                    transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
                     font-size: 2.8rem;
                     line-height: 100%;
                     letter-spacing: 0.042rem;

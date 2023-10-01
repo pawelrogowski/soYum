@@ -13,7 +13,9 @@ export const StyledFigure = styled.figure`
   overflow: hidden;
   border: 0.2rem solid var(--color-card-border-idle);
   background-color: var(--color-card-bg);
-  transition: border-color 200ms, color 200ms, background 200ms;
+  transition: border-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms,
+    color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms,
+    background cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
   &:hover,
   &:focus,
   &:focus-within {
@@ -37,12 +39,20 @@ export const StyledFigure = styled.figure`
     font-weight: 500;
     line-height: 1.25;
     letter-spacing: -0.024rem;
-    transition: border-color 200ms, color 200ms, background 200ms;
+    transition: border-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms,
+      color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms,
+      background cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
   }
   picture {
     width: 100%;
   }
   img {
+    transition: scale cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
     width: 100%;
+    &:hover,
+    &:focus {
+      scale: 1.3;
+      transition: scale cubic-bezier(0.17, 0.67, 1, 1.23) 60s;
+    }
   }
 `;

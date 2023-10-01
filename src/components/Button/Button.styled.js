@@ -10,18 +10,24 @@ export const StyledButton = styled.button`
   width: 16.1rem;
   height: 7rem;
   border: 0.1rem solid ${({ theme }) => theme.button.base.borderIdle};
-  transition: background-color 100ms, color 100ms, border 100ms;
+  transition: background-color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
+    color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
+    border cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
   cursor: pointer;
   outline: none;
 
   &:hover,
   &:focus {
-    transition: background-color 100ms, color 100ms, border 100ms;
+    transition: background-color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
+      color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
+      border cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
     background-color: ${({ theme }) => theme.button.base.bgHover};
     border: 0.1rem solid ${({ theme }) => theme.button.base.borderHover};
   }
   &:active {
-    transition: background-color 100ms, color 100ms, border 100ms;
+    transition: background-color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
+      color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
+      border cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
     background-color: ${({ theme }) => theme.button.base.bgActive};
     border: 0.1rem solid ${({ theme }) => theme.button.base.borderActive};
   }
