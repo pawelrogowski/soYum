@@ -275,6 +275,20 @@ export const lightTheme = {
   notFound: {
     text: "#000",
   },
+  editProfilePopup: {
+    bg: "#fff",
+    border: brandColors.main,
+    text: "#23262a",
+    icon: "#23262a",
+    iconActive: brandColors.main,
+    textActive: brandColors.main,
+    button: {
+      text: "#fafafa",
+      icon: "#fafafa",
+      iconActive: brandColors.main,
+      textActive: brandColors.main,
+    },
+  },
 };
 
 export const darkTheme = {
@@ -476,5 +490,19 @@ export const darkTheme = {
   },
   notFound: {
     text: "#FAFAFA",
+  },
+  editProfilePopup: {
+    bg: "#1E1F28",
+    border: brandColors.main,
+    text: "#fafafa",
+    icon: "#fafafa",
+    iconActive: brandColors.main,
+    textActive: brandColors.main,
+    button: {
+      text: "#fafafa",
+      icon: "#fafafa",
+      iconActive: brandColors.main,
+      textActive: brandColors.main,
+    },
   },
 };

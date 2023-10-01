@@ -1,6 +1,19 @@
 import styled from "styled-components";
 
 export const StyledDiv = styled.div`
+  --color-background: ${({ theme }) => theme.editProfilePopup.bg};
+  --color-text: ${({ theme }) => theme.editProfilePopup.text};
+  --color-icon: ${({ theme }) => theme.editProfilePopup.icon};
+  --color-border: ${({ theme }) => theme.editProfilePopup.border};
+  --color-button-text: ${({ theme }) => theme.editProfilePopup.button.text};
+  --color-button-icon: ${({ theme }) => theme.editProfilePopup.button.icon};
+  --color-button-icon-active: ${({ theme }) =>
+    theme.editProfilePopup.button.iconActive};
+  --color-button-text-active: ${({ theme }) =>
+    theme.editProfilePopup.button.textActive};
+  --color-text-active: ${({ theme }) => theme.editProfilePopup.textActive};
+  --color-icon-active: ${({ theme }) => theme.editProfilePopup.iconActive};
+
   position: absolute;
   top: calc(100% + 1.4rem);
   left: -50%;
@@ -11,24 +24,37 @@ export const StyledDiv = styled.div`
   height: 13rem;
   border-radius: 0.8rem;
   padding: 1.8rem;
-  background: #fff;
-  border: solid 1px #8baa36;
+  background: var(--color-background);
+  border: solid 1px var(--color-border);
   transform: translateX(-50%, -50%);
   z-index: 1;
   div {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     > span {
-      color: #23262a;
+      color: var(--color-text);
       font-size: 1.4rem;
       font-weight: 500;
       line-height: 1.6;
+      transition: color 200ms;
     }
     > svg {
       width: 1.4rem;
       height: 1.4rem;
-      stroke: #23262a;
+      stroke: var(--color-icon);
+      transition: stroke 200ms;
+    }
+    &:hover,
+    &:focus,
+    &:focus-within {
+      > span {
+        color: var(--color-button-text-active);
+      }
+      > svg {
+        stroke: var(--color-button-icon-active);
+      }
     }
   }
   > button {
@@ -36,7 +62,7 @@ export const StyledDiv = styled.div`
     align-items: center;
     justify-content: center;
     gap: 0.4rem;
-    color: #fafafa;
+    color: var(--color-button-text);
     width: 12.5rem;
     height: 4.3rem;
     font-size: 1.4rem;
@@ -44,7 +70,7 @@ export const StyledDiv = styled.div`
     > svg {
       width: 1.8rem;
       height: 1.8rem;
-      stroke: #fafafa;
+      stroke: var(--color-button-icon);
     }
   }
 `;
