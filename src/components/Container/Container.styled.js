@@ -27,7 +27,7 @@ export const StyledDiv = styled.main`
         bottom: -26.4rem;
         left: -10rem;
         rotate: -217deg;
-        filter: blur(0.45rerm);
+        filter: blur(0.45rem);
         transform: scaleX(-1);
         z-index: -1;
         @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {

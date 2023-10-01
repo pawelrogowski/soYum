@@ -21,14 +21,14 @@ export const StyledDiv = styled.div`
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     width: 26rem;
     padding: 1.2rem;
-    bottom: 2.4rem;
-    right: 2.6rem;
+    bottom: 5rem;
+    right: 1.8rem;
   }
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     width: 29.8rem;
     padding: 1.6rem;
-    bottom: 9rem;
-    right: -1.5rem;
+    bottom: 4rem;
+    right: -2.9rem;
   }
 
   p {
@@ -80,6 +80,7 @@ export const StyledDiv = styled.div`
     width: 100%;
     top: 6rem;
     left: -1rem;
+    pointer-events: none;
     @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       top: 7rem;
       left: 1rem;

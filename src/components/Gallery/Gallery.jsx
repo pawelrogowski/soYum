@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { StyledGallery } from "./Gallery.styled";
 import { Card } from "../Card/Card";
 import { Heading } from "../Heading/Heading.jsx";
+import { Button } from "../Button/Button";
 
 export const Gallery = ({ data, heading, limit = Infinity }) => {
   return (
@@ -18,6 +19,7 @@ export const Gallery = ({ data, heading, limit = Infinity }) => {
           </li>
         ))}
       </ul>
+      <Button variant="rectSmall">See all</Button>
     </StyledGallery>
   );
 };

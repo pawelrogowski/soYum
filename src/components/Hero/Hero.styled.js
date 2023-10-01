@@ -9,10 +9,12 @@ export const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 14.7rem;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     flex-direction: row;
     padding: 9.5rem 0;
+    padding-bottom: 20rem;
   }
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     gap: 7.4rem;
@@ -25,7 +27,7 @@ export const StyledSection = styled.section`
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       padding-top: 4.5rem;
       align-items: start;
-      max-width: 38rem;
+      max-width: 36.2rem;
     }
     @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       max-width: 50rem;
@@ -38,7 +40,6 @@ export const StyledSection = styled.section`
       letter-spacing: -0.3rem;
       margin-bottom: 1.4rem;
       font-weight: 400;
-
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         font-size: 7.2rem;
         line-height: 0.72;
@@ -98,10 +99,9 @@ export const StyledSection = styled.section`
         width: 200%;
         height: 200%;
         top: 40%;
-        left: 47%;
+        left: 35%;
         border-radius: 10rem;
-        z-index: -1;
-        transform: translate(0, -50%) rotate(21deg);
+        transform: translate(0, -50%) rotate(30deg);
       }
 
       @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
@@ -117,23 +117,38 @@ export const StyledSection = styled.section`
     &:after {
       content: "";
       position: absolute;
-      top: 33%;
-      left: 50%;
+      top: 27%;
+      left: 72%;
       background-image: url(${leaves});
       background-size: contain;
-      width: 230%;
-      height: 230%;
+      width: 275%;
+      height: 275%;
       transform: translate(-50%, -50%) rotate(60deg) scaleX(-1);
       filter: blur(0.2rem);
       z-index: -1;
+      background-repeat: no-repeat;
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-        width: 200%;
-        height: 200%;
+        top: 37%;
+        left: 45%;
+        width: 235%;
+        height: 235%;
+        transform: translate(-50%, -50%) rotate(67deg) scaleX(-1);
       }
     }
     picture {
       margin-bottom: 2.4rem;
       position: relative;
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        margin-bottom: 0rem;
+      }
+      > img {
+        max-width: 100%;
+        width: 100%;
+        @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+          max-width: 110%;
+          width: 110%;
+        }
+      }
     }
   }
 `;
