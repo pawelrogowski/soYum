@@ -19,7 +19,7 @@ export const StyledDiv = styled.div`
   &:hover,
   &:focus {
     cursor: pointer;
-    span {
+    > span:first-of-type {
       color: var(--color-userAvatar-fontHover);
       mix-blend-mode: initial;
     }
