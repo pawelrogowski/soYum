@@ -44,12 +44,14 @@ export const StyledDiv = styled(motion.div)`
       line-height: 1.6;
       transition: color 200ms;
     }
+
     > svg {
       width: 1.4rem;
       height: 1.4rem;
       stroke: var(--color-icon);
       transition: stroke 200ms;
     }
+
     &:hover,
     &:focus,
     &:focus-within {
@@ -61,6 +63,7 @@ export const StyledDiv = styled(motion.div)`
       }
     }
   }
+
   > button {
     display: flex;
     align-items: center;
@@ -71,6 +74,7 @@ export const StyledDiv = styled(motion.div)`
     height: 4.3rem;
     font-size: 1.4rem;
     line-height: 2.1rem;
+
     > svg {
       width: 1.8rem;
       height: 1.8rem;
