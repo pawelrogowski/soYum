@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const StyledDiv = styled.button`
+export const StyledDiv = styled.div`
   --color-userAvatar-fontIdle: ${({ theme }) => theme.userAvatar.fontIdle};
   --color-userAvatar-fontHover: ${({ theme }) => theme.userAvatar.fontHover};
   --color-decoration: ${({ theme }) => theme.backgroundDecoration.secondary};
