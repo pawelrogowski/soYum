@@ -6,7 +6,7 @@ export const StyledDiv = styled.div`
   --color-decoration: ${({ theme }) => theme.backgroundDecoration.secondary};
   --blend-mode: ${({ theme }) => theme.userAvatar.blend};
   position: relative;
-
+  transform-origin: "top center";
   @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
     margin-right: 5rem;
   }
