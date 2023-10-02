@@ -14,13 +14,14 @@ export function UserAvatar({ image, placeholder, name = "No Data" }) {
 
   const handleOpenUserEdit = () => {
     if (!isEditProfilePopupOpen) {
-      dispatch(toggleUserEditMenu(true));
+      setTimeout(() => dispatch(toggleUserEditMenu(true)), 0);
     }
   };
 
   return (
     <StyledButton
-      onClick={!isEditProfilePopupOpen ? handleOpenUserEdit : undefined}
+      onClick={handleOpenUserEdit}
+      disabled={isEditProfilePopupOpen}
     >
       <picture>
         <source srcSet={image} type="image/jpeg" />
