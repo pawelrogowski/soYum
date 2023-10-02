@@ -19,19 +19,17 @@ export function UserAvatar({ image, placeholder, name = "No Data" }) {
   };
 
   return (
-    <div>
-      <StyledButton
-        onClick={handleOpenUserEdit}
-        disabled={isEditProfilePopupOpen}
-      >
-        <picture>
-          <source srcSet={image} type="image/jpeg" />
-          <img src={placeholder} alt="user avatar" />
-        </picture>
-        <span>{shortenString(name, 10, "...")}</span>
-        {isEditProfilePopupOpen && <EditProfilePopup />}
-      </StyledButton>
-    </div>
+    <StyledButton
+      onClick={handleOpenUserEdit}
+      disabled={isEditProfilePopupOpen}
+    >
+      <picture>
+        <source srcSet={image} type="image/jpeg" />
+        <img src={placeholder} alt="user avatar" />
+      </picture>
+      <span>{shortenString(name, 10, "...")}</span>
+      {isEditProfilePopupOpen && <EditProfilePopup />}
+    </StyledButton>
   );
 }
 
