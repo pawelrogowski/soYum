@@ -41,9 +41,9 @@ export const StyledAside = styled(motion.aside)`
       background-repeat: no-repeat;
       width: 852px;
       height: 852px;
-      bottom: -34.5rem;
-      right: -190px;
-      rotate: 118deg;
+      bottom: -32.5rem;
+      right: -31rem;
+      rotate: 122deg;
       filter: blur(4px);
       z-index: -1;
       transform: scaleX(-1);
