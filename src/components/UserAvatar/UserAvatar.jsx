@@ -13,7 +13,7 @@ export function UserAvatar({ image, placeholder, name = "No Data" }) {
   );
 
   const handleUserEditToggle = () => {
-    dispatch(toggleUserEditMenu());
+    dispatch(toggleUserEditMenu(!isEditProfilePopup));
   };
 
   return (
