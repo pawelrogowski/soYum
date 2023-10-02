@@ -210,6 +210,7 @@ export const lightTheme = {
       borderActive: "#748d2e",
       fontColorIdle: "#22252A",
       fontColorHover: "#FAFAFA",
+      fontColorActive: "#22252A",
     },
     rectBig: {
       bgIdle: brandColors.main,
@@ -425,8 +426,9 @@ export const darkTheme = {
       borderIdle: brandColors.main,
       borderHover: brandColors.main,
       borderActive: "#748d2e",
-      fontColorIdle: "#22252A",
+      fontColorIdle: "#fafafa",
       fontColorHover: "#FAFAFA",
+      fontColorActive: "#fafafa",
     },
     rectBig: {
       bgIdle: "#1d2024",

@@ -5,6 +5,7 @@ export const StyledGallery = styled.section`
   flex-direction: column;
   margin-bottom: 3.2rem;
   gap: 2.4rem;
+  width: 100%;
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     gap: 4rem;
   }
@@ -20,12 +21,18 @@ export const StyledGallery = styled.section`
     max-height: 3.8rem;
     font-size: 1.4rem;
     line-height: 1.285;
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: #8baa36;
+    }
   }
 
   ul {
     display: flex;
     flex-wrap: wrap;
     gap: 3.2rem;
+
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       gap: 3.2rem;
     }

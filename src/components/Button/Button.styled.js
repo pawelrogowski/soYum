@@ -12,7 +12,8 @@ export const StyledButton = styled.button`
   border: 0.1rem solid ${({ theme }) => theme.button.base.borderIdle};
   transition: background-color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
     color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
-    border cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
+    border cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
+    scale cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
   cursor: pointer;
   outline: none;
 
@@ -22,14 +23,17 @@ export const StyledButton = styled.button`
       color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
       border cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
     background-color: ${({ theme }) => theme.button.base.bgHover};
-    border: 0.1rem solid ${({ theme }) => theme.button.base.borderHover};
+    border: 0.1rem solid ${({ theme }) => theme.button.base.borderHover},
+      scale cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
   }
   &:active {
+    scale: 0.98;
     transition: background-color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
       color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
       border cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
     background-color: ${({ theme }) => theme.button.base.bgActive};
-    border: 0.1rem solid ${({ theme }) => theme.button.base.borderActive};
+    border: 0.1rem solid ${({ theme }) => theme.button.base.borderActive},
+      scale cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
   }
 
   ${({ $variant, theme }) =>
@@ -66,6 +70,9 @@ export const StyledButton = styled.button`
             background-color: ${theme.button.outlineBig.bgHover};
             color: ${theme.button.outlineBig.fontColorHover};
             border: 0.2rem solid ${theme.button.outlineBig.borderHover};
+          }
+          &:active {
+            color: ${theme.button.outlineBig.fontColorActive};
           }
 
           &:active {

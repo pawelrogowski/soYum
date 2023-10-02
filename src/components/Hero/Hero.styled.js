@@ -127,7 +127,7 @@ export const StyledSection = styled.section`
       width: 275%;
       height: 275%;
       transform: translate(-50%, -50%) rotate(60deg) scaleX(-1);
-      filter: blur(0.2rem);
+      filter: blur(0.15rem);
       z-index: -1;
       background-repeat: no-repeat;
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {

@@ -51,7 +51,7 @@ export const StyledHeader = styled.header`
   }
 
   > a:first-of-type {
-    z-index: 1;
+    z-index: 2;
     margin-right: auto;
   }
 
