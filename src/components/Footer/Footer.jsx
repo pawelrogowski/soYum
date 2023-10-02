@@ -53,7 +53,7 @@ const Footer = ({ variant }) => {
         )}
         <SocialIcons />
       </Container>
-      <LegalDisclaimer>asdasd</LegalDisclaimer>
+      <LegalDisclaimer />
     </StyledFooter>
   );
 };
