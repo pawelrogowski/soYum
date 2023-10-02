@@ -47,11 +47,7 @@ export function UserAvatar({ image, placeholder, name = "No Data" }) {
         <img src={placeholder} alt="user avatar" />
       </picture>
       <span>{shortenString(name, 10, "...")}</span>
-      {isEditProfilePopupOpen && (
-        <div ref={popupRef}>
-          <EditProfilePopup />
-        </div>
-      )}
+      {isEditProfilePopupOpen && <EditProfilePopup ref={popupRef} />}
     </StyledDiv>
   );
 }
