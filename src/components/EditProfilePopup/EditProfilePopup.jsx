@@ -15,7 +15,7 @@ export const EditProfilePopup = () => {
     }
   };
 
-  const handleKeyDown = (event) => {
+  const handleEscapeClose = (event) => {
     if (event.key === "Escape") {
       dispatch(toggleUserEditMenu(false));
     }
@@ -23,11 +23,11 @@ export const EditProfilePopup = () => {
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
-    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("keydown", handleEscapeClose);
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("keydown", handleEscapeClose);
     };
   }, []);
 
