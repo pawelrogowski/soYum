@@ -22,6 +22,16 @@ export function UserAvatar({ image, placeholder, name = "No Data" }) {
     }
   };
 
+  const menuMotion = {
+    initial: { scale: 0.2 },
+    animate: { scale: 1 },
+    transition: {
+      type: "spring",
+      stiffness: 260,
+      damping: 20,
+    },
+  };
+
   return (
     <StyledDiv>
       <button onClick={handleOpenUserEdit} disabled={isEditProfilePopupOpen}>
@@ -32,7 +42,7 @@ export function UserAvatar({ image, placeholder, name = "No Data" }) {
         <span>{shortenString(name, 10, "...")}</span>
       </button>
       <AnimatePresence>
-        {isEditProfilePopupOpen && <EditProfilePopup />}
+        {isEditProfilePopupOpen && <EditProfilePopup {...menuMotion} />}
       </AnimatePresence>
     </StyledDiv>
   );
