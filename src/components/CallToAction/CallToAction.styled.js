@@ -22,7 +22,7 @@ export const StyledDiv = styled.div`
     width: 26rem;
     padding: 1.2rem;
     bottom: 5rem;
-    right: 1.8rem;
+    right: 0rem;
   }
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     width: 29.8rem;
