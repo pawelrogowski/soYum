@@ -21,6 +21,11 @@ export const StyledGallery = styled.section`
     max-height: 3.8rem;
     font-size: 1.4rem;
     line-height: 1.285;
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: #8baa36;
+    }
   }
 
   ul {

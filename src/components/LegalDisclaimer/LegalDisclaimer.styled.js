@@ -28,6 +28,13 @@ export const StyledDiv = styled(Container)`
     justify-content: center;
     align-items: center;
     width: 100%;
+    gap: 1.4rem;
+    @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+      gap: 2.8rem;
+    }
+    @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
+      gap: 4rem;
+    }
     > span {
       color: var(--color-text);
       font-size: 1rem;
