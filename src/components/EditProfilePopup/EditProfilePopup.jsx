@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { toggleUserEditMenu } from "../../redux/slices/modalSlice";
 
-export const EditProfilePopup = () => {
+export const EditProfilePopup = ({ ...props }) => {
   const dispatch = useDispatch();
   const ref = useRef(null);
 
@@ -37,7 +37,7 @@ export const EditProfilePopup = () => {
   }, []);
 
   return (
-    <StyledDiv ref={ref} onClick={handleClickInside}>
+    <StyledDiv ref={ref} onClick={handleClickInside} {...props}>
       <div>
         <span>Edit profile</span>
         <Icon icon="edit" />
