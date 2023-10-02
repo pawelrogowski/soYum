@@ -39,13 +39,15 @@ export const StyledAside = styled(motion.aside)`
       position: absolute;
       background-image: url(${leaves});
       background-repeat: no-repeat;
-      width: 33.5rem;
-      height: 51.7rem;
-      bottom: -17.5rem;
-      right: 0.9rem;
-      rotate: 424deg;
-      filter: blur(0.85rem);
+      width: 558px;
+      height: 852px;
+      bottom: -34.5rem;
+      right: -190px;
+      rotate: 118deg;
+      filter: blur(4px);
       z-index: -1;
+      transform: scaleX(-1);
+      background-size: contain;
     }
     > button {
       display: flex;
