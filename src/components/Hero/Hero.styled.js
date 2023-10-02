@@ -4,7 +4,7 @@ export const StyledSection = styled.section`
   --color-brand-highlight: ${({ theme }) => theme.brandColors.main};
   --color-hero-text: ${({ theme }) => theme.hero.text};
   --color-hero-bg-decoration: ${({ theme }) => theme.hero.bgDecoration};
-
+  position: relative;
   padding: 6.5rem 0;
   display: flex;
   flex-direction: column;
