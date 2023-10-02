@@ -14,9 +14,7 @@ import { toggleMobileMenu } from "../../redux/slices/modalSlice";
 
 export const Header = () => {
   const dispatch = useDispatch();
-  const isMobileMenuOpen = useSelector(
-    (state) => state.global.isMobileMenuOpen
-  );
+  const isMobileMenuOpen = useSelector((state) => state.modal.isMobileMenuOpen);
   const isAtLeastDesktopSize = useMediaQuery({ minWidth: breakpoints.desktop });
 
   const handleMenuToggle = () => {
