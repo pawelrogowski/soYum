@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "./slices/authSlice";
 import globalReducer from "./slices/globalSlice";
+import modalReducer from "./slices/modalSlice";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
@@ -28,6 +29,7 @@ export const store = configureStore({
   reducer: {
     auth: persistedAuthReducer,
     global: persistedGlobalReducer,
+    modal: modalReducer,
   },
   middleware: configureMiddleware,
 });
