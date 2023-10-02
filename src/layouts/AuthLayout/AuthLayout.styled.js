@@ -7,8 +7,8 @@ export const PageContent = styled(StyledDiv)`
   @media (max-height: 800px) {
     padding-top: 2.5rem;
   }
-  min-height: 100vh;
-  height: 100vh;
+  min-height: 100dvh;
+  height: 100dvh;
   width: 100vw;
 
   display: flex;

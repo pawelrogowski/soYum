@@ -16,7 +16,7 @@ export const StartPageContainer = styled.main`
   align-items: center;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   min-width: 28rem;
   padding: 3.5rem;
   background-repeat: no-repeat;

@@ -14,7 +14,7 @@ export const StyledAside = styled(motion.aside)`
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
 
   background: var(--color-mobileMenu-bg);
   > div {
