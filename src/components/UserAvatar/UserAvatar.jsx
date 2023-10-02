@@ -4,9 +4,11 @@ import { StyledDiv } from "./UserAvatar.styled";
 import { EditProfilePopup } from "../EditProfilePopup/EditProfilePopup";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleUserEditMenu } from "../../redux/slices/modalSlice";
+import { useEffect, useRef } from "react";
 
 export function UserAvatar({ image, placeholder, name = "No Data" }) {
   const dispatch = useDispatch();
+  const popupRef = useRef(null);
 
   const isEditProfilePopup = useSelector(
     (state) => state.modal.isUserEditMenuOpen
@@ -16,6 +18,28 @@ export function UserAvatar({ image, placeholder, name = "No Data" }) {
     !isEditProfilePopup && dispatch(toggleUserEditMenu(true));
   };
 
+  const handleClickOutside = (event) => {
+    if (popupRef.current && !popupRef.current.contains(event.target)) {
+      dispatch(toggleUserEditMenu(false));
+    }
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Escape") {
+      dispatch(toggleUserEditMenu(false));
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
   return (
     <StyledDiv onClick={handleOpenUserEdit}>
       <picture>
@@ -23,7 +47,11 @@ export function UserAvatar({ image, placeholder, name = "No Data" }) {
         <img src={placeholder} alt="user avatar" />
       </picture>
       <span>{shortenString(name, 10, "...")}</span>
-      {isEditProfilePopup && <EditProfilePopup />}
+      {isEditProfilePopup && (
+        <div ref={popupRef}>
+          <EditProfilePopup />
+        </div>
+      )}
     </StyledDiv>
   );
 }
