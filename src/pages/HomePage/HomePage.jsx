@@ -6,6 +6,7 @@ import img3 from "../../assets/images/food/Spinach_quinoa_patties_01.jpg";
 import placeholder from "../../assets/images/food/placeholder.jpg";
 import { breakpoints } from "../../styles/themes";
 import { useMediaQuery } from "react-responsive";
+import { Button } from "../../components/Button/Button";
 const images = [
   { placeholder: placeholder, img: img1, caption: "Banana Pancakes" },
   { placeholder: placeholder, img: img2, caption: "Ham Hock Colcannon" },
@@ -33,6 +34,7 @@ const HomePage = () => {
       />
       <Gallery data={images} heading="Chicken" limit={imgNumPerCategory} />
       <Gallery data={images} heading="Desserts" limit={imgNumPerCategory} />
+      <Button variant="outlineBig">Other Categories</Button>
     </>
   );
 };

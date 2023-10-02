@@ -11,10 +11,16 @@ export const StyledDiv = styled.main`
   ${(props) =>
     props.as === "main" &&
     css`
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       padding-bottom: 10rem;
 
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         padding-bottom: 20rem;
+      }
+      > section:last-of-type {
+        margin-bottom: 3.2rem;
       }
       &:after {
         content: "";

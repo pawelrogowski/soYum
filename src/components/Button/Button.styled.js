@@ -67,6 +67,9 @@ export const StyledButton = styled.button`
             color: ${theme.button.outlineBig.fontColorHover};
             border: 0.2rem solid ${theme.button.outlineBig.borderHover};
           }
+          &:active {
+            color: ${theme.button.outlineBig.fontColorActive};
+          }
 
           &:active {
             background-color: ${({ theme }) =>

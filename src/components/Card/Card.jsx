@@ -1,13 +1,14 @@
 import PropTypes from "prop-types";
 import { StyledFigure } from "./Card.styled";
 import { Link } from "react-router-dom";
+
 export const Card = ({ placeholder, img, caption }) => {
   return (
     <StyledFigure>
       <Link to="#">
         <picture>
           <source srcSet={img} />
-          <img src={placeholder} alt=""></img>
+          <img src={placeholder} alt="" loading="lazy"></img>
         </picture>
         <figcaption>{caption}</figcaption>
       </Link>
