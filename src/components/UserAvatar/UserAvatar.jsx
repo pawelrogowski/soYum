@@ -13,7 +13,9 @@ export function UserAvatar({ image, placeholder, name = "No Data" }) {
   );
 
   const handleOpenUserEdit = () => {
-    !isEditProfilePopupOpen && dispatch(toggleUserEditMenu(true));
+    if (!isEditProfilePopupOpen) {
+      setTimeout(() => dispatch(toggleUserEditMenu(true)), 0);
+    }
   };
 
   return (
