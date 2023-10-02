@@ -32,7 +32,7 @@ export const StyledDiv = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    pointer-events: fill;
+    cursor: pointer;
 
     > span {
       color: var(--color-text);
