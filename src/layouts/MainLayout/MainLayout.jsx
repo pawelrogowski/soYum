@@ -14,9 +14,9 @@ export const MainLayout = () => {
     minWidth: breakpoints.tablet,
     maxWidth: breakpoints.tabletMax,
   });
-  const isMobileMenuOpen = useSelector(
-    (state) => state.global.isMobileMenuOpen
-  );
+
+  const isMobileMenuOpen = useSelector((state) => state.modal.isMobileMenuOpen);
+
   return (
     <>
       <AnimatePresence>
@@ -26,7 +26,6 @@ export const MainLayout = () => {
       <Container as="main">
         <Outlet />
       </Container>
-
       <Footer
         variant={isMobileSize ? "mobile" : isTabletSize ? "tablet" : "desktop"}
       />

@@ -10,11 +10,11 @@ export const StyledAside = styled(motion.aside)`
   --breakpoint-tablet: ${({ theme }) => theme.breakpoints.tablet};
 
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
 
   background: var(--color-mobileMenu-bg);
   > div {
@@ -39,13 +39,15 @@ export const StyledAside = styled(motion.aside)`
       position: absolute;
       background-image: url(${leaves});
       background-repeat: no-repeat;
-      width: 33.5rem;
-      height: 51.7rem;
-      bottom: -17.5rem;
-      right: 0.9rem;
-      rotate: 424deg;
-      filter: blur(0.85rem);
+      width: 852px;
+      height: 852px;
+      bottom: -32.5rem;
+      right: -31rem;
+      rotate: 122deg;
+      filter: blur(4px);
       z-index: -1;
+      transform: scaleX(-1);
+      background-size: contain;
     }
     > button {
       display: flex;

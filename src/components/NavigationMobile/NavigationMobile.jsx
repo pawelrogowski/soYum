@@ -4,7 +4,8 @@ import { Icon } from "../Icon/Icon";
 import { ThemeSwitch } from "../ThemeSwitch/ThemeSwitch";
 import { MobileMenuButton } from "../MobileMenuButton/MobileMenuButton";
 import { useDispatch } from "react-redux";
-import { toggleMobileMenu } from "../../redux/slices/globalSlice";
+import { toggleMobileMenu } from "../../redux/slices/modalSlice";
+
 const navSlideMotion = {
   initial: { left: "-100%", opacity: 0 },
   animate: { left: 0, opacity: 1 },
@@ -14,6 +15,7 @@ const navSlideMotion = {
 
 export const NavigationMobile = () => {
   const dispatch = useDispatch();
+
   const handleMenuToggle = () => {
     dispatch(toggleMobileMenu());
   };

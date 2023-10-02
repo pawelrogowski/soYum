@@ -9,7 +9,7 @@ export const StyledDiv = styled.div`
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   backdrop-filter: blur(0.2rem);
   background-color: rgba(0, 0, 0, 0.8);
   transition: background-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;

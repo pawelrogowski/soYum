@@ -66,13 +66,13 @@ export const Hero = () => {
               />
               <img src={hero} alt="plate of delicious food" />{" "}
             </picture>{" "}
-            <CallToAction
-              text="way to enjoy a variety of fresh ingredients in one satisfying meal"
-              highlightedText="Delicious and healthy"
-              linkText="See recipes"
-              icon="arrow_long"
-            />
           </div>
+          <CallToAction
+            text="way to enjoy a variety of fresh ingredients in one satisfying meal"
+            highlightedText="Delicious and healthy"
+            linkText="See recipes"
+            icon="arrow_long"
+          />
         </>
       ) : null}
     </StyledSection>
