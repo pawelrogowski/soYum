@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const StyledDiv = styled.div`
+export const StyledButton = styled.button`
   --color-userAvatar-fontIdle: ${({ theme }) => theme.userAvatar.fontIdle};
   --color-userAvatar-fontHover: ${({ theme }) => theme.userAvatar.fontHover};
   --color-decoration: ${({ theme }) => theme.backgroundDecoration.secondary};
@@ -15,6 +15,8 @@ export const StyledDiv = styled.div`
   flex-wrap: nowrap;
   gap: 1.4rem;
   position: relative;
+  background: none;
+  border: none;
 
   &:hover,
   &:focus {

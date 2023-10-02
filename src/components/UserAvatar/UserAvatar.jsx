@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { shortenString } from "../../utils/stringManipulation";
-import { StyledDiv } from "./UserAvatar.styled";
+import { StyledButton } from "./UserAvatar.styled";
 import { EditProfilePopup } from "../EditProfilePopup/EditProfilePopup";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleUserEditMenu } from "../../redux/slices/modalSlice";
@@ -19,14 +19,14 @@ export function UserAvatar({ image, placeholder, name = "No Data" }) {
   };
 
   return (
-    <StyledDiv onClick={handleOpenUserEdit}>
+    <StyledButton onClick={handleOpenUserEdit}>
       <picture>
         <source srcSet={image} type="image/jpeg" />
         <img src={placeholder} alt="user avatar" />
       </picture>
       <span>{shortenString(name, 10, "...")}</span>
       {isEditProfilePopupOpen && <EditProfilePopup />}
-    </StyledDiv>
+    </StyledButton>
   );
 }
 
