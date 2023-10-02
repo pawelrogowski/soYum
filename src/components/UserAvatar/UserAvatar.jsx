@@ -19,8 +19,8 @@ export function UserAvatar({ image, placeholder, name = "No Data" }) {
   };
 
   return (
-    <StyledDiv onClick={handleOpenUserEdit} disabled={isEditProfilePopupOpen}>
-      <button>
+    <StyledDiv>
+      <button onClick={handleOpenUserEdit} disabled={isEditProfilePopupOpen}>
         <picture>
           <source srcSet={image} type="image/jpeg" />
           <img src={placeholder} alt="user avatar" />

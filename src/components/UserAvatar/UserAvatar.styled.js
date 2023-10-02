@@ -5,8 +5,7 @@ export const StyledDiv = styled.div`
   --color-userAvatar-fontHover: ${({ theme }) => theme.userAvatar.fontHover};
   --color-decoration: ${({ theme }) => theme.backgroundDecoration.secondary};
   --blend-mode: ${({ theme }) => theme.userAvatar.blend};
-  background: none;
-  border: none;
+  position: relative;
 
   @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
     margin-right: 5rem;
@@ -14,7 +13,6 @@ export const StyledDiv = styled.div`
   > button {
     height: 100%;
     max-height: 4.6rem;
-    margin-right: 2.4rem;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
