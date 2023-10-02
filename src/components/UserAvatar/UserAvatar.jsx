@@ -10,12 +10,12 @@ export function UserAvatar({ image, placeholder, name = "No Data" }) {
   const dispatch = useDispatch();
   const popupRef = useRef(null);
 
-  const isEditProfilePopup = useSelector(
+  const isEditProfilePopupOpen = useSelector(
     (state) => state.modal.isUserEditMenuOpen
   );
 
   const handleOpenUserEdit = () => {
-    !isEditProfilePopup && dispatch(toggleUserEditMenu(true));
+    !isEditProfilePopupOpen && dispatch(toggleUserEditMenu(true));
   };
 
   const handleClickOutside = (event) => {
@@ -47,7 +47,7 @@ export function UserAvatar({ image, placeholder, name = "No Data" }) {
         <img src={placeholder} alt="user avatar" />
       </picture>
       <span>{shortenString(name, 10, "...")}</span>
-      {isEditProfilePopup && (
+      {isEditProfilePopupOpen && (
         <div ref={popupRef}>
           <EditProfilePopup />
         </div>
