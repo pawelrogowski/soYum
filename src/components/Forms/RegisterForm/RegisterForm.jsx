@@ -14,7 +14,14 @@ export const RegistrationForm = () => {
   const warnIconMotion = {
     initial: { scale: 0.2 },
     animate: { scale: 1 },
-    exit: { scale: 0.2 },
+    exit: {
+      scale: 0.2,
+      transition: {
+        type: "spring",
+        stiffness: 260,
+        damping: 20,
+      },
+    },
     transition: {
       type: "spring",
       stiffness: 260,
