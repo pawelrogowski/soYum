@@ -28,10 +28,12 @@ export const StyledDiv = styled.div`
   border: solid 1px var(--color-border);
   transform: translateX(-50%, -50%);
   z-index: 1;
+  pointer-events: none;
   div {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    pointer-events: all;
 
     > span {
       color: var(--color-text);
