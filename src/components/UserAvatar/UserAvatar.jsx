@@ -37,8 +37,8 @@ export function UserAvatar({ image, placeholder, name = "No Data" }) {
     },
     transition: {
       type: "spring",
-      stiffness: 260,
-      damping: 20,
+      stiffness: 420,
+      damping: 30,
     },
   };
 
