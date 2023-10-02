@@ -7,8 +7,11 @@ export const modalSlice = createSlice({
     toggleMobileMenu: (state, action) => {
       state.isMobileMenuOpen = action.payload;
     },
+    toggleUserEditMenu: (state, action) => {
+      state.isUserEditMenuOpen = action.payload;
+    },
   },
 });
 
 export default modalSlice.reducer;
-export const { toggleMobileMenu } = modalSlice.actions;
+export const { toggleMobileMenu, toggleUserEditMenu } = modalSlice.actions;
