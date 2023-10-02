@@ -14,6 +14,7 @@ export const StyledDiv = styled(motion.div)`
     theme.editProfilePopup.button.textActive};
   --color-text-active: ${({ theme }) => theme.editProfilePopup.textActive};
   --color-icon-active: ${({ theme }) => theme.editProfilePopup.iconActive};
+
   transform-origin: top;
   position: absolute;
   top: calc(100% + 1.4rem);
@@ -29,6 +30,7 @@ export const StyledDiv = styled(motion.div)`
   border: solid 1px var(--color-border);
   transform: translateX(-50%, -50%);
   z-index: 1;
+
   div {
     display: flex;
     justify-content: space-between;
