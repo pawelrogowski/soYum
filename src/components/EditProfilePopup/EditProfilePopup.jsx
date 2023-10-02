@@ -15,25 +15,29 @@ export const EditProfilePopup = () => {
     }
   };
 
-  const handleEscapeClose = (event) => {
+  const handleKeyDown = (event) => {
     if (event.key === "Escape") {
       dispatch(toggleUserEditMenu(false));
     }
   };
 
+  const handleClickInside = (event) => {
+    event.stopPropagation();
+  };
+
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
-    document.addEventListener("keydown", handleEscapeClose);
+    document.addEventListener("keydown", handleKeyDown);
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("keydown", handleEscapeClose);
+      document.removeEventListener("keydown", handleKeyDown);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <StyledDiv ref={ref}>
+    <StyledDiv ref={ref} onClick={handleClickInside}>
       <div>
         <span>Edit profile</span>
         <Icon icon="edit" />
