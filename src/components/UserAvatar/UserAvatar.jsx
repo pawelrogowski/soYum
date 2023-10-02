@@ -12,12 +12,12 @@ export function UserAvatar({ image, placeholder, name = "No Data" }) {
     (state) => state.modal.isUserEditMenuOpen
   );
 
-  const handleUserEditToggle = () => {
-    dispatch(toggleUserEditMenu(!isEditProfilePopup));
+  const handleOpenUserEdit = () => {
+    !isEditProfilePopup && dispatch(toggleUserEditMenu(true));
   };
 
   return (
-    <StyledDiv onClick={handleUserEditToggle}>
+    <StyledDiv onClick={handleOpenUserEdit}>
       <picture>
         <source srcSet={image} type="image/jpeg" />
         <img src={placeholder} alt="user avatar" />
