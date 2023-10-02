@@ -7,9 +7,7 @@ export const StyledDiv = styled.div`
   --blend-mode: ${({ theme }) => theme.userAvatar.blend};
   position: relative;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
-    margin-right: 5rem;
-  }
+  margin-right: 5rem;
   > button {
     height: 100%;
     max-height: 4.6rem;
