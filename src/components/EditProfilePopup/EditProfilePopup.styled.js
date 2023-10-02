@@ -14,7 +14,7 @@ export const StyledDiv = styled(motion.div)`
     theme.editProfilePopup.button.textActive};
   --color-text-active: ${({ theme }) => theme.editProfilePopup.textActive};
   --color-icon-active: ${({ theme }) => theme.editProfilePopup.iconActive};
-
+  transform-origin: "top";
   position: absolute;
   top: calc(100% + 1.4rem);
   left: -50%;
