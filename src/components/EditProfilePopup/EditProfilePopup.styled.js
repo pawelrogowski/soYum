@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-export const StyledDiv = styled.div`
+export const StyledDiv = styled(motion.div)`
   --color-background: ${({ theme }) => theme.editProfilePopup.bg};
   --color-text: ${({ theme }) => theme.editProfilePopup.text};
   --color-icon: ${({ theme }) => theme.editProfilePopup.icon};

@@ -4,6 +4,7 @@ import { StyledDiv } from "./UserAvatar.styled";
 import { EditProfilePopup } from "../EditProfilePopup/EditProfilePopup";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleUserEditMenu } from "../../redux/slices/modalSlice";
+import { AnimatePresence } from "framer-motion";
 
 export function UserAvatar({ image, placeholder, name = "No Data" }) {
   const dispatch = useDispatch();
@@ -30,7 +31,9 @@ export function UserAvatar({ image, placeholder, name = "No Data" }) {
         </picture>
         <span>{shortenString(name, 10, "...")}</span>
       </button>
-      {isEditProfilePopupOpen && <EditProfilePopup />}
+      <AnimatePresence>
+        {isEditProfilePopupOpen && <EditProfilePopup />}
+      </AnimatePresence>
     </StyledDiv>
   );
 }
