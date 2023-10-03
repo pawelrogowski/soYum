@@ -25,6 +25,21 @@ export const GlobalStyles = createGlobalStyle`
     min-width: 28rem;
     overflow-x: hidden;
   }
+  .activeLink {
+  color: ${({ theme }) => theme.brandColors.main} !important;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border: 2px solid ${({ theme }) => theme.brandColors.main} ;
+    border-radius: 2px;
+  }
+}
 
   div[id="root"] {
       height: 100dvh;

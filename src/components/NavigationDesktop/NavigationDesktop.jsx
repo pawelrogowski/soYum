@@ -16,7 +16,12 @@ export const NavigationDesktop = () => {
       <ul>
         {navItems.map((item, index) => (
           <li key={index}>
-            <NavLink to={item.path}>{item.text}</NavLink>
+            <NavLink
+              className={({ isActive }) => (isActive ? "activeLink" : "")}
+              to={item.path}
+            >
+              {item.text}
+            </NavLink>
           </li>
         ))}
         <li>
