@@ -4,10 +4,17 @@ import { Card } from "../Card/Card";
 import { Heading } from "../Heading/Heading.jsx";
 import { Button } from "../Button/Button";
 
-export const Gallery = ({ data, heading, limit = Infinity }) => {
+export const Gallery = ({
+  data,
+  limit = Infinity,
+  showHeading = false,
+  showButton = false,
+  headingText = "your heading",
+  buttonText = "your button",
+}) => {
   return (
     <StyledGallery>
-      <Heading as="h2">{heading}</Heading>
+      {showHeading && <Heading as="h2">{headingText}</Heading>}
       <ul>
         {data.slice(0, limit).map((item, index) => (
           <li key={index}>
@@ -19,13 +26,16 @@ export const Gallery = ({ data, heading, limit = Infinity }) => {
           </li>
         ))}
       </ul>
-      <Button variant="rectSmall">See all</Button>
+      {showButton && <Button variant="rectSmall">{buttonText}</Button>}
     </StyledGallery>
   );
 };
 
 Gallery.propTypes = {
   data: PropTypes.array.isRequired,
-  heading: PropTypes.string.isRequired,
   limit: PropTypes.number,
+  headingText: PropTypes.string,
+  buttonText: PropTypes.string,
+  showHeading: PropTypes.bool,
+  showButton: PropTypes.bool,
 };
