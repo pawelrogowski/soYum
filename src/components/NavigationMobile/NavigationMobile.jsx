@@ -20,26 +20,25 @@ export const NavigationMobile = () => {
     dispatch(toggleMobileMenu());
   };
 
+  // Define an array of navigation items
+  const navItems = [
+    { path: "/categories", text: "Categories" },
+    { path: "/recipes", text: "Add recipes" },
+    { path: "/myrecipes", text: "My recipes" },
+    { path: "/favorites", text: "Favorites" },
+    { path: "/shoppinglist", text: "Shopping List" },
+  ];
+
   return (
     <StyledAside {...navSlideMotion}>
       <div>
         <MobileMenuButton onClick={handleMenuToggle} variant="close" />
         <ul>
-          <li>
-            <NavLink to="#">Categories</NavLink>
-          </li>
-          <li>
-            <NavLink to="#">Add recipes</NavLink>
-          </li>
-          <li>
-            <NavLink to="#">My Recipes</NavLink>
-          </li>
-          <li>
-            <NavLink to="#">Favorites</NavLink>
-          </li>
-          <li>
-            <NavLink to="#">Shopping List</NavLink>
-          </li>
+          {navItems.map((item, index) => (
+            <li key={index}>
+              <NavLink to={item.path}>{item.text}</NavLink>
+            </li>
+          ))}
           <li>
             <button type="button" aria-label="Search">
               <Icon icon="search" />
