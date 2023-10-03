@@ -32,12 +32,15 @@ export const GlobalStyles = createGlobalStyle`
   &:after {
     content: "";
     position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    border: 2px solid ${({ theme }) => theme.brandColors.main} ;
-    border-radius: 2px;
+    bottom: 6px;
+  left: -18px;
+  width: 0px;
+  height: 0px;
+    border: 4px solid ${({ theme }) => theme.brandColors.main} ;
+    border-radius: 50%;
+
+
+
   }
 }
 
