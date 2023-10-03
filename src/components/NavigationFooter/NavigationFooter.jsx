@@ -2,24 +2,22 @@ import { NavLink } from "react-router-dom";
 import { StyledNav } from "./NavigationFooter.styled";
 
 export function NavigationFooter() {
+  const navItems = [
+    { path: "/ingredients", text: "Ingredients" },
+    { path: "/recipes", text: "Add recipes" },
+    { path: "/myrecipes", text: "My recipes" },
+    { path: "/favorites", text: "Favorites" },
+    { path: "/shoppinglist", text: "Shopping List" },
+  ];
+
   return (
     <StyledNav>
       <ul>
-        <li>
-          <NavLink to="#">Ingredients </NavLink>
-        </li>
-        <li>
-          <NavLink to="#">Add recipes </NavLink>
-        </li>
-        <li>
-          <NavLink to="#">My recipes </NavLink>
-        </li>
-        <li>
-          <NavLink to="#">Favorite </NavLink>
-        </li>
-        <li>
-          <NavLink to="#">Shopping list </NavLink>
-        </li>
+        {navItems.map((item, index) => (
+          <li key={index}>
+            <NavLink to={item.path}>{item.text}</NavLink>
+          </li>
+        ))}
       </ul>
     </StyledNav>
   );

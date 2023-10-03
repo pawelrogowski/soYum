@@ -3,6 +3,8 @@ import { Icon } from "../../components/Icon/Icon";
 import { useMediaQuery } from "react-responsive";
 import { breakpoints } from "../../styles/themes";
 import { PageContent } from "./AuthLayout.styled";
+import { Suspense } from "react";
+import { LoaderDots } from "../../components/LoaderDots/LoaderDots";
 
 export const AuthLayout = () => {
   const isDesktop = useMediaQuery({ minWidth: breakpoints.desktop });
@@ -17,7 +19,9 @@ export const AuthLayout = () => {
         }
       />
       <div>
-        <Outlet />
+        <Suspense fallback={<LoaderDots />}>
+          <Outlet />
+        </Suspense>
       </div>
     </PageContent>
   );

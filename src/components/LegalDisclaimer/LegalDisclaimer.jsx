@@ -6,7 +6,7 @@ export const LegalDisclaimer = () => {
     <StyledDiv as="div">
       <Container as="div">
         <span>&copy; 2023 All Rights Reserved.</span>
-        <Link to="#">
+        <Link to="/tos">
           <span>Terms of Service</span>
         </Link>
       </Container>

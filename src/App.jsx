@@ -3,10 +3,10 @@ import { ThemeProvider } from "styled-components";
 import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { lightTheme, darkTheme } from "./styles/themes";
-import { LoaderDots } from "./components/LoaderDots/LoaderDots";
 import { GlobalStyles } from "./styles/globalStyles";
 import { AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { LoaderDots } from "./components/LoaderDots/LoaderDots";
 // layouts
 const AuthLayout = lazy(() => import("./layouts/AuthLayout/AuthLayout"));
 const MainLayout = lazy(() => import("./layouts/MainLayout/MainLayout"));
@@ -18,6 +18,9 @@ const RegisterPage = lazy(() =>
 );
 const StartPage = lazy(() => import("./pages/StartPage/StartPage.jsx"));
 const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"));
+const CategoriesPage = lazy(() =>
+  import("./pages/CategoriesPage/CategoriesPage.jsx")
+);
 const NotFoundPage = lazy(() =>
   import("./pages/NotFoundPage/NotFoundPage.jsx")
 );
@@ -46,6 +49,7 @@ export const App = () => {
               </Route>
               <Route element={<MainLayout />}>
                 <Route path="/home" element={<HomePage />} />
+                <Route path="/categories" element={<CategoriesPage />} />
                 <Route path="/404" element={<NotFoundPage />} />
                 <Route path="*" element={<NotFoundPage />} />
               </Route>

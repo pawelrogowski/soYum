@@ -1,5 +1,4 @@
 import { Header } from "../../components/Header/Header";
-import { Container } from "../../components/Container/Container";
 import { Outlet } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { NavigationMobile } from "../../components/NavigationMobile/NavigationMobile";
@@ -7,6 +6,8 @@ import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { breakpoints } from "../../styles/themes";
 import Footer from "../../components/Footer/Footer";
+import { Suspense } from "react";
+import { LoaderDots } from "../../components/LoaderDots/LoaderDots";
 
 export const MainLayout = () => {
   const isMobileSize = useMediaQuery({ maxWidth: breakpoints.mobileMax });
@@ -23,9 +24,9 @@ export const MainLayout = () => {
         {isMobileMenuOpen && <NavigationMobile />}
       </AnimatePresence>
       <Header />
-      <Container as="main">
+      <Suspense fallback={<LoaderDots />}>
         <Outlet />
-      </Container>
+      </Suspense>
       <Footer
         variant={isMobileSize ? "mobile" : isTabletSize ? "tablet" : "desktop"}
       />

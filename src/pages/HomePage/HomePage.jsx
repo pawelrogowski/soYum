@@ -7,6 +7,7 @@ import placeholder from "../../assets/icons/food-placeholder.svg";
 import { breakpoints } from "../../styles/themes";
 import { useMediaQuery } from "react-responsive";
 import { Button } from "../../components/Button/Button";
+import { MainContainer } from "./HomePage.styled";
 const images = [
   { placeholder: placeholder, img: img1, caption: "Banana Pancakes" },
   { placeholder: placeholder, img: img2, caption: "Ham Hock Colcannon" },
@@ -25,18 +26,42 @@ const HomePage = () => {
     : 1;
 
   return (
-    <>
+    <MainContainer>
       <Hero />
-      <Gallery data={images} heading="Breakfast" limit={imgNumPerCategory} />
       <Gallery
         data={images}
-        heading="Miscellaneous"
+        showHeading
+        showButton
+        headingText="Breakfast"
+        buttonText="See All"
         limit={imgNumPerCategory}
       />
-      <Gallery data={images} heading="Chicken" limit={imgNumPerCategory} />
-      <Gallery data={images} heading="Desserts" limit={imgNumPerCategory} />
+      <Gallery
+        data={images}
+        showHeading
+        showButton
+        headingText="Miscellaneous"
+        buttonText="See All"
+        limit={imgNumPerCategory}
+      />
+      <Gallery
+        data={images}
+        showHeading
+        showButton
+        headingText="Chicken"
+        buttonText="See All"
+        limit={imgNumPerCategory}
+      />
+      <Gallery
+        data={images}
+        showHeading
+        showButton
+        headingText="Desserts"
+        buttonText="See All"
+        limit={imgNumPerCategory}
+      />
       <Button variant="outlineBig">Other Categories</Button>
-    </>
+    </MainContainer>
   );
 };
 
