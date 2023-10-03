@@ -18,7 +18,7 @@ const typography = {
 
 const brandColors = {
   main: "#8BAA36",
-  secondary: "#FAFAFA",
+  secondary: "#fafafa",
   accent: "#EBF3D4",
 };
 
@@ -56,7 +56,7 @@ export const lightTheme = {
     },
   },
   bg: {
-    main: "#FAFAFA",
+    main: "#fafafa",
     secondary: "#1E1F28",
     form: "#22252A",
     footer: "#22252A",
@@ -73,25 +73,25 @@ export const lightTheme = {
       bgHover: brandColors.main,
       bgActive: "#748d2e",
       borderIdle: brandColors.main,
-      borderHover: "#FAFAFA",
+      borderHover: "#fafafa",
       borderActive: "#748d2e",
-      fontColorIdle: "#FAFAFA",
-      fontColorHover: "#FAFAFA",
+      fontColorIdle: "#fafafa",
+      fontColorHover: "#fafafa",
     },
     signinButton: {
       bgIdle: "transparent",
       bgHover: "transparent",
       bgActive: "#748d2e",
-      borderIdle: "#FAFAFA",
-      borderHover: "#FAFAFA",
+      borderIdle: "#fafafa",
+      borderHover: "#fafafa",
       borderActive: "#748d2e",
-      fontColorIdle: "#FAFAFA",
+      fontColorIdle: "#fafafa",
       fontColorHover: brandColors.main,
     },
   },
   authForm: {
     font: typography.family.primary,
-    header: "#FAFAFA",
+    header: "#fafafa",
     bg: "#2A2C36",
     textInput: {
       font: typography.family.primary,
@@ -114,13 +114,13 @@ export const lightTheme = {
       borderIdle: brandColors.main,
       borderHover: brandColors.main,
       borderActive: "#748d2e",
-      fontColorIdle: "#FAFAFA",
+      fontColorIdle: "#fafafa",
       fontColorHover: "#22252A",
     },
   },
   newsletterForm: {
     font: typography.family.primary,
-    header: "#FAFAFA",
+    header: "#fafafa",
     bg: "#2A2C36",
     textInput: {
       font: typography.family.primary,
@@ -150,7 +150,7 @@ export const lightTheme = {
   icon: {
     social: {
       fill: brandColors.main,
-      fillHover: "#FAFAFA",
+      fillHover: "#fafafa",
     },
   },
   form: {
@@ -161,6 +161,12 @@ export const lightTheme = {
       placeholder: "#bdbdbd",
       borderIdle: "#f0f0f0",
       borderFocus: "#f0f0f0",
+      button: {
+        bgIdle: brandColors.main,
+        bgActive: brandColors.main,
+        borderIdle: brandColors.main,
+        borderActive: brandColors.main,
+      },
     },
   },
   navigation: {
@@ -171,11 +177,11 @@ export const lightTheme = {
     blend: "initial",
     mobile: {
       font: typography.family.primary,
-      colorIdle: "#FAFAFA",
+      colorIdle: "#fafafa",
       colorHover: brandColors.main,
     },
     footer: {
-      colorIdle: "#FAFAFA",
+      colorIdle: "#fafafa",
       colorHover: brandColors.main,
     },
   },
@@ -188,17 +194,17 @@ export const lightTheme = {
       borderIdle: "#22252A",
       borderHover: brandColors.main,
       borderActive: "#748d2e",
-      fontColorIdle: "#FAFAFA",
-      fontColorHover: "#FAFAFA",
+      fontColorIdle: "#fafafa",
+      fontColorHover: "#fafafa",
     },
     outlineSmall: {
       bgIdle: "transparent",
       bgHover: "transparent",
       bgActive: "transparent",
-      borderIdle: "#FAFAFA",
+      borderIdle: "#fafafa",
       borderHover: brandColors.main,
       borderActive: "#748d2e",
-      fontColorIdle: "#FAFAFA",
+      fontColorIdle: "#fafafa",
       fontColorHover: brandColors.main,
     },
     outlineBig: {
@@ -209,7 +215,7 @@ export const lightTheme = {
       borderHover: brandColors.main,
       borderActive: "#748d2e",
       fontColorIdle: "#22252A",
-      fontColorHover: "#FAFAFA",
+      fontColorHover: "#fafafa",
       fontColorActive: "#22252A",
     },
     rectBig: {
@@ -219,7 +225,7 @@ export const lightTheme = {
       borderIdle: brandColors.main,
       borderHover: brandColors.main,
       borderActive: "#748d2e",
-      fontColorIdle: "#FAFAFA",
+      fontColorIdle: "#fafafa",
       fontColorHover: "#22252A",
     },
     rectSmall: {
@@ -229,8 +235,8 @@ export const lightTheme = {
       borderIdle: brandColors.main,
       borderHover: "#22252A",
       borderActive: "#22252A",
-      fontColorIdle: "#FAFAFA",
-      fontColorHover: "#FAFAFA",
+      fontColorIdle: "#fafafa",
+      fontColorHover: "#fafafa",
     },
     rectSmallDisabled: {
       bgIdle: "#D9D9D9",
@@ -265,9 +271,9 @@ export const lightTheme = {
   },
   footer: {
     legalText: "#8e8f92",
-    logoTextIdle: "#FAFAFA",
+    logoTextIdle: "#fafafa",
     logoTextActive: brandColors.main,
-    descriptionText: "#FAFAFA",
+    descriptionText: "#fafafa",
   },
   backgroundDecoration: {
     primary: brandColors.main,
@@ -368,32 +374,38 @@ export const darkTheme = {
   },
   icon: {
     social: {
-      fill: "#FAFAFA",
+      fill: "#fafafa",
       fillHover: "#22252a",
     },
   },
   form: {
     font: typography.family.primary,
     search: {
-      font: "#FAFAFA",
+      font: "#fafafa",
       background: "#1e1f28",
       placeholder: "#8c8c91",
       borderIdle: "#8c8c91",
       borderFocus: "#8c8c91",
+      button: {
+        bgIdle: brandColors.main,
+        bgActive: brandColors.main,
+        borderIdle: brandColors.main,
+        borderActive: brandColors.main,
+      },
     },
   },
   navigation: {
     font: typography.family.primary,
-    colorIdle: "#FAFAFA",
+    colorIdle: "#fafafa",
     colorHover: brandColors.main,
     icon: "#fafafa",
     blend: "difference",
     mobile: {
-      colorIdle: "#FAFAFA",
+      colorIdle: "#fafafa",
       colorHover: brandColors.main,
     },
     footer: {
-      colorIdle: "#FAFAFA",
+      colorIdle: "#fafafa",
       colorHover: "#23262A",
     },
   },
@@ -406,17 +418,17 @@ export const darkTheme = {
       borderIdle: brandColors.main,
       borderHover: "#22252A",
       borderActive: "#2c3036",
-      fontColorIdle: "#FAFAFA",
-      fontColorHover: "#FAFAFA",
+      fontColorIdle: "#fafafa",
+      fontColorHover: "#fafafa",
     },
     outlineSmall: {
       bgIdle: "transparent",
       bgHover: "transparent",
       bgActive: "transparent",
-      borderIdle: "#FAFAFA",
+      borderIdle: "#fafafa",
       borderHover: brandColors.main,
       borderActive: "#748d2e",
-      fontColorIdle: "#FAFAFA",
+      fontColorIdle: "#fafafa",
       fontColorHover: brandColors.main,
     },
     outlineBig: {
@@ -427,7 +439,7 @@ export const darkTheme = {
       borderHover: brandColors.main,
       borderActive: "#748d2e",
       fontColorIdle: "#fafafa",
-      fontColorHover: "#FAFAFA",
+      fontColorHover: "#fafafa",
       fontColorActive: "#fafafa",
     },
     rectBig: {
@@ -437,7 +449,7 @@ export const darkTheme = {
       borderIdle: "#1d2024",
       borderHover: "#1d2024",
       borderActive: "#2c3036",
-      fontColorIdle: "#FAFAFA",
+      fontColorIdle: "#fafafa",
       fontColorHover: brandColors.main,
     },
     rectSmall: {
@@ -447,8 +459,8 @@ export const darkTheme = {
       borderIdle: brandColors.main,
       borderHover: "#22252A",
       borderActive: "#22252A",
-      fontColorIdle: "#FAFAFA",
-      fontColorHover: "#FAFAFA",
+      fontColorIdle: "#fafafa",
+      fontColorHover: "#fafafa",
     },
     rectSmallDisabled: {
       bgIdle: "#D9D9D9",
@@ -465,7 +477,7 @@ export const darkTheme = {
     ...lightTheme.themeSwitch,
   },
   userAvatar: {
-    fontIdle: "#FAFAFA",
+    fontIdle: "#fafafa",
     fontHover: brandColors.main,
     fontActive: brandColors.main,
     borderIdle: "none",
@@ -475,15 +487,15 @@ export const darkTheme = {
   },
   mobileMenu: {
     bg: "#1E1F28",
-    strokeIdle: "#FAFAFA",
+    strokeIdle: "#fafafa",
     strokeHover: brandColors.main,
     strokeActive: brandColors.main,
     blend: "difference",
   },
   footer: {
-    logoTextIdle: "#FAFAFA",
+    logoTextIdle: "#fafafa",
     logoTextActive: "#22252a",
-    descriptionText: "#FAFAFA",
+    descriptionText: "#fafafa",
     legalText: "#8e8f92",
   },
   backgroundDecoration: {
@@ -491,7 +503,7 @@ export const darkTheme = {
     secondary: "#fafafa",
   },
   notFound: {
-    text: "#FAFAFA",
+    text: "#fafafa",
   },
   editProfilePopup: {
     bg: "#1E1F28",

@@ -24,7 +24,7 @@ export const StyledNav = styled.nav`
       color: var(--color-navigation-footer-idle);
       font-size: 1.4rem;
       font-weight: 500;
-      line-height: 128.571%;
+      line-height: 1.28;
       letter-spacing: -0.028rem;
       transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
 

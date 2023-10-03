@@ -1,5 +1,5 @@
 import { StyledForm } from "./SearchForm.styled";
-import { Button } from "../Button/Button";
+import { Button } from "../../Button/Button";
 import PropTypes from "prop-types";
 
 export const SearchForm = ({ onChange, onSubmit, placeholder, variant }) => {

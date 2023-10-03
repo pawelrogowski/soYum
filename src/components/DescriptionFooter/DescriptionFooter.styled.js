@@ -14,7 +14,7 @@ export const StyledUl = styled.ul`
     color: #fafafa;
     font-size: 1.4rem;
     font-weight: 500;
-    line-height: 128.571%;
+    line-height: 1.28;
     letter-spacing: -0.028rem;
   }
 `;

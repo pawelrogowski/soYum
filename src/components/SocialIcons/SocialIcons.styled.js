@@ -22,6 +22,8 @@ export const StyledUl = styled.ul`
   }
 
   a {
+    display: flex;
+    align-items: center;
     &:hover,
     &:focus {
       svg {

@@ -50,15 +50,15 @@ export const StyledFigure = styled.figure`
   }
 
   img {
-    transition: scale cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
+    transition: transform cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
     width: 300px;
     width: 100%;
     height: 300px;
     height: auto;
     &:hover,
     &:focus {
-      scale: 1.3;
-      transition: scale cubic-bezier(0.17, 0.67, 1, 1.23) 60s;
+      transform: scale(1.3);
+      transition: transform cubic-bezier(0.17, 0.67, 1, 1.23) 60s;
     }
   }
 `;

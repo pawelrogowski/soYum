@@ -63,6 +63,14 @@ export const StyledForm = styled.form`
     position: absolute;
     right: 0rem;
     top: 0;
+    background: ${({ theme }) => theme.form.search.button.bgIdle};
+    border-color: ${({ theme }) => theme.form.search.button.borderIdle};
+    &:hover,
+    &:focus {
+      background: ${({ theme }) => theme.form.search.button.bgActive};
+      border-color: ${({ theme }) => theme.form.search.button.borderActive};
+    }
+
     @media ${({ theme }) => theme.breakpoints.tablet} {
       position: relative;
       left: initial;

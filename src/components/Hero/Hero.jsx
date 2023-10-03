@@ -1,5 +1,5 @@
 import { StyledSection } from "./Hero.styled";
-import { SearchForm } from "../SearchForm/SearchForm";
+import { SearchForm } from "../Forms/SearchForm/SearchForm";
 import { breakpoints } from "../../styles/themes";
 import hero from "../../assets/images/hero@x1.webp";
 import herox1 from "../../assets/images/hero@x1.webp";

@@ -104,7 +104,7 @@ export const StyledForm = styled.form`
         color: #fafafa;
         font-size: 1.4rem;
         font-style: normal;
-        line-height: 128.57%
+        line-height: 1.28;
         letter-spacing: -0.028rem;
       }
 
