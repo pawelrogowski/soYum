@@ -1,7 +1,8 @@
-import sprite from "../../assets/icons/sprite.svg";
-import PropTypes from "prop-types";
-import { StyledSvg } from "./Icon.styled";
 import { AnimatePresence } from "framer-motion";
+import PropTypes from "prop-types";
+
+import sprite from "../../assets/icons/sprite.svg";
+import { StyledSvg } from "./Icon.styled";
 
 /**
  * Icon Component

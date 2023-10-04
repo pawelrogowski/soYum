@@ -1,10 +1,11 @@
-import PropTypes from "prop-types";
-import { shortenString } from "../../utils/stringManipulation";
-import { StyledDiv } from "./UserAvatar.styled";
-import { EditProfilePopup } from "../EditProfilePopup/EditProfilePopup";
-import { useSelector, useDispatch } from "react-redux";
-import { toggleUserEditMenu } from "../../redux/slices/modalSlice";
 import { AnimatePresence } from "framer-motion";
+import PropTypes from "prop-types";
+import { useDispatch, useSelector } from "react-redux";
+
+import { toggleUserEditMenu } from "../../redux/slices/modalSlice";
+import { shortenString } from "../../utils/stringManipulation";
+import { EditProfilePopup } from "../EditProfilePopup/EditProfilePopup";
+import { StyledDiv } from "./UserAvatar.styled";
 
 export function UserAvatar({ image, placeholder, name = "No Data" }) {
   const dispatch = useDispatch();

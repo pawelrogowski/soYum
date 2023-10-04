@@ -1,5 +1,5 @@
-import { StyledSection } from "./NotFound.styled";
 import { Icon } from "../Icon/Icon";
+import { StyledSection } from "./NotFound.styled";
 export const NotFound = () => {
   return (
     <StyledSection>

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 import { Button } from "../../components/Button/Button";
 import { Logo } from "../../components/Logo/Logo";
 import { StartPageContainer } from "./StartPage.styled";

@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { persistReducer, persistStore } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+
 import authReducer from "./slices/authSlice";
 import globalReducer from "./slices/globalSlice";
 import modalReducer from "./slices/modalSlice";
-import { persistStore, persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
 
 const generatePersistConfig = (key) => ({
   key,

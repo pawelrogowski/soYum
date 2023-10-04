@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import { StyledDiv } from "../../components/Container/Container.styled";
 export const PageContent = styled(StyledDiv)`
   max-width: 1860px;

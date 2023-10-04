@@ -1,8 +1,9 @@
-import { Button } from "../../Button/Button";
-import { StyledForm } from "./SignInForm.styled";
 import { Formik } from "formik";
+
 import { validationSchema } from "../../../schemas/singInSchema";
+import { Button } from "../../Button/Button";
 import { CustomFormikInput } from "../../CustomFormikInput/CustomFormikInput";
+import { StyledForm } from "./SignInForm.styled";
 
 export const SignInForm = () => {
   const initialFormValues = { name: "", email: "", password: "" };

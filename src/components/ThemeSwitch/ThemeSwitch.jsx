@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-import { StyledLabel } from "./ThemeSwitch.styled";
+
 import { toggleTheme } from "../../redux/slices/globalSlice";
+import { StyledLabel } from "./ThemeSwitch.styled";
 
 export const ThemeSwitch = () => {
   const dispatch = useDispatch();

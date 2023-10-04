@@ -1,9 +1,10 @@
-import { CustomFormikInput } from "../../CustomFormikInput/CustomFormikInput";
-import { Button } from "../../Button/Button";
-import { StyledForm } from "./NewsletterForm.styled";
 import { Formik } from "formik";
-import { validationSchema } from "../../../schemas/registrationSchema";
 import PropTypes from "prop-types";
+
+import { validationSchema } from "../../../schemas/registrationSchema";
+import { Button } from "../../Button/Button";
+import { CustomFormikInput } from "../../CustomFormikInput/CustomFormikInput";
+import { StyledForm } from "./NewsletterForm.styled";
 export const NewsletterForm = ({ layout }) => {
   const initialFormValues = { email: "" };
 

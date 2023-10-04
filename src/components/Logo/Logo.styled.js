@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+
 import { Icon } from "../Icon/Icon";
 
 export const LogoIcon = styled(Icon)`

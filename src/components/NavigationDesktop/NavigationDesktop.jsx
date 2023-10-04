@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
-import { StyledNav } from "./NavigationDesktop.styled";
+
 import { Icon } from "../Icon/Icon";
+import { StyledNav } from "./NavigationDesktop.styled";
 
 export const NavigationDesktop = () => {
   const navItems = [

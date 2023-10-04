@@ -1,13 +1,14 @@
-import { Header } from "../../components/Header/Header";
-import { Outlet } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import { NavigationMobile } from "../../components/NavigationMobile/NavigationMobile";
+import { Suspense } from "react";
 import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
-import { breakpoints } from "../../styles/themes";
+import { Outlet } from "react-router-dom";
+
 import Footer from "../../components/Footer/Footer";
-import { Suspense } from "react";
+import { Header } from "../../components/Header/Header";
 import { LoaderDots } from "../../components/LoaderDots/LoaderDots";
+import { NavigationMobile } from "../../components/NavigationMobile/NavigationMobile";
+import { breakpoints } from "../../styles/themes";
 
 export const MainLayout = () => {
   const isMobileSize = useMediaQuery({ maxWidth: breakpoints.mobileMax });

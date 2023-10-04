@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
-import { StyledGallery } from "./Gallery.styled";
+
+import { Button } from "../Button/Button";
 import { Card } from "../Card/Card";
 import { Heading } from "../Heading/Heading.jsx";
-import { Button } from "../Button/Button";
+import { StyledGallery } from "./Gallery.styled";
 
 export const Gallery = ({
   data,

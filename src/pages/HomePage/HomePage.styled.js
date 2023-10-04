@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import leaves from "../../assets/images/leaves@1x.webp";
 export const MainContainer = styled.main`
   max-width: ${({ theme }) => theme.breakpoints.maxContent};

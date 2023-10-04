@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 /**
  * Hook that enables horizontal scrolling of an element with buttons.

@@ -1,8 +1,9 @@
-import { StyledNav } from "./CategoryFilter.styled";
 import { NavLink } from "react-router-dom";
-import { useHorizontalScroll } from "../../hooks/useHorizontalScroll";
+
 import { useButtonScroll } from "../../hooks/useButtonScroll";
+import { useHorizontalScroll } from "../../hooks/useHorizontalScroll";
 import { Icon } from "../Icon/Icon";
+import { StyledNav } from "./CategoryFilter.styled";
 
 export const CategoryFilter = () => {
   const scrollRef = useHorizontalScroll();

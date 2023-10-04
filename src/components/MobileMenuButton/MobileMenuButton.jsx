@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+
 import { Icon } from "../Icon/Icon";
 import { StyledButton } from "./MobileMenuButton.styled";
 

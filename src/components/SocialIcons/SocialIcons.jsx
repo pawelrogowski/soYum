@@ -1,6 +1,7 @@
-import { StyledUl } from "./SocialIcons.styled";
-import { Icon } from "../Icon/Icon";
 import { Link } from "react-router-dom";
+
+import { Icon } from "../Icon/Icon";
+import { StyledUl } from "./SocialIcons.styled";
 
 export const SocialIcons = () => {
   return (

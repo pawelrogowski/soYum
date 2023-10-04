@@ -1,5 +1,6 @@
-import { StyledDiv } from "./Container.styled";
 import PropTypes from "prop-types";
+
+import { StyledDiv } from "./Container.styled";
 
 export const Container = ({ children, as }) => {
   return <StyledDiv as={as}>{children}</StyledDiv>;

@@ -1,12 +1,13 @@
-import { Gallery } from "../../components/Gallery/Gallery";
-import { Hero } from "../../components/Hero/Hero";
-import img1 from "../../assets/images/food/thick-pancakes.jpg";
+import { useMediaQuery } from "react-responsive";
+
+import placeholder from "../../assets/icons/food-placeholder.svg";
 import img2 from "../../assets/images/food/M6A1135.jpg";
 import img3 from "../../assets/images/food/Spinach_quinoa_patties_01.jpg";
-import placeholder from "../../assets/icons/food-placeholder.svg";
-import { breakpoints } from "../../styles/themes";
-import { useMediaQuery } from "react-responsive";
+import img1 from "../../assets/images/food/thick-pancakes.jpg";
 import { Button } from "../../components/Button/Button";
+import { Gallery } from "../../components/Gallery/Gallery";
+import { Hero } from "../../components/Hero/Hero";
+import { breakpoints } from "../../styles/themes";
 import { MainContainer } from "./HomePage.styled";
 const images = [
   { placeholder: placeholder, img: img1, caption: "Banana Pancakes" },

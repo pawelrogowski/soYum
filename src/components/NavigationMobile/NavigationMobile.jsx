@@ -1,10 +1,11 @@
-import { NavLink } from "react-router-dom";
-import { StyledAside } from "./NavigationMobile.styled";
-import { Icon } from "../Icon/Icon";
-import { ThemeSwitch } from "../ThemeSwitch/ThemeSwitch";
-import { MobileMenuButton } from "../MobileMenuButton/MobileMenuButton";
 import { useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
+
 import { toggleMobileMenu } from "../../redux/slices/modalSlice";
+import { Icon } from "../Icon/Icon";
+import { MobileMenuButton } from "../MobileMenuButton/MobileMenuButton";
+import { ThemeSwitch } from "../ThemeSwitch/ThemeSwitch";
+import { StyledAside } from "./NavigationMobile.styled";
 
 const navSlideMotion = {
   initial: { left: "-100%", opacity: 0 },

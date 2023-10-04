@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
+
 import Container from "../Container/Container.jsx";
 import { StyledDiv } from "./LegalDisclaimer.styled.js";
-import { Link } from "react-router-dom";
 export const LegalDisclaimer = () => {
   return (
     <StyledDiv as="div">

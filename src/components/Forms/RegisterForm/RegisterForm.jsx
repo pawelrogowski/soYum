@@ -1,8 +1,9 @@
-import { Button } from "../../Button/Button";
-import { StyledForm } from "./RegisterForm.styled";
 import { Formik } from "formik";
+
 import { validationSchema } from "../../../schemas/registrationSchema";
+import { Button } from "../../Button/Button";
 import { CustomFormikInput } from "../../CustomFormikInput/CustomFormikInput";
+import { StyledForm } from "./RegisterForm.styled";
 
 export const RegistrationForm = () => {
   const initialFormValues = { name: "", email: "", password: "" };

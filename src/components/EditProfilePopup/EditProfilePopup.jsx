@@ -1,9 +1,10 @@
-import { Icon } from "../Icon/Icon";
-import { StyledDiv } from "./EditProfilePopup.styled";
-import { Button } from "../Button/Button";
 import { useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
+
 import { toggleUserEditMenu } from "../../redux/slices/modalSlice";
+import { Button } from "../Button/Button";
+import { Icon } from "../Icon/Icon";
+import { StyledDiv } from "./EditProfilePopup.styled";
 
 export const EditProfilePopup = ({ ...props }) => {
   const dispatch = useDispatch();

@@ -1,12 +1,13 @@
-import { useSelector } from "react-redux";
-import { ThemeProvider } from "styled-components";
-import { lazy, Suspense } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { lightTheme, darkTheme } from "./styles/themes";
-import { GlobalStyles } from "./styles/globalStyles";
 import { AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { lazy, Suspense } from "react";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+
 import { LoaderDots } from "./components/LoaderDots/LoaderDots";
+import { GlobalStyles } from "./styles/globalStyles";
+import { darkTheme, lightTheme } from "./styles/themes";
 // layouts
 const AuthLayout = lazy(() => import("./layouts/AuthLayout/AuthLayout"));
 const MainLayout = lazy(() => import("./layouts/MainLayout/MainLayout"));

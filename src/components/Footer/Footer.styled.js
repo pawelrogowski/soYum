@@ -1,4 +1,4 @@
-import { styled, css } from "styled-components";
+import { css, styled } from "styled-components";
 
 export const StyledFooter = styled.footer`
   --breakpoint-tablet: ${(props) => props.theme.breakpoints.tablet};

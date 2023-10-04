@@ -1,13 +1,13 @@
-import { StyledSection } from "./Hero.styled";
-import { SearchForm } from "../Forms/SearchForm/SearchForm";
-import { breakpoints } from "../../styles/themes";
+import { useMediaQuery } from "react-responsive";
+
 import hero from "../../assets/images/hero@x1.webp";
 import herox1 from "../../assets/images/hero@x1.webp";
 import herox2 from "../../assets/images/hero@x2.webp";
 import herox3 from "../../assets/images/hero@x3.webp";
-
-import { useMediaQuery } from "react-responsive";
+import { breakpoints } from "../../styles/themes";
 import { CallToAction } from "../CallToAction/CallToAction";
+import { SearchForm } from "../Forms/SearchForm/SearchForm";
+import { StyledSection } from "./Hero.styled";
 
 export const Hero = () => {
   const isMobileSize = useMediaQuery({ maxWidth: breakpoints.mobileMax });

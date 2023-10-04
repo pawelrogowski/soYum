@@ -1,13 +1,14 @@
-import { StyledFooter } from "./Footer.styled";
-import { Container } from "../Container/Container";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { Logo } from "../Logo/Logo";
-import { NavigationFooter } from "../NavigationFooter/NavigationFooter";
+
+import { Container } from "../Container/Container";
 import { DescriptionFooter } from "../DescriptionFooter/DescriptionFooter";
 import { NewsletterForm } from "../Forms/NewsletterForm/NewsletterForm";
-import { SocialIcons } from "../SocialIcons/SocialIcons";
 import { LegalDisclaimer } from "../LegalDisclaimer/LegalDisclaimer";
-import PropTypes from "prop-types";
+import { Logo } from "../Logo/Logo";
+import { NavigationFooter } from "../NavigationFooter/NavigationFooter";
+import { SocialIcons } from "../SocialIcons/SocialIcons";
+import { StyledFooter } from "./Footer.styled";
 
 const Footer = ({ variant }) => {
   return (

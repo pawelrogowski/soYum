@@ -1,16 +1,17 @@
-import { StyledHeader } from "./Header.styled";
-import { Logo } from "../Logo/Logo";
+import { useDispatch, useSelector } from "react-redux";
+import { useMediaQuery } from "react-responsive";
+import { Link } from "react-router-dom";
+
 import avatar from "../../assets/images/avatar.webp";
 import avatarPlaceholder from "../../assets/images/avatar-placeholder.png";
-import { UserAvatar } from "../UserAvatar/UserAvatar";
+import { toggleMobileMenu } from "../../redux/slices/modalSlice";
+import { breakpoints } from "../../styles/themes";
+import { Logo } from "../Logo/Logo";
 import { MobileMenuButton } from "../MobileMenuButton/MobileMenuButton";
 import { NavigationDesktop } from "../NavigationDesktop/NavigationDesktop";
-import { useMediaQuery } from "react-responsive";
-import { breakpoints } from "../../styles/themes";
 import { ThemeSwitch } from "../ThemeSwitch/ThemeSwitch";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleMobileMenu } from "../../redux/slices/modalSlice";
+import { UserAvatar } from "../UserAvatar/UserAvatar";
+import { StyledHeader } from "./Header.styled";
 
 export const Header = () => {
   const dispatch = useDispatch();

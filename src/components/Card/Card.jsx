@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
-import { StyledFigure } from "./Card.styled";
 import { Link } from "react-router-dom";
+
+import { StyledFigure } from "./Card.styled";
 
 export const Card = ({ placeholder, img, caption }) => {
   return (

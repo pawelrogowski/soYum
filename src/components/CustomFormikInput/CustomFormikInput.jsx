@@ -1,6 +1,7 @@
-import { Field, ErrorMessage } from "formik";
-import { Icon } from "../Icon/Icon";
+import { ErrorMessage, Field } from "formik";
 import PropTypes from "prop-types";
+
+import { Icon } from "../Icon/Icon";
 
 export const CustomFormikInput = ({
   name,
