@@ -1,9 +1,12 @@
 import { StyledNav } from "./CategoryFilter.styled";
 import { NavLink } from "react-router-dom";
+import { useHorizontalScroll } from "../../hooks/useHorizontalScroll";
 
 export const CategoryFilter = () => {
+  const navRef = useHorizontalScroll();
+
   return (
-    <StyledNav>
+    <StyledNav ref={navRef}>
       <ul>
         <li>
           <NavLink to="#">Beef</NavLink>

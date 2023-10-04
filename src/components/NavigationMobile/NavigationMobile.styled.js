@@ -39,8 +39,8 @@ export const StyledAside = styled(motion.aside)`
       position: absolute;
       background-image: url(${leaves});
       background-repeat: no-repeat;
-      width: 852px;
-      height: 852px;
+      width: 85.2rem;
+      height: 85.2rem;
       bottom: -32.5rem;
       right: -31rem;
       rotate: 122deg;

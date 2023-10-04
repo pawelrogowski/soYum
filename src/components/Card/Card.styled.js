@@ -51,9 +51,9 @@ export const StyledFigure = styled.figure`
 
   img {
     transition: transform cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
-    width: 300px;
+    width: 30rem;
     width: 100%;
-    height: 300px;
+    height: 30rem;
     height: auto;
     &:hover,
     &:focus {

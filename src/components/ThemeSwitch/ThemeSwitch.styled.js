@@ -25,7 +25,7 @@ export const StyledLabel = styled.label`
     bottom: 0;
     background-color: var(--color-themeSwitch-bgOff);
     transition: box-shadow 400ms, transform 400ms;
-    border-radius: 34px;
+    border-radius: 3.4rem;
   }
 
   > span:before {

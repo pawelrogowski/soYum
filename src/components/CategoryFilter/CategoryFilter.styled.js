@@ -5,7 +5,15 @@ export const StyledNav = styled.nav`
   width: 100%;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  height: 5.6rem;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
   &:after {
     content: "";
     position: absolute;
@@ -15,11 +23,14 @@ export const StyledNav = styled.nav`
     height: 0;
     border-bottom: 1px solid #e0e0e0;
   }
+  &::-webkit-scrollbar {
+    width: 0; /* For Chrome, Safari, and Opera */
+  }
   > ul {
-    flex-wrap: wrap;
     height: 100%;
     width: 100%;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     gap: 2.8rem;
