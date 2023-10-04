@@ -5,15 +5,8 @@ export const StyledNav = styled.nav`
   width: 100%;
   display: flex;
   align-items: center;
-  flex-wrap: no-wrap;
-  overflow-x: auto;
-  scrollbar-width: none;
-  height: 5.6rem;
-  -ms-overflow-style: none;
-  scroll-behavior: smooth;
-  &::-webkit-scrollbar {
-    width: 0;
-  }
+  flex-wrap: nowrap;
+  justify-content: center;
   &:after {
     content: "";
     position: absolute;
@@ -23,16 +16,44 @@ export const StyledNav = styled.nav`
     height: 0;
     border-bottom: 1px solid #e0e0e0;
   }
-  &::-webkit-scrollbar {
-    width: 0; /* For Chrome, Safari, and Opera */
+  > button {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    &:first-of-type {
+      transform: rotate(180deg);
+    }
+    &:disabled {
+      > svg {
+        stroke: lightgray;
+        fill: lightgray;
+      }
+    }
+    > svg {
+      transition: stroke 200ms, fill 200ms;
+      stroke: black;
+      fill: gray;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
   > ul {
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     height: 100%;
-    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
     gap: 2.8rem;
     > li {
       > a {

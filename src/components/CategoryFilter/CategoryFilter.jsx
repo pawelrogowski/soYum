@@ -1,13 +1,26 @@
 import { StyledNav } from "./CategoryFilter.styled";
 import { NavLink } from "react-router-dom";
 import { useHorizontalScroll } from "../../hooks/useHorizontalScroll";
+import { useButtonScroll } from "../../hooks/useButtonScroll";
+import { Icon } from "../Icon/Icon";
 
 export const CategoryFilter = () => {
   const scrollRef = useHorizontalScroll();
+  const { scrollLeft, scrollRight, isAtLeft, isAtRight } =
+    useButtonScroll(scrollRef);
+  const scrollBy = 200;
 
   return (
-    <StyledNav ref={scrollRef}>
-      <ul>
+    <StyledNav>
+      <button
+        type="button"
+        aria-label="scroll left"
+        onClick={() => scrollLeft(scrollBy)}
+        disabled={isAtLeft}
+      >
+        <Icon icon="arrow_slim" />
+      </button>
+      <ul ref={scrollRef}>
         <li>
           <NavLink to="#">Beef</NavLink>
         </li>
@@ -51,6 +64,14 @@ export const CategoryFilter = () => {
           <NavLink to="#">Pork</NavLink>
         </li>
       </ul>
+      <button
+        type="button"
+        aria-label="scroll right"
+        onClick={() => scrollRight(scrollBy)}
+        disabled={isAtRight}
+      >
+        <Icon icon="arrow_slim" />
+      </button>
     </StyledNav>
   );
 };
