@@ -42,6 +42,7 @@ export const MainContainer = styled.main`
 
   > h1 {
     margin-bottom: 6rem;
+    align-self: flex-start;
     @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       margin-bottom: 7.4rem;
     }

@@ -96,7 +96,6 @@ export const StyledNav = styled.nav`
       width: calc(100% + 3.2rem);
       height: 0;
       border: 0.4rem solid ${({ theme }) => theme.brandColors.main};
-      z-index: 2;
       transform: translateX(-50%);
       border-radius: 4px;
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
@@ -116,7 +115,6 @@ export const StyledNav = styled.nav`
       width: 100%;
       height: 0;
       border: 0.4rem solid ${({ theme }) => theme.brandColors.main};
-      z-index: 2;
       transform: translateX(-50%);
       border-radius: 4px;
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
