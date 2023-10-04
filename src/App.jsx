@@ -49,7 +49,9 @@ export const App = () => {
               </Route>
               <Route element={<MainLayout />}>
                 <Route path="/home" element={<HomePage />} />
-                <Route path="/categories" element={<CategoriesPage />} />
+                <Route path="/categories" element={<CategoriesPage />}>
+                  <Route path=":category" element={<CategoriesPage />} />
+                </Route>
                 <Route path="/404" element={<NotFoundPage />} />
                 <Route path="*" element={<NotFoundPage />} />
               </Route>

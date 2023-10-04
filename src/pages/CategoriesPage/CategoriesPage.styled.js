@@ -40,10 +40,13 @@ export const MainContainer = styled.main`
     }
   }
 
-  h1 {
+  > h1 {
     margin-bottom: 6rem;
     @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-      margin-bottom: 11rem;
+      margin-bottom: 7.4rem;
     }
+  }
+  > nav {
+    margin-bottom: 6.6rem;
   }
 `;

@@ -147,15 +147,15 @@ export const StyledSection = styled.section`
       }
       > img {
         max-width: 100%;
-        min-width: 300px;
+        min-width: 30rem;
         width: 100%;
         @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
           max-width: 110%;
-          min-width: 400px;
+          min-width: 40rem;
           width: 110%;
         }
         @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-          min-width: 463px;
+          min-width: 46.3rem;
         }
       }
     }

@@ -5,6 +5,7 @@ import placeholder from "../../assets/icons/food-placeholder.svg";
 import img1 from "../../assets/images/food/thick-pancakes.jpg";
 import img2 from "../../assets/images/food/M6A1135.jpg";
 import img3 from "../../assets/images/food/Spinach_quinoa_patties_01.jpg";
+import { CategoryFilter } from "../../components/CategoryFilter/CategoryFilter";
 
 const images = [
   { placeholder: placeholder, img: img1, caption: "Banana Pancakes" },
@@ -16,7 +17,8 @@ const images = [
 const CategoriesPage = () => {
   return (
     <MainContainer>
-      <Heading>Categories</Heading>
+      <Heading as="h1">Categories</Heading>
+      <CategoryFilter />
       <Gallery
         data={images}
         showHeading={false}
