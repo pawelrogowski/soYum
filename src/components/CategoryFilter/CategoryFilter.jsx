@@ -22,48 +22,115 @@ export const CategoryFilter = () => {
       </button>
       <ul ref={scrollRef}>
         <li>
-          <NavLink to="#">Beef</NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "active-link-extreme" : ""
+            }
+            to="beef"
+          >
+            Beef
+          </NavLink>
         </li>
         <li>
-          <NavLink to="#">Breakfast</NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+            to="breakfast"
+          >
+            Breakfast
+          </NavLink>
         </li>
         <li>
-          <NavLink to="#">Chicken</NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+            to="chicken"
+          >
+            Chicken
+          </NavLink>
         </li>
         <li>
-          <NavLink to="#">Desserts</NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+            to="desserts"
+          >
+            Desserts
+          </NavLink>
         </li>
         <li>
-          <NavLink to="#">Goat</NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+            to="goat"
+          >
+            Goat
+          </NavLink>
         </li>
         <li>
-          <NavLink to="#">Lamb</NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+            to="lamb"
+          >
+            Lamb
+          </NavLink>
         </li>
         <li>
-          <NavLink to="#">Miscellaneous</NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+            to="miscellaneous"
+          >
+            Miscellaneous
+          </NavLink>
         </li>
         <li>
-          <NavLink to="#">Pasta</NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+            to="pasta"
+          >
+            Pasta
+          </NavLink>
         </li>
         <li>
-          <NavLink to="#">Seafood</NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+            to="seafood"
+          >
+            Seafood
+          </NavLink>
         </li>
         <li>
-          <NavLink to="#">Side</NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+            to="side"
+          >
+            Side
+          </NavLink>
         </li>
         <li>
-          <NavLink to="#">Starter</NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+            to="starter"
+          >
+            Starter
+          </NavLink>
         </li>
         <li>
-          <NavLink to="#">Vegan</NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+            to="vegan"
+          >
+            Vegan
+          </NavLink>
         </li>
         <li>
-          <NavLink to="#">Pork</NavLink>
-        </li>
-        <li>
-          <NavLink to="#">Pork</NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "active-link-extreme" : ""
+            }
+            to="pork"
+          >
+            Pork
+          </NavLink>
         </li>
       </ul>
+
       <button
         type="button"
         aria-label="scroll right"

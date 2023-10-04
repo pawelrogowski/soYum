@@ -42,6 +42,7 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
+
   div[id="root"] {
       height: 100dvh;
       display: flex;

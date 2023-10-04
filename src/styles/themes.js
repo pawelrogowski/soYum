@@ -296,6 +296,15 @@ export const lightTheme = {
       textActive: brandColors.main,
     },
   },
+  categoryFilter: {
+    textIdle: "#E0E0E0",
+    textActive: brandColors.main,
+    decorationIdle: "#E0E0E0",
+    decorationActive: brandColors.main,
+    buttonIdle: "#81878F",
+    buttonDisabled: "#E0E0E0",
+    buttonActive: brandColors.main,
+  },
 };
 
 export const darkTheme = {
@@ -518,5 +527,14 @@ export const darkTheme = {
       iconActive: brandColors.main,
       textActive: brandColors.main,
     },
+  },
+  categoryFilter: {
+    textIdle: "#A2A2A6",
+    textActive: brandColors.main,
+    decorationIdle: "rgba(162, 162, 166, 0.5)",
+    decorationActive: brandColors.main,
+    buttonIdle: "#A2A2A6",
+    buttonDisabled: "rgba(162, 162, 166, 0.3)",
+    buttonActive: brandColors.main,
   },
 };
