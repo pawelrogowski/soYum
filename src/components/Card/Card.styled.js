@@ -7,6 +7,7 @@ export const StyledFigure = styled.figure`
   --color-caption-text-idle: ${({ theme }) => theme.card.caption.textIdle};
   --color-caption-text-active: ${({ theme }) => theme.card.caption.textActive};
   --color-caption-bg-idle: ${({ theme }) => theme.card.caption.bgIdle};
+
   position: relative;
   display: flex;
   border-radius: 0.8rem;
