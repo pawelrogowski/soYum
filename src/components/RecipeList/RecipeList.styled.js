@@ -1,10 +1,7 @@
 import styled from "styled-components";
 
 export const StyledSection = styled.section`
-  max-width: 100%;
-  > h1 {
-    margin-bottom: 5rem;
-  }
+  width: 100%;
   > ul {
     display: flex;
     flex-direction: column;

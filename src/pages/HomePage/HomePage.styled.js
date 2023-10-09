@@ -16,7 +16,12 @@ export const MainContainer = styled.main`
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding-bottom: 20rem;
   }
-
+  section:last-of-type {
+    padding-bottom: 6rem;
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      padding-bottom: 10rem;
+    }
+  }
   &:after {
     content: "";
     position: absolute;

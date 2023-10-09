@@ -8,6 +8,7 @@ export const StyledFooter = styled.footer`
   --color-footer-logoTextIdle: ${({ theme }) => theme.footer.logoTextIdle};
 
   background-color: var(--color-bg-footer);
+  min-width: ${({ theme }) => theme.breakpoints.minContent};
   display: flex;
   justify-content: center;
   align-items: center;

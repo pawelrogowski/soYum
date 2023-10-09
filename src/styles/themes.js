@@ -5,7 +5,7 @@ export const breakpoints = {
   tabletMax: "1023px",
   desktop: "1024px",
   maxContent: "1240px",
-  minContent: "280px",
+  minContent: "320px",
 };
 
 const typography = {

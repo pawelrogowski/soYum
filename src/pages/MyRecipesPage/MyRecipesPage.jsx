@@ -1,4 +1,5 @@
 import image from "../../assets/images/food/placeholder.jpg";
+import { Heading } from "../../components/Heading/Heading";
 import { RecipeList } from "../../components/RecipeList/RecipeList";
 import { MainContainer } from "./MyRecipesPage.styled";
 
@@ -35,6 +36,7 @@ const imageList = [
 const MyRecipesPage = () => {
   return (
     <MainContainer>
+      <Heading as="h1">My Recipes</Heading>
       <RecipeList data={imageList} />
     </MainContainer>
   );

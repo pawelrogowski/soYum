@@ -16,7 +16,7 @@ export const StyledForm = styled.form`
   width: 100%;
   max-width: 50.1rem;
   position: relative;
-
+  min-width: ${({ theme }) => theme.breakpoints.minContent};
   label,
   p {
     display: none;

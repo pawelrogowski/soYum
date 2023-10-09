@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 
+import { shortenString } from "../../utils/stringManipulation";
 import { Button } from "../Button/Button";
 import { Icon } from "../Icon/Icon";
 import { StyledListItem } from "./RecipeCard.styled";
@@ -18,7 +19,7 @@ export const RecipeCard = ({ name, description, cookingTime, image }) => {
 
       <article>
         <h2>{name}</h2>
-        <p>{description}</p>
+        <p>{shortenString(description, 150, "...")}</p>
         <div>
           <span>{cookingTime}</span>
           <Button variant="base">See recipe</Button>
