@@ -5,9 +5,15 @@ import { Button } from "../Button/Button";
 import { Icon } from "../Icon/Icon";
 import { StyledListItem } from "./RecipeCard.styled";
 
-export const RecipeCard = ({ name, description, cookingTime, image }) => {
+export const RecipeCard = ({
+  name,
+  description,
+  cookingTime,
+  image,
+  variant,
+}) => {
   return (
-    <StyledListItem>
+    <StyledListItem $variant={variant}>
       <picture>
         <source />
         <img src={image} />
@@ -34,4 +40,5 @@ RecipeCard.propTypes = {
   description: PropTypes.string.isRequired,
   cookingTime: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  variant: PropTypes.string,
 };

@@ -305,6 +305,30 @@ export const lightTheme = {
     buttonDisabled: "#E0E0E0",
     buttonActive: brandColors.main,
   },
+  recipeCard: {
+    bgCard: "#fff",
+    bgImage: brandColors.main,
+    fontHead: "#3E4462",
+    fontArticle: "#23262A",
+    button: {
+      delete: {
+        bgIdle: brandColors.main,
+        bgActive: "#22252A",
+        borderIdle: brandColors.main,
+        borderActive: "22252A",
+        iconIdle: "#fafafa",
+        iconActive: "red",
+      },
+      seeRecipe: {
+        bgIdle: brandColors.main,
+        bgActive: "#22252A",
+        borderIdle: brandColors.main,
+        borderActive: "22252A",
+        textIdle: "#fafafa",
+        textActive: brandColors.main,
+      },
+    },
+  },
 };
 
 export const darkTheme = {
@@ -536,5 +560,29 @@ export const darkTheme = {
     buttonIdle: "#A2A2A6",
     buttonDisabled: "rgba(162, 162, 166, 0.3)",
     buttonActive: brandColors.main,
+  },
+  recipeCard: {
+    bgCard: "#2A2C36",
+    bgImage: brandColors.main,
+    fontHead: "#fafafa",
+    fontArticle: "rgba(250, 250, 250, 0.60)",
+    button: {
+      delete: {
+        bgIdle: brandColors.main,
+        bgActive: "#22252A",
+        borderIdle: brandColors.main,
+        borderActive: "#22252A",
+        iconIdle: "#fafafa",
+        iconActive: "red",
+      },
+      seeRecipe: {
+        bgIdle: brandColors.main,
+        bgActive: "#22252A",
+        borderIdle: brandColors.main,
+        borderActive: "22252A",
+        textIdle: "#fafafa",
+        textActive: brandColors.main,
+      },
+    },
   },
 };

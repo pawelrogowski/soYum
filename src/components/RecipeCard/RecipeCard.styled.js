@@ -1,12 +1,41 @@
 import styled from "styled-components";
 
 export const StyledListItem = styled.li`
+  --color-background-card: ${({ theme }) => theme.recipeCard.bgCard};
+  --color-background-image: ${({ theme }) => theme.recipeCard.bgImage};
+  --color-font-head: ${({ theme }) => theme.recipeCard.fontHead};
+  --color-font-article: ${({ theme }) => theme.recipeCard.fontArticle};
+  --color-button-delete-background-idle: ${({ theme }) =>
+    theme.recipeCard.button.delete.bgIdle};
+  --color-button-delete-background-active: ${({ theme }) =>
+    theme.recipeCard.button.delete.bgActive};
+  --color-button-delete-border-idle: ${({ theme }) =>
+    theme.recipeCard.button.delete.borderIdle};
+  --color-button-delete-border-active: ${({ theme }) =>
+    theme.recipeCard.button.delete.borderActive};
+  --color-button-delete-icon-idle: ${({ theme }) =>
+    theme.recipeCard.button.delete.iconIdle};
+  --color-button-delete-icon-active: ${({ theme }) =>
+    theme.recipeCard.button.delete.iconActive};
+  --color-button-seeRecipe-background-idle: ${({ theme }) =>
+    theme.recipeCard.button.seeRecipe.bgIdle};
+  --color-button-seeRecipe-background-active: ${({ theme }) =>
+    theme.recipeCard.button.seeRecipe.bgActive};
+  --color-button-seeRecipe-border-idle: ${({ theme }) =>
+    theme.recipeCard.button.seeRecipe.borderIdle};
+  --color-button-seeRecipe-border-active: ${({ theme }) =>
+    theme.recipeCard.button.seeRecipe.borderActive};
+  --color-button-seeRecipe-text-idle: ${({ theme }) =>
+    theme.recipeCard.button.seeRecipe.textIdle};
+  --color-button-seeRecipe-text-active: ${({ theme }) =>
+    theme.recipeCard.button.seeRecipe.textActive};
+
   position: relative;
   display: flex;
   width: 100%;
   padding: 1.4rem 0.9rem;
   gap: 1.4rem;
-  background-color: #fafafa;
+  background-color: var(--color-background-card);
   border-radius: 0.8rem;
   height: 15.2rem;
   overflow: hidden;
@@ -19,10 +48,12 @@ export const StyledListItem = styled.li`
     height: 40.4rem;
     gap: 5.4rem;
   }
+
   > picture {
     width: 124px;
     height: 124px;
     aspect-ratio: 1 / 1;
+    background-color: var(--color-background-image);
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       width: 228px;
       height: 232px;
@@ -33,11 +64,12 @@ export const StyledListItem = styled.li`
       height: 324px;
       aspect-ratio: 318 / 324;
     }
+
     > img {
       width: 124px;
       height: 124px;
       aspect-ratio: 1 / 1;
-
+      background-color: var(--color-background-image);
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         width: 228px;
         height: 232px;
@@ -50,14 +82,15 @@ export const StyledListItem = styled.li`
       }
     }
   }
+
   > button {
     position: absolute;
     top: 1.4rem;
     right: 0.9rem;
     width: 2.4rem;
     height: 2.4rem;
-    background-color: #8baa36;
-    border-color: #8baa36;
+    background-color: var(--color-button-delete-background-idle);
+    border-color: var(--color-button-delete-border-idle);
     transition: background-color 200ms, border-color 200ms;
     display: flex;
     justify-content: center;
@@ -75,7 +108,7 @@ export const StyledListItem = styled.li`
     > svg {
       width: 1.4rem;
       height: 1.4rem;
-      stroke: #fafafa;
+      stroke: var(--color-button-delete-icon-idle);
       transition: stroke 200ms;
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         width: 2.2rem;
@@ -84,10 +117,10 @@ export const StyledListItem = styled.li`
     }
     &:hover,
     &:focus {
-      background-color: #1e1f28;
-      border-color: #8baa36;
+      background-color: var(--color-button-delete-background-active);
+      border-color: var(--color-button-delete-border-active);
       > svg {
-        stroke: #8baa36;
+        stroke: var(--color-button-delete-icon-active);
       }
     }
   }
@@ -106,7 +139,7 @@ export const StyledListItem = styled.li`
     }
 
     > h2 {
-      color: #3e4462;
+      color: var(--color-font-head);
       font-size: 1.6rem;
       font-weight: 500;
       line-height: 1.25;
@@ -125,7 +158,7 @@ export const StyledListItem = styled.li`
       }
     }
     > p {
-      color: #23262a;
+      color: var(--color-font-article);
       font-size: 1rem;
       font-weight: 400;
       line-height: 1.25;
@@ -154,8 +187,9 @@ export const StyledListItem = styled.li`
       > button {
         max-width: 8.7rem;
         max-height: 2.7rem;
-        background-color: #8baa36;
-        color: #fafafa;
+        background-color: var(--color-button-seeRecipe-background-idle);
+        border-color: var(--color-button-seeRecipe-border-idle);
+        color: var(--color-button-seeRecipe-text-idle);
         font-size: 1rem;
         line-height: 1.5;
         @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
@@ -170,10 +204,13 @@ export const StyledListItem = styled.li`
         }
         &:hover,
         &:focus {
+          background-color: var(--color-button-seeRecipe-background-active);
+          border-color: var(--color-button-seeRecipe-border-active);
+          color: var(--color-button-seeRecipe-text-active);
         }
       }
       > span {
-        color: #3e4462;
+        color: var(--color-font-article);
         font-size: 1rem;
         font-weight: 500;
         line-height: 1.4%;
