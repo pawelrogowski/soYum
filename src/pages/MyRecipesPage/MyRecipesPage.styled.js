@@ -1,27 +1,22 @@
 import styled from "styled-components";
 
 import leaves from "../../assets/images/leaves@1x.webp";
+
 export const MainContainer = styled.main`
   max-width: ${({ theme }) => theme.breakpoints.maxContent};
   min-width: ${({ theme }) => theme.breakpoints.minContent};
-  padding: 0 2.1rem;
+  padding: 10rem 2.1rem 10rem 2.1rem;
   position: relative;
   margin: 0 auto;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 10rem;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding-bottom: 20rem;
   }
-  section:last-of-type {
-    padding-bottom: 6rem;
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-      padding-bottom: 10rem;
-    }
-  }
+
   &:after {
     content: "";
     position: absolute;
@@ -36,12 +31,21 @@ export const MainContainer = styled.main`
     filter: blur(0.15rem);
     transform: scaleX(-1);
     z-index: -1;
+
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       width: 33.5rem;
       height: 51.7rem;
       bottom: -29.9rem;
       left: -10.1rem;
       rotate: -217deg;
+    }
+  }
+
+  > h1 {
+    margin-bottom: 6rem;
+    align-self: flex-start;
+    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      margin-bottom: 10rem;
     }
   }
 `;

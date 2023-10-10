@@ -5,6 +5,7 @@ export const StyledHeader = styled.header`
 
   position: relative;
   max-width: ${({ theme }) => theme.breakpoints.maxContent};
+  min-width: ${({ theme }) => theme.breakpoints.minContent};
   position: relative;
   width: 100%;
   margin: 0 auto;

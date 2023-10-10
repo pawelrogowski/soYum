@@ -2,8 +2,8 @@ import placeholder from "../../assets/icons/food-placeholder.svg";
 import img2 from "../../assets/images/food/M6A1135.jpg";
 import img3 from "../../assets/images/food/Spinach_quinoa_patties_01.jpg";
 import img1 from "../../assets/images/food/thick-pancakes.jpg";
+import { CardGallery } from "../../components/CardGallery/CardGallery";
 import { CategoryFilter } from "../../components/CategoryFilter/CategoryFilter";
-import { Gallery } from "../../components/Gallery/Gallery";
 import { Heading } from "../../components/Heading/Heading";
 import { MainContainer } from "./CategoriesPage.styled";
 
@@ -19,7 +19,7 @@ const CategoriesPage = () => {
     <MainContainer>
       <Heading as="h1">Categories</Heading>
       <CategoryFilter />
-      <Gallery
+      <CardGallery
         data={images}
         showHeading={false}
         showButton={false}

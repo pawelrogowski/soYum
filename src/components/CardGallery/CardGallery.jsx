@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import { Button } from "../Button/Button";
 import { Card } from "../Card/Card";
 import { Heading } from "../Heading/Heading.jsx";
-import { StyledGallery } from "./Gallery.styled";
+import { StyledGallery } from "./CardGallery.styled";
 
-export const Gallery = ({
+export const CardGallery = ({
   data,
   limit = Infinity,
   showHeading = false,
@@ -32,7 +32,7 @@ export const Gallery = ({
   );
 };
 
-Gallery.propTypes = {
+CardGallery.propTypes = {
   data: PropTypes.array.isRequired,
   limit: PropTypes.number,
   headingText: PropTypes.string,
