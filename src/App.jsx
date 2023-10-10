@@ -26,6 +26,9 @@ const CategoriesPage = lazy(() =>
 const MyRecipesPage = lazy(() =>
   import("./pages/MyRecipesPage/MyRecipesPage.jsx")
 );
+const FavoritesPage = lazy(() =>
+  import("./pages/FavoritesPage/FavoritesPage.jsx")
+);
 const NotFoundPage = lazy(() =>
   import("./pages/NotFoundPage/NotFoundPage.jsx")
 );
@@ -58,6 +61,7 @@ export const App = () => {
                   <Route path=":category" element={<CategoriesPage />} />
                 </Route>
                 <Route path="/myrecipes" element={<MyRecipesPage />} />
+                <Route path="/favorites" element={<FavoritesPage />} />
                 <Route path="/404" element={<NotFoundPage />} />
                 <Route path="*" element={<NotFoundPage />} />
               </Route>
