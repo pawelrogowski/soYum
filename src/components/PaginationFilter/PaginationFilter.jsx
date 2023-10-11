@@ -68,7 +68,7 @@ PaginationFilter.propTypes = {
   currentPage: PropTypes.number.isRequired,
   maxPages: PropTypes.number.isRequired,
   onPageChange: PropTypes.func.isRequired,
-  maxPagesToDisplay: PropTypes.number, // Prop for specifying the maximum number of pages to display
+  maxPagesToDisplay: PropTypes.number,
 };
 
 export default PaginationFilter;
