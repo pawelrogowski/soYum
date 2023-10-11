@@ -9,7 +9,6 @@ export const StyledDiv = styled.div`
   border-radius: 2.6rem;
   box-shadow: 0px 4px 4px 0px rgba(135, 135, 135, 0.2);
   background: #fafafa;
-  padding: 1.4rem;
   .link-disabled {
     > svg {
       transition: fill 200ms, stroke 200ms;
@@ -20,9 +19,8 @@ export const StyledDiv = styled.div`
   }
   > a {
     cursor: pointer;
-    width: 2.5rem;
-    height: 5.5rem;
-    padding: 0.6rem 0;
+    height: 100%;
+    padding: 0 2rem;
     border: none;
     background: none;
     display: flex;
@@ -49,7 +47,7 @@ export const StyledDiv = styled.div`
     }
   }
   > ul {
-    padding: 0 3rem;
+    padding: 0 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
