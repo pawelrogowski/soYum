@@ -10,6 +10,14 @@ export const StyledDiv = styled.div`
   box-shadow: 0px 4px 4px 0px rgba(135, 135, 135, 0.2);
   background: #fafafa;
   padding: 1.4rem;
+  .link-disabled {
+    > svg {
+      transition: fill 200ms, stroke 200ms;
+      fill: #d9d9d9;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
   > a {
     cursor: pointer;
     width: 2.5rem;

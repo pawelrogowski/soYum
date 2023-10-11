@@ -28,6 +28,7 @@ export const PaginationFilter = ({
   return (
     <StyledDiv>
       <Link
+        className={currentPage > 1 ? "" : "link-disabled"}
         to={currentPage > 1 ? `${currentPage - 1}` : "#"}
         aria-label="previous page"
         onClick={() => {
@@ -52,6 +53,7 @@ export const PaginationFilter = ({
       </ul>
 
       <Link
+        className={currentPage !== maxPages ? "" : "link-disabled"}
         to={currentPage < maxPages ? `${currentPage + 1}` : "#"}
         aria-label="next page"
         onClick={() => {
