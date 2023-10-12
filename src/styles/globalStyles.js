@@ -124,4 +124,19 @@ export const GlobalStyles = createGlobalStyle`
       props.theme.authForm.bg} inset;
 	}
 
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 6px;
+}
+*::-webkit-scrollbar-track {
+  background: ${({ theme }) => theme.brandColors.secondary} ;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: ${({ theme }) => theme.brandColors.main} ;
+  border-radius: 20px;
+}
+* {
+  scrollbar-width: 6px;
+  scrollbar-color: ${({ theme }) => theme.brandColors.main} transparent;
+}
 `;
