@@ -14,15 +14,13 @@ export const PaginationFilter = ({
     onPageChange(page);
   };
 
-  // If the current page is in the middle of the page range, startPage is set to the page halfway before the current page.
-  // For example, if maxPagesToDisplay is 5 and the current page is 3, startPage will be 1 (3 - floor(5 / 2) = 1).
-  const startPage = Math.max(
-    1,
-    currentPage - Math.floor(maxPagesToDisplay / 2)
-  );
-  // If the current page is in the middle of the page range, endPage is set to the page halfway after the current page.
-  // For example, if maxPagesToDisplay is 5 and the current page is 3, endPage will be 5 (3 + 5 - 1 = 7).
-  const endPage = Math.min(maxPages, startPage + maxPagesToDisplay - 1);
+  let startPage = Math.max(1, currentPage - Math.floor(maxPagesToDisplay / 2));
+  let endPage = startPage + maxPagesToDisplay - 1;
+
+  if (endPage > maxPages) {
+    endPage = maxPages;
+    startPage = endPage - maxPagesToDisplay + 1;
+  }
 
   const pagesToDisplay = Array.from(
     { length: endPage - startPage + 1 },
