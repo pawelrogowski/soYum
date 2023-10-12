@@ -64,6 +64,7 @@ export const lightTheme = {
   link: {
     authNav: "#fafafa",
     authNavActive: brandColors.main,
+    navFooter: brandColors.main,
   },
   startPage: {
     header: "#fafafa",
@@ -329,6 +330,19 @@ export const lightTheme = {
       },
     },
   },
+  paginationFilter: {
+    bg: "#fafafa",
+    boxShadow: "rgba(135, 135, 135, 0.2)",
+    switchLinkIdle: "#0000006b",
+    switchLinkActive: brandColors.main,
+    switchLinkDisabled: "#d9d9d9",
+    pageLinkBgIdle: "none",
+    pageLinkBgActive: brandColors.main,
+    pageLinkBgCurrent: "#ebf3d4",
+    pageLinkFontCurrent: "#fafafa",
+    pageLinkFontIdle: "#22252a",
+    pageLinkFontActive: "#fafafa",
+  },
 };
 
 export const darkTheme = {
@@ -372,6 +386,7 @@ export const darkTheme = {
   },
   link: {
     ...lightTheme.link,
+    navFooter: "#23262A",
   },
   startPage: {
     ...lightTheme.startPage,
@@ -584,5 +599,18 @@ export const darkTheme = {
         textActive: brandColors.main,
       },
     },
+  },
+  paginationFilter: {
+    bg: "#2A2C36",
+    boxShadow: "rgba(31, 30, 30, 0.20)",
+    switchLinkIdle: "rgba(250, 250, 250, 0.60)",
+    switchLinkActive: brandColors.main,
+    switchLinkDisabled: "rgba(250, 250, 250, 0.1)",
+    pageLinkBgIdle: "none",
+    pageLinkBgActive: brandColors.main,
+    pageLinkBgCurrent: brandColors.main,
+    pageLinkFontCurrent: "#fafafa",
+    pageLinkFontIdle: "rgba(250, 250, 250, 0.60)",
+    pageLinkFontActive: "#fafafa",
   },
 };

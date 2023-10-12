@@ -48,4 +48,11 @@ export const MainContainer = styled.main`
       margin-bottom: 10rem;
     }
   }
+
+  > section {
+    margin-bottom: 4rem;
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      margin-bottom: 5rem;
+    }
+  }
 `;

@@ -39,7 +39,7 @@ export const NavigationMobile = () => {
             <li key={index}>
               <NavLink
                 className={({ isActive }) =>
-                  isActive ? "active-nav-link" : ""
+                  isActive ? "active-nav-link-mobile" : ""
                 }
                 to={item.path}
               >

@@ -42,6 +42,13 @@ export const GlobalStyles = createGlobalStyle`
     }
   }
 
+  .active-nav-link-mobile {
+    color: ${({ theme }) => theme.brandColors.main} !important;
+  }
+
+  .active-nav-link-footer {
+    color: ${({ theme }) => theme.link.navFooter} !important;
+  }
 
   div[id="root"] {
       height: 100dvh;
