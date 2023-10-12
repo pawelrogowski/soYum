@@ -64,6 +64,7 @@ export const lightTheme = {
   link: {
     authNav: "#fafafa",
     authNavActive: brandColors.main,
+    navFooter: brandColors.main,
   },
   startPage: {
     header: "#fafafa",
@@ -385,6 +386,7 @@ export const darkTheme = {
   },
   link: {
     ...lightTheme.link,
+    navFooter: "#23262A",
   },
   startPage: {
     ...lightTheme.startPage,

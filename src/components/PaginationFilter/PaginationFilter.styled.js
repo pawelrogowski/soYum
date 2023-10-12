@@ -93,7 +93,7 @@ export const StyledDiv = styled.div`
         cursor: pointer;
         color: var(--color-link-page-font-idle);
         text-align: center;
-        font-size: 12px;
+        font-size: 1.2rem;
         width: 2.8rem;
         height: 2.8rem;
         font-style: normal;

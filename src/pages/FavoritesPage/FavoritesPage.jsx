@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import { useParams } from "react-router-dom";
 
 import image from "../../assets/images/food/placeholder.jpg";
 import { Heading } from "../../components/Heading/Heading";
 import { PaginationFilter } from "../../components/PaginationFilter/PaginationFilter";
 import { RecipeList } from "../../components/RecipeList/RecipeList";
+import { breakpoints } from "../../styles/themes";
 import { MainContainer } from "./FavoritesPage.styled";
 
 const imageList = [
@@ -40,6 +42,9 @@ const imageList = [
 const FavoritesPage = () => {
   const { page } = useParams();
   const [currentPage, setCurrentPage] = useState(1);
+  const isAtLeastDesktop = useMediaQuery({ minWidth: breakpoints.desktop });
+
+  const dynamicMaxPages = isAtLeastDesktop ? 9 : 5;
 
   useEffect(() => {
     if (page) {
@@ -56,7 +61,7 @@ const FavoritesPage = () => {
       <PaginationFilter
         currentPage={currentPage}
         maxPages={50}
-        maxPagesToDisplay={5}
+        maxPagesToDisplay={dynamicMaxPages}
         onPageChange={() => console.log("siuuu")}
       />
     </MainContainer>

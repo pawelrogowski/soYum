@@ -16,7 +16,14 @@ export function NavigationFooter() {
       <ul>
         {navItems.map((item, index) => (
           <li key={index}>
-            <NavLink to={item.path}>{item.text}</NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "active-nav-link-footer" : ""
+              }
+              to={item.path}
+            >
+              {item.text}
+            </NavLink>
           </li>
         ))}
       </ul>

@@ -129,7 +129,7 @@ export const StyledListItem = styled.li`
     flex-direction: column;
     gap: 1.4rem;
     width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
 
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       gap: 2.8rem;
@@ -183,7 +183,6 @@ export const StyledListItem = styled.li`
       display: flex;
       flex-wrap: nowrap;
       justify-content: space-between;
-      align-items: center;
       > button {
         max-width: 8.7rem;
         max-height: 2.7rem;
@@ -192,6 +191,7 @@ export const StyledListItem = styled.li`
         color: var(--color-button-seeRecipe-text-idle);
         font-size: 1rem;
         line-height: 1.5;
+        align-self: flex-end;
         @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
           font-size: 1.4rem;
           max-width: 13.8rem;
@@ -213,7 +213,8 @@ export const StyledListItem = styled.li`
         color: var(--color-font-article);
         font-size: 1rem;
         font-weight: 500;
-        line-height: 1.4%;
+        line-height: 1;
+        align-self: flex-end;
         letter-spacing: -0.024rem;
         @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
           font-size: 1.4rem;
