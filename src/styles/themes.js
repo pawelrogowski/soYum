@@ -339,7 +339,7 @@ export const lightTheme = {
     pageLinkBgIdle: "none",
     pageLinkBgActive: brandColors.main,
     pageLinkBgCurrent: "#ebf3d4",
-    pageLinkFontCurrent: "#fafafa",
+    pageLinkFontCurrent: "#2A2C36",
     pageLinkFontIdle: "#22252a",
     pageLinkFontActive: "#fafafa",
   },
