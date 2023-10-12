@@ -1,18 +1,39 @@
 import styled from "styled-components";
 
 export const StyledDiv = styled.div`
+  --color-bg: ${({ theme }) => theme.paginationFilter.bg};
+  --color-box-shadow: ${({ theme }) => theme.paginationFilter.boxShadow};
+  --color-link-switch-idle: ${({ theme }) =>
+    theme.paginationFilter.switchLinkIdle};
+  --color-link-switch-active: ${({ theme }) =>
+    theme.paginationFilter.switchLinkActive};
+  --color-link-switch-disabled: ${({ theme }) =>
+    theme.paginationFilter.switchLinkDisabled};
+  --color-link-page-bg-idle: ${({ theme }) =>
+    theme.paginationFilter.pageLinkBgIdle};
+  --color-link-page-bg-active: ${({ theme }) =>
+    theme.paginationFilter.pageLinkBgActive};
+  --color-link-page-current: ${({ theme }) =>
+    theme.paginationFilter.pageLinkBgCurrent};
+  --color-link-page-font-idle: ${({ theme }) =>
+    theme.paginationFilter.pageLinkFontIdle};
+  --color-link-page-font-active: ${({ theme }) =>
+    theme.paginationFilter.pageLinkFontActive};
+  --color-link-page-font-current: ${({ theme }) =>
+    theme.paginationFilter.pageLinkFontCurrent};
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 5.5rem;
   border-radius: 2.6rem;
-  box-shadow: 0px 4px 4px 0px rgba(135, 135, 135, 0.2);
-  background: #fafafa;
+  box-shadow: 0px 4px 4px 0px var(--color-box-shadow);
+  background: var(--color-bg);
   .link-disabled {
+    pointer-events: none;
     > svg {
       transition: fill 200ms, stroke 200ms;
-      fill: #d9d9d9;
+      fill: var(--color-link-switch-disabled);
       width: 1.5rem;
       height: 1.5rem;
     }
@@ -33,7 +54,7 @@ export const StyledDiv = styled.div`
     }
     > svg {
       transition: fill 200ms, stroke 200ms;
-      fill: #0000006b;
+      fill: var(--color-link-switch-idle);
       width: 1.5rem;
       height: 1.5rem;
     }
@@ -41,8 +62,8 @@ export const StyledDiv = styled.div`
     &:focus {
       outline: none;
       > svg {
-        fill: #8baa36;
-        stroke: #8baa36;
+        fill: var(--color-link-switch-active);
+        stroke: var(--color-link-switch-active);
       }
     }
   }
@@ -62,14 +83,15 @@ export const StyledDiv = styled.div`
       justify-content: center;
       align-items: center;
       .current-page {
-        background-color: #ebf3d4;
+        background-color: var(--color-link-page-current);
+        color: var(--color-link-page-font-current);
       }
       > a {
         display: flex;
         justify-content: center;
         align-items: center;
         cursor: pointer;
-        color: #22252a;
+        color: var(--color-link-page-font-idle);
         text-align: center;
         font-size: 12px;
         width: 2.8rem;
@@ -84,8 +106,8 @@ export const StyledDiv = styled.div`
         &:hover,
         &:focus {
           outline: none;
-          color: #fafafa;
-          background-color: #8baa36;
+          color: var(--color-link-page-font-active);
+          background-color: var(--color-link-page-bg-active);
         }
       }
     }
