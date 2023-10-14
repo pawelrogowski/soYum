@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 
 import { LoaderDots } from "./components/LoaderDots/LoaderDots";
+import { UserUpdateForm } from "./components/UserUpdateForm/UserUpdateForm";
 import { GlobalStyles } from "./styles/globalStyles";
 import { darkTheme, lightTheme } from "./styles/themes";
 
@@ -49,6 +50,7 @@ export const App = () => {
       <Router basename="/">
         <AnimatePresence mode="wait">
           <Suspense fallback={<LoaderDots />}>
+            <UserUpdateForm />
             <Routes>
               <Route path="/" element={<StartPage />} />
               <Route element={<AuthLayout />}>
