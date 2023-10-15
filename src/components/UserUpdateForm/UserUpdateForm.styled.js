@@ -7,6 +7,14 @@ export const StyledFormikForm = styled(Form)`
   justify-content: center;
   align-items: center;
   > div:first-of-type {
+    position: relative;
+    margin-bottom: 5.4rem;
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      margin-bottom: 5rem;
+    }
+    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      margin-bottom: 5.2rem;
+    }
     &:hover {
       > picture > img {
         box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.9);
@@ -18,12 +26,13 @@ export const StyledFormikForm = styled(Form)`
         }
       }
     }
-    position: relative;
-    margin-bottom: 3rem;
     > picture {
       width: 8.8rem;
       height: 8.8rem;
-
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        width: 10.3rem;
+        height: 10.3rem;
+      }
       > img {
         cursor: pointer;
         transition: box-shadow 200ms;
@@ -31,6 +40,10 @@ export const StyledFormikForm = styled(Form)`
         overflow: hidden;
         width: 8.8rem;
         height: 8.8rem;
+        @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+          width: 10.3rem;
+          height: 10.3rem;
+        }
       }
     }
     > button {
@@ -62,25 +75,42 @@ export const StyledFormikForm = styled(Form)`
     flex-direction: column;
     position: relative;
     gap: 2.4rem;
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      gap: 3.2rem;
+    }
     > svg {
       position: absolute;
-      width: 2.4rem;
-      height: 2.4rem;
+      width: 2.1rem;
+      height: 2.1rem;
       stroke: #23262a;
-      left: 1rem;
-      top: 1.1rem;
+      left: 1.2rem;
+      top: 1.3rem;
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        left: 1.2rem;
+        top: 1.7rem;
+        width: 2.4rem;
+        height: 2.4rem;
+      }
     }
     .confirm-username-button {
       cursor: pointer;
       position: absolute;
       background: none;
       border: none;
-      right: 4.2rem;
-      top: 1.2rem;
+      right: 4rem;
+      top: 1.6rem;
       > svg {
-        width: 2.2rem;
-        height: 2.2rem;
+        width: 1.6rem;
+        height: 1.6rem;
         fill: #8baa36;
+      }
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        right: 4.8rem;
+        top: 2rem;
+        > svg {
+          width: 1.9rem;
+          height: 1.9rem;
+        }
       }
     }
     .edit-username-button {
@@ -88,12 +118,27 @@ export const StyledFormikForm = styled(Form)`
       position: absolute;
       background: none;
       border: none;
-      right: 1rem;
-      top: 1.1rem;
+      right: 1.4rem;
+      top: 1.6rem;
+      &:hover,
+      &:focus {
+        > svg {
+          stroke: #8baa36;
+        }
+      }
       > svg {
-        width: 2.4rem;
-        height: 2.4rem;
+        width: 1.7rem;
+        height: 1.7rem;
         stroke: #23262a;
+        transition: stroke 200ms;
+      }
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        right: 1.8rem;
+        top: 2rem;
+        > svg {
+          width: 2rem;
+          height: 2rem;
+        }
       }
     }
     .edit-username-button--cancel {
@@ -101,12 +146,20 @@ export const StyledFormikForm = styled(Form)`
       position: absolute;
       background: none;
       border: none;
-      right: 1rem;
-      top: 1.1rem;
+      right: 1.4rem;
+      top: 1.6rem;
       > svg {
-        width: 2.4rem;
-        height: 2.4rem;
+        width: 1.7rem;
+        height: 1.7rem;
         stroke: red;
+      }
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        right: 1.8rem;
+        top: 2rem;
+        > svg {
+          width: 2rem;
+          height: 2rem;
+        }
       }
     }
     > input {
@@ -117,9 +170,14 @@ export const StyledFormikForm = styled(Form)`
       border: 1px solid #bababc;
       display: flex;
       align-items: center;
-      padding: 0 7.6rem 0 3.8rem;
+      padding: 0 6.5rem 0 3.8rem;
       font-size: 1.4rem;
       letter-spacing: -0.036rem;
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        height: 5.8rem;
+        font-size: 1.8rem;
+        padding: 0 7.4rem 0 4.6rem;
+      }
       &:disabled {
         color: #23262a;
       }
@@ -129,6 +187,11 @@ export const StyledFormikForm = styled(Form)`
       height: 4.9rem;
       font-size: 1.4rem;
       line-height: 1.28;
+      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        height: 5.9rem;
+        font-size: 1.6rem;
+        line-height: 1.125;
+      }
     }
   }
 `;

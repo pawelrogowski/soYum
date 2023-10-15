@@ -15,6 +15,20 @@ export const StyledDiv = styled(motion.div)`
   z-index: 5;
   > div {
     position: relative;
+    padding: 3.2rem 2.4rem;
+    border-radius: 2.4rem;
+    min-width: 32rem;
+    width: 33rem;
+    background: #fafafa;
+    box-shadow: 0px 4px 48px 0px rgba(0, 0, 0, 0.1);
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      padding: 5rem 4rem;
+      width: 48rem;
+    }
+    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      padding: 6rem 5rem;
+      width: 50rem;
+    }
     > button {
       cursor: pointer;
       position: absolute;
@@ -40,11 +54,5 @@ export const StyledDiv = styled(motion.div)`
         height: 2rem;
       }
     }
-    padding: 3.2rem 2.4rem;
-    border-radius: 2.4rem;
-    max-width: 33rem;
-    max-height: 33rem;
-    background: #fafafa;
-    box-shadow: 0px 4px 48px 0px rgba(0, 0, 0, 0.1);
   }
 `;

@@ -1,18 +1,12 @@
 import { Field, Formik } from "formik";
-import { useEffect, useRef, useState } from "react";
-import * as Yup from "yup";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import avatar from "../../assets/images/avatar.webp";
+import { userEditSchema } from "../../schemas/userEditSchema";
 import { Button } from "../Button/Button";
 import { Icon } from "../Icon/Icon";
+import { cloudinarySettings } from "./CloudinarySettings";
 import { StyledFormikForm } from "./UserUpdateForm.styled";
-
-const validationSchema = Yup.object().shape({
-  username: Yup.string("User name must be a string").min(
-    3,
-    "User name must be at least 3 characters"
-  ),
-});
 
 const initialValues = {
   avatar: "",
@@ -20,6 +14,7 @@ const initialValues = {
 };
 
 export const UserUpdateForm = () => {
+  const [usernameValue, setUsernameValue] = useState(initialValues.username);
   const [isUsernameEditable, setIsUsernameEditable] = useState(false);
   const usernameInputRef = useRef(null);
   const [avatarPreview, setAvatarPreview] = useState(null);
@@ -28,155 +23,143 @@ export const UserUpdateForm = () => {
     const script = document.createElement("script");
     script.src = "https://widget.cloudinary.com/v2.0/global/all.js";
     script.async = true;
-    document.body.appendChild(script);
+    document.head.appendChild(script);
 
     return () => {
-      document.body.removeChild(script);
+      document.head.removeChild(script);
     };
   }, []);
 
-  const handleUsernameEdit = () => {
-    setIsUsernameEditable(!isUsernameEditable);
-  };
+  useEffect(() => {
+    if (isUsernameEditable) {
+      usernameInputRef.current.focus();
+    }
+  }, [isUsernameEditable]);
 
-  const handleAvatarClick = () => {
-    window.cloudinary.openUploadWidget(
-      {
-        cloudName: "dd9oa9bwd",
-        uploadPreset: "so-yummy",
-        sources: ["local", "url", "camera"],
-        cropping: false,
-        multiple: false,
-        defaultSource: "local",
-        eager: [{ width: 44, height: 44, crop: "scale", format: "webp" }],
-        styles: {
-          palette: {
-            window: "#fafafa",
-            sourceBg: "#fafafa",
-            windowBorder: "lightgrey",
-            tabIcon: "#8BAA36",
-            inactiveTabIcon: "lightgray",
-            menuIcons: "#8BAA36",
-            link: "#8BAA36",
-            action: "#8BAA36",
-            inProgress: "#8BAA36",
-            complete: "#53ad9d",
-            error: "#c43737",
-            textDark: "#000",
-            textLight: "#000",
-          },
-          fonts: {
-            default: "Poppins",
-            "'Poppins'": {
-              url: "../../assets/fonts/Poppins-Regular.woff2",
-              active: true,
-            },
-          },
-        },
-      },
-      (error, result) => {
-        if (!error && result && result.event === "success") {
-          setAvatarPreview(result.info.secure_url);
-          console.log(result.info.secure_url);
-        } else if (error) {
-          console.log(error);
-        }
+  const handleUsernameEdit = useCallback(() => {
+    setIsUsernameEditable((prevIsUsernameEditable) => !prevIsUsernameEditable);
+    if (!isUsernameEditable) {
+      setTimeout(() => {
+        usernameInputRef.current.focus();
+      }, 0);
+    }
+  }, [isUsernameEditable]);
+
+  const handleAvatarClick = useCallback(() => {
+    window.cloudinary.openUploadWidget(cloudinarySettings, (error, result) => {
+      if (!error && result && result.event === "success") {
+        setAvatarPreview(result.info.secure_url);
+        console.log(result.info.secure_url);
+      } else if (error) {
+        console.log(error);
       }
-    );
-  };
+    });
+  }, []);
 
-  const handleSubmit = (values, { setSubmitting }) => {
-    const changedValues = Object.keys(values).reduce((acc, key) => {
-      if (values[key] !== initialValues[key]) {
-        acc[key] = values[key];
+  const handleSubmit = useCallback(
+    (values, { setSubmitting }) => {
+      const changedValues = {
+        ...values,
+        username: usernameValue,
+      };
+
+      if (avatarPreview === null) {
+        delete changedValues.avatar;
+      } else {
+        changedValues.avatar = avatarPreview;
       }
-      return acc;
-    }, {});
 
-    changedValues.avatar = avatarPreview;
+      console.log(changedValues);
 
-    console.log(changedValues);
+      setSubmitting(false);
+    },
+    [avatarPreview, usernameValue]
+  );
 
-    setSubmitting(false);
-  };
+  const resetUsername = useCallback(() => {
+    setUsernameValue(initialValues.username);
+  }, []);
 
   return (
     <Formik
       initialValues={initialValues}
-      validationSchema={validationSchema}
+      validationSchema={userEditSchema}
       onSubmit={handleSubmit}
       validateOnMount
       validateOnBlur
       validateOnChange
     >
-      {({ errors, values }) => {
-        return (
-          <StyledFormikForm>
-            <label htmlFor="avatar" />
-            <div>
-              <picture>
-                <source srcSet={avatarPreview || avatar} />
-                <img
-                  src={avatarPreview || avatar}
-                  width="88px"
-                  onClick={handleAvatarClick}
-                />
-              </picture>
-              <button type="button" onClick={handleAvatarClick}>
-                <Icon icon="plus" />
-              </button>
-            </div>
-            <label htmlFor="username" />
-            <div>
-              <Icon icon="user" />
-              <Field
-                id="username"
-                name="username"
-                type="text"
-                disabled={!isUsernameEditable}
-                placeholder="Current Username"
-                innerRef={usernameInputRef}
+      {({ errors, values }) => (
+        <StyledFormikForm>
+          <label htmlFor="avatar" />
+          <div>
+            <picture>
+              <source srcSet={avatarPreview || avatar} />
+              <img
+                src={avatarPreview || avatar}
+                width="88px"
+                onClick={handleAvatarClick}
               />
-              {isUsernameEditable &&
-                !errors.username &&
-                values.username !== "" && (
-                  <button
-                    className="confirm-username-button"
-                    type="button"
-                    onClick={handleUsernameEdit}
-                  >
-                    <Icon icon="checkbox" />
-                  </button>
-                )}
-              {isUsernameEditable ? (
+            </picture>
+            <button type="button" onClick={handleAvatarClick}>
+              <Icon icon="plus" />
+            </button>
+          </div>
+          <label htmlFor="username" />
+          <div>
+            <Icon icon="user" />
+            <Field
+              id="username"
+              name="username"
+              type="text"
+              disabled={!isUsernameEditable}
+              placeholder="Current Username"
+              innerRef={usernameInputRef}
+              value={usernameValue}
+              onChange={(e) => setUsernameValue(e.target.value)}
+            />
+            {isUsernameEditable &&
+              !errors.username &&
+              values.username !== "" && (
                 <button
-                  className="edit-username-button--cancel"
+                  className="confirm-username-button"
                   type="button"
                   onClick={handleUsernameEdit}
                 >
-                  <Icon icon="x" />
-                </button>
-              ) : (
-                <button
-                  className="edit-username-button"
-                  type="button"
-                  onClick={handleUsernameEdit}
-                >
-                  <Icon icon="edit" />
+                  <Icon icon="checkbox" />
                 </button>
               )}
-
-              <Button
-                type="submit"
-                variant="rectBig"
-                disabled={isUsernameEditable}
+            {isUsernameEditable ? (
+              <button
+                className="edit-username-button--cancel"
+                type="button"
+                onClick={() => {
+                  handleUsernameEdit();
+                  resetUsername();
+                }}
               >
-                Save Changes
-              </Button>
-            </div>
-          </StyledFormikForm>
-        );
-      }}
+                <Icon icon="x" />
+              </button>
+            ) : (
+              <button
+                className="edit-username-button"
+                type="button"
+                onClick={handleUsernameEdit}
+              >
+                <Icon icon="edit" />
+              </button>
+            )}
+
+            <Button
+              type="submit"
+              variant="rectBig"
+              disabled={isUsernameEditable}
+            >
+              Save Changes
+            </Button>
+          </div>
+        </StyledFormikForm>
+      )}
     </Formik>
   );
 };
