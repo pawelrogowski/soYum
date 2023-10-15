@@ -1,8 +1,11 @@
-import { Field, Form, Formik } from "formik";
-import { useRef, useState } from "react";
+import { Field, Formik } from "formik";
+import { useEffect, useRef, useState } from "react";
 import * as Yup from "yup";
 
 import avatar from "../../assets/images/avatar.webp";
+import { Button } from "../Button/Button";
+import { Icon } from "../Icon/Icon";
+import { StyledFormikForm } from "./UserUpdateForm.styled";
 
 const validationSchema = Yup.object().shape({
   username: Yup.string("User name must be a string").min(
@@ -21,6 +24,17 @@ export const UserUpdateForm = () => {
   const usernameInputRef = useRef(null);
   const [avatarPreview, setAvatarPreview] = useState(null);
 
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://widget.cloudinary.com/v2.0/global/all.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   const handleUsernameEdit = () => {
     setIsUsernameEditable(!isUsernameEditable);
   };
@@ -31,27 +45,28 @@ export const UserUpdateForm = () => {
         cloudName: "dd9oa9bwd",
         uploadPreset: "so-yummy",
         sources: ["local", "url", "camera"],
-        cropping: true,
+        cropping: false,
         multiple: false,
         defaultSource: "local",
+        eager: [{ width: 44, height: 44, crop: "scale", format: "webp" }],
         styles: {
           palette: {
-            window: "#F5F5F5",
-            sourceBg: "#FFFFFF",
-            windowBorder: "#90A0B3",
-            tabIcon: "#0094C7",
-            inactiveTabIcon: "#69778A",
-            menuIcons: "#0094C7",
-            link: "#53ad9d",
-            action: "#8F5DA5",
-            inProgress: "#0194c7",
+            window: "#fafafa",
+            sourceBg: "#fafafa",
+            windowBorder: "lightgrey",
+            tabIcon: "#8BAA36",
+            inactiveTabIcon: "lightgray",
+            menuIcons: "#8BAA36",
+            link: "#8BAA36",
+            action: "#8BAA36",
+            inProgress: "#8BAA36",
             complete: "#53ad9d",
             error: "#c43737",
-            textDark: "#000000",
-            textLight: "#FFFFFF",
+            textDark: "#000",
+            textLight: "#000",
           },
           fonts: {
-            default: null,
+            default: "Poppins",
             "'Poppins'": {
               url: "../../assets/fonts/Poppins-Regular.woff2",
               active: true,
@@ -63,6 +78,8 @@ export const UserUpdateForm = () => {
         if (!error && result && result.event === "success") {
           setAvatarPreview(result.info.secure_url);
           console.log(result.info.secure_url);
+        } else if (error) {
+          console.log(error);
         }
       }
     );
@@ -93,21 +110,25 @@ export const UserUpdateForm = () => {
       validateOnChange
     >
       {({ errors, values }) => {
-        console.log(errors.username);
         return (
-          <Form>
+          <StyledFormikForm>
             <label htmlFor="avatar" />
-            <picture>
-              <source srcSet={avatarPreview || avatar} />
-              <img
-                src={avatarPreview || avatar}
-                width="50px"
-                onClick={handleAvatarClick}
-              />
-            </picture>
-
+            <div>
+              <picture>
+                <source srcSet={avatarPreview || avatar} />
+                <img
+                  src={avatarPreview || avatar}
+                  width="88px"
+                  onClick={handleAvatarClick}
+                />
+              </picture>
+              <button type="button" onClick={handleAvatarClick}>
+                <Icon icon="plus" />
+              </button>
+            </div>
             <label htmlFor="username" />
             <div>
+              <Icon icon="user" />
               <Field
                 id="username"
                 name="username"
@@ -119,19 +140,41 @@ export const UserUpdateForm = () => {
               {isUsernameEditable &&
                 !errors.username &&
                 values.username !== "" && (
-                  <button type="button" onClick={handleUsernameEdit}>
-                    Confirm
+                  <button
+                    className="confirm-username-button"
+                    type="button"
+                    onClick={handleUsernameEdit}
+                  >
+                    <Icon icon="checkbox" />
                   </button>
                 )}
-              <button type="button" onClick={handleUsernameEdit}>
-                {isUsernameEditable ? "Cancel" : "Edit Username"}
-              </button>
-            </div>
+              {isUsernameEditable ? (
+                <button
+                  className="edit-username-button--cancel"
+                  type="button"
+                  onClick={handleUsernameEdit}
+                >
+                  <Icon icon="x" />
+                </button>
+              ) : (
+                <button
+                  className="edit-username-button"
+                  type="button"
+                  onClick={handleUsernameEdit}
+                >
+                  <Icon icon="edit" />
+                </button>
+              )}
 
-            <button type="submit" disabled={isUsernameEditable}>
-              Save Changes
-            </button>
-          </Form>
+              <Button
+                type="submit"
+                variant="rectBig"
+                disabled={isUsernameEditable}
+              >
+                Save Changes
+              </Button>
+            </div>
+          </StyledFormikForm>
         );
       }}
     </Formik>

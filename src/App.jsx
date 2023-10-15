@@ -6,9 +6,9 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 
 import { LoaderDots } from "./components/LoaderDots/LoaderDots";
-import { UserUpdateForm } from "./components/UserUpdateForm/UserUpdateForm";
 import { GlobalStyles } from "./styles/globalStyles";
 import { darkTheme, lightTheme } from "./styles/themes";
+import { EditUserModal } from "./components/EditUserModal/EditUserModal";
 
 // layouts
 const AuthLayout = lazy(() => import("./layouts/AuthLayout/AuthLayout"));
@@ -49,8 +49,8 @@ export const App = () => {
       <GlobalStyles isTransitionEnabled={isTransitionEnabled} />
       <Router basename="/">
         <AnimatePresence mode="wait">
+          <EditUserModal />
           <Suspense fallback={<LoaderDots />}>
-            <UserUpdateForm />
             <Routes>
               <Route path="/" element={<StartPage />} />
               <Route element={<AuthLayout />}>
