@@ -1,6 +1,11 @@
 import styled, { css } from "styled-components";
 
 export const StyledButton = styled.button`
+  &:disabled {
+    background: grey;
+    pointer-events: none;
+    border: none;
+  }
   color: ${({ theme }) => theme.button.base.fontColorIdle};
   font-size: 1.6rem;
   font-family: ${({ theme }) => theme.button.font};
