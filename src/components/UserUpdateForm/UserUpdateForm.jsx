@@ -1,85 +1,139 @@
-import { FastField, Form, Formik } from "formik";
-import { useState } from "react";
+import { Field, Form, Formik } from "formik";
+import { useRef, useState } from "react";
 import * as Yup from "yup";
 
-export const UserUpdateForm = () => {
-  const [avatarPreview, setAvatarPreview] = useState(null);
-  const [isUsernameEditable, setIsUsernameEditable] = useState(false);
+import avatar from "../../assets/images/avatar.webp";
 
-  const handleFileChange = (event) => {
-    if (event.currentTarget.files.length > 0) {
-      const file = URL.createObjectURL(event.currentTarget.files[0]);
-      setAvatarPreview(file);
-    }
-  };
+const validationSchema = Yup.object().shape({
+  username: Yup.string("User name must be a string").min(
+    3,
+    "User name must be at least 3 characters"
+  ),
+});
+
+const initialValues = {
+  avatar: "",
+  username: "Current User Name",
+};
+
+export const UserUpdateForm = () => {
+  const [isUsernameEditable, setIsUsernameEditable] = useState(false);
+  const usernameInputRef = useRef(null);
+  const [avatarPreview, setAvatarPreview] = useState(null);
 
   const handleUsernameEdit = () => {
-    setIsUsernameEditable(true);
+    setIsUsernameEditable(!isUsernameEditable);
   };
 
-  const validationSchema = Yup.object().shape({
-    avatar: Yup.mixed().required("Avatar is required"),
-    username: Yup.string().required("Username is required"),
-  });
+  const handleAvatarClick = () => {
+    window.cloudinary.openUploadWidget(
+      {
+        cloudName: "dd9oa9bwd",
+        uploadPreset: "so-yummy",
+        sources: ["local", "url", "camera"],
+        cropping: true,
+        multiple: false,
+        defaultSource: "local",
+        styles: {
+          palette: {
+            window: "#F5F5F5",
+            sourceBg: "#FFFFFF",
+            windowBorder: "#90A0B3",
+            tabIcon: "#0094C7",
+            inactiveTabIcon: "#69778A",
+            menuIcons: "#0094C7",
+            link: "#53ad9d",
+            action: "#8F5DA5",
+            inProgress: "#0194c7",
+            complete: "#53ad9d",
+            error: "#c43737",
+            textDark: "#000000",
+            textLight: "#FFFFFF",
+          },
+          fonts: {
+            default: null,
+            "'Poppins'": {
+              url: "../../assets/fonts/Poppins-Regular.woff2",
+              active: true,
+            },
+          },
+        },
+      },
+      (error, result) => {
+        if (!error && result && result.event === "success") {
+          setAvatarPreview(result.info.secure_url);
+          console.log(result.info.secure_url);
+        }
+      }
+    );
+  };
+
+  const handleSubmit = (values, { setSubmitting }) => {
+    const changedValues = Object.keys(values).reduce((acc, key) => {
+      if (values[key] !== initialValues[key]) {
+        acc[key] = values[key];
+      }
+      return acc;
+    }, {});
+
+    changedValues.avatar = avatarPreview;
+
+    console.log(changedValues);
+
+    setSubmitting(false);
+  };
 
   return (
     <Formik
-      initialValues={{ avatar: "", username: "" }}
+      initialValues={initialValues}
       validationSchema={validationSchema}
-      onSubmit={(values, { setSubmitting }) => {
-        const { avatar, username } = values;
-        if (avatar && username) {
-          console.log("Both avatar and username changed");
-          // Submit both avatar and username changes
-        } else if (avatar) {
-          console.log("Only avatar changed");
-          // Submit avatar change
-        } else if (username) {
-          console.log("Only username changed");
-          // Submit username change
-        }
-        setSubmitting(false);
-      }}
+      onSubmit={handleSubmit}
+      validateOnMount
+      validateOnBlur
+      validateOnChange
     >
-      {({ isSubmitting, errors, touched }) => (
-        <Form>
-          <label htmlFor="avatar">
-            <img src={avatarPreview} alt="Avatar" />
-            <FastField
-              id="avatar"
-              name="avatar"
-              type="file"
-              accept="image/*"
-              onChange={handleFileChange}
-            />
-            {errors.avatar && touched.avatar && <div>{errors.avatar}</div>}
-          </label>
+      {({ errors, values }) => {
+        console.log(errors.username);
+        return (
+          <Form>
+            <label htmlFor="avatar" />
+            <picture>
+              <source srcSet={avatarPreview || avatar} />
+              <img
+                src={avatarPreview || avatar}
+                width="50px"
+                onClick={handleAvatarClick}
+              />
+            </picture>
 
-          <button type="button" onClick={handleUsernameEdit}>
-            Edit Username
-          </button>
-
-          {isUsernameEditable ? (
+            <label htmlFor="username" />
             <div>
-              <FastField
+              <Field
                 id="username"
                 name="username"
                 type="text"
                 disabled={!isUsernameEditable}
+                placeholder="Current Username"
+                innerRef={usernameInputRef}
               />
-              {errors.username && touched.username && (
-                <div>{errors.username}</div>
-              )}
+              {isUsernameEditable &&
+                !errors.username &&
+                values.username !== "" && (
+                  <button type="button" onClick={handleUsernameEdit}>
+                    Confirm
+                  </button>
+                )}
+              <button type="button" onClick={handleUsernameEdit}>
+                {isUsernameEditable ? "Cancel" : "Edit Username"}
+              </button>
             </div>
-          ) : (
-            <div>{/* Display current username */}</div>
-          )}
 
-          <button type="submit" disabled={isSubmitting}>
-            Submit
-          </button>
-        </Form>
-      )}
+            <button type="submit" disabled={isUsernameEditable}>
+              Save Changes
+            </button>
+          </Form>
+        );
+      }}
     </Formik>
   );
 };
