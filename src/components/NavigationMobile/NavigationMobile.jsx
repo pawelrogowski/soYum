@@ -21,7 +21,6 @@ export const NavigationMobile = () => {
     dispatch(toggleIsMobileMenuOpen());
   };
 
-  // Define an array of navigation items
   const navItems = [
     { path: "/categories", text: "Categories" },
     { path: "/recipes", text: "Add recipes" },
@@ -42,6 +41,7 @@ export const NavigationMobile = () => {
                   isActive ? "active-nav-link-mobile" : ""
                 }
                 to={item.path}
+                onClick={handleMenuToggle}
               >
                 {item.text}
               </NavLink>
