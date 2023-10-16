@@ -2,8 +2,8 @@ import { useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 
 import { toggleIsProfileUpdateMenuOpen } from "../../redux/slices/modalSlice";
+import { UserUpdateForm } from "../Forms/UserUpdateForm/UserUpdateForm";
 import { Icon } from "../Icon/Icon";
-import { UserUpdateForm } from "../UserUpdateForm/UserUpdateForm";
 import { StyledDiv } from "./EditUserModal.styled";
 
 export const EditUserModal = () => {

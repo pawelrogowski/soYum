@@ -169,13 +169,14 @@ export const StyledSection = styled.section`
     picture {
       margin-bottom: 2.4rem;
       position: relative;
+      min-width: 34rem;
 
       @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
         margin-bottom: 0rem;
       }
       > img {
         max-width: 100%;
-        min-width: 30rem;
+        min-width: 34rem;
         width: 100%;
         @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
           max-width: 110%;

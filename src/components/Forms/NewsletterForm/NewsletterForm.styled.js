@@ -92,12 +92,18 @@ export const StyledForm = styled.form`
     css`
       max-width: 33.9rem;
       flex-direction: column;
+      @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+        max-width: 26.4rem;
+      }
       > h2 {
         margin-bottom: 1.4rem;
         color: #fafafa;
         font-family: Poppins;
         font-size: 1.8rem;
         font-weight: 700;
+        @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+          display: none;
+        }
       }
       > p {
         margin-bottom: 2.8rem;
@@ -106,6 +112,9 @@ export const StyledForm = styled.form`
         font-style: normal;
         line-height: 1.28;
         letter-spacing: -0.028rem;
+        @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+          display: none;
+        }
       }
 
       > div {
@@ -115,6 +124,9 @@ export const StyledForm = styled.form`
       }
       > button {
         max-width: 33.9rem;
+        @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+          max-width: 26.4rem;
+        }
       }
     `}
 

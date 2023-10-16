@@ -1,10 +1,10 @@
 import { Field, Formik } from "formik";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import avatar from "../../assets/images/avatar.webp";
-import { userEditSchema } from "../../schemas/userEditSchema";
-import { Button } from "../Button/Button";
-import { Icon } from "../Icon/Icon";
+import avatar from "../../../assets/images/avatar.webp";
+import { userEditSchema } from "../../../schemas/userEditSchema";
+import { Button } from "../../Button/Button";
+import { Icon } from "../../Icon/Icon";
 import { cloudinarySettings } from "./CloudinarySettings";
 import { StyledFormikForm } from "./UserUpdateForm.styled";
 

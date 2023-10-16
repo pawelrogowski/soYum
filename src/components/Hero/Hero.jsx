@@ -37,8 +37,8 @@ export const Hero = () => {
               <img
                 src={hero}
                 alt="plate of delicious food"
-                width="200px"
-                height="200px"
+                width="320px"
+                height="320px"
               />
             </picture>
             <CallToAction

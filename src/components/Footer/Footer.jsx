@@ -20,7 +20,7 @@ const Footer = ({ variant }) => {
               <Logo variant="footer" />
               <span>So Yummy</span>
             </Link>
-            <NavigationFooter />
+            <NavigationFooter /> <NewsletterForm layout="column" />
           </>
         ) : variant === "tablet" ? (
           <>
