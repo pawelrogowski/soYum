@@ -20,7 +20,34 @@ export const StyledSection = styled.section`
   @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     gap: 2rem;
   }
-
+  &:after {
+    content: "";
+    position: absolute;
+    top: 21%;
+    left: -47px;
+    width: 45%;
+    height: 45%;
+    transform: translate(-50%, -50%) rotate(5deg) scaleX(-1);
+    background-image: url(${leaves});
+    background-size: contain;
+    filter: blur(0.25rem);
+    z-index: -1;
+    background-repeat: no-repeat;
+    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      top: 19%;
+      left: -59px;
+      width: 35%;
+      height: 35%;
+      transform: translate(-50%, -50%) rotate(23deg) scaleX(-1);
+    }
+    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      top: 10%;
+      left: -116px;
+      width: 45%;
+      height: 45%;
+      transform: translate(-50%, -50%) rotate(33deg) scaleX(-1);
+    }
+  }
   > div:first-of-type {
     display: flex;
     flex-direction: column;
@@ -128,7 +155,7 @@ export const StyledSection = styled.section`
       width: 275%;
       height: 275%;
       transform: translate(-50%, -50%) rotate(60deg) scaleX(-1);
-      filter: blur(0.15rem);
+      filter: blur(0.25rem);
       z-index: -1;
       background-repeat: no-repeat;
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {

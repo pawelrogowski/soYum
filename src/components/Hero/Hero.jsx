@@ -34,7 +34,12 @@ export const Hero = () => {
                 srcSet={`${herox1} 1x, ${herox2} 2x, ${herox3} 3x`}
                 type="image/webp"
               />
-              <img src={hero} alt="plate of delicious food" />
+              <img
+                src={hero}
+                alt="plate of delicious food"
+                width="200px"
+                height="200px"
+              />
             </picture>
             <CallToAction
               text="way to enjoy a variety of fresh ingredients in one satisfying meal"
