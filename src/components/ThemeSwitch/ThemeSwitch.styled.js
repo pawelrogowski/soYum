@@ -48,6 +48,6 @@ export const StyledLabel = styled.label`
 
   > input:checked + span:before {
     box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.3);
-    transform: translateX(34px);
+    transform: translateX(3.2rem);
   }
 `;

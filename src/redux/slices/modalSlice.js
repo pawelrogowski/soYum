@@ -2,16 +2,32 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const modalSlice = createSlice({
   name: "modal",
-  initialState: { isMobileMenuOpen: false, isUserEditMenuOpen: false },
+  initialState: {
+    isMobileMenuOpen: false,
+    isUserEditMenuOpen: false,
+    isProfileUpdateMenuOpen: false,
+    isLogoutModalOpen: false,
+  },
   reducers: {
-    toggleMobileMenu: (state, action) => {
+    toggleIsMobileMenuOpen: (state, action) => {
       state.isMobileMenuOpen = action.payload;
     },
-    toggleUserEditMenu: (state, action) => {
+    toggleIsUserEditMenuOpen: (state, action) => {
       state.isUserEditMenuOpen = action.payload;
+    },
+    toggleIsProfileUpdateMenuOpen: (state, action) => {
+      state.isProfileUpdateMenuOpen = action.payload;
+    },
+    toggleIsLogoutModalOpen: (state, action) => {
+      state.isLogoutModalOpen = action.payload;
     },
   },
 });
 
 export default modalSlice.reducer;
-export const { toggleMobileMenu, toggleUserEditMenu } = modalSlice.actions;
+export const {
+  toggleIsMobileMenuOpen,
+  toggleIsUserEditMenuOpen,
+  toggleIsProfileUpdateMenuOpen,
+  toggleIsLogoutModalOpen,
+} = modalSlice.actions;

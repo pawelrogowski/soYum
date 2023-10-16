@@ -107,6 +107,11 @@ export const GlobalStyles = createGlobalStyle`
   	}
 	}
 
+  .popup-box {
+    width: 500px;
+    height: 500px;
+  }
+
 	// this is for autofil on webkit browsers
 	input:-webkit-autofill,
 	input:-webkit-autofill:hover,

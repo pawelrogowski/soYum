@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import avatar from "../../assets/images/avatar.webp";
 import avatarPlaceholder from "../../assets/images/avatar-placeholder.png";
-import { toggleMobileMenu } from "../../redux/slices/modalSlice";
+import { toggleIsMobileMenuOpen } from "../../redux/slices/modalSlice";
 import { breakpoints } from "../../styles/themes";
 import { Logo } from "../Logo/Logo";
 import { MobileMenuButton } from "../MobileMenuButton/MobileMenuButton";
@@ -19,7 +19,7 @@ export const Header = () => {
   const isAtLeastDesktopSize = useMediaQuery({ minWidth: breakpoints.desktop });
 
   const handleMenuToggle = () => {
-    dispatch(toggleMobileMenu(!isMobileMenuOpen));
+    dispatch(toggleIsMobileMenuOpen(!isMobileMenuOpen));
   };
 
   return (

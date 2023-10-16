@@ -1,7 +1,11 @@
 import { useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 
-import { toggleUserEditMenu } from "../../redux/slices/modalSlice";
+import {
+  toggleIsLogoutModalOpen,
+  toggleIsProfileUpdateMenuOpen,
+  toggleIsUserEditMenuOpen,
+} from "../../redux/slices/modalSlice";
 import { Button } from "../Button/Button";
 import { Icon } from "../Icon/Icon";
 import { StyledDiv } from "./EditProfilePopup.styled";
@@ -12,13 +16,13 @@ export const EditProfilePopup = ({ ...props }) => {
 
   const handleClickOutside = (event) => {
     if (ref.current && !ref.current.contains(event.target)) {
-      dispatch(toggleUserEditMenu(false));
+      dispatch(toggleIsUserEditMenuOpen(false));
     }
   };
 
   const handleKeyDown = (event) => {
     if (event.key === "Escape") {
-      dispatch(toggleUserEditMenu(false));
+      dispatch(toggleIsUserEditMenuOpen(false));
     }
   };
 
@@ -26,6 +30,15 @@ export const EditProfilePopup = ({ ...props }) => {
     event.stopPropagation();
   };
 
+  const handleEditProfileOpen = () => {
+    dispatch(toggleIsUserEditMenuOpen(false));
+    dispatch(toggleIsProfileUpdateMenuOpen(true));
+  };
+
+  const handleLogoutModalOpen = () => {
+    dispatch(toggleIsLogoutModalOpen(true));
+    dispatch(toggleIsUserEditMenuOpen(false));
+  };
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     document.addEventListener("keydown", handleKeyDown);
@@ -39,11 +52,15 @@ export const EditProfilePopup = ({ ...props }) => {
 
   return (
     <StyledDiv ref={ref} onClick={handleClickInside} {...props}>
-      <div>
+      <div onClick={handleEditProfileOpen}>
         <span>Edit profile</span>
         <Icon icon="edit" />
       </div>
-      <Button>
+      <Button
+        type="button"
+        onClick={handleLogoutModalOpen}
+        aria-label="log out"
+      >
         Log out
         <Icon icon="arrow_long" />
       </Button>
