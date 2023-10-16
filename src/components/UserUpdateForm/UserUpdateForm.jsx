@@ -27,6 +27,11 @@ export const UserUpdateForm = () => {
 
     return () => {
       document.head.removeChild(script);
+      document.querySelectorAll("iframe").forEach((iframe) => {
+        if (iframe.title === "Upload Widget") {
+          iframe.remove();
+        }
+      });
     };
   }, []);
 

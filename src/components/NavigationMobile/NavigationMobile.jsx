@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 
-import { toggleMobileMenu } from "../../redux/slices/modalSlice";
+import { toggleIsMobileMenuOpen } from "../../redux/slices/modalSlice";
 import { Icon } from "../Icon/Icon";
 import { MobileMenuButton } from "../MobileMenuButton/MobileMenuButton";
 import { ThemeSwitch } from "../ThemeSwitch/ThemeSwitch";
@@ -18,7 +18,7 @@ export const NavigationMobile = () => {
   const dispatch = useDispatch();
 
   const handleMenuToggle = () => {
-    dispatch(toggleMobileMenu());
+    dispatch(toggleIsMobileMenuOpen());
   };
 
   // Define an array of navigation items

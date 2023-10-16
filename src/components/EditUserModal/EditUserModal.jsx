@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 
-import { toggleProfileUpdateMenu } from "../../redux/slices/modalSlice";
+import { toggleIsProfileUpdateMenuOpen } from "../../redux/slices/modalSlice";
 import { Icon } from "../Icon/Icon";
 import { UserUpdateForm } from "../UserUpdateForm/UserUpdateForm";
 import { StyledDiv } from "./EditUserModal.styled";
@@ -12,18 +12,18 @@ export const EditUserModal = () => {
 
   const handleClickOutside = (event) => {
     if (ref.current && !ref.current.contains(event.target)) {
-      dispatch(toggleProfileUpdateMenu(false));
+      dispatch(toggleIsProfileUpdateMenuOpen(false));
     }
   };
 
   const handleKeyDown = (event) => {
     if (event.key === "Escape") {
-      dispatch(toggleProfileUpdateMenu(false));
+      dispatch(toggleIsProfileUpdateMenuOpen(false));
     }
   };
 
   const handleClickClose = () => {
-    dispatch(toggleProfileUpdateMenu(false));
+    dispatch(toggleIsProfileUpdateMenuOpen(false));
   };
 
   useEffect(() => {
@@ -57,8 +57,8 @@ export const EditUserModal = () => {
   };
 
   return (
-    <StyledDiv ref={ref} {...modalMotion}>
-      <div>
+    <StyledDiv {...modalMotion}>
+      <div ref={ref}>
         <button type="button" onClick={handleClickClose}>
           <Icon icon="x" />
         </button>

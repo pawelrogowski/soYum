@@ -142,16 +142,15 @@ export const StyledButton = styled.button`
 
           &:hover,
           &:focus {
-            background-color: ${theme.button.rectSmallDisabled.bgHover};
-            color: ${theme.button.rectSmallDisabled.fontColorHover};
-            border: 0.2rem solid ${theme.button.rectSmallDisabled.borderHover};
+            background-color: ${theme.button.rectSmall.bgHover};
+            color: ${theme.button.rectSmall.fontColorHover};
+            border: 0.2rem solid ${theme.button.rectSmall.borderHover};
           }
 
           &:active {
-            background-color: ${({ theme }) =>
-              theme.button.rectSmallDisabled.bgActive};
+            background-color: ${({ theme }) => theme.button.rectSmall.bgActive};
             border: 0.2rem solid
-              ${({ theme }) => theme.button.rectSmallDisabled.borderActive};
+              ${({ theme }) => theme.button.rectSmall.borderActive};
           }
         `
       : null};

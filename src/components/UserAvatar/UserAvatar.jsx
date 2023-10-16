@@ -2,7 +2,7 @@ import { AnimatePresence } from "framer-motion";
 import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 
-import { toggleUserEditMenu } from "../../redux/slices/modalSlice";
+import { toggleIsUserEditMenuOpen } from "../../redux/slices/modalSlice";
 import { shortenString } from "../../utils/stringManipulation";
 import { EditProfilePopup } from "../EditProfilePopup/EditProfilePopup";
 import { StyledDiv } from "./UserAvatar.styled";
@@ -17,7 +17,7 @@ export function UserAvatar({ image, placeholder, name = "No Data" }) {
   const handleOpenUserEdit = () => {
     if (!isEditProfilePopupOpen) {
       setTimeout(
-        () => dispatch(toggleUserEditMenu(!isEditProfilePopupOpen)),
+        () => dispatch(toggleIsUserEditMenuOpen(!isEditProfilePopupOpen)),
         0
       );
     }
