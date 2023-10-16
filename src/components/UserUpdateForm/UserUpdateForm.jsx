@@ -91,7 +91,6 @@ export const UserUpdateForm = () => {
     >
       {({ errors, values }) => (
         <StyledFormikForm>
-          <label htmlFor="avatar" />
           <div>
             <picture>
               <source srcSet={avatarPreview || avatar} />

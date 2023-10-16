@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { Outlet } from "react-router-dom";
 
+import { EditUserModal } from "../../components/EditUserModal/EditUserModal";
 import Footer from "../../components/Footer/Footer";
 import { Header } from "../../components/Header/Header";
 import { LoaderDots } from "../../components/LoaderDots/LoaderDots";
@@ -11,6 +12,9 @@ import { NavigationMobile } from "../../components/NavigationMobile/NavigationMo
 import { breakpoints } from "../../styles/themes";
 
 export const MainLayout = () => {
+  const isProfileUpdateMenuOpen = useSelector(
+    (state) => state.modal.isProfileUpdateMenuOpen
+  );
   const isMobileSize = useMediaQuery({ maxWidth: breakpoints.mobileMax });
   const isTabletSize = useMediaQuery({
     minWidth: breakpoints.tablet,
@@ -31,6 +35,9 @@ export const MainLayout = () => {
       <Footer
         variant={isMobileSize ? "mobile" : isTabletSize ? "tablet" : "desktop"}
       />
+      <AnimatePresence>
+        {isProfileUpdateMenuOpen && <EditUserModal />}
+      </AnimatePresence>
     </>
   );
 };

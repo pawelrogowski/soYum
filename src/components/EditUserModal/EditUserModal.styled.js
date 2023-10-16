@@ -11,7 +11,8 @@ export const StyledDiv = styled(motion.div)`
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding-top: 10vh;
   z-index: 5;
   > div {
     position: relative;
