@@ -2,11 +2,15 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const StyledDiv = styled(motion.div)`
+  --color-bg: ${({ theme }) => theme.editUserModal.bg};
+  --color-backdrop: ${({ theme }) => theme.editUserModal.backdrop};
+  --color-icon-idle: ${({ theme }) => theme.editUserModal.iconIdle};
+  --color-icon-active: ${({ theme }) => theme.editUserModal.iconActive};
   position: fixed;
   top: 0;
   left: 0;
   backdrop-filter: blur(4px);
-  background: rgba(0, 0, 0, 0.8);
+  background: var(--color-backdrop);
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -20,7 +24,7 @@ export const StyledDiv = styled(motion.div)`
     border-radius: 2.4rem;
     min-width: 32rem;
     width: 33rem;
-    background: #fafafa;
+    background: var(--color-bg);
     box-shadow: 0px 4px 48px 0px rgba(0, 0, 0, 0.1);
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       padding: 5rem 4rem;
@@ -45,12 +49,12 @@ export const StyledDiv = styled(motion.div)`
       &:hover,
       &:focus {
         > svg {
-          stroke: #8baa36;
+          stroke: var(--color-icon-active);
         }
       }
       > svg {
-        fill: black;
-        stroke: black;
+        fill: var(--color-icon-idle);
+        stroke: var(--color-icon-idle);
         width: 2rem;
         height: 2rem;
       }
