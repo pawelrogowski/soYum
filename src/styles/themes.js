@@ -343,6 +343,27 @@ export const lightTheme = {
     pageLinkFontIdle: "#22252a",
     pageLinkFontActive: "#fafafa",
   },
+  logoutModal: {
+    bg: "#FAFAFA",
+    iconIdle: "#23262A",
+    iconActive: brandColors.main,
+    text: "#23262A",
+    buttons: {
+      logoutBgIdle: "#8BAA36",
+      logoutBgActive: "#23262A",
+      logoutBorderIdle: "#8BAA36",
+      logoutBorderActive: "#8BAA36",
+      logoutTextIdle: "#fafafa",
+      logoutTextActive: "#8BAA36",
+
+      cancelBgIdle: "#D9D9D9",
+      cancelBgActive: "#23262A",
+      cancelBorderIdle: "#D9D9D9",
+      cancelBorderActive: "#8BAA36",
+      cancelTextIdle: "#23262A",
+      cancelTextActive: "#8BAA36",
+    },
+  },
 };
 
 export const darkTheme = {
@@ -612,5 +633,26 @@ export const darkTheme = {
     pageLinkFontCurrent: "#fafafa",
     pageLinkFontIdle: "rgba(250, 250, 250, 0.60)",
     pageLinkFontActive: "#fafafa",
+  },
+  logoutModal: {
+    bg: "#2A2C36",
+    iconIdle: "#fafafa",
+    iconActive: brandColors.main,
+    text: "#fafafa",
+    buttons: {
+      logoutBgIdle: "#8BAA36",
+      logoutBgActive: "#23262A",
+      logoutBorderIdle: "#8BAA36",
+      logoutBorderActive: "#8BAA36",
+      logoutTextIdle: "#fafafa",
+      logoutTextActive: "#8BAA36",
+
+      cancelBgIdle: "#D9D9D9",
+      cancelBgActive: "#23262A",
+      cancelBorderIdle: "#D9D9D9",
+      cancelBorderActive: "#8BAA36",
+      cancelTextIdle: "#23262A",
+      cancelTextActive: "#8BAA36",
+    },
   },
 };

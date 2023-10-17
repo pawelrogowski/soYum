@@ -6,6 +6,10 @@ export const StyledGallery = styled.section`
   margin-bottom: 3.2rem;
   gap: 2.4rem;
   width: 100%;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    max-width: 48rem;
+  }
+
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     gap: 4rem;
   }

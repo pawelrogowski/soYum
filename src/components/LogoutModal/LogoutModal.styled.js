@@ -2,6 +2,34 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const StyledDiv = styled(motion.div)`
+  --color-bg: ${({ theme }) => theme.logoutModal.bg};
+  --color-icon-idle: ${({ theme }) => theme.logoutModal.iconIdle};
+  --color-icon-active: ${({ theme }) => theme.logoutModal.iconActive};
+  --color-text: ${({ theme }) => theme.logoutModal.text};
+  --color-button-logout-bg-idle: ${({ theme }) =>
+    theme.logoutModal.buttons.logoutBgIdle};
+  --color-button-logout-bg-active: ${({ theme }) =>
+    theme.logoutModal.buttons.logoutBgActive};
+  --color-button-logout-border-idle: ${({ theme }) =>
+    theme.logoutModal.buttons.logoutBorderIdle};
+  --color-button-logout-border-active: ${({ theme }) =>
+    theme.logoutModal.buttons.logoutBorderActive};
+  --color-button-logout-text-idle: ${({ theme }) =>
+    theme.logoutModal.buttons.logoutTextIdle};
+  --color-button-logout-text-active: ${({ theme }) =>
+    theme.logoutModal.buttons.logoutTextActive};
+  --color-button-cancel-bg-idle: ${({ theme }) =>
+    theme.logoutModal.buttons.cancelBgIdle};
+  --color-button-cancel-bg-active: ${({ theme }) =>
+    theme.logoutModal.buttons.cancelBgActive};
+  --color-button-cancel-border-idle: ${({ theme }) =>
+    theme.logoutModal.buttons.cancelBorderIdle};
+  --color-button-cancel-border-active: ${({ theme }) =>
+    theme.logoutModal.buttons.cancelBorderActive};
+  --color-button-cancel-text-idle: ${({ theme }) =>
+    theme.logoutModal.buttons.cancelTextIdle};
+  --color-button-cancel-text-active: ${({ theme }) =>
+    theme.logoutModal.buttons.cancelTextActive};
   position: fixed;
   top: 0;
   left: 0;
@@ -23,7 +51,7 @@ export const StyledDiv = styled(motion.div)`
     border-radius: 2.4rem;
     min-width: 32rem;
 
-    background: #fafafa;
+    background: var(--color-bg);
     box-shadow: 0px 4px 48px 0px rgba(0, 0, 0, 0.1);
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       gap: 3.2rem;
@@ -47,18 +75,18 @@ export const StyledDiv = styled(motion.div)`
       &:hover,
       &:focus {
         > svg {
-          stroke: #8baa36;
+          stroke: var(--color-icon-active);
         }
       }
       > svg {
-        fill: black;
-        stroke: black;
+        fill: var(--color-icon-idle);
+        stroke: var(--color-icon-idle);
         width: 2rem;
         height: 2rem;
       }
     }
     > p {
-      color: #23262a;
+      color: var(--color-text);
       text-align: center;
       font-size: 1.4rem;
       line-height: 1.28;
@@ -79,6 +107,28 @@ export const StyledDiv = styled(motion.div)`
         @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
           font-size: 1.6rem;
           height: 5.9rem;
+        }
+        &:first-of-type {
+          background: var(--color-button-logout-bg-idle);
+          border-color: var(--color-button-logout-border-idle);
+          color: var(--color-button-logout-text-idle);
+          &:hover,
+          &:focus {
+            background: var(--color-button-logout-bg-active);
+            border-color: var(--color-button-logout-border-active);
+            color: var(--color-button-logout-text-active);
+          }
+        }
+        &:nth-of-type(2) {
+          background: var(--color-button-cancel-bg-idle);
+          border-color: var(--color-button-cancel-border-idle);
+          color: var(--color-button-cancel-text-idle);
+          &:hover,
+          &:focus {
+            background: var(--color-button-cancel-bg-active);
+            border-color: var(--color-button-cancel-border-active);
+            color: var(--color-button-cancel-text-active);
+          }
         }
       }
     }

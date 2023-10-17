@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import leaves from "../../assets/images/leaves@1x.webp";
+
 export const StyledSection = styled.section`
   --color-brand-highlight: ${({ theme }) => theme.brandColors.main};
   --color-hero-text: ${({ theme }) => theme.hero.text};
@@ -11,7 +12,8 @@ export const StyledSection = styled.section`
   flex-direction: column;
   align-items: center;
   padding-bottom: 14.7rem;
-
+  width: 100%;
+  min-height: 54.36rem;
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     flex-direction: row;
     padding: 9.5rem 0;
@@ -52,6 +54,7 @@ export const StyledSection = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
+
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       align-items: start;
       max-width: 36.2rem;
@@ -112,6 +115,8 @@ export const StyledSection = styled.section`
   > div:nth-of-type(2) {
     position: relative;
     margin-bottom: 4.4rem;
+    width: 100%;
+    max-width: 53rem;
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       margin-bottom: 0rem;
     }
@@ -149,11 +154,11 @@ export const StyledSection = styled.section`
       content: "";
       position: absolute;
       top: 27%;
-      left: 72%;
+      left: 51%;
       background-image: url(${leaves});
       background-size: contain;
-      width: 275%;
-      height: 275%;
+      width: 200%;
+      height: 200%;
       transform: translate(-50%, -50%) rotate(60deg) scaleX(-1);
       filter: blur(0.25rem);
       z-index: -1;
@@ -168,8 +173,10 @@ export const StyledSection = styled.section`
     }
     picture {
       margin-bottom: 2.4rem;
-      position: relative;
+      max-width: 100%;
       min-width: 34rem;
+      width: 100%;
+      height: 100%;
 
       @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
         margin-bottom: 0rem;
@@ -178,6 +185,8 @@ export const StyledSection = styled.section`
         max-width: 100%;
         min-width: 34rem;
         width: 100%;
+        height: 100%;
+        background: transparent;
         @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
           max-width: 110%;
           min-width: 40rem;

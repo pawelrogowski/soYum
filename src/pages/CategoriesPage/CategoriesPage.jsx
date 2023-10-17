@@ -17,7 +17,9 @@ const images = [
 const CategoriesPage = () => {
   return (
     <MainContainer>
-      <Heading as="h1">Categories</Heading>
+      <Heading as="h1" id="Categories">
+        Categories
+      </Heading>
       <CategoryFilter />
       <CardGallery
         data={images}

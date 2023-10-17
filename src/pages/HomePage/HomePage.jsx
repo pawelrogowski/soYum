@@ -1,4 +1,5 @@
 import { useMediaQuery } from "react-responsive";
+import { Link } from "react-router-dom";
 
 import placeholder from "../../assets/icons/food-placeholder.svg";
 import img2 from "../../assets/images/food/M6A1135.jpg";
@@ -61,7 +62,9 @@ const HomePage = () => {
         buttonText="See All"
         limit={imgNumPerCategory}
       />
-      <Button variant="outlineBig">Other Categories</Button>
+      <Link to="/categories">
+        <Button variant="outlineBig">Other Categories</Button>
+      </Link>
     </MainContainer>
   );
 };
