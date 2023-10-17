@@ -10,9 +10,11 @@ import { Header } from "../../components/Header/Header";
 import { LoaderDots } from "../../components/LoaderDots/LoaderDots";
 import { LogoutModal } from "../../components/LogoutModal/LogoutModal";
 import { NavigationMobile } from "../../components/NavigationMobile/NavigationMobile";
+import { useScrollToTopOnRouteChange } from "../../hooks/useScrollToTopOnRouteChange.js";
 import { breakpoints } from "../../styles/themes";
 
 export const MainLayout = () => {
+  useScrollToTopOnRouteChange();
   const isProfileUpdateMenuOpen = useSelector(
     (state) => state.modal.isProfileUpdateMenuOpen
   );

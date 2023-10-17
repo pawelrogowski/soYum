@@ -10,6 +10,7 @@ import { CardGallery } from "../../components/CardGallery/CardGallery";
 import { Hero } from "../../components/Hero/Hero";
 import { breakpoints } from "../../styles/themes";
 import { MainContainer } from "./HomePage.styled";
+
 const images = [
   { placeholder: placeholder, img: img1, caption: "Banana Pancakes" },
   { placeholder: placeholder, img: img2, caption: "Ham Hock Colcannon" },
