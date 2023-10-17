@@ -46,16 +46,13 @@ export const StyledFigure = styled.figure`
       background cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
   }
 
-  picture {
-    width: 100%;
-  }
-
   img {
     transition: transform cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
     width: 30rem;
     width: 100%;
     height: 30rem;
     height: auto;
+    aspect-ratio: 343 / 323;
     &:hover,
     &:focus {
       transform: scale(1.3);

@@ -9,7 +9,13 @@ export const Card = ({ placeholder, img, caption }) => {
       <Link to="#">
         <picture>
           <source srcSet={img} />
-          <img src={placeholder} alt="" loading="lazy" />
+          <img
+            src={placeholder}
+            width="343px"
+            height="323px"
+            alt=""
+            loading="lazy"
+          />
         </picture>
         <figcaption>{caption}</figcaption>
       </Link>

@@ -53,7 +53,6 @@ export const StyledListItem = styled.li`
     width: 124px;
     height: 124px;
     aspect-ratio: 1 / 1;
-    background-color: var(--color-background-image);
     @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       width: 228px;
       height: 232px;
@@ -69,7 +68,7 @@ export const StyledListItem = styled.li`
       width: 124px;
       height: 124px;
       aspect-ratio: 1 / 1;
-      background-color: var(--color-background-image);
+
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         width: 228px;
         height: 232px;

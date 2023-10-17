@@ -16,7 +16,7 @@ export const RecipeCard = ({
     <StyledListItem $variant={variant}>
       <picture>
         <source />
-        <img src={image} />
+        <img src={image} width="124px" height="124px" />
       </picture>
 
       <Button variant="rectSmall">

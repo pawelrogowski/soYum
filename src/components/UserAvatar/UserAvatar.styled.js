@@ -27,6 +27,9 @@ export const StyledDiv = styled.div`
         color: var(--color-userAvatar-fontHover);
         mix-blend-mode: initial;
       }
+      img {
+        box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.9);
+      }
     }
 
     &::before {
@@ -56,11 +59,13 @@ export const StyledDiv = styled.div`
       width: 3.4rem;
       border-radius: 50%;
       background-color: lightgrey;
-      transition: border-color cubic-bezier(0.17, 0.67, 1, 1.23) 250ms;
+      transition: border-color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
+        box-shadow cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
 
       @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         height: 4.4rem;
         width: 4.4rem;
+        aspect-ratio: 1 / 1;
       }
     }
 
