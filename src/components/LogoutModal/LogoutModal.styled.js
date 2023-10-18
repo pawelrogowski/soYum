@@ -53,11 +53,11 @@ export const StyledDiv = styled(motion.div)`
 
     background: var(--color-bg);
     box-shadow: 0px 4px 48px 0px rgba(0, 0, 0, 0.1);
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       gap: 3.2rem;
       padding: 5rem 4rem;
     }
-    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       padding: 5rem 5rem;
     }
     > button {
@@ -91,7 +91,8 @@ export const StyledDiv = styled(motion.div)`
       font-size: 1.4rem;
       line-height: 1.28;
       letter-spacing: -0.028rem;
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.tablet}) {
         font-size: 1.8rem;
         letter-spacing: -0.036rem;
         line-height: 1.333;
@@ -104,7 +105,8 @@ export const StyledDiv = styled(motion.div)`
         height: 4.9rem;
         font-size: 1.4rem;
         line-height: 1.285;
-        @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        @media screen and (min-width: ${({ theme }) =>
+            theme.breakpoints.tablet}) {
           font-size: 1.6rem;
           height: 5.9rem;
         }

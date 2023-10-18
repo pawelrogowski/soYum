@@ -15,12 +15,12 @@ export const StyledSection = styled.section`
   width: 100%;
   min-height: 54.36rem;
   min-width: 32rem;
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     flex-direction: row;
     padding: 9.5rem 0;
     padding-bottom: 20rem;
   }
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     gap: 2rem;
   }
   &:after {
@@ -36,14 +36,14 @@ export const StyledSection = styled.section`
     filter: blur(0.25rem);
     z-index: -1;
     background-repeat: no-repeat;
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       top: 19%;
       left: -59px;
       width: 35%;
       height: 35%;
       transform: translate(-50%, -50%) rotate(23deg) scaleX(-1);
     }
-    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       top: 10%;
       left: -116px;
       width: 45%;
@@ -56,11 +56,11 @@ export const StyledSection = styled.section`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       align-items: start;
       max-width: 36.2rem;
     }
-    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       max-width: 50rem;
     }
     h1 {
@@ -71,14 +71,16 @@ export const StyledSection = styled.section`
       letter-spacing: -0.3rem;
       margin-bottom: 1.4rem;
       font-weight: 400;
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.tablet}) {
         font-size: 7.2rem;
         line-height: 0.72;
         letter-spacing: -0.036rem;
         margin-bottom: 3.6rem;
         text-align: start;
       }
-      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.desktop}) {
         font-size: 10rem;
         line-height: 1;
         letter-spacing: -0.05rem;
@@ -99,13 +101,15 @@ export const StyledSection = styled.section`
       max-width: 25rem;
       font-weight: 400;
 
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.tablet}) {
         max-width: 100%;
         text-align: start;
         margin-bottom: 4.2rem;
       }
 
-      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.desktop}) {
         font-size: 1.8rem;
         line-height: 1.33;
         letter-spacing: -0.036rem;
@@ -117,7 +121,7 @@ export const StyledSection = styled.section`
     position: relative;
     margin-bottom: 4.4rem;
     width: 100%;
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       margin-bottom: 0rem;
     }
     &:before {
@@ -131,7 +135,8 @@ export const StyledSection = styled.section`
       border-radius: 10rem;
       z-index: -1;
       transform: translate(0, -50%) rotate(45deg);
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.tablet}) {
         width: 200%;
         height: 200%;
         top: 40%;
@@ -140,7 +145,8 @@ export const StyledSection = styled.section`
         transform: translate(0, -50%) rotate(30deg);
       }
 
-      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.desktop}) {
         width: 600%;
         height: 600%;
         top: -120%;
@@ -163,7 +169,8 @@ export const StyledSection = styled.section`
       filter: blur(0.25rem);
       z-index: -1;
       background-repeat: no-repeat;
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.tablet}) {
         top: 37%;
         left: 45%;
         width: 235%;
@@ -180,13 +187,15 @@ export const StyledSection = styled.section`
         height: auto;
         background: transparent;
         aspect-ratio: 320 / 296;
-        @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        @media screen and (min-width: ${({ theme }) =>
+            theme.breakpoints.tablet}) {
           max-width: 110%;
           min-width: 40rem;
           width: 110%;
           aspect-ratio: 378 / 351;
         }
-        @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        @media screen and (min-width: ${({ theme }) =>
+            theme.breakpoints.desktop}) {
           min-width: 46.3rem;
           margin-bottom: 0rem;
           aspect-ratio: 578 / 539;
@@ -196,17 +205,18 @@ export const StyledSection = styled.section`
   }
   form {
     height: 5.2rem;
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       height: 5.9rem;
     }
-    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       height: 7rem;
     }
     > button {
       height: 100%;
       width: 11.3rem;
       font-size: 1.4rem;
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.tablet}) {
         width: 16.1rem;
         font-size: 1.6rem;
       }
@@ -215,7 +225,8 @@ export const StyledSection = styled.section`
       height: 100%;
       padding-right: 12.3rem;
       font-size: 1.2rem;
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.tablet}) {
         font-size: 1.6rem;
         padding-right: 17.1rem;
       }

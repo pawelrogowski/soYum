@@ -11,7 +11,7 @@ export const StyledUl = styled.ul`
   align-items: center;
   gap: 1.4rem;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     gap: 1.8rem;
   }
 
@@ -38,7 +38,7 @@ export const StyledUl = styled.ul`
     height: 1.8rem;
     fill: var(--color-social-fill);
     transition: fill cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       width: 2rem;
       height: 2rem;
     }

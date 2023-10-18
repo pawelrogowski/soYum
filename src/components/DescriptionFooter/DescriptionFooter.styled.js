@@ -6,7 +6,7 @@ export const StyledUl = styled.ul`
   gap: 1.4rem;
   list-style: disc;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${(props) => props.theme.breakpoints.tablet}) {
     display: flex;
   }
 

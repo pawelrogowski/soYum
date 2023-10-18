@@ -10,7 +10,7 @@ export const StyledButton = styled.button`
   height: 100%;
   cursor: pointer;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     width: 3.2rem;
   }
 
@@ -21,7 +21,7 @@ export const StyledButton = styled.button`
     transition: stroke cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
     mix-blend-mode: var(--blend-mode);
 
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       width: 3.2rem;
       height: 3.2rem;
     }

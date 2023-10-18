@@ -39,7 +39,7 @@ export const StyledForm = styled(Form)`
     border cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
     fill cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${(props) => props.theme.breakpoints.tablet}) {
     padding: 4.4rem 5rem;
     min-width: 50rem;
   }
@@ -53,7 +53,8 @@ export const StyledForm = styled(Form)`
     letter-spacing: -0.048rem;
     font-weight: 600;
 
-    @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${(props) =>
+        props.theme.breakpoints.tablet}) {
       font-size: 2.8rem;
       line-height: 3rem;
       letter-spacing: -0.056rem;
@@ -64,7 +65,8 @@ export const StyledForm = styled(Form)`
     margin-top: 3.2rem;
     margin-bottom: 2.8rem;
 
-    @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${(props) =>
+        props.theme.breakpoints.tablet}) {
       margin-bottom: 5rem;
     }
 
@@ -72,7 +74,8 @@ export const StyledForm = styled(Form)`
       position: relative;
       margin-bottom: 1.2rem;
 
-      @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${(props) =>
+          props.theme.breakpoints.tablet}) {
         margin-bottom: 2.4rem;
       }
 
@@ -84,7 +87,8 @@ export const StyledForm = styled(Form)`
         transition: stroke cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
           fill cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
 
-        @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+        @media screen and (min-width: ${(props) =>
+            props.theme.breakpoints.tablet}) {
           width: 2.4rem;
           height: 2.4rem;
           top: 1.9rem;
@@ -123,7 +127,8 @@ export const StyledForm = styled(Form)`
       line-height: 1rem;
       font-weight: 400;
 
-      @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${(props) =>
+          props.theme.breakpoints.tablet}) {
         bottom: -1.9rem;
         font-size: 1.4rem;
         line-height: 1.4rem;
@@ -163,7 +168,8 @@ export const StyledForm = styled(Form)`
         background: var(--color-bgIdle);
       }
 
-      @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${(props) =>
+          props.theme.breakpoints.tablet}) {
         font-size: 1.8rem;
         height: 6rem;
       }
@@ -192,7 +198,8 @@ export const StyledForm = styled(Form)`
       border: 0.2rem solid var(--color-buttonBorderActive);
     }
 
-    @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${(props) =>
+        props.theme.breakpoints.tablet}) {
       height: 6rem;
     }
   }
@@ -206,7 +213,7 @@ export const StyledForm = styled(Form)`
                 -webkit-text-security: square;
 
                 margin-bottom: 2rem;
-                @media (min-width: ${(props) =>
+                @media screen and (min-width: ${(props) =>
                     props.theme.breakpoints.tablet}) {
                   margin-bottom: 2.8rem;
                 }
@@ -230,7 +237,7 @@ export const StyledForm = styled(Form)`
               input[name="password"] {
                 -webkit-text-security: square;
                 margin-bottom: 2rem;
-                @media (min-width: ${(props) =>
+                @media screen and (min-width: ${(props) =>
                     props.theme.breakpoints.tablet}) {
                   margin-bottom: 2.8rem;
                 }
@@ -278,7 +285,7 @@ export const StyledForm = styled(Form)`
             li {
               input[name="name"] {
                 margin-bottom: 2rem;
-                @media (min-width: ${(props) =>
+                @media screen and (min-width: ${(props) =>
                     props.theme.breakpoints.tablet}) {
                   margin-bottom: 2.8rem;
                 }
@@ -326,7 +333,7 @@ export const StyledForm = styled(Form)`
             li {
               input[name="email"] {
                 margin-bottom: 2rem;
-                @media (min-width: ${(props) =>
+                @media screen and (min-width: ${(props) =>
                     props.theme.breakpoints.tablet}) {
                   margin-bottom: 2.8rem;
                 }
@@ -352,7 +359,7 @@ export const StyledForm = styled(Form)`
             li {
               input[name="email"] {
                 margin-bottom: 2rem;
-                @media (min-width: ${(props) =>
+                @media screen and (min-width: ${(props) =>
                     props.theme.breakpoints.tablet}) {
                   margin-bottom: 2.8rem;
                 }

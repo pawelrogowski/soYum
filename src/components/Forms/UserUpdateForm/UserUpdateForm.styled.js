@@ -61,10 +61,10 @@ export const StyledFormikForm = styled(Form)`
   > div:first-of-type {
     position: relative;
     margin-bottom: 5.4rem;
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       margin-bottom: 5rem;
     }
-    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       margin-bottom: 5.2rem;
     }
     &:hover {
@@ -81,7 +81,8 @@ export const StyledFormikForm = styled(Form)`
     > picture {
       width: 8.8rem;
       height: 8.8rem;
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.tablet}) {
         width: 10.3rem;
         height: 10.3rem;
       }
@@ -93,7 +94,8 @@ export const StyledFormikForm = styled(Form)`
         width: 8.8rem;
         height: 8.8rem;
         background-color: var(--color-img-bg);
-        @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        @media screen and (min-width: ${({ theme }) =>
+            theme.breakpoints.tablet}) {
           width: 10.3rem;
           height: 10.3rem;
         }
@@ -128,7 +130,7 @@ export const StyledFormikForm = styled(Form)`
     flex-direction: column;
     position: relative;
     gap: 2.4rem;
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       gap: 3.2rem;
     }
     > svg {
@@ -138,7 +140,8 @@ export const StyledFormikForm = styled(Form)`
       stroke: var(--color-input-icon-user-idle);
       left: 1.2rem;
       top: 1.3rem;
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.tablet}) {
         left: 1.2rem;
         top: 1.7rem;
         width: 2.4rem;
@@ -157,7 +160,8 @@ export const StyledFormikForm = styled(Form)`
         height: 1.6rem;
         fill: #8baa36;
       }
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.tablet}) {
         right: 4.8rem;
         top: 2rem;
         > svg {
@@ -185,7 +189,8 @@ export const StyledFormikForm = styled(Form)`
         stroke: var(--color-input-icon-edit-idle);
         transition: stroke 200ms;
       }
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.tablet}) {
         right: 1.8rem;
         top: 2rem;
         > svg {
@@ -206,7 +211,8 @@ export const StyledFormikForm = styled(Form)`
         height: 1.7rem;
         stroke: red;
       }
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.tablet}) {
         right: 1.8rem;
         top: 2rem;
         > svg {
@@ -227,7 +233,8 @@ export const StyledFormikForm = styled(Form)`
       font-size: 1.4rem;
       letter-spacing: -0.036rem;
       background: var(--color-input-bg-idle);
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.tablet}) {
         height: 5.8rem;
         font-size: 1.8rem;
         padding: 0 7.4rem 0 4.6rem;
@@ -257,7 +264,8 @@ export const StyledFormikForm = styled(Form)`
         border-color: var(--color-button-border-active);
         color: var(--color-button-text-active);
       }
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.tablet}) {
         height: 5.9rem;
         font-size: 1.6rem;
         line-height: 1.125;

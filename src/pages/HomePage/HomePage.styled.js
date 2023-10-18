@@ -13,12 +13,12 @@ export const MainContainer = styled.main`
   align-items: center;
   padding-bottom: 10rem;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding-bottom: 20rem;
   }
   section:last-of-type {
     padding-bottom: 6rem;
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       padding-bottom: 10rem;
     }
   }
@@ -36,7 +36,7 @@ export const MainContainer = styled.main`
     filter: blur(0.15rem);
     transform: scaleX(-1);
     z-index: -1;
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       width: 33.5rem;
       height: 51.7rem;
       bottom: -29.9rem;

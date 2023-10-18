@@ -7,10 +7,10 @@ export const StyledSection = styled.section`
     flex-direction: column;
     width: 100%;
     gap: 1.8rem;
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       gap: 4rem;
     }
-    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       gap: 5rem;
     }
   }

@@ -11,10 +11,10 @@ export const StyledNav = styled.nav`
     flex-direction: column;
     gap: 1.4rem;
 
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       gap: 2rem;
     }
-    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       gap: 2.4rem;
     }
 

@@ -29,7 +29,7 @@ export const StartPageContainer = styled.main`
     bgImageMobile3x
   )}
 
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${(props) => props.theme.breakpoints.tablet}) {
     ${responsiveBackgroundImage(
       bgImageTablet1x,
       bgImageTablet2x,
@@ -37,7 +37,7 @@ export const StartPageContainer = styled.main`
     )};
   }
 
-  @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
+  @media screen and (min-width: ${(props) => props.theme.breakpoints.desktop}) {
     ${responsiveBackgroundImage(
       bgImageDesktop1x,
       bgImageDesktop2x,
@@ -51,7 +51,8 @@ export const StartPageContainer = styled.main`
     max-height: 5.4rem;
     width: 5.4rem;
     height: 5.4rem;
-    @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${(props) =>
+        props.theme.breakpoints.tablet}) {
       max-width: 6.8rem;
       max-height: 6.8rem;
       width: 6.8rem;
@@ -67,7 +68,8 @@ export const StartPageContainer = styled.main`
     line-height: 2.4rem;
     letter-spacing: -0.048rem;
     text-align: center;
-    @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${(props) =>
+        props.theme.breakpoints.tablet}) {
       font-size: 2.8rem;
       line-height: 2.8rem;
       letter-spacing: -0.056rem;
@@ -84,7 +86,8 @@ export const StartPageContainer = styled.main`
     font-weight: 400;
     line-height: 1.8rem;
     letter-spacing: -0.028rem;
-    @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${(props) =>
+        props.theme.breakpoints.tablet}) {
       margin-bottom: 4rem;
       max-width: 50.5rem;
       font-size: 1.8rem;
@@ -104,7 +107,8 @@ export const StartPageContainer = styled.main`
       flex-direction: row;
       gap: 1.2rem;
 
-      @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${(props) =>
+          props.theme.breakpoints.tablet}) {
         gap: 1.8rem;
       }
 
@@ -131,7 +135,8 @@ export const StartPageContainer = styled.main`
             border-color: ${({ theme }) =>
               theme.startPage.registerButton.borderActive};
           }
-          @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+          @media screen and (min-width: ${(props) =>
+              props.theme.breakpoints.tablet}) {
             font-size: 1.6rem;
             width: 18.4rem;
             height: 6.7rem;
@@ -156,7 +161,8 @@ export const StartPageContainer = styled.main`
             background-color: ${({ theme }) =>
               theme.startPage.signinButton.bgActive};
           }
-          @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+          @media screen and (min-width: ${(props) =>
+              props.theme.breakpoints.tablet}) {
             font-size: 1.6rem;
             width: 14.1rem;
             height: 6.7rem;

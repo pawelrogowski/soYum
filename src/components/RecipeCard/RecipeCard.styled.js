@@ -39,11 +39,11 @@ export const StyledListItem = styled.li`
   border-radius: 0.8rem;
   height: 15.2rem;
   overflow: hidden;
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding: 2.8rem 2.4rem;
     height: 28.8rem;
   }
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     padding: 4rem;
     height: 40.4rem;
     gap: 5.4rem;
@@ -53,12 +53,12 @@ export const StyledListItem = styled.li`
     width: 124px;
     height: 124px;
     aspect-ratio: 1 / 1;
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       width: 228px;
       height: 232px;
       aspect-ratio: 228 / 232;
     }
-    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       width: 318px;
       height: 324px;
       aspect-ratio: 318 / 324;
@@ -69,12 +69,14 @@ export const StyledListItem = styled.li`
       height: 124px;
       aspect-ratio: 1 / 1;
 
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.tablet}) {
         width: 228px;
         height: 232px;
         aspect-ratio: 228 / 232;
       }
-      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.desktop}) {
         width: 318px;
         height: 324px;
         aspect-ratio: 318 / 324;
@@ -94,13 +96,13 @@ export const StyledListItem = styled.li`
     display: flex;
     justify-content: center;
     align-items: center;
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       width: 3.8rem;
       height: 3.8rem;
       top: 2.8rem;
       right: 2.4rem;
     }
-    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       top: 4rem;
       right: 4rem;
     }
@@ -109,7 +111,8 @@ export const StyledListItem = styled.li`
       height: 1.4rem;
       stroke: var(--color-button-delete-icon-idle);
       transition: stroke 200ms;
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.tablet}) {
         width: 2.2rem;
         height: 2.2rem;
       }
@@ -130,10 +133,10 @@ export const StyledListItem = styled.li`
     width: 100%;
     overflow: hidden;
 
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       gap: 2.8rem;
     }
-    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       gap: 4rem;
     }
 
@@ -147,11 +150,13 @@ export const StyledListItem = styled.li`
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.tablet}) {
         font-size: 2.4rem;
         line-height: 1.25;
       }
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.tablet}) {
         font-size: 2.4rem;
         line-height: 1.25;
       }
@@ -168,11 +173,13 @@ export const StyledListItem = styled.li`
       overflow: hidden;
       padding-right: 1rem;
       text-wrap: preety;
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.tablet}) {
         font-size: 1.4rem;
         line-height: 1.28;
       }
-      @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.desktop}) {
         font-size: 1.8rem;
         line-height: 1.33;
         letter-spacing: -0.036rem;
@@ -191,12 +198,14 @@ export const StyledListItem = styled.li`
         font-size: 1rem;
         line-height: 1.5;
         align-self: flex-end;
-        @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        @media screen and (min-width: ${({ theme }) =>
+            theme.breakpoints.tablet}) {
           font-size: 1.4rem;
           max-width: 13.8rem;
           max-height: 4.5rem;
         }
-        @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        @media screen and (min-width: ${({ theme }) =>
+            theme.breakpoints.desktop}) {
           font-size: 1.7rem;
           max-width: 17.2rem;
           max-height: 5.9rem;
@@ -215,7 +224,8 @@ export const StyledListItem = styled.li`
         line-height: 1;
         align-self: flex-end;
         letter-spacing: -0.024rem;
-        @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        @media screen and (min-width: ${({ theme }) =>
+            theme.breakpoints.tablet}) {
           font-size: 1.4rem;
         }
       }

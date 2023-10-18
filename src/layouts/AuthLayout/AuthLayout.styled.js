@@ -4,7 +4,7 @@ export const PageContent = styled.div`
   max-width: 1860px;
   margin: 0 auto;
   padding: 9.6rem 2rem 10rem 2rem;
-  @media (max-height: 800px) {
+  @media screen and (max-height: 800px) {
     padding-top: 2.5rem;
   }
   min-height: 100dvh;
@@ -16,13 +16,13 @@ export const PageContent = styled.div`
   justify-content: initial;
   align-items: center;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    @media (max-height: 1100px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (max-height: 1100px) {
       padding-top: 2.5rem;
     }
   }
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -60,7 +60,7 @@ export const PageContent = styled.div`
     max-width: 50rem;
     width: 100%;
 
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       min-height: 40rem;
     }
   }
@@ -75,7 +75,8 @@ export const PageContent = styled.div`
     > a {
       font-size: 1.4rem;
 
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.tablet}) {
         font-size: 1.6rem;
       }
       text-decoration-line: underline;
