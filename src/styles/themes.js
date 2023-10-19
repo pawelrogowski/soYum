@@ -407,6 +407,12 @@ export const lightTheme = {
       textDisabled: "#23262A",
     },
   },
+  recipeTextInput: {
+    borderIdle: "#e0e0e0",
+    borderActive: brandColors.main,
+    font: "#000",
+    fontPlaceholder: "#0000004D",
+  },
 };
 
 export const darkTheme = {
@@ -740,5 +746,11 @@ export const darkTheme = {
       textActive: brandColors.main,
       textDisabled: "#23262A",
     },
+  },
+  recipeTextInput: {
+    borderIdle: "#FAFAFA4D",
+    borderActive: brandColors.main,
+    font: "#fafafa",
+    fontPlaceholder: "#FAFAFA4D",
   },
 };

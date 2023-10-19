@@ -2,6 +2,7 @@ import { Field, Formik } from "formik";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import avatar from "../../../assets/images/avatar.webp";
+import useUploadWidget from "../../../hooks/useUploadWidget";
 import { userEditSchema } from "../../../schemas/userEditSchema";
 import { Button } from "../../Button/Button";
 import { Icon } from "../../Icon/Icon";
@@ -14,26 +15,11 @@ const initialValues = {
 };
 
 export const UserUpdateForm = () => {
+  useUploadWidget();
   const [usernameValue, setUsernameValue] = useState(initialValues.username);
   const [isUsernameEditable, setIsUsernameEditable] = useState(false);
   const usernameInputRef = useRef(null);
   const [avatarPreview, setAvatarPreview] = useState(null);
-
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://widget.cloudinary.com/v2.0/global/all.js";
-    script.async = true;
-    document.head.appendChild(script);
-
-    return () => {
-      document.head.removeChild(script);
-      document.querySelectorAll("iframe").forEach((iframe) => {
-        if (iframe.title === "Upload Widget") {
-          iframe.remove();
-        }
-      });
-    };
-  }, []);
 
   useEffect(() => {
     if (isUsernameEditable) {
@@ -99,11 +85,7 @@ export const UserUpdateForm = () => {
           <div>
             <picture>
               <source srcSet={avatarPreview || avatar} />
-              <img
-                src={avatarPreview || avatar}
-                width="88px"
-                onClick={handleAvatarClick}
-              />
+              <img src={avatarPreview || avatar} width="88px" onClick={handleAvatarClick} />
             </picture>
             <button type="button" onClick={handleAvatarClick}>
               <Icon icon="plus" />
@@ -122,17 +104,15 @@ export const UserUpdateForm = () => {
               value={usernameValue}
               onChange={(e) => setUsernameValue(e.target.value)}
             />
-            {isUsernameEditable &&
-              !errors.username &&
-              values.username !== "" && (
-                <button
-                  className="confirm-username-button"
-                  type="button"
-                  onClick={handleUsernameEdit}
-                >
-                  <Icon icon="checkbox" />
-                </button>
-              )}
+            {isUsernameEditable && !errors.username && values.username !== "" && (
+              <button
+                className="confirm-username-button"
+                type="button"
+                onClick={handleUsernameEdit}
+              >
+                <Icon icon="checkbox" />
+              </button>
+            )}
             {isUsernameEditable ? (
               <button
                 className="edit-username-button--cancel"
@@ -145,20 +125,12 @@ export const UserUpdateForm = () => {
                 <Icon icon="x" />
               </button>
             ) : (
-              <button
-                className="edit-username-button"
-                type="button"
-                onClick={handleUsernameEdit}
-              >
+              <button className="edit-username-button" type="button" onClick={handleUsernameEdit}>
                 <Icon icon="edit" />
               </button>
             )}
 
-            <Button
-              type="submit"
-              variant="rectBig"
-              disabled={isUsernameEditable}
-            >
+            <Button type="submit" variant="rectBig" disabled={isUsernameEditable}>
               Save Changes
             </Button>
           </div>
