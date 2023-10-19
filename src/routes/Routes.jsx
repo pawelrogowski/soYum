@@ -8,26 +8,14 @@ const MainLayout = lazy(() => import("../layouts/MainLayout/MainLayout"));
 
 // pages
 const SignInPage = lazy(() => import("../pages/SignInPage/SignInPage.jsx"));
-const RegisterPage = lazy(() =>
-  import("../pages/RegistrationPage/RegistrationPage.jsx")
-);
+const RegisterPage = lazy(() => import("../pages/RegistrationPage/RegistrationPage.jsx"));
 const StartPage = lazy(() => import("../pages/StartPage/StartPage.jsx"));
 const HomePage = lazy(() => import("../pages/HomePage/HomePage.jsx"));
-const CategoriesPage = lazy(() =>
-  import("../pages/CategoriesPage/CategoriesPage.jsx")
-);
-const MyRecipesPage = lazy(() =>
-  import("../pages/MyRecipesPage/MyRecipesPage.jsx")
-);
-const AddRecipePage = lazy(() =>
-  import("../pages/AddRecipePage/AddRecipePage")
-);
-const FavoritesPage = lazy(() =>
-  import("../pages/FavoritesPage/FavoritesPage.jsx")
-);
-const NotFoundPage = lazy(() =>
-  import("../pages/NotFoundPage/NotFoundPage.jsx")
-);
+const CategoriesPage = lazy(() => import("../pages/CategoriesPage/CategoriesPage.jsx"));
+const MyRecipesPage = lazy(() => import("../pages/MyRecipesPage/MyRecipesPage.jsx"));
+const AddRecipePage = lazy(() => import("../pages/AddRecipePage/AddRecipePage"));
+const FavoritesPage = lazy(() => import("../pages/FavoritesPage/FavoritesPage.jsx"));
+const NotFoundPage = lazy(() => import("../pages/NotFoundPage/NotFoundPage.jsx"));
 
 export const AppRoutes = () => (
   <Suspense fallback={<LoaderDots />}>
