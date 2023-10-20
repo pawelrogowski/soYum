@@ -17,7 +17,6 @@ export const AddRecipeForm = () => {
           <RecipeTextInput name="recipe title" placeholder="Enter item title" />
           <RecipeTextInput name="recipe about" placeholder="Enter about recipe" />
           <CategorySelect />
-          <CategorySelect />
         </div>
       </StyledFormikForm>
     </Formik>

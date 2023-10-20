@@ -413,6 +413,20 @@ export const lightTheme = {
     font: "#000",
     fontPlaceholder: "#0000004D",
   },
+  categorySelect: {
+    bg: "#fff",
+    textIdle: "#22252a",
+    textActive: brandColors.main,
+    textPlaceholder: "#0000004d",
+    iconIdle: "#22252a",
+    iconActive: brandColors.main,
+    iconRemove: "red",
+    borderIdle: "#e0e0e0",
+    borderActive: brandColors.main,
+    accent: brandColors.main,
+    scrollbarBg: "#fff",
+    scrollbarThumb: brandColors.main,
+  },
 };
 
 export const darkTheme = {
@@ -752,5 +766,19 @@ export const darkTheme = {
     borderActive: brandColors.main,
     font: "#fafafa",
     fontPlaceholder: "#FAFAFA4D",
+  },
+  categorySelect: {
+    bg: "#8BAA36",
+    textIdle: "#fafafa",
+    textActive: "#fafafa",
+    textPlaceholder: "#FAFAFA8D",
+    iconIdle: "#fafafa",
+    iconActive: brandColors.main,
+    iconRemove: "red",
+    borderIdle: "#FAFAFA4D",
+    borderActive: brandColors.main,
+    accent: brandColors.main,
+    scrollbarBg: "#8BAA36",
+    scrollbarThumb: "#22252a",
   },
 };

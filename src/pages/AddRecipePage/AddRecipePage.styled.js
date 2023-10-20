@@ -12,9 +12,6 @@ export const MainContainer = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  > section {
-    width: 100%;
-  }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding-bottom: 20rem;
@@ -43,15 +40,18 @@ export const MainContainer = styled.main`
       rotate: -217deg;
     }
   }
+  > section {
+    width: 100%;
 
-  > h1 {
-    margin-bottom: 6rem;
-    align-self: flex-start;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-      margin-bottom: 7.4rem;
+    > h1 {
+      margin-bottom: 6rem;
+      align-self: flex-start;
+      @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        margin-bottom: 7.4rem;
+      }
     }
-  }
-  > nav {
-    margin-bottom: 6.6rem;
+    > nav {
+      margin-bottom: 6.6rem;
+    }
   }
 `;

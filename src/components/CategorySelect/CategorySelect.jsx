@@ -37,6 +37,7 @@ export const CategorySelect = () => {
       classNamePrefix="Select"
       options={options}
       onChange={handleChange}
+      placeholder="Categories"
     />
   );
 };
