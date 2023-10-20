@@ -12,6 +12,9 @@ export const MainContainer = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  > section {
+    width: 100%;
+  }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding-bottom: 20rem;

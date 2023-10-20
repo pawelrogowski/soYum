@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { useParams } from "react-router-dom";
 
-import image from "../../assets/images/food/placeholder.jpg";
+import image from "../../assets/images/placeholder.png";
 import { Heading } from "../../components/Heading/Heading";
 import { PaginationFilter } from "../../components/PaginationFilter/PaginationFilter";
 import { RecipeList } from "../../components/RecipeList/RecipeList";

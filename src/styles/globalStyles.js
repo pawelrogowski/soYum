@@ -28,18 +28,7 @@ export const GlobalStyles = createGlobalStyle`
 
   .activeLink {
     color: ${({ theme }) => theme.brandColors.main} !important;
-    position: relative;
-
-    &:after {
-      content: "";
-      position: absolute;
-      bottom: 0.6rem;
-      left: -1.8rem;
-      width: 0;
-      height: 0;
-      border: 0.4rem solid ${({ theme }) => theme.brandColors.main} ;
-      border-radius: 50%;
-    }
+    ;
   }
 
   .active-nav-link-mobile {
@@ -125,7 +114,7 @@ export const GlobalStyles = createGlobalStyle`
 	  border: 0.1rem solid SlateBlue;
 	  -webkit-text-fill-color: #fafafa;
 	  transition: background-color 0s 600000s, color 0s 600000s;
-    -webkit-box-shadow: 0 0 0px 10000px ${(props) =>
-      props.theme.authForm.bg} inset;
+    -webkit-box-shadow: 0 0 0px 10000px ${(props) => props.theme.authForm.bg} inset;
 	}
+
 `;

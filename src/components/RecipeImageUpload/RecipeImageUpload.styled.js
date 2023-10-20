@@ -5,14 +5,17 @@ export const StyledButton = styled.button`
   position: relative;
   width: 27.9rem;
   height: 26.8rem;
+  min-width: 27.9rem;
   background: #8baa36;
   border-radius: 0.8rem;
   overflow: hidden;
   border: 1px solid #8baa36;
   transition: scale 200ms, background-color 200ms, border-color 200ms;
+
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     width: 35.7rem;
     height: 34.4rem;
+    min-width: 35.7rem;
   }
 
   &:active {
