@@ -20,6 +20,7 @@ export const StyledDiv = styled.div`
   height: 4.4rem;
   transition: border-color 200ms;
   width: 100%;
+  cursor: pointer;
   &:hover,
   &:focus {
     border-bottom: 1px solid var(--color-border-active);
@@ -80,9 +81,11 @@ export const StyledDiv = styled.div`
           fill: var(--color-icon-idle);
           transition: fill 200ms;
           cursor: pointer;
-          &:focus,
-          &:hover {
-            fill: var(--color-text-active);
+        }
+        &:focus,
+        &:hover {
+          > svg {
+            fill: var(--color-icon-active);
           }
         }
         max-height: 1.4rem;
@@ -139,7 +142,7 @@ export const StyledDiv = styled.div`
         border-radius: 0.6rem;
         box-shadow: 0px 7px 8px 5px rgba(0, 0, 0, 0.1);
         min-height: 12.4rem;
-        margin-top: 1.4rem;
+        margin-top: 0.8rem;
         scrollbar-width: thin;
         scrollbar-color: var(--color-scrollbar-thumb) var(--color-scrollbar-bg);
         width: 100%;

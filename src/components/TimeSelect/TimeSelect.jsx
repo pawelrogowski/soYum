@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Select from "react-select";
 
 import { StyledDiv } from "./TimeSelect.styled.js";
@@ -10,9 +10,14 @@ const options = Array.from({ length: 240 / 5 }, (_, i) => {
 
 export const TimeSelect = () => {
   const [selectedOption, setSelectedOption] = useState("");
+  const ref = useRef(null);
 
   const handleChange = (option) => {
     setSelectedOption(option);
+  };
+
+  const handleClick = () => {
+    ref.current.focus();
   };
 
   useEffect(() => {
@@ -20,11 +25,12 @@ export const TimeSelect = () => {
   }, [selectedOption]);
 
   return (
-    <StyledDiv>
+    <StyledDiv onClick={handleClick}>
       <span className={selectedOption.value ? "no-placeholder" : ""}>
         {selectedOption.value ? `Cooking Time: ${selectedOption.value} min` : "Cooking Time"}
       </span>
       <Select
+        ref={ref}
         openMenuOnFocus
         unstyled
         classNamePrefix="Select"
