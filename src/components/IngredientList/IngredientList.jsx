@@ -12,6 +12,9 @@ export const IngredientList = () => {
       </div>
       <div>
         <IngredientSelect />
+        <IngredientSelect />
+        <IngredientSelect />
+        <IngredientSelect />
       </div>
     </StyledDiv>
   );

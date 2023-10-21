@@ -3,12 +3,7 @@ import Creatable from "react-select/creatable";
 import { Icon } from "../Icon/Icon";
 import { MeasureSelect } from "../MeasureSelect/MeasureSelect";
 import { StyledDiv } from "./IngredientSelect.styled";
-const options = [
-  { value: "tbs", label: "tbs" },
-  { value: "tsp", label: "tsp" },
-  { value: "kg", label: "kg" },
-  { value: "g", label: "g" },
-];
+const options = [{ value: "to be added", label: "to be added" }];
 export const IngredientSelect = () => {
   return (
     <StyledDiv>
@@ -23,6 +18,7 @@ export const IngredientSelect = () => {
         />
         <MeasureSelect />
       </div>
+
       <button type="button" aria-label="remove ingredient">
         <Icon icon="x" />
       </button>
