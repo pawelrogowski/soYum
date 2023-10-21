@@ -2,6 +2,7 @@ import { Formik } from "formik";
 import { useState } from "react";
 
 import { CategorySelect } from "../../CategorySelect/CategorySelect";
+import { IngredientList } from "../../IngredientList/IngredientList";
 import { RecipeImageUpload } from "../../RecipeImageUpload/RecipeImageUpload";
 import { RecipeTextInput } from "../../RecipeTextInput/RecipeTextInput";
 import { TimeSelect } from "../../TimeSelect/TimeSelect";
@@ -12,13 +13,16 @@ export const AddRecipeForm = () => {
   return (
     <Formik>
       <StyledFormikForm>
-        <RecipeImageUpload onImageUpload={setUploadedImageUrl} />
         <div>
-          <RecipeTextInput name="recipe title" placeholder="Enter item title" />
-          <RecipeTextInput name="recipe about" placeholder="Enter about recipe" />
-          <CategorySelect />
-          <TimeSelect />
+          <RecipeImageUpload onImageUpload={setUploadedImageUrl} />
+          <div>
+            <RecipeTextInput name="recipe title" placeholder="Enter item title" />
+            <RecipeTextInput name="recipe about" placeholder="Enter about recipe" />
+            <CategorySelect />
+            <TimeSelect />
+          </div>
         </div>
+        <IngredientList />
       </StyledFormikForm>
     </Formik>
   );
