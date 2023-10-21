@@ -298,12 +298,12 @@ export const lightTheme = {
     },
   },
   categoryFilter: {
-    textIdle: "#E0E0E0",
+    textIdle: "#bcbcbc",
     textActive: brandColors.main,
-    decorationIdle: "#E0E0E0",
+    decorationIdle: "#bcbcbc",
     decorationActive: brandColors.main,
     buttonIdle: "#81878F",
-    buttonDisabled: "#E0E0E0",
+    buttonDisabled: "#bcbcbc",
     buttonActive: brandColors.main,
   },
   recipeCard: {

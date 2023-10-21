@@ -10,6 +10,12 @@ export const StyledFormikForm = styled(Form)`
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 1.8rem;
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      gap: 3.1rem;
+    }
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      gap: 4rem;
+    }
   }
 `;

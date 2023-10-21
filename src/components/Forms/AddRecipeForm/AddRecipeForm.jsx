@@ -4,8 +4,8 @@ import { useState } from "react";
 import { CategorySelect } from "../../CategorySelect/CategorySelect";
 import { RecipeImageUpload } from "../../RecipeImageUpload/RecipeImageUpload";
 import { RecipeTextInput } from "../../RecipeTextInput/RecipeTextInput";
+import { TimeSelect } from "../../TimeSelect/TimeSelect";
 import { StyledFormikForm } from "./AddRecipeForm.styled";
-
 export const AddRecipeForm = () => {
   const [uploadedImageUrl, setUploadedImageUrl] = useState("");
 
@@ -17,6 +17,7 @@ export const AddRecipeForm = () => {
           <RecipeTextInput name="recipe title" placeholder="Enter item title" />
           <RecipeTextInput name="recipe about" placeholder="Enter about recipe" />
           <CategorySelect />
+          <TimeSelect />
         </div>
       </StyledFormikForm>
     </Formik>
