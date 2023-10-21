@@ -1,10 +1,16 @@
 import styled from "styled-components";
 
 export const StyledDiv = styled.div`
+  --color-text-idle: ${({ theme }) => theme.counter.textIdle};
+  --color-text-active: ${({ theme }) => theme.counter.textActive};
+  --color-icon-active: ${({ theme }) => theme.counter.iconActive};
+  --color-icon-idle: ${({ theme }) => theme.counter.iconIdle};
+  --color-icon-disabled: ${({ theme }) => theme.counter.iconDisabled};
+  --color-border: ${({ theme }) => theme.counter.border};
   padding: 0.7rem 1.4rem;
   display: flex;
   border-radius: 1.8rem;
-  border: 1px solid rgba(51, 51, 51, 0.3);
+  border: 1px solid var(--color-border);
   margin-left: auto;
   max-width: 11rem;
   min-width: 9.2rem;
@@ -18,14 +24,14 @@ export const StyledDiv = styled.div`
     &:hover,
     &:focus {
       > svg {
-        stroke: #8baa36;
+        stroke: var(--color-icon-active);
       }
     }
     > svg {
       transition: stroke 200ms;
       width: 1.4rem;
       height: 1.4rem;
-      stroke: #3333334d;
+      stroke: var(--color-icon-idle);
     }
     &:disabled {
       cursor: initial;
@@ -33,12 +39,12 @@ export const StyledDiv = styled.div`
         transition: stroke 200ms;
         width: 1.4rem;
         height: 1.4rem;
-        stroke: #3333331d;
+        stroke: var(--color-icon-disabled);
       }
     }
   }
   > span {
-    color: #333;
+    color: var(--color-text-idle);
     font-size: 1.4rem;
     line-height: 1;
     text-align: center;

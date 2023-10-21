@@ -427,6 +427,14 @@ export const lightTheme = {
     scrollbarBg: "#fff",
     scrollbarThumb: brandColors.main,
   },
+  counter: {
+    textIdle: "#333",
+    textActive: brandColors.main,
+    iconIdle: "#BEBEBE",
+    iconActive: brandColors.main,
+    iconDisabled: "#e5e5e5",
+    border: "#BEBEBE",
+  },
 };
 
 export const darkTheme = {
@@ -780,5 +788,13 @@ export const darkTheme = {
     accent: brandColors.main,
     scrollbarBg: "#8BAA36",
     scrollbarThumb: "#22252a",
+  },
+  counter: {
+    textIdle: "#fafafa",
+    textActive: brandColors.main,
+    iconIdle: "#fafafa",
+    iconActive: brandColors.main,
+    iconDisabled: "#4c4c4c",
+    border: "#fafafa",
   },
 };
