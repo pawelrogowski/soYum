@@ -3,8 +3,10 @@ import styled from "styled-components";
 
 export const StyledFormikForm = styled(Form)`
   width: 100%;
-
-  > div:first-of-type {
+  .ingredient-list {
+    margin-bottom: 5rem;
+  }
+  > .image-upload-wrapper {
     align-self: flex-start;
     display: flex;
     flex-direction: column;
@@ -20,7 +22,7 @@ export const StyledFormikForm = styled(Form)`
     @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       gap: 5rem;
     }
-    > div {
+    .image-upload-wrapper__inner {
       flex-grow: 1;
       display: flex;
       flex-direction: column;
@@ -33,6 +35,27 @@ export const StyledFormikForm = styled(Form)`
       @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
         gap: 4rem;
       }
+    }
+  }
+  .recipe-preparation-wrapper {
+    margin-bottom: 1.8rem;
+  }
+  > button {
+    width: 129px;
+    height: 46px;
+
+    font-size: 16px;
+    line-height: 1;
+  }
+  h2 {
+    color: ${({ theme }) => theme.heading.color};
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.048rem;
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      letter-spacing: -0.024rem;
     }
   }
 `;

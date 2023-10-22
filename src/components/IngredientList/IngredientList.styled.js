@@ -1,16 +1,13 @@
 import styled from "styled-components";
 
 export const StyledDiv = styled.div`
+  max-width: 62rem;
   > div:first-of-type {
     display: flex;
-    justify-content: space-between;
     margin-bottom: 2.4rem;
-    > h2 {
-      font-size: 2.4rem;
-      font-weight: 600;
-      line-height: 1;
-      letter-spacing: -0.048rem;
-    }
+    justify-content: space-between;
+
+    margin-left: auto;
   }
   > div:nth-of-type(2) {
     display: flex;

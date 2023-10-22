@@ -143,9 +143,9 @@ export const StyledDiv = styled.div`
             background: transparent;
           }
           ::-webkit-scrollbar-thumb {
-            background: var(--color-scrollbar-thumb);
+            background: red;
             border-radius: 12px;
-            border: 6px solid var(--color-scrollbar-bg);
+            border: 6px solid red;
           }
         }
 

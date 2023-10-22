@@ -15,6 +15,7 @@ export const StyledDiv = styled.div`
   max-width: 11rem;
   min-width: 9.2rem;
   justify-content: space-evenly;
+
   > button {
     cursor: pointer;
     border: none;

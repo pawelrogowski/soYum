@@ -1,11 +1,13 @@
+import PropTypes from "prop-types";
+
 import { Counter } from "../Counter/Counter";
 import { Heading } from "../Heading/Heading";
 import { IngredientSelect } from "../IngredientSelect/IngredientSelect";
 import { StyledDiv } from "./IngredientList.styled";
 
-export const IngredientList = () => {
+export const IngredientList = ({ className }) => {
   return (
-    <StyledDiv>
+    <StyledDiv className={className}>
       <div>
         <Heading as="h2">Ingredients</Heading>
         <Counter />
@@ -18,4 +20,8 @@ export const IngredientList = () => {
       </div>
     </StyledDiv>
   );
+};
+
+IngredientList.propTypes = {
+  className: PropTypes.string,
 };
