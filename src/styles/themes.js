@@ -439,6 +439,13 @@ export const lightTheme = {
     iconDisabled: "#e5e5e5",
     border: "#BEBEBE",
   },
+  recipePreparationTextArea: {
+    bg: "#F5F5F5",
+    borderIdle: "#E0E0E0",
+    borderActive: brandColors.main,
+    textIdle: "#23262A",
+    textPlaceholder: "#7B7B7B",
+  },
 };
 
 export const darkTheme = {
@@ -804,5 +811,12 @@ export const darkTheme = {
     iconActive: brandColors.main,
     iconDisabled: "#4c4c4c",
     border: "#fafafa",
+  },
+  recipePreparationTextArea: {
+    bg: "transparent",
+    borderIdle: "#4A4B52",
+    borderActive: brandColors.main,
+    textIdle: "#fafafa",
+    textPlaceholder: "rgba(250, 250, 250, 0.6)",
   },
 };

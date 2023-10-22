@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 
 import { Heading } from "../Heading/Heading";
-import { StyledDiv } from "./RecipePreparation.styled";
+import { StyledDiv } from "./RecipePreparationTextArea.styled";
 
-export const RecipePreparation = ({ className }) => {
+export const RecipePreparationTextArea = ({ className }) => {
   const [inputValue, setInputValue] = useState("");
 
   const handleInputChange = (event) => {
@@ -45,6 +45,6 @@ export const RecipePreparation = ({ className }) => {
   );
 };
 
-RecipePreparation.propTypes = {
+RecipePreparationTextArea.propTypes = {
   className: PropTypes.string,
 };
