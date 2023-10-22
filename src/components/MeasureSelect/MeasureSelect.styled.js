@@ -1,37 +1,40 @@
 import styled from "styled-components";
 
 export const StyledDiv = styled.div`
-  --color-bg: ${({ theme }) => theme.categorySelect.bg};
-  --color-text-idle: ${({ theme }) => theme.categorySelect.textIdle};
-  --color-text-active: ${({ theme }) => theme.categorySelect.textActive};
-  --color-text-placeholder: ${({ theme }) => theme.categorySelect.textPlaceholder};
-  --color-icon-idle: ${({ theme }) => theme.categorySelect.iconIdle};
-  --color-icon-active: ${({ theme }) => theme.categorySelect.iconActive};
-  --color-icon-remove: ${({ theme }) => theme.categorySelect.iconRemove};
-  --color-border-idle: ${({ theme }) => theme.categorySelect.borderIdle};
-  --color-border-active: ${({ theme }) => theme.categorySelect.borderActive};
-  --color-accent: ${({ theme }) => theme.categorySelect.accent};
-  --color-scrollbar-bg: ${({ theme }) => theme.categorySelect.scrollbarBg};
-  --color-scrollbar-thumb: ${({ theme }) => theme.categorySelect.scrollbarThumb};
+  --color-bg: ${({ theme }) => theme.select.bg};
+  --color-ingredient-bg: ${({ theme }) => theme.select.ingredient.bg};
+  --color-ingredient-border-idle: ${({ theme }) => theme.select.ingredient.borderIdle};
+  --color-text-idle: ${({ theme }) => theme.select.textIdle};
+  --color-text-active: ${({ theme }) => theme.select.textActive};
+  --color-text-placeholder: ${({ theme }) => theme.select.textPlaceholder};
+  --color-icon-idle: ${({ theme }) => theme.select.iconIdle};
+  --color-icon-active: ${({ theme }) => theme.select.iconActive};
+  --color-icon-remove: ${({ theme }) => theme.select.iconRemove};
+  --color-border-idle: ${({ theme }) => theme.select.borderIdle};
+  --color-border-active: ${({ theme }) => theme.select.borderActive};
+  --color-accent: ${({ theme }) => theme.select.accent};
+  --color-scrollbar-bg: ${({ theme }) => theme.select.scrollbarBg};
+  --color-scrollbar-thumb: ${({ theme }) => theme.select.scrollbarThumb};
 
   padding: 1.6rem 1.2rem 1.6rem 1.6rem;
   border: none;
-  background: #f5f5f5;
+  background: var(--color-ingredient-bg);
   height: 5.3rem;
   width: auto;
-  border: 1px solid #f5f5f5;
+  border: 1px solid var(--color-ingredient-border-idle);
   border-radius: 5px;
   transition: border-color 200ms;
   display: flex;
   gap: 0.2rem;
+  margin-right: 1rem;
   cursor: text;
   &:hover,
   &:focus {
     border: 1px solid var(--color-border-active);
   }
   input {
-    width: 3rem;
-    color: #23262a;
+    max-width: 3rem;
+    color: var(--color-text-idle);
     font-family: Poppins;
     font-size: 1.4rem;
     line-height: normal;
@@ -92,6 +95,8 @@ export const StyledDiv = styled.div`
         line-height: normal;
         letter-spacing: -0.032rem;
         height: 2.4rem;
+
+        gap: 1.3rem;
         ::-webkit-scrollbar {
           width: 0px;
         }
@@ -165,7 +170,7 @@ export const StyledDiv = styled.div`
         border-radius: 0.6rem;
         box-shadow: 0px 7px 8px 5px rgba(0, 0, 0, 0.1);
         min-height: 13rem;
-        margin-top: 1.4rem;
+        margin-top: 1.6rem;
         right: -1.4rem;
         bottom: 0;
         scrollbar-width: thin;

@@ -20,10 +20,6 @@ export const TimeSelect = () => {
     ref.current.focus();
   };
 
-  useEffect(() => {
-    console.log(selectedOption);
-  }, [selectedOption]);
-
   return (
     <StyledDiv onClick={handleClick}>
       <span className={selectedOption.value ? "no-placeholder" : ""}>

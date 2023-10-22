@@ -1,18 +1,18 @@
 import styled from "styled-components";
 
 export const StyledDiv = styled.div`
-  --color-bg: ${({ theme }) => theme.categorySelect.bg};
-  --color-text-idle: ${({ theme }) => theme.categorySelect.textIdle};
-  --color-text-active: ${({ theme }) => theme.categorySelect.textActive};
-  --color-text-placeholder: ${({ theme }) => theme.categorySelect.textPlaceholder};
-  --color-icon-idle: ${({ theme }) => theme.categorySelect.iconIdle};
-  --color-icon-active: ${({ theme }) => theme.categorySelect.iconActive};
-  --color-icon-remove: ${({ theme }) => theme.categorySelect.iconRemove};
-  --color-border-idle: ${({ theme }) => theme.categorySelect.borderIdle};
-  --color-border-active: ${({ theme }) => theme.categorySelect.borderActive};
-  --color-accent: ${({ theme }) => theme.categorySelect.accent};
-  --color-scrollbar-bg: ${({ theme }) => theme.categorySelect.scrollbarBg};
-  --color-scrollbar-thumb: ${({ theme }) => theme.categorySelect.scrollbarThumb};
+  --color-bg: ${({ theme }) => theme.select.bg};
+  --color-text-idle: ${({ theme }) => theme.select.textIdle};
+  --color-text-active: ${({ theme }) => theme.select.textActive};
+  --color-text-placeholder: ${({ theme }) => theme.select.textPlaceholder};
+  --color-icon-idle: ${({ theme }) => theme.select.iconIdle};
+  --color-icon-active: ${({ theme }) => theme.select.iconActive};
+  --color-icon-remove: ${({ theme }) => theme.select.iconRemove};
+  --color-border-idle: ${({ theme }) => theme.select.borderIdle};
+  --color-border-active: ${({ theme }) => theme.select.borderActive};
+  --color-accent: ${({ theme }) => theme.select.accent};
+  --color-scrollbar-bg: ${({ theme }) => theme.select.scrollbarBg};
+  --color-scrollbar-thumb: ${({ theme }) => theme.select.scrollbarThumb};
 
   display: flex;
   padding-bottom: 1.8rem;

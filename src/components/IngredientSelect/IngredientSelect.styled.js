@@ -1,18 +1,20 @@
 import styled from "styled-components";
 
 export const StyledDiv = styled.div`
-  --color-bg: ${({ theme }) => theme.categorySelect.bg};
-  --color-text-idle: ${({ theme }) => theme.categorySelect.textIdle};
-  --color-text-active: ${({ theme }) => theme.categorySelect.textActive};
-  --color-text-placeholder: ${({ theme }) => theme.categorySelect.textPlaceholder};
-  --color-icon-idle: ${({ theme }) => theme.categorySelect.iconIdle};
-  --color-icon-active: ${({ theme }) => theme.categorySelect.iconActive};
-  --color-icon-remove: ${({ theme }) => theme.categorySelect.iconRemove};
-  --color-border-idle: ${({ theme }) => theme.categorySelect.borderIdle};
-  --color-border-active: ${({ theme }) => theme.categorySelect.borderActive};
-  --color-accent: ${({ theme }) => theme.categorySelect.accent};
-  --color-scrollbar-bg: ${({ theme }) => theme.categorySelect.scrollbarBg};
-  --color-scrollbar-thumb: ${({ theme }) => theme.categorySelect.scrollbarThumb};
+  --color-bg: ${({ theme }) => theme.select.bg};
+  --color-ingredient-bg: ${({ theme }) => theme.select.ingredient.bg};
+  --color-ingredient-border-idle: ${({ theme }) => theme.select.ingredient.borderIdle};
+  --color-text-idle: ${({ theme }) => theme.select.textIdle};
+  --color-text-active: ${({ theme }) => theme.select.textActive};
+  --color-text-placeholder: ${({ theme }) => theme.select.textPlaceholder};
+  --color-icon-idle: ${({ theme }) => theme.select.iconIdle};
+  --color-icon-active: ${({ theme }) => theme.select.iconActive};
+  --color-icon-remove: ${({ theme }) => theme.select.iconRemove};
+  --color-border-idle: ${({ theme }) => theme.select.borderIdle};
+  --color-border-active: ${({ theme }) => theme.select.borderActive};
+  --color-accent: ${({ theme }) => theme.select.accent};
+  --color-scrollbar-bg: ${({ theme }) => theme.select.scrollbarBg};
+  --color-scrollbar-thumb: ${({ theme }) => theme.select.scrollbarThumb};
 
   display: flex;
   align-items: center;
@@ -20,15 +22,15 @@ export const StyledDiv = styled.div`
     display: flex;
     gap: 1.4rem;
     max-width: 56rem;
-    flex: 1;
+    flex: 5;
     > div:first-of-type {
       padding: 1.6rem 1.2rem 1.6rem 1.6rem;
       border: none;
-      background: #f5f5f5;
+      background: var(--color-ingredient-bg);
       height: 5.3rem;
       width: 100%;
       flex-grow: 1;
-      border: 1px solid #f5f5f5;
+      border: 1px solid var(--color-ingredient-border-idle);
       border-radius: 5px;
       transition: border-color 200ms;
       cursor: text;
@@ -69,6 +71,7 @@ export const StyledDiv = styled.div`
           color: var(--color-text-placeholder);
           font-size: 1.4rem;
           line-height: 1;
+
           @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
             font-size: 1.6rem;
           }
@@ -175,6 +178,7 @@ export const StyledDiv = styled.div`
       }
     }
   }
+
   > button {
     background: none;
     border: none;
@@ -183,15 +187,16 @@ export const StyledDiv = styled.div`
     height: 1.8rem;
     margin-left: auto;
     justify-self: flex-end;
+    flex: 0;
     &:hover,
     &:focus {
       > svg {
-        stroke: green;
+        stroke: var(--color-icon-remove);
       }
     }
     > svg {
       transition: stroke 200ms;
-      stroke: #333333;
+      stroke: var(--color-icon-idle);
       width: 1.8rem;
       height: 1.8rem;
     }

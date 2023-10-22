@@ -6,7 +6,6 @@ export const StyledDiv = styled.div`
     justify-content: space-between;
     margin-bottom: 2.4rem;
     > h2 {
-      color: #3e4462;
       font-size: 2.4rem;
       font-weight: 600;
       line-height: 1;
