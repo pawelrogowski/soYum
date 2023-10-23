@@ -6,7 +6,6 @@ const initialState = {
   recipeAbout: "",
   recipeCategories: [],
   recipeCookingTime: "",
-  recipeIngredientNumber: 1,
   recipeIngredients: [
     {
       ingredient: "",
@@ -40,9 +39,6 @@ export const addRecipeFormSlice = createSlice({
     setRecipeCookingTime: (state, action) => {
       state.recipeCookingTime = action.payload;
     },
-    setRecipeIngredientNumber: (state, action) => {
-      state.recipeIngredientNumber = action.payload;
-    },
     addIngredient: (state, action) => {
       state.recipeIngredients.push(action.payload);
     },
@@ -50,6 +46,9 @@ export const addRecipeFormSlice = createSlice({
       state.recipeIngredients = state.recipeIngredients.filter(
         (_, index) => index !== action.payload
       );
+    },
+    removeLastIngredient: (state) => {
+      state.recipeIngredients.pop();
     },
     addPreparationStep: (state, action) => {
       state.recipePreparationSteps.push(action.payload);
@@ -73,4 +72,5 @@ export const {
   removeIngredient,
   addPreparationStep,
   removePreparationStep,
+  removeLastIngredient,
 } = addRecipeFormSlice.actions;
