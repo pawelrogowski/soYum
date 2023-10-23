@@ -26,7 +26,7 @@ export const Counter = () => {
         type="button"
         aria-label="remove last ingredient"
         onClick={handleDecrement}
-        disabled={recipeIngredients.length === 1}
+        disabled={recipeIngredients.length < 2}
       >
         <Icon icon="minus" />
       </button>

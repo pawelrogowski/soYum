@@ -1,6 +1,9 @@
-import { useState } from "react";
+import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux/es/hooks/useSelector";
 import Select from "react-select";
 
+import { setAmount, setMeasure } from "../../redux/slices/addRecipeFormSlice";
 import { StyledDiv } from "./MeasureSelect.styled";
 
 const options = [
@@ -15,16 +18,16 @@ const options = [
   { value: "l", label: "l" },
 ];
 
-export const MeasureSelect = () => {
-  const [amount, setAmount] = useState("");
-  const [selectedOption, setSelectedOption] = useState(null);
+export const MeasureSelect = ({ index }) => {
+  const { recipeIngredients } = useSelector((state) => state.addRecipeForm);
+  const dispatch = useDispatch();
 
-  const handleChange = (selectedOption) => {
-    setSelectedOption(selectedOption);
+  const handleAmountChange = (e) => {
+    dispatch(setAmount({ index: index, amount: e.target.value }));
   };
 
-  const handleInputChange = (event) => {
-    setAmount(event.target.value);
+  const handleMeasureChange = (option) => {
+    dispatch(setMeasure({ index: index, measure: option.value }));
   };
 
   return (
@@ -32,19 +35,30 @@ export const MeasureSelect = () => {
       <input
         name="amount"
         type="number"
-        value={amount}
-        onChange={handleInputChange}
+        value={recipeIngredients[index].amount ? recipeIngredients[index].amount : ""}
+        onChange={handleAmountChange}
         aria-label="amount"
-        placeholder="1"
+        placeholder="5"
       />
       <Select
-        value={selectedOption}
-        onChange={handleChange}
+        onChange={handleMeasureChange}
         options={options}
         placeholder="tsp"
         unstyled
         classNamePrefix="Select"
+        value={
+          recipeIngredients[index].measure
+            ? {
+                value: recipeIngredients[index].measure,
+                label: recipeIngredients[index].measure,
+              }
+            : null
+        }
       />
     </StyledDiv>
   );
+};
+
+MeasureSelect.propTypes = {
+  index: PropTypes.number.isRequired,
 };

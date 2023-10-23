@@ -42,6 +42,18 @@ export const addRecipeFormSlice = createSlice({
     addIngredient: (state, action) => {
       state.recipeIngredients.push(action.payload);
     },
+    setIngredient: (state, action) => {
+      const { index, ingredient } = action.payload;
+      state.recipeIngredients[index].ingredient = ingredient;
+    },
+    setMeasure: (state, action) => {
+      const { index, measure } = action.payload;
+      state.recipeIngredients[index].measure = measure;
+    },
+    setAmount: (state, action) => {
+      const { index, amount } = action.payload;
+      state.recipeIngredients[index].amount = amount;
+    },
     removeIngredient: (state, action) => {
       state.recipeIngredients = state.recipeIngredients.filter(
         (_, index) => index !== action.payload
@@ -73,4 +85,7 @@ export const {
   addPreparationStep,
   removePreparationStep,
   removeLastIngredient,
+  setIngredient,
+  setMeasure,
+  setAmount,
 } = addRecipeFormSlice.actions;
