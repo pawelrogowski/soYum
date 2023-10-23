@@ -1,6 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
 
+import { setRecipeCookingTime } from "../../redux/slices/addRecipeFormSlice";
 import { StyledDiv } from "./TimeSelect.styled.js";
 
 const options = Array.from({ length: 240 / 5 }, (_, i) => {
@@ -9,11 +11,12 @@ const options = Array.from({ length: 240 / 5 }, (_, i) => {
 });
 
 export const TimeSelect = () => {
-  const [selectedOption, setSelectedOption] = useState("");
   const ref = useRef(null);
+  const dispatch = useDispatch();
+  const { recipeCookingTime } = useSelector((state) => state.addRecipeForm);
 
-  const handleChange = (option) => {
-    setSelectedOption(option);
+  const handleChange = (selectedOption) => {
+    dispatch(setRecipeCookingTime(selectedOption.value));
   };
 
   const handleClick = () => {
@@ -22,8 +25,8 @@ export const TimeSelect = () => {
 
   return (
     <StyledDiv onClick={handleClick}>
-      <span className={selectedOption.value ? "no-placeholder" : ""}>
-        {selectedOption.value ? `Cooking Time: ${selectedOption.value} min` : "Cooking Time"}
+      <span className={recipeCookingTime ? "no-placeholder" : ""}>
+        {recipeCookingTime ? `Cooking Time: ${recipeCookingTime} min` : "Cooking Time"}
       </span>
       <Select
         ref={ref}

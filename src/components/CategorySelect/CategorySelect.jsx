@@ -1,8 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
 
-import { extractValuesByKey } from "../../utils/extractValuesByKey.js";
+import { setRecipeCategories } from "../../redux/slices/addRecipeFormSlice";
 import { StyledDiv } from "./CategorySelect.styled";
+
 const options = [
   { value: "beef", label: "Beef" },
   { value: "breakfast", label: "Breakfast" },
@@ -21,16 +23,18 @@ const options = [
 ];
 export const CategorySelect = () => {
   const ref = useRef(null);
-  const [selectedOptions, setSelectedOptions] = useState([]);
+  const dispatch = useDispatch();
+  const { recipeCategories } = useSelector((state) => state.addRecipeForm);
 
-  const handleChange = (option) => {
-    setSelectedOptions(extractValuesByKey(option, "value"));
+  const handleChange = (selectedOptions) => {
+    dispatch(setRecipeCategories(selectedOptions.map((option) => option.value)));
   };
 
   const handleWrapperClick = () => ref.current.focus();
+
   useEffect(() => {
-    console.log(selectedOptions);
-  }, [selectedOptions]);
+    console.log(recipeCategories);
+  }, [recipeCategories]);
 
   return (
     <StyledDiv onClick={handleWrapperClick}>

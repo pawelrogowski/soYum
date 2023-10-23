@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
+import addRecipeFormReducer from "./slices/addRecipeFormSlice";
 import authReducer from "./slices/authSlice";
 import globalReducer from "./slices/globalSlice";
 import modalReducer from "./slices/modalSlice";
@@ -16,21 +17,16 @@ const configureMiddleware = (getDefaultMiddleware) =>
     serializableCheck: false,
   });
 
-const persistedAuthReducer = persistReducer(
-  generatePersistConfig("auth"),
-  authReducer
-);
+const persistedAuthReducer = persistReducer(generatePersistConfig("auth"), authReducer);
 
-const persistedGlobalReducer = persistReducer(
-  generatePersistConfig("global"),
-  globalReducer
-);
+const persistedGlobalReducer = persistReducer(generatePersistConfig("global"), globalReducer);
 
 export const store = configureStore({
   reducer: {
     auth: persistedAuthReducer,
     global: persistedGlobalReducer,
     modal: modalReducer,
+    addRecipeForm: addRecipeFormReducer,
   },
   middleware: configureMiddleware,
 });

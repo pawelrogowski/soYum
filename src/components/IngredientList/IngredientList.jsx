@@ -14,9 +14,6 @@ export const IngredientList = ({ className }) => {
       </div>
       <div>
         <IngredientSelect />
-        <IngredientSelect />
-        <IngredientSelect />
-        <IngredientSelect />
       </div>
     </StyledDiv>
   );

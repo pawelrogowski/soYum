@@ -1,19 +1,21 @@
-import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux/es/hooks/useSelector";
 
+import { setRecipeIngredientNumber } from "../../redux/slices/addRecipeFormSlice";
 import { Icon } from "../Icon/Icon";
 import { StyledDiv } from "./Counter.styled";
-
 export const Counter = () => {
-  const [counterValue, setCounterValue] = useState(1);
+  const { recipeIngredientNumber } = useSelector((state) => state.addRecipeForm);
+  const dispatch = useDispatch();
 
   const handleIncrement = () => {
-    if (counterValue < 51) {
-      setCounterValue((prevState) => prevState + 1);
+    if (recipeIngredientNumber < 51) {
+      dispatch(setRecipeIngredientNumber(recipeIngredientNumber + 1));
     }
   };
   const handleDecrement = () => {
-    if (counterValue > 1) {
-      setCounterValue((prevState) => prevState - 1);
+    if (recipeIngredientNumber > 1) {
+      dispatch(setRecipeIngredientNumber(recipeIngredientNumber - 1));
     }
   };
 
@@ -23,18 +25,18 @@ export const Counter = () => {
         type="button"
         aria-label="remove last ingredient"
         onClick={handleDecrement}
-        disabled={counterValue === 1}
+        disabled={recipeIngredientNumber === 1}
       >
         <Icon icon="minus" />
       </button>
 
-      <span>{counterValue}</span>
+      <span>{recipeIngredientNumber}</span>
 
       <button
         type="button"
         aria-label="add new ingredient"
         onClick={handleIncrement}
-        disabled={counterValue > 49}
+        disabled={recipeIngredientNumber > 49}
       >
         <Icon icon="plus" />
       </button>
