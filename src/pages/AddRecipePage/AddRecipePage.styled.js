@@ -12,6 +12,31 @@ export const MainContainer = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    flex-direction: row;
+    gap: 10rem;
+  }
+  > aside {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      max-width: 32rem;
+      padding-top: 12rem;
+    }
+  }
+  h2 {
+    color: ${({ theme }) => theme.heading.color};
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.048rem;
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      letter-spacing: -0.024rem;
+    }
+  }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding-bottom: 20rem;
@@ -50,8 +75,14 @@ export const MainContainer = styled.main`
         margin-bottom: 7.4rem;
       }
     }
-    > nav {
-      margin-bottom: 6.6rem;
+    &:first-of-type {
+      margin-bottom: 7.2rem;
+      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        margin-bottom: 10rem;
+      }
+      @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        margin-bottom: 20rem;
+      }
     }
   }
 `;

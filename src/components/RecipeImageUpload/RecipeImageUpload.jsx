@@ -24,7 +24,7 @@ export const RecipeImageUpload = ({ onImageUpload }) => {
     <StyledButton type="button" aria-label="upload an image" onClick={handleImageUpload}>
       <picture>
         <source srcSet={uploadedImageUrl} />
-        <img src={placeholder} width="279px" height="268px" />
+        <img src={placeholder} width="279px" height="268px" alt="your recipe image" />
       </picture>
       {!uploadedImageUrl && <Icon icon="capture" />}
     </StyledButton>

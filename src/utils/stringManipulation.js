@@ -23,3 +23,17 @@ export const shortenString = (inputString, maxLength, appendText) => {
 export const capitalizeFirstLetter = (str) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
+
+/**
+ * Truncates a given input string by keeping a specified number of sentences.
+ * @param {string} inputString - The input string to truncate.
+ * @param {number} numSentences - The number of sentences to keep.
+ * @returns {string} The truncated string.
+ */
+export const truncateSentences = (inputString, numSentences) => {
+  const regex = new RegExp(`^((.*?[.?!]\\s*){${numSentences}})(.*)$`);
+  const truncatedString = inputString.replace(regex, (match, sentences) => {
+    return `${sentences}...`;
+  });
+  return truncatedString;
+};

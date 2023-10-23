@@ -446,6 +446,18 @@ export const lightTheme = {
     textIdle: "#23262A",
     textPlaceholder: "#7B7B7B",
   },
+  popularCard: {
+    bgCard: "transparent",
+    bgImage: "transparent",
+    fontHead: "#3E4462",
+    fontArticle: "#23262A",
+    borderIdle: "#E3E3E3",
+    borderActive: brandColors.main,
+  },
+  followUs: {
+    iconIdle: brandColors.main,
+    iconActive: "#1E1F28",
+  },
 };
 
 export const darkTheme = {
@@ -818,5 +830,17 @@ export const darkTheme = {
     borderActive: brandColors.main,
     textIdle: "#fafafa",
     textPlaceholder: "rgba(250, 250, 250, 0.6)",
+  },
+  popularCard: {
+    bgCard: "transparent",
+    bgImage: "transparent",
+    fontHead: "#fafafa",
+    fontArticle: "rgba(250, 250, 250, 0.60)",
+    borderIdle: "#4A4B52",
+    borderActive: brandColors.main,
+  },
+  followUs: {
+    iconIdle: "#fafafa",
+    iconActive: brandColors.main,
   },
 };

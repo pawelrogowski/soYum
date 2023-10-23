@@ -47,15 +47,4 @@ export const StyledFormikForm = styled(Form)`
     font-size: 16px;
     line-height: 1;
   }
-  h2 {
-    color: ${({ theme }) => theme.heading.color};
-    font-size: 2.4rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 1;
-    letter-spacing: -0.048rem;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-      letter-spacing: -0.024rem;
-    }
-  }
 `;
