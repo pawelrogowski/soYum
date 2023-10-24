@@ -14,7 +14,7 @@ export const MainContainer = styled.main`
   align-items: center;
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     flex-direction: row;
-    gap: 10rem;
+    gap: 5rem;
   }
   > aside {
     align-self: flex-start;

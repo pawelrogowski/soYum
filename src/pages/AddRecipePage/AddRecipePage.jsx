@@ -1,8 +1,11 @@
+import { useMediaQuery } from "react-responsive";
+
 import image from "../../assets/icons/product-placeholder.svg";
 import { FollowUs } from "../../components/FollowUs/FollowUs";
 import { AddRecipeForm } from "../../components/Forms/AddRecipeForm/AddRecipeForm";
 import { Heading } from "../../components/Heading/Heading";
 import { PopularRecipeList } from "../../components/PopularRecipeList/PopularRecipeList";
+import { breakpoints } from "../../styles/themes";
 import { MainContainer } from "./AddRecipePage.styled";
 const imageList = [
   {
@@ -35,6 +38,7 @@ const imageList = [
   },
 ];
 const AddRecipePage = () => {
+  const isDesktop = useMediaQuery({ minWidth: breakpoints.desktop });
   return (
     <MainContainer>
       <section>
@@ -44,7 +48,7 @@ const AddRecipePage = () => {
         <AddRecipeForm />
       </section>
       <aside>
-        <FollowUs />
+        {isDesktop && <FollowUs />}
         <PopularRecipeList data={imageList} />
       </aside>
     </MainContainer>

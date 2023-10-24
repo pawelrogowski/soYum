@@ -37,3 +37,7 @@ export const truncateSentences = (inputString, numSentences) => {
   });
   return truncatedString;
 };
+
+export const limitTextLength = (str, maxSentences, maxCharacters, appendText) => {
+  return shortenString(truncateSentences(str, maxSentences), maxCharacters, appendText);
+};

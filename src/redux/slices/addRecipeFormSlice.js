@@ -13,12 +13,9 @@ const initialState = {
       amount: 0,
     },
   ],
-  recipePreparationSteps: [
-    {
-      stepNumber: 1,
-      stepDescription: "",
-    },
-  ],
+  recipePreparationSteps: [],
+  currentTextAreaValue: "",
+  currentEditIndex: null,
 };
 export const addRecipeFormSlice = createSlice({
   name: "addRecipeForm",
@@ -47,8 +44,8 @@ export const addRecipeFormSlice = createSlice({
       state.recipeIngredients[index].ingredient = ingredient;
     },
     setMeasure: (state, action) => {
-      const { index, measure } = action.payload;
-      state.recipeIngredients[index].measure = measure;
+      const { index, measureType } = action.payload;
+      state.recipeIngredients[index].measureType = measureType;
     },
     setAmount: (state, action) => {
       const { index, amount } = action.payload;
@@ -65,10 +62,20 @@ export const addRecipeFormSlice = createSlice({
     addPreparationStep: (state, action) => {
       state.recipePreparationSteps.push(action.payload);
     },
+    editPreparationStep: (state, action) => {
+      const { index, text } = action.payload;
+      state.recipePreparationSteps[index] = text;
+    },
     removePreparationStep: (state, action) => {
       state.recipePreparationSteps = state.recipePreparationSteps.filter(
         (_, index) => index !== action.payload
       );
+    },
+    setCurrentTextAreaValue: (state, action) => {
+      state.currentTextAreaValue = action.payload;
+    },
+    setCurrentEditIndex: (state, action) => {
+      state.currentEditIndex = action.payload;
     },
   },
 });
@@ -88,4 +95,7 @@ export const {
   setIngredient,
   setMeasure,
   setAmount,
+  setCurrentTextAreaValue,
+  setCurrentEditIndex,
+  editPreparationStep,
 } = addRecipeFormSlice.actions;

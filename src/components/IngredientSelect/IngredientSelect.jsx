@@ -14,7 +14,7 @@ export const IngredientSelect = ({ index }) => {
   const { recipeIngredients } = useSelector((state) => state.addRecipeForm);
   const dispatch = useDispatch();
 
-  const handleRemoveIngredient = () => {
+  const handleRemoveIngredient = (index) => {
     dispatch(removeIngredient(index));
   };
 
@@ -45,7 +45,11 @@ export const IngredientSelect = ({ index }) => {
         <MeasureSelect index={index} />
       </div>
 
-      <button type="button" aria-label="remove ingredient" onClick={handleRemoveIngredient}>
+      <button
+        type="button"
+        aria-label="remove ingredient"
+        onClick={() => handleRemoveIngredient(index)}
+      >
         <Icon icon="x" />
       </button>
     </StyledDiv>

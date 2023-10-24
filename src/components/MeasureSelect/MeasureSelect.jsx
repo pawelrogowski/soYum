@@ -27,7 +27,7 @@ export const MeasureSelect = ({ index }) => {
   };
 
   const handleMeasureChange = (option) => {
-    dispatch(setMeasure({ index: index, measure: option.value }));
+    dispatch(setMeasure({ index: index, measureType: option.value }));
   };
 
   return (
@@ -47,10 +47,10 @@ export const MeasureSelect = ({ index }) => {
         unstyled
         classNamePrefix="Select"
         value={
-          recipeIngredients[index].measure
+          recipeIngredients[index].measureType
             ? {
-                value: recipeIngredients[index].measure,
-                label: recipeIngredients[index].measure,
+                value: recipeIngredients[index].measureType,
+                label: recipeIngredients[index].measureType,
               }
             : null
         }
