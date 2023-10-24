@@ -7,7 +7,9 @@ import {
   setCurrentEditIndex,
   setCurrentTextAreaValue,
 } from "../../redux/slices/addRecipeFormSlice.js";
+import { Button } from "../Button/Button.jsx";
 import { Heading } from "../Heading/Heading";
+import { Icon } from "../Icon/Icon.jsx";
 import { StyledDiv } from "./RecipePreparationTextArea.styled";
 
 export const RecipePreparationTextArea = ({ className }) => {
@@ -28,6 +30,24 @@ export const RecipePreparationTextArea = ({ className }) => {
       dispatch(setCurrentTextAreaValue(""));
     }
   };
+  const handleAddClick = (event) => {
+    event.preventDefault();
+    if (currentTextAreaValue.trim() !== "") {
+      if (currentEditIndex === null) {
+        dispatch(addPreparationStep(currentTextAreaValue.trim()));
+      } else {
+        dispatch(editPreparationStep({ index: currentEditIndex, text: currentTextAreaValue }));
+        dispatch(setCurrentEditIndex(null));
+      }
+    }
+    dispatch(setCurrentTextAreaValue(""));
+  };
+
+  const handleCancelClick = (event) => {
+    event.preventDefault();
+    dispatch(setCurrentEditIndex(null));
+    dispatch(setCurrentTextAreaValue(""));
+  };
 
   const handleChange = (e) => {
     dispatch(setCurrentTextAreaValue(e.target.value));
@@ -42,6 +62,14 @@ export const RecipePreparationTextArea = ({ className }) => {
         onKeyDown={handleKeyDown}
         onChange={handleChange}
       />
+      <Button onClick={handleAddClick} disabled={!currentTextAreaValue}>
+        {currentEditIndex !== null ? "Edit existing step" : " Add new step"}
+      </Button>
+      {currentEditIndex !== null && (
+        <Button onClick={handleCancelClick}>
+          <Icon icon="x" />
+        </Button>
+      )}
     </StyledDiv>
   );
 };

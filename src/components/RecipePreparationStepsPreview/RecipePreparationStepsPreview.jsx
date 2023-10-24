@@ -10,7 +10,7 @@ import { Icon } from "../Icon/Icon";
 import { StyledOl } from "./RecipePreparationStepsPreview.styled";
 export const RecipePreparationStepsPreview = () => {
   const dispatch = useDispatch();
-  const { recipePreparationSteps } = useSelector((state) => state.addRecipeForm);
+  const { recipePreparationSteps, currentEditIndex } = useSelector((state) => state.addRecipeForm);
 
   const handleRemoveStep = (index) => {
     dispatch(removePreparationStep(index));
@@ -25,10 +25,18 @@ export const RecipePreparationStepsPreview = () => {
     <StyledOl>
       {recipePreparationSteps.map((_, index) => (
         <li key={index}>
-          <button type="button" onClick={() => handleEditStep(index)}>
+          <button
+            type="button"
+            onClick={() => handleEditStep(index)}
+            disabled={currentEditIndex !== null}
+          >
             <Icon icon="edit" />
           </button>
-          <button type="button" onClick={() => handleRemoveStep(index)}>
+          <button
+            type="button"
+            onClick={() => handleRemoveStep(index)}
+            disabled={currentEditIndex !== null}
+          >
             <Icon icon="x" />
           </button>
 
