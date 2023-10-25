@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 import avatar from "../../../assets/images/avatar.webp";
 import useUploadWidget from "../../../hooks/useUploadWidget";
-import { userEditSchema } from "../../../schemas/userEditSchema";
+import { userEditSchema } from "../../../validation/userEditSchema";
 import { Button } from "../../Button/Button";
 import { Icon } from "../../Icon/Icon";
 import { cloudinarySettings } from "./CloudinarySettings";

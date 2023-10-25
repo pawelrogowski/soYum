@@ -1,6 +1,6 @@
 import { Formik } from "formik";
 
-import { validationSchema } from "../../../schemas/registrationSchema";
+import { validationSchema } from "../../../validation/registrationSchema";
 import { Button } from "../../Button/Button";
 import { CustomFormikInput } from "../../CustomFormikInput/CustomFormikInput";
 import { StyledForm } from "./RegisterForm.styled";

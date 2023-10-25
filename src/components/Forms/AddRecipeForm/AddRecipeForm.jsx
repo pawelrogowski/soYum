@@ -10,9 +10,23 @@ import { RecipeTextInput } from "../../RecipeTextInput/RecipeTextInput";
 import { TimeSelect } from "../../TimeSelect/TimeSelect";
 import { StyledFormikForm } from "./AddRecipeForm.styled";
 
+const initialValues = {
+  recipeTitle: "",
+  recipeAbout: "",
+  recipeCategories: [],
+  recipeCookingTime: "",
+  recipeIngredients: [
+    {
+      ingredient: "",
+      measureType: "",
+      amount: 0,
+    },
+  ],
+  recipePreparationSteps: [],
+};
 export const AddRecipeForm = () => {
   return (
-    <Formik>
+    <Formik initialValues={initialValues}>
       <StyledFormikForm>
         <div className="image-upload-wrapper">
           <RecipeImageUpload />
