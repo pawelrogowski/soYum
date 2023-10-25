@@ -478,6 +478,18 @@ export const lightTheme = {
     iconIdle: brandColors.main,
     iconActive: "#1E1F28",
   },
+  addRecipeForm: {
+    buttonBgIdle: "#22252A",
+    buttonBorderIdle: "#22252A",
+    buttonTextIdle: "#fafafa",
+    buttonBgActive: "8baa36",
+    buttonBorderActive: "",
+    buttonTextActive: "#fafafa",
+
+    buttonBgDisabled: "",
+    buttonBorderDisabled: "",
+    buttonTextDisabled: "",
+  },
 };
 
 export const darkTheme = {

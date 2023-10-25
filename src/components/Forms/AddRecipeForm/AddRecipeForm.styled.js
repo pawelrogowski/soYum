@@ -3,6 +3,10 @@ import styled from "styled-components";
 
 export const StyledFormikForm = styled(Form)`
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   .ingredient-list {
     margin-bottom: 5rem;
   }
@@ -37,14 +41,29 @@ export const StyledFormikForm = styled(Form)`
       }
     }
   }
-  .recipe-preparation-wrapper {
-    margin-bottom: 1.8rem;
-  }
+
   > button {
+    margin-top: 4.2rem;
     width: 129px;
     height: 46px;
-
     font-size: 16px;
     line-height: 1;
+    border-color: #22252a;
+    background-color: #22252a;
+    color: #fafafa;
+
+    &:hover,
+    &:focus {
+      border-radius: 4.4rem 2.4rem;
+      border-color: #8baa36;
+      background-color: #8baa36;
+      color: #fafafa;
+    }
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      width: 17rem;
+      height: 6rem;
+
+      font-size: 16px;
+    }
   }
 `;

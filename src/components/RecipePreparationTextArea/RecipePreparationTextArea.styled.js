@@ -67,6 +67,8 @@ export const StyledDiv = styled.div`
     color: var(--color-text-idle);
     font-size: 1.4rem;
     line-height: 1.5;
+    max-width: 15.1rem;
+    border-width: 1px;
     &:hover,
     &:focus {
       background-color: var(--color-border-active);
@@ -80,6 +82,7 @@ export const StyledDiv = styled.div`
     right: 21rem;
     height: 3rem;
     width: 3rem;
+
     border-radius: 50%;
     background: var(--color-button-bg-idle);
     border-color: var(--color-border-idle);

@@ -26,8 +26,8 @@ export const AddRecipeForm = () => {
         <IngredientList className="ingredient-list" />
         <RecipePreparationTextArea className="recipe-preparation-wrapper" />{" "}
         <RecipePreparationStepsPreview />
-        <Button type="submit" variant="">
-          Add
+        <Button type="submit" variant="outlineBig" disabled>
+          Add Recipe
         </Button>
       </StyledFormikForm>
     </Formik>

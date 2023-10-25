@@ -62,7 +62,7 @@ export const RecipePreparationTextArea = ({ className }) => {
         onKeyDown={handleKeyDown}
         onChange={handleChange}
       />
-      <Button onClick={handleAddClick} disabled={!currentTextAreaValue}>
+      <Button variant="outlineBig" onClick={handleAddClick} disabled={!currentTextAreaValue}>
         {currentEditIndex !== null ? "Edit existing step" : " Add new step"}
       </Button>
       {currentEditIndex !== null && (

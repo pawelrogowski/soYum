@@ -6,8 +6,9 @@ import {
   setCurrentTextAreaValue,
 } from "../../redux/slices/addRecipeFormSlice";
 import { limitTextLength } from "../../utils/stringManipulation";
+import { Heading } from "../Heading/Heading";
 import { Icon } from "../Icon/Icon";
-import { StyledOl } from "./RecipePreparationStepsPreview.styled";
+import { StyledDiv } from "./RecipePreparationStepsPreview.styled";
 export const RecipePreparationStepsPreview = () => {
   const dispatch = useDispatch();
   const { recipePreparationSteps, currentEditIndex } = useSelector((state) => state.addRecipeForm);
@@ -22,27 +23,30 @@ export const RecipePreparationStepsPreview = () => {
   };
 
   return (
-    <StyledOl>
-      {recipePreparationSteps.map((_, index) => (
-        <li key={index}>
-          <button
-            type="button"
-            onClick={() => handleEditStep(index)}
-            disabled={currentEditIndex !== null}
-          >
-            <Icon icon="edit" />
-          </button>
-          <button
-            type="button"
-            onClick={() => handleRemoveStep(index)}
-            disabled={currentEditIndex !== null}
-          >
-            <Icon icon="x" />
-          </button>
+    <StyledDiv>
+      <Heading as="h2">Steps:</Heading>
+      <ol>
+        {recipePreparationSteps.map((_, index) => (
+          <li key={index}>
+            <button
+              type="button"
+              onClick={() => handleEditStep(index)}
+              disabled={currentEditIndex !== null}
+            >
+              <Icon icon="edit" />
+            </button>
+            <button
+              type="button"
+              onClick={() => handleRemoveStep(index)}
+              disabled={currentEditIndex !== null}
+            >
+              <Icon icon="x" />
+            </button>
 
-          {limitTextLength(recipePreparationSteps[index], 2, 120, "...")}
-        </li>
-      ))}
-    </StyledOl>
+            {limitTextLength(recipePreparationSteps[index], 2, 120, "...")}
+          </li>
+        ))}
+      </ol>
+    </StyledDiv>
   );
 };
