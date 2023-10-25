@@ -1,10 +1,14 @@
 import { useEffect, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Select from "react-select";
 
-import { setRecipeCategories } from "../../redux/slices/addRecipeFormSlice";
+import { useFieldValidation } from "../../hooks/useFieldValidation";
+import {
+  setRecipeCategories,
+  setRecipeCategoriesError,
+} from "../../redux/slices/addRecipeFormSlice";
+import { validationSchema } from "../../validation/addRecipeSchema.js";
 import { StyledDiv } from "./CategorySelect.styled";
-
 const options = [
   { value: "beef", label: "Beef" },
   { value: "breakfast", label: "Breakfast" },
@@ -22,32 +26,42 @@ const options = [
   { value: "vegetarian", label: "Vegetarian" },
 ];
 export const CategorySelect = () => {
+  const { error, validateField } = useFieldValidation(validationSchema, "recipeCategories");
   const ref = useRef(null);
   const dispatch = useDispatch();
-  const { recipeCategories } = useSelector((state) => state.addRecipeForm);
 
-  const handleChange = (selectedOptions) => {
-    dispatch(setRecipeCategories(selectedOptions.map((option) => option.value)));
+  const handleChange = async (selectedOptions) => {
+    const { isValid, errorMessage } = await validateField(selectedOptions);
+    isValid
+      ? setRecipeCategories(selectedOptions.map((option) => option.value))
+      : setRecipeCategories([]);
+    errorMessage && dispatch(setRecipeCategoriesError(errorMessage));
+  };
+
+  const handleBlur = async (e) => {
+    console.log(e);
+    const { errorMessage } = await validateField(e);
+    errorMessage && dispatch(setRecipeCategoriesError(errorMessage));
   };
 
   const handleWrapperClick = () => ref.current.focus();
 
-  useEffect(() => {
-    console.log(recipeCategories);
-  }, [recipeCategories]);
-
   return (
-    <StyledDiv onClick={handleWrapperClick}>
-      <Select
-        ref={ref}
-        openMenuOnFocus
-        isMulti
-        unstyled
-        classNamePrefix="Select"
-        options={options}
-        onChange={handleChange}
-        placeholder="Categories"
-      />
-    </StyledDiv>
+    <>
+      <StyledDiv onClick={handleWrapperClick}>
+        <Select
+          ref={ref}
+          openMenuOnFocus
+          isMulti
+          unstyled
+          classNamePrefix="Select"
+          options={options}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          placeholder="Categories"
+        />
+      </StyledDiv>
+      <span>{error}</span>
+    </>
   );
 };

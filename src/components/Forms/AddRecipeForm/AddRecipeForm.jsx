@@ -31,14 +31,14 @@ export const AddRecipeForm = () => {
         <div className="image-upload-wrapper">
           <RecipeImageUpload />
           <div className="image-upload-wrapper__inner">
-            <RecipeTextInput name="recipe title" placeholder="Enter item title" />
-            <RecipeTextInput name="recipe about" placeholder="Enter about recipe" />
+            <RecipeTextInput name="recipeTitle" placeholder="Enter item title" />
+            <RecipeTextInput name="recipeAbout" placeholder="Enter about recipe" />
             <CategorySelect />
             <TimeSelect />
           </div>
         </div>
         <IngredientList className="ingredient-list" />
-        <RecipePreparationTextArea className="recipe-preparation-wrapper" />{" "}
+        <RecipePreparationTextArea className="recipe-preparation-wrapper" />
         <RecipePreparationStepsPreview />
         <Button type="submit" variant="outlineBig" disabled>
           Add Recipe
