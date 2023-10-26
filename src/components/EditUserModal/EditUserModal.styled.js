@@ -26,11 +26,11 @@ export const StyledDiv = styled(motion.div)`
     width: 33rem;
     background: var(--color-bg);
     box-shadow: 0px 4px 48px 0px rgba(0, 0, 0, 0.1);
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       padding: 5rem 4rem;
       width: 48rem;
     }
-    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       padding: 6rem 5rem;
       width: 50rem;
     }

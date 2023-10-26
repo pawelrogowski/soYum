@@ -23,7 +23,7 @@ export const StyledHeader = styled.header`
     height: 0.8rem;
     border-radius: 0.3rem;
     background-color: var(--color-decoration);
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       width: 1.4rem;
       height: 1.4rem;
     }
@@ -34,7 +34,7 @@ export const StyledHeader = styled.header`
     left: 14.3rem;
     rotate: -25deg;
 
-    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       bottom: -5.8rem;
       left: 19.8rem;
     }
@@ -45,7 +45,7 @@ export const StyledHeader = styled.header`
     right: 1rem;
     rotate: -25deg;
 
-    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       bottom: -6.9rem;
       right: 10rem;
     }

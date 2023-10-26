@@ -16,11 +16,11 @@ export const StyledDiv = styled(Container)`
   gap: 1.4rem;
   height: 6.6rem;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${(props) => props.theme.breakpoints.tablet}) {
     gap: 2.8rem;
     height: 7.8rem;
   }
-  @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
+  @media screen and (min-width: ${(props) => props.theme.breakpoints.desktop}) {
     gap: 4rem;
     height: 11.4rem;
   }
@@ -30,10 +30,12 @@ export const StyledDiv = styled(Container)`
     align-items: center;
     width: 100%;
     gap: 1.4rem;
-    @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${(props) =>
+        props.theme.breakpoints.tablet}) {
       gap: 2.8rem;
     }
-    @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${(props) =>
+        props.theme.breakpoints.desktop}) {
       gap: 4rem;
     }
     > span {
@@ -42,7 +44,8 @@ export const StyledDiv = styled(Container)`
       font-weight: 500;
       line-height: 1;
       letter-spacing: -0.01rem;
-      @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${(props) =>
+          props.theme.breakpoints.tablet}) {
         font-size: 1.4rem;
         letter-spacing: -0.014rem;
       }
@@ -53,7 +56,8 @@ export const StyledDiv = styled(Container)`
       font-weight: 400;
       line-height: 1;
       letter-spacing: -0.01rem;
-      @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${(props) =>
+          props.theme.breakpoints.tablet}) {
         font-size: 1.4rem;
         letter-spacing: -0.014rem;
       }
@@ -71,14 +75,16 @@ export const StyledDiv = styled(Container)`
       rotate: -35deg;
       transform: scaleX(-1);
       filter: blur(0.15rem);
-      @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${(props) =>
+          props.theme.breakpoints.tablet}) {
         width: 23.1rem;
         height: 22.2rem;
         bottom: -11.8rem;
         right: -2rem;
         rotate: -35deg;
       }
-      @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
+      @media screen and (min-width: ${(props) =>
+          props.theme.breakpoints.desktop}) {
         width: 30.1rem;
         height: 29.7rem;
         bottom: -15rem;

@@ -1,6 +1,6 @@
 import { Formik } from "formik";
 
-import { validationSchema } from "../../../schemas/singInSchema";
+import { validationSchema } from "../../../validation/singInSchema";
 import { Button } from "../../Button/Button";
 import { CustomFormikInput } from "../../CustomFormikInput/CustomFormikInput";
 import { StyledForm } from "./SignInForm.styled";

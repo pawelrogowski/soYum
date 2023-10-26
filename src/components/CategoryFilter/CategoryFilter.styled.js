@@ -19,7 +19,7 @@ export const StyledNav = styled.nav`
   flex-wrap: nowrap;
   justify-content: center;
   border-bottom: 0.1rem solid var(--color-decoration-idle);
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     height: 10.6rem;
   }
 
@@ -98,7 +98,8 @@ export const StyledNav = styled.nav`
       border: 0.4rem solid ${({ theme }) => theme.brandColors.main};
       transform: translateX(-50%);
       border-radius: 4px;
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.tablet}) {
         bottom: -4.8rem;
       }
     }
@@ -117,7 +118,8 @@ export const StyledNav = styled.nav`
       border: 0.4rem solid ${({ theme }) => theme.brandColors.main};
       transform: translateX(-50%);
       border-radius: 4px;
-      @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) =>
+          theme.breakpoints.tablet}) {
         bottom: -4.8rem;
       }
     }

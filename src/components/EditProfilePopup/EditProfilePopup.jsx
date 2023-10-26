@@ -39,6 +39,7 @@ export const EditProfilePopup = ({ ...props }) => {
     dispatch(toggleIsLogoutModalOpen(true));
     dispatch(toggleIsUserEditMenuOpen(false));
   };
+
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     document.addEventListener("keydown", handleKeyDown);

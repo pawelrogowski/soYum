@@ -16,26 +16,22 @@ export const StyledButton = styled.button`
   height: 7rem;
   border: 0.1rem solid ${({ theme }) => theme.button.base.borderIdle};
   transition: background-color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
-    color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
-    border cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
-    transform cubic-bezier(0.17, 0.67, 1, 1.23) 50ms;
+    color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms, border cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
+    transform cubic-bezier(0.17, 0.67, 1, 1.23) 50ms,
+    border-radius cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
   cursor: pointer;
   outline: none;
 
   &:hover,
-  &:focus {
-    transition: background-color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
-      color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
-      border cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
-      transform cubic-bezier(0.17, 0.67, 1, 1.23) 50ms;
+  &:focus,
+  &:focus-within {
     background-color: ${({ theme }) => theme.button.base.bgHover};
     border: 0.1rem solid ${({ theme }) => theme.button.base.borderHover};
   }
   &:active {
     transform: scale(0.95);
     transition: background-color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
-      color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
-      border cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
+      color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms, border cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
       transform cubic-bezier(0.17, 0.67, 1, 1.23) 50ms;
     background-color: ${({ theme }) => theme.button.base.bgActive};
     border: 0.1rem solid ${({ theme }) => theme.button.base.borderActive};
@@ -50,16 +46,15 @@ export const StyledButton = styled.button`
 
           &:hover,
           &:focus {
+            border-radius: 4.4rem 2.4rem;
             background-color: ${theme.button.outlineSmall.bgHover};
             color: ${theme.button.outlineSmall.fontColorHover};
             border: 0.2rem solid ${theme.button.outlineSmall.borderHover};
           }
 
           &:active {
-            background-color: ${({ theme }) =>
-              theme.button.outlineSmall.bgActive};
-            border: 0.2rem solid
-              ${({ theme }) => theme.button.outlineSmall.borderActive};
+            background-color: ${({ theme }) => theme.button.outlineSmall.bgActive};
+            border: 0.2rem solid ${({ theme }) => theme.button.outlineSmall.borderActive};
           }
         `
       : $variant === "outlineBig"
@@ -72,6 +67,7 @@ export const StyledButton = styled.button`
 
           &:hover,
           &:focus {
+            border-radius: 4.4rem 2.4rem;
             background-color: ${theme.button.outlineBig.bgHover};
             color: ${theme.button.outlineBig.fontColorHover};
             border: 0.2rem solid ${theme.button.outlineBig.borderHover};
@@ -81,10 +77,8 @@ export const StyledButton = styled.button`
           }
 
           &:active {
-            background-color: ${({ theme }) =>
-              theme.button.outlineBig.bgActive};
-            border: 0.2rem solid
-              ${({ theme }) => theme.button.outlineBig.borderActive};
+            background-color: ${({ theme }) => theme.button.outlineBig.bgActive};
+            border: 0.2rem solid ${({ theme }) => theme.button.outlineBig.borderActive};
           }
         `
       : $variant === "rectBig"
@@ -105,8 +99,7 @@ export const StyledButton = styled.button`
 
           &:active {
             background-color: ${({ theme }) => theme.button.rectBig.bgActive};
-            border: 0.2rem solid
-              ${({ theme }) => theme.button.rectBig.borderActive};
+            border: 0.2rem solid ${({ theme }) => theme.button.rectBig.borderActive};
           }
         `
       : $variant === "rectSmall"
@@ -127,8 +120,7 @@ export const StyledButton = styled.button`
 
           &:active {
             background-color: ${({ theme }) => theme.button.rectSmall.bgActive};
-            border: 0.2rem solid
-              ${({ theme }) => theme.button.rectSmall.borderActive};
+            border: 0.2rem solid ${({ theme }) => theme.button.rectSmall.borderActive};
           }
         `
       : $variant === "rectSmallDisabled"
@@ -149,8 +141,7 @@ export const StyledButton = styled.button`
 
           &:active {
             background-color: ${({ theme }) => theme.button.rectSmall.bgActive};
-            border: 0.2rem solid
-              ${({ theme }) => theme.button.rectSmall.borderActive};
+            border: 0.2rem solid ${({ theme }) => theme.button.rectSmall.borderActive};
           }
         `
       : null};

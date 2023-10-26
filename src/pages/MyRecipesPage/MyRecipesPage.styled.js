@@ -13,7 +13,7 @@ export const MainContainer = styled.main`
   flex-direction: column;
   align-items: center;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding-bottom: 20rem;
   }
 
@@ -32,7 +32,7 @@ export const MainContainer = styled.main`
     transform: scaleX(-1);
     z-index: -1;
 
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       width: 33.5rem;
       height: 51.7rem;
       bottom: -29.9rem;
@@ -44,14 +44,14 @@ export const MainContainer = styled.main`
   > h1 {
     margin-bottom: 6rem;
     align-self: flex-start;
-    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       margin-bottom: 10rem;
     }
   }
 
   > section {
     margin-bottom: 4rem;
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       margin-bottom: 5rem;
     }
   }

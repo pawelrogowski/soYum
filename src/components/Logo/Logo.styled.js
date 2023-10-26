@@ -28,7 +28,8 @@ export const LogoIcon = styled(Icon)`
           stroke: var(--color-logo-footer-icon);
           background-color: var(--color-logo-footer-bg);
 
-          @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+          @media screen and (max-width: ${(props) =>
+              props.theme.breakpoints.tablet}) {
             border-radius: 0.6rem;
             padding: 0.4rem 0.2rem 0.3rem 0.3rem;
             max-width: 3.2rem;
@@ -37,7 +38,7 @@ export const LogoIcon = styled(Icon)`
         `
       : null}
 
-  @media (min-width: var(--breakpoint-tablet)) {
+  @media screen and (min-width: var(--breakpoint-tablet)) {
     max-width: 4.4rem;
     max-height: 4.4rem;
   }

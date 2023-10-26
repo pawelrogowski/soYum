@@ -20,7 +20,7 @@ export const StyledSection = styled.section`
     line-height: 1.11;
     letter-spacing: -0.036rem;
     margin-bottom: 0.8rem;
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       font-size: 2.4rem;
       line-height: 1;
       letter-spacing: -0.048rem;
@@ -33,7 +33,7 @@ export const StyledSection = styled.section`
     line-height: 1.28;
     letter-spacing: -0.028rem;
     opacity: 0.5;
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       font-size: 1.8rem;
       line-height: 1.33;
       letter-spacing: -0.036rem;

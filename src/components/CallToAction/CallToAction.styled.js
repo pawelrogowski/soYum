@@ -18,13 +18,13 @@ export const StyledDiv = styled.div`
   gap: 0.4rem;
   background-color: var(--color-call-bg);
   border-radius: 0.8rem;
-  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     width: 26rem;
     padding: 1.2rem;
     bottom: 23rem;
     right: 0rem;
   }
-  @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     width: 29.8rem;
     padding: 1.6rem;
   }
@@ -35,11 +35,11 @@ export const StyledDiv = styled.div`
     font-weight: 500;
     line-height: 1.5rem;
     letter-spacing: -0.024rem;
-    @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       font-size: 1.4rem;
       line-height: 1.28;
     }
-    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       line-height: 1.43;
     }
     span {
@@ -79,7 +79,7 @@ export const StyledDiv = styled.div`
     top: 6rem;
     left: -1rem;
     pointer-events: none;
-    @media (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       top: 7rem;
       left: 1rem;
     }

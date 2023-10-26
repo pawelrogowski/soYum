@@ -6,7 +6,7 @@ import { StyledNav } from "./NavigationDesktop.styled";
 export const NavigationDesktop = () => {
   const navItems = [
     { path: "/categories", text: "Categories" },
-    { path: "/recipes", text: "Add recipes" },
+    { path: "/add", text: "Add recipes" },
     { path: "/myrecipes", text: "My recipes" },
     { path: "/favorites", text: "Favorites" },
     { path: "/shoppinglist", text: "Shopping List" },

@@ -1,7 +1,7 @@
 import { Formik } from "formik";
 import PropTypes from "prop-types";
 
-import { validationSchema } from "../../../schemas/registrationSchema";
+import { validationSchema } from "../../../validation/registrationSchema";
 import { Button } from "../../Button/Button";
 import { CustomFormikInput } from "../../CustomFormikInput/CustomFormikInput";
 import { StyledForm } from "./NewsletterForm.styled";
@@ -44,8 +44,7 @@ export const NewsletterForm = ({ layout }) => {
               <>
                 <h2>Subscribe to our Newsletter</h2>
                 <p>
-                  Subscribe up to our newsletter. Be in touch with latest news
-                  and special offers.
+                  Subscribe up to our newsletter. Be in touch with latest news and special offers.
                 </p>
               </>
             )}
