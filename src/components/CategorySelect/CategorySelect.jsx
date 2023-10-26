@@ -1,5 +1,5 @@
-import { useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
 
 import { useFieldValidation } from "../../hooks/useFieldValidation";
@@ -9,6 +9,7 @@ import {
 } from "../../redux/slices/addRecipeFormSlice";
 import { validationSchema } from "../../validation/addRecipeSchema.js";
 import { StyledDiv } from "./CategorySelect.styled";
+
 const options = [
   { value: "beef", label: "Beef" },
   { value: "breakfast", label: "Breakfast" },
@@ -27,20 +28,19 @@ const options = [
 ];
 export const CategorySelect = () => {
   const { error, validateField } = useFieldValidation(validationSchema, "recipeCategories");
+  const { recipeCategories } = useSelector((state) => state.addRecipeForm);
   const ref = useRef(null);
   const dispatch = useDispatch();
 
-  const handleChange = async (selectedOptions) => {
-    const { isValid, errorMessage } = await validateField(selectedOptions);
-    isValid
-      ? setRecipeCategories(selectedOptions.map((option) => option.value))
-      : setRecipeCategories([]);
+  const handleChange = async (selectOptions) => {
+    const valueArray = selectOptions.map((option) => option.value);
+    const { isValid, errorMessage } = await validateField(valueArray);
+    isValid ? dispatch(setRecipeCategories(valueArray)) : dispatch(setRecipeCategories([]));
     errorMessage && dispatch(setRecipeCategoriesError(errorMessage));
   };
 
-  const handleBlur = async (e) => {
-    console.log(e);
-    const { errorMessage } = await validateField(e);
+  const handleBlur = async () => {
+    const { errorMessage } = await validateField(recipeCategories);
     errorMessage && dispatch(setRecipeCategoriesError(errorMessage));
   };
 

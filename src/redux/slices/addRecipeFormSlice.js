@@ -13,12 +13,18 @@ const initialState = {
   recipeCookingTimeError: "",
   recipeIngredients: [
     {
+      ingredient: "", // want to validate this
+      measureType: "",
+      amount: 0,
+    },
+  ],
+  recipeIngredientsError: [
+    {
       ingredient: "",
       measureType: "",
       amount: 0,
     },
   ],
-  recipeIngredientsError: "",
   recipePreparationSteps: [],
   recipePreparationStepsError: "",
   currentTextAreaValue: "",

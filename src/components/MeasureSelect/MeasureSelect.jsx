@@ -1,10 +1,17 @@
-import PropTypes from "prop-types";
+import PropTypes, { number } from "prop-types";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import Select from "react-select";
 
-import { setAmount, setMeasure } from "../../redux/slices/addRecipeFormSlice";
+import {
+  setAmount,
+  setAmountError,
+  setMeasure,
+  setMeasureError,
+} from "../../redux/slices/addRecipeFormSlice";
+import { validationSchema } from "../../validation/addRecipeSchema.js";
 import { StyledDiv } from "./MeasureSelect.styled";
+import { useFieldValidation } from "../../hooks/useFieldValidation";
 
 const options = [
   { value: "tbs", label: "tbs" },
@@ -19,15 +26,41 @@ const options = [
 ];
 
 export const MeasureSelect = ({ index }) => {
+  const { measureError, validateField } = useFieldValidation(
+    validationSchema,
+    `recipeIngredients.[${index}].measureType`
+  );
+  const { amountError } = useFieldValidation(
+    validationSchema,
+    `recipeIngredients.[${index}].measureType`
+  );
   const { recipeIngredients } = useSelector((state) => state.addRecipeForm);
   const dispatch = useDispatch();
 
-  const handleAmountChange = (e) => {
-    dispatch(setAmount({ index: index, amount: e.target.value }));
+  const handleMeasureChange = async (selectedOption) => {
+    const selectedValue = selectedOption.value;
+    const { isValid, measureError } = await validateField(selectedValue);
+
+    isValid
+      ? dispatch(setMeasure({ index: index, measureType: selectedValue }))
+      : dispatch(setMeasure({ index: index, measureType: "" }));
+
+    measureError && dispatch(setMeasureError({ index: index, measureType: measureError }));
   };
 
-  const handleMeasureChange = (option) => {
-    dispatch(setMeasure({ index: index, measureType: option.value }));
+  const handleMeasureBlur = async () => {
+    console.log("blurred");
+    const { measureError } = await validateField(recipeIngredients[index].measureType);
+    measureError && dispatch(setMeasureError({ index: index, measureType: measureError }));
+  };
+
+  const handleAmountChange = async (e) => {
+    const { isValid, amountError } = await validateField(e.target.value);
+    isValid
+      ? dispatch(setAmount({ index: index, amount: e.target.value }))
+      : dispatch(setAmount({ index: index, amount: "" }));
+
+    amountError && setAmountError({ index: index, amount: amountError });
   };
 
   return (
@@ -41,6 +74,7 @@ export const MeasureSelect = ({ index }) => {
         placeholder="5"
       />
       <Select
+        onBlur={handleMeasureBlur}
         onChange={handleMeasureChange}
         options={options}
         placeholder="tsp"
@@ -55,6 +89,7 @@ export const MeasureSelect = ({ index }) => {
             : null
         }
       />
+      {measureError && <span>{measureError}</span>}
     </StyledDiv>
   );
 };

@@ -31,7 +31,6 @@ export const RecipeTextInput = ({ name, placeholder }) => {
     <StyledLabel htmlFor={name}>
       <input type="text" name={name} id={name} placeholder={placeholder} onChange={handleChange} />
       {error && <span>{error}</span>}
-      {!error && <span>no error bitch</span>}
     </StyledLabel>
   );
 };
