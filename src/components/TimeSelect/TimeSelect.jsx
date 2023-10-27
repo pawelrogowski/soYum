@@ -36,6 +36,7 @@ export const TimeSelect = () => {
         options={options}
         onChange={handleChange}
         placeholder="5 min"
+        escapeClearsValue
       />
     </StyledDiv>
   );

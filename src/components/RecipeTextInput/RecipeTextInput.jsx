@@ -27,10 +27,22 @@ export const RecipeTextInput = ({ name, placeholder }) => {
     }
   }, 200);
 
+  const handleBlur = async (e) => {
+    const { errorMessage } = await validateField(e.target.value);
+    errorMessage && dispatch(setRecipeAboutError(error));
+  };
+
   return (
-    <StyledLabel htmlFor={name}>
-      <input type="text" name={name} id={name} placeholder={placeholder} onChange={handleChange} />
-      {error && <span>{error}</span>}
+    <StyledLabel htmlFor={name} $hasError={error && "true"}>
+      <input
+        type="text"
+        name={name}
+        id={name}
+        placeholder={placeholder}
+        onChange={handleChange}
+        onBlur={handleBlur}
+      />
+      {error && <span className="validation-error">{error}</span>}
     </StyledLabel>
   );
 };

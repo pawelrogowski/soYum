@@ -11,7 +11,6 @@ export const StyledFormikForm = styled(Form)`
     margin-bottom: 5rem;
   }
   > .image-upload-wrapper {
-    align-self: flex-start;
     display: flex;
     flex-direction: column;
     align-items: center;

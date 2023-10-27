@@ -49,8 +49,10 @@ export const StyledDiv = styled.div`
     }
 
     .Select {
-      //main wrapper
       &__control {
+        * {
+          display: block;
+        }
         display: flex;
         align-items: center;
         justify-content: space-between;

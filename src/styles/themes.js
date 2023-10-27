@@ -412,6 +412,8 @@ export const lightTheme = {
     borderActive: brandColors.main,
     font: "#000",
     fontPlaceholder: "#0000004D",
+    error: "#ff0069",
+    errorBg: "#fafafa",
   },
   select: {
     bg: "#fff",
@@ -829,6 +831,8 @@ export const darkTheme = {
     borderActive: brandColors.main,
     font: "#fafafa",
     fontPlaceholder: "#FAFAFA4D",
+    error: "#ff0069",
+    errorBg: "#1E1F28",
   },
   select: {
     bg: "#8BAA36",
