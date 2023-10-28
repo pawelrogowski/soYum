@@ -1,17 +1,17 @@
-import PropTypes, { number } from "prop-types";
+import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import Select from "react-select";
 
+import { useValidation } from "../../hooks/useFieldValidation";
 import {
   setAmount,
   setAmountError,
   setMeasure,
   setMeasureError,
 } from "../../redux/slices/addRecipeFormSlice";
-import { validationSchema } from "../../validation/addRecipeSchema.js";
+import { addRecipeSchema } from "../../validation/addRecipeSchema.js";
 import { StyledDiv } from "./MeasureSelect.styled";
-import { useFieldValidation } from "../../hooks/useFieldValidation";
 
 const options = [
   { value: "tbs", label: "tbs" },
@@ -26,12 +26,8 @@ const options = [
 ];
 
 export const MeasureSelect = ({ index }) => {
-  const { measureError, validateField } = useFieldValidation(
-    validationSchema,
-    `recipeIngredients.[${index}].measureType`
-  );
-  const { amountError } = useFieldValidation(
-    validationSchema,
+  const { errors, validate } = useValidation(
+    addRecipeSchema,
     `recipeIngredients.[${index}].measureType`
   );
   const { recipeIngredients } = useSelector((state) => state.addRecipeForm);
@@ -39,19 +35,20 @@ export const MeasureSelect = ({ index }) => {
 
   const handleMeasureChange = async (selectedOption) => {
     const selectedValue = selectedOption.value;
-    const { isValid, measureError } = await validateField(selectedValue);
+    const { isValid } = await validate(addRecipeSchema, "recipeMeasureType", selectedValue);
 
     isValid
       ? dispatch(setMeasure({ index: index, measureType: selectedValue }))
       : dispatch(setMeasure({ index: index, measureType: "" }));
 
-    measureError && dispatch(setMeasureError({ index: index, measureType: measureError }));
+    errors.recipeMeasureType &&
+      dispatch(setMeasureError({ index: index, measureType: errors.recipeMeasureType }));
   };
 
   const handleMeasureBlur = async () => {
-    console.log("blurred");
-    const { measureError } = await validateField(recipeIngredients[index].measureType);
-    measureError && dispatch(setMeasureError({ index: index, measureType: measureError }));
+    await validate(addRecipeSchema, "recipeMeasureType", recipeIngredients[index].measureType);
+    errors.recipeMeasureType &&
+      dispatch(setMeasureError({ index: index, measureType: errors.recipeMeasureType }));
   };
 
   const handleAmountChange = async (e) => {
@@ -89,7 +86,7 @@ export const MeasureSelect = ({ index }) => {
             : null
         }
       />
-      {measureError && <span>{measureError}</span>}
+      {errors.recipeMeasureType && <span>{errors.recipeMeasureType}</span>}
     </StyledDiv>
   );
 };
