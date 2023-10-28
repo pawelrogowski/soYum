@@ -2,7 +2,12 @@ import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
 
-import { setRecipeCookingTime } from "../../redux/slices/addRecipeFormSlice";
+import { useValidation } from "../../hooks/useFieldValidation";
+import {
+  setRecipeCookingTime,
+  setRecipeCookingTimeError,
+} from "../../redux/slices/addRecipeFormSlice";
+import { addRecipeSchema } from "../../validation/addRecipeSchema.js";
 import { StyledDiv } from "./TimeSelect.styled.js";
 
 const options = Array.from({ length: 240 / 5 }, (_, i) => {
@@ -11,33 +16,63 @@ const options = Array.from({ length: 240 / 5 }, (_, i) => {
 });
 
 export const TimeSelect = () => {
-  const ref = useRef(null);
+  const { errors, validate } = useValidation();
+  const ref = useRef();
   const dispatch = useDispatch();
   const { recipeCookingTime } = useSelector((state) => state.addRecipeForm);
 
-  const handleChange = (selectedOption) => {
-    dispatch(setRecipeCookingTime(selectedOption.value));
+  const handleChange = async (selectedOption) => {
+    const { isValid, errorMessage } = await validate(
+      addRecipeSchema,
+      "recipeCookingTime",
+      selectedOption.value
+    );
+    isValid
+      ? dispatch(setRecipeCookingTime(selectedOption.value))
+      : dispatch(setRecipeCookingTime(""));
+    errorMessage
+      ? dispatch(setRecipeCookingTimeError(errorMessage))
+      : dispatch(setRecipeCookingTimeError(null));
   };
 
-  const handleClick = () => {
+  const handleBlur = async () => {
+    const { errorMessage } = await validate(
+      addRecipeSchema,
+      "recipeCookingTime",
+      recipeCookingTime
+    );
+    errorMessage
+      ? dispatch(setRecipeCookingTimeError(errorMessage))
+      : dispatch(setRecipeCookingTimeError(null));
+  };
+
+  const handleWrapperClick = () => {
     ref.current.focus();
   };
 
   return (
-    <StyledDiv onClick={handleClick}>
-      <span className={recipeCookingTime ? "no-placeholder" : ""}>
-        {recipeCookingTime ? `Cooking Time: ${recipeCookingTime} min` : "Cooking Time"}
-      </span>
+    <StyledDiv
+      $hasError={errors.recipeCookingTime && "true"}
+      onBlur={handleBlur}
+      onClick={handleWrapperClick}
+      $placeholderShown={!recipeCookingTime}
+    >
+      <span>Cooking Time</span>
       <Select
         ref={ref}
         openMenuOnFocus
+        openMenuOnClick
+        closeMenuOnSelect
+        escapeClearsValue
         unstyled
         classNamePrefix="Select"
         options={options}
         onChange={handleChange}
         placeholder="5 min"
-        escapeClearsValue
       />
+      {errors.recipeCookingTime && (
+        <span className="validation-error">{errors.recipeCookingTime}</span>
+      )}
     </StyledDiv>
   );
 };

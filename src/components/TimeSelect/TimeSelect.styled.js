@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const StyledDiv = styled.div`
   --color-bg: ${({ theme }) => theme.select.bg};
@@ -13,27 +13,53 @@ export const StyledDiv = styled.div`
   --color-accent: ${({ theme }) => theme.select.accent};
   --color-scrollbar-bg: ${({ theme }) => theme.select.scrollbarBg};
   --color-scrollbar-thumb: ${({ theme }) => theme.select.scrollbarThumb};
+  --color-error: ${({ theme }) => theme.select.error};
+  --color-error-bg: ${({ theme }) => theme.select.errorBg};
 
+  position: relative;
   display: flex;
+  align-items: center;
   padding-bottom: 1.8rem;
-  border-bottom: 1px solid var(--color-border-idle);
+  border-bottom: 1px solid
+    ${(props) =>
+      props.$hasError === "true" ? css`var(--color-error)` : css`var(--color-border-idle)`};
   height: 4.4rem;
   transition: border-color 200ms;
   width: 100%;
   cursor: pointer;
   &:hover,
   &:focus {
-    border-bottom: 1px solid var(--color-border-active);
+    border-bottom: 1px solid
+      ${(props) =>
+        props.$hasError === "true" ? css`var(--color-error)` : css`var(--color-border-active)`};
   }
 
-  > span {
+  .validation-error {
+    background: var(--color-error-bg);
+    overflow: hidden;
+    border-left: 1px solid var(--color-error);
+    border-right: 1px solid var(--color-error);
+    max-width: 100%;
+    color: var(--color-error);
+    position: absolute;
+    bottom: -0.5rem;
+    padding: 0 0.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  > span:first-of-type {
     width: 100%;
-    color: var(--color-text-placeholder);
+    color: ${({ $placeholderShown }) =>
+      $placeholderShown ? css`var(--color-text-placeholder)` : css`var(--color-text-idle)`};
     font-size: 1.4rem;
-    line-height: 1;
+    line-height: 1.5;
     @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       font-size: 1.6rem;
     }
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   .no-placeholder {
     color: var(--color-text-idle);
@@ -58,7 +84,7 @@ export const StyledDiv = styled.div`
         justify-content: space-between;
         color: var(--color-text-idle);
         font-size: 1.4rem;
-        line-height: normal;
+        line-height: 1.5;
         letter-spacing: -0.032rem;
         height: 2.4rem;
         ::-webkit-scrollbar {
@@ -72,7 +98,7 @@ export const StyledDiv = styled.div`
       &__placeholder {
         color: var(--color-text-placeholder);
         font-size: 1.4rem;
-        line-height: 1;
+        line-height: 1.5;
         @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
           font-size: 1.6rem;
         }
@@ -92,8 +118,19 @@ export const StyledDiv = styled.div`
         }
         max-height: 1.4rem;
       }
+
       &__indicators {
-        margin-bottom: 0.5rem;
+        height: 2.4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      &__indicator {
+        align-self: center;
+        height: 2.4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       //dropdown clear icon
       &__clear-indicator {
@@ -104,25 +141,15 @@ export const StyledDiv = styled.div`
           }
         }
       }
-      &__multi-value {
-        border: 1px solid var(--color-border-active);
-        border-radius: 4px;
-        padding: 0 4px;
-        background: var(--color-bg);
-        gap: 5px;
-        align-items: center;
-        &:focus,
-        &:hover {
-          svg {
-            fill: var(--color-icon-remove);
-            cursor: pointer;
-          }
-        }
-      }
+
       &__input {
+        position: absolute;
+        top: 0;
+        left: 0;
         min-height: 0;
         max-height: 2.4rem;
         width: 100%;
+        overflow: hidden;
         &-container {
           display: flex;
           cursor: pointer;
@@ -132,21 +159,27 @@ export const StyledDiv = styled.div`
         }
       }
       &__value-container {
+        position: relative;
         scrollbar-width: thin;
         scrollbar-color: var(--color-scrollbar-thumb) var(--color-scrollbar-bg);
         overflow-y: auto;
         gap: 12px;
         width: 11rem;
+        max-width: 7.5rem;
       }
 
       &__menu {
+        white-space: nowrap;
+        overflow-x: hidden;
         background: var(--color-bg);
         border-radius: 0.6rem;
         box-shadow: 0px 7px 8px 5px rgba(0, 0, 0, 0.1);
         min-height: 12.4rem;
-        margin-top: 1.6rem;
+        margin-top: 0.8rem;
         scrollbar-width: thin;
         scrollbar-color: var(--color-scrollbar-thumb) var(--color-scrollbar-bg);
+        min-width: 9rem;
+        right: 0%;
         width: 100%;
 
         ::-webkit-scrollbar {
@@ -164,6 +197,7 @@ export const StyledDiv = styled.div`
       }
 
       &__menu-list {
+        overflow-x: hidden;
         border: 1px solid var(--color-accent);
         width: 100%;
         min-height: 12.4rem;
@@ -172,7 +206,7 @@ export const StyledDiv = styled.div`
         font-size: 14px;
         font-style: normal;
         font-weight: 400;
-        line-height: normal;
+        line-height: 1.5;
         letter-spacing: -0.28px;
         display: flex;
         flex-direction: column;
