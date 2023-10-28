@@ -2,12 +2,12 @@ import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
 
-import { useFieldValidation } from "../../hooks/useFieldValidation";
+import { useValidation } from "../../hooks/useFieldValidation";
 import {
   setRecipeCategories,
   setRecipeCategoriesError,
 } from "../../redux/slices/addRecipeFormSlice";
-import { validationSchema } from "../../validation/addRecipeSchema.js";
+import { addRecipeSchema } from "../../validation/addRecipeSchema.js";
 import { StyledDiv } from "./CategorySelect.styled";
 
 const options = [
@@ -26,42 +26,54 @@ const options = [
   { value: "pork", label: "Pork" },
   { value: "vegetarian", label: "Vegetarian" },
 ];
-export const CategorySelect = () => {
-  const { error, validateField } = useFieldValidation(validationSchema, "recipeCategories");
-  const { recipeCategories } = useSelector((state) => state.addRecipeForm);
-  const ref = useRef(null);
-  const dispatch = useDispatch();
 
-  const handleChange = async (selectOptions) => {
-    const valueArray = selectOptions.map((option) => option.value);
-    const { isValid, errorMessage } = await validateField(valueArray);
+export const CategorySelect = () => {
+  const { errors, validate } = useValidation();
+  const { recipeCategories } = useSelector((state) => state.addRecipeForm);
+  const dispatch = useDispatch();
+  const ref = useRef(null);
+
+  const handleChange = async (selectedOptions) => {
+    const valueArray = selectedOptions.map((option) => option.value);
+    const { isValid, errorMessage } = await validate(
+      addRecipeSchema,
+      "recipeCategories",
+      valueArray
+    );
     isValid ? dispatch(setRecipeCategories(valueArray)) : dispatch(setRecipeCategories([]));
-    errorMessage && dispatch(setRecipeCategoriesError(errorMessage));
+    errorMessage
+      ? dispatch(setRecipeCategoriesError(errorMessage))
+      : dispatch(setRecipeCategoriesError(null));
   };
 
   const handleBlur = async () => {
-    const { errorMessage } = await validateField(recipeCategories);
-    errorMessage && dispatch(setRecipeCategoriesError(errorMessage));
+    const { errorMessage } = await validate(addRecipeSchema, "recipeCategories", recipeCategories);
+    errorMessage
+      ? dispatch(setRecipeCategoriesError(errorMessage))
+      : dispatch(setRecipeCategoriesError(null));
   };
 
-  const handleWrapperClick = () => ref.current.focus();
+  const handleWrapperClick = () => {
+    ref.current.focus();
+  };
 
   return (
-    <>
-      <StyledDiv onClick={handleWrapperClick}>
-        <Select
-          ref={ref}
-          openMenuOnFocus
-          isMulti
-          unstyled
-          classNamePrefix="Select"
-          options={options}
-          onChange={handleChange}
-          onBlur={handleBlur}
-          placeholder="Categories"
-        />
-      </StyledDiv>
-      <span>{error}</span>
-    </>
+    <StyledDiv onClick={handleWrapperClick} $hasError={errors.recipeCategories && "true"}>
+      <Select
+        ref={ref}
+        openMenuOnFocus
+        openMenuOnClick
+        isMulti
+        unstyled
+        options={options}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        placeholder="Categories"
+        classNamePrefix="Select"
+      />
+      {errors.recipeCategories && (
+        <span className="validation-error">{errors.recipeCategories}</span>
+      )}
+    </StyledDiv>
   );
 };

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const StyledDiv = styled.div`
   --color-bg: ${({ theme }) => theme.select.bg};
@@ -13,17 +13,41 @@ export const StyledDiv = styled.div`
   --color-accent: ${({ theme }) => theme.select.accent};
   --color-scrollbar-bg: ${({ theme }) => theme.select.scrollbarBg};
   --color-scrollbar-thumb: ${({ theme }) => theme.select.scrollbarThumb};
+  --color-font-error: ${({ theme }) => theme.recipeTextInput.error};
 
+  --color-bg-error: ${({ theme }) => theme.recipeTextInput.errorBg};
+  position: relative;
   display: flex;
   padding-bottom: 1.8rem;
-  border-bottom: 1px solid var(--color-border-idle);
-  height: 4.4rem;
+  border-bottom: 1px solid
+    ${(props) =>
+      props.$hasError === "true" ? css`var(--color-font-error)` : css`var(--color-border-idle)`};
   transition: border-color 200ms;
   width: 100%;
-  cursor: text;
+  min-height: 2.4rem;
+  cursor: pointer;
+
   &:hover,
   &:focus {
-    border-bottom: 1px solid var(--color-border-active);
+    border-bottom: 1px solid
+      ${(props) =>
+        props.$hasError === "true"
+          ? css`var(--color-font-error)`
+          : css`var(--color-border-active)`};
+  }
+
+  .validation-error {
+    background: var(--color-bg-error);
+    overflow: hidden;
+    border-left: 1px solid var(--color-font-error);
+    border-right: 1px solid var(--color-font-error);
+    max-width: 100%;
+    color: var(--color-font-error);
+    position: absolute;
+    bottom: -0.5rem;
+    padding: 0 0.8rem;
+    left: 50%;
+    transform: translateX(-50%);
   }
   > div {
     width: 100%;
@@ -33,8 +57,9 @@ export const StyledDiv = styled.div`
     }
 
     div {
-      max-height: 2.4rem;
-      min-height: 0;
+      min-height: 2.4rem;
+      display: flex;
+      align-items: center;
     }
 
     .Select {
@@ -46,21 +71,24 @@ export const StyledDiv = styled.div`
         justify-content: space-between;
         color: var(--color-text-idle);
         font-size: 1.4rem;
-        line-height: normal;
+        line-height: 1.5;
         letter-spacing: -0.032rem;
-        height: 2.4rem;
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-scrollbar-thumb) var(--color-scrollbar-bg);
+        cursor: pointer;
         ::-webkit-scrollbar {
-          width: 0px;
+          width: 0;
         }
-        @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-          font-size: 1.6rem;
+
+        ::-webkit-scrollbar-track {
+          background: transparent;
         }
       }
 
       &__placeholder {
         color: var(--color-text-placeholder);
         font-size: 1.4rem;
-        line-height: 1;
+        line-height: 1.5;
         @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
           font-size: 1.6rem;
         }
@@ -73,13 +101,15 @@ export const StyledDiv = styled.div`
           cursor: pointer;
           &:focus,
           &:hover {
-            fill: var(--color-text-active);
+            fill: var(--color-icon-active);
           }
         }
         max-height: 1.4rem;
       }
       &__indicators {
-        margin-bottom: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       //dropdown clear icon
       &__clear-indicator {
@@ -91,7 +121,7 @@ export const StyledDiv = styled.div`
         }
       }
       &__multi-value {
-        border: 1px solid var(--color-border-active);
+        border: none;
         border-radius: 4px;
         padding: 0 4px;
         background: var(--color-bg);
@@ -106,22 +136,25 @@ export const StyledDiv = styled.div`
         }
       }
       &__input {
-        min-height: 0;
+        min-height: 2.4rem;
         max-height: 2.4rem;
+        max-width: 0;
+        min-width: 0 !important;
+        font-size: 0px;
         width: 100%;
+        color: var(--color-bg);
         &-container {
           display: flex;
           cursor: pointer;
+          max-width: 0px;
           &:after {
             display: none;
           }
         }
       }
       &__value-container {
-        scrollbar-width: thin;
-        scrollbar-color: var(--color-scrollbar-thumb) var(--color-scrollbar-bg);
         overflow-y: auto;
-        gap: 12px;
+        gap: 4px;
         width: 100%;
       }
 
@@ -158,7 +191,7 @@ export const StyledDiv = styled.div`
         font-size: 14px;
         font-style: normal;
         font-weight: 400;
-        line-height: normal;
+        line-height: 1.5;
         letter-spacing: -0.28px;
         display: flex;
         flex-direction: column;
