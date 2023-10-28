@@ -5,7 +5,6 @@ export const StyledFormikForm = styled(Form)`
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 
   .ingredient-list {
     margin-bottom: 5rem;
@@ -18,12 +17,15 @@ export const StyledFormikForm = styled(Form)`
     display: flex;
     flex-direction: column;
     margin-bottom: 6.71rem;
+
     @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       gap: 3.2rem;
       flex-direction: row;
+      align-items: flex-start;
     }
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       gap: 5rem;
+      min-height: 38rem;
     }
     .image-upload-wrapper__inner {
       flex-grow: 1;
@@ -36,7 +38,7 @@ export const StyledFormikForm = styled(Form)`
         gap: 3.1rem;
       }
       @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-        gap: 4rem;
+        gap: 5.7rem;
       }
     }
   }
