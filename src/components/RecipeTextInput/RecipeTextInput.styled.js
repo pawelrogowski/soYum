@@ -30,7 +30,9 @@ export const StyledLabel = styled.label`
     &:focus {
       outline: none;
       border-color: ${(props) =>
-        props.$hasError === "true" ? css`var(--color-font-error)` : css`var(--color-border-idle)`};
+        props.$hasError === "true"
+          ? css`var(--color-font-error)`
+          : css`var(--color-border-active)`};
     }
     &:placeholder-shown {
       color: var(--color-font-placeholder);
