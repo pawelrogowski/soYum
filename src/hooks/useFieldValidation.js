@@ -1,21 +1,21 @@
 import { useState } from "react";
 import * as yup from "yup";
 
-export const useFieldValidation = (validationSchema, fieldName) => {
-  const [error, setError] = useState("");
+export const useValidation = () => {
+  const [errors, setErrors] = useState({});
 
-  const validateField = async (value, parentFields) => {
+  const validate = async (validationSchema, fieldName, value, parentFields) => {
     try {
       const fieldSchema = yup.reach(validationSchema, fieldName);
       await fieldSchema.validate(value, { ...parentFields });
 
-      setError("");
+      setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: "" }));
       return { isValid: true, errorMessage: "" };
     } catch (error) {
-      setError(error.message);
+      setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: error.message }));
       return { isValid: false, errorMessage: error.message };
     }
   };
 
-  return { error, validateField };
+  return { errors, validate };
 };

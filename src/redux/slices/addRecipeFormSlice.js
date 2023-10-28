@@ -13,7 +13,7 @@ const initialState = {
   recipeCookingTimeError: "",
   recipeIngredients: [
     {
-      ingredient: "", // want to validate this
+      ingredient: "",
       measureType: "",
       amount: 0,
     },

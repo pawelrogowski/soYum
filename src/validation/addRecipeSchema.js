@@ -1,19 +1,17 @@
 import * as Yup from "yup";
 
-export const validationSchema = Yup.object().shape({
-  recipeTitle: Yup.string().required("Title is required."),
-  recipeAbout: Yup.string()
-    .required("Short description is required.")
-    .min(20, "please provide longer description."),
-  recipeCategories: Yup.array().of(Yup.string()).min(1, "Select at least one category"),
-  recipeCookingTime: Yup.string().required("Required"),
+export const addRecipeSchema = Yup.object().shape({
+  recipeTitle: Yup.string("wrong type").required("Required."),
+  recipeAbout: Yup.string("wrong type").required("Required.").min(20, "Too short"),
+  recipeCategories: Yup.array().of(Yup.string("wrong type")).min(1, "Required"),
+  recipeCookingTime: Yup.string("wrong type").required("Required"),
 
   recipeIngredients: Yup.array()
     .of(
       Yup.object().shape({
-        ingredient: Yup.string("must be a string").required("required").min(5, "min 5"), // to mnie interesuje
-        measureType: Yup.string().required("Required"),
-        amount: Yup.number().required("Required"),
+        ingredient: Yup.string("wrong type").required("Required").min(1, "at least 1 character"),
+        measureType: Yup.string("wrong type").required("Required"),
+        amount: Yup.number("wrong type").required("Required"),
       })
     )
     .min(1, "Add at least one ingredient"),
