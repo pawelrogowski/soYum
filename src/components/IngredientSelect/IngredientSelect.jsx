@@ -9,7 +9,7 @@ import {
   setIngredient,
   setIngredientError,
 } from "../../redux/slices/addRecipeFormSlice";
-import { validationSchema } from "../../validation/addRecipeSchema.js";
+import { addRecipeSchema } from "../../validation/addRecipeSchema.js";
 import { Icon } from "../Icon/Icon";
 import { MeasureSelect } from "../MeasureSelect/MeasureSelect";
 import { StyledDiv } from "./IngredientSelect.styled";
@@ -21,7 +21,7 @@ const options = [
 
 export const IngredientSelect = ({ index }) => {
   const { error, validateField } = useFieldValidation(
-    validationSchema,
+    addRecipeSchema,
     `recipeIngredients.[${index}].ingredient`
   );
   const { recipeIngredients } = useSelector((state) => state.addRecipeForm);
@@ -50,26 +50,29 @@ export const IngredientSelect = ({ index }) => {
 
   return (
     <>
-      <StyledDiv>
+      <StyledDiv $hasError={error && "true"} onBlur={handleBlur}>
         <div>
-          <Creatable
-            openMenuOnFocus
-            unstyled
-            classNamePrefix="Select"
-            formatCreateLabel={(inputValue) => `${inputValue}`}
-            options={options}
-            placeholder="Ingredient"
-            value={
-              recipeIngredients[index].ingredient
-                ? {
-                    value: recipeIngredients[index].ingredient,
-                    label: recipeIngredients[index].ingredient,
-                  }
-                : null
-            }
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
+          <div className="ingredient-wrapper">
+            <Creatable
+              openMenuOnFocus
+              unstyled
+              classNamePrefix="Select"
+              formatCreateLabel={(inputValue) => `${inputValue}`}
+              options={options}
+              placeholder="Ingredient"
+              escapeClearsValue
+              value={
+                recipeIngredients[index].ingredient
+                  ? {
+                      value: recipeIngredients[index].ingredient,
+                      label: recipeIngredients[index].ingredient,
+                    }
+                  : null
+              }
+              onChange={handleChange}
+            />
+            {error && <span className="validation-error">{error}</span>}
+          </div>
           <MeasureSelect index={index} />
         </div>
 
@@ -81,7 +84,6 @@ export const IngredientSelect = ({ index }) => {
           <Icon icon="x" />
         </button>
       </StyledDiv>
-      {error && <span>{error}</span>}
     </>
   );
 };

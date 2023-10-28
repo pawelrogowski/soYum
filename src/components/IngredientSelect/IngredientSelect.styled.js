@@ -1,9 +1,10 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const StyledDiv = styled.div`
   --color-bg: ${({ theme }) => theme.select.bg};
   --color-ingredient-bg: ${({ theme }) => theme.select.ingredient.bg};
   --color-ingredient-border-idle: ${({ theme }) => theme.select.ingredient.borderIdle};
+  --color-ingredient-border-active: ${({ theme }) => theme.select.ingredient.borderActive};
   --color-text-idle: ${({ theme }) => theme.select.textIdle};
   --color-text-active: ${({ theme }) => theme.select.textActive};
   --color-text-placeholder: ${({ theme }) => theme.select.textPlaceholder};
@@ -15,9 +16,30 @@ export const StyledDiv = styled.div`
   --color-accent: ${({ theme }) => theme.select.accent};
   --color-scrollbar-bg: ${({ theme }) => theme.select.scrollbarBg};
   --color-scrollbar-thumb: ${({ theme }) => theme.select.scrollbarThumb};
+  --color-error: ${({ theme }) => theme.select.error};
+  --color-error-bg: ${({ theme }) => theme.select.errorBg};
 
   display: flex;
   align-items: center;
+
+  .validation-error {
+    display: block !important;
+    position: absolute;
+    background: var(--color-error-bg);
+    overflow: hidden;
+    border-left: 1px solid var(--color-error);
+    border-right: 1px solid var(--color-error);
+    max-width: 100%;
+    color: var(--color-error);
+    bottom: -0.5rem;
+    padding: 0 0.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .ingredient-wrapper {
+    position: relative;
+  }
   > div:first-of-type {
     display: flex;
     gap: 1.4rem;
@@ -30,13 +52,21 @@ export const StyledDiv = styled.div`
       height: 5.3rem;
       width: 100%;
       flex-grow: 1;
-      border: 1px solid var(--color-ingredient-border-idle);
+      border: 1px solid
+        ${(props) =>
+          props.$hasError === "true"
+            ? css`var(--color-error)`
+            : css`var(--color-ingredient-border-idle)`};
       border-radius: 5px;
       transition: border-color 200ms;
       cursor: text;
       &:hover,
       &:focus {
-        border: 1px solid var(--color-border-active);
+        border: 1px solid
+          ${(props) =>
+            props.$hasError === "true"
+              ? css`var(--color-error)`
+              : css`var(--color-ingredient-border-active)`};
       }
 
       span {
@@ -131,6 +161,8 @@ export const StyledDiv = styled.div`
           min-height: 13rem;
 
           right: 0;
+          bottom: 0;
+          top: 3.5rem;
           scrollbar-width: thin;
           scrollbar-color: var(--color-scrollbar-thumb) var(--color-scrollbar-bg);
           width: 100%;
@@ -143,9 +175,9 @@ export const StyledDiv = styled.div`
             background: transparent;
           }
           ::-webkit-scrollbar-thumb {
-            background: red;
+            background: var(--color-error);
             border-radius: 12px;
-            border: 6px solid red;
+            border: 6px solid var(--color-error);
           }
         }
 
