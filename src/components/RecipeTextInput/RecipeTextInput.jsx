@@ -17,7 +17,7 @@ export const RecipeTextInput = ({ name, placeholder }) => {
   const { errors, validate } = useValidation();
 
   const handleChange = debounce(async (e) => {
-    const { isValid, errorMessage } = await validate(addRecipeSchema, name, e.target.value);
+    const { isValid, errorMessage } = validate(addRecipeSchema, name, e.target.value);
     const setField = name.startsWith("recipeTitle") ? setRecipeTitle : setRecipeAbout;
     const setError = name.startsWith("recipeTitle") ? setRecipeTitleError : setRecipeAboutError;
 
@@ -26,7 +26,7 @@ export const RecipeTextInput = ({ name, placeholder }) => {
   }, 200);
 
   const handleBlur = async (e) => {
-    const { errorMessage } = await validate(addRecipeSchema, name, e.target.value);
+    const { errorMessage } = validate(addRecipeSchema, name, e.target.value);
     errorMessage
       ? dispatch(setRecipeAboutError(errorMessage))
       : dispatch(setRecipeAboutError(null));

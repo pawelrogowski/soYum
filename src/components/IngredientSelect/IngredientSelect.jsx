@@ -3,11 +3,13 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import Creatable from "react-select/creatable";
 
-import { useFieldValidation } from "../../hooks/useFieldValidation";
+import { useValidation } from "../../hooks/useFieldValidation";
 import {
   removeIngredient,
+  setAmountError,
   setIngredient,
   setIngredientError,
+  setMeasureError,
 } from "../../redux/slices/addRecipeFormSlice";
 import { addRecipeSchema } from "../../validation/addRecipeSchema.js";
 import { Icon } from "../Icon/Icon";
@@ -20,37 +22,70 @@ const options = [
 ];
 
 export const IngredientSelect = ({ index }) => {
-  const { error, validateField } = useFieldValidation(
-    addRecipeSchema,
-    `recipeIngredients.[${index}].ingredient`
-  );
+  const { validate } = useValidation();
   const { recipeIngredients } = useSelector((state) => state.addRecipeForm);
   const dispatch = useDispatch();
 
   const handleChange = async (selectedOption) => {
     const selectedValue = selectedOption.value;
-    console.log(typeof selectedValue, selectedValue);
-    const { isValid, error } = await validateField(selectedValue);
+
+    const { isValid, errorMessage } = validate(
+      addRecipeSchema,
+      `recipeIngredients.[${index}].ingredient`,
+      selectedValue
+    );
 
     isValid
       ? dispatch(setIngredient({ index: index, ingredient: selectedValue }))
       : dispatch(setIngredient({ index: index, ingredient: "" }));
 
-    error && dispatch(setIngredientError({ index: index, ingredient: error }));
-  };
-
-  const handleBlur = async () => {
-    const { error } = await validateField(recipeIngredients[index].ingredient);
-    error && dispatch(setIngredientError({ index: index, ingredient: error }));
+    errorMessage
+      ? dispatch(setIngredientError({ index: index, error: errorMessage }))
+      : dispatch(setIngredientError({ index: index, error: null }));
   };
 
   const handleRemoveIngredient = (index) => {
     dispatch(removeIngredient(index));
   };
 
+  const handleWrapperBlur = async () => {
+    const { errorMessage: ingredientError } = validate(
+      addRecipeSchema,
+      `recipeIngredients.[${index}].ingredient`,
+      recipeIngredients[index].ingredient
+    );
+
+    ingredientError
+      ? dispatch(setIngredientError({ index: index, error: ingredientError }))
+      : dispatch(setIngredientError({ index: index, error: null }));
+
+    const { errorMessage: measureError } = validate(
+      addRecipeSchema,
+      `recipeIngredients.[${index}].measureType`,
+      recipeIngredients[index].measureType
+    );
+
+    measureError
+      ? dispatch(setMeasureError({ index: index, error: measureError }))
+      : dispatch(setMeasureError({ index: index, error: null }));
+
+    const { errorMessage: amountError } = validate(
+      addRecipeSchema,
+      `recipeIngredients.[${index}].amount`,
+      recipeIngredients[index].amount
+    );
+
+    amountError
+      ? dispatch(setAmountError({ index: index, error: amountError }))
+      : dispatch(setAmountError({ index: index, error: null }));
+  };
+
   return (
     <>
-      <StyledDiv $hasError={error && "true"} onBlur={handleBlur}>
+      <StyledDiv
+        $hasError={recipeIngredients[index].ingredientError && "true"}
+        onBlur={handleWrapperBlur}
+      >
         <div>
           <div className="ingredient-wrapper">
             <Creatable
@@ -71,7 +106,9 @@ export const IngredientSelect = ({ index }) => {
               }
               onChange={handleChange}
             />
-            {error && <span className="validation-error">{error}</span>}
+            {recipeIngredients[index].ingredientError && (
+              <span className="validation-error">{recipeIngredients[index].ingredientError}</span>
+            )}
           </div>
           <MeasureSelect index={index} />
         </div>

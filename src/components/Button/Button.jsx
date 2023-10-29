@@ -4,12 +4,7 @@ import { StyledButton } from "./Button.styled";
 
 export const Button = ({ variant, type, children, disabled, onClick }) => {
   return (
-    <StyledButton
-      $variant={variant}
-      type={type}
-      disabled={disabled}
-      onClick={onClick}
-    >
+    <StyledButton $variant={variant} type={type} disabled={disabled} onClick={onClick}>
       {children}
     </StyledButton>
   );

@@ -26,57 +26,63 @@ const options = [
 ];
 
 export const MeasureSelect = ({ index }) => {
-  const { errors, validate } = useValidation(
-    addRecipeSchema,
-    `recipeIngredients.[${index}].measureType`
-  );
+  const { errors, validate } = useValidation();
   const { recipeIngredients } = useSelector((state) => state.addRecipeForm);
   const dispatch = useDispatch();
-
   const handleMeasureChange = async (selectedOption) => {
     const selectedValue = selectedOption.value;
-    const { isValid } = await validate(addRecipeSchema, "recipeMeasureType", selectedValue);
+    const { isValid, errorMessage } = validate(
+      addRecipeSchema,
+      `recipeIngredients.[${index}].measureType`,
+      selectedValue
+    );
 
     isValid
       ? dispatch(setMeasure({ index: index, measureType: selectedValue }))
       : dispatch(setMeasure({ index: index, measureType: "" }));
 
-    errors.recipeMeasureType &&
-      dispatch(setMeasureError({ index: index, measureType: errors.recipeMeasureType }));
-  };
-
-  const handleMeasureBlur = async () => {
-    await validate(addRecipeSchema, "recipeMeasureType", recipeIngredients[index].measureType);
-    errors.recipeMeasureType &&
-      dispatch(setMeasureError({ index: index, measureType: errors.recipeMeasureType }));
+    errorMessage
+      ? dispatch(setMeasureError({ index: index, error: errors.recipeMeasureType }))
+      : dispatch(setMeasureError({ index: index, error: errors.recipeMeasureType }));
   };
 
   const handleAmountChange = async (e) => {
-    const { isValid, amountError } = await validateField(e.target.value);
+    const { isValid, errorMessage } = validate(
+      addRecipeSchema,
+      `recipeIngredients.[${index}].amount`,
+      e.target.value
+    );
     isValid
       ? dispatch(setAmount({ index: index, amount: e.target.value }))
       : dispatch(setAmount({ index: index, amount: "" }));
 
-    amountError && setAmountError({ index: index, amount: amountError });
+    errorMessage
+      ? dispatch(setAmountError({ index: index, error: errorMessage }))
+      : dispatch(setAmountError({ index: index, error: null }));
   };
 
   return (
-    <StyledDiv>
+    <StyledDiv
+      $hasError={
+        (recipeIngredients[index].measureTypeError || recipeIngredients[index].amountError) &&
+        "true"
+      }
+    >
       <input
         name="amount"
         type="number"
-        value={recipeIngredients[index].amount ? recipeIngredients[index].amount : ""}
         onChange={handleAmountChange}
         aria-label="amount"
         placeholder="5"
       />
       <Select
-        onBlur={handleMeasureBlur}
         onChange={handleMeasureChange}
         options={options}
         placeholder="tsp"
         unstyled
+        isSearchable={false}
         classNamePrefix="Select"
+        escapeClearsValue={true}
         value={
           recipeIngredients[index].measureType
             ? {
@@ -86,7 +92,11 @@ export const MeasureSelect = ({ index }) => {
             : null
         }
       />
-      {errors.recipeMeasureType && <span>{errors.recipeMeasureType}</span>}
+      {(recipeIngredients[index].measureTypeError || recipeIngredients[index].amountError) && (
+        <span className="validation-error">
+          {recipeIngredients[index].measureTypeError || recipeIngredients[index].amountError}
+        </span>
+      )}
     </StyledDiv>
   );
 };

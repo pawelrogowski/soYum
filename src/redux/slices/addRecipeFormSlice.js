@@ -15,14 +15,10 @@ const initialState = {
     {
       ingredient: "",
       measureType: "",
-      amount: 0,
-    },
-  ],
-  recipeIngredientsError: [
-    {
-      ingredient: "",
-      measureType: "",
-      amount: 0,
+      amount: "",
+      ingredientError: "",
+      measureTypeError: "",
+      amountError: "",
     },
   ],
   recipePreparationSteps: [],
@@ -73,16 +69,13 @@ export const addRecipeFormSlice = createSlice({
     addIngredient: (state, action) => {
       state.recipeIngredients.push(action.payload);
     },
-    addIngredientError: (state, action) => {
-      state.recipeIngredientsError.push(action.payload);
-    },
     setIngredient: (state, action) => {
       const { index, ingredient } = action.payload;
       state.recipeIngredients[index].ingredient = ingredient;
     },
     setIngredientError: (state, action) => {
-      const { index, ingredient } = action.payload;
-      state.recipeIngredientsError[index].ingredient = ingredient;
+      const { index, error } = action.payload;
+      state.recipeIngredients[index].ingredientError = error;
     },
 
     setMeasure: (state, action) => {
@@ -90,8 +83,8 @@ export const addRecipeFormSlice = createSlice({
       state.recipeIngredients[index].measureType = measureType;
     },
     setMeasureError: (state, action) => {
-      const { index, measureType } = action.payload;
-      state.recipeIngredientsError[index].measureType = measureType;
+      const { index, error } = action.payload;
+      state.recipeIngredients[index].measureTypeError = error;
     },
 
     setAmount: (state, action) => {
@@ -99,8 +92,8 @@ export const addRecipeFormSlice = createSlice({
       state.recipeIngredients[index].amount = amount;
     },
     setAmountError: (state, action) => {
-      const { index, amount } = action.payload;
-      state.recipeIngredientsError[index].amount = amount;
+      const { index, error } = action.payload;
+      state.recipeIngredients[index].amountError = error;
     },
 
     removeIngredient: (state, action) => {

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const StyledDiv = styled.div`
   --color-bg: ${({ theme }) => theme.select.bg};
@@ -15,13 +15,18 @@ export const StyledDiv = styled.div`
   --color-accent: ${({ theme }) => theme.select.accent};
   --color-scrollbar-bg: ${({ theme }) => theme.select.scrollbarBg};
   --color-scrollbar-thumb: ${({ theme }) => theme.select.scrollbarThumb};
-
+  --color-error: ${({ theme }) => theme.select.error};
+  --color-error-bg: ${({ theme }) => theme.select.errorBg};
+  position: relative;
   padding: 1.6rem 1.2rem 1.6rem 1.6rem;
-  border: none;
   background: var(--color-ingredient-bg);
   height: 5.3rem;
   width: auto;
-  border: 1px solid var(--color-ingredient-border-idle);
+  border: 1px solid
+    ${(props) =>
+      props.$hasError === "true"
+        ? css`var(--color-error)`
+        : css`var(--color-ingredient-border-idle)`};
   border-radius: 5px;
   transition: border-color 200ms;
   display: flex;
@@ -30,8 +35,28 @@ export const StyledDiv = styled.div`
   cursor: text;
   &:hover,
   &:focus {
-    border: 1px solid var(--color-border-active);
+    border: 1px solid
+      ${(props) =>
+        props.$hasError === "true"
+          ? css`var(--color-error)`
+          : css`var(--color-ingredient-border-active)`};
   }
+
+  .validation-error {
+    display: block !important;
+    position: absolute;
+    background: var(--color-error-bg);
+    overflow: hidden;
+    border-left: 1px solid var(--color-error);
+    border-right: 1px solid var(--color-error);
+    max-width: 100%;
+    color: var(--color-error);
+    bottom: -0.5rem;
+    padding: 0 0.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   input {
     max-width: 3rem;
     color: var(--color-text-idle);
@@ -145,11 +170,16 @@ export const StyledDiv = styled.div`
         min-height: 0;
         max-height: 2.4rem;
         width: 100%;
+        max-width: 0;
+        min-width: 0;
         &-container {
-          display: none;
           cursor: pointer;
+          max-width: 0;
+          min-width: 0;
           &:after {
             display: none;
+            max-width: 0;
+            min-width: 0;
           }
         }
       }
@@ -196,10 +226,8 @@ export const StyledDiv = styled.div`
         width: 10rem;
         min-height: 13rem;
         border-radius: 0.6rem;
-        font-family: Poppins;
         font-size: 14px;
         font-style: normal;
-        font-weight: 400;
         line-height: normal;
         letter-spacing: -0.28px;
         display: flex;

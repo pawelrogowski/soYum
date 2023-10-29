@@ -14,7 +14,6 @@ export const StyledDiv = styled.div`
   --color-scrollbar-bg: ${({ theme }) => theme.select.scrollbarBg};
   --color-scrollbar-thumb: ${({ theme }) => theme.select.scrollbarThumb};
   --color-font-error: ${({ theme }) => theme.recipeTextInput.error};
-
   --color-bg-error: ${({ theme }) => theme.recipeTextInput.errorBg};
   position: relative;
   display: flex;

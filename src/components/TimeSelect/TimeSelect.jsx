@@ -22,7 +22,7 @@ export const TimeSelect = () => {
   const { recipeCookingTime } = useSelector((state) => state.addRecipeForm);
 
   const handleChange = async (selectedOption) => {
-    const { isValid, errorMessage } = await validate(
+    const { isValid, errorMessage } = validate(
       addRecipeSchema,
       "recipeCookingTime",
       selectedOption.value
@@ -36,11 +36,7 @@ export const TimeSelect = () => {
   };
 
   const handleBlur = async () => {
-    const { errorMessage } = await validate(
-      addRecipeSchema,
-      "recipeCookingTime",
-      recipeCookingTime
-    );
+    const { errorMessage } = validate(addRecipeSchema, "recipeCookingTime", recipeCookingTime);
     errorMessage
       ? dispatch(setRecipeCookingTimeError(errorMessage))
       : dispatch(setRecipeCookingTimeError(null));

@@ -4,10 +4,10 @@ import * as yup from "yup";
 export const useValidation = () => {
   const [errors, setErrors] = useState({});
 
-  const validate = async (validationSchema, fieldName, value, parentFields) => {
+  const validate = (validationSchema, fieldName, value, parentFields) => {
     try {
       const fieldSchema = yup.reach(validationSchema, fieldName);
-      await fieldSchema.validate(value, { ...parentFields });
+      fieldSchema.validateSync(value, { ...parentFields });
 
       setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: "" }));
       return { isValid: true, errorMessage: "" };

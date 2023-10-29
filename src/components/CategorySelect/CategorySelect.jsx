@@ -35,11 +35,7 @@ export const CategorySelect = () => {
 
   const handleChange = async (selectedOptions) => {
     const valueArray = selectedOptions.map((option) => option.value);
-    const { isValid, errorMessage } = await validate(
-      addRecipeSchema,
-      "recipeCategories",
-      valueArray
-    );
+    const { isValid, errorMessage } = validate(addRecipeSchema, "recipeCategories", valueArray);
     isValid ? dispatch(setRecipeCategories(valueArray)) : dispatch(setRecipeCategories([]));
     errorMessage
       ? dispatch(setRecipeCategoriesError(errorMessage))
@@ -47,7 +43,7 @@ export const CategorySelect = () => {
   };
 
   const handleBlur = async () => {
-    const { errorMessage } = await validate(addRecipeSchema, "recipeCategories", recipeCategories);
+    const { errorMessage } = validate(addRecipeSchema, "recipeCategories", recipeCategories);
     errorMessage
       ? dispatch(setRecipeCategoriesError(errorMessage))
       : dispatch(setRecipeCategoriesError(null));
