@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
 
-export const StyledDiv = styled.div`
+export const StyledDiv = styled(motion.div)`
   --color-bg: ${({ theme }) => theme.select.bg};
   --color-ingredient-bg: ${({ theme }) => theme.select.ingredient.bg};
   --color-ingredient-border-idle: ${({ theme }) => theme.select.ingredient.borderIdle};
@@ -58,7 +59,7 @@ export const StyledDiv = styled.div`
             ? css`var(--color-error)`
             : css`var(--color-ingredient-border-idle)`};
       border-radius: 5px;
-      transition: border-color 200ms;
+      transition: border-color 100ms;
       cursor: text;
       &:hover,
       &:focus {
@@ -120,7 +121,7 @@ export const StyledDiv = styled.div`
           //idle icons
           svg {
             fill: var(--color-icon-idle);
-            transition: fill 200ms;
+            transition: fill 100ms;
             cursor: pointer;
             &:focus,
             &:hover {
@@ -155,6 +156,7 @@ export const StyledDiv = styled.div`
         }
 
         &__menu {
+          z-index: 50000;
           background: var(--color-bg);
           border-radius: 0.6rem;
           box-shadow: 0px 7px 8px 5px rgba(0, 0, 0, 0.1);
@@ -182,6 +184,7 @@ export const StyledDiv = styled.div`
         }
 
         &__menu-list {
+          z-index: 5;
           border: 1px solid var(--color-accent);
           width: 100%;
           min-height: 13rem;
@@ -199,6 +202,7 @@ export const StyledDiv = styled.div`
         }
 
         &__option {
+          z-index: 5;
           min-height: 2rem;
 
           &:hover,
@@ -227,7 +231,7 @@ export const StyledDiv = styled.div`
       }
     }
     > svg {
-      transition: stroke 200ms;
+      transition: stroke 100ms;
       stroke: var(--color-icon-idle);
       width: 1.8rem;
       height: 1.8rem;

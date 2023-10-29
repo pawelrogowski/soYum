@@ -11,6 +11,7 @@ import {
   setMeasureError,
 } from "../../redux/slices/addRecipeFormSlice";
 import { addRecipeSchema } from "../../validation/addRecipeSchema.js";
+import { InputErrorSpan } from "../InputErrorSpan/InputErrorSpan";
 import { StyledDiv } from "./MeasureSelect.styled";
 
 const options = [
@@ -46,7 +47,7 @@ export const MeasureSelect = ({ index }) => {
       : dispatch(setMeasureError({ index: index, error: errors.recipeMeasureType }));
   };
 
-  const handleAmountChange = async (e) => {
+  const handleAmountChange = (e) => {
     const { isValid, errorMessage } = validate(
       addRecipeSchema,
       `recipeIngredients.[${index}].amount`,
@@ -93,9 +94,12 @@ export const MeasureSelect = ({ index }) => {
         }
       />
       {(recipeIngredients[index].measureTypeError || recipeIngredients[index].amountError) && (
-        <span className="validation-error">
-          {recipeIngredients[index].measureTypeError || recipeIngredients[index].amountError}
-        </span>
+        <InputErrorSpan
+          className="validation-error"
+          errorMessage={
+            recipeIngredients[index].measureTypeError || recipeIngredients[index].amountError
+          }
+        />
       )}
     </StyledDiv>
   );

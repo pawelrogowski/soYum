@@ -28,7 +28,7 @@ export const StyledDiv = styled.div`
         ? css`var(--color-error)`
         : css`var(--color-ingredient-border-idle)`};
   border-radius: 5px;
-  transition: border-color 200ms;
+  transition: border-color 100ms;
   display: flex;
   gap: 0.2rem;
   margin-right: 1rem;
@@ -152,7 +152,7 @@ export const StyledDiv = styled.div`
         //idle icons
         svg {
           fill: var(--color-icon-idle);
-          transition: fill 200ms;
+          transition: fill 100ms;
           cursor: pointer;
           &:focus,
           &:hover {

@@ -37,7 +37,7 @@ export const Counter = () => {
         type="button"
         aria-label="add new ingredient"
         onClick={handleIncrement}
-        disabled={recipeIngredients.length > 49}
+        disabled={recipeIngredients.length > 19}
       >
         <Icon icon="plus" />
       </button>

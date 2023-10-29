@@ -71,6 +71,7 @@ export const addRecipeFormSlice = createSlice({
     },
     setIngredient: (state, action) => {
       const { index, ingredient } = action.payload;
+      console.log(action.payload);
       state.recipeIngredients[index].ingredient = ingredient;
     },
     setIngredientError: (state, action) => {
