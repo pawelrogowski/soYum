@@ -40,7 +40,6 @@ export const UserUpdateForm = () => {
     window.cloudinary.openUploadWidget(cloudinarySettings, (error, result) => {
       if (!error && result && result.event === "success") {
         setAvatarPreview(result.info.secure_url);
-        console.log(result.info.secure_url);
       } else if (error) {
         console.log(error);
       }
@@ -59,8 +58,6 @@ export const UserUpdateForm = () => {
       } else {
         changedValues.avatar = avatarPreview;
       }
-
-      console.log(changedValues);
 
       setSubmitting(false);
     },

@@ -34,8 +34,6 @@ export const IngredientList = ({ className }) => {
 
   const handleIngredientChange = useCallback(
     (selectedOption, index) => {
-      console.log(index);
-      console.log(selectedOption);
       const selectedValue = selectedOption.value;
 
       const { isValid, errorMessage } = validate(
@@ -113,7 +111,6 @@ export const IngredientList = ({ className }) => {
           `recipeIngredients.[${index}].${field}`,
           recipeIngredient[field]
         );
-        console.log(fieldError);
         dispatch(
           errorActions[field]({
             index: index,

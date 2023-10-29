@@ -11,7 +11,6 @@ export const useScrollToTopOnRouteChange = () => {
     const rootDiv = document.getElementById("root");
     if (rootDiv && pathname.split("/").length === 2) {
       rootDiv.scrollTop = 0;
-      console.log("Scrolling to top");
     }
   }, [pathname]);
 };
