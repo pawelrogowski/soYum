@@ -180,7 +180,7 @@ export const StyledDiv = styled(motion.div)`
           line-height: 1;
           overflow: hidden;
           min-width: 6rem;
-
+          flex: 6;
           @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
             font-size: 1.6rem;
           }
@@ -216,6 +216,7 @@ export const StyledDiv = styled(motion.div)`
             overflow-x: hidden;
             flex-wrap: nowrap;
             cursor: pointer;
+            flex: 1;
             &:after {
               display: none;
             }
