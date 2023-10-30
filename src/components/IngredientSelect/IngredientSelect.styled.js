@@ -146,10 +146,14 @@ export const StyledDiv = styled(motion.div)`
           max-height: 1.8rem;
           width: 100%;
           overflow-x: hidden;
+          max-width: 95%;
           &-container {
+            display: inline-flex;
             overflow-x: hidden;
-            display: flex;
             cursor: pointer;
+            &:after {
+              display: none;
+            }
           }
         }
         &__value-container {
