@@ -1,8 +1,10 @@
 import PropTypes from "prop-types";
+import { memo } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import Select from "react-select";
 
+import { measureTypeSelectOptions } from "../../common/selectOptions";
 import { useValidation } from "../../hooks/useFieldValidation";
 import {
   setAmount,
@@ -14,19 +16,7 @@ import { addRecipeSchema } from "../../validation/addRecipeSchema.js";
 import { InputErrorSpan } from "../InputErrorSpan/InputErrorSpan";
 import { StyledDiv } from "./MeasureSelect.styled";
 
-const options = [
-  { value: "tbs", label: "tbs" },
-  { value: "tsp", label: "tsp" },
-  { value: "kg", label: "kg" },
-  { value: "g", label: "g" },
-  { value: "cup", label: "cup" },
-  { value: "oz", label: "oz" },
-  { value: "lb", label: "lb" },
-  { value: "ml", label: "ml" },
-  { value: "l", label: "l" },
-];
-
-export const MeasureSelect = ({ index }) => {
+const MeasureSelectComponent = ({ index }) => {
   const { errors, validate } = useValidation();
   const { recipeIngredients } = useSelector((state) => state.addRecipeForm);
   const dispatch = useDispatch();
@@ -74,12 +64,12 @@ export const MeasureSelect = ({ index }) => {
         type="number"
         onChange={handleAmountChange}
         aria-label="amount"
-        placeholder="5"
+        placeholder="5*"
       />
       <Select
         onChange={handleMeasureChange}
-        options={options}
-        placeholder="tsp"
+        options={measureTypeSelectOptions}
+        placeholder="tsp*"
         unstyled
         isSearchable={false}
         classNamePrefix="Select"
@@ -105,6 +95,8 @@ export const MeasureSelect = ({ index }) => {
   );
 };
 
-MeasureSelect.propTypes = {
+MeasureSelectComponent.propTypes = {
   index: PropTypes.number.isRequired,
 };
+
+export const MeasureSelect = memo(MeasureSelectComponent);

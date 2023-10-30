@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 
-import { inputErrorMotion } from "../../animations/animations";
+import { inputErrorMotion } from "../../common/animations";
 
 export const InputErrorSpan = ({ errorMessage, key, className }, props) => {
   return (

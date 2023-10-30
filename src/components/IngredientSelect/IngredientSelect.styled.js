@@ -230,6 +230,11 @@ export const StyledDiv = styled(motion.div)`
         stroke: var(--color-icon-remove);
       }
     }
+    &:disabled {
+      > svg {
+        stroke: var(--color-border-idle);
+      }
+    }
     > svg {
       transition: stroke 100ms;
       stroke: var(--color-icon-idle);

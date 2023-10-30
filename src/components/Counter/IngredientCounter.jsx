@@ -1,32 +1,40 @@
+import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 
 import { addIngredient, removeLastIngredient } from "../../redux/slices/addRecipeFormSlice";
 import { Icon } from "../Icon/Icon";
-import { StyledDiv } from "./Counter.styled";
-export const Counter = () => {
-  const { recipeIngredients } = useSelector((state) => state.addRecipeForm);
+import { StyledDiv } from "./IngredientCounter.styled";
+
+export const IngredientCounter = ({ min = 0, max = Infinity }) => {
   const dispatch = useDispatch();
+  const { recipeIngredients } = useSelector((state) => state.addRecipeForm);
 
   const handleIncrement = () => {
-    dispatch(
-      addIngredient({
-        ingredient: "",
-        measureType: "",
-        amount: 0,
-      })
-    );
+    if (recipeIngredients.length < max) {
+      dispatch(
+        addIngredient({
+          ingredient: "",
+          measureType: "",
+          amount: 0,
+        })
+      );
+    }
   };
+
   const handleDecrement = () => {
-    dispatch(removeLastIngredient());
+    if (recipeIngredients.length > min) {
+      dispatch(removeLastIngredient());
+    }
   };
+
   return (
     <StyledDiv>
       <button
         type="button"
         aria-label="remove last ingredient"
         onClick={handleDecrement}
-        disabled={recipeIngredients.length < 2}
+        disabled={recipeIngredients.length <= min}
       >
         <Icon icon="minus" />
       </button>
@@ -37,10 +45,15 @@ export const Counter = () => {
         type="button"
         aria-label="add new ingredient"
         onClick={handleIncrement}
-        disabled={recipeIngredients.length > 19}
+        disabled={recipeIngredients.length >= max}
       >
         <Icon icon="plus" />
       </button>
     </StyledDiv>
   );
+};
+
+IngredientCounter.propTypes = {
+  min: PropTypes.number,
+  max: PropTypes.number,
 };

@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
 
+import { timeSelectOptions } from "../../common/selectOptions";
 import { useValidation } from "../../hooks/useFieldValidation";
 import {
   setRecipeCookingTime,
@@ -9,11 +10,6 @@ import {
 } from "../../redux/slices/addRecipeFormSlice";
 import { addRecipeSchema } from "../../validation/addRecipeSchema.js";
 import { StyledDiv } from "./TimeSelect.styled.js";
-
-const options = Array.from({ length: 240 / 5 }, (_, i) => {
-  const value = (i + 1) * 5;
-  return { value: value.toString(), label: `${value} min` };
-});
 
 export const TimeSelect = () => {
   const { errors, validate } = useValidation();
@@ -53,7 +49,7 @@ export const TimeSelect = () => {
       onClick={handleWrapperClick}
       $placeholderShown={!recipeCookingTime}
     >
-      <span>Cooking Time</span>
+      <span>{errors.recipeCookingTime ? "Cooking Time" : "Cooking Time*"}</span>
       <Select
         ref={ref}
         openMenuOnFocus
@@ -62,7 +58,7 @@ export const TimeSelect = () => {
         escapeClearsValue
         unstyled
         classNamePrefix="Select"
-        options={options}
+        options={timeSelectOptions}
         onChange={handleChange}
         placeholder="5 min"
       />

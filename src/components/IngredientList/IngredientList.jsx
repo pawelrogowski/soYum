@@ -12,7 +12,7 @@ import {
   setMeasureError,
 } from "../../redux/slices/addRecipeFormSlice";
 import { addRecipeSchema } from "../../validation/addRecipeSchema.js";
-import { Counter } from "../Counter/Counter";
+import { IngredientCounter } from "../Counter/IngredientCounter";
 import { Heading } from "../Heading/Heading";
 import { IngredientSelect } from "../IngredientSelect/IngredientSelect";
 import { StyledDiv } from "./IngredientList.styled";
@@ -95,6 +95,7 @@ export const IngredientList = ({ className }) => {
     if (e.currentTarget.contains(e.relatedTarget)) {
       return;
     }
+    console.log(e);
     const fields = ["ingredient", "measureType", "amount"];
     const errorActions = {
       ingredient: setIngredientError,
@@ -122,10 +123,10 @@ export const IngredientList = ({ className }) => {
   };
   //
   return (
-    <StyledDiv className={className} onBlur={(e) => handleWrapperBlur(e)}>
+    <StyledDiv tabIndex="0" className={className} onBlur={(e) => handleWrapperBlur(e)}>
       <div>
         <Heading as="h2">Ingredients</Heading>
-        <Counter />
+        <IngredientCounter min={1} max={20} />
       </div>
       <div>
         <AnimatePresence>

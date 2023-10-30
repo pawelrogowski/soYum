@@ -1,20 +1,18 @@
 import { AnimatePresence, usePresence } from "framer-motion";
 import PropTypes from "prop-types";
+import { memo } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import Creatable from "react-select/creatable";
 
+import { ingredientSelectOptions } from "../../common/selectOptions";
 import { removeIngredient } from "../../redux/slices/addRecipeFormSlice";
 import { Icon } from "../Icon/Icon";
 import { InputErrorSpan } from "../InputErrorSpan/InputErrorSpan";
 import { MeasureSelect } from "../MeasureSelect/MeasureSelect";
 import { StyledDiv } from "./IngredientSelect.styled";
-const options = [
-  { value: "to be added", label: "to be added" },
-  { value: "asdasd", label: "asdasd" },
-];
 
-export const IngredientSelect = ({ index, onIngredientChange, onIngredientBlur, ...props }) => {
+const IngredientSelectComponent = ({ index, onIngredientChange, onIngredientBlur, ...props }) => {
   const { recipeIngredients } = useSelector((state) => state.addRecipeForm);
   const dispatch = useDispatch();
   const [isPresent] = usePresence();
@@ -39,8 +37,8 @@ export const IngredientSelect = ({ index, onIngredientChange, onIngredientBlur, 
               unstyled
               classNamePrefix="Select"
               formatCreateLabel={(inputValue) => `${inputValue}`}
-              options={options}
-              placeholder="Ingredient"
+              options={ingredientSelectOptions}
+              placeholder="Ingredient*"
               escapeClearsValue
               value={
                 recipeIngredients[index].ingredient
@@ -63,22 +61,22 @@ export const IngredientSelect = ({ index, onIngredientChange, onIngredientBlur, 
           </div>
           <MeasureSelect index={index} />
         </div>
-        {index !== 0 && (
-          <button
-            type="button"
-            aria-label="remove ingredient"
-            onClick={() => handleRemoveIngredient(index)}
-          >
-            <Icon icon="x" />
-          </button>
-        )}
+        <button
+          type="button"
+          aria-label="remove ingredient"
+          onClick={() => handleRemoveIngredient(index)}
+          disabled={index === 0}
+        >
+          <Icon icon="x" />
+        </button>
       </StyledDiv>
     </>
   );
 };
-
-IngredientSelect.propTypes = {
+IngredientSelectComponent.propTypes = {
   index: PropTypes.number.isRequired,
   onIngredientBlur: PropTypes.func,
   onIngredientChange: PropTypes.func,
 };
+
+export const IngredientSelect = memo(IngredientSelectComponent);
