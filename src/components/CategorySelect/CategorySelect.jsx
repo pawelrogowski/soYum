@@ -17,7 +17,7 @@ export const CategorySelect = () => {
   const dispatch = useDispatch();
   const ref = useRef(null);
 
-  const handleChange = async (selectedOptions) => {
+  const handleChange = (selectedOptions) => {
     const valueArray = selectedOptions.map((option) => option.value);
     const { isValid, errorMessage } = validate(addRecipeSchema, "recipeCategories", valueArray);
     isValid ? dispatch(setRecipeCategories(valueArray)) : dispatch(setRecipeCategories([]));
@@ -26,7 +26,7 @@ export const CategorySelect = () => {
       : dispatch(setRecipeCategoriesError(null));
   };
 
-  const handleBlur = async () => {
+  const handleBlur = () => {
     const { errorMessage } = validate(addRecipeSchema, "recipeCategories", recipeCategories);
     errorMessage
       ? dispatch(setRecipeCategoriesError(errorMessage))

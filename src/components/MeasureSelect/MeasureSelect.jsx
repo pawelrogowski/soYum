@@ -20,7 +20,7 @@ const MeasureSelectComponent = ({ index }) => {
   const { errors, validate } = useValidation();
   const { recipeIngredients } = useSelector((state) => state.addRecipeForm);
   const dispatch = useDispatch();
-  const handleMeasureChange = async (selectedOption) => {
+  const handleMeasureChange = (selectedOption) => {
     const selectedValue = selectedOption.value;
     const { isValid, errorMessage } = validate(
       addRecipeSchema,

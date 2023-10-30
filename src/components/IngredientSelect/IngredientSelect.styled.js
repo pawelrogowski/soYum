@@ -40,6 +40,10 @@ export const StyledDiv = styled(motion.div)`
 
   .ingredient-wrapper {
     position: relative;
+    > div {
+      display: flex;
+      align-items: center;
+    }
   }
   > div:first-of-type {
     display: flex;
@@ -52,6 +56,7 @@ export const StyledDiv = styled(motion.div)`
       background: var(--color-ingredient-bg);
       height: 5.3rem;
       width: 100%;
+      max-width: 40.9rem;
       flex-grow: 1;
       border: 1px solid
         ${(props) =>
@@ -87,9 +92,10 @@ export const StyledDiv = styled(motion.div)`
           justify-content: space-between;
           color: var(--color-text-idle);
           font-size: 1.4rem;
-          line-height: normal;
+          line-height: 1;
           letter-spacing: -0.032rem;
-          height: 2.4rem;
+          height: 1.8rem;
+          flex-wrap: nowrap;
           ::-webkit-scrollbar {
             width: 0px;
           }
@@ -137,9 +143,12 @@ export const StyledDiv = styled(motion.div)`
 
         &__input {
           min-height: 0;
-          max-height: 2.4rem;
+          max-height: 1.8rem;
           width: 100%;
+          overflow-x: hidden;
           &-container {
+            overflow-x: hidden;
+            display: flex;
             cursor: pointer;
           }
         }
@@ -156,7 +165,8 @@ export const StyledDiv = styled(motion.div)`
         }
 
         &__menu {
-          z-index: 50000;
+          max-width: 40rem;
+          overflow-x: hidden;
           background: var(--color-bg);
           border-radius: 0.6rem;
           box-shadow: 0px 7px 8px 5px rgba(0, 0, 0, 0.1);
@@ -184,7 +194,8 @@ export const StyledDiv = styled(motion.div)`
         }
 
         &__menu-list {
-          z-index: 5;
+          overflow-x: hidden;
+          max-width: 40rem;
           border: 1px solid var(--color-accent);
           width: 100%;
           min-height: 13rem;
@@ -193,7 +204,7 @@ export const StyledDiv = styled(motion.div)`
           font-size: 14px;
           font-style: normal;
           font-weight: 400;
-          line-height: normal;
+          line-height: 1;
           letter-spacing: -0.28px;
           display: flex;
           flex-direction: column;
@@ -202,6 +213,8 @@ export const StyledDiv = styled(motion.div)`
         }
 
         &__option {
+          overflow-x: hidden;
+          max-width: 40rem;
           z-index: 5;
           min-height: 2rem;
 

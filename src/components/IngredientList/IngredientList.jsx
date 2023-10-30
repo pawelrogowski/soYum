@@ -95,7 +95,6 @@ export const IngredientList = ({ className }) => {
     if (e.currentTarget.contains(e.relatedTarget)) {
       return;
     }
-    console.log(e);
     const fields = ["ingredient", "measureType", "amount"];
     const errorActions = {
       ingredient: setIngredientError,
