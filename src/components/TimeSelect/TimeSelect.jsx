@@ -50,6 +50,8 @@ export const TimeSelect = () => {
       $placeholderShown={!recipeCookingTime}
     >
       <span>{errors.recipeCookingTime ? "Cooking Time" : "Cooking Time*"}</span>
+      <label htmlFor="time-select-value-container" />
+      <label htmlFor="time-select" />
       <Select
         ref={ref}
         openMenuOnFocus
@@ -61,6 +63,8 @@ export const TimeSelect = () => {
         options={timeSelectOptions}
         onChange={handleChange}
         placeholder="5 min"
+        inputId="time-select"
+        id="time-select-value-container"
       />
       {errors.recipeCookingTime && (
         <span className="validation-error">{errors.recipeCookingTime}</span>

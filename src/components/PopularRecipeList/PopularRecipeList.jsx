@@ -24,14 +24,15 @@ export const PopularRecipeList = ({ data }) => {
       <Heading as="h2">Popular Recipes</Heading>
       <ul>
         {data.slice(0, itemsToShow).map((item, index) => (
-          <PopularCard
-            key={index}
-            name={item.name}
-            cookingTime={item.cookingTime}
-            description={item.description}
-            image={item.image}
-            placeholder={placeholder}
-          />
+          <li key={index}>
+            <PopularCard
+              name={item.name}
+              cookingTime={item.cookingTime}
+              description={item.description}
+              image={item.image}
+              placeholder={placeholder}
+            />
+          </li>
         ))}
       </ul>
     </StyledSection>

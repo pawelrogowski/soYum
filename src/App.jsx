@@ -12,8 +12,6 @@ export const App = () => {
   const [isTransitionEnabled, setIsTransitionEnabled] = useState(false);
   usePageTitle("So Yummy");
 
-  // this is to prevent white bg flash on page refreshes
-  // without sacraficing smooth theme switching for body background
   useEffect(() => {
     setIsTransitionEnabled(true);
   }, []);
