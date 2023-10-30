@@ -2,7 +2,7 @@ import debounce from "lodash/debounce";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 
-import { useValidation } from "../../hooks/useFieldValidation";
+import { useValidation } from "../../hooks/useValidation";
 import {
   setRecipeAbout,
   setRecipeAboutError,

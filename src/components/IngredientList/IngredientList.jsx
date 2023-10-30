@@ -4,7 +4,7 @@ import { useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 
-import { useValidation } from "../../hooks/useFieldValidation";
+import { useValidation } from "../../hooks/useValidation";
 import {
   setAmountError,
   setIngredient,

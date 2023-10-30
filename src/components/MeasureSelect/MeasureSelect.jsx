@@ -5,7 +5,7 @@ import { useSelector } from "react-redux/es/hooks/useSelector";
 import Select from "react-select";
 
 import { measureTypeSelectOptions } from "../../common/selectOptions";
-import { useValidation } from "../../hooks/useFieldValidation";
+import { useValidation } from "../../hooks/useValidation";
 import {
   setAmount,
   setAmountError,
