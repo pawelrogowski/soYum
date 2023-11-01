@@ -14,7 +14,6 @@ import { Button } from "../Button/Button.jsx";
 import { Heading } from "../Heading/Heading";
 import { Icon } from "../Icon/Icon.jsx";
 import { StyledDiv } from "./RecipePreparationTextArea.styled";
-import { debounce } from "lodash";
 
 export const RecipePreparationTextArea = ({ className }) => {
   const { currentTextAreaValue, currentEditIndex, currentTextAreaValueError } = useSelector(
