@@ -19,4 +19,5 @@ export const addRecipeSchema = Yup.object().shape({
     .min(1, "Add at least one ingredient"),
 
   recipePreparationSteps: Yup.array().min(1, "Add at least one step"),
+  currentTextAreaValue: Yup.string("wrong type").required("Required"),
 });

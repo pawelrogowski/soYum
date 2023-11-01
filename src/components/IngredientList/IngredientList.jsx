@@ -36,7 +36,7 @@ export const IngredientList = ({ className }) => {
     };
   }, []);
 
-  const handleWrapperBlur = (e) => {
+  const handleValidationOnBlur = (e) => {
     if (e.currentTarget.contains(e.relatedTarget)) {
       return;
     }
@@ -106,7 +106,7 @@ export const IngredientList = ({ className }) => {
   };
 
   return (
-    <StyledDiv tabIndex="0" className={className} onBlur={(e) => handleWrapperBlur(e)}>
+    <StyledDiv tabIndex="0" className={className} onBlur={(e) => handleValidationOnBlur(e)}>
       <div>
         <Heading as="h2">Ingredients</Heading>
         <IngredientCounter min={0} max={20} />
