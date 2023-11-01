@@ -838,7 +838,7 @@ export const darkTheme = {
     errorBg: "#1E1F28",
   },
   select: {
-    bg: "#8BAA36",
+    bg: "#1E1F28",
     textIdle: "#fafafa",
     textActive: "#fafafa",
     textPlaceholder: "#FAFAFA8D",

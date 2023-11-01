@@ -4,8 +4,8 @@ import { Button } from "../../Button/Button";
 import { CategorySelect } from "../../CategorySelect/CategorySelect";
 import { IngredientList } from "../../IngredientList/IngredientList";
 import { RecipeImageUpload } from "../../RecipeImageUpload/RecipeImageUpload";
-// import { RecipePreparationStepsPreview } from "../../RecipePreparationStepsPreview/RecipePreparationStepsPreview";
-// import { RecipePreparationTextArea } from "../../RecipePreparationTextArea/RecipePreparationTextArea";
+import { RecipePreparationStepsPreview } from "../../RecipePreparationStepsPreview/RecipePreparationStepsPreview";
+import { RecipePreparationTextArea } from "../../RecipePreparationTextArea/RecipePreparationTextArea";
 import { RecipeTextInput } from "../../RecipeTextInput/RecipeTextInput";
 import { TimeSelect } from "../../TimeSelect/TimeSelect";
 import { StyledFormikForm } from "./AddRecipeForm.styled";
@@ -33,12 +33,13 @@ export const AddRecipeForm = () => {
           <div className="image-upload-wrapper__inner">
             <RecipeTextInput name="recipeTitle" placeholder="Enter item title*" />
             <RecipeTextInput name="recipeAbout" placeholder="Enter about recipe*" />
-            <TimeSelect /> <CategorySelect />
+            <TimeSelect />
+            <CategorySelect />
           </div>
         </div>
         <IngredientList className="ingredient-list" />
-        {/* <RecipePreparationTextArea className="recipe-preparation-wrapper" />
-        <RecipePreparationStepsPreview /> */}
+        <RecipePreparationTextArea className="recipe-preparation-wrapper" />
+        <RecipePreparationStepsPreview />
         <Button type="submit" variant="outlineBig" disabled>
           Add Recipe
         </Button>

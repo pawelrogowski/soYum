@@ -1,18 +1,12 @@
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 
+import { mobileMenuMotion } from "../../common/animations";
 import { toggleIsMobileMenuOpen } from "../../redux/slices/modalSlice";
 import { Icon } from "../Icon/Icon";
 import { MobileMenuButton } from "../MobileMenuButton/MobileMenuButton";
 import { ThemeSwitch } from "../ThemeSwitch/ThemeSwitch";
 import { StyledAside } from "./NavigationMobile.styled";
-
-const navSlideMotion = {
-  initial: { left: "-100%", opacity: 0 },
-  animate: { left: 0, opacity: 1 },
-  exit: { left: "-100%", transition: { duration: 0.2 } },
-  transition: { duration: 0.3 },
-};
 
 export const NavigationMobile = () => {
   const dispatch = useDispatch();
@@ -30,16 +24,14 @@ export const NavigationMobile = () => {
   ];
 
   return (
-    <StyledAside {...navSlideMotion}>
+    <StyledAside {...mobileMenuMotion}>
       <div>
         <MobileMenuButton onClick={handleMenuToggle} variant="close" />
         <ul>
           {navItems.map((item, index) => (
             <li key={index}>
               <NavLink
-                className={({ isActive }) =>
-                  isActive ? "active-nav-link-mobile" : ""
-                }
+                className={({ isActive }) => (isActive ? "active-nav-link-mobile" : "")}
                 to={item.path}
                 onClick={handleMenuToggle}
               >

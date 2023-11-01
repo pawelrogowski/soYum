@@ -31,8 +31,7 @@ export const StyledAside = styled(motion.aside)`
       top: 2.3rem;
       left: 1.6rem;
 
-      @media screen and (min-width: ${({ theme }) =>
-          theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         top: 2.1rem;
       }
     }
@@ -79,8 +78,7 @@ export const StyledAside = styled(motion.aside)`
       flex-wrap: nowrap;
       gap: 3.6rem;
 
-      @media screen and (min-width: ${({ theme }) =>
-          theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         gap: 4rem;
       }
 
@@ -94,8 +92,7 @@ export const StyledAside = styled(motion.aside)`
         font-weight: 500;
         font-style: normal;
 
-        @media screen and (min-width: ${({ theme }) =>
-            theme.breakpoints.tablet}) {
+        @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
           font-size: 2.4rem;
           font-weight: 500;
           line-height: 2.4rem;
@@ -122,8 +119,7 @@ export const StyledAside = styled(motion.aside)`
           font-weight: 500;
           font-style: normal;
 
-          @media screen and (min-width: ${({ theme }) =>
-              theme.breakpoints.tablet}) {
+          @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
             font-size: 2.4rem;
             font-weight: 500;
             line-height: 2.4rem;

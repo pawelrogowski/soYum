@@ -27,11 +27,7 @@ export const StyledDiv = styled(motion.div)`
     display: block !important;
     position: absolute;
     background: var(--color-error-bg);
-    border-left: 1px solid var(--color-error);
-    border-right: 1px solid var(--color-error);
-    border-radius: 2px;
     padding: 0 4px;
-
     color: var(--color-error);
     bottom: -2.1rem;
     left: 50%;
@@ -52,7 +48,7 @@ export const StyledDiv = styled(motion.div)`
     background: var(--color-ingredient-bg);
     border-radius: 5px;
     padding: 1.2rem;
-    transition: border-color 100ms;
+    transition: border-color 200ms;
     min-width: 278px;
     @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       padding: 1.7rem 1.6rem 1.6rem 1.6rem;
@@ -162,7 +158,7 @@ export const StyledDiv = styled(motion.div)`
           align-items: center;
           svg {
             fill: var(--color-icon-idle);
-            transition: fill 100ms;
+            transition: fill 200ms;
             cursor: pointer;
             &:focus,
             &:hover {
@@ -284,7 +280,7 @@ export const StyledDiv = styled(motion.div)`
       }
     }
     > svg {
-      transition: stroke 100ms;
+      transition: stroke 200ms;
       stroke: var(--color-icon-idle);
       width: 1.8rem;
       height: 1.8rem;
@@ -440,7 +436,7 @@ export const StyledDiv = styled(motion.div)`
             //idle icons
             svg {
               fill: var(--color-icon-idle);
-              transition: fill 100ms;
+              transition: fill 200ms;
               cursor: pointer;
               &:focus,
               &:hover {

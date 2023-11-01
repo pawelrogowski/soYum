@@ -16,7 +16,7 @@ export const IngredientCounter = ({ min = 0, max = Infinity }) => {
         addIngredient({
           ingredient: "",
           measureType: "",
-          amount: 0,
+          amount: "",
         })
       );
     }

@@ -7,8 +7,7 @@ export const StyledDiv = styled.div`
     display: flex;
     margin-bottom: 2.4rem;
     justify-content: space-between;
-
-    margin-left: auto;
+    padding-right: 3rem;
   }
   > div:nth-of-type(2) {
     display: flex;

@@ -21,7 +21,7 @@ export const StyledDiv = styled.div`
   flex-direction: column;
   gap: 2.4rem;
   width: 100%;
-  max-width: 55.2rem;
+  max-width: 58.8rem;
 
   > textarea {
     resize: none;

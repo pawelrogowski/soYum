@@ -1,6 +1,6 @@
 import { AnimatePresence } from "framer-motion";
 import PropTypes from "prop-types";
-import { useCallback, useMemo } from "react";
+import { useMemo } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 
@@ -25,23 +25,6 @@ export const IngredientList = ({ className }) => {
   const { validate } = useValidation();
   const dispatch = useDispatch();
 
-  const handleIngredientChange = useCallback(
-    (selectedOption, index) => {
-      const selectedValue = selectedOption.value;
-
-      const { isValid, errorMessage } = validate(
-        addRecipeSchema,
-        `recipeIngredients.[${index}].ingredient`,
-        selectedValue
-      );
-
-      const ingredient = isValid ? selectedValue : "";
-      const error = errorMessage || null;
-      dispatch(setIngredient({ index, ingredient, error }));
-    },
-    [validate, dispatch]
-  );
-
   const { fields, errorActions } = useMemo(() => {
     return {
       fields: ["ingredient", "measureType", "amount"],
@@ -53,44 +36,6 @@ export const IngredientList = ({ className }) => {
     };
   }, []);
 
-  const handleIngredientBlur = useCallback(
-    (e, index) => {
-      if (e.currentTarget && e.relatedTarget && e.currentTarget.contains(e.relatedTarget)) {
-        return;
-      }
-      const { errorMessage: ingredientError } = validate(
-        addRecipeSchema,
-        `recipeIngredients.[${index}].ingredient`,
-        recipeIngredients[index].ingredient
-      );
-
-      ingredientError
-        ? dispatch(setIngredientError({ index: index, error: ingredientError }))
-        : dispatch(setIngredientError({ index: index, error: null }));
-
-      const { errorMessage: measureError } = validate(
-        addRecipeSchema,
-        `recipeIngredients.[${index}].measureType`,
-        recipeIngredients[index].measureType
-      );
-
-      measureError
-        ? dispatch(setMeasureError({ index: index, error: measureError }))
-        : dispatch(setMeasureError({ index: index, error: null }));
-
-      const { errorMessage: amountError } = validate(
-        addRecipeSchema,
-        `recipeIngredients.[${index}].amount`,
-        recipeIngredients[index].amount
-      );
-
-      amountError
-        ? dispatch(setAmountError({ index: index, error: amountError }))
-        : dispatch(setAmountError({ index: index, error: null }));
-    },
-    [validate, recipeIngredients, dispatch]
-  );
-
   const handleWrapperBlur = (e) => {
     if (e.currentTarget.contains(e.relatedTarget)) {
       return;
@@ -100,19 +45,37 @@ export const IngredientList = ({ className }) => {
     for (let index = 0; index < len; index++) {
       const recipeIngredient = recipeIngredients[index];
       for (const field of fields) {
-        const { errorMessage: fieldError } = validate(
-          addRecipeSchema,
-          `recipeIngredients.[${index}].${field}`,
-          recipeIngredient[field]
-        );
-        dispatch(
-          errorActions[field]({
-            index: index,
-            error: fieldError || null,
-          })
-        );
+        if (recipeIngredient[field] !== undefined && recipeIngredient[field].error !== null) {
+          const { errorMessage: fieldError } = validate(
+            addRecipeSchema,
+            `recipeIngredients.[${index}].${field}`,
+            recipeIngredient[field]
+          );
+          dispatch(
+            errorActions[field]({
+              index: index,
+              error: fieldError || null,
+            })
+          );
+        }
       }
     }
+  };
+
+  const handleIngredientChange = (selectedOption, index) => {
+    const selectedValue = selectedOption.value;
+
+    const { isValid, errorMessage } = validate(
+      addRecipeSchema,
+      `recipeIngredients.[${index}].ingredient`,
+      selectedValue
+    );
+
+    isValid && dispatch(setIngredient({ index: index, ingredient: selectedOption.value }));
+
+    errorMessage
+      ? dispatch(setIngredientError({ index: index, error: errorMessage }))
+      : dispatch(setIngredientError({ index: index, error: null }));
   };
 
   const handleMeasureChange = (selectedOption, index) => {
@@ -122,9 +85,7 @@ export const IngredientList = ({ className }) => {
       selectedOption.value
     );
 
-    isValid
-      ? dispatch(setMeasure({ index: index, measureType: selectedOption.value }))
-      : dispatch(setMeasure({ index: index, measureType: "" }));
+    isValid && dispatch(setMeasure({ index: index, measureType: selectedOption.value }));
 
     errorMessage
       ? dispatch(setMeasureError({ index: index, error: errorMessage }))
@@ -132,15 +93,12 @@ export const IngredientList = ({ className }) => {
   };
 
   const handleAmountChange = (e, index) => {
-    console.log("2");
     const { isValid, errorMessage } = validate(
       addRecipeSchema,
       `recipeIngredients.[${index}].amount`,
       e.target.value
     );
-    isValid
-      ? dispatch(setAmount({ index: index, amount: e.target.value }))
-      : dispatch(setAmount({ index: index, amount: "" }));
+    isValid && dispatch(setAmount({ index: index, amount: e.target.value }));
 
     errorMessage
       ? dispatch(setAmountError({ index: index, error: errorMessage }))
@@ -151,16 +109,15 @@ export const IngredientList = ({ className }) => {
     <StyledDiv tabIndex="0" className={className} onBlur={(e) => handleWrapperBlur(e)}>
       <div>
         <Heading as="h2">Ingredients</Heading>
-        <IngredientCounter min={1} max={200} />
+        <IngredientCounter min={0} max={20} />
       </div>
       <div>
         <AnimatePresence>
           {recipeIngredients.map((_, index) => (
             <IngredientSelect
-              key={index}
               index={index}
+              key={index}
               onIngredientChange={handleIngredientChange}
-              onIngredientBlur={handleIngredientBlur}
               onMeasureChange={handleMeasureChange}
               onAmountChange={handleAmountChange}
               {...ingredientListItemMotion}

@@ -19,15 +19,21 @@ export const StyledDiv = styled.div`
   --color-icon-edit-idle: ${({ theme }) => theme.recipePreparationStepsPreview.iconEditIdle};
   --color-icon-edit-active: ${({ theme }) => theme.recipePreparationStepsPreview.iconEditActive};
   padding: 3.2rem 0;
+
+  max-width: 55.2rem;
   > h2 {
     font-size: 1.8rem;
     margin-bottom: 2rem;
+    overflow-wrap: break-word;
   }
   > ol {
     display: flex;
     flex-direction: column;
     gap: 1.4rem;
     list-style-type: none;
+    max-width: 58.8rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 
     max-width: 55.2rem;
     > li {
@@ -39,6 +45,7 @@ export const StyledDiv = styled.div`
       font-size: 1.2rem;
       line-height: 1.16;
       letter-spacing: -0.024rem;
+      overflow-wrap: break-word;
 
       &::before {
         content: counter(my-counter);

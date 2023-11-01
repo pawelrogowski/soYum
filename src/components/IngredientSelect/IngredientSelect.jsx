@@ -6,6 +6,7 @@ import { useSelector } from "react-redux/es/hooks/useSelector";
 import Select from "react-select";
 import Creatable from "react-select/creatable";
 
+import { inputErrorMotion } from "../../common/animations";
 import { ingredientSelectOptions, measureTypeSelectOptions } from "../../common/selectOptions";
 import { removeIngredient } from "../../redux/slices/addRecipeFormSlice";
 import { Icon } from "../Icon/Icon";
@@ -15,7 +16,6 @@ import { StyledDiv } from "./IngredientSelect.styled";
 const IngredientSelectComponent = ({
   index,
   onIngredientChange,
-  onIngredientBlur,
   onMeasureChange,
   onAmountChange,
   ...props
@@ -46,7 +46,6 @@ const IngredientSelectComponent = ({
 
   return (
     <StyledDiv
-      onBlur={(e) => onIngredientBlur(e, index)}
       {...props}
       $hasError={
         (recipeIngredients[index].ingredientError ||
@@ -81,6 +80,7 @@ const IngredientSelectComponent = ({
               <InputErrorSpan
                 className="validation-error"
                 errorMessage={recipeIngredients[index].ingredientError}
+                {...inputErrorMotion}
               />
             )}
           </AnimatePresence>
@@ -98,12 +98,13 @@ const IngredientSelectComponent = ({
               onWheel={(e) => e.preventDefault()}
               min="0"
               step="0.1"
-            />{" "}
+            />
             <AnimatePresence>
               {recipeIngredients[index].amountError && (
                 <InputErrorSpan
                   className="validation-error"
                   errorMessage={recipeIngredients[index].amountError}
+                  {...inputErrorMotion}
                 />
               )}
             </AnimatePresence>
@@ -123,15 +124,15 @@ const IngredientSelectComponent = ({
               closeMenuOnSelect
               inputId={`measure-type-${index}`}
             />
-            {(recipeIngredients[index].measureTypeError ||
-              recipeIngredients[index].amountError) && (
-              <InputErrorSpan
-                className="validation-error"
-                errorMessage={
-                  recipeIngredients[index].measureTypeError || recipeIngredients[index].amountError
-                }
-              />
-            )}
+            <AnimatePresence>
+              {recipeIngredients[index].measureTypeError && (
+                <InputErrorSpan
+                  className="validation-error"
+                  errorMessage={recipeIngredients[index].measureTypeError}
+                  {...inputErrorMotion}
+                />
+              )}
+            </AnimatePresence>
           </label>
         </div>
       </div>

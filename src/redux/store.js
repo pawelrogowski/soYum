@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { autoBatchEnhancer, configureStore } from "@reduxjs/toolkit";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
@@ -27,6 +27,9 @@ export const store = configureStore({
     global: persistedGlobalReducer,
     modal: modalReducer,
     addRecipeForm: addRecipeFormReducer,
+  },
+  enhancers: (existingEnhancers) => {
+    return existingEnhancers.concat(autoBatchEnhancer());
   },
   middleware: configureMiddleware,
 });
