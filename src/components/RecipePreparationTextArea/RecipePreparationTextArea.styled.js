@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const StyledDiv = styled.div`
   --color-bg: ${({ theme }) => theme.recipePreparationTextArea.bg};
@@ -16,44 +16,67 @@ export const StyledDiv = styled.div`
     theme.recipePreparationTextArea.buttonBorderActive};
   --color-button-border-disabled: ${({ theme }) =>
     theme.recipePreparationTextArea.buttonBorderDisabled};
+  --color-error: ${({ theme }) => theme.select.error};
+  --color-error-bg: ${({ theme }) => theme.select.errorBg};
+
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
   width: 100%;
   max-width: 58.8rem;
+  .validation-error {
+    display: block !important;
+    position: absolute;
+    background: var(--color-error-bg);
+    padding: 0 4px;
+    color: var(--color-error);
+    top: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+  > div {
+    position: relative;
+    > textarea {
+      resize: none;
+      padding: 1rem 1.6rem;
+      outline: none;
+      width: 100%;
+      min-height: 16rem;
+      color: var(--color-text-idle);
+      border-radius: 5px;
+      border: 1px solid
+        ${(props) =>
+          props.$hasError === "true" ? css`var(--color-error)` : css`var(--color-border-idle)`};
+      font-size: 1.4rem;
+      line-height: 1.5;
+      letter-spacing: -0.036rem;
+      background: none;
+      scrollbar-width: thin;
+      transition: border-color 200ms, color 200ms;
+      &:placeholder-shown {
+        color: var(--color-text-placeholder);
+      }
+      &:focus,
+      &:hover {
+        border-color: ${(props) =>
+          props.$hasError === "true" ? css`var(--color-error)` : css`var(--color-border-active)`};
+      }
 
-  > textarea {
-    resize: none;
-    padding: 1rem 1.6rem;
-    outline: none;
-    width: 100%;
-    min-height: 16rem;
-    color: var(--color-text-idle);
-    border-radius: 5px;
-    border: 1px solid var(--color-border-idle);
-    font-size: 1.4rem;
-    line-height: 1.5;
-    letter-spacing: -0.036rem;
-    background: none;
-    scrollbar-width: thin;
-    transition: border-color 200ms, color 200ms;
-    &:placeholder-shown {
-      color: var(--color-text-placeholder);
-    }
-    &:focus,
-    &:hover {
-      border-color: var(--color-border-active);
-      + button,
-      + button + button {
-        border-color: var(--color-border-active);
+      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        padding: 1.6rem 2.3rem;
+        font-size: 1.8rem;
+        letter-spacing: -0.028rem;
       }
     }
-
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-      padding: 1.6rem 2.3rem;
-      font-size: 1.8rem;
-      letter-spacing: -0.028rem;
+    &:focus-within,
+    &:hover {
+      + button,
+      + button + button {
+        border-color: ${(props) =>
+          props.$hasError === "true" ? css`var(--color-error)` : css`var(--color-border-active)`};
+      }
     }
   }
 
@@ -63,7 +86,9 @@ export const StyledDiv = styled.div`
     right: 31px;
     height: 5rem;
     background: var(--color-button-bg-idle);
-    border-color: var(--color-border-idle);
+    border-color: ${(props) =>
+      props.$hasError === "true" ? css`var(--color-error)` : css`var(--color-border-idle)`};
+
     color: var(--color-text-idle);
     font-size: 1.4rem;
     line-height: 1.5;
@@ -72,7 +97,9 @@ export const StyledDiv = styled.div`
     &:hover,
     &:focus {
       background-color: var(--color-border-active);
-      border-color: var(--color-border-active);
+      border-color: ${(props) =>
+        props.$hasError === "true" ? css`var(--color-error)` : css`var(--color-border-active)`};
+
       color: var(--color-button-bg-idle);
     }
   }
@@ -85,7 +112,9 @@ export const StyledDiv = styled.div`
 
     border-radius: 50%;
     background: var(--color-button-bg-idle);
-    border-color: var(--color-border-idle);
+    border-color: ${(props) =>
+      props.$hasError === "true" ? css`var(--color-error)` : css`var(--color-border-idle)`};
+
     color: var(--color-text-idle);
     display: flex;
     justify-content: center;
@@ -107,6 +136,8 @@ export const StyledDiv = styled.div`
   > button:disabled {
     background: var(--color-button-bg-disabled);
     color: var(--color-text-placeholder);
-    border: 1px solid var(--color-border-idle);
+    border: 1px solid
+      ${(props) =>
+        props.$hasError === "true" ? css`var(--color-error)` : css`var(--color-border-idle)`};
   }
 `;

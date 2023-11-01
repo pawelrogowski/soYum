@@ -1,6 +1,8 @@
+import { AnimatePresence } from "framer-motion";
 import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 
+import { inputErrorMotion } from "../../common/animations.js";
 import { useValidation } from "../../hooks/useValidation.js";
 import {
   addPreparationStep,
@@ -13,6 +15,7 @@ import { addRecipeSchema } from "../../validation/addRecipeSchema.js";
 import { Button } from "../Button/Button.jsx";
 import { Heading } from "../Heading/Heading";
 import { Icon } from "../Icon/Icon.jsx";
+import { InputErrorSpan } from "../InputErrorSpan/InputErrorSpan.jsx";
 import { StyledDiv } from "./RecipePreparationTextArea.styled";
 
 export const RecipePreparationTextArea = ({ className }) => {
@@ -22,7 +25,8 @@ export const RecipePreparationTextArea = ({ className }) => {
   const dispatch = useDispatch();
   const { validate } = useValidation();
 
-  const handleEnterDown = (e) => {
+  const handleKeyDown = (e) => {
+    console.log(e);
     const value = e.target.value;
     if (e.key === "Enter") {
       e.preventDefault();
@@ -41,7 +45,7 @@ export const RecipePreparationTextArea = ({ className }) => {
 
   const handleAddClick = (e) => {
     e.preventDefault();
-    if (!setCurrentTextAreaValueError) {
+    if (!currentTextAreaValueError) {
       if (currentEditIndex === null) {
         dispatch(addPreparationStep(currentTextAreaValue.trim()));
       } else {
@@ -74,14 +78,29 @@ export const RecipePreparationTextArea = ({ className }) => {
   };
 
   return (
-    <StyledDiv className={className} onBlur={handleValidationOnBlur}>
+    <StyledDiv
+      className={className}
+      onBlur={handleValidationOnBlur}
+      $hasError={currentTextAreaValueError && "true"}
+    >
       <Heading as="h2">Recipe Preparation</Heading>
-      <textarea
-        placeholder="Enter preparation steps. Confirm each step with enter"
-        value={currentTextAreaValue}
-        onKeyDown={handleEnterDown}
-        onChange={handleTextAreaChange}
-      />
+      <div>
+        <textarea
+          placeholder="Enter preparation steps. Confirm each step with enter"
+          value={currentTextAreaValue}
+          onKeyDown={handleKeyDown}
+          onChange={handleTextAreaChange}
+        />
+        <AnimatePresence>
+          {currentTextAreaValueError && (
+            <InputErrorSpan
+              className="validation-error"
+              errorMessage={currentTextAreaValueError}
+              {...inputErrorMotion}
+            />
+          )}
+        </AnimatePresence>
+      </div>
       <Button variant="outlineBig" onClick={handleAddClick} disabled={!currentTextAreaValue}>
         {currentEditIndex !== null ? "Edit existing step" : " Add new step"}
       </Button>

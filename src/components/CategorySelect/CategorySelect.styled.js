@@ -15,6 +15,18 @@ export const StyledDiv = styled.div`
   --color-scrollbar-thumb: ${({ theme }) => theme.select.scrollbarThumb};
   --color-font-error: ${({ theme }) => theme.recipeTextInput.error};
   --color-bg-error: ${({ theme }) => theme.recipeTextInput.errorBg};
+
+  @keyframes menu-fade-in {
+    0% {
+      opacity: 0;
+      transform: scaleY(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+  }
+
   position: relative;
   display: flex;
   padding-bottom: 1.8rem;
@@ -157,6 +169,8 @@ export const StyledDiv = styled.div`
       }
 
       &__menu {
+        transform-origin: top;
+        animation: menu-fade-in 0.2s ease-in-out;
         background: var(--color-bg);
         border-radius: 0.6rem;
         box-shadow: 0px 7px 8px 5px rgba(0, 0, 0, 0.1);

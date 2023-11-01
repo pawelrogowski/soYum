@@ -16,6 +16,17 @@ export const StyledDiv = styled.div`
   --color-error: ${({ theme }) => theme.select.error};
   --color-error-bg: ${({ theme }) => theme.select.errorBg};
 
+  @keyframes menu-fade-in {
+    0% {
+      opacity: 0;
+      transform: scaleY(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+  }
+
   position: relative;
   display: flex;
   align-items: center;
@@ -167,6 +178,8 @@ export const StyledDiv = styled.div`
       }
 
       &__menu {
+        transform-origin: top;
+        animation: menu-fade-in 0.2s ease-in-out;
         white-space: nowrap;
         overflow-x: hidden;
         background: var(--color-bg);

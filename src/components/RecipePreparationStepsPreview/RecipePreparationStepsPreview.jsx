@@ -26,26 +26,32 @@ export const RecipePreparationStepsPreview = () => {
     <StyledDiv>
       <Heading as="h2">Steps:</Heading>
       <ol>
-        {recipePreparationSteps.map((_, index) => (
-          <li key={index}>
-            <button
-              type="button"
-              onClick={() => handleEditStep(index)}
-              disabled={currentEditIndex !== null}
-            >
-              <Icon icon="edit" />
-            </button>
-            <button
-              type="button"
-              onClick={() => handleRemoveStep(index)}
-              disabled={currentEditIndex !== null}
-            >
-              <Icon icon="x" />
-            </button>
+        {recipePreparationSteps.length ? (
+          recipePreparationSteps.map((_, index) => (
+            <li key={index}>
+              <button
+                type="button"
+                onClick={() => handleEditStep(index)}
+                disabled={currentEditIndex !== null}
+              >
+                <Icon icon="edit" />
+              </button>
+              <button
+                type="button"
+                onClick={() => handleRemoveStep(index)}
+                disabled={currentEditIndex !== null}
+              >
+                <Icon icon="x" />
+              </button>
 
-            {limitTextLength(recipePreparationSteps[index], 2, 120, "...")}
+              {limitTextLength(recipePreparationSteps[index], 2, 120, "...")}
+            </li>
+          ))
+        ) : (
+          <li>
+            <span> plase enter step above</span>
           </li>
-        ))}
+        )}
       </ol>
     </StyledDiv>
   );

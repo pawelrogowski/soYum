@@ -1,7 +1,9 @@
+import { AnimatePresence } from "framer-motion";
 import debounce from "lodash/debounce";
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 
+import { inputErrorMotion } from "../../common/animations";
 import { useValidation } from "../../hooks/useValidation";
 import {
   setRecipeAbout,
@@ -10,6 +12,7 @@ import {
   setRecipeTitleError,
 } from "../../redux/slices/addRecipeFormSlice";
 import { addRecipeSchema } from "../../validation/addRecipeSchema.js";
+import { InputErrorSpan } from "../InputErrorSpan/InputErrorSpan";
 import { StyledLabel } from "./RecipeTextInput.styled";
 
 export const RecipeTextInput = ({ name, placeholder }) => {
@@ -41,8 +44,17 @@ export const RecipeTextInput = ({ name, placeholder }) => {
         placeholder={placeholder}
         onChange={handleChange}
         onBlur={handleBlur}
-      />
-      {errors[name] && <span className="validation-error">{errors[name]}</span>}
+      />{" "}
+      <AnimatePresence>
+        {errors[name] && (
+          <InputErrorSpan
+            className="validation-error"
+            errorMessage={errors[name]}
+            {...inputErrorMotion}
+          />
+        )}
+      </AnimatePresence>
+      {errors[name] && <span className="validation-error">{}</span>}
     </StyledLabel>
   );
 };

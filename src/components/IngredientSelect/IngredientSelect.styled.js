@@ -20,6 +20,20 @@ export const StyledDiv = styled(motion.div)`
   --color-error: ${({ theme }) => theme.select.error};
   --color-error-bg: ${({ theme }) => theme.select.errorBg};
 
+  @keyframes menu-fade-in {
+    0% {
+      opacity: 0;
+      transform: scaleY(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+  }
+
+  .menu {
+    animation: fadeIn 0.2s ease-in-out;
+  }
   display: flex;
   align-items: center;
   border-radius: 5px;
@@ -198,6 +212,8 @@ export const StyledDiv = styled(motion.div)`
         }
 
         &__menu {
+          transform-origin: top;
+          animation: menu-fade-in 0.2s ease-in-out;
           white-space: nowrap;
           overflow-x: hidden;
           background: var(--color-bg);
@@ -366,6 +382,9 @@ export const StyledDiv = styled(motion.div)`
         &:focus {
           outline: none;
         }
+        &::placeholder {
+          color: var(--color-text-placeholder);
+        }
       }
     }
     > label:nth-child(2) {
@@ -496,6 +515,8 @@ export const StyledDiv = styled(motion.div)`
             }
           }
           &__menu {
+            transform-origin: top;
+            animation: menu-fade-in 0.2s ease-in-out;
             white-space: nowrap;
             overflow-x: hidden;
             background: var(--color-bg);
