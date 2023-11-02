@@ -1,7 +1,9 @@
+import { AnimatePresence } from "framer-motion";
 import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
 
+import { inputErrorMotion } from "../../common/animations.js";
 import { categorySelectOptions } from "../../common/selectOptions";
 import { useValidation } from "../../hooks/useValidation";
 import {
@@ -9,20 +11,21 @@ import {
   setRecipeCategoriesError,
 } from "../../redux/slices/addRecipeFormSlice";
 import { addRecipeSchema } from "../../validation/addRecipeSchema.js";
+import { InputErrorSpan } from "../InputErrorSpan/InputErrorSpan.jsx";
 import { StyledDiv } from "./CategorySelect.styled";
 
 export const CategorySelect = () => {
-  const { errors, validate } = useValidation();
-  const { recipeCategories } = useSelector((state) => state.addRecipeForm);
+  const { validate } = useValidation();
+  const { recipeCategories, recipeCategoriesError } = useSelector((state) => state.addRecipeForm);
   const dispatch = useDispatch();
   const ref = useRef(null);
 
   const handleChange = (selectedOptions) => {
     const valueArray = selectedOptions.map((option) => option.value);
-    const { isValid, errorMessage } = validate(addRecipeSchema, "recipeCategories", valueArray);
+    const { isValid } = validate(addRecipeSchema, "recipeCategories", valueArray);
     isValid ? dispatch(setRecipeCategories(valueArray)) : dispatch(setRecipeCategories([]));
-    errorMessage
-      ? dispatch(setRecipeCategoriesError(errorMessage))
+    recipeCategoriesError
+      ? dispatch(setRecipeCategoriesError(recipeCategoriesError))
       : dispatch(setRecipeCategoriesError(null));
   };
 
@@ -38,7 +41,7 @@ export const CategorySelect = () => {
   };
 
   return (
-    <StyledDiv onClick={handleWrapperClick} $hasError={errors.recipeCategories && "true"}>
+    <StyledDiv onClick={handleWrapperClick} $hasError={recipeCategoriesError && "true"}>
       <Select
         ref={ref}
         openMenuOnFocus
@@ -51,9 +54,15 @@ export const CategorySelect = () => {
         placeholder="Categories*"
         classNamePrefix="Select"
       />
-      {errors.recipeCategories && (
-        <span className="validation-error">{errors.recipeCategories}</span>
-      )}
+      <AnimatePresence>
+        {recipeCategoriesError && (
+          <InputErrorSpan
+            className="validation-error"
+            errorMessage={recipeCategoriesError}
+            {...inputErrorMotion}
+          />
+        )}
+      </AnimatePresence>
     </StyledDiv>
   );
 };

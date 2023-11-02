@@ -32,8 +32,7 @@ export const StyledDiv = styled.div`
     padding: 0 4px;
     color: var(--color-error);
     top: -0.5rem;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 7.4rem;
     text-align: center;
   }
   > div {

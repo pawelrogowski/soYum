@@ -19,9 +19,12 @@ import { InputErrorSpan } from "../InputErrorSpan/InputErrorSpan.jsx";
 import { StyledDiv } from "./RecipePreparationTextArea.styled";
 
 export const RecipePreparationTextArea = ({ className }) => {
-  const { currentTextAreaValue, currentEditIndex, currentTextAreaValueError } = useSelector(
-    (state) => state.addRecipeForm
-  );
+  const {
+    currentTextAreaValue,
+    currentEditIndex,
+    currentTextAreaValueError,
+    recipePreparationSteps,
+  } = useSelector((state) => state.addRecipeForm);
   const dispatch = useDispatch();
   const { validate } = useValidation();
 
@@ -81,21 +84,21 @@ export const RecipePreparationTextArea = ({ className }) => {
     <StyledDiv
       className={className}
       onBlur={handleValidationOnBlur}
-      $hasError={currentTextAreaValueError && "true"}
+      $hasError={currentTextAreaValueError && recipePreparationSteps.length === 0 && "true"}
     >
       <Heading as="h2">Recipe Preparation</Heading>
       <div>
         <textarea
-          placeholder="Enter preparation steps. Confirm each step with enter"
+          placeholder="Enter preparation steps"
           value={currentTextAreaValue}
           onKeyDown={handleKeyDown}
           onChange={handleTextAreaChange}
         />
         <AnimatePresence>
-          {currentTextAreaValueError && (
+          {currentTextAreaValueError && recipePreparationSteps.length === 0 && (
             <InputErrorSpan
               className="validation-error"
-              errorMessage={currentTextAreaValueError}
+              errorMessage={"At least 1 step required"}
               {...inputErrorMotion}
             />
           )}

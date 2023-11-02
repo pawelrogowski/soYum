@@ -53,8 +53,7 @@ export const StyledDiv = styled.div`
     position: absolute;
     bottom: -0.5rem;
     padding: 0 0.8rem;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 3.6rem;
   }
 
   > span:first-of-type {

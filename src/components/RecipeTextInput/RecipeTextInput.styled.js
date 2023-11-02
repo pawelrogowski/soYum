@@ -45,12 +45,10 @@ export const StyledLabel = styled.label`
   .validation-error {
     background: var(--color-bg-error);
     overflow: hidden;
-    max-width: 100%;
     color: var(--color-font-error);
     position: absolute;
     bottom: -0.5rem;
     padding: 0 0.8rem;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 3.6rem;
   }
 `;

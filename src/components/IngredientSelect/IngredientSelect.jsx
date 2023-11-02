@@ -102,7 +102,7 @@ const IngredientSelectComponent = ({
             <AnimatePresence>
               {recipeIngredients[index].amountError && (
                 <InputErrorSpan
-                  className="validation-error"
+                  className="validation-error--centered"
                   errorMessage={recipeIngredients[index].amountError}
                   {...inputErrorMotion}
                 />
@@ -127,7 +127,7 @@ const IngredientSelectComponent = ({
             <AnimatePresence>
               {recipeIngredients[index].measureTypeError && (
                 <InputErrorSpan
-                  className="validation-error"
+                  className="validation-error--centered"
                   errorMessage={recipeIngredients[index].measureTypeError}
                   {...inputErrorMotion}
                 />

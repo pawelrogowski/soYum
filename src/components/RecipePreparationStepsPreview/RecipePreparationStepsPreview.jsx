@@ -49,7 +49,7 @@ export const RecipePreparationStepsPreview = () => {
           ))
         ) : (
           <li>
-            <span> plase enter step above</span>
+            <span>Plase enter the step above</span>
           </li>
         )}
       </ol>

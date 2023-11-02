@@ -1,7 +1,7 @@
 import { AnimatePresence } from "framer-motion";
 import debounce from "lodash/debounce";
 import PropTypes from "prop-types";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { inputErrorMotion } from "../../common/animations";
 import { useValidation } from "../../hooks/useValidation";
@@ -16,8 +16,9 @@ import { InputErrorSpan } from "../InputErrorSpan/InputErrorSpan";
 import { StyledLabel } from "./RecipeTextInput.styled";
 
 export const RecipeTextInput = ({ name, placeholder }) => {
+  const { recipeTitleError, recipeAboutError } = useSelector((state) => state.addRecipeForm);
   const dispatch = useDispatch();
-  const { errors, validate } = useValidation();
+  const { validate } = useValidation();
 
   const handleChange = debounce((e) => {
     const { isValid, errorMessage } = validate(addRecipeSchema, name, e.target.value);
@@ -30,13 +31,15 @@ export const RecipeTextInput = ({ name, placeholder }) => {
 
   const handleBlur = (e) => {
     const { errorMessage } = validate(addRecipeSchema, name, e.target.value);
-    errorMessage
-      ? dispatch(setRecipeAboutError(errorMessage))
-      : dispatch(setRecipeAboutError(null));
+    const setError = name.startsWith("recipeTitle") ? setRecipeTitleError : setRecipeAboutError;
+    errorMessage ? dispatch(setError(errorMessage)) : dispatch(setError(null));
   };
 
   return (
-    <StyledLabel htmlFor={name} $hasError={errors[name] && "true"}>
+    <StyledLabel
+      htmlFor={name}
+      $hasError={(name.startsWith("recipeTitle") ? recipeTitleError : recipeAboutError) && "true"}
+    >
       <input
         type="text"
         name={name}
@@ -44,17 +47,16 @@ export const RecipeTextInput = ({ name, placeholder }) => {
         placeholder={placeholder}
         onChange={handleChange}
         onBlur={handleBlur}
-      />{" "}
+      />
       <AnimatePresence>
-        {errors[name] && (
+        {(name.startsWith("recipeTitle") ? recipeTitleError : recipeAboutError) && (
           <InputErrorSpan
             className="validation-error"
-            errorMessage={errors[name]}
+            errorMessage={name.startsWith("recipeTitle") ? recipeTitleError : recipeAboutError}
             {...inputErrorMotion}
           />
         )}
       </AnimatePresence>
-      {errors[name] && <span className="validation-error">{}</span>}
     </StyledLabel>
   );
 };

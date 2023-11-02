@@ -44,6 +44,16 @@ export const StyledDiv = styled(motion.div)`
     padding: 0 4px;
     color: var(--color-error);
     bottom: -2.1rem;
+    left: 2.6rem;
+    text-align: center;
+  }
+  .validation-error--centered {
+    display: block !important;
+    position: absolute;
+    background: var(--color-error-bg);
+    padding: 0 4px;
+    color: var(--color-error);
+    bottom: -2.1rem;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -219,7 +229,7 @@ export const StyledDiv = styled(motion.div)`
           background: var(--color-bg);
           border-radius: 0.6rem;
           box-shadow: 0px 7px 8px 5px rgba(0, 0, 0, 0.1);
-          min-height: 12.4rem;
+          min-height: 33.4rem;
           margin-top: 0.8rem;
           scrollbar-width: thin;
           scrollbar-color: var(--color-scrollbar-thumb) var(--color-scrollbar-bg);
@@ -245,7 +255,7 @@ export const StyledDiv = styled(motion.div)`
           overflow-x: hidden;
           border: 1px solid var(--color-accent);
           width: 100%;
-          min-height: 12.4rem;
+          min-height: 33.4rem;
           border-radius: 0.6rem;
           font-family: Poppins;
           font-size: 14px;
