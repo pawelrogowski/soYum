@@ -44,7 +44,7 @@ export const RecipePreparationStepsPreview = () => {
                 <Icon icon="x" />
               </button>
 
-              {limitTextLength(recipePreparationSteps[index], 2, 120, "...")}
+              <p>{recipePreparationSteps[index]}</p>
             </li>
           ))
         ) : (

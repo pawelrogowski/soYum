@@ -73,7 +73,7 @@ export const StyledDiv = styled(motion.div)`
     border-radius: 5px;
     padding: 1.2rem;
     transition: border-color 200ms;
-    min-width: 278px;
+    min-width: 25.1rem;
     @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       padding: 1.7rem 1.6rem 1.6rem 1.6rem;
     }
@@ -98,6 +98,7 @@ export const StyledDiv = styled(motion.div)`
       @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         height: 2.4rem;
       }
+
       flex-grow: 1;
       cursor: text;
       &:after {
@@ -290,6 +291,9 @@ export const StyledDiv = styled(motion.div)`
     height: 1.8rem;
     margin-left: 1rem;
     @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      margin-left: auto;
+    }
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       margin-left: 1.4rem;
     }
     justify-self: flex-end;

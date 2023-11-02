@@ -99,6 +99,9 @@ export const StyledFigure = styled.figure`
       flex-grow: 1;
       overflow: hidden;
       text-wrap: preety;
+      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        text-wrap: balance;
+      }
     }
   }
 `;

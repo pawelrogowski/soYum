@@ -20,22 +20,18 @@ export const StyledDiv = styled.div`
   --color-icon-edit-active: ${({ theme }) => theme.recipePreparationStepsPreview.iconEditActive};
   padding: 3.2rem 0;
 
-  max-width: 55.2rem;
+  max-width: 58.8rem;
   > h2 {
     font-size: 1.8rem;
     margin-bottom: 2rem;
-    overflow-wrap: break-word;
   }
   > ol {
     display: flex;
     flex-direction: column;
     gap: 1.4rem;
-    list-style-type: none;
-    max-width: 58.8rem;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
 
-    max-width: 55.2rem;
+    padding: 0 1.2rem;
+    width: 100%;
     > li {
       counter-increment: my-counter;
       display: flex;
@@ -45,8 +41,10 @@ export const StyledDiv = styled.div`
       font-size: 1.2rem;
       line-height: 1.16;
       letter-spacing: -0.024rem;
-      overflow-wrap: break-word;
-
+      > p {
+        word-break: break-all;
+        text-wrap: pretty;
+      }
       &::before {
         content: counter(my-counter);
         display: flex;
@@ -61,8 +59,10 @@ export const StyledDiv = styled.div`
         text-align: center;
         font-size: 1.2rem;
         font-weight: 600;
+        align-self: flex-start;
       }
       > button:nth-of-type(1) {
+        align-self: flex-start;
         cursor: pointer;
         padding: 0;
         background: var(--color-button-bg-edit-idle);
@@ -90,6 +90,7 @@ export const StyledDiv = styled.div`
         }
       }
       > button:nth-of-type(2) {
+        align-self: flex-start;
         cursor: pointer;
         padding: 0;
         background: var(--color-button-bg-remove-idle);

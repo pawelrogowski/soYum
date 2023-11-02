@@ -7,6 +7,7 @@ export const StyledForm = styled.form`
 
   .ingredient-list {
     margin-bottom: 5rem;
+    width: 100%;
   }
   > .image-upload-wrapper {
     display: flex;
@@ -38,6 +39,7 @@ export const StyledForm = styled.form`
       }
       @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
         gap: 5.7rem;
+        max-width: 39.4rem;
       }
     }
   }

@@ -162,7 +162,7 @@ export const StyledListItem = styled.li`
       height: 3.9rem;
       overflow: hidden;
       padding-right: 1rem;
-      text-wrap: preety;
+      text-wrap: pretty;
       @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         font-size: 1.4rem;
         line-height: 1.28;

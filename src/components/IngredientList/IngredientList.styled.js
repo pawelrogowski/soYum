@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const StyledDiv = styled.div`
   max-width: 62rem;
   outline: none;
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    max-width: 120rem;
+    width: 100%;
+  }
   > div:first-of-type {
     display: flex;
     margin-bottom: 2.4rem;
@@ -12,6 +16,7 @@ export const StyledDiv = styled.div`
   > div:nth-of-type(2) {
     display: flex;
     flex-direction: column;
+
     gap: 1.8rem;
   }
 `;
