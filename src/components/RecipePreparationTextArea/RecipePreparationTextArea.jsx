@@ -29,12 +29,11 @@ export const RecipePreparationTextArea = ({ className }) => {
   const { validate } = useValidation();
 
   const handleKeyDown = (e) => {
-    console.log(e);
     const value = e.target.value;
+
     if (e.key === "Enter") {
       e.preventDefault();
       if (!currentTextAreaValueError && currentTextAreaValue) {
-        console.log("?");
         if (!currentEditIndex) {
           dispatch(addPreparationStep(value.trim()));
         } else {
@@ -48,6 +47,7 @@ export const RecipePreparationTextArea = ({ className }) => {
 
   const handleAddClick = (e) => {
     e.preventDefault();
+
     if (!currentTextAreaValueError) {
       if (currentEditIndex === null) {
         dispatch(addPreparationStep(currentTextAreaValue.trim()));
@@ -56,11 +56,13 @@ export const RecipePreparationTextArea = ({ className }) => {
         dispatch(setCurrentEditIndex(null));
       }
     }
+
     dispatch(setCurrentTextAreaValue(""));
   };
 
   const handleCancelClick = (event) => {
     event.preventDefault();
+
     dispatch(setCurrentEditIndex(null));
     dispatch(setCurrentTextAreaValue(""));
   };
@@ -68,7 +70,9 @@ export const RecipePreparationTextArea = ({ className }) => {
   const handleTextAreaChange = (e) => {
     const value = e.target.value;
     const { errorMessage } = validate(addRecipeSchema, `currentTextAreaValue`, value.trim());
+
     dispatch(setCurrentTextAreaValue(value));
+
     errorMessage
       ? dispatch(setCurrentTextAreaValueError(errorMessage))
       : dispatch(setCurrentTextAreaValueError(null));
@@ -78,13 +82,19 @@ export const RecipePreparationTextArea = ({ className }) => {
     if (e.currentTarget.contains(e.relatedTarget)) {
       return;
     }
+
+    const { errorMessage } = validate(addRecipeSchema, "currentTextAreaValue", e.target.value);
+
+    errorMessage
+      ? dispatch(setCurrentTextAreaValueError(errorMessage))
+      : dispatch(setCurrentTextAreaValueError(null));
   };
 
   return (
     <StyledDiv
       className={className}
       onBlur={handleValidationOnBlur}
-      $hasError={currentTextAreaValueError && recipePreparationSteps.length === 0 && "true"}
+      $hasError={currentTextAreaValueError && recipePreparationSteps.length < 3 && "true"}
     >
       <Heading as="h2">Recipe Preparation</Heading>
       <div>
@@ -95,10 +105,10 @@ export const RecipePreparationTextArea = ({ className }) => {
           onChange={handleTextAreaChange}
         />
         <AnimatePresence>
-          {currentTextAreaValueError && recipePreparationSteps.length === 0 && (
+          {currentTextAreaValueError && recipePreparationSteps.length < 3 && (
             <InputErrorSpan
               className="validation-error"
-              errorMessage={"At least 1 step required"}
+              errorMessage={"At least 3 step are required"}
               {...inputErrorMotion}
             />
           )}

@@ -44,11 +44,10 @@ export const StyledLabel = styled.label`
   }
   .validation-error {
     background: var(--color-bg-error);
-    overflow: hidden;
     color: var(--color-font-error);
     position: absolute;
     bottom: -0.5rem;
     padding: 0 0.8rem;
-    left: 3.6rem;
+    left: 0.71rem;
   }
 `;

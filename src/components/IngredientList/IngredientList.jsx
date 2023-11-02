@@ -93,11 +93,15 @@ export const IngredientList = ({ className }) => {
   };
 
   const handleAmountChange = (e, index) => {
+    if (e.target.value <= 0) {
+      e.target.value = 1;
+    }
     const { isValid, errorMessage } = validate(
       addRecipeSchema,
       `recipeIngredients.[${index}].amount`,
       e.target.value
     );
+
     isValid && dispatch(setAmount({ index: index, amount: e.target.value }));
 
     errorMessage

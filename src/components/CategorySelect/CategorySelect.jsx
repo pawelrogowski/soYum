@@ -22,18 +22,24 @@ export const CategorySelect = () => {
 
   const handleChange = (selectedOptions) => {
     const valueArray = selectedOptions.map((option) => option.value);
-    const { isValid } = validate(addRecipeSchema, "recipeCategories", valueArray);
-    isValid ? dispatch(setRecipeCategories(valueArray)) : dispatch(setRecipeCategories([]));
-    recipeCategoriesError
-      ? dispatch(setRecipeCategoriesError(recipeCategoriesError))
-      : dispatch(setRecipeCategoriesError(null));
+    const { isValid, errorMessage } = validate(addRecipeSchema, "recipeCategories", valueArray);
+
+    isValid && dispatch(setRecipeCategories(valueArray));
+    errorMessage && dispatch(setRecipeCategoriesError(recipeCategoriesError));
+    if (valueArray.length === 0) {
+      dispatch(setRecipeCategories([]));
+      dispatch(setRecipeCategoriesError("At least 1 category is required"));
+    }
   };
 
   const handleBlur = () => {
     const { errorMessage } = validate(addRecipeSchema, "recipeCategories", recipeCategories);
-    errorMessage
-      ? dispatch(setRecipeCategoriesError(errorMessage))
-      : dispatch(setRecipeCategoriesError(null));
+    if (errorMessage) {
+      dispatch(setRecipeCategoriesError(errorMessage));
+      dispatch(setRecipeCategories([]));
+    } else {
+      dispatch(setRecipeCategoriesError(null));
+    }
   };
 
   const handleWrapperClick = () => {
@@ -51,7 +57,7 @@ export const CategorySelect = () => {
         options={categorySelectOptions}
         onChange={handleChange}
         onBlur={handleBlur}
-        placeholder="Categories*"
+        placeholder="Categories"
         classNamePrefix="Select"
       />
       <AnimatePresence>

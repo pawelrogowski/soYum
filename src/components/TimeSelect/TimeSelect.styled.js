@@ -47,13 +47,12 @@ export const StyledDiv = styled.div`
 
   .validation-error {
     background: var(--color-error-bg);
-    overflow: hidden;
     max-width: 100%;
     color: var(--color-error);
     position: absolute;
     bottom: -0.5rem;
     padding: 0 0.8rem;
-    left: 3.6rem;
+    left: 0.71rem;
   }
 
   > span:first-of-type {

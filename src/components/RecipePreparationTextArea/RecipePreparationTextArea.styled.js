@@ -32,8 +32,7 @@ export const StyledDiv = styled.div`
     padding: 0 4px;
     color: var(--color-error);
     top: -0.5rem;
-    left: 7.4rem;
-    text-align: center;
+    left: 2rem;
   }
   > div {
     position: relative;
