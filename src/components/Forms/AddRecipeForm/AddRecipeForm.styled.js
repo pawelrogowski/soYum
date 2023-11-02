@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
 export const StyledForm = styled.form`
+  --color-button-bg-idle: ${({ theme }) => theme.addRecipeForm.buttonBgIdle};
+  --color-button-bg-active: ${({ theme }) => theme.addRecipeForm.buttonBgActive};
+  --color-button-border-active: ${({ theme }) => theme.addRecipeForm.buttonBorderActive};
+  --color-button-border-idle: ${({ theme }) => theme.addRecipeForm.buttonBorderIdle};
+  --color-button-text-idle: ${({ theme }) => theme.addRecipeForm.buttonTextIdle};
+  --color-button-text-active: ${({ theme }) => theme.addRecipeForm.buttonTextActive};
+
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -50,21 +57,20 @@ export const StyledForm = styled.form`
     height: 46px;
     font-size: 16px;
     line-height: 1;
-    border-color: #22252a;
-    background-color: #22252a;
-    color: #fafafa;
+    border-color: var(--color-button-border-idle);
+    background-color: var(--color-button-bg-idle);
+    color: var(--color-button-text-idle);
 
     &:hover,
     &:focus {
       border-radius: 4.4rem 2.4rem;
-      border-color: #8baa36;
-      background-color: #8baa36;
-      color: #fafafa;
+      border-color: var(--color-button-border-active);
+      background-color: var(--color-button-bg-active);
+      color: var(--color-button-text-active);
     }
     @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       width: 17rem;
       height: 6rem;
-
       font-size: 16px;
     }
   }

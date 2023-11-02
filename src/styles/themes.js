@@ -901,4 +901,12 @@ export const darkTheme = {
     iconIdle: "#fafafa",
     iconActive: brandColors.main,
   },
+  addRecipeForm: {
+    buttonBgIdle: brandColors.main,
+    buttonBorderIdle: brandColors.main,
+    buttonTextIdle: "#fafafa",
+    buttonBgActive: brandColors.main,
+    buttonBorderActive: brandColors.main,
+    buttonTextActive: "#fafafa",
+  },
 };
