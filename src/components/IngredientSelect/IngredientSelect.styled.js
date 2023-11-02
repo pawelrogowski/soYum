@@ -296,12 +296,14 @@ export const StyledDiv = styled(motion.div)`
     flex: 0;
     &:hover,
     &:focus {
+      outline: none;
       > svg {
         stroke: var(--color-icon-remove);
       }
     }
     &:disabled {
       > svg {
+        cursor: initial;
         stroke: var(--color-border-idle);
       }
     }
@@ -571,12 +573,14 @@ export const StyledDiv = styled(motion.div)`
             gap: 1rem;
             padding: 0.8rem 1.8rem;
           }
-
+          &*:focus,
+          &*:focus-within {
+            color: var(--color-text-active);
+          }
           &__option {
             min-height: 2rem;
 
-            &:hover,
-            &:focus {
+            &:hover {
               color: var(--color-text-active);
               cursor: pointer;
             }
