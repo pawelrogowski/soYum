@@ -49,6 +49,6 @@ export const StyledLabel = styled.label`
     position: absolute;
     bottom: -0.5rem;
     padding: 0 0.8rem;
-    left: 3.6rem;
+    left: 0.71rem;
   }
 `;

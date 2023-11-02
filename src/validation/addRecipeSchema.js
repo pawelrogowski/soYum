@@ -15,6 +15,6 @@ export const addRecipeSchema = Yup.object().shape({
     )
     .min(1, "Add at least one ingredient"),
 
-  recipePreparationSteps: Yup.array().min(1, "Add at least one step"),
-  currentTextAreaValue: Yup.string().required("Steps cannot be empty"),
+  recipePreparationSteps: Yup.array().min(3, "At least 3 steps are required"),
+  currentTextAreaValue: Yup.string().required("At least 3 steps are required"),
 });

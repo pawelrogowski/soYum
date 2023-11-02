@@ -98,7 +98,7 @@ export const RecipePreparationTextArea = ({ className }) => {
           {currentTextAreaValueError && recipePreparationSteps.length === 0 && (
             <InputErrorSpan
               className="validation-error"
-              errorMessage={"At least 1 step required"}
+              errorMessage={"At least 3 step are requiredaaaaaa"}
               {...inputErrorMotion}
             />
           )}

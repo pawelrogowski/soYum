@@ -1,14 +1,14 @@
 export const inputErrorMotion = {
   initial: {
     opacity: 1,
-    x: "-50%",
+    x: "0%",
   },
   animate: {
     opacity: 1,
-    x: ["-55%", "-45%", "-55%", "-50%"],
+    x: ["-5%", "0%", "5%", "0%"],
     transition: {
       duration: 0.2,
-      yoyo: 10,
+      yoyo: 3,
       repeatDelay: 0.1,
       repeatType: "reverse",
     },

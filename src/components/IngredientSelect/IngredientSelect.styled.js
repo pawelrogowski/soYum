@@ -44,7 +44,7 @@ export const StyledDiv = styled(motion.div)`
     padding: 0 4px;
     color: var(--color-error);
     bottom: -2.1rem;
-    left: 2.6rem;
+    left: 0.71rem;
     text-align: center;
   }
   .validation-error--centered {
@@ -55,7 +55,7 @@ export const StyledDiv = styled(motion.div)`
     color: var(--color-error);
     bottom: -2.1rem;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) !important;
     text-align: center;
   }
 
