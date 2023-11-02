@@ -487,13 +487,9 @@ export const lightTheme = {
     buttonBgIdle: "#22252A",
     buttonBorderIdle: "#22252A",
     buttonTextIdle: "#fafafa",
-    buttonBgActive: "8baa36",
-    buttonBorderActive: "",
+    buttonBgActive: brandColors.main,
+    buttonBorderActive: brandColors.main,
     buttonTextActive: "#fafafa",
-
-    buttonBgDisabled: "",
-    buttonBorderDisabled: "",
-    buttonTextDisabled: "",
   },
 };
 
