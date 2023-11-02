@@ -26,8 +26,8 @@ const IngredientSelectComponent = ({
   const measureRef = useRef(null);
 
   const [isPresent] = usePresence();
-
   if (!isPresent) return null;
+
   const handleRemoveIngredient = (index) => {
     if (recipeIngredients[index]) {
       dispatch(removeIngredient(index));

@@ -1,10 +1,15 @@
 import * as Yup from "yup";
 
 export const addRecipeSchema = Yup.object().shape({
-  recipeTitle: Yup.string().required("Required.").min(1, "Required").max(50, "Too Long"),
-  recipeAbout: Yup.string().min(20, "Too short").required("Required."),
-  recipeCategories: Yup.array().of(Yup.string()).min(1, "Required").required("Required"),
-  recipeCookingTime: Yup.string().required("Required."),
+  recipeTitle: Yup.string().required("Required").min(1, "Required").max(50, "Too Long"),
+  recipeAbout: Yup.string()
+    .min(20, "Description too short")
+    .required("Short description is required"),
+  recipeCategories: Yup.array()
+    .of(Yup.string())
+    .min(1, "At least 1 category is required")
+    .required("Required"),
+  recipeCookingTime: Yup.string().required("Cooking time is required"),
   recipeIngredients: Yup.array()
     .of(
       Yup.object().shape({

@@ -1,17 +1,16 @@
-import { Formik } from "formik";
 import { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useValidation } from "../../../hooks/useValidation";
 import {
   setAmountError,
+  setCurrentTextAreaValueError,
   setIngredientError,
   setMeasureError,
   setRecipeAboutError,
   setRecipeCategoriesError,
   setRecipeCookingTimeError,
   setRecipeTitleError,
-  setCurrentTextAreaValueError,
 } from "../../../redux/slices/addRecipeFormSlice";
 import { addRecipeSchema } from "../../../validation/addRecipeSchema";
 import { Button } from "../../Button/Button";
@@ -22,22 +21,7 @@ import { RecipePreparationStepsPreview } from "../../RecipePreparationStepsPrevi
 import { RecipePreparationTextArea } from "../../RecipePreparationTextArea/RecipePreparationTextArea";
 import { RecipeTextInput } from "../../RecipeTextInput/RecipeTextInput";
 import { TimeSelect } from "../../TimeSelect/TimeSelect";
-import { StyledFormikForm } from "./AddRecipeForm.styled";
-
-const initialValues = {
-  recipeTitle: "",
-  recipeAbout: "",
-  recipeCategories: [],
-  recipeCookingTime: "",
-  recipeIngredients: [
-    {
-      ingredient: "",
-      measureType: "",
-      amount: 0,
-    },
-  ],
-  recipePreparationSteps: [],
-};
+import { StyledForm } from "./AddRecipeForm.styled";
 
 export const AddRecipeForm = () => {
   const {
@@ -67,6 +51,7 @@ export const AddRecipeForm = () => {
       "recipeCategories",
       recipeCategories
     );
+
     titleError ? dispatch(setRecipeTitleError(titleError)) : dispatch(setRecipeTitleError(null));
     aboutError ? dispatch(setRecipeAboutError(aboutError)) : dispatch(setRecipeAboutError(null));
     cookingTimeError
@@ -109,6 +94,7 @@ export const AddRecipeForm = () => {
 
     titleError ? dispatch(setRecipeTitleError(titleError)) : dispatch(setRecipeTitleError(null));
     aboutError ? dispatch(setRecipeAboutError(aboutError)) : dispatch(setRecipeAboutError(null));
+
     cookingTimeError
       ? dispatch(setRecipeCookingTimeError(cookingTimeError))
       : dispatch(setRecipeCookingTimeError(null));
@@ -160,24 +146,22 @@ export const AddRecipeForm = () => {
   };
 
   return (
-    <Formik initialValues={initialValues}>
-      <StyledFormikForm>
-        <div className="image-upload-wrapper">
-          <RecipeImageUpload />
-          <div className="image-upload-wrapper__inner" onBlur={handleValidationOnBlur}>
-            <RecipeTextInput name="recipeTitle" placeholder="Enter item title*" />
-            <RecipeTextInput name="recipeAbout" placeholder="Enter about recipe*" />
-            <TimeSelect />
-            <CategorySelect />
-          </div>
+    <StyledForm>
+      <div className="image-upload-wrapper">
+        <RecipeImageUpload />
+        <div className="image-upload-wrapper__inner" onBlur={handleValidationOnBlur}>
+          <RecipeTextInput name="recipeTitle" placeholder="Enter item title" />
+          <RecipeTextInput name="recipeAbout" placeholder="Enter about recipe" />
+          <TimeSelect />
+          <CategorySelect />
         </div>
-        <IngredientList className="ingredient-list" />
-        <RecipePreparationTextArea className="recipe-preparation-wrapper" />
-        <RecipePreparationStepsPreview />
-        <Button type="button" variant="outlineBig" onClick={validateForm}>
-          Add Recipe
-        </Button>
-      </StyledFormikForm>
-    </Formik>
+      </div>
+      <IngredientList className="ingredient-list" />
+      <RecipePreparationTextArea className="recipe-preparation-wrapper" />
+      <RecipePreparationStepsPreview />
+      <Button type="button" variant="outlineBig" onClick={validateForm}>
+        Add Recipe
+      </Button>
+    </StyledForm>
   );
 };

@@ -49,8 +49,6 @@ export const StyledDiv = styled.div`
 
   .validation-error {
     background: var(--color-bg-error);
-    overflow: hidden;
-
     max-width: 100%;
     color: var(--color-font-error);
     position: absolute;

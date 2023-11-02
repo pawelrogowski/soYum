@@ -26,6 +26,7 @@ export const TimeSelect = () => {
       "recipeCookingTime",
       selectedOption.value
     );
+
     isValid
       ? dispatch(setRecipeCookingTime(selectedOption.value))
       : dispatch(setRecipeCookingTime(""));
@@ -36,6 +37,7 @@ export const TimeSelect = () => {
 
   const handleBlur = () => {
     const { errorMessage } = validate(addRecipeSchema, "recipeCookingTime", recipeCookingTime);
+
     errorMessage
       ? dispatch(setRecipeCookingTimeError(errorMessage))
       : dispatch(setRecipeCookingTimeError(null));
@@ -52,7 +54,7 @@ export const TimeSelect = () => {
       onClick={handleWrapperClick}
       $placeholderShown={!recipeCookingTime}
     >
-      <span>{recipeCookingTimeError ? "Cooking Time" : "Cooking Time*"}</span>
+      <span>{recipeCookingTimeError ? "Cooking Time" : "Cooking Time"}</span>
       <label htmlFor="time-select-value-container" />
       <label htmlFor="time-select" />
       <Select
@@ -68,7 +70,7 @@ export const TimeSelect = () => {
         placeholder="5 min"
         inputId="time-select"
         id="time-select-value-container"
-      />{" "}
+      />
       <AnimatePresence>
         {recipeCookingTimeError && (
           <InputErrorSpan

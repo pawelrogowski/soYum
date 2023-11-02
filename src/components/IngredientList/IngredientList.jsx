@@ -98,6 +98,7 @@ export const IngredientList = ({ className }) => {
       `recipeIngredients.[${index}].amount`,
       e.target.value
     );
+
     isValid && dispatch(setAmount({ index: index, amount: e.target.value }));
 
     errorMessage

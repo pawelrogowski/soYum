@@ -32,6 +32,7 @@ export const RecipeTextInput = ({ name, placeholder }) => {
   const handleBlur = (e) => {
     const { errorMessage } = validate(addRecipeSchema, name, e.target.value);
     const setError = name.startsWith("recipeTitle") ? setRecipeTitleError : setRecipeAboutError;
+
     errorMessage ? dispatch(setError(errorMessage)) : dispatch(setError(null));
   };
 
