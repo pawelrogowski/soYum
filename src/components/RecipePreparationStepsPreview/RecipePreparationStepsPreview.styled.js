@@ -18,12 +18,23 @@ export const StyledDiv = styled.div`
     theme.recipePreparationStepsPreview.iconRemoveActive};
   --color-icon-edit-idle: ${({ theme }) => theme.recipePreparationStepsPreview.iconEditIdle};
   --color-icon-edit-active: ${({ theme }) => theme.recipePreparationStepsPreview.iconEditActive};
+  --color-error: ${({ theme }) => theme.select.error};
+  --color-error-bg: ${({ theme }) => theme.select.errorBg};
   padding: 3.2rem 0;
-
+  position: relative;
   max-width: 58.8rem;
   > h2 {
     font-size: 1.8rem;
     margin-bottom: 2rem;
+  }
+  .validation-error {
+    background: var(--color-error-bg);
+    max-width: 100%;
+    color: var(--color-error);
+    position: absolute;
+    bottom: -0.5rem;
+    padding: 0 0.8rem;
+    left: 0.71rem;
   }
   > ol {
     display: flex;

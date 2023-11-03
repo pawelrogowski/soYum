@@ -165,9 +165,9 @@ export const addRecipeFormSlice = createSlice({
       },
       prepare: prepareAutoBatched(),
     },
-    addPreparationStepError: {
+    setPreparationStepError: {
       reducer(state, action) {
-        state.recipePreparationStepsError.push(action.payload);
+        state.recipePreparationStepsError = action.payload;
       },
       prepare: prepareAutoBatched(),
     },
@@ -240,4 +240,5 @@ export const {
   setCurrentTextAreaValueError,
   setCurrentEditIndex,
   editPreparationStep,
+  setPreparationStepError,
 } = addRecipeFormSlice.actions;

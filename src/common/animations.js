@@ -48,3 +48,26 @@ export const mobileMenuMotion = {
   exit: { left: "-100%", transition: { duration: 0.2 } },
   transition: { duration: 0.3 },
 };
+
+export const prepStepMotion = {
+  initial: {
+    opacity: 0,
+    y: -15,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.2,
+      type: "easeInOut",
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: 15,
+    transition: {
+      duration: 0.2,
+      type: "easeInOut",
+    },
+  },
+};
