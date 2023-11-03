@@ -19,82 +19,76 @@ import { InputErrorSpan } from "../InputErrorSpan/InputErrorSpan.jsx";
 import { StyledDiv } from "./RecipePreparationTextArea.styled";
 
 export const RecipePreparationTextArea = ({ className }) => {
+  const dispatch = useDispatch();
+  const { validate } = useValidation();
+
   const {
     currentTextAreaValue,
     currentEditIndex,
     currentTextAreaValueError,
     recipePreparationSteps,
   } = useSelector((state) => state.addRecipeForm);
-  const dispatch = useDispatch();
-  const { validate } = useValidation();
+
+  const handleErrorState = (value) => {
+    const { errorMessage } = validate(addRecipeSchema, "currentTextAreaValue", value.trim());
+    dispatch(setCurrentTextAreaValue(value));
+    errorMessage
+      ? dispatch(setCurrentTextAreaValueError(errorMessage))
+      : dispatch(setCurrentTextAreaValueError(null));
+  };
+
+  const handleStepUpdate = (value) => {
+    if (currentEditIndex !== null && currentEditIndex !== undefined) {
+      dispatch(editPreparationStep({ index: currentEditIndex, text: value }));
+      dispatch(setCurrentEditIndex(null));
+    } else {
+      dispatch(addPreparationStep(value.trim()));
+    }
+    dispatch(setCurrentTextAreaValue(""));
+  };
 
   const handleKeyDown = (e) => {
     const value = e.target.value;
 
     if (e.key === "Enter") {
       e.preventDefault();
-      if (!currentTextAreaValueError && currentTextAreaValue) {
-        if (!currentEditIndex) {
-          dispatch(addPreparationStep(value.trim()));
-        } else {
-          dispatch(editPreparationStep({ index: currentEditIndex, text: value }));
-          dispatch(setCurrentEditIndex(null));
-        }
+      if (!currentTextAreaValueError && value) {
+        handleStepUpdate(value);
       }
-      dispatch(setCurrentTextAreaValue(""));
     }
   };
 
   const handleAddClick = (e) => {
     e.preventDefault();
-
     if (!currentTextAreaValueError) {
-      if (currentEditIndex === null) {
-        dispatch(addPreparationStep(currentTextAreaValue.trim()));
-      } else {
-        dispatch(editPreparationStep({ index: currentEditIndex, text: currentTextAreaValue }));
-        dispatch(setCurrentEditIndex(null));
-      }
+      handleStepUpdate(currentTextAreaValue);
     }
-
-    dispatch(setCurrentTextAreaValue(""));
   };
 
   const handleCancelClick = (event) => {
     event.preventDefault();
-
     dispatch(setCurrentEditIndex(null));
     dispatch(setCurrentTextAreaValue(""));
   };
 
   const handleTextAreaChange = (e) => {
-    const value = e.target.value;
-    const { errorMessage } = validate(addRecipeSchema, `currentTextAreaValue`, value.trim());
-
-    dispatch(setCurrentTextAreaValue(value));
-
-    errorMessage
-      ? dispatch(setCurrentTextAreaValueError(errorMessage))
-      : dispatch(setCurrentTextAreaValueError(null));
+    handleErrorState(e.target.value);
   };
 
   const handleValidationOnBlur = (e) => {
     if (e.currentTarget.contains(e.relatedTarget)) {
       return;
     }
-
-    const { errorMessage } = validate(addRecipeSchema, "currentTextAreaValue", e.target.value);
-
-    errorMessage
-      ? dispatch(setCurrentTextAreaValueError(errorMessage))
-      : dispatch(setCurrentTextAreaValueError(null));
+    handleErrorState(e.target.value);
   };
+
+  const showError = currentTextAreaValueError && recipePreparationSteps.length < 3;
 
   return (
     <StyledDiv
       className={className}
       onBlur={handleValidationOnBlur}
-      $hasError={currentTextAreaValueError && recipePreparationSteps.length < 3 && "true"}
+      $hasError={showError && "true"}
     >
       <Heading as="h2">Recipe Preparation</Heading>
       <div>
@@ -105,7 +99,7 @@ export const RecipePreparationTextArea = ({ className }) => {
           onChange={handleTextAreaChange}
         />
         <AnimatePresence>
-          {currentTextAreaValueError && recipePreparationSteps.length < 3 && (
+          {showError && (
             <InputErrorSpan
               className="validation-error"
               errorMessage={"At least 3 step are required"}
@@ -125,7 +119,6 @@ export const RecipePreparationTextArea = ({ className }) => {
     </StyledDiv>
   );
 };
-
 RecipePreparationTextArea.propTypes = {
   className: PropTypes.string,
 };

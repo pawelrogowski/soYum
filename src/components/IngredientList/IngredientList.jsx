@@ -113,7 +113,7 @@ export const IngredientList = ({ className }) => {
     <StyledDiv tabIndex="0" className={className} onBlur={(e) => handleValidationOnBlur(e)}>
       <div>
         <Heading as="h2">Ingredients</Heading>
-        <IngredientCounter min={0} max={20} />
+        <IngredientCounter min={1} max={20} />
       </div>
       <div>
         <AnimatePresence>

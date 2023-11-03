@@ -20,27 +20,19 @@ export const TimeSelect = () => {
   const dispatch = useDispatch();
   const { recipeCookingTime, recipeCookingTimeError } = useSelector((state) => state.addRecipeForm);
 
-  const handleChange = (selectedOption) => {
-    const { isValid, errorMessage } = validate(
-      addRecipeSchema,
-      "recipeCookingTime",
-      selectedOption.value
-    );
+  const dispatchCookingTime = (value, error) => {
+    dispatch(setRecipeCookingTime(value));
+    dispatch(setRecipeCookingTimeError(error));
+  };
 
-    isValid
-      ? dispatch(setRecipeCookingTime(selectedOption.value))
-      : dispatch(setRecipeCookingTime(""));
-    errorMessage
-      ? dispatch(setRecipeCookingTimeError(errorMessage))
-      : dispatch(setRecipeCookingTimeError(null));
+  const handleChange = ({ value }) => {
+    const { isValid, errorMessage } = validate(addRecipeSchema, "recipeCookingTime", value);
+    dispatchCookingTime(isValid ? value : "", errorMessage);
   };
 
   const handleBlur = () => {
     const { errorMessage } = validate(addRecipeSchema, "recipeCookingTime", recipeCookingTime);
-
-    errorMessage
-      ? dispatch(setRecipeCookingTimeError(errorMessage))
-      : dispatch(setRecipeCookingTimeError(null));
+    dispatchCookingTime(recipeCookingTime, errorMessage);
   };
 
   const handleWrapperClick = () => {
@@ -54,9 +46,7 @@ export const TimeSelect = () => {
       onClick={handleWrapperClick}
       $placeholderShown={!recipeCookingTime}
     >
-      <span>{recipeCookingTimeError ? "Cooking Time" : "Cooking Time"}</span>
-      <label htmlFor="time-select-value-container" />
-      <label htmlFor="time-select" />
+      <span>Cooking Time</span>
       <Select
         ref={ref}
         openMenuOnFocus

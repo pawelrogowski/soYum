@@ -1,5 +1,6 @@
 import { AnimatePresence } from "framer-motion";
 import { useRef } from "react";
+import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
 
@@ -20,31 +21,42 @@ export const CategorySelect = () => {
   const dispatch = useDispatch();
   const ref = useRef(null);
 
-  const handleChange = (selectedOptions) => {
-    const valueArray = selectedOptions.map((option) => option.value);
-    const { isValid, errorMessage } = validate(addRecipeSchema, "recipeCategories", valueArray);
+  const handleChange = useCallback(
+    (selectedOptions) => {
+      const valueArray = selectedOptions.map((option) => option.value);
+      const { isValid, errorMessage } = validate(addRecipeSchema, "recipeCategories", valueArray);
 
-    isValid && dispatch(setRecipeCategories(valueArray));
-    errorMessage && dispatch(setRecipeCategoriesError(recipeCategoriesError));
-    if (valueArray.length === 0) {
-      dispatch(setRecipeCategories([]));
-      dispatch(setRecipeCategoriesError("At least 1 category is required"));
-    }
-  };
+      if (isValid) {
+        dispatch(setRecipeCategories(valueArray));
+      }
 
-  const handleBlur = () => {
+      if (errorMessage) {
+        dispatch(setRecipeCategoriesError(errorMessage));
+        dispatch(setRecipeCategories([]));
+      }
+
+      if (valueArray.length === 0) {
+        dispatch(setRecipeCategories([]));
+        dispatch(setRecipeCategoriesError("At least 1 category is required"));
+      }
+    },
+    [validate, dispatch]
+  );
+
+  const handleBlur = useCallback(() => {
     const { errorMessage } = validate(addRecipeSchema, "recipeCategories", recipeCategories);
+
     if (errorMessage) {
       dispatch(setRecipeCategoriesError(errorMessage));
       dispatch(setRecipeCategories([]));
     } else {
       dispatch(setRecipeCategoriesError(null));
     }
-  };
+  }, [validate, dispatch, recipeCategories]);
 
-  const handleWrapperClick = () => {
+  const handleWrapperClick = useCallback(() => {
     ref.current.focus();
-  };
+  }, []);
 
   return (
     <StyledDiv onClick={handleWrapperClick} $hasError={recipeCategoriesError && "true"}>

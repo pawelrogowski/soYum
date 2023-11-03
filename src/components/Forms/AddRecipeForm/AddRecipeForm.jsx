@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useValidation } from "../../../hooks/useValidation";
@@ -7,6 +6,7 @@ import {
   setCurrentTextAreaValueError,
   setIngredientError,
   setMeasureError,
+  setPreparationStepError,
   setRecipeAboutError,
   setRecipeCategoriesError,
   setRecipeCookingTimeError,
@@ -23,126 +23,64 @@ import { RecipeTextInput } from "../../RecipeTextInput/RecipeTextInput";
 import { TimeSelect } from "../../TimeSelect/TimeSelect";
 import { StyledForm } from "./AddRecipeForm.styled";
 
+const errorActions = {
+  recipeTitle: setRecipeTitleError,
+  recipeAbout: setRecipeAboutError,
+  recipeCookingTime: setRecipeCookingTimeError,
+  recipeCategories: setRecipeCategoriesError,
+  ingredient: setIngredientError,
+  measureType: setMeasureError,
+  amount: setAmountError,
+  currentTextAreaValue: setCurrentTextAreaValueError,
+};
+
 export const AddRecipeForm = () => {
-  const {
-    recipeTitle,
-    recipeAbout,
-    recipeCategories,
-    recipeCookingTime,
-    currentTextAreaValue,
-    recipeIngredients,
-  } = useSelector((state) => state.addRecipeForm);
   const dispatch = useDispatch();
   const { validate } = useValidation();
+  const data = useSelector((state) => state.addRecipeForm);
 
-  const handleValidationOnBlur = (e) => {
-    if (e.currentTarget.contains(e.relatedTarget)) {
-      return;
-    }
-    const { errorMessage: titleError } = validate(addRecipeSchema, "recipeTitle", recipeTitle);
-    const { errorMessage: aboutError } = validate(addRecipeSchema, "recipeAbout", recipeAbout);
-    const { errorMessage: cookingTimeError } = validate(
-      addRecipeSchema,
-      "recipeCookingTime",
-      recipeCookingTime
-    );
-    const { errorMessage: categoriesError } = validate(
-      addRecipeSchema,
-      "recipeCategories",
-      recipeCategories
-    );
-
-    titleError ? dispatch(setRecipeTitleError(titleError)) : dispatch(setRecipeTitleError(null));
-    aboutError ? dispatch(setRecipeAboutError(aboutError)) : dispatch(setRecipeAboutError(null));
-    cookingTimeError
-      ? dispatch(setRecipeCookingTimeError(cookingTimeError))
-      : dispatch(setRecipeCookingTimeError(null));
-    categoriesError
-      ? dispatch(setRecipeCategoriesError(categoriesError))
-      : dispatch(setRecipeCategoriesError(null));
+  const validateAndDispatch = (field, value) => {
+    const { errorMessage } = validate(addRecipeSchema, field, value);
+    dispatch(errorActions[field](errorMessage || null));
   };
 
-  const { fields, errorActions } = useMemo(() => {
-    return {
-      fields: ["ingredient", "measureType", "amount"],
-      errorActions: {
-        ingredient: setIngredientError,
-        measureType: setMeasureError,
-        amount: setAmountError,
-      },
-    };
-  }, []);
+  const handleValidationOnBlur = (e) => {
+    if (!e.currentTarget.contains(e.relatedTarget)) {
+      ["recipeTitle", "recipeAbout", "recipeCookingTime", "recipeCategories"].forEach((field) =>
+        validateAndDispatch(field, data[field])
+      );
+    }
+  };
 
   const validateForm = () => {
-    const { errorMessage: titleError } = validate(addRecipeSchema, "recipeTitle", recipeTitle);
-    const { errorMessage: aboutError } = validate(addRecipeSchema, "recipeAbout", recipeAbout);
-    const { errorMessage: cookingTimeError } = validate(
-      addRecipeSchema,
+    [
+      "recipeTitle",
+      "recipeAbout",
       "recipeCookingTime",
-      recipeCookingTime
-    );
-    const { errorMessage: categoriesError } = validate(
-      addRecipeSchema,
       "recipeCategories",
-      recipeCategories
-    );
-    const { errorMessage: textAreaError } = validate(
-      addRecipeSchema,
       "currentTextAreaValue",
-      currentTextAreaValue
-    );
-
-    titleError ? dispatch(setRecipeTitleError(titleError)) : dispatch(setRecipeTitleError(null));
-    aboutError ? dispatch(setRecipeAboutError(aboutError)) : dispatch(setRecipeAboutError(null));
-
-    cookingTimeError
-      ? dispatch(setRecipeCookingTimeError(cookingTimeError))
-      : dispatch(setRecipeCookingTimeError(null));
-    categoriesError
-      ? dispatch(setRecipeCategoriesError(categoriesError))
-      : dispatch(setRecipeCategoriesError(null));
-    textAreaError
-      ? dispatch(setCurrentTextAreaValueError(textAreaError))
-      : dispatch(setRecipeCategoriesError(null));
-
-    const len = recipeIngredients.length;
-    if (len === 1) {
-      const recipeIngredient = recipeIngredients[0];
-      for (const field of fields) {
-        if (recipeIngredient[field] !== undefined && recipeIngredient[field].error !== null) {
-          const { errorMessage: fieldError } = validate(
+    ].forEach((field) => validateAndDispatch(field, data[field]));
+    data.recipeIngredients.forEach((ingredient, index) => {
+      ["ingredient", "measureType", "amount"].forEach((field) => {
+        if (ingredient[field]?.error !== null) {
+          const { errorMessage } = validate(
             addRecipeSchema,
-            `recipeIngredients.${field}`,
-            recipeIngredient[field]
+            `recipeIngredients.[${index}].${field}`,
+            ingredient[field]
           );
           dispatch(
             errorActions[field]({
-              index: 0,
-              error: fieldError || null,
+              index,
+              error: errorMessage || null,
             })
           );
         }
-      }
-    } else {
-      for (let index = 0; index < len; index++) {
-        const recipeIngredient = recipeIngredients[index];
-        for (const field of fields) {
-          if (recipeIngredient[field] !== undefined && recipeIngredient[field].error !== null) {
-            const { errorMessage: fieldError } = validate(
-              addRecipeSchema,
-              `recipeIngredients.[${index}].${field}`,
-              recipeIngredient[field]
-            );
-            dispatch(
-              errorActions[field]({
-                index: index,
-                error: fieldError || null,
-              })
-            );
-          }
-        }
-      }
-    }
+      });
+    });
+
+    data.recipePreparationSteps.length < 3
+      ? dispatch(setPreparationStepError("At least 3 steps are required"))
+      : dispatch(setPreparationStepError(""));
   };
 
   return (

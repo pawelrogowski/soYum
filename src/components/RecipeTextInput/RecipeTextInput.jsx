@@ -1,6 +1,7 @@
 import { AnimatePresence } from "framer-motion";
 import debounce from "lodash/debounce";
 import PropTypes from "prop-types";
+import { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { inputErrorMotion } from "../../common/animations";
@@ -19,28 +20,30 @@ export const RecipeTextInput = ({ name, placeholder }) => {
   const { recipeTitleError, recipeAboutError } = useSelector((state) => state.addRecipeForm);
   const dispatch = useDispatch();
   const { validate } = useValidation();
+  const isRecipeTitle = name.startsWith("recipeTitle");
+
+  const { setField, setError, error } = useMemo(
+    () => ({
+      setField: isRecipeTitle ? setRecipeTitle : setRecipeAbout,
+      setError: isRecipeTitle ? setRecipeTitleError : setRecipeAboutError,
+      error: isRecipeTitle ? recipeTitleError : recipeAboutError,
+    }),
+    [isRecipeTitle, recipeTitleError, recipeAboutError]
+  );
 
   const handleChange = debounce((e) => {
     const { isValid, errorMessage } = validate(addRecipeSchema, name, e.target.value);
-    const setField = name.startsWith("recipeTitle") ? setRecipeTitle : setRecipeAbout;
-    const setError = name.startsWith("recipeTitle") ? setRecipeTitleError : setRecipeAboutError;
-
-    isValid ? dispatch(setField(e.target.value)) : dispatch(setField(""));
-    errorMessage ? dispatch(setError(errorMessage)) : dispatch(setError(null));
-  }, 200);
+    dispatch(errorMessage ? setError(errorMessage) : setError(null));
+    dispatch(isValid ? setField(e.target.value) : setField(""));
+  }, 100);
 
   const handleBlur = (e) => {
     const { errorMessage } = validate(addRecipeSchema, name, e.target.value);
-    const setError = name.startsWith("recipeTitle") ? setRecipeTitleError : setRecipeAboutError;
-
-    errorMessage ? dispatch(setError(errorMessage)) : dispatch(setError(null));
+    dispatch(errorMessage ? setError(errorMessage) : setError(null));
   };
 
   return (
-    <StyledLabel
-      htmlFor={name}
-      $hasError={(name.startsWith("recipeTitle") ? recipeTitleError : recipeAboutError) && "true"}
-    >
+    <StyledLabel htmlFor={name} $hasError={error && "true"}>
       <input
         type="text"
         name={name}
@@ -50,18 +53,13 @@ export const RecipeTextInput = ({ name, placeholder }) => {
         onBlur={handleBlur}
       />
       <AnimatePresence>
-        {(name.startsWith("recipeTitle") ? recipeTitleError : recipeAboutError) && (
-          <InputErrorSpan
-            className="validation-error"
-            errorMessage={name.startsWith("recipeTitle") ? recipeTitleError : recipeAboutError}
-            {...inputErrorMotion}
-          />
+        {error && (
+          <InputErrorSpan className="validation-error" errorMessage={error} {...inputErrorMotion} />
         )}
       </AnimatePresence>
     </StyledLabel>
   );
 };
-
 RecipeTextInput.propTypes = {
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
