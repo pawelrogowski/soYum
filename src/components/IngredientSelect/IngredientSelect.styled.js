@@ -46,6 +46,7 @@ export const StyledDiv = styled(motion.div)`
     bottom: -2.1rem;
     left: 0.71rem;
     text-align: center;
+    transition: color 200ms, background-color 200ms;
   }
   .validation-error--centered {
     display: block !important;
@@ -57,6 +58,7 @@ export const StyledDiv = styled(motion.div)`
     left: 50%;
     transform: translateX(-50%) !important;
     text-align: center;
+    transition: color 200ms, background-color 200ms;
   }
 
   > .ingredient-flex-row {
@@ -272,7 +274,7 @@ export const StyledDiv = styled(motion.div)`
 
         &__option {
           min-height: 2rem;
-
+          transition: color 200ms;
           &:hover,
           &:focus {
             color: var(--color-text-active);
@@ -583,7 +585,7 @@ export const StyledDiv = styled(motion.div)`
           }
           &__option {
             min-height: 2rem;
-
+            transition: color 200ms;
             &:hover {
               color: var(--color-text-active);
               cursor: pointer;
