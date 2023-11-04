@@ -4,7 +4,7 @@ import { useSelector } from "react-redux/es/hooks/useSelector";
 
 import placeholder from "../../assets/images/placeholder.png";
 import useUploadWidget from "../../hooks/useUploadWidget";
-import { setRecipeImageUrl } from "../../redux/slices/addRecipeFormSlice";
+import { setField } from "../../redux/slices/addRecipeFormSlice";
 import { cloudinarySettings } from "../Forms/UserUpdateForm/CloudinarySettings";
 import { Icon } from "../Icon/Icon";
 import { StyledButton } from "./RecipeImageUpload.styled";
@@ -17,7 +17,7 @@ export const RecipeImageUpload = () => {
   const handleImageUpload = useCallback(() => {
     window.cloudinary.openUploadWidget(cloudinarySettings, (error, result) => {
       if (!error && result && result.event === "success") {
-        dispatch(setRecipeImageUrl(result.info.secure_url));
+        dispatch(setField({ field: "recipeImageUrl", value: result.info.secure_url }));
       } else if (error) {
         console.log(error);
       }

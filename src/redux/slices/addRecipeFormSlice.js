@@ -1,4 +1,5 @@
 import { createSlice, prepareAutoBatched } from "@reduxjs/toolkit";
+import { uniqueId } from "lodash";
 
 const initialState = {
   recipeImageUrl: "",
@@ -13,6 +14,7 @@ const initialState = {
   recipeCookingTimeError: "",
   recipeIngredients: [
     {
+      id: "0",
       ingredient: "",
       measureType: "",
       amount: "",
@@ -31,118 +33,47 @@ export const addRecipeFormSlice = createSlice({
   name: "addRecipeForm",
   initialState: { ...initialState },
   reducers: {
-    setRecipeImageUrl: {
+    setField: {
       reducer(state, action) {
-        state.recipeImageUrl = action.payload;
-      },
-      prepare: prepareAutoBatched(),
-    },
-    setRecipeImageUrlError: {
-      reducer(state, action) {
-        state.recipeImageUrlError = action.payload;
-      },
-      prepare: prepareAutoBatched(),
-    },
-
-    setRecipeTitle: {
-      reducer(state, action) {
-        state.recipeTitle = action.payload;
-      },
-      prepare: prepareAutoBatched(),
-    },
-    setRecipeTitleError: {
-      reducer(state, action) {
-        state.recipeTitleError = action.payload;
+        const { field, subfield, value, index } = action.payload;
+        if (subfield !== undefined && index !== undefined) {
+          state[field][index][subfield] = value;
+        } else if (index !== undefined) {
+          state[field][index] = value;
+        } else {
+          state[field] = value;
+        }
       },
       prepare: prepareAutoBatched(),
     },
 
-    setRecipeAbout: {
+    setFieldError: {
       reducer(state, action) {
-        state.recipeAbout = action.payload;
-      },
-      prepare: prepareAutoBatched(),
-    },
-    setRecipeAboutError: {
-      reducer(state, action) {
-        state.recipeAboutError = action.payload;
-      },
-      prepare: prepareAutoBatched(),
-    },
-
-    setRecipeCategories: {
-      reducer(state, action) {
-        state.recipeCategories = action.payload;
-      },
-      prepare: prepareAutoBatched(),
-    },
-    setRecipeCategoriesError: {
-      reducer(state, action) {
-        state.recipeCategoriesError = action.payload;
-      },
-      prepare: prepareAutoBatched(),
-    },
-
-    setRecipeCookingTime: {
-      reducer(state, action) {
-        state.recipeCookingTime = action.payload;
-      },
-      prepare: prepareAutoBatched(),
-    },
-    setRecipeCookingTimeError: {
-      reducer(state, action) {
-        state.recipeCookingTimeError = action.payload;
+        const { field, subfield, error, index } = action.payload;
+        if (subfield !== undefined && index !== undefined) {
+          state[field][index][subfield + "Error"] = error;
+        } else if (index !== undefined) {
+          state[field][index] = error;
+        } else {
+          state[field + "Error"] = error;
+        }
       },
       prepare: prepareAutoBatched(),
     },
 
     addIngredient: {
-      reducer(state, action) {
-        state.recipeIngredients.push(action.payload);
-      },
-      prepare: prepareAutoBatched(),
-    },
-    setIngredient: {
-      reducer(state, action) {
-        const { index, ingredient } = action.payload;
-        state.recipeIngredients[index].ingredient = ingredient;
-      },
-      prepare: prepareAutoBatched(),
-    },
-    setIngredientError: {
-      reducer(state, action) {
-        const { index, error } = action.payload;
-        state.recipeIngredients[index].ingredientError = error;
-      },
-      prepare: prepareAutoBatched(),
-    },
+      reducer(state) {
+        const newIngredient = {
+          id: uniqueId(),
+          ingredient: "",
+          measureType: "",
+          amount: "",
+          ingredientError: "",
+          measureTypeError: "",
+          amountError: "",
+        };
 
-    setMeasure: {
-      reducer(state, action) {
-        const { index, measureType } = action.payload;
-        state.recipeIngredients[index].measureType = measureType;
-      },
-      prepare: prepareAutoBatched(),
-    },
-    setMeasureError: {
-      reducer(state, action) {
-        const { index, error } = action.payload;
-        state.recipeIngredients[index].measureTypeError = error;
-      },
-      prepare: prepareAutoBatched(),
-    },
-
-    setAmount: {
-      reducer(state, action) {
-        const { index, amount } = action.payload;
-        state.recipeIngredients[index].amount = amount;
-      },
-      prepare: prepareAutoBatched(),
-    },
-    setAmountError: {
-      reducer(state, action) {
-        const { index, error } = action.payload;
-        state.recipeIngredients[index].amountError = error;
+        state.recipeIngredients.push(newIngredient);
       },
       prepare: prepareAutoBatched(),
     },
@@ -155,30 +86,33 @@ export const addRecipeFormSlice = createSlice({
       },
       prepare: prepareAutoBatched(),
     },
+
     removeLastIngredient: (state) => {
       state.recipeIngredients.pop();
     },
 
     addPreparationStep: {
       reducer(state, action) {
-        state.recipePreparationSteps.push(action.payload);
-      },
-      prepare: prepareAutoBatched(),
-    },
-    setPreparationStepError: {
-      reducer(state, action) {
-        state.recipePreparationStepsError = action.payload;
+        const newStep = {
+          id: uniqueId(),
+          text: action.payload,
+        };
+        state.recipePreparationSteps.push(newStep);
       },
       prepare: prepareAutoBatched(),
     },
 
     editPreparationStep: {
       reducer(state, action) {
-        const { index, text } = action.payload;
-        state.recipePreparationSteps[index] = text;
+        const { id, text } = action.payload;
+        const step = state.recipePreparationSteps.find((step) => step.id === id);
+        if (step) {
+          step.text = text;
+        }
       },
       prepare: prepareAutoBatched(),
     },
+
     removePreparationStep: {
       reducer(state, action) {
         state.recipePreparationSteps = state.recipePreparationSteps.filter(
@@ -187,58 +121,16 @@ export const addRecipeFormSlice = createSlice({
       },
       prepare: prepareAutoBatched(),
     },
-
-    setCurrentTextAreaValue: {
-      reducer(state, action) {
-        state.currentTextAreaValue = action.payload;
-      },
-      prepare: prepareAutoBatched(),
-    },
-    setCurrentTextAreaValueError: {
-      reducer(state, action) {
-        state.currentTextAreaValueError = action.payload;
-      },
-      prepare: prepareAutoBatched(),
-    },
-
-    setCurrentEditIndex: {
-      reducer(state, action) {
-        state.currentEditIndex = action.payload;
-      },
-      prepare: prepareAutoBatched(),
-    },
   },
 });
 export default addRecipeFormSlice.reducer;
 export const {
-  setRecipeImageUrl,
-  setRecipeImageUrlError,
-  setRecipeTitle,
-  setRecipeTitleError,
-  setRecipeAbout,
-  setRecipeAboutError,
-  setRecipeCategories,
-  setRecipeCategoriesError,
-  setRecipeCookingTime,
-  setRecipeCookingTimeError,
-  setRecipeIngredientNumber,
-  setRecipeIngredientNumberError,
+  setField,
+  setFieldError,
   addIngredient,
-  addIngredientError,
   removeIngredient,
-  addPreparationStep,
-  addPreparationStepError,
-  removePreparationStep,
   removeLastIngredient,
-  setIngredient,
-  setIngredientError,
-  setMeasure,
-  setMeasureError,
-  setAmount,
-  setAmountError,
-  setCurrentTextAreaValue,
-  setCurrentTextAreaValueError,
-  setCurrentEditIndex,
+  addPreparationStep,
   editPreparationStep,
-  setPreparationStepError,
+  removePreparationStep,
 } = addRecipeFormSlice.actions;

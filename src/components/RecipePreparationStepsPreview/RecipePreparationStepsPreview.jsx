@@ -4,9 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { inputErrorMotion, prepStepMotion } from "../../common/animations";
 import {
   removePreparationStep,
-  setCurrentEditIndex,
-  setCurrentTextAreaValue,
-  setPreparationStepError,
+  setField,
+  setFieldError,
 } from "../../redux/slices/addRecipeFormSlice";
 import { Heading } from "../Heading/Heading";
 import { Icon } from "../Icon/Icon";
@@ -21,14 +20,16 @@ export const RecipePreparationStepsPreview = () => {
   const handleRemoveStep = (index) => {
     dispatch(removePreparationStep(index));
     recipePreparationSteps.length < 2
-      ? dispatch(setPreparationStepError("At least 3 steps are required"))
-      : dispatch(setPreparationStepError(null));
+      ? dispatch(
+          setFieldError({ field: "recipePreparationSteps", error: "At least 3 steps are required" })
+        )
+      : dispatch(setFieldError({ field: "recipePreparationSteps", error: null }));
   };
 
-  const handleEditStep = (index) => {
-    dispatch(setCurrentTextAreaValue(recipePreparationSteps[index]));
-    dispatch(setCurrentEditIndex(index));
-    console.log("editing", index);
+  const handleStepUpdate = (index) => {
+    const stepValue = recipePreparationSteps[index].text;
+    dispatch(setField({ field: "currentTextAreaValue", value: stepValue }));
+    dispatch(setField({ field: "currentEditIndex", value: index }));
   };
 
   return (
@@ -47,12 +48,12 @@ export const RecipePreparationStepsPreview = () => {
       <ol>
         {recipePreparationSteps.length ? (
           <AnimatePresence>
-            {recipePreparationSteps.map((_, index) => (
-              <motion.li {...prepStepMotion} key={index}>
+            {recipePreparationSteps.map((prepStep, index) => (
+              <motion.li {...prepStepMotion} key={prepStep.id}>
                 <>
                   <button
                     type="button"
-                    onClick={() => handleEditStep(index)}
+                    onClick={() => handleStepUpdate(index)}
                     disabled={currentEditIndex !== null}
                   >
                     <Icon icon="edit" />
@@ -64,7 +65,7 @@ export const RecipePreparationStepsPreview = () => {
                   >
                     <Icon icon="x" />
                   </button>
-                  <p>{recipePreparationSteps[index]}</p>
+                  <p>{prepStep.text}</p>
                 </>
               </motion.li>
             ))}

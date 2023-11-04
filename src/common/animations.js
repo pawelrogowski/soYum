@@ -24,20 +24,24 @@ export const inputErrorMotion = {
 export const ingredientListItemMotion = {
   initial: {
     opacity: 0,
+    type: "spring",
     transition: {
       duration: 0.2,
+      type: "easeInOut",
     },
   },
   animate: {
     opacity: 1,
     transition: {
       duration: 0.2,
+      type: "easeInOut",
     },
   },
   exit: {
     opacity: 0,
     transition: {
-      duration: 2.2,
+      opacity: { duration: 0.2 },
+      type: "easeInOut",
     },
   },
 };

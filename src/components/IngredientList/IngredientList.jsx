@@ -6,14 +6,7 @@ import { useSelector } from "react-redux/es/hooks/useSelector";
 
 import { ingredientListItemMotion } from "../../common/animations";
 import { useValidation } from "../../hooks/useValidation";
-import {
-  setAmount,
-  setAmountError,
-  setIngredient,
-  setIngredientError,
-  setMeasure,
-  setMeasureError,
-} from "../../redux/slices/addRecipeFormSlice";
+import { setField, setFieldError } from "../../redux/slices/addRecipeFormSlice";
 import { addRecipeSchema } from "../../validation/addRecipeSchema.js";
 import { IngredientCounter } from "../Counter/IngredientCounter";
 import { Heading } from "../Heading/Heading";
@@ -25,14 +18,9 @@ export const IngredientList = ({ className }) => {
   const { validate } = useValidation();
   const dispatch = useDispatch();
 
-  const { fields, errorActions } = useMemo(() => {
+  const { fields } = useMemo(() => {
     return {
       fields: ["ingredient", "measureType", "amount"],
-      errorActions: {
-        ingredient: setIngredientError,
-        measureType: setMeasureError,
-        amount: setAmountError,
-      },
     };
   }, []);
 
@@ -40,7 +28,6 @@ export const IngredientList = ({ className }) => {
     if (e.currentTarget.contains(e.relatedTarget)) {
       return;
     }
-
     const len = recipeIngredients.length;
     for (let index = 0; index < len; index++) {
       const recipeIngredient = recipeIngredients[index];
@@ -52,7 +39,9 @@ export const IngredientList = ({ className }) => {
             recipeIngredient[field]
           );
           dispatch(
-            errorActions[field]({
+            setFieldError({
+              field: "recipeIngredients",
+              subfield: field,
               index: index,
               error: fieldError || null,
             })
@@ -71,11 +60,25 @@ export const IngredientList = ({ className }) => {
       selectedValue
     );
 
-    isValid && dispatch(setIngredient({ index: index, ingredient: selectedOption.value }));
+    if (isValid) {
+      dispatch(
+        setField({
+          field: "recipeIngredients",
+          subfield: "ingredient",
+          index: index,
+          value: selectedOption.value,
+        })
+      );
+    }
 
-    errorMessage
-      ? dispatch(setIngredientError({ index: index, error: errorMessage }))
-      : dispatch(setIngredientError({ index: index, error: null }));
+    dispatch(
+      setFieldError({
+        field: "recipeIngredients",
+        subfield: "ingredient",
+        index: index,
+        error: errorMessage || null,
+      })
+    );
   };
 
   const handleMeasureChange = (selectedOption, index) => {
@@ -85,11 +88,25 @@ export const IngredientList = ({ className }) => {
       selectedOption.value
     );
 
-    isValid && dispatch(setMeasure({ index: index, measureType: selectedOption.value }));
+    if (isValid) {
+      dispatch(
+        setField({
+          field: "recipeIngredients",
+          subfield: "measureType",
+          index: index,
+          value: selectedOption.value,
+        })
+      );
+    }
 
-    errorMessage
-      ? dispatch(setMeasureError({ index: index, error: errorMessage }))
-      : dispatch(setMeasureError({ index: index, error: null }));
+    dispatch(
+      setFieldError({
+        field: "recipeIngredients",
+        subfield: "measureType",
+        index: index,
+        error: errorMessage || null,
+      })
+    );
   };
 
   const handleAmountChange = (e, index) => {
@@ -102,11 +119,25 @@ export const IngredientList = ({ className }) => {
       e.target.value
     );
 
-    isValid && dispatch(setAmount({ index: index, amount: e.target.value }));
+    if (isValid) {
+      dispatch(
+        setField({
+          field: "recipeIngredients",
+          subfield: "amount",
+          index: index,
+          value: e.target.value,
+        })
+      );
+    }
 
-    errorMessage
-      ? dispatch(setAmountError({ index: index, error: errorMessage }))
-      : dispatch(setAmountError({ index: index, error: null }));
+    dispatch(
+      setFieldError({
+        field: "recipeIngredients",
+        subfield: "amount",
+        index: index,
+        error: errorMessage || null,
+      })
+    );
   };
 
   return (
@@ -117,10 +148,10 @@ export const IngredientList = ({ className }) => {
       </div>
       <div>
         <AnimatePresence>
-          {recipeIngredients.map((_, index) => (
+          {recipeIngredients.map((ingredient, index) => (
             <IngredientSelect
               index={index}
-              key={index}
+              key={ingredient.id}
               onIngredientChange={handleIngredientChange}
               onMeasureChange={handleMeasureChange}
               onAmountChange={handleAmountChange}
