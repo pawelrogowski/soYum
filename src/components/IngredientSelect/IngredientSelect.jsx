@@ -1,4 +1,4 @@
-import { AnimatePresence, usePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import PropTypes from "prop-types";
 import { memo, useRef } from "react";
 import { useDispatch } from "react-redux";
@@ -25,9 +25,6 @@ const IngredientSelectComponent = ({
   const ingredientRef = useRef(null);
   const measureRef = useRef(null);
 
-  const [isPresent] = usePresence();
-  if (!isPresent) return null;
-
   const handleRemoveIngredient = (index) => {
     if (recipeIngredients[index]) {
       dispatch(removeIngredient(index));
@@ -48,6 +45,7 @@ const IngredientSelectComponent = ({
     <StyledDiv
       {...props}
       $hasError={
+        recipeIngredients[index] &&
         (recipeIngredients[index].ingredientError ||
           recipeIngredients[index].amountError ||
           recipeIngredients[index].measureTypeError) &&
@@ -67,7 +65,7 @@ const IngredientSelectComponent = ({
               escapeClearsValue
               ref={ingredientRef}
               value={
-                recipeIngredients[index].ingredient
+                recipeIngredients[index] && recipeIngredients[index].ingredient
                   ? {
                       value: recipeIngredients[index].ingredient,
                       label: recipeIngredients[index].ingredient,
@@ -77,7 +75,7 @@ const IngredientSelectComponent = ({
               onChange={(selectedOption) => onIngredientChange(selectedOption, index)}
             />
             <AnimatePresence>
-              {recipeIngredients[index].ingredientError && (
+              {recipeIngredients[index] && recipeIngredients[index].ingredientError && (
                 <InputErrorSpan
                   className="validation-error"
                   errorMessage={recipeIngredients[index].ingredientError}
@@ -101,7 +99,7 @@ const IngredientSelectComponent = ({
                 step="0.1"
               />
               <AnimatePresence>
-                {recipeIngredients[index].amountError && (
+                {recipeIngredients[index] && recipeIngredients[index].amountError && (
                   <InputErrorSpan
                     className="validation-error--centered"
                     errorMessage={recipeIngredients[index].amountError}
@@ -126,7 +124,7 @@ const IngredientSelectComponent = ({
                 inputId={`measure-type-${index}`}
               />
               <AnimatePresence>
-                {recipeIngredients[index].measureTypeError && (
+                {recipeIngredients[index] && recipeIngredients[index].measureTypeError && (
                   <InputErrorSpan
                     className="validation-error--centered"
                     errorMessage={recipeIngredients[index].measureTypeError}
