@@ -46,6 +46,7 @@ export const addRecipeFormSlice = createSlice({
       },
       prepare: prepareAutoBatched(),
     },
+
     setFieldError: {
       reducer(state, action) {
         const { field, subfield, error, index } = action.payload;
@@ -85,6 +86,7 @@ export const addRecipeFormSlice = createSlice({
       },
       prepare: prepareAutoBatched(),
     },
+
     removeLastIngredient: (state) => {
       state.recipeIngredients.pop();
     },
@@ -118,34 +120,10 @@ export default addRecipeFormSlice.reducer;
 export const {
   setField,
   setFieldError,
-  setRecipeImageUrl,
-  setRecipeImageUrlError,
-  setRecipeTitle,
-  setRecipeTitleError,
-  setRecipeAbout,
-  setRecipeAboutError,
-  setRecipeCategories,
-  setRecipeCategoriesError,
-  setRecipeCookingTime,
-  setRecipeCookingTimeError,
-  setRecipeIngredientNumber,
-  setRecipeIngredientNumberError,
   addIngredient,
-  addIngredientError,
   removeIngredient,
-  addPreparationStep,
-  addPreparationStepError,
-  removePreparationStep,
   removeLastIngredient,
-  setIngredient,
-  setIngredientError,
-  setMeasure,
-  setMeasureError,
-  setAmount,
-  setAmountError,
-  setCurrentTextAreaValue,
-  setCurrentTextAreaValueError,
-  setCurrentEditIndex,
+  addPreparationStep,
   editPreparationStep,
-  setPreparationStepError,
+  removePreparationStep,
 } = addRecipeFormSlice.actions;
