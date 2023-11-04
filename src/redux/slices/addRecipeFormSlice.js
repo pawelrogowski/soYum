@@ -93,15 +93,22 @@ export const addRecipeFormSlice = createSlice({
 
     addPreparationStep: {
       reducer(state, action) {
-        state.recipePreparationSteps.push(action.payload);
+        const newStep = {
+          id: uniqueId(),
+          text: action.payload,
+        };
+        state.recipePreparationSteps.push(newStep);
       },
       prepare: prepareAutoBatched(),
     },
 
     editPreparationStep: {
       reducer(state, action) {
-        const { index, text } = action.payload;
-        state.recipePreparationSteps[index] = text;
+        const { id, text } = action.payload;
+        const step = state.recipePreparationSteps.find((step) => step.id === id);
+        if (step) {
+          step.text = text;
+        }
       },
       prepare: prepareAutoBatched(),
     },

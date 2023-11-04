@@ -26,8 +26,9 @@ export const RecipePreparationStepsPreview = () => {
       : dispatch(setFieldError({ field: "recipePreparationSteps", error: null }));
   };
 
-  const handleEditStep = (index) => {
-    dispatch(setField({ field: "currentTextAreaValue", value: recipePreparationSteps[index] }));
+  const handleStepUpdate = (index) => {
+    const stepValue = recipePreparationSteps[index].text;
+    dispatch(setField({ field: "currentTextAreaValue", value: stepValue }));
     dispatch(setField({ field: "currentEditIndex", value: index }));
   };
 
@@ -47,12 +48,12 @@ export const RecipePreparationStepsPreview = () => {
       <ol>
         {recipePreparationSteps.length ? (
           <AnimatePresence>
-            {recipePreparationSteps.map((_, index) => (
-              <motion.li {...prepStepMotion} key={index}>
+            {recipePreparationSteps.map((prepStep, index) => (
+              <motion.li {...prepStepMotion} key={prepStep.id}>
                 <>
                   <button
                     type="button"
-                    onClick={() => handleEditStep(index)}
+                    onClick={() => handleStepUpdate(index)}
                     disabled={currentEditIndex !== null}
                   >
                     <Icon icon="edit" />
@@ -64,7 +65,7 @@ export const RecipePreparationStepsPreview = () => {
                   >
                     <Icon icon="x" />
                   </button>
-                  <p>{recipePreparationSteps[index]}</p>
+                  <p>{prepStep.text}</p>
                 </>
               </motion.li>
             ))}

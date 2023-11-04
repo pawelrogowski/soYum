@@ -45,6 +45,7 @@ export const RecipeTextInput = ({ name, placeholder }) => {
         placeholder={placeholder}
         onChange={handleChange}
         onBlur={handleBlur}
+        autoComplete="off"
       />
       <AnimatePresence>
         {error && (
