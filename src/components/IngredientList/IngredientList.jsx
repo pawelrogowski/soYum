@@ -4,7 +4,7 @@ import { useMemo } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 
-import { ingredientListItemMotion, prepStepMotion } from "../../common/animations";
+import { ingredientListItemMotion } from "../../common/animations";
 import { useValidation } from "../../hooks/useValidation";
 import {
   setAmount,
@@ -116,20 +116,18 @@ export const IngredientList = ({ className }) => {
         <IngredientCounter min={1} max={20} />
       </div>
       <div>
-        {recipeIngredients.length && (
-          <AnimatePresence>
-            {recipeIngredients.map((_, index) => (
-              <IngredientSelect
-                index={index}
-                key={`ingredient-${index}`}
-                onIngredientChange={handleIngredientChange}
-                onMeasureChange={handleMeasureChange}
-                onAmountChange={handleAmountChange}
-                {...prepStepMotion}
-              />
-            ))}
-          </AnimatePresence>
-        )}
+        <AnimatePresence>
+          {recipeIngredients.map((ingredient, index) => (
+            <IngredientSelect
+              index={index}
+              key={ingredient.id}
+              onIngredientChange={handleIngredientChange}
+              onMeasureChange={handleMeasureChange}
+              onAmountChange={handleAmountChange}
+              {...ingredientListItemMotion}
+            />
+          ))}
+        </AnimatePresence>
       </div>
     </StyledDiv>
   );
