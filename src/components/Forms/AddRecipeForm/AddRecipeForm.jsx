@@ -1,17 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 
 import { useValidation } from "../../../hooks/useValidation";
-import {
-  setAmountError,
-  setCurrentTextAreaValueError,
-  setIngredientError,
-  setMeasureError,
-  setPreparationStepError,
-  setRecipeAboutError,
-  setRecipeCategoriesError,
-  setRecipeCookingTimeError,
-  setRecipeTitleError,
-} from "../../../redux/slices/addRecipeFormSlice";
+import { setFieldError } from "../../../redux/slices/addRecipeFormSlice";
 import { addRecipeSchema } from "../../../validation/addRecipeSchema";
 import { Button } from "../../Button/Button";
 import { CategorySelect } from "../../CategorySelect/CategorySelect";
@@ -23,17 +13,6 @@ import { RecipeTextInput } from "../../RecipeTextInput/RecipeTextInput";
 import { TimeSelect } from "../../TimeSelect/TimeSelect";
 import { StyledForm } from "./AddRecipeForm.styled";
 
-const errorActions = {
-  recipeTitle: setRecipeTitleError,
-  recipeAbout: setRecipeAboutError,
-  recipeCookingTime: setRecipeCookingTimeError,
-  recipeCategories: setRecipeCategoriesError,
-  ingredient: setIngredientError,
-  measureType: setMeasureError,
-  amount: setAmountError,
-  currentTextAreaValue: setCurrentTextAreaValueError,
-};
-
 export const AddRecipeForm = () => {
   const dispatch = useDispatch();
   const { validate } = useValidation();
@@ -41,14 +20,14 @@ export const AddRecipeForm = () => {
 
   const validateAndDispatch = (field, value) => {
     const { errorMessage } = validate(addRecipeSchema, field, value);
-    dispatch(errorActions[field](errorMessage || null));
+    dispatch(setFieldError({ field, error: errorMessage || null }));
   };
 
   const handleValidationOnBlur = (e) => {
     if (!e.currentTarget.contains(e.relatedTarget)) {
-      ["recipeTitle", "recipeAbout", "recipeCookingTime", "recipeCategories"].forEach((field) =>
-        validateAndDispatch(field, data[field])
-      );
+      ["recipeTitle", "recipeAbout", "recipeCookingTime", "recipeCategories"].forEach((field) => {
+        validateAndDispatch(field, data[field]);
+      });
     }
   };
 
@@ -69,8 +48,11 @@ export const AddRecipeForm = () => {
             ingredient[field]
           );
           dispatch(
-            errorActions[field]({
-              index,
+            setFieldError({
+              field: `recipeIngredients`,
+              index: index,
+
+              subfield: field,
               error: errorMessage || null,
             })
           );
@@ -79,8 +61,10 @@ export const AddRecipeForm = () => {
     });
 
     data.recipePreparationSteps.length < 3
-      ? dispatch(setPreparationStepError("At least 3 steps are required"))
-      : dispatch(setPreparationStepError(""));
+      ? dispatch(
+          setFieldError({ field: "recipePreparationSteps", error: "At least 3 steps are required" })
+        )
+      : dispatch(setFieldError({ field: "recipePreparationSteps", error: "" }));
   };
 
   return (
