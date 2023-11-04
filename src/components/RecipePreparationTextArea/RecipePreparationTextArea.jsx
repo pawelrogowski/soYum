@@ -7,9 +7,8 @@ import { useValidation } from "../../hooks/useValidation.js";
 import {
   addPreparationStep,
   editPreparationStep,
-  setCurrentEditIndex,
-  setCurrentTextAreaValue,
-  setCurrentTextAreaValueError,
+  setField,
+  setFieldError,
 } from "../../redux/slices/addRecipeFormSlice.js";
 import { addRecipeSchema } from "../../validation/addRecipeSchema.js";
 import { Button } from "../Button/Button.jsx";
@@ -31,20 +30,20 @@ export const RecipePreparationTextArea = ({ className }) => {
 
   const handleErrorState = (value) => {
     const { errorMessage } = validate(addRecipeSchema, "currentTextAreaValue", value.trim());
-    dispatch(setCurrentTextAreaValue(value));
+    dispatch(setField({ field: "currentTextAreaValue", value }));
     errorMessage
-      ? dispatch(setCurrentTextAreaValueError(errorMessage))
-      : dispatch(setCurrentTextAreaValueError(null));
+      ? dispatch(setFieldError({ field: "currentTextAreaValue", error: errorMessage }))
+      : dispatch(setFieldError({ field: "currentTextAreaValue", error: null }));
   };
 
   const handleStepUpdate = (value) => {
     if (currentEditIndex !== null && currentEditIndex !== undefined) {
       dispatch(editPreparationStep({ index: currentEditIndex, text: value }));
-      dispatch(setCurrentEditIndex(null));
+      dispatch(setField({ field: "currentEditIndex", value: null }));
     } else {
       dispatch(addPreparationStep(value.trim()));
     }
-    dispatch(setCurrentTextAreaValue(""));
+    dispatch(setField({ field: "currentTextAreaValue", value: "" }));
   };
 
   const handleKeyDown = (e) => {
@@ -67,8 +66,8 @@ export const RecipePreparationTextArea = ({ className }) => {
 
   const handleCancelClick = (event) => {
     event.preventDefault();
-    dispatch(setCurrentEditIndex(null));
-    dispatch(setCurrentTextAreaValue(""));
+    dispatch(setField({ field: "currentEditIndex", value: null }));
+    dispatch(setField({ field: "currentTextAreaValue", value: "" }));
   };
 
   const handleTextAreaChange = (e) => {
