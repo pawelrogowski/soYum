@@ -4,9 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { inputErrorMotion, prepStepMotion } from "../../common/animations";
 import {
   removePreparationStep,
-  setCurrentEditIndex,
-  setCurrentTextAreaValue,
-  setPreparationStepError,
+  setField,
+  setFieldError,
 } from "../../redux/slices/addRecipeFormSlice";
 import { Heading } from "../Heading/Heading";
 import { Icon } from "../Icon/Icon";
@@ -21,14 +20,15 @@ export const RecipePreparationStepsPreview = () => {
   const handleRemoveStep = (index) => {
     dispatch(removePreparationStep(index));
     recipePreparationSteps.length < 2
-      ? dispatch(setPreparationStepError("At least 3 steps are required"))
-      : dispatch(setPreparationStepError(null));
+      ? dispatch(
+          setFieldError({ field: "recipePreparationSteps", error: "At least 3 steps are required" })
+        )
+      : dispatch(setFieldError({ field: "recipePreparationSteps", error: null }));
   };
 
   const handleEditStep = (index) => {
-    dispatch(setCurrentTextAreaValue(recipePreparationSteps[index]));
-    dispatch(setCurrentEditIndex(index));
-    console.log("editing", index);
+    dispatch(setField({ field: "currentTextAreaValue", value: recipePreparationSteps[index] }));
+    dispatch(setField({ field: "currentEditIndex", value: index }));
   };
 
   return (
