@@ -6,12 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { inputErrorMotion } from "../../common/animations";
 import { useValidation } from "../../hooks/useValidation";
-import {
-  setRecipeAbout,
-  setRecipeAboutError,
-  setRecipeTitle,
-  setRecipeTitleError,
-} from "../../redux/slices/addRecipeFormSlice";
+import { setField, setFieldError } from "../../redux/slices/addRecipeFormSlice";
 import { addRecipeSchema } from "../../validation/addRecipeSchema.js";
 import { InputErrorSpan } from "../InputErrorSpan/InputErrorSpan";
 import { StyledLabel } from "./RecipeTextInput.styled";
@@ -22,10 +17,9 @@ export const RecipeTextInput = ({ name, placeholder }) => {
   const { validate } = useValidation();
   const isRecipeTitle = name.startsWith("recipeTitle");
 
-  const { setField, setError, error } = useMemo(
+  const { field, error } = useMemo(
     () => ({
-      setField: isRecipeTitle ? setRecipeTitle : setRecipeAbout,
-      setError: isRecipeTitle ? setRecipeTitleError : setRecipeAboutError,
+      field: isRecipeTitle ? "recipeTitle" : "recipeAbout",
       error: isRecipeTitle ? recipeTitleError : recipeAboutError,
     }),
     [isRecipeTitle, recipeTitleError, recipeAboutError]
@@ -33,13 +27,13 @@ export const RecipeTextInput = ({ name, placeholder }) => {
 
   const handleChange = debounce((e) => {
     const { isValid, errorMessage } = validate(addRecipeSchema, name, e.target.value);
-    dispatch(errorMessage ? setError(errorMessage) : setError(null));
-    dispatch(isValid ? setField(e.target.value) : setField(""));
+    dispatch(setField({ field: field, value: isValid ? e.target.value : "" }));
+    dispatch(setFieldError({ field: field, error: errorMessage || null }));
   }, 100);
 
   const handleBlur = (e) => {
     const { errorMessage } = validate(addRecipeSchema, name, e.target.value);
-    dispatch(errorMessage ? setError(errorMessage) : setError(null));
+    dispatch(setFieldError({ field: field, error: errorMessage || null }));
   };
 
   return (
@@ -60,6 +54,7 @@ export const RecipeTextInput = ({ name, placeholder }) => {
     </StyledLabel>
   );
 };
+
 RecipeTextInput.propTypes = {
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
