@@ -6,10 +6,7 @@ import Select from "react-select";
 import { inputErrorMotion } from "../../common/animations.js";
 import { timeSelectOptions } from "../../common/selectOptions";
 import { useValidation } from "../../hooks/useValidation";
-import {
-  setRecipeCookingTime,
-  setRecipeCookingTimeError,
-} from "../../redux/slices/addRecipeFormSlice";
+import { setField, setFieldError } from "../../redux/slices/addRecipeFormSlice";
 import { addRecipeSchema } from "../../validation/addRecipeSchema.js";
 import { InputErrorSpan } from "../InputErrorSpan/InputErrorSpan.jsx";
 import { StyledDiv } from "./TimeSelect.styled.js";
@@ -20,19 +17,15 @@ export const TimeSelect = () => {
   const dispatch = useDispatch();
   const { recipeCookingTime, recipeCookingTimeError } = useSelector((state) => state.addRecipeForm);
 
-  const dispatchCookingTime = (value, error) => {
-    dispatch(setRecipeCookingTime(value));
-    dispatch(setRecipeCookingTimeError(error));
-  };
-
   const handleChange = ({ value }) => {
-    const { isValid, errorMessage } = validate(addRecipeSchema, "recipeCookingTime", value);
-    dispatchCookingTime(isValid ? value : "", errorMessage);
+    dispatch(setField({ field: "recipeCookingTime", value }));
+    const { errorMessage } = validate(addRecipeSchema, "recipeCookingTime", value);
+    dispatch(setFieldError({ field: "recipeCookingTime", error: errorMessage || null }));
   };
 
   const handleBlur = () => {
     const { errorMessage } = validate(addRecipeSchema, "recipeCookingTime", recipeCookingTime);
-    dispatchCookingTime(recipeCookingTime, errorMessage);
+    dispatch(setFieldError({ field: "recipeCookingTime", error: errorMessage || null }));
   };
 
   const handleWrapperClick = () => {
