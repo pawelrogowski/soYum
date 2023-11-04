@@ -33,6 +33,7 @@ export const StyledDiv = styled.div`
     color: var(--color-error);
     top: -0.5rem;
     left: 2rem;
+    transition: color 200ms, background-color 200ms;
   }
   > div {
     position: relative;

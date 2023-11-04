@@ -53,6 +53,7 @@ export const StyledDiv = styled.div`
     bottom: -0.5rem;
     padding: 0 0.8rem;
     left: 0.71rem;
+    transition: color 200ms, background-color 200ms;
   }
 
   > span:first-of-type {
@@ -225,7 +226,7 @@ export const StyledDiv = styled.div`
 
       &__option {
         min-height: 2rem;
-
+        transition: color 200ms;
         &:hover,
         &:focus {
           color: var(--color-text-active);
