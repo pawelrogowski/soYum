@@ -11,15 +11,16 @@ import { Heading } from "../Heading/Heading";
 import { Icon } from "../Icon/Icon";
 import { InputErrorSpan } from "../InputErrorSpan/InputErrorSpan";
 import { StyledDiv } from "./RecipePreparationStepsPreview.styled";
+
 export const RecipePreparationStepsPreview = () => {
   const dispatch = useDispatch();
-  const { recipePreparationSteps, currentEditIndex, currentTextAreaValueError } = useSelector(
+  const { recipePreparationSteps, currentEditIndex, recipePreparationStepsError } = useSelector(
     (state) => state.addRecipeForm
   );
 
   const handleRemoveStep = (index) => {
     dispatch(removePreparationStep(index));
-    recipePreparationSteps.length < 2
+    recipePreparationSteps.length < 3
       ? dispatch(
           setFieldError({ field: "recipePreparationSteps", error: "At least 3 steps are required" })
         )
@@ -36,11 +37,10 @@ export const RecipePreparationStepsPreview = () => {
     <StyledDiv>
       <Heading as="h2">Steps</Heading>
       <AnimatePresence>
-        {((recipePreparationSteps.length < 3 && recipePreparationSteps[0]) ||
-          currentTextAreaValueError) && (
+        {recipePreparationStepsError && (
           <InputErrorSpan
             className="validation-error"
-            errorMessage="At least 3 steps are required"
+            errorMessage={recipePreparationStepsError}
             {...inputErrorMotion}
           />
         )}

@@ -25,7 +25,6 @@ export const CategorySelect = () => {
 
     if (errorMessage || !isValid) {
       dispatch(setFieldError({ field: "recipeCategories", error: errorMessage }));
-      dispatch(setField({ field: "recipeCategories", value: [] }));
     } else {
       dispatch(setFieldError({ field: "recipeCategories", error: null }));
     }
@@ -36,7 +35,6 @@ export const CategorySelect = () => {
 
     if (errorMessage) {
       dispatch(setFieldError({ field: "recipeCategories", error: errorMessage }));
-      dispatch(setField({ field: "recipeCategories", value: [] }));
     } else {
       dispatch(setFieldError({ field: "recipeCategories", error: null }));
     }

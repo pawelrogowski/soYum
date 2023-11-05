@@ -37,6 +37,16 @@ export const StyledDiv = styled.div`
   }
   > div {
     position: relative;
+    padding-bottom: 2rem;
+    &:focus-within,
+    &:hover {
+      + button,
+      textarea,
+      + button + button {
+        border-color: ${(props) =>
+          props.$hasError === "true" ? css`var(--color-error)` : css`var(--color-border-active)`};
+      }
+    }
     > textarea {
       resize: none;
       padding: 1rem 1.6rem;
@@ -69,19 +79,11 @@ export const StyledDiv = styled.div`
         letter-spacing: -0.028rem;
       }
     }
-    &:focus-within,
-    &:hover {
-      + button,
-      + button + button {
-        border-color: ${(props) =>
-          props.$hasError === "true" ? css`var(--color-error)` : css`var(--color-border-active)`};
-      }
-    }
   }
 
   > button:nth-of-type(1) {
     position: absolute;
-    bottom: -23px;
+    bottom: -3px;
     right: 31px;
     height: 5rem;
     background: var(--color-button-bg-idle);
@@ -95,7 +97,8 @@ export const StyledDiv = styled.div`
     border-width: 1px;
     &:hover,
     &:focus {
-      background-color: var(--color-border-active);
+      background-color: ${(props) =>
+        props.$hasError === "true" ? css`var(--color-error)` : css`var(--color-border-active) `};
       border-color: ${(props) =>
         props.$hasError === "true" ? css`var(--color-error)` : css`var(--color-border-active)`};
 
@@ -104,7 +107,7 @@ export const StyledDiv = styled.div`
   }
   > button:nth-of-type(2) {
     position: absolute;
-    bottom: -1.45rem;
+    bottom: 0.75rem;
     right: 21rem;
     height: 3rem;
     width: 3rem;
@@ -133,6 +136,8 @@ export const StyledDiv = styled.div`
     }
   }
   > button:disabled {
+    cursor: not-allowed;
+    pointer-events: visible;
     background: var(--color-button-bg-disabled);
     color: var(--color-text-placeholder);
     border: 1px solid

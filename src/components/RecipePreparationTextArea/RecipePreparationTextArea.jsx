@@ -1,4 +1,5 @@
 import { AnimatePresence } from "framer-motion";
+import { debounce } from "lodash";
 import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -21,12 +22,9 @@ export const RecipePreparationTextArea = ({ className }) => {
   const dispatch = useDispatch();
   const { validate } = useValidation();
 
-  const {
-    currentTextAreaValue,
-    currentEditIndex,
-    currentTextAreaValueError,
-    recipePreparationSteps,
-  } = useSelector((state) => state.addRecipeForm);
+  const { currentTextAreaValue, currentEditIndex, currentTextAreaValueError } = useSelector(
+    (state) => state.addRecipeForm
+  );
 
   const handleErrorState = (value) => {
     const { errorMessage } = validate(addRecipeSchema, "currentTextAreaValue", value.trim());
@@ -36,7 +34,7 @@ export const RecipePreparationTextArea = ({ className }) => {
       : dispatch(setFieldError({ field: "currentTextAreaValue", error: null }));
   };
 
-  const handleStepUpdate = (value) => {
+  const handleStepUpdate = debounce((value) => {
     if (currentEditIndex !== null && currentEditIndex !== undefined) {
       dispatch(editPreparationStep({ index: currentEditIndex, text: value }));
       dispatch(setField({ field: "currentEditIndex", value: null }));
@@ -44,7 +42,7 @@ export const RecipePreparationTextArea = ({ className }) => {
       dispatch(addPreparationStep(value.trim()));
     }
     dispatch(setField({ field: "currentTextAreaValue", value: "" }));
-  };
+  }, 100);
 
   const handleKeyDown = (e) => {
     const value = e.target.value;
@@ -81,7 +79,7 @@ export const RecipePreparationTextArea = ({ className }) => {
     handleErrorState(e.target.value);
   };
 
-  const showError = currentTextAreaValueError && recipePreparationSteps.length < 3;
+  const showError = currentTextAreaValueError;
 
   return (
     <StyledDiv
@@ -101,13 +99,17 @@ export const RecipePreparationTextArea = ({ className }) => {
           {showError && (
             <InputErrorSpan
               className="validation-error"
-              errorMessage={"At least 3 step are required"}
+              errorMessage={currentTextAreaValueError}
               {...inputErrorMotion}
             />
           )}
         </AnimatePresence>
       </div>
-      <Button variant="outlineBig" onClick={handleAddClick} disabled={!currentTextAreaValue}>
+      <Button
+        variant="outlineBig"
+        onClick={handleAddClick}
+        disabled={currentEditIndex !== null || currentTextAreaValueError !== null}
+      >
         {currentEditIndex !== null ? "Edit existing step" : " Add new step"}
       </Button>
       {currentEditIndex !== null && (
