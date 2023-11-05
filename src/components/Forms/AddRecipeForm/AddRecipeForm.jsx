@@ -32,13 +32,9 @@ export const AddRecipeForm = () => {
   };
 
   const validateForm = () => {
-    [
-      "recipeTitle",
-      "recipeAbout",
-      "recipeCookingTime",
-      "recipeCategories",
-      "currentTextAreaValue",
-    ].forEach((field) => validateAndDispatch(field, data[field]));
+    ["recipeTitle", "recipeAbout", "recipeCookingTime", "recipeCategories"].forEach((field) =>
+      validateAndDispatch(field, data[field])
+    );
     data.recipeIngredients.forEach((ingredient, index) => {
       ["ingredient", "measureType", "amount"].forEach((field) => {
         if (ingredient[field]?.error !== null) {
@@ -60,11 +56,13 @@ export const AddRecipeForm = () => {
       });
     });
 
-    data.recipePreparationSteps.length < 3
-      ? dispatch(
-          setFieldError({ field: "recipePreparationSteps", error: "At least 3 steps are required" })
-        )
-      : dispatch(setFieldError({ field: "recipePreparationSteps", error: "" }));
+    data.recipePreparationSteps.length < 3 &&
+      dispatch(
+        setFieldError({
+          field: "recipePreparationSteps",
+          error: "At least 3 steps are required",
+        })
+      );
   };
 
   return (

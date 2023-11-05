@@ -156,6 +156,7 @@ export const IngredientList = ({ className }) => {
               onMeasureChange={handleMeasureChange}
               onAmountChange={handleAmountChange}
               {...ingredientListItemMotion}
+              layout
             />
           ))}
         </AnimatePresence>
