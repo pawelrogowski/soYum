@@ -1,4 +1,5 @@
 import { AnimatePresence } from "framer-motion";
+import { Suspense } from "react";
 import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { Outlet } from "react-router-dom";
@@ -6,6 +7,7 @@ import { Outlet } from "react-router-dom";
 import { EditUserModal } from "../../components/EditUserModal/EditUserModal";
 import Footer from "../../components/Footer/Footer";
 import { Header } from "../../components/Header/Header";
+import { LoaderDots } from "../../components/LoaderDots/LoaderDots";
 import { LogoutModal } from "../../components/LogoutModal/LogoutModal";
 import { NavigationMobile } from "../../components/NavigationMobile/NavigationMobile";
 import { breakpoints } from "../../styles/themes";
@@ -26,7 +28,9 @@ export const MainLayout = () => {
       <AnimatePresence>{isMobileMenuOpen && <NavigationMobile />}</AnimatePresence>
       <Header />
       <div className="main-content">
-        <Outlet />
+        <Suspense fallback={<LoaderDots variant="layout" />}>
+          <Outlet />
+        </Suspense>
       </div>
       <Footer variant={isMobileSize ? "mobile" : isTabletSize ? "tablet" : "desktop"} />
       <AnimatePresence>{isProfileUpdateMenuOpen && <EditUserModal />}</AnimatePresence>
