@@ -3,6 +3,7 @@ import { useMediaQuery } from "react-responsive";
 import { useParams } from "react-router-dom";
 
 import image from "../../assets/images/food/placeholder.jpg";
+import { routeChangeMotion } from "../../common/animations";
 import { Heading } from "../../components/Heading/Heading";
 import { PaginationFilter } from "../../components/PaginationFilter/PaginationFilter";
 import { RecipeList } from "../../components/RecipeList/RecipeList";
@@ -55,7 +56,7 @@ const FavoritesPage = () => {
   }, [page]);
 
   return (
-    <MainContainer>
+    <MainContainer {...routeChangeMotion}>
       <Heading as="h1">Favorites</Heading>
       <RecipeList data={imageList} />
       <PaginationFilter

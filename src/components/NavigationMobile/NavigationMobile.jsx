@@ -16,7 +16,7 @@ export const NavigationMobile = () => {
   };
 
   const navItems = [
-    { path: "/categories", text: "Categories" },
+    { path: "/categories/beef", text: "Categories" },
     { path: "/add", text: "Add recipes" },
     { path: "/myrecipes", text: "My recipes" },
     { path: "/favorites", text: "Favorites" },
@@ -39,12 +39,18 @@ export const NavigationMobile = () => {
               </NavLink>
             </li>
           ))}
-          <li>
-            <button type="button" aria-label="Search">
-              <Icon icon="search" />
-              <span>Search</span>
-            </button>
-          </li>
+          <NavLink
+            to="/search"
+            className={({ isActive }) => (isActive ? "active-nav-link-mobile" : "")}
+            onClick={handleMenuToggle}
+          >
+            <li>
+              <button type="button" aria-label="Search">
+                <Icon icon="search" />
+                <span>Search</span>
+              </button>
+            </li>
+          </NavLink>
         </ul>
         <ThemeSwitch />
       </div>

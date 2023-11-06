@@ -5,6 +5,7 @@ import placeholder from "../../assets/icons/food-placeholder.svg";
 import img2 from "../../assets/images/food/M6A1135.jpg";
 import img3 from "../../assets/images/food/Spinach_quinoa_patties_01.jpg";
 import img1 from "../../assets/images/food/thick-pancakes.jpg";
+import { routeChangeMotion } from "../../common/animations";
 import { Button } from "../../components/Button/Button";
 import { CardGallery } from "../../components/CardGallery/CardGallery";
 import { Hero } from "../../components/Hero/Hero";
@@ -22,14 +23,10 @@ const HomePage = () => {
   const isAtLeastTabletSize = useMediaQuery({ minWidth: breakpoints.tablet });
   const isAtLeastDesktopSize = useMediaQuery({ minWidth: breakpoints.desktop });
 
-  const imgNumPerCategory = isAtLeastDesktopSize
-    ? 4
-    : isAtLeastTabletSize
-    ? 2
-    : 1;
+  const imgNumPerCategory = isAtLeastDesktopSize ? 4 : isAtLeastTabletSize ? 2 : 1;
 
   return (
-    <MainContainer>
+    <MainContainer {...routeChangeMotion}>
       <Hero />
       <CardGallery
         data={images}
