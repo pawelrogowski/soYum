@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const StyledFigure = styled.figure`
+export const StyledFigure = styled(motion.figure)`
   --color-card-bg: ${({ theme }) => theme.card.bg};
   --color-card-border-idle: ${({ theme }) => theme.card.borderIdle};
   --color-card-border-active: ${({ theme }) => theme.card.borderActive};

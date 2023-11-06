@@ -85,7 +85,8 @@ export const StyledListItem = styled.li`
     height: 2.4rem;
     background-color: var(--color-button-delete-background-idle);
     border-color: var(--color-button-delete-border-idle);
-    transition: background-color 200ms, border-color 200ms;
+    transition: background-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms,
+      border-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -103,7 +104,7 @@ export const StyledListItem = styled.li`
       width: 1.4rem;
       height: 1.4rem;
       stroke: var(--color-button-delete-icon-idle);
-      transition: stroke 200ms;
+      transition: stroke cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
       @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         width: 2.2rem;
         height: 2.2rem;

@@ -29,7 +29,7 @@ export const StyledDiv = styled.div`
       }
     }
     > svg {
-      transition: stroke 200ms;
+      transition: stroke cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
       width: 1.4rem;
       height: 1.4rem;
       stroke: var(--color-icon-idle);
@@ -37,7 +37,7 @@ export const StyledDiv = styled.div`
     &:disabled {
       cursor: initial;
       > svg {
-        transition: stroke 200ms;
+        transition: stroke cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
         width: 1.4rem;
         height: 1.4rem;
         stroke: var(--color-icon-disabled);

@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const StyledGallery = styled.section`
+export const StyledGallery = styled(motion.section)`
   display: flex;
   flex-direction: column;
   margin-bottom: 3.2rem;
@@ -45,12 +46,10 @@ export const StyledGallery = styled.section`
     }
     li {
       flex-basis: 100%;
-      @media screen and (min-width: ${({ theme }) =>
-          theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         flex-basis: calc((100% - 1 * 3.2rem) / 2);
       }
-      @media screen and (min-width: ${({ theme }) =>
-          theme.breakpoints.desktop}) {
+      @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
         flex-basis: calc((100% - 3 * 1.4rem) / 4);
       }
     }

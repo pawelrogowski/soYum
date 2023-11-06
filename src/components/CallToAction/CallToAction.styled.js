@@ -5,8 +5,7 @@ export const StyledDiv = styled.div`
   --color-text-highlight: ${({ theme }) => theme.callToAction.textHightlight};
   --color-text-idle: ${({ theme }) => theme.callToAction.text};
   --color-text-link-idle: ${({ theme }) => theme.callToAction.link.textIdle};
-  --color-text-link-active: ${({ theme }) =>
-    theme.callToAction.link.textActive};
+  --color-text-link-active: ${({ theme }) => theme.callToAction.link.textActive};
 
   position: absolute;
   bottom: 10rem;

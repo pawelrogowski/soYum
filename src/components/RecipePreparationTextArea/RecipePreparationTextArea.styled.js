@@ -33,7 +33,8 @@ export const StyledDiv = styled.div`
     color: var(--color-error);
     top: -0.5rem;
     left: 2rem;
-    transition: color 200ms, background-color 200ms;
+    transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms,
+      background-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
   }
   > div {
     position: relative;
@@ -63,7 +64,8 @@ export const StyledDiv = styled.div`
       letter-spacing: -0.036rem;
       background: none;
       scrollbar-width: thin;
-      transition: border-color 200ms, color 200ms;
+      transition: border-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms,
+        color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
       &:placeholder-shown {
         color: var(--color-text-placeholder);
       }

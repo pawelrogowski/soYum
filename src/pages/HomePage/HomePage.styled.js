@@ -1,7 +1,8 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 import leaves from "../../assets/images/leaves@1x.webp";
-export const MainContainer = styled.main`
+export const MainContainer = styled(motion.main)`
   max-width: ${({ theme }) => theme.breakpoints.maxContent};
   min-width: ${({ theme }) => theme.breakpoints.minContent};
   padding: 0 2.1rem;

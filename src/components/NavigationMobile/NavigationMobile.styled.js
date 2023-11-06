@@ -106,7 +106,7 @@ export const StyledAside = styled(motion.aside)`
         }
       }
 
-      > li > button {
+      a > li > button {
         display: flex;
         align-items: center;
         gap: 0.8rem;
@@ -134,14 +134,14 @@ export const StyledAside = styled(motion.aside)`
         }
       }
 
-      > li > button > svg {
+      a > li > button > svg {
         stroke: var(--color-navigation-idle);
         width: 2.4rem;
         height: 2.4rem;
         transition: stroke cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
       }
 
-      > li {
+      > a > li {
         &:focus,
         &:hover,
         &:focus-within {
@@ -154,7 +154,7 @@ export const StyledAside = styled(motion.aside)`
         }
       }
 
-      > li > button {
+      > a > li > button {
         background: none;
         border: none;
         outline: none;

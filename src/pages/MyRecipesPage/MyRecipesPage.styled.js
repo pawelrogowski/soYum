@@ -1,8 +1,9 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 import leaves from "../../assets/images/leaves@1x.webp";
 
-export const MainContainer = styled.main`
+export const MainContainer = styled(motion.main)`
   max-width: ${({ theme }) => theme.breakpoints.maxContent};
   min-width: ${({ theme }) => theme.breakpoints.minContent};
   padding: 10rem 2.1rem 10rem 2.1rem;
@@ -13,8 +14,10 @@ export const MainContainer = styled.main`
   flex-direction: column;
   align-items: center;
 
+  min-height: calc(100dvh - 62px);
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding-bottom: 20rem;
+    min-height: calc(100dvh - 60.5px);
   }
 
   &:after {

@@ -42,16 +42,14 @@ export const StyledDiv = styled.div`
       background-color: var(--color-decoration);
       bottom: -8.35rem;
       left: 3.8rem;
-      @media screen and (min-width: ${(props) =>
-          props.theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${(props) => props.theme.breakpoints.tablet}) {
         width: 1.2rem;
         height: 1.2rem;
         bottom: -10rem;
         left: -10rem;
         rotate: -25deg;
       }
-      @media screen and (min-width: ${(props) =>
-          props.theme.breakpoints.desktop}) {
+      @media screen and (min-width: ${(props) => props.theme.breakpoints.desktop}) {
         bottom: -13.9rem;
         left: -30.5rem;
       }
@@ -64,8 +62,7 @@ export const StyledDiv = styled.div`
       transition: border-color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
         box-shadow cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
 
-      @media screen and (min-width: ${({ theme }) =>
-          theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         height: 4.4rem;
         width: 4.4rem;
         aspect-ratio: 1 / 1;
@@ -82,8 +79,7 @@ export const StyledDiv = styled.div`
       font-style: normal;
       mix-blend-mode: var(--blend-mode);
 
-      @media screen and (min-width: ${({ theme }) =>
-          theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         font-size: 1.4rem;
         line-height: 2.38rem;
       }

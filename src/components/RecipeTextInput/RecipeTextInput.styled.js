@@ -14,7 +14,7 @@ export const StyledLabel = styled.label`
   position: relative;
   > input {
     background: none;
-    transition: border-color 200ms;
+    transition: border-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
     width: 100%;
     border: none;
     border-bottom: 1px solid
@@ -49,6 +49,7 @@ export const StyledLabel = styled.label`
     bottom: -0.5rem;
     padding: 0 0.8rem;
     left: 0.71rem;
-    transition: color 200ms, background-color 200ms;
+    transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms,
+      background-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
   }
 `;

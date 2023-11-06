@@ -75,8 +75,7 @@ export const PageContent = styled.div`
     > a {
       font-size: 1.4rem;
 
-      @media screen and (min-width: ${({ theme }) =>
-          theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         font-size: 1.6rem;
       }
       text-decoration-line: underline;

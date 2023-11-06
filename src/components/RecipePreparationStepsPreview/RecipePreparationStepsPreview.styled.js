@@ -35,7 +35,8 @@ export const StyledDiv = styled.div`
     bottom: -0.5rem;
     padding: 0 0.8rem;
     left: 0.71rem;
-    transition: color 200ms, background-color 200ms;
+    transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms,
+      background-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
   }
   > ol {
     display: flex;
@@ -86,7 +87,7 @@ export const StyledDiv = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: bkacground-color 100ms;
+        transition: bkacground-color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
         &:focus,
         &:hover {
           background-color: var(--color-button-bg-edit-active);
@@ -95,7 +96,7 @@ export const StyledDiv = styled.div`
           }
         }
         > svg {
-          transition: stroke 100ms;
+          transition: stroke cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
           width: 1.3rem;
           height: 1.3rem;
           stroke: var(--color-icon-edit-idle);
@@ -114,7 +115,7 @@ export const StyledDiv = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: bkacground-color 100ms;
+        transition: bkacground-color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
         &:focus,
         &:hover {
           background-color: var(--color-button-bg-remove-active);
@@ -123,7 +124,7 @@ export const StyledDiv = styled.div`
           }
         }
         > svg {
-          transition: stroke 100ms;
+          transition: stroke cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
           width: 1.3rem;
           height: 1.3rem;
           stroke: var(--color-icon-remove-idle);

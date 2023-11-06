@@ -3,24 +3,15 @@ import styled from "styled-components";
 export const StyledDiv = styled.div`
   --color-bg: ${({ theme }) => theme.paginationFilter.bg};
   --color-box-shadow: ${({ theme }) => theme.paginationFilter.boxShadow};
-  --color-link-switch-idle: ${({ theme }) =>
-    theme.paginationFilter.switchLinkIdle};
-  --color-link-switch-active: ${({ theme }) =>
-    theme.paginationFilter.switchLinkActive};
-  --color-link-switch-disabled: ${({ theme }) =>
-    theme.paginationFilter.switchLinkDisabled};
-  --color-link-page-bg-idle: ${({ theme }) =>
-    theme.paginationFilter.pageLinkBgIdle};
-  --color-link-page-bg-active: ${({ theme }) =>
-    theme.paginationFilter.pageLinkBgActive};
-  --color-link-page-current: ${({ theme }) =>
-    theme.paginationFilter.pageLinkBgCurrent};
-  --color-link-page-font-idle: ${({ theme }) =>
-    theme.paginationFilter.pageLinkFontIdle};
-  --color-link-page-font-active: ${({ theme }) =>
-    theme.paginationFilter.pageLinkFontActive};
-  --color-link-page-font-current: ${({ theme }) =>
-    theme.paginationFilter.pageLinkFontCurrent};
+  --color-link-switch-idle: ${({ theme }) => theme.paginationFilter.switchLinkIdle};
+  --color-link-switch-active: ${({ theme }) => theme.paginationFilter.switchLinkActive};
+  --color-link-switch-disabled: ${({ theme }) => theme.paginationFilter.switchLinkDisabled};
+  --color-link-page-bg-idle: ${({ theme }) => theme.paginationFilter.pageLinkBgIdle};
+  --color-link-page-bg-active: ${({ theme }) => theme.paginationFilter.pageLinkBgActive};
+  --color-link-page-current: ${({ theme }) => theme.paginationFilter.pageLinkBgCurrent};
+  --color-link-page-font-idle: ${({ theme }) => theme.paginationFilter.pageLinkFontIdle};
+  --color-link-page-font-active: ${({ theme }) => theme.paginationFilter.pageLinkFontActive};
+  --color-link-page-font-current: ${({ theme }) => theme.paginationFilter.pageLinkFontCurrent};
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -32,7 +23,8 @@ export const StyledDiv = styled.div`
   .link-disabled {
     pointer-events: none;
     > svg {
-      transition: fill 200ms, stroke 200ms;
+      transition: fill cubic-bezier(0.17, 0.67, 1, 1.23) 200ms,
+        stroke cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
       fill: var(--color-link-switch-disabled);
       width: 1.5rem;
       height: 1.5rem;
@@ -53,7 +45,8 @@ export const StyledDiv = styled.div`
       transform: scaleX(-1);
     }
     > svg {
-      transition: fill 200ms, stroke 200ms;
+      transition: fill cubic-bezier(0.17, 0.67, 1, 1.23) 200ms,
+        stroke cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
       fill: var(--color-link-switch-idle);
       width: 1.5rem;
       height: 1.5rem;
@@ -102,7 +95,8 @@ export const StyledDiv = styled.div`
         border: none;
         border-radius: 50%;
         background-color: transparent;
-        transition: color 200ms, background-color 200ms;
+        transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms,
+          background-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
         &:hover,
         &:focus {
           outline: none;

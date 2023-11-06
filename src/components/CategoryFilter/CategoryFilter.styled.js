@@ -3,14 +3,11 @@ import styled from "styled-components";
 export const StyledNav = styled.nav`
   --color-text-idle: ${({ theme }) => theme.categoryFilter.textIdle};
   --color-text-active: ${({ theme }) => theme.categoryFilter.textActive};
-  --color-decoration-idle: ${({ theme }) =>
-    theme.categoryFilter.decorationIdle};
-  --color-decoration-active: ${({ theme }) =>
-    theme.categoryFilter.decorationIdle};
+  --color-decoration-idle: ${({ theme }) => theme.categoryFilter.decorationIdle};
+  --color-decoration-active: ${({ theme }) => theme.categoryFilter.decorationIdle};
   --color-button-idle: ${({ theme }) => theme.categoryFilter.buttonIdle};
   --color-button-active: ${({ theme }) => theme.categoryFilter.buttonActive};
-  --color-button-disabled: ${({ theme }) =>
-    theme.categoryFilter.buttonDisabled};
+  --color-button-disabled: ${({ theme }) => theme.categoryFilter.buttonDisabled};
   position: relative;
   width: 100%;
   height: 9.6rem;
@@ -42,7 +39,8 @@ export const StyledNav = styled.nav`
       }
     }
     > svg {
-      transition: stroke 200ms, fill 200ms;
+      transition: stroke cubic-bezier(0.17, 0.67, 1, 1.23) 200ms,
+        fill cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
       stroke: var(--color-button-idle);
       fill: var(--color-button-idle);
       width: 1.5rem;
@@ -76,7 +74,7 @@ export const StyledNav = styled.nav`
         color: var(--color-text-idle);
         font-size: 1.4rem;
         line-height: 1;
-        transition: color 200ms;
+        transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
         &:hover,
         &:focus {
           color: var(--color-button-active);
@@ -98,8 +96,7 @@ export const StyledNav = styled.nav`
       border: 0.4rem solid ${({ theme }) => theme.brandColors.main};
       transform: translateX(-50%);
       border-radius: 4px;
-      @media screen and (min-width: ${({ theme }) =>
-          theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         bottom: -4.8rem;
       }
     }
@@ -118,8 +115,7 @@ export const StyledNav = styled.nav`
       border: 0.4rem solid ${({ theme }) => theme.brandColors.main};
       transform: translateX(-50%);
       border-radius: 4px;
-      @media screen and (min-width: ${({ theme }) =>
-          theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         bottom: -4.8rem;
       }
     }
