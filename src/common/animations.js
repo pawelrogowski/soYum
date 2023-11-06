@@ -90,4 +90,32 @@ export const galleryMotion = {
   transition: { duration: 0.05 },
 };
 
-export const noMotion = {};
+export const logoMotion = {
+  initial: { scale: 1, borderRadius: "1.2rem" },
+  animate: { scale: 1 },
+  exit: { scale: 0.8, transition: { duration: 0.5 } },
+  whileHover: {
+    scale: 1.3,
+    borderRadius: "1.6rem",
+    transition: {
+      scale: { duration: 0.3 },
+      borderRadius: { duration: 0.3 },
+    },
+  },
+  whileFocus: {
+    scale: 1.3,
+    borderRadius: "1.6rem",
+    transition: {
+      scale: { duration: 0.3 },
+      borderRadius: { duration: 0.3 },
+    },
+  },
+  whileTap: {
+    scale: 1.3,
+    borderRadius: "1.6rem",
+    transition: {
+      scale: { duration: 0.3 },
+      borderRadius: { duration: 0.3 },
+    },
+  },
+};

@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
 
-export const StyledButton = styled.button`
+export const StyledButton = styled(motion.button)`
   &:disabled {
     background: grey;
     pointer-events: none;
@@ -29,7 +30,6 @@ export const StyledButton = styled.button`
     border: 0.1rem solid ${({ theme }) => theme.button.base.borderHover};
   }
   &:active {
-    transform: scale(0.95);
     transition: background-color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
       color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms, border cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
       transform cubic-bezier(0.17, 0.67, 1, 1.23) 50ms;

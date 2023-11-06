@@ -1,5 +1,7 @@
 import { css, styled } from "styled-components";
 
+import leaves from "../../assets/images/leaves@1x.webp";
+
 export const StyledFooter = styled.footer`
   --breakpoint-tablet: ${(props) => props.theme.breakpoints.tablet};
   --breakpoint-desktop: ${(props) => props.theme.breakpoints.desktop};
@@ -14,7 +16,31 @@ export const StyledFooter = styled.footer`
   align-items: center;
   flex-direction: column;
   transition: background-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
-
+  > div:first-of-type {
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      background-image: url(${leaves});
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 33.5rem;
+      height: 46.8rem;
+      top: -21rem;
+      left: -5rem;
+      rotate: -217deg;
+      filter: blur(0.4rem);
+      transform: scaleX(-1);
+      z-index: -1;
+      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        width: 33.5rem;
+        height: 51.7rem;
+        top: -26rem;
+        left: -11rem;
+        rotate: -217deg;
+      }
+    }
+  }
   ${({ $variant }) =>
     $variant === "mobile"
       ? css`

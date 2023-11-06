@@ -28,16 +28,10 @@ export const Header = () => {
         <Logo variant="header" />
       </Link>
       {isAtLeastDesktopSize && <NavigationDesktop />}
-      <UserAvatar
-        image={avatar}
-        placeholder={avatarPlaceholder}
-        name="Feironnnnnnnnnnnn"
-      />
+      <UserAvatar image={avatar} placeholder={avatarPlaceholder} name="Feironnnnnnnnnnnn" />
       {isAtLeastDesktopSize && <ThemeSwitch />}
 
-      {!isAtLeastDesktopSize && (
-        <MobileMenuButton onClick={handleMenuToggle} variant="open" />
-      )}
+      {!isAtLeastDesktopSize && <MobileMenuButton onClick={handleMenuToggle} variant="open" />}
     </StyledHeader>
   );
 };
