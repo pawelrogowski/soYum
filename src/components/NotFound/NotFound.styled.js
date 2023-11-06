@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledSection = styled.section`
+export const StyledMain = styled.main`
   --color-text: ${({ theme }) => theme.notFound.text};
   display: flex;
   flex-direction: column;
@@ -8,10 +8,14 @@ export const StyledSection = styled.section`
   justify-content: center;
   width: 100%;
   height: 100%;
-  padding-bottom: 4rem;
+  padding: 4rem;
+  min-height: calc(100dvh - 63px);
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    min-height: calc(100dvh - 61px);
+  }
   > svg {
     width: 100%;
-    height: 100%;
+    height: 70dvh;
   }
   > h1 {
     color: var(--color-text);
