@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
-
+  root: {
+    --base-bezier: cubic-bezier(0.17, 0.67, 1, 1.23);
+  }
   *,
   *::after,
   *::before {
@@ -26,21 +28,33 @@ export const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
   }
 
-  .activeLink {
+  .active-nav-link {
     color: ${({ theme }) => theme.brandColors.main} !important;
-    ;
+    svg {
+      stroke: ${({ theme }) => theme.brandColors.main} !important;
+    }
   }
 
   .active-nav-link-mobile {
     color: ${({ theme }) => theme.brandColors.main} !important;
+    span {
+      color: ${({ theme }) => theme.brandColors.main} !important;
+    }
+    svg {
+      stroke: ${({ theme }) => theme.brandColors.main} !important;
+    }
   }
 
   .active-nav-link-footer {
     color: ${({ theme }) => theme.link.navFooter} !important;
   }
 
+
+
+.main-content {
+  min-height: calc(100dvh - 62px);
+}
   div[id="root"] {
-      height: 100dvh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;

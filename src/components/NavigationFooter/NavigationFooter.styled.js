@@ -1,10 +1,8 @@
 import { styled } from "styled-components";
 
 export const StyledNav = styled.nav`
-  --color-navigation-footer-idle: ${({ theme }) =>
-    theme.navigation.footer.colorIdle};
-  --color-navigation-footer-hover: ${({ theme }) =>
-    theme.navigation.footer.colorHover};
+  --color-navigation-footer-idle: ${({ theme }) => theme.navigation.footer.colorIdle};
+  --color-navigation-footer-hover: ${({ theme }) => theme.navigation.footer.colorHover};
 
   > ul {
     display: flex;

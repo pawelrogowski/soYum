@@ -8,10 +8,8 @@ export const StyledDiv = styled(motion.div)`
   --color-border: ${({ theme }) => theme.editProfilePopup.border};
   --color-button-text: ${({ theme }) => theme.editProfilePopup.button.text};
   --color-button-icon: ${({ theme }) => theme.editProfilePopup.button.icon};
-  --color-button-icon-active: ${({ theme }) =>
-    theme.editProfilePopup.button.iconActive};
-  --color-button-text-active: ${({ theme }) =>
-    theme.editProfilePopup.button.textActive};
+  --color-button-icon-active: ${({ theme }) => theme.editProfilePopup.button.iconActive};
+  --color-button-text-active: ${({ theme }) => theme.editProfilePopup.button.textActive};
   --color-text-active: ${({ theme }) => theme.editProfilePopup.textActive};
   --color-icon-active: ${({ theme }) => theme.editProfilePopup.iconActive};
 
@@ -42,14 +40,14 @@ export const StyledDiv = styled(motion.div)`
       font-size: 1.4rem;
       font-weight: 500;
       line-height: 1.6;
-      transition: color 200ms;
+      transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
     }
 
     > svg {
       width: 1.4rem;
       height: 1.4rem;
       stroke: var(--color-icon);
-      transition: stroke 200ms;
+      transition: stroke cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
     }
 
     &:hover,

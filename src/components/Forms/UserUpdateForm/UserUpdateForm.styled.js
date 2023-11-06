@@ -63,7 +63,7 @@ export const StyledFormikForm = styled(Form)`
       }
       > img {
         cursor: pointer;
-        transition: box-shadow 200ms;
+        transition: box-shadow cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
         border-radius: 50%;
         overflow: hidden;
         width: 8.8rem;
@@ -89,12 +89,12 @@ export const StyledFormikForm = styled(Form)`
       align-items: center;
       background: var(--color-img-button-bg-idle);
       border: none;
-      transition: background-color 200ms;
+      transition: background-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
       > svg {
         width: 1.8rem;
         height: 1.8rem;
         stroke: var(--color-img-button-icon-idle);
-        transition: stroke 200ms;
+        transition: stroke cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
       }
     }
   }
@@ -159,7 +159,7 @@ export const StyledFormikForm = styled(Form)`
         width: 1.7rem;
         height: 1.7rem;
         stroke: var(--color-input-icon-edit-idle);
-        transition: stroke 200ms;
+        transition: stroke cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
       }
       @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         right: 1.8rem;

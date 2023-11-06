@@ -10,7 +10,9 @@ export const StyledButton = styled.button`
   border-radius: 0.8rem;
   overflow: hidden;
   border: 1px solid #8baa36;
-  transition: scale 200ms, background-color 200ms, border-color 200ms;
+  transition: scale cubic-bezier(0.17, 0.67, 1, 1.23) 200ms,
+    background-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms,
+    border-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     width: 35.7rem;
@@ -36,7 +38,8 @@ export const StyledButton = styled.button`
     height: 6.4rem;
     fill: none;
     stroke: #fafafa;
-    transition: fill 200ms stroke 200ms;
+    transition: fill cubic-bezier(0.17, 0.67, 1, 1.23) 200ms stroke
+      cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
   }
   > picture {
     > img {

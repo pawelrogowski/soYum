@@ -1,6 +1,7 @@
 import { useMediaQuery } from "react-responsive";
 
 import image from "../../assets/icons/product-placeholder.svg";
+import { routeChangeMotion } from "../../common/animations";
 import { FollowUs } from "../../components/FollowUs/FollowUs";
 import { AddRecipeForm } from "../../components/Forms/AddRecipeForm/AddRecipeForm";
 import { Heading } from "../../components/Heading/Heading";
@@ -40,7 +41,7 @@ const imageList = [
 const AddRecipePage = () => {
   const isDesktop = useMediaQuery({ minWidth: breakpoints.desktop });
   return (
-    <MainContainer>
+    <MainContainer {...routeChangeMotion}>
       <section>
         <Heading as="h1" id="Categories">
           Add Recipe

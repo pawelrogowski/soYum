@@ -15,7 +15,7 @@ export const StyledFigure = styled.figure`
   background-color: var(--color-background-card);
   overflow: hidden;
   border-bottom: 1px solid var(--color-border-idle);
-  transition: border-color 200ms;
+  transition: border-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
   flex-basis: 100%;
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     padding: 0 1.3rem 1.3rem 0;

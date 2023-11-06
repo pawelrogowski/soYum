@@ -432,6 +432,7 @@ export const lightTheme = {
     errorBg: "rgba(250, 250, 250, 1)",
     colorTextMenuIdle: "rgba(0, 0, 0, 0.5)",
     colorTextMenuActive: brandColors.main,
+    colorBorderSearch: "transparent",
     ingredient: {
       bg: "rgb(245, 245, 245)",
       borderIdle: "rgb(224, 224, 224)",
@@ -852,6 +853,7 @@ export const darkTheme = {
     errorBg: "rgb(30, 31, 40)",
     colorTextMenuIdle: "rgba(250, 250, 250, 0.5)",
     colorTextMenuActive: "rgba(250, 250, 250, 1)",
+    colorBorderSearch: "rgba(250, 250, 250, 0.20)",
     ingredient: {
       bg: "transparent",
       borderIdle: "rgb(74, 75, 82)",

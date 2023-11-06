@@ -24,10 +24,10 @@ export const StyledDiv = styled.div`
     border-radius: 5rem;
     --c: no-repeat radial-gradient(farthest-side, #000 92%, #0000);
     --s: 3.6rem 3.6rem;
-    mask: var(--c) left 0.4rem top 50%, var(--c) center,
-      var(--c) right 0.4rem top 50%, linear-gradient(#000 0 0);
-    -webkit-mask: var(--c) left 0.4rem top 50%, var(--c) center,
-      var(--c) right 0.4rem top 50%, linear-gradient(#000 0 0);
+    mask: var(--c) left 0.4rem top 50%, var(--c) center, var(--c) right 0.4rem top 50%,
+      linear-gradient(#000 0 0);
+    -webkit-mask: var(--c) left 0.4rem top 50%, var(--c) center, var(--c) right 0.4rem top 50%,
+      linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     animation: l1 1.5s infinite;

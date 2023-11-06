@@ -46,7 +46,8 @@ export const StyledDiv = styled(motion.div)`
     bottom: -2.1rem;
     left: 0.71rem;
     text-align: center;
-    transition: color 200ms, background-color 200ms;
+    transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms,
+      background-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
   }
   .validation-error--centered {
     display: block !important;
@@ -58,7 +59,8 @@ export const StyledDiv = styled(motion.div)`
     left: 50%;
     transform: translateX(-50%) !important;
     text-align: center;
-    transition: color 200ms, background-color 200ms;
+    transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms,
+      background-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
   }
 
   > .ingredient-flex-row {
@@ -74,7 +76,7 @@ export const StyledDiv = styled(motion.div)`
     background: var(--color-ingredient-bg);
     border-radius: 5px;
     padding: 1.2rem;
-    transition: border-color 200ms;
+    transition: border-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
     min-width: 25.1rem;
     @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       padding: 1.7rem 1.6rem 1.6rem 1.6rem;
@@ -185,7 +187,7 @@ export const StyledDiv = styled(motion.div)`
           align-items: center;
           svg {
             fill: var(--color-icon-idle);
-            transition: fill 200ms;
+            transition: fill cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
             cursor: pointer;
             &:focus,
             &:hover {
@@ -274,7 +276,7 @@ export const StyledDiv = styled(motion.div)`
 
         &__option {
           min-height: 2rem;
-          transition: color 200ms;
+          transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
           &:hover,
           &:focus {
             color: var(--color-text-active);
@@ -314,7 +316,7 @@ export const StyledDiv = styled(motion.div)`
       }
     }
     > svg {
-      transition: stroke 200ms;
+      transition: stroke cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
       stroke: var(--color-icon-idle);
       width: 1.8rem;
       height: 1.8rem;
@@ -473,7 +475,7 @@ export const StyledDiv = styled(motion.div)`
             //idle icons
             svg {
               fill: var(--color-icon-idle);
-              transition: fill 200ms;
+              transition: fill cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
               cursor: pointer;
               &:focus,
               &:hover {
@@ -585,7 +587,7 @@ export const StyledDiv = styled(motion.div)`
           }
           &__option {
             min-height: 2rem;
-            transition: color 200ms;
+            transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
             &:hover {
               color: var(--color-text-active);
               cursor: pointer;

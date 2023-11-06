@@ -19,11 +19,7 @@ export const CardGallery = ({
       <ul>
         {data.slice(0, limit).map((item, index) => (
           <li key={index}>
-            <Card
-              img={item.img}
-              caption={item.caption}
-              placeholder={item.placeholder}
-            />
+            <Card img={item.img} caption={item.caption} placeholder={item.placeholder} />
           </li>
         ))}
       </ul>

@@ -33,7 +33,7 @@ export const StyledDiv = styled.div`
   border-bottom: 1px solid
     ${(props) =>
       props.$hasError === "true" ? css`var(--color-font-error)` : css`var(--color-border-idle)`};
-  transition: border-color 200ms;
+  transition: border-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
   width: 100%;
   min-height: 2.4rem;
   cursor: pointer;
@@ -55,7 +55,8 @@ export const StyledDiv = styled.div`
     bottom: -0.5rem;
     padding: 0 0.8rem;
     left: 0.71rem;
-    transition: color 200ms, background-color 200ms;
+    transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms,
+      background-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
   }
   > div {
     width: 100%;
@@ -105,7 +106,7 @@ export const StyledDiv = styled.div`
         //idle icons
         svg {
           fill: var(--color-icon-idle);
-          transition: fill 200ms;
+          transition: fill cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
           cursor: pointer;
           &:focus,
           &:hover {
@@ -211,7 +212,7 @@ export const StyledDiv = styled.div`
 
       &__option {
         min-height: 2rem;
-        transition: color 200ms;
+        transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
         &:hover,
         &:focus {
           color: var(--color-text-active);

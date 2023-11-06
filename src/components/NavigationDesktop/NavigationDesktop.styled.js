@@ -37,7 +37,7 @@ export const StyledNav = styled.nav`
       &:focus-within {
         mix-blend-mode: initial;
       }
-      > button > svg {
+      a > button > svg {
         stroke: var(--color-navigation-idle);
         width: 2.4rem;
         height: 2.4rem;
@@ -57,7 +57,7 @@ export const StyledNav = styled.nav`
       }
     }
 
-    > li > button {
+    > li > a > button {
       width: 2.4rem;
       height: 2.4rem;
       background: none;
