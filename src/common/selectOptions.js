@@ -71,3 +71,8 @@ export const timeSelectOptions = Array.from({ length: 240 / 5 }, (_, i) => {
   const value = (i + 1) * 5;
   return { value: value.toString(), label: `${value} min` };
 });
+
+export const searchFilterOptions = [
+  { value: "title", label: "Title" },
+  { value: "ingredient", label: "Ingredient" },
+];
