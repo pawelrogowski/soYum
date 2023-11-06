@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 
 export const StyledDiv = styled.div`
   position: fixed;
@@ -14,8 +14,16 @@ export const StyledDiv = styled.div`
   background-color: rgba(0, 0, 0, 0.8);
   transition: background-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
   z-index: 1;
-
   animation: delayLoader 1.5s ease-in-out 1 forwards;
+
+  ${({ $variant }) =>
+    $variant === "layout"
+      ? css`
+          backdrop-filter: none;
+          background-color: rgba(0, 0, 0, 0);
+          pointer-events: none;
+        `
+      : null}
 
   div {
     width: 14rem;

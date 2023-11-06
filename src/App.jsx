@@ -19,6 +19,7 @@ export const App = () => {
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
       <GlobalStyles isTransitionEnabled={isTransitionEnabled} />
+
       <AppRoutes />
     </ThemeProvider>
   );
