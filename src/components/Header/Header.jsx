@@ -21,11 +21,14 @@ export const Header = () => {
   const handleMenuToggle = () => {
     dispatch(toggleIsMobileMenuOpen(!isMobileMenuOpen));
   };
+  const handleCloseMenu = () => {
+    isMobileMenuOpen && dispatch(toggleIsMobileMenuOpen(false));
+  };
 
   return (
     <StyledHeader>
       <Link to="/home" aria-label="navigate to homepage">
-        <Logo variant="header" />
+        <Logo variant="header" onClick={handleCloseMenu} />
       </Link>
       {isAtLeastDesktopSize && <NavigationDesktop />}
       <UserAvatar image={avatar} placeholder={avatarPlaceholder} name="Feironnnnnnnnnnnn" />
