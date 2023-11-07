@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import Select from "react-select";
 
-import { logoMotion } from "../../../common/animations";
+import { baseButtonMotion } from "../../../common/animations";
 import { Button } from "../../Button/Button";
 import { StyledForm } from "./SearchForm.styled";
 export const SearchForm = ({
@@ -25,7 +25,7 @@ export const SearchForm = ({
           onChange={onChange}
           aria-labelledby="search"
         />
-        <Button variant={variant} type="submit" aria-label="Submit Search" {...logoMotion}>
+        <Button variant={variant} type="submit" aria-label="Submit Search" {...baseButtonMotion}>
           Search
         </Button>
       </div>

@@ -3,7 +3,7 @@ import { debounce } from "lodash";
 import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 
-import { inputErrorMotion } from "../../common/animations.js";
+import { baseButtonMotion, inputErrorMotion } from "../../common/animations.js";
 import { useValidation } from "../../hooks/useValidation.js";
 import {
   addPreparationStep,
@@ -109,11 +109,12 @@ export const RecipePreparationTextArea = ({ className }) => {
         variant="outlineBig"
         onClick={handleAddClick}
         disabled={currentEditIndex !== null || currentTextAreaValueError !== null}
+        {...baseButtonMotion}
       >
         {currentEditIndex !== null ? "Edit existing step" : " Add new step"}
       </Button>
       {currentEditIndex !== null && (
-        <Button onClick={handleCancelClick}>
+        <Button onClick={handleCancelClick} {...baseButtonMotion}>
           <Icon icon="x" />
         </Button>
       )}

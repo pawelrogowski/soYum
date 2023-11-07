@@ -1,5 +1,6 @@
 import { Formik } from "formik";
 
+import { baseButtonMotion } from "../../../common/animations";
 import { validationSchema } from "../../../validation/singInSchema";
 import { Button } from "../../Button/Button";
 import { CustomFormikInput } from "../../CustomFormikInput/CustomFormikInput";
@@ -71,7 +72,7 @@ export const SignInForm = () => {
                 />
               </li>
             </ul>
-            <Button variant="rectBig" type="submit" aria-label="Submit form">
+            <Button variant="rectBig" type="submit" aria-label="Submit form" {...baseButtonMotion}>
               Sign up
             </Button>
           </StyledForm>

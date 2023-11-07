@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 
+import { baseButtonMotion } from "../../../common/animations";
 import { useValidation } from "../../../hooks/useValidation";
 import { setFieldError } from "../../../redux/slices/addRecipeFormSlice";
 import { addRecipeSchema } from "../../../validation/addRecipeSchema";
@@ -79,7 +80,7 @@ export const AddRecipeForm = () => {
       <IngredientList className="ingredient-list" />
       <RecipePreparationTextArea className="recipe-preparation-wrapper" />
       <RecipePreparationStepsPreview />
-      <Button type="button" variant="outlineBig" onClick={validateForm}>
+      <Button type="button" variant="outlineBig" onClick={validateForm} {...baseButtonMotion}>
         Add Recipe
       </Button>
     </StyledForm>

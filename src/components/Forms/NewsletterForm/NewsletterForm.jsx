@@ -1,6 +1,7 @@
 import { Formik } from "formik";
 import PropTypes from "prop-types";
 
+import { baseButtonMotion } from "../../../common/animations";
 import { validationSchema } from "../../../validation/registrationSchema";
 import { Button } from "../../Button/Button";
 import { CustomFormikInput } from "../../CustomFormikInput/CustomFormikInput";
@@ -60,7 +61,7 @@ export const NewsletterForm = ({ layout }) => {
                 autocomplete="off"
               />
             </div>
-            <Button variant="rectBig" type="submit" aria-label="Submit form">
+            <Button variant="rectBig" type="submit" aria-label="Submit form" {...baseButtonMotion}>
               Subscribe
             </Button>
           </StyledForm>

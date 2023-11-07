@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 
+import { baseButtonMotion } from "../../common/animations.js";
 import { Button } from "../Button/Button";
 import { Card } from "../Card/Card";
 import { Heading } from "../Heading/Heading.jsx";
@@ -23,7 +24,11 @@ export const CardGallery = ({
           </li>
         ))}
       </ul>
-      {showButton && <Button variant="rectSmall">{buttonText}</Button>}
+      {showButton && (
+        <Button variant="rectSmall" {...baseButtonMotion}>
+          {buttonText}
+        </Button>
+      )}
     </StyledGallery>
   );
 };

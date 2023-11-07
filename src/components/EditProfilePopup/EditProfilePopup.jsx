@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 
+import { baseIconMotion } from "../../common/animations";
 import {
   toggleIsLogoutModalOpen,
   toggleIsProfileUpdateMenuOpen,
@@ -55,15 +56,11 @@ export const EditProfilePopup = ({ ...props }) => {
     <StyledDiv ref={ref} onClick={handleClickInside} {...props}>
       <div onClick={handleEditProfileOpen}>
         <span>Edit profile</span>
-        <Icon icon="edit" />
+        <Icon icon="edit" {...baseIconMotion} />
       </div>
-      <Button
-        type="button"
-        onClick={handleLogoutModalOpen}
-        aria-label="log out"
-      >
+      <Button type="button" onClick={handleLogoutModalOpen} aria-label="log out">
         Log out
-        <Icon icon="arrow_long" />
+        <Icon icon="arrow_long" {...baseIconMotion} />
       </Button>
     </StyledDiv>
   );

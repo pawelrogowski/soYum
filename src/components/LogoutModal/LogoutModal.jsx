@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
+import { baseIconMotion } from "../../common/animations";
 import { toggleIsLogoutModalOpen } from "../../redux/slices/modalSlice";
 import { Button } from "../Button/Button";
 import { Icon } from "../Icon/Icon";
@@ -63,27 +64,15 @@ export const LogoutModal = () => {
   return (
     <StyledDiv {...modalMotion}>
       <div ref={ref}>
-        <button
-          type="button"
-          aria-label="close logout window"
-          onClick={handleClickClose}
-        >
-          <Icon icon="x" />
+        <button type="button" aria-label="close logout window" onClick={handleClickClose}>
+          <Icon icon="x" {...baseIconMotion} />
         </button>
         <p>Are you sure you want to log out?</p>
         <div>
-          <Button
-            variant="rectSmall"
-            aria-label="confirm logout"
-            onClick={handleLogoutClick}
-          >
+          <Button variant="rectSmall" aria-label="confirm logout" onClick={handleLogoutClick}>
             Log out
           </Button>
-          <Button
-            variant="rectSmallDisabled"
-            aria-label="cancel"
-            onClick={handleClickClose}
-          >
+          <Button variant="rectSmallDisabled" aria-label="cancel" onClick={handleClickClose}>
             Cancel
           </Button>
         </div>

@@ -6,7 +6,7 @@ import { useSelector } from "react-redux/es/hooks/useSelector";
 import Select from "react-select";
 import Creatable from "react-select/creatable";
 
-import { inputErrorMotion } from "../../common/animations";
+import { baseIconMotion, inputErrorMotion } from "../../common/animations";
 import { ingredientSelectOptions, measureTypeSelectOptions } from "../../common/selectOptions";
 import { removeIngredient } from "../../redux/slices/addRecipeFormSlice";
 import { Icon } from "../Icon/Icon";
@@ -142,7 +142,7 @@ const IngredientSelectComponent = ({
         onClick={() => handleRemoveIngredient(index)}
         disabled={index === 0}
       >
-        <Icon icon="x" />
+        <Icon icon="x" {...baseIconMotion} />
       </button>
     </StyledDiv>
   );

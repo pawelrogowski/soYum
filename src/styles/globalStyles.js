@@ -77,7 +77,9 @@ export const GlobalStyles = createGlobalStyle`
 		padding: 0;
 	}
 
-
+  button,svg {
+    outline: none;
+  }
 
 	ol,
 	ul {

@@ -126,3 +126,66 @@ export const startPageMotion = {
   exit: { opacity: 0 },
   transition: { duration: 0.1 },
 };
+
+export const baseButtonMotion = {
+  whileHover: {
+    scale: 1.02,
+    transition: {
+      scale: { duration: 0.1 },
+    },
+  },
+  whileFocus: {
+    scale: 1.02,
+    transition: {
+      scale: { duration: 0.1 },
+    },
+  },
+  whileTap: {
+    scale: [0.95, 1.05],
+    transition: {
+      scale: { duration: 0.2 },
+    },
+  },
+};
+
+export const socialIconMotion = {
+  whileHover: {
+    scale: 1.3,
+    transition: {
+      background: { duration: 55, yoyo: Infinity, repeat: Infinity },
+    },
+  },
+  whileFocus: {
+    scale: 1.3,
+    transition: {
+      scale: { duration: 0.1 },
+    },
+  },
+  whileTap: {
+    scale: [0.95, 1.4],
+    transition: {
+      scale: { duration: 0.2 },
+    },
+  },
+};
+
+export const baseIconMotion = {
+  whileHover: {
+    scale: 1.3,
+    transition: {
+      scale: { duration: 0.1 },
+    },
+  },
+  whileFocus: {
+    scale: 1.3,
+    transition: {
+      scale: { duration: 0.1 },
+    },
+  },
+  whileTap: {
+    scale: [0.8, 1.4],
+    transition: {
+      scale: { duration: 0.2 },
+    },
+  },
+};

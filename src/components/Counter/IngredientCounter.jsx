@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 
+import { baseIconMotion } from "../../common/animations";
 import { addIngredient, removeLastIngredient } from "../../redux/slices/addRecipeFormSlice";
 import { Icon } from "../Icon/Icon";
 import { StyledDiv } from "./IngredientCounter.styled";
@@ -36,7 +37,7 @@ export const IngredientCounter = ({ min = 0, max = Infinity }) => {
         onClick={handleDecrement}
         disabled={recipeIngredients.length <= min}
       >
-        <Icon icon="minus" />
+        <Icon icon="minus" {...baseIconMotion} />
       </button>
 
       <span>{recipeIngredients.length}</span>
@@ -47,7 +48,7 @@ export const IngredientCounter = ({ min = 0, max = Infinity }) => {
         onClick={handleIncrement}
         disabled={recipeIngredients.length >= max}
       >
-        <Icon icon="plus" />
+        <Icon icon="plus" {...baseIconMotion} />
       </button>
     </StyledDiv>
   );

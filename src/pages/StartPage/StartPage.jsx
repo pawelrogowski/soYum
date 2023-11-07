@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { startPageMotion } from "../../common/animations";
+import { baseButtonMotion, startPageMotion } from "../../common/animations";
 import { Button } from "../../components/Button/Button";
 import { Logo } from "../../components/Logo/Logo";
 import { StartPageContainer } from "./StartPage.styled";
@@ -18,14 +18,14 @@ export const StartPage = () => {
         <ul>
           <li>
             <Link to="/register">
-              <Button variant="normal" aria-label="Registration">
+              <Button variant="normal" aria-label="Registration" {...baseButtonMotion}>
                 Registration
               </Button>
             </Link>
           </li>
           <li>
             <Link to="/signin">
-              <Button variant="outlineBig" aria-label="Sign In">
+              <Button variant="outlineBig" aria-label="Sign In" {...baseButtonMotion}>
                 Sign In
               </Button>
             </Link>

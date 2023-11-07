@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 
+import { baseIconMotion } from "../../common/animations";
 import { toggleIsProfileUpdateMenuOpen } from "../../redux/slices/modalSlice";
 import { UserUpdateForm } from "../Forms/UserUpdateForm/UserUpdateForm";
 import { Icon } from "../Icon/Icon";
@@ -60,7 +61,7 @@ export const EditUserModal = () => {
     <StyledDiv {...modalMotion}>
       <div ref={ref}>
         <button type="button" onClick={handleClickClose}>
-          <Icon icon="x" />
+          <Icon icon="x" {...baseIconMotion} />
         </button>
         <UserUpdateForm />
       </div>

@@ -1,15 +1,11 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
+import { baseIconMotion } from "../../common/animations";
 import { Icon } from "../Icon/Icon";
 import { StyledDiv } from "./PaginationFilter.styled";
 
-export const PaginationFilter = ({
-  currentPage,
-  maxPages,
-  onPageChange,
-  maxPagesToDisplay,
-}) => {
+export const PaginationFilter = ({ currentPage, maxPages, onPageChange, maxPagesToDisplay }) => {
   const handlePageChange = (page) => {
     onPageChange(page);
   };
@@ -22,10 +18,7 @@ export const PaginationFilter = ({
     startPage = endPage - maxPagesToDisplay + 1;
   }
 
-  const pagesToDisplay = Array.from(
-    { length: endPage - startPage + 1 },
-    (_, i) => i + startPage
-  );
+  const pagesToDisplay = Array.from({ length: endPage - startPage + 1 }, (_, i) => i + startPage);
 
   return (
     <StyledDiv>
@@ -37,7 +30,7 @@ export const PaginationFilter = ({
           if (currentPage > 1) handlePageChange(currentPage - 1);
         }}
       >
-        <Icon icon="arrow_slim" />
+        <Icon icon="arrow_slim" {...baseIconMotion} />
       </Link>
 
       <ul>
@@ -62,7 +55,7 @@ export const PaginationFilter = ({
           if (currentPage < maxPages) handlePageChange(currentPage + 1);
         }}
       >
-        <Icon icon="arrow_slim" />
+        <Icon icon="arrow_slim" {...baseIconMotion} />
       </Link>
     </StyledDiv>
   );

@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
 
+import { baseIconMotion } from "../../common/animations";
 import { breakpoints } from "../../styles/themes";
 import { Icon } from "../Icon/Icon";
 import { StyledDiv } from "./CallToAction.styled";
@@ -15,7 +16,7 @@ export const CallToAction = ({ text, highlightedText, linkText, icon }) => {
       </p>
       <Link to="#">
         <span>{linkText}</span>
-        <Icon icon={icon} />
+        <Icon icon={icon} {...baseIconMotion} />
       </Link>
       {isAtLeastTablet && <Icon icon="squiggly_arrow" />}
     </StyledDiv>

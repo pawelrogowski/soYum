@@ -2,6 +2,7 @@ import { Field, Formik } from "formik";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import avatar from "../../../assets/images/avatar.webp";
+import { baseButtonMotion, baseIconMotion } from "../../../common/animations";
 import useUploadWidget from "../../../hooks/useUploadWidget";
 import { userEditSchema } from "../../../validation/userEditSchema";
 import { Button } from "../../Button/Button";
@@ -85,7 +86,7 @@ export const UserUpdateForm = () => {
               <img src={avatarPreview || avatar} width="88px" onClick={handleAvatarClick} />
             </picture>
             <button type="button" onClick={handleAvatarClick}>
-              <Icon icon="plus" />
+              <Icon icon="plus" {...baseIconMotion} />
             </button>
           </div>
           <label htmlFor="username" />
@@ -107,7 +108,7 @@ export const UserUpdateForm = () => {
                 type="button"
                 onClick={handleUsernameEdit}
               >
-                <Icon icon="checkbox" />
+                <Icon icon="checkbox" {...baseIconMotion} />
               </button>
             )}
             {isUsernameEditable ? (
@@ -119,15 +120,20 @@ export const UserUpdateForm = () => {
                   resetUsername();
                 }}
               >
-                <Icon icon="x" />
+                <Icon icon="x" {...baseIconMotion} />
               </button>
             ) : (
               <button className="edit-username-button" type="button" onClick={handleUsernameEdit}>
-                <Icon icon="edit" />
+                <Icon icon="edit" {...baseIconMotion} />
               </button>
             )}
 
-            <Button type="submit" variant="rectBig" disabled={isUsernameEditable}>
+            <Button
+              type="submit"
+              variant="rectBig"
+              disabled={isUsernameEditable}
+              {...baseButtonMotion}
+            >
               Save Changes
             </Button>
           </div>
