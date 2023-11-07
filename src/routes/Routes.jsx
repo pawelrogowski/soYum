@@ -3,6 +3,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 
 import { LoaderDots } from "../components/LoaderDots/LoaderDots";
 import { LocationProvider } from "../components/LocationProvider/LocationProvider.jsx";
+import usePreloadOnHover from "../hooks/usePreloadOnHover.js";
 
 // layouts
 const AuthLayout = lazy(() => import("../layouts/AuthLayout/AuthLayout"));
@@ -73,6 +74,19 @@ export const AppRoutes = () => {
       import("../pages/NotFoundPage/NotFoundPage.jsx");
       break;
   }
+
+  usePreloadOnHover([
+    { to: "/signin", component: "SignInPage" },
+    { to: "/register", component: "RegistrationPage" },
+    { to: "/", component: "StartPage" },
+    { to: "/home", component: "HomePage" },
+    { to: "/categories", component: "CategoriesPage" },
+    { to: "/myrecipes", component: "MyRecipesPage" },
+    { to: "/add", component: "AddRecipePage" },
+    { to: "/favorites", component: "FavoritesPage" },
+    { to: "/search", component: "SearchPage" },
+    { to: "/404", component: "NotFoundPage" },
+  ]);
 
   return (
     <Suspense fallback={<LoaderDots />}>
