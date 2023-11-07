@@ -9,16 +9,6 @@ import usePreloadOnHover from "../hooks/usePreloadOnHover.js";
 const AuthLayout = lazy(() => import("../layouts/AuthLayout/AuthLayout"));
 const MainLayout = lazy(() => import("../layouts/MainLayout/MainLayout"));
 
-// import AddRecipePage from "../pages/AddRecipePage/AddRecipePage.jsx";
-// import CategoriesPage from "../pages/CategoriesPage/CategoriesPage.jsx";
-// import FavoritesPage from "../pages/FavoritesPage/FavoritesPage.jsx";
-// import HomePage from "../pages/HomePage/HomePage.jsx";
-// import MyRecipesPage from "../pages/MyRecipesPage/MyRecipesPage.jsx";
-// import NotFoundPage from "../pages/NotFoundPage/NotFoundPage.jsx";
-// import RegisterPage from "../pages/RegistrationPage/RegistrationPage.jsx";
-// import SearchPage from "../pages/SearchPage/SearchPage.jsx";
-// import SignInPage from "../pages/SignInPage/SignInPage.jsx";
-// import StartPage from "../pages/StartPage/StartPage.jsx";
 // pages
 const SignInPage = lazy(() => import("../pages/SignInPage/SignInPage.jsx"));
 const RegisterPage = lazy(() => import("../pages/RegistrationPage/RegistrationPage.jsx"));
@@ -41,46 +31,12 @@ export const AppRoutes = () => {
     }
   }, [location]);
 
-  //this exist to force initial loading of components during framer animation instead of waiting for it to finish
-  switch (location.pathname) {
-    case "/signin":
-      import("../pages/SignInPage/SignInPage.jsx");
-      break;
-    case "/register":
-      import("../pages/RegistrationPage/RegistrationPage.jsx");
-      break;
-    case "/":
-      import("../pages/StartPage/StartPage.jsx");
-      break;
-    case "/home":
-      import("../pages/HomePage/HomePage.jsx");
-      break;
-    case "/categories":
-      import("../pages/CategoriesPage/CategoriesPage.jsx");
-      break;
-    case "/myrecipes":
-      import("../pages/MyRecipesPage/MyRecipesPage.jsx");
-      break;
-    case "/add":
-      import("../pages/AddRecipePage/AddRecipePage");
-      break;
-    case "/favorites":
-      import("../pages/FavoritesPage/FavoritesPage.jsx");
-      break;
-    case "/search":
-      import("../pages/SearchPage/SearchPage.jsx");
-      break;
-    case "/404":
-      import("../pages/NotFoundPage/NotFoundPage.jsx");
-      break;
-  }
-
   usePreloadOnHover([
     { to: "/signin", component: "SignInPage" },
     { to: "/register", component: "RegistrationPage" },
     { to: "/", component: "StartPage" },
     { to: "/home", component: "HomePage" },
-    { to: "/categories", component: "CategoriesPage" },
+    { to: "/categories/beef", component: "CategoriesPage" },
     { to: "/myrecipes", component: "MyRecipesPage" },
     { to: "/add", component: "AddRecipePage" },
     { to: "/favorites", component: "FavoritesPage" },
