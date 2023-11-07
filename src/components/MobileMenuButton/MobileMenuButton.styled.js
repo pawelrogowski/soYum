@@ -8,6 +8,7 @@ export const StyledButton = styled.button`
   border: none;
   width: 2.8rem;
   height: 100%;
+  z-index: 2;
   cursor: pointer;
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {

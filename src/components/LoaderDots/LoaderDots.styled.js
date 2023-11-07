@@ -13,7 +13,7 @@ export const StyledDiv = styled.div`
   backdrop-filter: blur(0.2rem);
   background-color: rgba(0, 0, 0, 0.8);
   transition: background-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
-  z-index: 1;
+  z-index: 3;
   animation: delayLoader 1.5s ease-in-out 1 forwards;
 
   ${({ $variant }) =>

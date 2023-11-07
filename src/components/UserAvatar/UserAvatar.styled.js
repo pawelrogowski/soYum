@@ -6,8 +6,9 @@ export const StyledDiv = styled.div`
   --color-decoration: ${({ theme }) => theme.backgroundDecoration.secondary};
   --blend-mode: ${({ theme }) => theme.userAvatar.blend};
   position: relative;
-
+  z-index: 2;
   margin-right: 5rem;
+
   > button {
     height: 100%;
     max-height: 4.6rem;

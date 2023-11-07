@@ -131,6 +131,8 @@ export const StyledSection = styled.section`
       border-radius: 10rem;
       z-index: -1;
       transform: translate(0, -50%) rotate(45deg);
+      clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 50%, calc(100% - 30px) 100%, 0 100%);
+      z-index: 50;
       @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         width: 200%;
         height: 200%;

@@ -8,6 +8,7 @@ export const StyledLabel = styled.label`
   display: inline-block;
   width: 6.1rem;
   height: 2.7rem;
+  z-index: 2;
 
   > input {
     opacity: 0;

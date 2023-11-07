@@ -11,7 +11,7 @@ export const StyledAside = styled(motion.aside)`
   --breakpoint-tablet: ${({ theme }) => theme.breakpoints.tablet};
 
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   top: 0;
   left: 0;
   width: 100vw;
