@@ -1,10 +1,11 @@
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 
 export const StyledDiv = styled.div`
   --color-userAvatar-fontIdle: ${({ theme }) => theme.userAvatar.fontIdle};
   --color-userAvatar-fontHover: ${({ theme }) => theme.userAvatar.fontHover};
   --color-decoration: ${({ theme }) => theme.backgroundDecoration.secondary};
-  --blend-mode: ${({ theme }) => theme.userAvatar.blend};
+
+  --color-font-alternative: ${({ theme }) => theme.userAvatar.fontAlternativeIdle};
   position: relative;
   z-index: 2;
   margin-right: 5rem;
@@ -26,35 +27,38 @@ export const StyledDiv = styled.div`
       cursor: pointer;
       > span:first-of-type {
         color: var(--color-userAvatar-fontHover);
-        mix-blend-mode: initial;
       }
       img {
         box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.9);
       }
     }
+    ${({ $addDecor }) =>
+      $addDecor &&
+      css`
+        &::before {
+          pointer-events: none;
+          content: "";
+          position: absolute;
+          width: 0.6rem;
+          height: 0.6rem;
+          border-radius: 0.3rem;
+          background-color: var(--color-decoration);
+          bottom: -8.35rem;
+          left: 3.8rem;
+          @media screen and (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+            width: 1.2rem;
+            height: 1.2rem;
+            bottom: -10rem;
+            left: -10rem;
+            rotate: -25deg;
+          }
+          @media screen and (min-width: ${(props) => props.theme.breakpoints.desktop}) {
+            bottom: -13.9rem;
+            left: -30.5rem;
+          }
+        }
+      `}
 
-    &::before {
-      pointer-events: none;
-      content: "";
-      position: absolute;
-      width: 0.6rem;
-      height: 0.6rem;
-      border-radius: 0.3rem;
-      background-color: var(--color-decoration);
-      bottom: -8.35rem;
-      left: 3.8rem;
-      @media screen and (min-width: ${(props) => props.theme.breakpoints.tablet}) {
-        width: 1.2rem;
-        height: 1.2rem;
-        bottom: -10rem;
-        left: -10rem;
-        rotate: -25deg;
-      }
-      @media screen and (min-width: ${(props) => props.theme.breakpoints.desktop}) {
-        bottom: -13.9rem;
-        left: -30.5rem;
-      }
-    }
     > picture img {
       height: 3.4rem;
       width: 3.4rem;
@@ -71,19 +75,28 @@ export const StyledDiv = styled.div`
     }
 
     > span {
-      color: var(--color-userAvatar-fontIdle);
+      color: var(--color-font-alternative);
       font-size: 1.2rem;
       font-family: "Poppins";
       line-height: 2.34rem;
       letter-spacing: normal;
       font-weight: 600;
       font-style: normal;
-      mix-blend-mode: var(--blend-mode);
-
+      @media screen and (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+        color: var(--color-userAvatar-fontIdle);
+      }
       @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         font-size: 1.4rem;
         line-height: 2.38rem;
       }
+      ${({ $addDecor }) =>
+        !$addDecor
+          ? css`
+              color: var(--color-font-alternative);
+            `
+          : css`
+              color: var(--color-userAvatar-fontIdle);
+            `}
     }
   }
 `;

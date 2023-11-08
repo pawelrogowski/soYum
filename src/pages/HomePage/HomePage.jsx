@@ -27,7 +27,9 @@ const HomePage = () => {
 
   return (
     <MainContainer {...routeChangeMotion}>
-      <Hero />
+      <section className="section-hero">
+        <Hero />
+      </section>
       <CardGallery
         data={images}
         showHeading
@@ -36,6 +38,7 @@ const HomePage = () => {
         buttonText="See All"
         limit={imgNumPerCategory}
       />
+
       <CardGallery
         data={images}
         showHeading

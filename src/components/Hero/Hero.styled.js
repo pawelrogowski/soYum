@@ -1,67 +1,36 @@
 import styled from "styled-components";
 
-import leaves from "../../assets/images/leaves@1x.webp";
-
-export const StyledSection = styled.section`
+export const StyledDiv = styled.div`
   --color-brand-highlight: ${({ theme }) => theme.brandColors.main};
   --color-hero-text: ${({ theme }) => theme.hero.text};
   --color-hero-bg-decoration: ${({ theme }) => theme.hero.bgDecoration};
-  position: relative;
-  padding: 6.5rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 14.7rem;
-  width: 100%;
-  min-height: 54.36rem;
-  min-width: 32rem;
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    width: 100%;
     flex-direction: row;
-    padding: 9.5rem 0;
-    padding-bottom: 20rem;
-  }
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-    gap: 2rem;
-  }
-  &:after {
-    content: "";
-    position: absolute;
-    top: 21%;
-    left: -47px;
-    width: 45%;
-    height: 45%;
-    transform: translate(-50%, -50%) rotate(5deg) scaleX(-1);
-    background-image: url(${leaves});
-    background-size: contain;
-    filter: blur(0.4rem);
-    z-index: -1;
-    background-repeat: no-repeat;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-      top: 19%;
-      left: -59px;
-      width: 35%;
-      height: 35%;
-      transform: translate(-50%, -50%) rotate(23deg) scaleX(-1);
-    }
+    justify-content: space-evenly;
     @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-      top: 10%;
-      left: -116px;
-      width: 45%;
-      height: 45%;
-      transform: translate(-50%, -50%) rotate(33deg) scaleX(-1);
+      gap: 7.4rem;
     }
   }
-  > div:first-of-type {
+
+  > .hero__text-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    gap: 1.4rem;
     @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       align-items: start;
       max-width: 36.2rem;
+      gap: 2.4rem;
     }
     @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-      max-width: 50rem;
+      max-width: 46.5rem;
+      gap: 1.4rem;
+      margin-top: -5.1rem;
     }
     h1 {
       white-space: nowrap;
@@ -69,20 +38,17 @@ export const StyledSection = styled.section`
       font-size: 6rem;
       line-height: 1;
       letter-spacing: -0.3rem;
-      margin-bottom: 1.4rem;
       font-weight: 400;
       @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         font-size: 7.2rem;
         line-height: 0.72;
         letter-spacing: -0.036rem;
-        margin-bottom: 3.6rem;
         text-align: start;
       }
       @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
         font-size: 10rem;
         line-height: 1;
         letter-spacing: -0.05rem;
-        margin-bottom: 4.4rem;
       }
 
       > span {
@@ -96,99 +62,102 @@ export const StyledSection = styled.section`
       line-height: 1.28;
       letter-spacing: -0.028rem;
       margin-bottom: 4.4rem;
-      max-width: 25rem;
-      font-weight: 400;
+      min-width: 25rem;
+      max-width: 32rem;
+      text-wrap: pretty;
 
       @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
         max-width: 100%;
         text-align: start;
-        margin-bottom: 4.2rem;
+        margin-bottom: 0.8rem;
       }
 
       @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
         font-size: 1.8rem;
         line-height: 1.33;
         letter-spacing: -0.036rem;
-        margin-bottom: 5rem;
+        margin-bottom: 3.6rem;
       }
     }
   }
-  > div:nth-of-type(2) {
-    position: relative;
-    margin-bottom: 4.4rem;
-    width: 100%;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-      margin-bottom: 0rem;
-    }
-    &:before {
-      content: "";
-      position: absolute;
-      background: var(--color-hero-bg-decoration);
-      width: 150%;
-      height: 150%;
-      top: 50%;
-      left: 58%;
-      border-radius: 10rem;
-      z-index: -1;
-      transform: translate(0, -50%) rotate(45deg);
-      clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 50%, calc(100% - 30px) 100%, 0 100%);
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-        width: 200%;
-        height: 200%;
-        top: 40%;
-        left: 35%;
-        border-radius: 10rem;
-        transform: translate(0, -50%) rotate(30deg);
-      }
 
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-        width: 600%;
-        height: 600%;
-        top: -120%;
-        left: 78%;
-        border-radius: 10rem;
-        z-index: -1;
-        transform: translate(0, -50%) rotate(17deg);
-      }
-    }
-    &:after {
-      content: "";
-      position: absolute;
-      top: 27%;
-      left: 51%;
-      background-image: url(${leaves});
-      background-size: contain;
-      width: 200%;
-      height: 200%;
-      transform: translate(-50%, -50%) rotate(60deg) scaleX(-1);
-      filter: blur(0.4rem);
-      z-index: -1;
-      background-repeat: no-repeat;
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-        top: 37%;
-        left: 45%;
-        width: 235%;
-        height: 235%;
-        transform: translate(-50%, -50%) rotate(67deg) scaleX(-1);
-      }
+  > .hero__image-container {
+    position: relative;
+
+    height: 100%;
+    margin-bottom: 2.1rem;
+    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      margin-bottom: 0;
     }
 
     > picture {
+      width: 100%;
+      max-width: 49.2rem;
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 32%;
+        left: 51%;
+        background-image: url(/src/assets/images/leaves@1x.webp);
+        background-size: contain;
+        width: 230%;
+        height: 230%;
+        max-width: 1142px;
+        transform: translate(-50%, -50%) rotate(60deg) scaleX(-1);
+        filter: blur(0.2rem);
+        z-index: -1;
+        background-repeat: no-repeat;
+
+        @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+          top: 37%;
+          left: 45%;
+          width: 235%;
+          height: 235%;
+          transform: translate(-50%, -50%) rotate(67deg) scaleX(-1);
+        }
+      }
+      > div:last-of-type {
+        width: 145%;
+        height: 145%;
+        top: 50%;
+        left: 50%;
+        transform: translate(0, -50%) rotate(49deg) skew(5deg, 5deg);
+        @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+          width: 500%;
+          height: 500%;
+          max-width: 2435px;
+          top: -73%;
+          left: 127%;
+          transform: translate(0, -50%) rotate(-62deg) skewX(18deg) skewY(1deg);
+          border-radius: 12rem;
+        }
+        @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+          width: 500%;
+          height: 500%;
+          max-width: 2620px;
+          top: -95%;
+          left: 113%;
+          transform: translate(0, -50%) rotate(-66deg) skewX(18deg) skewY(0deg);
+          border-radius: 12rem;
+        }
+      }
       > img {
         max-width: 100%;
         min-width: 34rem;
         width: 100%;
         height: auto;
-        background: transparent;
         aspect-ratio: 320 / 296;
         @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-          max-width: 110%;
+          max-width: 54rem;
           min-width: 40rem;
           width: 110%;
           aspect-ratio: 378 / 351;
+          min-width: auto;
         }
         @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
           min-width: 46.3rem;
+          max-width: fit-content;
           margin-bottom: 0rem;
           aspect-ratio: 578 / 539;
         }
@@ -197,8 +166,10 @@ export const StyledSection = styled.section`
   }
   form {
     height: 5.2rem;
+    max-width: 42rem;
     @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       height: 5.9rem;
+      max-width: 100%;
     }
     @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       height: 7rem;

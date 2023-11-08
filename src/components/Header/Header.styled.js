@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 
 export const StyledHeader = styled.header`
   --color-decoration: ${({ theme }) => theme.backgroundDecoration.primary};
@@ -13,43 +13,46 @@ export const StyledHeader = styled.header`
   flex-direction: row;
   align-items: center;
   flex-wrap: nowrap;
-  padding: 1.8rem 1.8rem 0 1.8rem;
+  padding: 1.8rem 2.1rem 0 2.1rem;
+  ${({ $addDecor }) =>
+    $addDecor &&
+    css`
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0.8rem;
+        height: 0.8rem;
+        border-radius: 0.3rem;
+        background-color: var(--color-decoration);
+        @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+          width: 1.4rem;
+          height: 1.4rem;
+        }
+      }
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    width: 0.8rem;
-    height: 0.8rem;
-    border-radius: 0.3rem;
-    background-color: var(--color-decoration);
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-      width: 1.4rem;
-      height: 1.4rem;
-    }
-  }
+      &::before {
+        bottom: -2.1rem;
+        left: 14.3rem;
+        rotate: -25deg;
 
-  &::before {
-    bottom: -2.1rem;
-    left: 14.3rem;
-    rotate: -25deg;
+        @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+          bottom: -5.8rem;
+          left: 19.8rem;
+        }
+      }
 
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-      bottom: -5.8rem;
-      left: 19.8rem;
-    }
-  }
+      &::after {
+        bottom: -4.4rem;
+        right: 1rem;
+        rotate: -25deg;
 
-  &::after {
-    bottom: -4.4rem;
-    right: 1rem;
-    rotate: -25deg;
-
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-      bottom: -6.9rem;
-      right: 10rem;
-    }
-  }
+        @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+          bottom: -6.9rem;
+          right: 10rem;
+        }
+      }
+    `}
 
   > a:first-of-type {
     z-index: 3;
