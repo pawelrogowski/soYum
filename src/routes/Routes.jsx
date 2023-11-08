@@ -1,10 +1,8 @@
 import { lazy, Suspense, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
-
 import { LoaderDots } from "../components/LoaderDots/LoaderDots";
 import { LocationProvider } from "../components/LocationProvider/LocationProvider.jsx";
 import usePreloadOnHover from "../hooks/usePreloadOnHover.js";
-
 // layouts
 const AuthLayout = lazy(() => import("../layouts/AuthLayout/AuthLayout"));
 const MainLayout = lazy(() => import("../layouts/MainLayout/MainLayout"));

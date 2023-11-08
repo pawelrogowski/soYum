@@ -8,8 +8,8 @@ export const StyledDiv = styled.div`
   --color-text-link-active: ${({ theme }) => theme.callToAction.link.textActive};
 
   position: absolute;
-  bottom: 10rem;
-  right: 0.9rem;
+  bottom: 9.1rem;
+  right: 0.7rem;
   width: 22.5rem;
   padding: 0.8rem;
   display: flex;
@@ -20,8 +20,8 @@ export const StyledDiv = styled.div`
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
     width: 26rem;
     padding: 1.2rem;
-    bottom: 23rem;
-    right: 0rem;
+    bottom: 3.8rem;
+    right: 0.6rem;
   }
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     width: 29.8rem;

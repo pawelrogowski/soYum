@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import avatar from "../../assets/images/avatar.webp";
 import avatarPlaceholder from "../../assets/images/avatar-placeholder.png";
+import useShowDecorations from "../../hooks/useShowDecorations";
 import { toggleIsMobileMenuOpen } from "../../redux/slices/modalSlice";
 import { breakpoints } from "../../styles/themes";
 import { Logo } from "../Logo/Logo";
@@ -14,19 +15,20 @@ import { UserAvatar } from "../UserAvatar/UserAvatar";
 import { StyledHeader } from "./Header.styled";
 
 export const Header = () => {
+  const shouldUseDecor = useShowDecorations();
   const dispatch = useDispatch();
   const isMobileMenuOpen = useSelector((state) => state.modal.isMobileMenuOpen);
   const isAtLeastDesktopSize = useMediaQuery({ minWidth: breakpoints.desktop });
-
   const handleMenuToggle = () => {
     dispatch(toggleIsMobileMenuOpen(!isMobileMenuOpen));
   };
+
   const handleCloseMenu = () => {
     isMobileMenuOpen && dispatch(toggleIsMobileMenuOpen(false));
   };
 
   return (
-    <StyledHeader>
+    <StyledHeader $addDecor={shouldUseDecor}>
       <Link to="/home" aria-label="navigate to homepage">
         <Logo variant="header" onClick={handleCloseMenu} />
       </Link>

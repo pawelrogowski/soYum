@@ -256,6 +256,7 @@ export const lightTheme = {
   },
   userAvatar: {
     fontIdle: "rgb(34, 37, 42)",
+    fontAlternativeIdle: "rgb(34, 37, 42)",
     fontHover: brandColors.main,
     fontActive: brandColors.main,
     borderIdle: "none",
@@ -677,6 +678,7 @@ export const darkTheme = {
   },
   userAvatar: {
     fontIdle: "rgba(250, 250, 250, 1)",
+    fontAlternativeIdle: "rgb(34, 37, 42)",
     fontHover: brandColors.main,
     fontActive: brandColors.main,
     borderIdle: "none",

@@ -9,7 +9,7 @@ export const StyledAside = styled(motion.aside)`
   --color-navigation-hover: ${({ theme }) => theme.navigation.colorHover};
   --color-mobileMenu-bg: ${({ theme }) => theme.mobileMenu.bg};
   --breakpoint-tablet: ${({ theme }) => theme.breakpoints.tablet};
-
+  --color-brand: ${({ theme }) => theme.brandColors.main};
   position: absolute;
   z-index: 3;
   top: 0;
@@ -26,6 +26,11 @@ export const StyledAside = styled(motion.aside)`
     display: flex;
     justify-content: center;
     align-items: center;
+    > button {
+      svg {
+        stroke: var(--color-navigation-idle);
+      }
+    }
     > svg {
       position: absolute;
       top: 2.3rem;
