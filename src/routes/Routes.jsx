@@ -40,7 +40,6 @@ export const AppRoutes = () => {
     { to: "/add", component: "AddRecipePage" },
     { to: "/favorites", component: "FavoritesPage" },
     { to: "/search", component: "SearchPage" },
-    { to: "/404", component: "NotFoundPage" },
   ]);
 
   return (
@@ -65,7 +64,7 @@ export const AppRoutes = () => {
               <Route path=":page" element={<FavoritesPage />} />
             </Route>
             <Route path="/search" element={<SearchPage />} />
-            <Route path="/404" element={<NotFoundPage />} />
+            <Route path="/notfound" element={<NotFoundPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>

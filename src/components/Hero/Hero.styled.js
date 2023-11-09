@@ -129,11 +129,11 @@ export const StyledDiv = styled.div`
         border-radius: 12rem;
       }
       @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-        width: 165%;
+        width: 365%;
         height: 161%;
         top: initial;
         bottom: -73px;
-        left: 26%;
+        left: 36%;
         transform: translate(0%, 0) rotate(22deg) skewY(-20deg);
         border-radius: 10rem;
       }

@@ -12,7 +12,7 @@ export const useShowDecorations = () => {
     favorites: true,
     myrecipes: true,
     shoppinglist: true,
-    404: true,
+    notfound: false,
     search: true,
   };
 
