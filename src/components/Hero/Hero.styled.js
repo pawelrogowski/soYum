@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+import leaves from "../../assets/images/leaves@1x.webp";
 export const StyledDiv = styled.div`
   --color-brand-highlight: ${({ theme }) => theme.brandColors.main};
   --color-hero-text: ${({ theme }) => theme.hero.text};
@@ -99,7 +100,7 @@ export const StyledDiv = styled.div`
         position: absolute;
         top: 32%;
         left: 51%;
-        background-image: url(/src/assets/images/leaves@1x.webp);
+        background-image: url(${leaves});
         background-size: contain;
         width: 230%;
         height: 230%;
