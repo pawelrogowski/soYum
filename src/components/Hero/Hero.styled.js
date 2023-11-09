@@ -95,6 +95,48 @@ export const StyledDiv = styled.div`
       width: 100%;
       max-width: 49.2rem;
       position: relative;
+      max-width: 100%;
+      min-width: 34rem;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 320 / 296;
+      max-width: 100%;
+      min-width: 34rem;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 320 / 296;
+      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        max-width: 54rem;
+        min-width: 40rem;
+        width: 110%;
+        aspect-ratio: 378 / 351;
+        min-width: auto;
+      }
+      @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        min-width: 46.3rem;
+        max-width: fit-content;
+        margin-bottom: 0rem;
+        aspect-ratio: 578 / 539;
+      }
+      > img {
+        max-width: 51rem;
+        min-width: 34rem;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 320 / 296;
+        @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+          max-width: 54rem;
+          min-width: 40rem;
+          width: 110%;
+          aspect-ratio: 378 / 351;
+        }
+        @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+          min-width: 46.3rem;
+          max-width: 59.8rem;
+          margin-bottom: 0rem;
+          aspect-ratio: 578 / 539;
+        }
+      }
       &:after {
         content: "";
         position: absolute;
@@ -141,26 +183,6 @@ export const StyledDiv = styled.div`
           left: 113%;
           transform: translate(0, -50%) rotate(-66deg) skewX(18deg) skewY(0deg);
           border-radius: 12rem;
-        }
-      }
-      > img {
-        max-width: 100%;
-        min-width: 34rem;
-        width: 100%;
-        height: auto;
-        aspect-ratio: 320 / 296;
-        @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-          max-width: 54rem;
-          min-width: 40rem;
-          width: 110%;
-          aspect-ratio: 378 / 351;
-          min-width: auto;
-        }
-        @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-          min-width: 46.3rem;
-          max-width: fit-content;
-          margin-bottom: 0rem;
-          aspect-ratio: 578 / 539;
         }
       }
     }
