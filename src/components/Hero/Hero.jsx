@@ -1,16 +1,16 @@
 import { useMediaQuery } from "react-responsive";
 
+import heroMobile1x from "../../assets/images/hero.webp?w=380&format=avif";
+import heroMobile2x from "../../assets/images/hero.webp?w=480&format=avif";
 import heroFallback from "../../assets/images/hero.webp?w=600";
+import heroMobile3x from "../../assets/images/hero.webp?w=640&format=avif";
 import heroTablet1x from "../../assets/images/hero.webp?w=768&format=avif";
+import heroMobile4x from "../../assets/images/hero.webp?w=960&format=avif";
 import heroDesktop1x from "../../assets/images/hero.webp?w=1024&format=avif";
 import heroTablet2x from "../../assets/images/hero.webp?w=1536&format=avif";
 import heroDesktop2x from "../../assets/images/hero.webp?w=2048&format=avif";
 import heroTablet3x from "../../assets/images/hero.webp?w=2304&format=avif";
 import heroDesktop3x from "../../assets/images/hero.webp?w=3072&format=avif";
-import heroMobile1x from "../../assets/images/hero.png?w=380&format=avif";
-import heroMobile2x from "../../assets/images/hero.webp?w=480&format=avif";
-import heroMobile3x from "../../assets/images/hero.webp?w=640&format=avif";
-import heroMobile4x from "../../assets/images/hero.webp?w=960&format=avif";
 import { breakpoints } from "../../styles/themes";
 import { CallToAction } from "../CallToAction/CallToAction";
 import { SearchForm } from "../Forms/SearchForm/SearchForm";
