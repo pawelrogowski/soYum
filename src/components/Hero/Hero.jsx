@@ -1,16 +1,19 @@
 import { useMediaQuery } from "react-responsive";
 
-import heroMobile1x from "../../assets/images/hero.webp?w=380&format=avif";
-import heroMobile2x from "../../assets/images/hero.webp?w=480&format=avif";
-import heroFallback from "../../assets/images/hero.webp?w=600";
-import heroMobile3x from "../../assets/images/hero.webp?w=640&format=avif";
-import heroTablet1x from "../../assets/images/hero.webp?w=768&format=avif";
-import heroMobile4x from "../../assets/images/hero.webp?w=960&format=avif";
-import heroDesktop1x from "../../assets/images/hero.webp?w=1024&format=avif";
-import heroTablet2x from "../../assets/images/hero.webp?w=1536&format=avif";
-import heroDesktop2x from "../../assets/images/hero.webp?w=2048&format=avif";
-import heroTablet3x from "../../assets/images/hero.webp?w=2304&format=avif";
-import heroDesktop3x from "../../assets/images/hero.webp?w=3072&format=avif";
+import heroMobile1x from "../../assets/images/hero.webp?w=600&format=avif";
+import heroMobileS1x from "../../assets/images/hero.webp?w=380&format=avif";
+import heroMobileS2x from "../../assets/images/hero.webp?w=760&format=avif";
+import heroMobileS3x from "../../assets/images/hero.webp?w=1520&format=avif";
+import heroMobile2x from "../../assets/images/hero.webp?w=1200&format=avif";
+import heroMobile3x from "../../assets/images/hero.webp?w=2400&format=avif";
+import heroTablet1x from "../../assets/images/hero.webp?w=540&format=avif";
+
+import heroDesktop1x from "../../assets/images/hero.webp?w=600&format=avif";
+import heroFallback from "../../assets/images/hero.webp?w=1200";
+import heroTablet2x from "../../assets/images/hero.webp?w=1080&format=avif";
+import heroDesktop2x from "../../assets/images/hero.webp?w=1200&format=avif";
+import heroTablet3x from "../../assets/images/hero.webp?w=2160&format=avif";
+import heroDesktop3x from "../../assets/images/hero.webp?w=2400&format=avif";
 import { breakpoints } from "../../styles/themes";
 import { CallToAction } from "../CallToAction/CallToAction";
 import { SearchForm } from "../Forms/SearchForm/SearchForm";
@@ -37,10 +40,13 @@ export const Hero = () => {
       </div>
       <div className="hero__image-container">
         <picture>
-          <source media="(max-width: 479px)" srcSet={`${heroMobile1x} 1x, ${heroMobile2x} 2x`} />
           <source
-            media="(min-width: 480px) and (max-width: 767px)"
-            srcSet={`${heroMobile3x} 1x, ${heroMobile4x} 2x`}
+            media="(max-width: 479px)"
+            srcSet={`${heroMobileS1x} 1x, ${heroMobileS2x} 2x, ${heroMobileS3x} 3x`}
+          />
+          <source
+            media="(min-width: 480px), (max-width: 767px)"
+            srcSet={`${heroMobile1x} 1x, ${heroMobile2x} 2x, ${heroMobile3x} 3x`}
           />
           <source
             media="(min-width: 768px) and (max-width: 1023px)"

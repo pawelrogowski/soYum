@@ -114,7 +114,7 @@ export const StyledDiv = styled.div`
       }
       @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
         min-width: 46.3rem;
-        max-width: fit-content;
+        max-width: 60rem;
         margin-bottom: 0rem;
         aspect-ratio: 578 / 539;
       }
@@ -132,7 +132,7 @@ export const StyledDiv = styled.div`
         }
         @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
           min-width: 46.3rem;
-          max-width: 59.8rem;
+          max-width: 60rem;
           margin-bottom: 0rem;
           aspect-ratio: 578 / 539;
         }
