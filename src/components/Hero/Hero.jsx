@@ -1,9 +1,16 @@
 import { useMediaQuery } from "react-responsive";
 
-import hero from "../../assets/images/hero@x1.webp";
-import herox1 from "../../assets/images/hero@x1.webp";
-import herox2 from "../../assets/images/hero@x2.webp";
-import herox3 from "../../assets/images/hero@x3.webp";
+import heroFallback from "../../assets/images/hero.webp?w=600";
+import heroTablet1x from "../../assets/images/hero.webp?w=768&format=avif";
+import heroDesktop1x from "../../assets/images/hero.webp?w=1024&format=avif";
+import heroTablet2x from "../../assets/images/hero.webp?w=1536&format=avif";
+import heroDesktop2x from "../../assets/images/hero.webp?w=2048&format=avif";
+import heroTablet3x from "../../assets/images/hero.webp?w=2304&format=avif";
+import heroDesktop3x from "../../assets/images/hero.webp?w=3072&format=avif";
+import heroMobile1x from "../../assets/images/hero.png?w=380&format=avif";
+import heroMobile2x from "../../assets/images/hero.webp?w=480&format=avif";
+import heroMobile3x from "../../assets/images/hero.webp?w=640&format=avif";
+import heroMobile4x from "../../assets/images/hero.webp?w=960&format=avif";
 import { breakpoints } from "../../styles/themes";
 import { CallToAction } from "../CallToAction/CallToAction";
 import { SearchForm } from "../Forms/SearchForm/SearchForm";
@@ -30,15 +37,26 @@ export const Hero = () => {
       </div>
       <div className="hero__image-container">
         <picture>
-          <source srcSet={`${herox1} 1x, ${herox2} 2x, ${herox3} 3x`} type="image/webp" />
+          <source media="(max-width: 479px)" srcSet={`${heroMobile1x} 1x, ${heroMobile2x} 2x`} />
+          <source
+            media="(min-width: 480px) and (max-width: 767px)"
+            srcSet={`${heroMobile3x} 1x, ${heroMobile4x} 2x`}
+          />
+          <source
+            media="(min-width: 768px) and (max-width: 1023px)"
+            srcSet={`${heroTablet1x} 1x, ${heroTablet2x} 2x, ${heroTablet3x} 3x`}
+          />
+          <source
+            media="(min-width: 1024px)"
+            srcSet={`${heroDesktop1x} 1x, ${heroDesktop2x} 2x, ${heroDesktop3x} 3x`}
+          />
           {isMobileSize ? (
-            <img src={hero} alt="plate of delicious food" width="320px" height="296px" />
+            <img src={heroFallback} alt="plate of delicious food" width="320px" height="296px" />
           ) : isAtLeastTabletSize ? (
-            <img src={hero} alt="plate of delicious food" width="378px" height="351px" />
+            <img src={heroFallback} alt="plate of delicious food" width="378px" height="351px" />
           ) : (
-            <img src={hero} alt="plate of delicious food" width="578px" height="539px" />
+            <img src={heroFallback} alt="plate of delicious food" width="578px" height="539px" />
           )}
-
           <SquareBackground />
         </picture>
         <CallToAction

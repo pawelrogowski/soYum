@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
+
 import { LoaderDots } from "../components/LoaderDots/LoaderDots";
 import { LocationProvider } from "../components/LocationProvider/LocationProvider.jsx";
 import usePreloadOnHover from "../hooks/usePreloadOnHover.js";
