@@ -62,14 +62,14 @@ export const Hero = () => {
           ) : (
             <img src={heroFallback} alt="plate of delicious food" width="578px" height="539px" />
           )}
-          <SquareBackground />
         </picture>
         <CallToAction
           text="way to enjoy a variety of fresh ingredients in one satisfying meal"
           highlightedText="Delicious and healthy"
           linkText="See recipes"
           icon="arrow_long"
-        />
+        />{" "}
+        <SquareBackground />
       </div>
       {isMobileSize && <SearchForm placeholder="beef" />}
     </StyledDiv>

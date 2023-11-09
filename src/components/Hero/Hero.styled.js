@@ -90,7 +90,54 @@ export const StyledDiv = styled.div`
     @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       margin-bottom: 0;
     }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 32%;
+      left: 51%;
+      background-image: url(${leaves});
+      background-size: contain;
+      width: 230%;
+      height: 230%;
+      max-width: 1142px;
+      transform: translate(-50%, -50%) rotate(60deg) scaleX(-1);
+      filter: blur(0.2rem);
+      z-index: -1;
+      background-repeat: no-repeat;
 
+      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        top: 37%;
+        left: 45%;
+        width: 235%;
+        height: 235%;
+        transform: translate(-50%, -50%) rotate(67deg) scaleX(-1);
+      }
+    }
+    > div:last-of-type {
+      width: 145%;
+      height: 145%;
+      top: 50%;
+      left: 50%;
+      transform: translate(0, -50%) rotate(49deg) skew(5deg, 5deg);
+      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        width: 500%;
+        height: 500%;
+        max-width: 2435px;
+        top: -73%;
+        left: 127%;
+        transform: translate(0, -50%) rotate(-62deg) skewX(18deg) skewY(1deg);
+        border-radius: 12rem;
+      }
+      @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        width: 500%;
+        height: 500%;
+        max-width: 2620px;
+        top: -95%;
+        left: 113%;
+        transform: translate(0, -50%) rotate(-66deg) skewX(18deg) skewY(0deg);
+        border-radius: 12rem;
+      }
+    }
     > picture {
       width: 100%;
       max-width: 49.2rem;
@@ -135,54 +182,6 @@ export const StyledDiv = styled.div`
           max-width: 60rem;
           margin-bottom: 0rem;
           aspect-ratio: 578 / 539;
-        }
-      }
-      &:after {
-        content: "";
-        position: absolute;
-        top: 32%;
-        left: 51%;
-        background-image: url(${leaves});
-        background-size: contain;
-        width: 230%;
-        height: 230%;
-        max-width: 1142px;
-        transform: translate(-50%, -50%) rotate(60deg) scaleX(-1);
-        filter: blur(0.2rem);
-        z-index: -1;
-        background-repeat: no-repeat;
-
-        @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-          top: 37%;
-          left: 45%;
-          width: 235%;
-          height: 235%;
-          transform: translate(-50%, -50%) rotate(67deg) scaleX(-1);
-        }
-      }
-      > div:last-of-type {
-        width: 145%;
-        height: 145%;
-        top: 50%;
-        left: 50%;
-        transform: translate(0, -50%) rotate(49deg) skew(5deg, 5deg);
-        @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-          width: 500%;
-          height: 500%;
-          max-width: 2435px;
-          top: -73%;
-          left: 127%;
-          transform: translate(0, -50%) rotate(-62deg) skewX(18deg) skewY(1deg);
-          border-radius: 12rem;
-        }
-        @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-          width: 500%;
-          height: 500%;
-          max-width: 2620px;
-          top: -95%;
-          left: 113%;
-          transform: translate(0, -50%) rotate(-66deg) skewX(18deg) skewY(0deg);
-          border-radius: 12rem;
         }
       }
     }
