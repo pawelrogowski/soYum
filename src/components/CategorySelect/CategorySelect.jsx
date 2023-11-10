@@ -43,9 +43,11 @@ export const CategorySelect = () => {
     }
   }, [dispatch, validate, recipeCategories]);
 
-  const handleWrapperClick = useCallback(() => {
-    ref.current.focus();
-  }, [ref]);
+  const handleWrapperClick = useCallback((event) => {
+    if (event.target !== ref.current) {
+      ref.current.focus();
+    }
+  }, []);
 
   return (
     <StyledDiv onClick={handleWrapperClick} $hasError={recipeCategoriesError && "true"}>
