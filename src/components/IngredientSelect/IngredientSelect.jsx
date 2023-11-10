@@ -121,6 +121,7 @@ const IngredientSelectComponent = ({
                 openMenuOnFocus
                 openMenuOnClick
                 closeMenuOnSelect
+                defaultMenuIsOpen={false}
                 inputId={`measure-type-${index}`}
               />
               <AnimatePresence>

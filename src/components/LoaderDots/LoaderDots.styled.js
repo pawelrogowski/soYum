@@ -1,6 +1,7 @@
-import { css, styled } from "styled-components";
+import { motion } from "framer-motion";
+import { styled } from "styled-components";
 
-export const StyledDiv = styled.div`
+export const StyledDiv = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0;
@@ -10,20 +11,11 @@ export const StyledDiv = styled.div`
   align-items: center;
   width: 100vw;
   height: 100dvh;
-  backdrop-filter: blur(0.2rem);
+  backdrop-filter: blur(0.1rem);
   background-color: rgba(0, 0, 0, 0.8);
   transition: background-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
   z-index: 3;
   animation: delayLoader 1.5s ease-in-out 1 forwards;
-
-  ${({ $variant }) =>
-    $variant === "layout"
-      ? css`
-          backdrop-filter: none;
-          background-color: rgba(0, 0, 0, 0);
-          pointer-events: none;
-        `
-      : null}
 
   div {
     width: 14rem;

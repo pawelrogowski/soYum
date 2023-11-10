@@ -1,13 +1,16 @@
 import { AnimatePresence } from "framer-motion";
 import PropTypes from "prop-types";
+import { lazy, Suspense } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import { userMenuMotion } from "../../common/animations";
 import useShowDecorations from "../../hooks/useShowDecorations";
-import { toggleIsUserEditMenuOpen } from "../../redux/slices/modalSlice";
+import { setIsUserEditMenuOpen } from "../../redux/slices/modalSlice";
 import { shortenString } from "../../utils/stringManipulation";
-import { EditProfilePopup } from "../EditProfilePopup/EditProfilePopup";
+import { LoaderLine } from "../LoaderLine/LoaderLine";
 import { StyledDiv } from "./UserAvatar.styled";
 
+const EditProfilePopup = lazy(() => import("../EditProfilePopup/EditProfilePopup"));
 export function UserAvatar({ image, placeholder, name = "No Data" }) {
   const shouldUseDecor = useShowDecorations();
   const dispatch = useDispatch();
@@ -15,28 +18,8 @@ export function UserAvatar({ image, placeholder, name = "No Data" }) {
 
   const handleOpenUserEdit = () => {
     if (!isEditProfilePopupOpen) {
-      setTimeout(() => dispatch(toggleIsUserEditMenuOpen(!isEditProfilePopupOpen)), 0);
+      setTimeout(() => dispatch(setIsUserEditMenuOpen(!isEditProfilePopupOpen)), 0);
     }
-  };
-
-  const menuMotion = {
-    initial: { scale: 0.2, opacity: 0 },
-    animate: { scale: 1, opacity: 1 },
-    exit: {
-      scale: -0.0,
-      opacity: 0,
-      transition: {
-        type: "spring",
-        stiffness: 260,
-        damping: 20,
-        duration: 50,
-      },
-    },
-    transition: {
-      type: "spring",
-      stiffness: 420,
-      damping: 30,
-    },
   };
 
   return (
@@ -48,9 +31,11 @@ export function UserAvatar({ image, placeholder, name = "No Data" }) {
         </picture>
         <span>{shortenString(name, 10, "...")}</span>
       </button>
-      <AnimatePresence>
-        {isEditProfilePopupOpen && <EditProfilePopup {...menuMotion} />}
-      </AnimatePresence>
+      <Suspense fallback={<LoaderLine />}>
+        <AnimatePresence>
+          {isEditProfilePopupOpen && <EditProfilePopup {...userMenuMotion} />}
+        </AnimatePresence>
+      </Suspense>
     </StyledDiv>
   );
 }

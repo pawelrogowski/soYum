@@ -1,13 +1,19 @@
 import { Field, Formik } from "formik";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useDispatch } from "react-redux";
 
 import avatar from "../../../assets/images/avatar.avif";
 import { baseButtonMotion, baseIconMotion } from "../../../common/animations";
+import { cloudinarySettings } from "../../../common/CloudinarySettings";
+import { useDisableBodyScroll } from "../../../hooks/useDisableBodyScroll";
 import useUploadWidget from "../../../hooks/useUploadWidget";
+import {
+  setIsImageUploadModalLoading,
+  setIsImageUploadModalOpen,
+} from "../../../redux/slices/modalSlice";
 import { userEditSchema } from "../../../validation/userEditSchema";
 import { Button } from "../../Button/Button";
 import { Icon } from "../../Icon/Icon";
-import { cloudinarySettings } from "./CloudinarySettings";
 import { StyledFormikForm } from "./UserUpdateForm.styled";
 
 const initialValues = {
@@ -17,10 +23,12 @@ const initialValues = {
 
 export const UserUpdateForm = () => {
   useUploadWidget();
+  useDisableBodyScroll();
   const [usernameValue, setUsernameValue] = useState(initialValues.username);
   const [isUsernameEditable, setIsUsernameEditable] = useState(false);
   const usernameInputRef = useRef(null);
   const [avatarPreview, setAvatarPreview] = useState(null);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (isUsernameEditable) {
@@ -37,16 +45,34 @@ export const UserUpdateForm = () => {
     }
   }, [isUsernameEditable]);
 
-  const handleAvatarClick = useCallback(() => {
-    window.cloudinary.openUploadWidget(cloudinarySettings, (error, result) => {
-      if (!error && result && result.event === "success") {
+  const widget = useCallback(() => {
+    return window.cloudinary.createUploadWidget(cloudinarySettings, (error, result) => {
+      if (result.info === "shown") {
+        dispatch(setIsImageUploadModalLoading(false));
+        dispatch(setIsImageUploadModalOpen(true));
+      }
+
+      if (result.event === "close") {
+        const widgetInstance = widget();
+        widgetInstance.destroy();
+        dispatch(setIsImageUploadModalLoading(false));
+        dispatch(setIsImageUploadModalOpen(false));
+      }
+
+      if (!error && result.event === "success") {
         setAvatarPreview(result.info.secure_url);
       } else if (error) {
+        dispatch(setIsImageUploadModalLoading(false));
+        dispatch(setIsImageUploadModalOpen(false));
         console.log(error);
       }
     });
-  }, []);
+  }, [dispatch]);
 
+  const handleAvatarClick = useCallback(() => {
+    const cloudinaryWidget = widget();
+    cloudinaryWidget.open();
+  }, [widget]);
   const handleSubmit = useCallback(
     (values, { setSubmitting }) => {
       const changedValues = {

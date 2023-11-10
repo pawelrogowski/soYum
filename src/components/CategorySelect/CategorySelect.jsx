@@ -1,5 +1,5 @@
 import { AnimatePresence } from "framer-motion";
-import { useRef } from "react";
+import { useCallback, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
 
@@ -17,20 +17,23 @@ export const CategorySelect = () => {
   const dispatch = useDispatch();
   const ref = useRef(null);
 
-  const handleChange = (selectedOptions) => {
-    const valueArray = selectedOptions.map((option) => option.value);
-    dispatch(setField({ field: "recipeCategories", value: valueArray }));
+  const handleChange = useCallback(
+    (selectedOptions) => {
+      const valueArray = selectedOptions.map((option) => option.value);
+      dispatch(setField({ field: "recipeCategories", value: valueArray }));
 
-    const { isValid, errorMessage } = validate(addRecipeSchema, "recipeCategories", valueArray);
+      const { isValid, errorMessage } = validate(addRecipeSchema, "recipeCategories", valueArray);
 
-    if (errorMessage || !isValid) {
-      dispatch(setFieldError({ field: "recipeCategories", error: errorMessage }));
-    } else {
-      dispatch(setFieldError({ field: "recipeCategories", error: null }));
-    }
-  };
+      if (errorMessage || !isValid) {
+        dispatch(setFieldError({ field: "recipeCategories", error: errorMessage }));
+      } else {
+        dispatch(setFieldError({ field: "recipeCategories", error: null }));
+      }
+    },
+    [dispatch, validate]
+  );
 
-  const handleBlur = () => {
+  const handleBlur = useCallback(() => {
     const { errorMessage } = validate(addRecipeSchema, "recipeCategories", recipeCategories);
 
     if (errorMessage) {
@@ -38,11 +41,11 @@ export const CategorySelect = () => {
     } else {
       dispatch(setFieldError({ field: "recipeCategories", error: null }));
     }
-  };
+  }, [dispatch, validate, recipeCategories]);
 
-  const handleWrapperClick = () => {
+  const handleWrapperClick = useCallback(() => {
     ref.current.focus();
-  };
+  }, [ref]);
 
   return (
     <StyledDiv onClick={handleWrapperClick} $hasError={recipeCategoriesError && "true"}>
@@ -57,6 +60,7 @@ export const CategorySelect = () => {
         onBlur={handleBlur}
         placeholder="Categories"
         classNamePrefix="Select"
+        closeMenuOnSelect
       />
       <AnimatePresence>
         {recipeCategoriesError && (

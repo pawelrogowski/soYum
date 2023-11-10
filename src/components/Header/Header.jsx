@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import avatar from "../../assets/images/avatar.avif";
 import avatarPlaceholder from "../../assets/images/avatar.avif";
 import useShowDecorations from "../../hooks/useShowDecorations";
-import { toggleIsMobileMenuOpen } from "../../redux/slices/modalSlice";
+import { setIsMobileMenuOpen } from "../../redux/slices/modalSlice";
 import { breakpoints } from "../../styles/themes";
 import { Logo } from "../Logo/Logo";
 import { MobileMenuButton } from "../MobileMenuButton/MobileMenuButton";
@@ -20,11 +20,11 @@ export const Header = () => {
   const isMobileMenuOpen = useSelector((state) => state.modal.isMobileMenuOpen);
   const isAtLeastDesktopSize = useMediaQuery({ minWidth: breakpoints.desktop });
   const handleMenuToggle = () => {
-    dispatch(toggleIsMobileMenuOpen(!isMobileMenuOpen));
+    dispatch(setIsMobileMenuOpen(!isMobileMenuOpen));
   };
 
   const handleCloseMenu = () => {
-    isMobileMenuOpen && dispatch(toggleIsMobileMenuOpen(false));
+    isMobileMenuOpen && dispatch(setIsMobileMenuOpen(false));
   };
 
   return (

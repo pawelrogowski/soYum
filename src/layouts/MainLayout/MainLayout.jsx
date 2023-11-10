@@ -7,7 +7,7 @@ import { Outlet } from "react-router-dom";
 import { EditUserModal } from "../../components/EditUserModal/EditUserModal";
 import Footer from "../../components/Footer/Footer";
 import { Header } from "../../components/Header/Header";
-import { LoaderDots } from "../../components/LoaderDots/LoaderDots";
+import { LoaderLine } from "../../components/LoaderLine/LoaderLine";
 import { LogoutModal } from "../../components/LogoutModal/LogoutModal";
 import { NavigationMobile } from "../../components/NavigationMobile/NavigationMobile";
 import { breakpoints } from "../../styles/themes";
@@ -28,7 +28,7 @@ export const MainLayout = () => {
       <AnimatePresence>{isMobileMenuOpen && <NavigationMobile />}</AnimatePresence>
       <Header />
       <div className="main-content">
-        <Suspense fallback={<LoaderDots variant="layout" />}>
+        <Suspense fallback={<LoaderLine />}>
           <Outlet />
         </Suspense>
       </div>

@@ -1,4 +1,4 @@
-import { store } from "../../../redux/store";
+import { store } from "../redux/store";
 
 const lightPallete = {
   window: "#fafafa",
@@ -32,9 +32,7 @@ const darkPallete = {
   textLight: "#000",
 };
 
-let cloudinarySettings = getCloudinarySettings(
-  store.getState().global.isDarkTheme
-);
+let cloudinarySettings = getCloudinarySettings(store.getState().global.isDarkTheme);
 
 store.subscribe(() => {
   const isDarkTheme = store.getState().global.isDarkTheme;
@@ -45,12 +43,13 @@ function getCloudinarySettings(isDarkTheme) {
   return {
     cloudName: "dd9oa9bwd",
     uploadPreset: "so-yummy",
-    sources: ["local", "url", "camera"],
+    sources: ["local", "camera"],
     cropping: false,
     multiple: false,
     defaultSource: "local",
     eager: [{ width: 44, height: 44, crop: "scale", format: "webp" }],
     styles: {
+      frame: { background: "rgba(0,0,0,0.2)" },
       palette: {
         ...(isDarkTheme ? darkPallete : lightPallete),
       },

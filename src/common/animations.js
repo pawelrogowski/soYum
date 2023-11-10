@@ -77,12 +77,23 @@ export const prepStepMotion = {
 };
 
 export const routeChangeMotion = {
-  initial: { opacity: 0, y: 30, scale: 0.95 },
+  initial: { opacity: 0, y: 0, scale: 1 },
   animate: { opacity: 1, y: 0, scale: 1 },
-  exit: { opacity: 0, y: -30, scale: 0.95, transition: { duration: 0.1 } },
+  exit: { opacity: 0, y: 20, scale: 0.9, transition: { duration: 0.1 } },
   transition: { duration: 0.1 },
 };
-
+export const loaderLineMotion = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
+  transition: { duration: 5.5 },
+};
+export const loaderDotsMotion = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: { opacity: 0 },
+  transition: { duration: 0.3 },
+};
 export const galleryMotion = {
   initial: { opacity: 0, scale: 0.8 },
   animate: { opacity: 1, scale: 1 },
@@ -187,5 +198,44 @@ export const baseIconMotion = {
     transition: {
       scale: { duration: 0.2 },
     },
+  },
+};
+
+export const userMenuMotion = {
+  initial: { scale: 0.2, opacity: 0 },
+  animate: { scale: 1, opacity: 1 },
+  exit: {
+    scale: -0.0,
+    opacity: 0,
+    transition: {
+      type: "spring",
+      stiffness: 260,
+      damping: 20,
+      duration: 50,
+    },
+  },
+  transition: {
+    type: "spring",
+    stiffness: 420,
+    damping: 30,
+  },
+};
+
+export const editUserModalMotion = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  exit: {
+    opacity: 0,
+    transition: {
+      type: "spring",
+      stiffness: 260,
+      damping: 20,
+      duration: 50,
+    },
+  },
+  transition: {
+    type: "spring",
+    stiffness: 420,
+    damping: 30,
   },
 };

@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { baseIconMotion } from "../../common/animations";
-import { toggleIsLogoutModalOpen } from "../../redux/slices/modalSlice";
+import { setIsLogoutModalOpen } from "../../redux/slices/modalSlice";
 import { Button } from "../Button/Button";
 import { Icon } from "../Icon/Icon";
 import { StyledDiv } from "./LogoutModal.styled";
@@ -14,18 +14,18 @@ export const LogoutModal = () => {
 
   const handleClickOutside = (event) => {
     if (ref.current && !ref.current.contains(event.target)) {
-      dispatch(toggleIsLogoutModalOpen(false));
+      dispatch(setIsLogoutModalOpen(false));
     }
   };
 
   const handleKeyDown = (event) => {
     if (event.key === "Escape") {
-      dispatch(toggleIsLogoutModalOpen(false));
+      dispatch(setIsLogoutModalOpen(false));
     }
   };
 
   const handleClickClose = () => {
-    dispatch(toggleIsLogoutModalOpen(false));
+    dispatch(setIsLogoutModalOpen(false));
   };
 
   const handleLogoutClick = () => {

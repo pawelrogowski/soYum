@@ -5,7 +5,7 @@ import { useSelector } from "react-redux/es/hooks/useSelector";
 import placeholder from "../../assets/images/transparent.avif";
 import useUploadWidget from "../../hooks/useUploadWidget";
 import { setField } from "../../redux/slices/addRecipeFormSlice";
-import { cloudinarySettings } from "../Forms/UserUpdateForm/CloudinarySettings";
+import { cloudinarySettings } from "../../common/CloudinarySettings";
 import { Icon } from "../Icon/Icon";
 import { StyledButton } from "./RecipeImageUpload.styled";
 

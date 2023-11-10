@@ -7,27 +7,37 @@ export const modalSlice = createSlice({
     isUserEditMenuOpen: false,
     isProfileUpdateMenuOpen: false,
     isLogoutModalOpen: false,
+    isImageUploadModalLoading: false,
+    isImageUploadModalOpen: false,
   },
   reducers: {
-    toggleIsMobileMenuOpen: (state, action) => {
+    setIsMobileMenuOpen: (state, action) => {
       state.isMobileMenuOpen = action.payload;
     },
-    toggleIsUserEditMenuOpen: (state, action) => {
+    setIsUserEditMenuOpen: (state, action) => {
       state.isUserEditMenuOpen = action.payload;
     },
-    toggleIsProfileUpdateMenuOpen: (state, action) => {
+    setIsProfileUpdateMenuOpen: (state, action) => {
       state.isProfileUpdateMenuOpen = action.payload;
     },
-    toggleIsLogoutModalOpen: (state, action) => {
+    setIsLogoutModalOpen: (state, action) => {
       state.isLogoutModalOpen = action.payload;
+    },
+    setIsImageUploadModalLoading: (state, action) => {
+      state.isImageUploadModalOpen = action.payload;
+    },
+    setIsImageUploadModalOpen: (state, action) => {
+      state.isImageUploadModalOpen = action.payload;
     },
   },
 });
 
 export default modalSlice.reducer;
 export const {
-  toggleIsMobileMenuOpen,
-  toggleIsUserEditMenuOpen,
-  toggleIsProfileUpdateMenuOpen,
-  toggleIsLogoutModalOpen,
+  setIsMobileMenuOpen,
+  setIsUserEditMenuOpen,
+  setIsProfileUpdateMenuOpen,
+  setIsLogoutModalOpen,
+  setIsImageUploadModalOpen,
+  setIsImageUploadModalLoading,
 } = modalSlice.actions;

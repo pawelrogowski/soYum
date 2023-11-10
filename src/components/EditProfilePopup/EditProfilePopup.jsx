@@ -1,45 +1,60 @@
-import { useEffect, useRef } from "react";
+import { throttle } from "lodash";
+import { useCallback, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 
 import { baseIconMotion } from "../../common/animations";
 import {
-  toggleIsLogoutModalOpen,
-  toggleIsProfileUpdateMenuOpen,
-  toggleIsUserEditMenuOpen,
+  setIsLogoutModalOpen,
+  setIsProfileUpdateMenuOpen,
+  setIsUserEditMenuOpen,
 } from "../../redux/slices/modalSlice";
 import { Button } from "../Button/Button";
 import { Icon } from "../Icon/Icon";
 import { StyledDiv } from "./EditProfilePopup.styled";
 
-export const EditProfilePopup = ({ ...props }) => {
+const EditProfilePopup = ({ ...props }) => {
   const dispatch = useDispatch();
   const ref = useRef(null);
 
-  const handleClickOutside = (event) => {
-    if (ref.current && !ref.current.contains(event.target)) {
-      dispatch(toggleIsUserEditMenuOpen(false));
-    }
-  };
+  const handleClickOutside = useCallback(
+    (event) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        dispatch(setIsUserEditMenuOpen(false));
+      }
+    },
+    [dispatch]
+  );
 
-  const handleKeyDown = (event) => {
-    if (event.key === "Escape") {
-      dispatch(toggleIsUserEditMenuOpen(false));
-    }
-  };
+  const handleKeyDown = useCallback(
+    (event) => {
+      if (event.key === "Escape") {
+        dispatch(setIsUserEditMenuOpen(false));
+      }
+    },
+    [dispatch]
+  );
 
-  const handleClickInside = (event) => {
+  const handleClickInside = useCallback((event) => {
     event.stopPropagation();
-  };
+  }, []);
 
-  const handleEditProfileOpen = () => {
-    dispatch(toggleIsUserEditMenuOpen(false));
-    dispatch(toggleIsProfileUpdateMenuOpen(true));
-  };
+  const throttledEditProfileOpen = throttle(() => {
+    dispatch(setIsUserEditMenuOpen(false));
+    dispatch(setIsProfileUpdateMenuOpen(true));
+  }, 300);
 
-  const handleLogoutModalOpen = () => {
-    dispatch(toggleIsLogoutModalOpen(true));
-    dispatch(toggleIsUserEditMenuOpen(false));
-  };
+  const throttledLogoutModalOpen = throttle(() => {
+    dispatch(setIsLogoutModalOpen(true));
+    dispatch(setIsUserEditMenuOpen(false));
+  }, 300);
+
+  const handleEditProfileOpen = useCallback(() => {
+    throttledEditProfileOpen();
+  }, [throttledEditProfileOpen]);
+
+  const handleLogoutModalOpen = useCallback(() => {
+    throttledLogoutModalOpen();
+  }, [throttledLogoutModalOpen]);
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
@@ -49,8 +64,7 @@ export const EditProfilePopup = ({ ...props }) => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("keydown", handleKeyDown);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [handleClickOutside, handleKeyDown]);
 
   return (
     <StyledDiv ref={ref} onClick={handleClickInside} {...props}>
@@ -65,3 +79,5 @@ export const EditProfilePopup = ({ ...props }) => {
     </StyledDiv>
   );
 };
+
+export default EditProfilePopup;
