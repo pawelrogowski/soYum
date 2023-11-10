@@ -1,6 +1,6 @@
 import { css, styled } from "styled-components";
 
-import leaves from "../../assets/images/leaves@1x.webp";
+import leaves from "../../assets/images/leavesDecor.avif";
 
 export const StyledFooter = styled.footer`
   --breakpoint-tablet: ${(props) => props.theme.breakpoints.tablet};

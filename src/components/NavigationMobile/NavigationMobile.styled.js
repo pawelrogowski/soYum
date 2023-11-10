@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-import leaves from "../../assets/images/leaves@1x.webp";
+import leaves from "../../assets/images/leavesDecor.avif";
 
 export const StyledAside = styled(motion.aside)`
   --font-navigation: ${({ theme }) => theme.navigation.font};

@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 
-import placeholder from "../../assets/images/placeholder.png";
+import placeholder from "../../assets/images/transparent.avif";
 import useUploadWidget from "../../hooks/useUploadWidget";
 import { setField } from "../../redux/slices/addRecipeFormSlice";
 import { cloudinarySettings } from "../Forms/UserUpdateForm/CloudinarySettings";

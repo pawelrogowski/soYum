@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useMediaQuery } from "react-responsive";
 
-import placeholder from "../../assets/images/placeholder.png";
+import placeholder from "../../assets/images/transparent.avif";
 import { breakpoints } from "../../styles/themes";
 import { Heading } from "../Heading/Heading";
 import { PopularCard } from "../PopularCard/PopularCard";

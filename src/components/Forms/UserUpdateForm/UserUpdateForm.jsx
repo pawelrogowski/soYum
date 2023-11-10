@@ -1,7 +1,7 @@
 import { Field, Formik } from "formik";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import avatar from "../../../assets/images/avatar.webp";
+import avatar from "../../../assets/images/avatar.avif";
 import { baseButtonMotion, baseIconMotion } from "../../../common/animations";
 import useUploadWidget from "../../../hooks/useUploadWidget";
 import { userEditSchema } from "../../../validation/userEditSchema";

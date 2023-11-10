@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import leaves from "../../assets/images/leaves@1x.webp";
+import leaves from "../../assets/images/leavesDecor.avif";
 export const StyledDiv = styled.div`
   --color-brand-highlight: ${({ theme }) => theme.brandColors.main};
   --color-hero-text: ${({ theme }) => theme.hero.text};

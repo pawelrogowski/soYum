@@ -1,16 +1,8 @@
 import { motion } from "framer-motion";
 import { styled } from "styled-components";
 
-import bgImageDesktop1x from "../../assets/images/start-background-desktop@1x.webp";
-import bgImageDesktop2x from "../../assets/images/start-background-desktop@2x.webp";
-import bgImageDesktop3x from "../../assets/images/start-background-desktop@3x.webp";
-import bgImageMobile1x from "../../assets/images/start-background-mobile@1x.webp";
-import bgImageMobile2x from "../../assets/images/start-background-mobile@2x.webp";
-import bgImageMobile3x from "../../assets/images/start-background-mobile@3x.webp";
-import bgImageTablet1x from "../../assets/images/start-background-tablet@1x.webp";
-import bgImageTablet2x from "../../assets/images/start-background-tablet@2x.webp";
-import bgImageTablet3x from "../../assets/images/start-background-tablet@3x.webp";
-import { responsiveBackgroundImage } from "../../utils/mixins";
+import saladBg from "../../assets/images/saladBg.avif";
+
 export const StartPageContainer = styled(motion.main)`
   display: flex;
   flex-direction: column;
@@ -24,15 +16,7 @@ export const StartPageContainer = styled(motion.main)`
   background-size: cover;
   background-position: center;
 
-  ${responsiveBackgroundImage(bgImageMobile1x, bgImageMobile2x, bgImageMobile3x)}
-
-  @media screen and (min-width: ${(props) => props.theme.breakpoints.tablet}) {
-    ${responsiveBackgroundImage(bgImageTablet1x, bgImageTablet2x, bgImageTablet3x)};
-  }
-
-  @media screen and (min-width: ${(props) => props.theme.breakpoints.desktop}) {
-    ${responsiveBackgroundImage(bgImageDesktop1x, bgImageDesktop2x, bgImageDesktop3x)};
-  }
+  background-image: url(${saladBg});
 
   > svg {
     margin-bottom: 2.8rem;

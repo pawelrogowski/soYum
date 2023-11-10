@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { useParams } from "react-router-dom";
 
-import image from "../../assets/images/placeholder.png";
+import image from "../../assets/images/transparent.avif";
 import { routeChangeMotion } from "../../common/animations";
 import { Heading } from "../../components/Heading/Heading";
 import { PaginationFilter } from "../../components/PaginationFilter/PaginationFilter";
