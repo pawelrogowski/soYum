@@ -33,7 +33,13 @@ export const Hero = () => {
           <source type="image/avif" srcSet={srcsetAvif} />
           <source type="image/webp" srcSet={srcsetWebp} />
           <source type="image/png" srcSet={srcsetPng} />
-          <img src={heroFallback} alt="plate of delicious food" />
+          {isMobileSize ? (
+            <img src={heroFallback} alt="plate of delicious food" width="320px" height="296px" />
+          ) : isAtLeastTabletSize ? (
+            <img src={heroFallback} alt="plate of delicious food" width="378px" height="351px" />
+          ) : (
+            <img src={heroFallback} alt="plate of delicious food" width="578px" height="539px" />
+          )}
         </picture>
         <CallToAction
           text="way to enjoy a variety of fresh ingredients in one satisfying meal"

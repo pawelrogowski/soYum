@@ -84,6 +84,7 @@ export const StyledDiv = styled.div`
     margin-left: auto;
     position: relative;
     margin-bottom: 2.1rem;
+    flex-grow: 1;
     @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       margin-bottom: 0;
       min-width: 38rem;
@@ -139,17 +140,31 @@ export const StyledDiv = styled.div`
       }
     }
     > picture {
+      min-width: 32rem;
       @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        min-width: 38rem;
       }
       @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
         margin-bottom: 0rem;
         display: flex;
+        min-width: 46.2rem;
       }
       > img {
         width: 100%;
         height: auto;
-        aspect-ratio: 15 / 14;
+        aspect-ratio: 320 / 296;
         object-fit: contain;
+        min-width: 32rem;
+        @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+          min-width: 38rem;
+          aspect-ratio: 378 / 351;
+        }
+        @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+          margin-bottom: 0rem;
+          display: flex;
+          min-width: 46.2rem;
+          aspect-ratio: 578 / 539;
+        }
       }
     }
   }

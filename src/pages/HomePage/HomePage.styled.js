@@ -36,10 +36,12 @@ export const MainContainer = styled(motion.main)`
     @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
       flex-direction: row;
       padding-bottom: 19.5rem;
+      min-height: 71.9rem;
     }
     @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
       gap: 2rem;
       padding-bottom: 23.5rem;
+      min-height: 85.7rem;
     }
     &:after {
       content: "";
