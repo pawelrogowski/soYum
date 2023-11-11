@@ -25,7 +25,7 @@ export const UserUpdateForm = () => {
   useUploadWidget();
   useDisableBodyScroll();
 
-  const { isImageUploadModalOpen } = useSelector((state) => state.modal);
+  const { isImageUploadModalOpen, isImageUploadModalLoading } = useSelector((state) => state.modal);
   const [usernameValue, setUsernameValue] = useState(initialValues.username);
   const [isUsernameEditable, setIsUsernameEditable] = useState(false);
   const usernameInputRef = useRef(null);
@@ -72,11 +72,11 @@ export const UserUpdateForm = () => {
     });
   }, [dispatch]);
 
-  const handleAvatarClick = useCallback(() => {
+  const handleAvatarClick = () => {
+    const { open: openWidget } = widget();
+    !isImageUploadModalLoading && openWidget();
     dispatch(setIsImageUploadModalLoading(true));
-    const cloudinaryWidget = widget();
-    !setIsImageUploadModalLoading && cloudinaryWidget.open();
-  }, [widget, dispatch]);
+  };
 
   const handleSubmit = useCallback(
     (values, { setSubmitting }) => {

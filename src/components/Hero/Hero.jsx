@@ -1,10 +1,11 @@
+import { AnimatePresence, motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 
-import heroLowRes from "../../assets/images/hero.webp?w=50&format=avif";
 import srcsetAvif from "../../assets/images/hero.webp?w=380;760;1520&format=avif&as=srcset";
 import srcsetPng from "../../assets/images/hero.webp?w=380;760;1520&format=png&as=srcset";
 import srcsetWebp from "../../assets/images/hero.webp?w=380;760;1520&format=webp&as=srcset";
 import heroFallback from "../../assets/images/hero.webp?w=1520";
+import { simpleOpacityMotion } from "../../common/animations";
 import { breakpoints } from "../../styles/themes";
 import { CallToAction } from "../CallToAction/CallToAction";
 import { SearchForm } from "../Forms/SearchForm/SearchForm";
@@ -17,6 +18,12 @@ export const Hero = () => {
   const isAtLeastTabletSize = useMediaQuery({
     minWidth: breakpoints.tablet,
   });
+
+  const imageConfig = isMobileSize
+    ? { width: "320px", height: "296px" }
+    : isAtLeastTabletSize
+    ? { width: "378px", height: "351px" }
+    : { width: "578px", height: "539px" };
   return (
     <StyledDiv>
       <div className="hero__text-container ">
@@ -34,31 +41,16 @@ export const Hero = () => {
           <source type="image/avif" srcSet={srcsetAvif} />
           <source type="image/webp" srcSet={srcsetWebp} />
           <source type="image/png" srcSet={srcsetPng} />
-          {isMobileSize ? (
-            <img
+          <AnimatePresence>
+            <motion.img
               src={heroFallback}
               alt="plate of delicious food"
-              width="320px"
-              height="296px"
+              width={imageConfig.width}
+              height={imageConfig.height}
               loading="eager"
+              {...simpleOpacityMotion}
             />
-          ) : isAtLeastTabletSize ? (
-            <img
-              src={heroFallback}
-              alt="plate of delicious food"
-              width="378px"
-              height="351px"
-              loading="eager"
-            />
-          ) : (
-            <img
-              src={heroFallback}
-              alt="plate of delicious food"
-              width="578px"
-              height="539px"
-              loading="eager"
-            />
-          )}
+          </AnimatePresence>
         </picture>
         <CallToAction
           text="way to enjoy a variety of fresh ingredients in one satisfying meal"

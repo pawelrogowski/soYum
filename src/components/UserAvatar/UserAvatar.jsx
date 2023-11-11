@@ -31,7 +31,7 @@ export function UserAvatar({ image, placeholder, name = "No Data" }) {
         </picture>
         <span>{shortenString(name, 10, "...")}</span>
       </button>
-      <Suspense fallback={<LoaderLine />} isGlobal>
+      <Suspense fallback={<LoaderLine isGlobal />}>
         <AnimatePresence>
           {isEditProfilePopupOpen && <EditProfilePopup {...userMenuMotion} />}
         </AnimatePresence>

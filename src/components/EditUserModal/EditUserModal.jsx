@@ -1,9 +1,13 @@
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { baseIconMotion, editUserModalMotion } from "../../common/animations";
-import { setIsProfileUpdateMenuOpen } from "../../redux/slices/modalSlice";
+import { baseIconMotion, editUserModalMotion, userMenuMotion } from "../../common/animations";
+import {
+  setIsImageUploadModalLoading,
+  setIsImageUploadModalOpen,
+  setIsProfileUpdateMenuOpen,
+} from "../../redux/slices/modalSlice";
 import { UserUpdateForm } from "../Forms/UserUpdateForm/UserUpdateForm";
 import { Icon } from "../Icon/Icon";
 import { LoaderLine } from "../LoaderLine/LoaderLine";
@@ -26,6 +30,8 @@ export const EditUserModal = () => {
   };
 
   const handleClickClose = () => {
+    dispatch(setIsImageUploadModalOpen(false));
+    dispatch(setIsImageUploadModalLoading(false));
     dispatch(setIsProfileUpdateMenuOpen(false));
   };
 
@@ -42,15 +48,17 @@ export const EditUserModal = () => {
 
   return (
     <StyledDiv {...editUserModalMotion}>
-      <div ref={ref}>
-        <AnimatePresence>
-          {isImageUploadModalLoading && <LoaderLine isGlobal={false} />}
-        </AnimatePresence>
-        <button type="button" onClick={handleClickClose}>
-          <Icon icon="x" {...baseIconMotion} />
-        </button>
-        <UserUpdateForm />
-      </div>
+      <AnimatePresence mode="wait">
+        <motion.div {...userMenuMotion} ref={ref}>
+          <AnimatePresence>
+            {isImageUploadModalLoading && <LoaderLine isGlobal={false} />}
+          </AnimatePresence>
+          <button type="button" onClick={handleClickClose}>
+            <Icon icon="x" {...baseIconMotion} />
+          </button>
+          <UserUpdateForm />
+        </motion.div>
+      </AnimatePresence>
     </StyledDiv>
   );
 };
