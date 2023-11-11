@@ -1,6 +1,6 @@
 import { Field, Formik } from "formik";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import avatar from "../../../assets/images/avatar.avif";
 import { baseButtonMotion, baseIconMotion } from "../../../common/animations";
@@ -24,17 +24,23 @@ const initialValues = {
 export const UserUpdateForm = () => {
   useUploadWidget();
   useDisableBodyScroll();
+
+  const { isImageUploadModalOpen } = useSelector((state) => state.modal);
   const [usernameValue, setUsernameValue] = useState(initialValues.username);
   const [isUsernameEditable, setIsUsernameEditable] = useState(false);
   const usernameInputRef = useRef(null);
   const [avatarPreview, setAvatarPreview] = useState(null);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     if (isUsernameEditable) {
       usernameInputRef.current.focus();
     }
-  }, [isUsernameEditable]);
+    if (isImageUploadModalOpen) {
+      dispatch(setIsImageUploadModalLoading(false));
+    }
+  }, [isUsernameEditable, isImageUploadModalOpen, dispatch]);
 
   const handleUsernameEdit = useCallback(() => {
     setIsUsernameEditable((prevIsUsernameEditable) => !prevIsUsernameEditable);
@@ -48,21 +54,18 @@ export const UserUpdateForm = () => {
   const widget = useCallback(() => {
     return window.cloudinary.createUploadWidget(cloudinarySettings, (error, result) => {
       if (result.info === "shown") {
-        dispatch(setIsImageUploadModalLoading(false));
         dispatch(setIsImageUploadModalOpen(true));
       }
 
       if (result.event === "close") {
         const widgetInstance = widget();
         widgetInstance.destroy();
-        dispatch(setIsImageUploadModalLoading(false));
         dispatch(setIsImageUploadModalOpen(false));
       }
 
       if (!error && result.event === "success") {
         setAvatarPreview(result.info.secure_url);
       } else if (error) {
-        dispatch(setIsImageUploadModalLoading(false));
         dispatch(setIsImageUploadModalOpen(false));
         console.log(error);
       }
@@ -70,9 +73,11 @@ export const UserUpdateForm = () => {
   }, [dispatch]);
 
   const handleAvatarClick = useCallback(() => {
+    console.log("opening");
+    dispatch(setIsImageUploadModalLoading(true));
     const cloudinaryWidget = widget();
     cloudinaryWidget.open();
-  }, [widget]);
+  }, [widget, dispatch]);
   const handleSubmit = useCallback(
     (values, { setSubmitting }) => {
       const changedValues = {
