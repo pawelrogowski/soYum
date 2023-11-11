@@ -24,7 +24,7 @@ export const modalSlice = createSlice({
       state.isLogoutModalOpen = action.payload;
     },
     setIsImageUploadModalLoading: (state, action) => {
-      state.isImageUploadModalOpen = action.payload;
+      state.isImageUploadModalLoading = action.payload;
     },
     setIsImageUploadModalOpen: (state, action) => {
       state.isImageUploadModalOpen = action.payload;

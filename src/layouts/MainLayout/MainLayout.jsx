@@ -28,7 +28,7 @@ export const MainLayout = () => {
       <AnimatePresence>{isMobileMenuOpen && <NavigationMobile />}</AnimatePresence>
       <Header />
       <div className="main-content">
-        <Suspense fallback={<LoaderLine />}>
+        <Suspense fallback={<LoaderLine isGlobal />}>
           <Outlet />
         </Suspense>
       </div>

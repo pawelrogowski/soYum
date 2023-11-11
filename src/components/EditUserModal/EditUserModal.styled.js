@@ -19,6 +19,7 @@ export const StyledDiv = styled(motion.div)`
   padding-top: 10vh;
   z-index: 5;
   > div {
+    overflow: hidden;
     position: relative;
     padding: 3.2rem 2.4rem;
     border-radius: 2.4rem;
