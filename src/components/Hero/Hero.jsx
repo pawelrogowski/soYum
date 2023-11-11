@@ -1,6 +1,5 @@
 import { useMediaQuery } from "react-responsive";
 
-import heroLowRes from "../../assets/images/hero.webp?w=50&format=avif";
 import srcsetAvif from "../../assets/images/hero.webp?w=380;760;1520&format=avif&as=srcset";
 import srcsetPng from "../../assets/images/hero.webp?w=380;760;1520&format=png&as=srcset";
 import srcsetWebp from "../../assets/images/hero.webp?w=380;760;1520&format=webp&as=srcset";
@@ -34,14 +33,7 @@ export const Hero = () => {
           <source type="image/avif" srcSet={srcsetAvif} />
           <source type="image/webp" srcSet={srcsetWebp} />
           <source type="image/png" srcSet={srcsetPng} />
-
-          <img
-            src={heroFallback}
-            alt="plate of delicious food"
-            width="578px"
-            height="539px"
-            loading="eager"
-          />
+          <img src={heroFallback} alt="plate of delicious food" width="578px" height="539px" />
         </picture>
         <CallToAction
           text="way to enjoy a variety of fresh ingredients in one satisfying meal"
