@@ -87,6 +87,7 @@ export const GlobalStyles = createGlobalStyle`
 	}
 
 	img {
+    font-size: 0;
   	max-width: 100%;
  		display: block;
 	}

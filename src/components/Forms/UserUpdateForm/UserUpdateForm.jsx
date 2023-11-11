@@ -73,11 +73,11 @@ export const UserUpdateForm = () => {
   }, [dispatch]);
 
   const handleAvatarClick = useCallback(() => {
-    console.log("opening");
     dispatch(setIsImageUploadModalLoading(true));
     const cloudinaryWidget = widget();
-    cloudinaryWidget.open();
+    !setIsImageUploadModalLoading && cloudinaryWidget.open();
   }, [widget, dispatch]);
+
   const handleSubmit = useCallback(
     (values, { setSubmitting }) => {
       const changedValues = {

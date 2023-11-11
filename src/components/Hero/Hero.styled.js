@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import leaves from "../../assets/images/leavesDecor.avif";
+import heroLowRes from "../../assets/images/heroLowRes.avif";
 export const StyledDiv = styled.div`
   --color-brand-highlight: ${({ theme }) => theme.brandColors.main};
   --color-hero-text: ${({ theme }) => theme.hero.text};
@@ -85,11 +86,19 @@ export const StyledDiv = styled.div`
     position: relative;
     margin-bottom: 2.1rem;
     flex-grow: 1;
+    aspect-ratio: 320 / 296;
+    background-image: url(${heroLowRes});
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    background-position: center;
     @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      aspect-ratio: 378 / 351;
       margin-bottom: 0;
       min-width: 38rem;
     }
     @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      aspect-ratio: 578 / 539;
       margin-bottom: 0;
       min-height: 53.9rem;
     }
@@ -100,19 +109,30 @@ export const StyledDiv = styled.div`
       left: 51%;
       background-image: url(${leaves});
       background-size: contain;
-      width: 230%;
-      height: 230%;
+      width: 170%;
+      height: 170%;
       transform: translate(-50%, -50%) rotate(60deg) scaleX(-1);
       filter: blur(0.2rem);
       z-index: -1;
       background-repeat: no-repeat;
+      aspect-ratio: 320 / 296;
 
       @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        aspect-ratio: 378 / 351;
         top: 31%;
         left: 45%;
-        width: 210%;
-        height: 210%;
+        width: 180%;
+        height: 180%;
         transform: translate(-50%, -50%) rotate(61deg) scaleX(-1);
+      }
+      @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        min-width: 104.4rem;
+        aspect-ratio: 378/351;
+        top: 23%;
+        left: 43%;
+        width: 180%;
+        height: 180%;
+        transform: translate(-50%, -50%) rotate(55deg) scaleX(-1);
       }
     }
     > div:last-of-type {
@@ -155,6 +175,7 @@ export const StyledDiv = styled.div`
         aspect-ratio: 320 / 296;
         object-fit: contain;
         min-width: 32rem;
+
         @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
           min-width: 38rem;
           aspect-ratio: 378 / 351;
