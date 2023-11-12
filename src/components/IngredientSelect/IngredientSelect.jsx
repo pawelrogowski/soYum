@@ -33,7 +33,6 @@ const IngredientSelectComponent = ({
     },
     [dispatch, recipeIngredients]
   );
-
   const handleIngredientClick = useCallback(
     (e) => {
       e.preventDefault();
@@ -133,7 +132,6 @@ const IngredientSelectComponent = ({
                 closeMenuOnSelect
                 defaultMenuIsOpen={false}
                 inputId={`measure-type-${index}`}
-                openMenuOnClick={false}
               />
               <AnimatePresence>
                 {recipeIngredients[index] && recipeIngredients[index].measureTypeError && (
