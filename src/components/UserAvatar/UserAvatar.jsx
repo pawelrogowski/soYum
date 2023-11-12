@@ -27,7 +27,7 @@ export function UserAvatar({ image, placeholder, name = "No Data" }) {
       <button onClick={handleOpenUserEdit} disabled={isEditProfilePopupOpen}>
         <picture>
           <source srcSet={image} type="image/jpeg" />
-          <img src={placeholder} alt="user avatar" width="44px" height="44px" />
+          <img src={placeholder} alt="user avatar" width="44px" height="44px" loading="eager" />
         </picture>
         <span>{shortenString(name, 10, "...")}</span>
       </button>

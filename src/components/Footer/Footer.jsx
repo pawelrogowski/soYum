@@ -47,7 +47,6 @@ const Footer = ({ variant }) => {
                 <DescriptionFooter />
               </div>
               <NavigationFooter />
-
               <NewsletterForm layout="column" />
             </div>
           </>

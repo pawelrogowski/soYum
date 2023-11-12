@@ -114,7 +114,12 @@ export const UserUpdateForm = () => {
           <div>
             <picture>
               <source srcSet={avatarPreview || avatar} />
-              <img src={avatarPreview || avatar} width="88px" onClick={handleAvatarClick} />
+              <img
+                src={avatarPreview || avatar}
+                width="88px"
+                loading="eager"
+                onClick={handleAvatarClick}
+              />
             </picture>
             <button type="button" onClick={handleAvatarClick}>
               <Icon icon="plus" {...baseIconMotion} />

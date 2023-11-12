@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
+import vegieBasketLowRes from "../../assets/images/vegieBasketLowRes.avif";
 export const MainContainer = styled(motion.main)`
   max-width: ${({ theme }) => theme.breakpoints.maxContent};
   min-width: ${({ theme }) => theme.breakpoints.minContent};
@@ -8,9 +9,6 @@ export const MainContainer = styled(motion.main)`
   position: relative;
   margin: 0 auto;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 
   min-height: calc(100dvh - 62px);
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
@@ -18,18 +16,21 @@ export const MainContainer = styled(motion.main)`
     min-height: calc(100dvh - 60.5px);
   }
 
-  > h1 {
-    margin-bottom: 6rem;
-    align-self: flex-start;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-      margin-bottom: 10rem;
-    }
-  }
-
   > section {
-    margin-bottom: 4rem;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-      margin-bottom: 5rem;
+    margin: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > h2 {
+      display: none;
+    }
+    > h1 {
+      margin-bottom: 6rem;
+      align-self: flex-start;
+      @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        margin-bottom: 10rem;
+      }
     }
   }
 `;

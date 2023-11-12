@@ -1,8 +1,8 @@
-import { routeChangeMotion } from "../../common/animations";
-import { searchFilterOptions } from "../../common/selectOptions";
-import { SearchForm } from "../../components/Forms/SearchForm/SearchForm";
-import { Heading } from "../../components/Heading/Heading";
-import { NoItemFound } from "../../components/NoItemFound/NoItemFound";
+import { routeChangeMotion } from "../../../common/animations";
+import { searchFilterOptions } from "../../../common/selectOptions";
+import { SearchForm } from "../../Forms/SearchForm/SearchForm";
+import { Heading } from "../../Heading/Heading";
+import { NoItemFound } from "./NoItemFound";
 import { MainContainer } from "./SearchPage.styled";
 
 const SearchPage = () => {
@@ -20,7 +20,7 @@ const SearchPage = () => {
       </section>
       <section>
         <Heading as="h2">Search Results</Heading>
-        {<NoItemFound />}
+        {<NoItemFound></NoItemFound>}
       </section>
     </MainContainer>
   );

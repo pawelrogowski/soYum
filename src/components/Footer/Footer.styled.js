@@ -23,20 +23,20 @@ export const StyledFooter = styled.footer`
       position: absolute;
       background-image: url(${leaves});
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: contain;
       width: 33.5rem;
       height: 46.8rem;
-      top: -21rem;
-      left: -5rem;
+      top: -22rem;
+      left: -8rem;
       rotate: -217deg;
       filter: blur(0.4rem);
       transform: scaleX(-1);
       z-index: -1;
       @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-        width: 33.5rem;
-        height: 51.7rem;
-        top: -26rem;
-        left: -11rem;
+        width: 54.5rem;
+        height: 54.7rem;
+        top: -30rem;
+        left: -14rem;
         rotate: -217deg;
       }
     }

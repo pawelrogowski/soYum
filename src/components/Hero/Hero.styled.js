@@ -126,7 +126,7 @@ export const StyledDiv = styled.div`
         transform: translate(-50%, -50%) rotate(61deg) scaleX(-1);
       }
       @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-        min-width: 104.4rem;
+        min-width: 96.4rem;
         aspect-ratio: 378/351;
         top: 23%;
         left: 43%;
@@ -141,22 +141,24 @@ export const StyledDiv = styled.div`
       top: 50%;
       left: 108%;
       transform: translate(0, -50%) rotate(49deg) skew(-8deg, -20deg);
+      border-radius: 30% 70% 82% 18%/72% 30% 70% 28%;
       @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-        width: 500%;
-        height: 500%;
-        top: -96%;
-        left: 110%;
-        transform: translate(0, -50%) rotate(-62deg) skewX(18deg) skewY(1deg);
-        border-radius: 12rem;
+        width: 365%;
+        height: 187%;
+        top: initial;
+        bottom: 0;
+        left: -7%;
+        transform: translate(0%, 0) rotate(-13deg);
+        border-radius: 30% 70% 82% 18%/72% 30% 70% 28%;
       }
       @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
         width: 365%;
-        height: 161%;
+        height: 182%;
         top: initial;
-        bottom: -73px;
-        left: 36%;
-        transform: translate(0%, 0) rotate(22deg) skewY(-20deg);
-        border-radius: 10rem;
+        bottom: 78px;
+        left: -18%;
+        transform: translate(0%, 0) rotate(-13deg);
+        border-radius: 96% 22% 69% 54%/100% 0% 46% 21%;
       }
     }
     > picture {
