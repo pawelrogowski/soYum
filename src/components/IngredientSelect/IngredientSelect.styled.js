@@ -2,23 +2,23 @@ import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
 
 export const StyledDiv = styled(motion.div)`
-  --color-bg: ${({ theme }) => theme.select.bg};
-  --color-ingredient-bg: ${({ theme }) => theme.select.ingredient.bg};
-  --color-ingredient-border-idle: ${({ theme }) => theme.select.ingredient.borderIdle};
-  --color-ingredient-border-active: ${({ theme }) => theme.select.ingredient.borderActive};
-  --color-text-idle: ${({ theme }) => theme.select.textIdle};
-  --color-text-active: ${({ theme }) => theme.select.textActive};
-  --color-text-placeholder: ${({ theme }) => theme.select.textPlaceholder};
-  --color-icon-idle: ${({ theme }) => theme.select.iconIdle};
-  --color-icon-active: ${({ theme }) => theme.select.iconActive};
-  --color-icon-remove: ${({ theme }) => theme.select.iconRemove};
-  --color-border-idle: ${({ theme }) => theme.select.borderIdle};
-  --color-border-active: ${({ theme }) => theme.select.borderActive};
-  --color-accent: ${({ theme }) => theme.select.accent};
-  --color-scrollbar-bg: ${({ theme }) => theme.select.scrollbarBg};
-  --color-scrollbar-thumb: ${({ theme }) => theme.select.scrollbarThumb};
-  --color-error: ${({ theme }) => theme.select.error};
-  --color-error-bg: ${({ theme }) => theme.select.errorBg};
+  --color-bg: ${({ theme: t }) => t.select.bg};
+  --color-ingredient-bg: ${({ theme: t }) => t.select.ingredient.bg};
+  --color-ingredient-border-idle: ${({ theme: t }) => t.select.ingredient.borderIdle};
+  --color-ingredient-border-active: ${({ theme: t }) => t.select.ingredient.borderActive};
+  --color-text-idle: ${({ theme: t }) => t.select.textIdle};
+  --color-text-active: ${({ theme: t }) => t.select.textActive};
+  --color-text-placeholder: ${({ theme: t }) => t.select.textPlaceholder};
+  --color-icon-idle: ${({ theme: t }) => t.select.iconIdle};
+  --color-icon-active: ${({ theme: t }) => t.select.iconActive};
+  --color-icon-remove: ${({ theme: t }) => t.select.iconRemove};
+  --color-border-idle: ${({ theme: t }) => t.select.borderIdle};
+  --color-border-active: ${({ theme: t }) => t.select.borderActive};
+  --color-accent: ${({ theme: t }) => t.select.accent};
+  --color-scrollbar-bg: ${({ theme: t }) => t.select.scrollbarBg};
+  --color-scrollbar-thumb: ${({ theme: t }) => t.select.scrollbarThumb};
+  --color-error: ${({ theme: t }) => t.select.error};
+  --color-error-bg: ${({ theme: t }) => t.select.errorBg};
 
   @keyframes menu-fade-in {
     0% {
@@ -78,7 +78,7 @@ export const StyledDiv = styled(motion.div)`
     padding: 1.2rem;
     transition: border-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
     min-width: 25.1rem;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
       padding: 1.7rem 1.6rem 1.6rem 1.6rem;
     }
 
@@ -99,7 +99,7 @@ export const StyledDiv = styled(motion.div)`
       align-self: center;
       max-height: 2.4rem;
       height: 1.8rem;
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         height: 2.4rem;
       }
 
@@ -117,7 +117,7 @@ export const StyledDiv = styled(motion.div)`
         width: 1px;
         height: 1.8rem;
         transform: translateY(-50%);
-        @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
           height: 2.4rem;
         }
       }
@@ -151,7 +151,7 @@ export const StyledDiv = styled(motion.div)`
           ::-webkit-scrollbar {
             width: 0px;
           }
-          @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+          @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
             font-size: 1.6rem;
           }
         }
@@ -161,7 +161,7 @@ export const StyledDiv = styled(motion.div)`
           font-size: 1.4rem;
           line-height: 1;
 
-          @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+          @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
             font-size: 1.6rem;
           }
         }
@@ -171,7 +171,7 @@ export const StyledDiv = styled(motion.div)`
           overflow: hidden;
           min-width: 6rem;
           flex: 6;
-          @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+          @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
             font-size: 1.6rem;
           }
         }
@@ -179,7 +179,7 @@ export const StyledDiv = styled(motion.div)`
         // dropdown icon wrapper
         &__indicator {
           height: 1.8rem;
-          @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+          @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
             height: 2.4rem;
           }
           display: flex;
@@ -294,10 +294,10 @@ export const StyledDiv = styled(motion.div)`
     width: 1.8rem;
     height: 1.8rem;
     margin-left: 1rem;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
       margin-left: auto;
     }
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
       margin-left: 1.4rem;
     }
     justify-self: flex-end;
@@ -337,7 +337,7 @@ export const StyledDiv = styled(motion.div)`
       position: relative;
       padding: 0 1.2rem;
       height: 1.8rem;
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         padding: 0 1.4rem;
         height: 2.4rem;
       }
@@ -354,7 +354,7 @@ export const StyledDiv = styled(motion.div)`
         width: 0px;
         height: 1.8rem;
         transform: translateY(-50%);
-        @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
           height: 2.4rem;
         }
       }
@@ -371,7 +371,7 @@ export const StyledDiv = styled(motion.div)`
         text-align: center;
         min-width: 2.6rem;
 
-        @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
           min-width: 3.6rem;
           font-size: 1.6rem;
         }
@@ -412,7 +412,7 @@ export const StyledDiv = styled(motion.div)`
       align-items: center;
       position: relative;
       height: 1.8rem;
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         height: 2.4rem;
       }
       > div {
@@ -441,14 +441,14 @@ export const StyledDiv = styled(motion.div)`
             letter-spacing: -0.032rem;
             height: 1.8rem;
             padding-left: 1.4rem;
-            @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+            @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
               padding-left: 1.2rem;
             }
             max-width: 8rem;
             ::-webkit-scrollbar {
               width: 0px;
             }
-            @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+            @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
               font-size: 1.6rem;
             }
           }
@@ -457,7 +457,7 @@ export const StyledDiv = styled(motion.div)`
             color: var(--color-text-placeholder);
             font-size: 1.4rem;
             line-height: 1;
-            @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+            @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
               font-size: 1.6rem;
             }
           }
@@ -465,7 +465,7 @@ export const StyledDiv = styled(motion.div)`
             font-size: 1.4rem;
             line-height: 1;
             overflow: visible;
-            @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+            @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
               font-size: 1.6rem;
             }
           }
@@ -486,7 +486,7 @@ export const StyledDiv = styled(motion.div)`
           }
           &__indicators {
             height: 1.8rem;
-            @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+            @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
               height: 2.4rem;
             }
             display: flex;
@@ -496,7 +496,7 @@ export const StyledDiv = styled(motion.div)`
           &__indicator {
             align-self: center;
             height: 1.8rem;
-            @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+            @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
               height: 2.4rem;
             }
             display: flex;
@@ -510,7 +510,7 @@ export const StyledDiv = styled(motion.div)`
             left: 0;
             min-height: 0;
             height: 1.8rem;
-            @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+            @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
               height: 2.4rem;
             }
             width: 100%;
@@ -530,7 +530,7 @@ export const StyledDiv = styled(motion.div)`
             scrollbar-color: var(--color-scrollbar-thumb) var(--color-scrollbar-bg);
             gap: 10px;
             overflow: visible;
-            @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+            @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
               width: 5.2rem;
             }
           }

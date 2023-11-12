@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const StyledLabel = styled.label`
-  --color-themeSwitch-bgOff: ${({ theme }) => theme.themeSwitch.bgOff};
-  --color-themeSwitch-bgOn: ${({ theme }) => theme.themeSwitch.bgOn};
+  --color-themeSwitch-bgOff: ${({ theme: t }) => t.themeSwitch.bgOff};
+  --color-themeSwitch-bgOn: ${({ theme: t }) => t.themeSwitch.bgOn};
 
   position: relative;
   display: inline-block;

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const StyledDiv = styled.div`
-  --color-text: ${({ theme }) => theme.recipePreparationStepsPreview.text};
-  --color-number-decoration: ${({ theme }) => theme.recipePreparationStepsPreview.numberDecoration};
+  --color-text: ${({ theme: t }) => t.recipePreparationStepsPreview.text};
+  --color-number-decoration: ${({ theme: t }) => t.recipePreparationStepsPreview.numberDecoration};
   --color-number-decoration-text: ${({ theme }) =>
     theme.recipePreparationStepsPreview.numberDecorationText};
   --color-button-bg-edit-idle: ${({ theme }) =>
@@ -13,13 +13,13 @@ export const StyledDiv = styled.div`
     theme.recipePreparationStepsPreview.buttonBgRemoveIdle};
   --color-button-bg-remove-active: ${({ theme }) =>
     theme.recipePreparationStepsPreview.buttonBgRemoveActive};
-  --color-icon-remove-idle: ${({ theme }) => theme.recipePreparationStepsPreview.iconRemoveIdle};
+  --color-icon-remove-idle: ${({ theme: t }) => t.recipePreparationStepsPreview.iconRemoveIdle};
   --color-icon-remove-active: ${({ theme }) =>
     theme.recipePreparationStepsPreview.iconRemoveActive};
-  --color-icon-edit-idle: ${({ theme }) => theme.recipePreparationStepsPreview.iconEditIdle};
-  --color-icon-edit-active: ${({ theme }) => theme.recipePreparationStepsPreview.iconEditActive};
-  --color-error: ${({ theme }) => theme.select.error};
-  --color-error-bg: ${({ theme }) => theme.select.errorBg};
+  --color-icon-edit-idle: ${({ theme: t }) => t.recipePreparationStepsPreview.iconEditIdle};
+  --color-icon-edit-active: ${({ theme: t }) => t.recipePreparationStepsPreview.iconEditActive};
+  --color-error: ${({ theme: t }) => t.select.error};
+  --color-error-bg: ${({ theme: t }) => t.select.errorBg};
   padding: 3.2rem 0;
   position: relative;
   max-width: 58.8rem;

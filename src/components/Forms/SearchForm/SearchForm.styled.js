@@ -1,43 +1,43 @@
 import styled, { css } from "styled-components";
 
 export const StyledForm = styled.form`
-  --color-form-search-borderIdle: ${({ theme }) => theme.form.search.borderIdle};
-  --color-form-search-font: ${({ theme }) => theme.form.search.font};
-  --font-form: ${({ theme }) => theme.form.font};
-  --color-button-base-bgHover: ${({ theme }) => theme.button.base.bgHover};
-  --color-form-search-borderFocus: ${({ theme }) => theme.form.search.borderFocus};
-  --color-form-search-placeholder: ${({ theme }) => theme.form.search.placeholder};
-  --color-form-search-background: ${({ theme }) => theme.form.search.background};
-  --color-bg: ${({ theme }) => theme.select.bg};
-  --color-text-idle: ${({ theme }) => theme.select.textIdle};
-  --color-text-active: ${({ theme }) => theme.select.textActive};
-  --color-text-placeholder: ${({ theme }) => theme.select.textPlaceholder};
-  --color-icon-idle: ${({ theme }) => theme.select.iconIdle};
-  --color-icon-active: ${({ theme }) => theme.select.iconActive};
-  --color-icon-remove: ${({ theme }) => theme.select.iconRemove};
-  --color-border-idle: ${({ theme }) => theme.select.borderIdle};
-  --color-border-active: ${({ theme }) => theme.select.borderActive};
-  --color-accent: ${({ theme }) => theme.select.accent};
-  --color-scrollbar-bg: ${({ theme }) => theme.select.scrollbarBg};
-  --color-scrollbar-thumb: ${({ theme }) => theme.select.scrollbarThumb};
-  --color-error: ${({ theme }) => theme.select.error};
-  --color-error-bg: ${({ theme }) => theme.select.errorBg};
-  --color-ingredient-bg: ${({ theme }) => theme.select.ingredient.bg};
-  --color-border-search: ${({ theme }) => theme.select.colorBorderSearch};
+  --color-form-search-borderIdle: ${({ theme: t }) => t.form.search.borderIdle};
+  --color-form-search-font: ${({ theme: t }) => t.form.search.font};
+  --font-form: ${({ theme: t }) => t.form.font};
+  --color-button-base-bgHover: ${({ theme: t }) => t.button.base.bgHover};
+  --color-form-search-borderFocus: ${({ theme: t }) => t.form.search.borderFocus};
+  --color-form-search-placeholder: ${({ theme: t }) => t.form.search.placeholder};
+  --color-form-search-background: ${({ theme: t }) => t.form.search.background};
+  --color-bg: ${({ theme: t }) => t.select.bg};
+  --color-text-idle: ${({ theme: t }) => t.select.textIdle};
+  --color-text-active: ${({ theme: t }) => t.select.textActive};
+  --color-text-placeholder: ${({ theme: t }) => t.select.textPlaceholder};
+  --color-icon-idle: ${({ theme: t }) => t.select.iconIdle};
+  --color-icon-active: ${({ theme: t }) => t.select.iconActive};
+  --color-icon-remove: ${({ theme: t }) => t.select.iconRemove};
+  --color-border-idle: ${({ theme: t }) => t.select.borderIdle};
+  --color-border-active: ${({ theme: t }) => t.select.borderActive};
+  --color-accent: ${({ theme: t }) => t.select.accent};
+  --color-scrollbar-bg: ${({ theme: t }) => t.select.scrollbarBg};
+  --color-scrollbar-thumb: ${({ theme: t }) => t.select.scrollbarThumb};
+  --color-error: ${({ theme: t }) => t.select.error};
+  --color-error-bg: ${({ theme: t }) => t.select.errorBg};
+  --color-ingredient-bg: ${({ theme: t }) => t.select.ingredient.bg};
+  --color-border-search: ${({ theme: t }) => t.select.colorBorderSearch};
 
   width: 100%;
   max-width: 50.1rem;
   position: relative;
-  min-width: ${({ theme }) => theme.breakpoints.minContent};
+  min-width: ${({ theme: t }) => t.breakpoints.minContent};
   ${({ $variant }) =>
     $variant === "page" &&
     css`
       max-width: 32rem;
 
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         max-width: 36.2rem;
       }
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
         max-width: 50.1rem;
       }
     `}
@@ -61,12 +61,12 @@ export const StyledForm = styled.form`
     height: 5.3rem;
     padding-right: 12.6rem;
     font-size: 1.4rem;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
       height: 5.7rem;
       font-size: 1.6rem;
       padding-right: 14.6rem;
     }
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
       height: 7rem;
       padding-right: 18.6rem;
     }
@@ -94,24 +94,24 @@ export const StyledForm = styled.form`
     position: absolute;
     right: 0rem;
     top: 0;
-    background: ${({ theme }) => theme.form.search.button.bgIdle};
-    border-color: ${({ theme }) => theme.form.search.button.borderIdle};
+    background: ${({ theme: t }) => t.form.search.button.bgIdle};
+    border-color: ${({ theme: t }) => t.form.search.button.borderIdle};
     height: 5.3rem;
     font-size: 1.4rem;
     width: 11.3rem;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
       width: 13.1rem;
       height: 5.7rem;
       font-size: 1.6rem;
     }
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
       width: 16.1rem;
       height: 7rem;
     }
     &:hover,
     &:focus {
-      background: ${({ theme }) => theme.form.search.button.bgActive};
-      border-color: ${({ theme }) => theme.form.search.button.borderActive};
+      background: ${({ theme: t }) => t.form.search.button.bgActive};
+      border-color: ${({ theme: t }) => t.form.search.button.borderActive};
     }
   }
 
@@ -121,7 +121,7 @@ export const StyledForm = styled.form`
     align-items: center;
     justify-content: center;
     margin-top: 2.4rem;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
       margin-top: 2.8rem;
       gap: 1.8rem;
     }
@@ -133,7 +133,7 @@ export const StyledForm = styled.form`
       line-height: 1.33;
       font-weight: 500;
       letter-spacing: -0.24px;
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         font-size: 1.6rem;
       }
       overflow: hidden;
@@ -147,12 +147,12 @@ export const StyledForm = styled.form`
       height: 3.4rem;
       padding: 8px 14px;
 
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         height: 4.1rem;
       }
       > div {
         width: 14.6rem;
-        @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
           width: 17.5rem;
         }
         span {
@@ -179,7 +179,7 @@ export const StyledForm = styled.form`
             ::-webkit-scrollbar {
               width: 0px;
             }
-            @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+            @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
               font-size: 1.6rem;
             }
           }
@@ -189,7 +189,7 @@ export const StyledForm = styled.form`
             font-size: 1.2rem;
             line-height: 1.5;
             letter-spacing: -0.24px;
-            @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+            @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
               font-size: 1.6rem;
             }
           } // dropdown icon wrapper
@@ -214,7 +214,7 @@ export const StyledForm = styled.form`
             display: flex;
             justify-content: center;
             align-items: center;
-            @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+            @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
               height: 2.4rem;
             }
           }
@@ -302,7 +302,7 @@ export const StyledForm = styled.form`
             flex-direction: column;
             gap: 0.8rem;
             padding: 0.8rem 1.4rem;
-            @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+            @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
               font-size: 1.6rem;
             }
           }

@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const StyledDiv = styled.div`
-  --color-text-idle: ${({ theme }) => theme.counter.textIdle};
-  --color-text-active: ${({ theme }) => theme.counter.textActive};
-  --color-icon-active: ${({ theme }) => theme.counter.iconActive};
-  --color-icon-idle: ${({ theme }) => theme.counter.iconIdle};
-  --color-icon-disabled: ${({ theme }) => theme.counter.iconDisabled};
-  --color-border: ${({ theme }) => theme.counter.border};
+  --color-text-idle: ${({ theme: t }) => t.counter.textIdle};
+  --color-text-active: ${({ theme: t }) => t.counter.textActive};
+  --color-icon-active: ${({ theme: t }) => t.counter.iconActive};
+  --color-icon-idle: ${({ theme: t }) => t.counter.iconIdle};
+  --color-icon-disabled: ${({ theme: t }) => t.counter.iconDisabled};
+  --color-border: ${({ theme: t }) => t.counter.border};
   padding: 0.7rem 1.4rem;
   display: flex;
   border-radius: 1.8rem;

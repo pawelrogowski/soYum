@@ -1,15 +1,15 @@
 import { css, styled } from "styled-components";
 
 export const StyledForm = styled.form`
-  --color-border-idle: ${({ theme }) => theme.newsletterForm.textInput.borderIdle};
-  --color-background-idle: ${({ theme }) => theme.newsletterForm.textInput.bgIdle};
-  --color-font-idle: ${({ theme }) => theme.newsletterForm.textInput.fontIdle};
-  --font-input: ${({ theme }) => theme.newsletterForm.textInput.font};
-  --color-border-active: ${({ theme }) => theme.newsletterForm.textInput.borderActive};
-  --color-icon-idle: ${({ theme }) => theme.newsletterForm.textInput.iconIdle};
-  --color-error: ${({ theme }) => theme.newsletterForm.textInput.error};
-  --color-warning: ${({ theme }) => theme.newsletterForm.textInput.warning};
-  --color-correct: ${({ theme }) => theme.newsletterForm.textInput.correct};
+  --color-border-idle: ${({ theme: t }) => t.newsletterForm.textInput.borderIdle};
+  --color-background-idle: ${({ theme: t }) => t.newsletterForm.textInput.bgIdle};
+  --color-font-idle: ${({ theme: t }) => t.newsletterForm.textInput.fontIdle};
+  --font-input: ${({ theme: t }) => t.newsletterForm.textInput.font};
+  --color-border-active: ${({ theme: t }) => t.newsletterForm.textInput.borderActive};
+  --color-icon-idle: ${({ theme: t }) => t.newsletterForm.textInput.iconIdle};
+  --color-error: ${({ theme: t }) => t.newsletterForm.textInput.error};
+  --color-warning: ${({ theme: t }) => t.newsletterForm.textInput.warning};
+  --color-correct: ${({ theme: t }) => t.newsletterForm.textInput.correct};
 
   max-width: 100rem;
   width: 100%;
@@ -89,7 +89,7 @@ export const StyledForm = styled.form`
     css`
       max-width: 33.9rem;
       flex-direction: column;
-      @media screen and (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+      @media screen and (max-width: ${({ theme: t }) => t.breakpoints.mobileMax}) {
         max-width: 26.4rem;
       }
       > h2 {
@@ -98,7 +98,7 @@ export const StyledForm = styled.form`
         font-family: Poppins;
         font-size: 1.8rem;
         font-weight: 700;
-        @media screen and (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+        @media screen and (max-width: ${({ theme: t }) => t.breakpoints.mobileMax}) {
           display: none;
         }
       }
@@ -109,7 +109,7 @@ export const StyledForm = styled.form`
         font-style: normal;
         line-height: 1.28;
         letter-spacing: -0.028rem;
-        @media screen and (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+        @media screen and (max-width: ${({ theme: t }) => t.breakpoints.mobileMax}) {
           display: none;
         }
       }
@@ -121,7 +121,7 @@ export const StyledForm = styled.form`
       }
       > button {
         max-width: 33.9rem;
-        @media screen and (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+        @media screen and (max-width: ${({ theme: t }) => t.breakpoints.mobileMax}) {
           max-width: 26.4rem;
         }
       }

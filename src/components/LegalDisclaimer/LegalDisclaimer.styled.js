@@ -3,8 +3,8 @@ import styled from "styled-components";
 import leaves from "../../assets/images/leavesDecor.avif";
 import Container from "../Container/Container";
 export const StyledDiv = styled(Container)`
-  --color-background: ${({ theme }) => theme.bg.main};
-  --color-text: ${({ theme }) => theme.footer.legalText};
+  --color-background: ${({ theme: t }) => t.bg.main};
+  --color-text: ${({ theme: t }) => t.footer.legalText};
 
   position: relative;
   overflow: hidden;

@@ -14,7 +14,7 @@ export const StyledButton = styled.button`
     background-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms,
     border-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+  @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
     width: 35.7rem;
     height: 34.4rem;
     min-width: 35.7rem;
@@ -46,7 +46,7 @@ export const StyledButton = styled.button`
       width: 100%;
       height: auto;
       aspect-ratio: 279 / 268;
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
         aspect-ratio: 357 / 344;
       }
     }

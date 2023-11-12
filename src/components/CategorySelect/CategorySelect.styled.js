@@ -1,20 +1,20 @@
 import styled, { css } from "styled-components";
 
 export const StyledDiv = styled.div`
-  --color-bg: ${({ theme }) => theme.select.bg};
-  --color-text-idle: ${({ theme }) => theme.select.textIdle};
-  --color-text-active: ${({ theme }) => theme.select.textActive};
-  --color-text-placeholder: ${({ theme }) => theme.select.textPlaceholder};
-  --color-icon-idle: ${({ theme }) => theme.select.iconIdle};
-  --color-icon-active: ${({ theme }) => theme.select.iconActive};
-  --color-icon-remove: ${({ theme }) => theme.select.iconRemove};
-  --color-border-idle: ${({ theme }) => theme.select.borderIdle};
-  --color-border-active: ${({ theme }) => theme.select.borderActive};
-  --color-accent: ${({ theme }) => theme.select.accent};
-  --color-scrollbar-bg: ${({ theme }) => theme.select.scrollbarBg};
-  --color-scrollbar-thumb: ${({ theme }) => theme.select.scrollbarThumb};
-  --color-font-error: ${({ theme }) => theme.recipeTextInput.error};
-  --color-bg-error: ${({ theme }) => theme.recipeTextInput.errorBg};
+  --color-bg: ${({ theme: t }) => t.select.bg};
+  --color-text-idle: ${({ theme: t }) => t.select.textIdle};
+  --color-text-active: ${({ theme: t }) => t.select.textActive};
+  --color-text-placeholder: ${({ theme: t }) => t.select.textPlaceholder};
+  --color-icon-idle: ${({ theme: t }) => t.select.iconIdle};
+  --color-icon-active: ${({ theme: t }) => t.select.iconActive};
+  --color-icon-remove: ${({ theme: t }) => t.select.iconRemove};
+  --color-border-idle: ${({ theme: t }) => t.select.borderIdle};
+  --color-border-active: ${({ theme: t }) => t.select.borderActive};
+  --color-accent: ${({ theme: t }) => t.select.accent};
+  --color-scrollbar-bg: ${({ theme: t }) => t.select.scrollbarBg};
+  --color-scrollbar-thumb: ${({ theme: t }) => t.select.scrollbarThumb};
+  --color-font-error: ${({ theme: t }) => t.recipeTextInput.error};
+  --color-bg-error: ${({ theme: t }) => t.recipeTextInput.errorBg};
 
   @keyframes menu-fade-in {
     0% {
@@ -98,7 +98,7 @@ export const StyledDiv = styled.div`
         color: var(--color-text-placeholder);
         font-size: 1.4rem;
         line-height: 1.5;
-        @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
           font-size: 1.6rem;
         }
       } // dropdown icon wrapper

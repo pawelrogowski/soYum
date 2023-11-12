@@ -1,23 +1,23 @@
 import styled, { css } from "styled-components";
 
 export const StyledDiv = styled.div`
-  --color-bg: ${({ theme }) => theme.recipePreparationTextArea.bg};
-  --color-border-idle: ${({ theme }) => theme.recipePreparationTextArea.borderIdle};
-  --color-border-active: ${({ theme }) => theme.recipePreparationTextArea.borderActive};
-  --color-text-idle: ${({ theme }) => theme.recipePreparationTextArea.textIdle};
-  --color-text-placeholder: ${({ theme }) => theme.recipePreparationTextArea.textPlaceholder};
+  --color-bg: ${({ theme: t }) => t.recipePreparationTextArea.bg};
+  --color-border-idle: ${({ theme: t }) => t.recipePreparationTextArea.borderIdle};
+  --color-border-active: ${({ theme: t }) => t.recipePreparationTextArea.borderActive};
+  --color-text-idle: ${({ theme: t }) => t.recipePreparationTextArea.textIdle};
+  --color-text-placeholder: ${({ theme: t }) => t.recipePreparationTextArea.textPlaceholder};
   --color-button-bg-remove-active: ${({ theme }) =>
     theme.recipePreparationTextArea.buttonBgRemoveActive};
-  --color-button-bg-idle: ${({ theme }) => theme.recipePreparationTextArea.buttonBgIdle};
-  --color-button-bg-active: ${({ theme }) => theme.recipePreparationTextArea.buttonBgActive};
-  --color-button-bg-disabled: ${({ theme }) => theme.recipePreparationTextArea.buttonBgDisabled};
-  --color-button-border-idle: ${({ theme }) => theme.recipePreparationTextArea.buttonBorderIdle};
+  --color-button-bg-idle: ${({ theme: t }) => t.recipePreparationTextArea.buttonBgIdle};
+  --color-button-bg-active: ${({ theme: t }) => t.recipePreparationTextArea.buttonBgActive};
+  --color-button-bg-disabled: ${({ theme: t }) => t.recipePreparationTextArea.buttonBgDisabled};
+  --color-button-border-idle: ${({ theme: t }) => t.recipePreparationTextArea.buttonBorderIdle};
   --color-button-border-active: ${({ theme }) =>
     theme.recipePreparationTextArea.buttonBorderActive};
   --color-button-border-disabled: ${({ theme }) =>
     theme.recipePreparationTextArea.buttonBorderDisabled};
-  --color-error: ${({ theme }) => theme.select.error};
-  --color-error-bg: ${({ theme }) => theme.select.errorBg};
+  --color-error: ${({ theme: t }) => t.select.error};
+  --color-error-bg: ${({ theme: t }) => t.select.errorBg};
 
   position: relative;
   display: flex;
@@ -75,7 +75,7 @@ export const StyledDiv = styled.div`
           props.$hasError === "true" ? css`var(--color-error)` : css`var(--color-border-active)`};
       }
 
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         padding: 1.6rem 2.3rem;
         font-size: 1.8rem;
         letter-spacing: -0.028rem;

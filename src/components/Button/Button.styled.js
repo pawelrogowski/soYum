@@ -7,15 +7,15 @@ export const StyledButton = styled(motion.button)`
     pointer-events: none;
     border: none;
   }
-  color: ${({ theme }) => theme.button.base.fontColorIdle};
+  color: ${({ theme: t }) => t.button.base.fontColorIdle};
   font-size: 1.6rem;
-  font-family: ${({ theme }) => theme.button.font};
+  font-family: ${({ theme: t }) => t.button.font};
   font-weight: 400;
-  background-color: ${({ theme }) => theme.button.base.bgIdle};
+  background-color: ${({ theme: t }) => t.button.base.bgIdle};
   border-radius: 2.4rem 4.4rem;
   width: 16.1rem;
   height: 7rem;
-  border: 0.1rem solid ${({ theme }) => theme.button.base.borderIdle};
+  border: 0.1rem solid ${({ theme: t }) => t.button.base.borderIdle};
   transition: background-color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
     color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms, border cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
     transform cubic-bezier(0.17, 0.67, 1, 1.23) 50ms,
@@ -26,15 +26,15 @@ export const StyledButton = styled(motion.button)`
   &:hover,
   &:focus,
   &:focus-within {
-    background-color: ${({ theme }) => theme.button.base.bgHover};
-    border: 0.1rem solid ${({ theme }) => theme.button.base.borderHover};
+    background-color: ${({ theme: t }) => t.button.base.bgHover};
+    border: 0.1rem solid ${({ theme: t }) => t.button.base.borderHover};
   }
   &:active {
     transition: background-color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
       color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms, border cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
       transform cubic-bezier(0.17, 0.67, 1, 1.23) 50ms;
-    background-color: ${({ theme }) => theme.button.base.bgActive};
-    border: 0.1rem solid ${({ theme }) => theme.button.base.borderActive};
+    background-color: ${({ theme: t }) => t.button.base.bgActive};
+    border: 0.1rem solid ${({ theme: t }) => t.button.base.borderActive};
   }
 
   ${({ $variant, theme }) =>
@@ -53,8 +53,8 @@ export const StyledButton = styled(motion.button)`
           }
 
           &:active {
-            background-color: ${({ theme }) => theme.button.outlineSmall.bgActive};
-            border: 0.2rem solid ${({ theme }) => theme.button.outlineSmall.borderActive};
+            background-color: ${({ theme: t }) => t.button.outlineSmall.bgActive};
+            border: 0.2rem solid ${({ theme: t }) => t.button.outlineSmall.borderActive};
           }
         `
       : $variant === "outlineBig"
@@ -77,8 +77,8 @@ export const StyledButton = styled(motion.button)`
           }
 
           &:active {
-            background-color: ${({ theme }) => theme.button.outlineBig.bgActive};
-            border: 0.2rem solid ${({ theme }) => theme.button.outlineBig.borderActive};
+            background-color: ${({ theme: t }) => t.button.outlineBig.bgActive};
+            border: 0.2rem solid ${({ theme: t }) => t.button.outlineBig.borderActive};
           }
         `
       : $variant === "rectBig"
@@ -98,8 +98,8 @@ export const StyledButton = styled(motion.button)`
           }
 
           &:active {
-            background-color: ${({ theme }) => theme.button.rectBig.bgActive};
-            border: 0.2rem solid ${({ theme }) => theme.button.rectBig.borderActive};
+            background-color: ${({ theme: t }) => t.button.rectBig.bgActive};
+            border: 0.2rem solid ${({ theme: t }) => t.button.rectBig.borderActive};
           }
         `
       : $variant === "rectSmall"
@@ -119,8 +119,8 @@ export const StyledButton = styled(motion.button)`
           }
 
           &:active {
-            background-color: ${({ theme }) => theme.button.rectSmall.bgActive};
-            border: 0.2rem solid ${({ theme }) => theme.button.rectSmall.borderActive};
+            background-color: ${({ theme: t }) => t.button.rectSmall.bgActive};
+            border: 0.2rem solid ${({ theme: t }) => t.button.rectSmall.borderActive};
           }
         `
       : $variant === "rectSmallDisabled"
@@ -140,8 +140,8 @@ export const StyledButton = styled(motion.button)`
           }
 
           &:active {
-            background-color: ${({ theme }) => theme.button.rectSmall.bgActive};
-            border: 0.2rem solid ${({ theme }) => theme.button.rectSmall.borderActive};
+            background-color: ${({ theme: t }) => t.button.rectSmall.bgActive};
+            border: 0.2rem solid ${({ theme: t }) => t.button.rectSmall.borderActive};
           }
         `
       : null};

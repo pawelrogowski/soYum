@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const StyledDiv = styled(motion.div)`
-  --color-bg: ${({ theme }) => theme.editUserModal.bg};
-  --color-backdrop: ${({ theme }) => theme.editUserModal.backdrop};
-  --color-icon-idle: ${({ theme }) => theme.editUserModal.iconIdle};
-  --color-icon-active: ${({ theme }) => theme.editUserModal.iconActive};
+  --color-bg: ${({ theme: t }) => t.editUserModal.bg};
+  --color-backdrop: ${({ theme: t }) => t.editUserModal.backdrop};
+  --color-icon-idle: ${({ theme: t }) => t.editUserModal.iconIdle};
+  --color-icon-active: ${({ theme: t }) => t.editUserModal.iconActive};
   position: fixed;
   top: 0;
   left: 0;
@@ -27,11 +27,11 @@ export const StyledDiv = styled(motion.div)`
     width: 33rem;
     background: var(--color-bg);
     box-shadow: 0px 4px 48px 0px rgba(0, 0, 0, 0.1);
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
       padding: 5rem 4rem;
       width: 48rem;
     }
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
       padding: 6rem 5rem;
       width: 50rem;
     }

@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const StyledFigure = styled(motion.figure)`
-  --color-card-bg: ${({ theme }) => theme.card.bg};
-  --color-card-border-idle: ${({ theme }) => theme.card.borderIdle};
-  --color-card-border-active: ${({ theme }) => theme.card.borderActive};
-  --color-caption-text-idle: ${({ theme }) => theme.card.caption.textIdle};
-  --color-caption-text-active: ${({ theme }) => theme.card.caption.textActive};
-  --color-caption-bg-idle: ${({ theme }) => theme.card.caption.bgIdle};
+  --color-card-bg: ${({ theme: t }) => t.card.bg};
+  --color-card-border-idle: ${({ theme: t }) => t.card.borderIdle};
+  --color-card-border-active: ${({ theme: t }) => t.card.borderActive};
+  --color-caption-text-idle: ${({ theme: t }) => t.card.caption.textIdle};
+  --color-caption-text-active: ${({ theme: t }) => t.card.caption.textActive};
+  --color-caption-bg-idle: ${({ theme: t }) => t.card.caption.bgIdle};
 
   position: relative;
   display: flex;

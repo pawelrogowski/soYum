@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const StyledNav = styled.nav`
-  --color-text-idle: ${({ theme }) => theme.categoryFilter.textIdle};
-  --color-text-active: ${({ theme }) => theme.categoryFilter.textActive};
-  --color-decoration-idle: ${({ theme }) => theme.categoryFilter.decorationIdle};
-  --color-decoration-active: ${({ theme }) => theme.categoryFilter.decorationIdle};
-  --color-button-idle: ${({ theme }) => theme.categoryFilter.buttonIdle};
-  --color-button-active: ${({ theme }) => theme.categoryFilter.buttonActive};
-  --color-button-disabled: ${({ theme }) => theme.categoryFilter.buttonDisabled};
+  --color-text-idle: ${({ theme: t }) => t.categoryFilter.textIdle};
+  --color-text-active: ${({ theme: t }) => t.categoryFilter.textActive};
+  --color-decoration-idle: ${({ theme: t }) => t.categoryFilter.decorationIdle};
+  --color-decoration-active: ${({ theme: t }) => t.categoryFilter.decorationIdle};
+  --color-button-idle: ${({ theme: t }) => t.categoryFilter.buttonIdle};
+  --color-button-active: ${({ theme: t }) => t.categoryFilter.buttonActive};
+  --color-button-disabled: ${({ theme: t }) => t.categoryFilter.buttonDisabled};
   position: relative;
   width: 100%;
   height: 9.6rem;
@@ -16,7 +16,7 @@ export const StyledNav = styled.nav`
   flex-wrap: nowrap;
   justify-content: center;
   border-bottom: 0.1rem solid var(--color-decoration-idle);
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
     height: 10.6rem;
   }
 
@@ -83,7 +83,7 @@ export const StyledNav = styled.nav`
     }
   }
   .active-link {
-    color: ${({ theme }) => theme.brandColors.main} !important;
+    color: ${({ theme: t }) => t.brandColors.main} !important;
     position: relative;
 
     &:after {
@@ -93,16 +93,16 @@ export const StyledNav = styled.nav`
       left: 50%;
       width: calc(100% + 3.2rem);
       height: 0;
-      border: 0.4rem solid ${({ theme }) => theme.brandColors.main};
+      border: 0.4rem solid ${({ theme: t }) => t.brandColors.main};
       transform: translateX(-50%);
       border-radius: 4px;
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         bottom: -4.8rem;
       }
     }
   }
   .active-link-extreme {
-    color: ${({ theme }) => theme.brandColors.main} !important;
+    color: ${({ theme: t }) => t.brandColors.main} !important;
     position: relative;
 
     &:after {
@@ -112,10 +112,10 @@ export const StyledNav = styled.nav`
       left: 50%;
       width: 100%;
       height: 0;
-      border: 0.4rem solid ${({ theme }) => theme.brandColors.main};
+      border: 0.4rem solid ${({ theme: t }) => t.brandColors.main};
       transform: translateX(-50%);
       border-radius: 4px;
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         bottom: -4.8rem;
       }
     }

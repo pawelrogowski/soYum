@@ -1,11 +1,11 @@
 import { css, styled } from "styled-components";
 
 export const StyledHeader = styled.header`
-  --color-decoration: ${({ theme }) => theme.backgroundDecoration.primary};
+  --color-decoration: ${({ theme: t }) => t.backgroundDecoration.primary};
 
   position: relative;
-  max-width: ${({ theme }) => theme.breakpoints.maxContent};
-  min-width: ${({ theme }) => theme.breakpoints.minContent};
+  max-width: ${({ theme: t }) => t.breakpoints.maxContent};
+  min-width: ${({ theme: t }) => t.breakpoints.minContent};
   position: relative;
   width: 100%;
   margin: 0 auto;
@@ -25,7 +25,7 @@ export const StyledHeader = styled.header`
         height: 0.8rem;
         border-radius: 0.3rem;
         background-color: var(--color-decoration);
-        @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
           width: 1.4rem;
           height: 1.4rem;
         }
@@ -36,7 +36,7 @@ export const StyledHeader = styled.header`
         left: 14.3rem;
         rotate: -25deg;
 
-        @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
           bottom: -5.8rem;
           left: 19.8rem;
         }
@@ -47,7 +47,7 @@ export const StyledHeader = styled.header`
         right: 1rem;
         rotate: -25deg;
 
-        @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
           bottom: -6.9rem;
           right: 10rem;
         }

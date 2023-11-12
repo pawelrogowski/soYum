@@ -1,11 +1,11 @@
 import { css, styled } from "styled-components";
 
 export const StyledDiv = styled.div`
-  --color-userAvatar-fontIdle: ${({ theme }) => theme.userAvatar.fontIdle};
-  --color-userAvatar-fontHover: ${({ theme }) => theme.userAvatar.fontHover};
-  --color-decoration: ${({ theme }) => theme.backgroundDecoration.secondary};
+  --color-userAvatar-fontIdle: ${({ theme: t }) => t.userAvatar.fontIdle};
+  --color-userAvatar-fontHover: ${({ theme: t }) => t.userAvatar.fontHover};
+  --color-decoration: ${({ theme: t }) => t.backgroundDecoration.secondary};
 
-  --color-font-alternative: ${({ theme }) => theme.userAvatar.fontAlternativeIdle};
+  --color-font-alternative: ${({ theme: t }) => t.userAvatar.fontAlternativeIdle};
   position: relative;
   z-index: 2;
   margin-right: 5rem;
@@ -67,7 +67,7 @@ export const StyledDiv = styled.div`
       transition: border-color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
         box-shadow cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
 
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         height: 4.4rem;
         width: 4.4rem;
         aspect-ratio: 1 / 1;
@@ -82,10 +82,10 @@ export const StyledDiv = styled.div`
       letter-spacing: normal;
       font-weight: 600;
       font-style: normal;
-      @media screen and (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+      @media screen and (max-width: ${({ theme: t }) => t.breakpoints.mobileMax}) {
         color: var(--color-userAvatar-fontIdle);
       }
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         font-size: 1.4rem;
         line-height: 2.38rem;
       }

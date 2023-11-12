@@ -3,14 +3,14 @@ import styled from "styled-components";
 import heroLowRes from "../../assets/images/heroLowRes.avif";
 import leaves from "../../assets/images/leavesDecor.avif";
 export const StyledDiv = styled.div`
-  --color-brand-highlight: ${({ theme }) => theme.brandColors.main};
-  --color-hero-text: ${({ theme }) => theme.hero.text};
-  --color-hero-bg-decoration: ${({ theme }) => theme.hero.bgDecoration};
+  --color-brand-highlight: ${({ theme: t }) => t.brandColors.main};
+  --color-hero-text: ${({ theme: t }) => t.hero.text};
+  --color-hero-bg-decoration: ${({ theme: t }) => t.hero.bgDecoration};
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
     width: 100%;
     flex-direction: row;
   }
@@ -21,12 +21,12 @@ export const StyledDiv = styled.div`
     align-items: center;
     width: 100%;
     gap: 1.4rem;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
       align-items: start;
       max-width: 36.2rem;
       gap: 2.4rem;
     }
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
       min-width: 50.5rem;
       gap: 1.4rem;
       margin-top: -5.1rem;
@@ -38,13 +38,13 @@ export const StyledDiv = styled.div`
       line-height: 1;
       letter-spacing: -0.3rem;
       font-weight: 400;
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         font-size: 7.2rem;
         line-height: 0.72;
         letter-spacing: -0.036rem;
         text-align: start;
       }
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
         font-size: 10rem;
         line-height: 1;
         letter-spacing: -0.05rem;
@@ -65,13 +65,13 @@ export const StyledDiv = styled.div`
       max-width: 32rem;
       text-wrap: pretty;
 
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         max-width: 100%;
         text-align: start;
         margin-bottom: 0.8rem;
       }
 
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
         font-size: 1.8rem;
         line-height: 1.33;
         letter-spacing: -0.036rem;
@@ -92,12 +92,12 @@ export const StyledDiv = styled.div`
     background-repeat: no-repeat;
 
     background-position: center;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
       aspect-ratio: 378 / 351;
       margin-bottom: 0;
       min-width: 38rem;
     }
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
       aspect-ratio: 578 / 539;
       margin-bottom: 0;
       min-height: 53.9rem;
@@ -117,7 +117,7 @@ export const StyledDiv = styled.div`
       background-repeat: no-repeat;
       aspect-ratio: 320 / 296;
 
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         aspect-ratio: 378 / 351;
         top: 31%;
         left: 45%;
@@ -125,8 +125,8 @@ export const StyledDiv = styled.div`
         height: 180%;
         transform: translate(-50%, -50%) rotate(61deg) scaleX(-1);
       }
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
-        min-width: 104.4rem;
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
+        min-width: 96.4rem;
         aspect-ratio: 378/351;
         top: 23%;
         left: 43%;
@@ -141,30 +141,32 @@ export const StyledDiv = styled.div`
       top: 50%;
       left: 108%;
       transform: translate(0, -50%) rotate(49deg) skew(-8deg, -20deg);
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-        width: 500%;
-        height: 500%;
-        top: -96%;
-        left: 110%;
-        transform: translate(0, -50%) rotate(-62deg) skewX(18deg) skewY(1deg);
-        border-radius: 12rem;
-      }
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      border-radius: 30% 70% 82% 18%/72% 30% 70% 28%;
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         width: 365%;
-        height: 161%;
+        height: 187%;
         top: initial;
-        bottom: -73px;
-        left: 36%;
-        transform: translate(0%, 0) rotate(22deg) skewY(-20deg);
-        border-radius: 10rem;
+        bottom: 0;
+        left: -7%;
+        transform: translate(0%, 0) rotate(-13deg);
+        border-radius: 30% 70% 82% 18%/72% 30% 70% 28%;
+      }
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
+        width: 365%;
+        height: 182%;
+        top: initial;
+        bottom: 78px;
+        left: -18%;
+        transform: translate(0%, 0) rotate(-13deg);
+        border-radius: 96% 22% 69% 54%/100% 0% 46% 21%;
       }
     }
     > picture {
       min-width: 32rem;
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         min-width: 38rem;
       }
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
         margin-bottom: 0rem;
         display: flex;
         min-width: 46.2rem;
@@ -176,11 +178,11 @@ export const StyledDiv = styled.div`
         object-fit: contain;
         min-width: 32rem;
 
-        @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
           min-width: 38rem;
           aspect-ratio: 378 / 351;
         }
-        @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
           margin-bottom: 0rem;
           display: flex;
           min-width: 46.2rem;
@@ -192,18 +194,18 @@ export const StyledDiv = styled.div`
   form {
     height: 5.2rem;
     max-width: 42rem;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
       height: 5.9rem;
       max-width: 100%;
     }
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
       height: 7rem;
     }
     > button {
       height: 100%;
       width: 11.3rem;
       font-size: 1.4rem;
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         width: 16.1rem;
         font-size: 1.6rem;
       }
@@ -212,7 +214,7 @@ export const StyledDiv = styled.div`
       height: 100%;
       padding-right: 12.3rem;
       font-size: 1.2rem;
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         font-size: 1.6rem;
         padding-right: 17.1rem;
       }

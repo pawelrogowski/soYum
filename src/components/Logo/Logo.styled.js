@@ -3,10 +3,10 @@ import styled, { css } from "styled-components";
 import { Icon } from "../Icon/Icon";
 
 export const LogoIcon = styled(Icon)`
-  --color-logo-header-icon: ${({ theme }) => theme.logo.header.icon};
-  --color-logo-header-bg: ${({ theme }) => theme.logo.header.bg};
-  --color-logo-footer-icon: ${({ theme }) => theme.logo.footer.icon};
-  --color-logo-footer-bg: ${({ theme }) => theme.logo.footer.bg};
+  --color-logo-header-icon: ${({ theme: t }) => t.logo.header.icon};
+  --color-logo-header-bg: ${({ theme: t }) => t.logo.header.bg};
+  --color-logo-footer-icon: ${({ theme: t }) => t.logo.footer.icon};
+  --color-logo-footer-bg: ${({ theme: t }) => t.logo.footer.bg};
 
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -28,8 +28,7 @@ export const LogoIcon = styled(Icon)`
           stroke: var(--color-logo-footer-icon);
           background-color: var(--color-logo-footer-bg);
 
-          @media screen and (max-width: ${(props) =>
-              props.theme.breakpoints.tablet}) {
+          @media screen and (max-width: ${(props) => props.theme.breakpoints.tablet}) {
             border-radius: 0.6rem;
             padding: 0.4rem 0.2rem 0.3rem 0.3rem;
             max-width: 3.2rem;

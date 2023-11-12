@@ -5,12 +5,12 @@ import leaves from "../../assets/images/leavesDecor.avif";
 export const StyledFooter = styled.footer`
   --breakpoint-tablet: ${(props) => props.theme.breakpoints.tablet};
   --breakpoint-desktop: ${(props) => props.theme.breakpoints.desktop};
-  --color-bg-footer: ${({ theme }) => theme.bg.footer};
-  --color-footer-logoTextActive: ${({ theme }) => theme.footer.logoTextActive};
-  --color-footer-logoTextIdle: ${({ theme }) => theme.footer.logoTextIdle};
+  --color-bg-footer: ${({ theme: t }) => t.bg.footer};
+  --color-footer-logoTextActive: ${({ theme: t }) => t.footer.logoTextActive};
+  --color-footer-logoTextIdle: ${({ theme: t }) => t.footer.logoTextIdle};
 
   background-color: var(--color-bg-footer);
-  min-width: ${({ theme }) => theme.breakpoints.minContent};
+  min-width: ${({ theme: t }) => t.breakpoints.minContent};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,20 +23,20 @@ export const StyledFooter = styled.footer`
       position: absolute;
       background-image: url(${leaves});
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: contain;
       width: 33.5rem;
       height: 46.8rem;
-      top: -21rem;
-      left: -5rem;
+      top: -22rem;
+      left: -8rem;
       rotate: -217deg;
       filter: blur(0.4rem);
       transform: scaleX(-1);
       z-index: -1;
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
-        width: 33.5rem;
-        height: 51.7rem;
-        top: -26rem;
-        left: -11rem;
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
+        width: 54.5rem;
+        height: 54.7rem;
+        top: -30rem;
+        left: -14rem;
         rotate: -217deg;
       }
     }
