@@ -42,7 +42,6 @@ export const StyledNav = styled.nav`
         width: 2.4rem;
         height: 2.4rem;
         transition: stroke cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
-        mix-blend-mode: var(--blend-mode);
       }
     }
 
@@ -52,7 +51,6 @@ export const StyledNav = styled.nav`
         svg {
           stroke: var(--color-navigation-hover);
           transition: none;
-          mix-blend-mode: initial;
         }
       }
     }
