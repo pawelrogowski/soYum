@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const StyledNav = styled.nav`
-  --font-navigation: ${({ theme }) => theme.navigation.font};
-  --color-navigation-idle: ${({ theme }) => theme.navigation.colorIdle};
-  --color-navigation-hover: ${({ theme }) => theme.navigation.colorHover};
-  --blend-mode: ${({ theme }) => theme.navigation.blend};
+  --font-navigation: ${({ theme: t }) => t.navigation.font};
+  --color-navigation-idle: ${({ theme: t }) => t.navigation.colorIdle};
+  --color-navigation-hover: ${({ theme: t }) => t.navigation.colorHover};
+  --blend-mode: ${({ theme: t }) => t.navigation.blend};
   margin-right: auto;
 
   > ul {

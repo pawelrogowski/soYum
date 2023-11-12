@@ -1,13 +1,13 @@
 import styled, { css } from "styled-components";
 
 export const StyledLabel = styled.label`
-  --color-border-idle: ${({ theme }) => theme.recipeTextInput.borderIdle};
-  --color-border-active: ${({ theme }) => theme.recipeTextInput.borderActive};
-  --color-font: ${({ theme }) => theme.recipeTextInput.font};
-  --color-font-placeholder: ${({ theme }) => theme.recipeTextInput.fontPlaceholder};
-  --color-font-error: ${({ theme }) => theme.recipeTextInput.error};
+  --color-border-idle: ${({ theme: t }) => t.recipeTextInput.borderIdle};
+  --color-border-active: ${({ theme: t }) => t.recipeTextInput.borderActive};
+  --color-font: ${({ theme: t }) => t.recipeTextInput.font};
+  --color-font-placeholder: ${({ theme: t }) => t.recipeTextInput.fontPlaceholder};
+  --color-font-error: ${({ theme: t }) => t.recipeTextInput.error};
 
-  --color-bg-error: ${({ theme }) => theme.recipeTextInput.errorBg};
+  --color-bg-error: ${({ theme: t }) => t.recipeTextInput.errorBg};
 
   align-self: flex-start;
   width: 100%;
@@ -37,7 +37,7 @@ export const StyledLabel = styled.label`
     &:placeholder-shown {
       color: var(--color-font-placeholder);
     }
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
       font-size: 1.6rem;
       letter-spacing: -0.032rem;
     }

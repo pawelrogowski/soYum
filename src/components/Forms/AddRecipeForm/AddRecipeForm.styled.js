@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const StyledForm = styled.form`
-  --color-button-bg-idle: ${({ theme }) => theme.addRecipeForm.buttonBgIdle};
-  --color-button-bg-active: ${({ theme }) => theme.addRecipeForm.buttonBgActive};
-  --color-button-border-active: ${({ theme }) => theme.addRecipeForm.buttonBorderActive};
-  --color-button-border-idle: ${({ theme }) => theme.addRecipeForm.buttonBorderIdle};
-  --color-button-text-idle: ${({ theme }) => theme.addRecipeForm.buttonTextIdle};
-  --color-button-text-active: ${({ theme }) => theme.addRecipeForm.buttonTextActive};
+  --color-button-bg-idle: ${({ theme: t }) => t.addRecipeForm.buttonBgIdle};
+  --color-button-bg-active: ${({ theme: t }) => t.addRecipeForm.buttonBgActive};
+  --color-button-border-active: ${({ theme: t }) => t.addRecipeForm.buttonBorderActive};
+  --color-button-border-idle: ${({ theme: t }) => t.addRecipeForm.buttonBorderIdle};
+  --color-button-text-idle: ${({ theme: t }) => t.addRecipeForm.buttonTextIdle};
+  --color-button-text-active: ${({ theme: t }) => t.addRecipeForm.buttonTextActive};
 
   width: 100%;
   display: flex;
@@ -25,12 +25,12 @@ export const StyledForm = styled.form`
     flex-direction: column;
     margin-bottom: 6.71rem;
 
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
       gap: 3.2rem;
       flex-direction: row;
       align-items: flex-start;
     }
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
       gap: 5rem;
       min-height: 38rem;
     }
@@ -41,10 +41,10 @@ export const StyledForm = styled.form`
       width: 100%;
 
       gap: 1.8rem;
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         gap: 3.1rem;
       }
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
         gap: 5.7rem;
         max-width: 39.4rem;
       }
@@ -68,7 +68,7 @@ export const StyledForm = styled.form`
       background-color: var(--color-button-bg-active);
       color: var(--color-button-text-active);
     }
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
       width: 17rem;
       height: 6rem;
       font-size: 16px;

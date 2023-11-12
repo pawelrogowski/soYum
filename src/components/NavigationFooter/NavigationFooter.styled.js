@@ -1,18 +1,18 @@
 import { styled } from "styled-components";
 
 export const StyledNav = styled.nav`
-  --color-navigation-footer-idle: ${({ theme }) => theme.navigation.footer.colorIdle};
-  --color-navigation-footer-hover: ${({ theme }) => theme.navigation.footer.colorHover};
+  --color-navigation-footer-idle: ${({ theme: t }) => t.navigation.footer.colorIdle};
+  --color-navigation-footer-hover: ${({ theme: t }) => t.navigation.footer.colorHover};
 
   > ul {
     display: flex;
     flex-direction: column;
     gap: 1.4rem;
 
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
       gap: 2rem;
     }
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
       gap: 2.4rem;
     }
 

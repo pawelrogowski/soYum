@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 export const MainContainer = styled(motion.main)`
-  max-width: ${({ theme }) => theme.breakpoints.maxContent};
-  min-width: ${({ theme }) => theme.breakpoints.minContent};
+  max-width: ${({ theme: t }) => t.breakpoints.maxContent};
+  min-width: ${({ theme: t }) => t.breakpoints.minContent};
   padding: 10rem 2.1rem 10rem 2.1rem;
   position: relative;
   margin: 0 auto;
@@ -11,7 +11,7 @@ export const MainContainer = styled(motion.main)`
   flex-direction: column;
   align-items: center;
   min-height: calc(100dvh - 62px);
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
     padding-bottom: 20rem;
     min-height: calc(100dvh - 60.5px);
   }
@@ -19,7 +19,7 @@ export const MainContainer = styled(motion.main)`
   > h1 {
     margin-bottom: 6rem;
     align-self: flex-start;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
       margin-bottom: 7.4rem;
     }
   }

@@ -8,7 +8,7 @@ export const StyledPicture = styled(motion.picture)`
   background-repeat: no-repeat;
   background-size: cover;
   min-width: 26rem;
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
     min-width: 30rem;
   }
   img {
@@ -16,18 +16,19 @@ export const StyledPicture = styled(motion.picture)`
     max-width: 26rem;
     height: auto;
     aspect-ratio: 208 / 133;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
       max-width: 30rem;
     }
   }
+`;
 
-  + p {
-    text-align: center;
-    color: rgba(0, 0, 0, 0.5);
-    font-size: 1.4rem;
-    font-weight: 500;
-    line-height: 1;
-    letter-spacing: -0.028rem;
-    margin-top: 2.4rem;
-  }
+export const StyledParagraph = styled.p`
+  --color-font-idle: ${({ theme: t }) => t.noItemFound.fontIdle};
+  text-align: center;
+  color: var(--color-font-idle);
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.028rem;
+  margin-top: 2.4rem;
 `;

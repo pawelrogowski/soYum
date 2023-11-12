@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const StyledUl = styled.ul`
-  --breakpoint-tablet: ${({ theme }) => theme.breakpoints.tablet};
-  --color-social-fill: ${({ theme }) => theme.icon.social.fill};
-  --color-social-fillHover: ${({ theme }) => theme.icon.social.fillHover};
+  --breakpoint-tablet: ${({ theme: t }) => t.breakpoints.tablet};
+  --color-social-fill: ${({ theme: t }) => t.icon.social.fill};
+  --color-social-fillHover: ${({ theme: t }) => t.icon.social.fillHover};
 
   display: inline-block;
   display: flex;
@@ -11,7 +11,7 @@ export const StyledUl = styled.ul`
   align-items: center;
   gap: 1.4rem;
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
     gap: 1.8rem;
   }
 
@@ -38,7 +38,7 @@ export const StyledUl = styled.ul`
     height: 1.8rem;
     fill: var(--color-social-fill);
     transition: fill cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
       width: 2rem;
       height: 2rem;
     }

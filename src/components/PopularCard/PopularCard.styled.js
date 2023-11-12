@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const StyledFigure = styled.figure`
-  --color-background-card: ${({ theme }) => theme.popularCard.bgCard};
-  --color-background-image: ${({ theme }) => theme.popularCard.bgImage};
-  --color-font-head: ${({ theme }) => theme.popularCard.fontHead};
-  --color-font-article: ${({ theme }) => theme.popularCard.fontArticle};
-  --color-border-idle: ${({ theme }) => theme.popularCard.borderIdle};
-  --color-border-active: ${({ theme }) => theme.popularCard.borderActive};
+  --color-background-card: ${({ theme: t }) => t.popularCard.bgCard};
+  --color-background-image: ${({ theme: t }) => t.popularCard.bgImage};
+  --color-font-head: ${({ theme: t }) => t.popularCard.fontHead};
+  --color-font-article: ${({ theme: t }) => t.popularCard.fontArticle};
+  --color-border-idle: ${({ theme: t }) => t.popularCard.borderIdle};
+  --color-border-active: ${({ theme: t }) => t.popularCard.borderActive};
   position: relative;
   display: flex;
   width: 100%;
@@ -17,11 +17,11 @@ export const StyledFigure = styled.figure`
   border-bottom: 1px solid var(--color-border-idle);
   transition: border-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
   flex-basis: 100%;
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
     padding: 0 1.3rem 1.3rem 0;
     flex-basis: calc((100% - 1 * 3.2rem) / 2);
   }
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+  @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
     padding: 0 1.3rem 1.3rem 0;
     flex-basis: 100%;
   }
@@ -38,13 +38,13 @@ export const StyledFigure = styled.figure`
     background-color: var(--color-background-image);
     border-radius: 7px;
     overflow: hidden;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
       min-width: 102px;
       width: 102px;
       height: 85px;
       aspect-ratio: 102 / 85;
     }
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
       min-width: 97px;
       width: 97px;
       height: 85px;
@@ -57,13 +57,13 @@ export const StyledFigure = styled.figure`
       height: 85px;
       aspect-ratio: 104 / 85;
       background-color: var(--color-background-image);
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         min-width: 102px;
         width: 102px;
         height: 85px;
         aspect-ratio: 102 / 85;
       }
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
         min-width: 97px;
         width: 97px;
         height: 85px;
@@ -99,7 +99,7 @@ export const StyledFigure = styled.figure`
       flex-grow: 1;
       overflow: hidden;
       text-wrap: preety;
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         text-wrap: balance;
       }
     }

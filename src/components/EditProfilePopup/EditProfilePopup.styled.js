@@ -2,16 +2,16 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const StyledDiv = styled(motion.div)`
-  --color-background: ${({ theme }) => theme.editProfilePopup.bg};
-  --color-text: ${({ theme }) => theme.editProfilePopup.text};
-  --color-icon: ${({ theme }) => theme.editProfilePopup.icon};
-  --color-border: ${({ theme }) => theme.editProfilePopup.border};
-  --color-button-text: ${({ theme }) => theme.editProfilePopup.button.text};
-  --color-button-icon: ${({ theme }) => theme.editProfilePopup.button.icon};
-  --color-button-icon-active: ${({ theme }) => theme.editProfilePopup.button.iconActive};
-  --color-button-text-active: ${({ theme }) => theme.editProfilePopup.button.textActive};
-  --color-text-active: ${({ theme }) => theme.editProfilePopup.textActive};
-  --color-icon-active: ${({ theme }) => theme.editProfilePopup.iconActive};
+  --color-background: ${({ theme: t }) => t.editProfilePopup.bg};
+  --color-text: ${({ theme: t }) => t.editProfilePopup.text};
+  --color-icon: ${({ theme: t }) => t.editProfilePopup.icon};
+  --color-border: ${({ theme: t }) => t.editProfilePopup.border};
+  --color-button-text: ${({ theme: t }) => t.editProfilePopup.button.text};
+  --color-button-icon: ${({ theme: t }) => t.editProfilePopup.button.icon};
+  --color-button-icon-active: ${({ theme: t }) => t.editProfilePopup.button.iconActive};
+  --color-button-text-active: ${({ theme: t }) => t.editProfilePopup.button.textActive};
+  --color-text-active: ${({ theme: t }) => t.editProfilePopup.textActive};
+  --color-icon-active: ${({ theme: t }) => t.editProfilePopup.iconActive};
 
   transform-origin: top;
   position: absolute;

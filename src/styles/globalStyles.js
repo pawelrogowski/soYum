@@ -18,7 +18,7 @@ export const GlobalStyles = createGlobalStyle`
 	}
 
 	body {
-		background-color: ${({ theme }) => theme.bg.main};
+		background-color: ${({ theme: t }) => t.bg.main};
     transition: ${({ isTransitionEnabled }) =>
       isTransitionEnabled ? "background-color 200ms" : "none"};
   	scroll-behavior: smooth;
@@ -29,24 +29,24 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .active-nav-link {
-    color: ${({ theme }) => theme.brandColors.main} !important;
+    color: ${({ theme: t }) => t.brandColors.main} !important;
     svg {
-      stroke: ${({ theme }) => theme.brandColors.main} !important;
+      stroke: ${({ theme: t }) => t.brandColors.main} !important;
     }
   }
 
   .active-nav-link-mobile {
-    color: ${({ theme }) => theme.brandColors.main} !important;
+    color: ${({ theme: t }) => t.brandColors.main} !important;
     span {
-      color: ${({ theme }) => theme.brandColors.main} !important;
+      color: ${({ theme: t }) => t.brandColors.main} !important;
     }
     svg {
-      stroke: ${({ theme }) => theme.brandColors.main} !important;
+      stroke: ${({ theme: t }) => t.brandColors.main} !important;
     }
   }
 
   .active-nav-link-footer {
-    color: ${({ theme }) => theme.link.navFooter} !important;
+    color: ${({ theme: t }) => t.link.navFooter} !important;
   }
 
 

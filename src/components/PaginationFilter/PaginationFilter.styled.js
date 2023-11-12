@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 export const StyledDiv = styled.div`
-  --color-bg: ${({ theme }) => theme.paginationFilter.bg};
-  --color-box-shadow: ${({ theme }) => theme.paginationFilter.boxShadow};
-  --color-link-switch-idle: ${({ theme }) => theme.paginationFilter.switchLinkIdle};
-  --color-link-switch-active: ${({ theme }) => theme.paginationFilter.switchLinkActive};
-  --color-link-switch-disabled: ${({ theme }) => theme.paginationFilter.switchLinkDisabled};
-  --color-link-page-bg-idle: ${({ theme }) => theme.paginationFilter.pageLinkBgIdle};
-  --color-link-page-bg-active: ${({ theme }) => theme.paginationFilter.pageLinkBgActive};
-  --color-link-page-current: ${({ theme }) => theme.paginationFilter.pageLinkBgCurrent};
-  --color-link-page-font-idle: ${({ theme }) => theme.paginationFilter.pageLinkFontIdle};
-  --color-link-page-font-active: ${({ theme }) => theme.paginationFilter.pageLinkFontActive};
-  --color-link-page-font-current: ${({ theme }) => theme.paginationFilter.pageLinkFontCurrent};
+  --color-bg: ${({ theme: t }) => t.paginationFilter.bg};
+  --color-box-shadow: ${({ theme: t }) => t.paginationFilter.boxShadow};
+  --color-link-switch-idle: ${({ theme: t }) => t.paginationFilter.switchLinkIdle};
+  --color-link-switch-active: ${({ theme: t }) => t.paginationFilter.switchLinkActive};
+  --color-link-switch-disabled: ${({ theme: t }) => t.paginationFilter.switchLinkDisabled};
+  --color-link-page-bg-idle: ${({ theme: t }) => t.paginationFilter.pageLinkBgIdle};
+  --color-link-page-bg-active: ${({ theme: t }) => t.paginationFilter.pageLinkBgActive};
+  --color-link-page-current: ${({ theme: t }) => t.paginationFilter.pageLinkBgCurrent};
+  --color-link-page-font-idle: ${({ theme: t }) => t.paginationFilter.pageLinkFontIdle};
+  --color-link-page-font-active: ${({ theme: t }) => t.paginationFilter.pageLinkFontActive};
+  --color-link-page-font-current: ${({ theme: t }) => t.paginationFilter.pageLinkFontCurrent};
   margin: 0 auto;
   display: flex;
   justify-content: center;

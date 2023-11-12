@@ -495,6 +495,9 @@ export const lightTheme = {
     buttonBorderActive: brandColors.main,
     buttonTextActive: "rgba(250, 250, 250, 1)",
   },
+  noItemFound: {
+    fontIdle: "rgba(0, 0, 0, 0.5)",
+  },
 };
 
 export const darkTheme = {
@@ -916,5 +919,8 @@ export const darkTheme = {
     buttonBgActive: brandColors.main,
     buttonBorderActive: brandColors.main,
     buttonTextActive: "rgba(250, 250, 250, 1)",
+  },
+  noItemFound: {
+    fontIdle: "rgba(250, 250, 250, 0.5)",
   },
 };

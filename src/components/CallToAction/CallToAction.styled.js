@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const StyledDiv = styled.div`
-  --color-call-bg: ${({ theme }) => theme.callToAction.bg};
-  --color-text-highlight: ${({ theme }) => theme.callToAction.textHightlight};
-  --color-text-idle: ${({ theme }) => theme.callToAction.text};
-  --color-text-link-idle: ${({ theme }) => theme.callToAction.link.textIdle};
-  --color-text-link-active: ${({ theme }) => theme.callToAction.link.textActive};
+  --color-call-bg: ${({ theme: t }) => t.callToAction.bg};
+  --color-text-highlight: ${({ theme: t }) => t.callToAction.textHightlight};
+  --color-text-idle: ${({ theme: t }) => t.callToAction.text};
+  --color-text-link-idle: ${({ theme: t }) => t.callToAction.link.textIdle};
+  --color-text-link-active: ${({ theme: t }) => t.callToAction.link.textActive};
 
   position: absolute;
   bottom: 9.1rem;
@@ -17,13 +17,13 @@ export const StyledDiv = styled.div`
   gap: 0.4rem;
   background-color: var(--color-call-bg);
   border-radius: 0.8rem;
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
     width: 26rem;
     padding: 1.2rem;
     bottom: 3.8rem;
     right: 0.6rem;
   }
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+  @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
     width: 29.8rem;
     padding: 1.6rem;
   }
@@ -34,11 +34,11 @@ export const StyledDiv = styled.div`
     font-weight: 500;
     line-height: 1.5rem;
     letter-spacing: -0.024rem;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
       font-size: 1.4rem;
       line-height: 1.28;
     }
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
       line-height: 1.43;
     }
     span {
@@ -78,7 +78,7 @@ export const StyledDiv = styled.div`
     top: 6rem;
     left: -1rem;
     pointer-events: none;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
       top: 7rem;
       left: 1rem;
     }

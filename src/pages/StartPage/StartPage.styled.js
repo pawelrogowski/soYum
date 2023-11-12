@@ -34,7 +34,7 @@ export const StartPageContainer = styled(motion.main)`
 
   h1 {
     margin-bottom: 1.4rem;
-    color: ${({ theme }) => theme.startPage.header};
+    color: ${({ theme: t }) => t.startPage.header};
     font-size: 2.4rem;
     font-weight: 600;
     line-height: 2.4rem;
@@ -51,7 +51,7 @@ export const StartPageContainer = styled(motion.main)`
     margin-bottom: 4.4rem;
     max-width: 35rem;
     text-align: center;
-    color: ${({ theme }) => theme.startPage.description};
+    color: ${({ theme: t }) => t.startPage.description};
     text-align: center;
     font-size: 1.4rem;
     font-weight: 400;
@@ -83,20 +83,20 @@ export const StartPageContainer = styled(motion.main)`
 
       li:first-of-type {
         button {
-          color: ${({ theme }) => theme.startPage.registerButton.fontColorIdle};
-          background-color: ${({ theme }) => theme.startPage.registerButton.bgIdle};
+          color: ${({ theme: t }) => t.startPage.registerButton.fontColorIdle};
+          background-color: ${({ theme: t }) => t.startPage.registerButton.bgIdle};
           border-color: #8baa36;
           width: 13.2rem;
           height: 4.5rem;
-          border: 0.2rem solid ${({ theme }) => theme.startPage.registerButton.borderIdle};
+          border: 0.2rem solid ${({ theme: t }) => t.startPage.registerButton.borderIdle};
           &:hover,
           &:focus {
-            background-color: ${({ theme }) => theme.startPage.registerButton.bgHover};
-            border-color: ${({ theme }) => theme.startPage.registerButton.borderHover};
-            color: ${({ theme }) => theme.startPage.registerButton.fontColorHover};
+            background-color: ${({ theme: t }) => t.startPage.registerButton.bgHover};
+            border-color: ${({ theme: t }) => t.startPage.registerButton.borderHover};
+            color: ${({ theme: t }) => t.startPage.registerButton.fontColorHover};
           }
           &:active {
-            border-color: ${({ theme }) => theme.startPage.registerButton.borderActive};
+            border-color: ${({ theme: t }) => t.startPage.registerButton.borderActive};
           }
           @media screen and (min-width: ${(props) => props.theme.breakpoints.tablet}) {
             font-size: 1.6rem;
@@ -107,17 +107,17 @@ export const StartPageContainer = styled(motion.main)`
       }
       li:last-of-type {
         button {
-          color: ${({ theme }) => theme.startPage.signinButton.fontColorIdle};
-          border-color: ${({ theme }) => theme.startPage.signinButton.borderIdle};
+          color: ${({ theme: t }) => t.startPage.signinButton.fontColorIdle};
+          border-color: ${({ theme: t }) => t.startPage.signinButton.borderIdle};
           width: 9.5rem;
           height: 4.5rem;
           &:hover,
           &:focus {
-            border-color: ${({ theme }) => theme.startPage.signinButton.borderHover};
+            border-color: ${({ theme: t }) => t.startPage.signinButton.borderHover};
           }
           &:active {
-            border-color: ${({ theme }) => theme.startPage.signinButton.borderActive};
-            background-color: ${({ theme }) => theme.startPage.signinButton.bgActive};
+            border-color: ${({ theme: t }) => t.startPage.signinButton.borderActive};
+            background-color: ${({ theme: t }) => t.startPage.signinButton.bgActive};
           }
           @media screen and (min-width: ${(props) => props.theme.breakpoints.tablet}) {
             font-size: 1.6rem;

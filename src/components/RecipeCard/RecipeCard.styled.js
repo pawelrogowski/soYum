@@ -1,18 +1,18 @@
 import styled from "styled-components";
 
 export const StyledListItem = styled.li`
-  --color-background-card: ${({ theme }) => theme.recipeCard.bgCard};
-  --color-background-image: ${({ theme }) => theme.recipeCard.bgImage};
-  --color-font-head: ${({ theme }) => theme.recipeCard.fontHead};
-  --color-font-article: ${({ theme }) => theme.recipeCard.fontArticle};
-  --color-button-delete-background-idle: ${({ theme }) => theme.recipeCard.button.delete.bgIdle};
+  --color-background-card: ${({ theme: t }) => t.recipeCard.bgCard};
+  --color-background-image: ${({ theme: t }) => t.recipeCard.bgImage};
+  --color-font-head: ${({ theme: t }) => t.recipeCard.fontHead};
+  --color-font-article: ${({ theme: t }) => t.recipeCard.fontArticle};
+  --color-button-delete-background-idle: ${({ theme: t }) => t.recipeCard.button.delete.bgIdle};
   --color-button-delete-background-active: ${({ theme }) =>
     theme.recipeCard.button.delete.bgActive};
-  --color-button-delete-border-idle: ${({ theme }) => theme.recipeCard.button.delete.borderIdle};
+  --color-button-delete-border-idle: ${({ theme: t }) => t.recipeCard.button.delete.borderIdle};
   --color-button-delete-border-active: ${({ theme }) =>
     theme.recipeCard.button.delete.borderActive};
-  --color-button-delete-icon-idle: ${({ theme }) => theme.recipeCard.button.delete.iconIdle};
-  --color-button-delete-icon-active: ${({ theme }) => theme.recipeCard.button.delete.iconActive};
+  --color-button-delete-icon-idle: ${({ theme: t }) => t.recipeCard.button.delete.iconIdle};
+  --color-button-delete-icon-active: ${({ theme: t }) => t.recipeCard.button.delete.iconActive};
   --color-button-seeRecipe-background-idle: ${({ theme }) =>
     theme.recipeCard.button.seeRecipe.bgIdle};
   --color-button-seeRecipe-background-active: ${({ theme }) =>
@@ -21,7 +21,7 @@ export const StyledListItem = styled.li`
     theme.recipeCard.button.seeRecipe.borderIdle};
   --color-button-seeRecipe-border-active: ${({ theme }) =>
     theme.recipeCard.button.seeRecipe.borderActive};
-  --color-button-seeRecipe-text-idle: ${({ theme }) => theme.recipeCard.button.seeRecipe.textIdle};
+  --color-button-seeRecipe-text-idle: ${({ theme: t }) => t.recipeCard.button.seeRecipe.textIdle};
   --color-button-seeRecipe-text-active: ${({ theme }) =>
     theme.recipeCard.button.seeRecipe.textActive};
 
@@ -34,11 +34,11 @@ export const StyledListItem = styled.li`
   border-radius: 0.8rem;
   height: 15.2rem;
   overflow: hidden;
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
     padding: 2.8rem 2.4rem;
     height: 28.8rem;
   }
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+  @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
     padding: 4rem;
     height: 40.4rem;
     gap: 5.4rem;
@@ -48,12 +48,12 @@ export const StyledListItem = styled.li`
     width: 124px;
     height: 124px;
     aspect-ratio: 1 / 1;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
       width: 228px;
       height: 232px;
       aspect-ratio: 228 / 232;
     }
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
       width: 318px;
       height: 324px;
       aspect-ratio: 318 / 324;
@@ -64,12 +64,12 @@ export const StyledListItem = styled.li`
       height: 124px;
       aspect-ratio: 1 / 1;
 
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         width: 228px;
         height: 232px;
         aspect-ratio: 228 / 232;
       }
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
         width: 318px;
         height: 324px;
         aspect-ratio: 318 / 324;
@@ -90,13 +90,13 @@ export const StyledListItem = styled.li`
     display: flex;
     justify-content: center;
     align-items: center;
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
       width: 3.8rem;
       height: 3.8rem;
       top: 2.8rem;
       right: 2.4rem;
     }
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
       top: 4rem;
       right: 4rem;
     }
@@ -105,7 +105,7 @@ export const StyledListItem = styled.li`
       height: 1.4rem;
       stroke: var(--color-button-delete-icon-idle);
       transition: stroke cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         width: 2.2rem;
         height: 2.2rem;
       }
@@ -126,10 +126,10 @@ export const StyledListItem = styled.li`
     width: 100%;
     overflow: hidden;
 
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
       gap: 2.8rem;
     }
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
       gap: 4rem;
     }
 
@@ -143,11 +143,11 @@ export const StyledListItem = styled.li`
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         font-size: 2.4rem;
         line-height: 1.25;
       }
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         font-size: 2.4rem;
         line-height: 1.25;
       }
@@ -164,11 +164,11 @@ export const StyledListItem = styled.li`
       overflow: hidden;
       padding-right: 1rem;
       text-wrap: pretty;
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         font-size: 1.4rem;
         line-height: 1.28;
       }
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
         font-size: 1.8rem;
         line-height: 1.33;
         letter-spacing: -0.036rem;
@@ -187,12 +187,12 @@ export const StyledListItem = styled.li`
         font-size: 1rem;
         line-height: 1.5;
         align-self: flex-end;
-        @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
           font-size: 1.4rem;
           max-width: 13.8rem;
           max-height: 4.5rem;
         }
-        @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+        @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
           font-size: 1.7rem;
           max-width: 17.2rem;
           max-height: 5.9rem;
@@ -211,7 +211,7 @@ export const StyledListItem = styled.li`
         line-height: 1;
         align-self: flex-end;
         letter-spacing: -0.024rem;
-        @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
           font-size: 1.4rem;
         }
       }

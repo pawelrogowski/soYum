@@ -2,7 +2,7 @@ import vegieBasket from "../../assets/images/vegieBasket.avif";
 import vegieBasketSrcsetAvif from "../../assets/images/vegieBasket.avif?w=260;300&format=avif&as=srcset";
 import vegieBasketSrcsetPng from "../../assets/images/vegieBasket.avif?w=260;300&format=png&as=srcset";
 import vegieBasketSrcsetWebp from "../../assets/images/vegieBasket.avif?w=260;300&format=webp&as=srcset";
-import { StyledPicture } from "./NoItemFound.styled";
+import { StyledParagraph, StyledPicture } from "./NoItemFound.styled";
 
 export const NoItemFound = () => (
   <>
@@ -17,8 +17,7 @@ export const NoItemFound = () => (
         height="192px"
         loading="eager"
       />
-    </StyledPicture>
-
-    <p>Try looking for something else...</p>
+    </StyledPicture>{" "}
+    <StyledParagraph>Try looking for something else...</StyledParagraph>
   </>
 );

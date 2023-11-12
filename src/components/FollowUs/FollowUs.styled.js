@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const StyledDiv = styled.div`
-  --color-icon-idle: ${({ theme }) => theme.followUs.iconIdle};
-  --color-icon-active: ${({ theme }) => theme.followUs.iconActive};
+  --color-icon-idle: ${({ theme: t }) => t.followUs.iconIdle};
+  --color-icon-active: ${({ theme: t }) => t.followUs.iconActive};
   display: flex;
   flex-direction: column;
   gap: 4rem;

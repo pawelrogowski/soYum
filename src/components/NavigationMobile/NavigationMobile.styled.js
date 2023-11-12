@@ -4,12 +4,12 @@ import styled from "styled-components";
 import leaves from "../../assets/images/leavesDecor.avif";
 
 export const StyledAside = styled(motion.aside)`
-  --font-navigation: ${({ theme }) => theme.navigation.font};
-  --color-navigation-idle: ${({ theme }) => theme.navigation.colorIdle};
-  --color-navigation-hover: ${({ theme }) => theme.navigation.colorHover};
-  --color-mobileMenu-bg: ${({ theme }) => theme.mobileMenu.bg};
-  --breakpoint-tablet: ${({ theme }) => theme.breakpoints.tablet};
-  --color-brand: ${({ theme }) => theme.brandColors.main};
+  --font-navigation: ${({ theme: t }) => t.navigation.font};
+  --color-navigation-idle: ${({ theme: t }) => t.navigation.colorIdle};
+  --color-navigation-hover: ${({ theme: t }) => t.navigation.colorHover};
+  --color-mobileMenu-bg: ${({ theme: t }) => t.mobileMenu.bg};
+  --breakpoint-tablet: ${({ theme: t }) => t.breakpoints.tablet};
+  --color-brand: ${({ theme: t }) => t.brandColors.main};
   position: absolute;
   z-index: 3;
   top: 0;
@@ -36,7 +36,7 @@ export const StyledAside = styled(motion.aside)`
       top: 2.3rem;
       left: 1.6rem;
 
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         top: 2.1rem;
       }
     }
@@ -83,7 +83,7 @@ export const StyledAside = styled(motion.aside)`
       flex-wrap: nowrap;
       gap: 3.6rem;
 
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         gap: 4rem;
       }
 
@@ -97,7 +97,7 @@ export const StyledAside = styled(motion.aside)`
         font-weight: 500;
         font-style: normal;
 
-        @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+        @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
           font-size: 2.4rem;
           font-weight: 500;
           line-height: 2.4rem;
@@ -124,7 +124,7 @@ export const StyledAside = styled(motion.aside)`
           font-weight: 500;
           font-style: normal;
 
-          @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+          @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
             font-size: 2.4rem;
             font-weight: 500;
             line-height: 2.4rem;

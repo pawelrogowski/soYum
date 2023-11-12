@@ -16,13 +16,13 @@ export const PageContent = styled.div`
   justify-content: initial;
   align-items: center;
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
     @media screen and (max-height: 1100px) {
       padding-top: 2.5rem;
     }
   }
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
+  @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -33,7 +33,7 @@ export const PageContent = styled.div`
   &::after {
     position: fixed;
     content: "";
-    background-color: ${({ theme }) => theme.bg.form};
+    background-color: ${({ theme: t }) => t.bg.form};
 
     bottom: 0;
     left: 0;
@@ -60,7 +60,7 @@ export const PageContent = styled.div`
     max-width: 50rem;
     width: 100%;
 
-    @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
       min-height: 40rem;
     }
   }
@@ -75,15 +75,15 @@ export const PageContent = styled.div`
     > a {
       font-size: 1.4rem;
 
-      @media screen and (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         font-size: 1.6rem;
       }
       text-decoration-line: underline;
-      color: ${({ theme }) => theme.link.authNav};
+      color: ${({ theme: t }) => t.link.authNav};
       transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
       &:hover,
       &:focus {
-        color: ${({ theme }) => theme.link.authNavActive};
+        color: ${({ theme: t }) => t.link.authNavActive};
       }
     }
   }
