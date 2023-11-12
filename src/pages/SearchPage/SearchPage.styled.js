@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-import vegieBasketLowRes from "../../assets/images/vegieBasketLowRes.avif";
 export const MainContainer = styled(motion.main)`
   max-width: ${({ theme }) => theme.breakpoints.maxContent};
   min-width: ${({ theme }) => theme.breakpoints.minContent};
