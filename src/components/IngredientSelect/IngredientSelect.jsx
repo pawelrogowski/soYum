@@ -69,7 +69,6 @@ const IngredientSelectComponent = ({
         <div className="ingredient-flex-row">
           <div className="ingredient-wrapper" onClick={handleIngredientClick}>
             <Creatable
-              openMenuOnFocus
               unstyled
               classNamePrefix="Select"
               formatCreateLabel={(inputValue) => `${inputValue}`}
@@ -131,11 +130,10 @@ const IngredientSelectComponent = ({
                 classNamePrefix="Select"
                 escapeClearsValue={true}
                 ref={measureRef}
-                openMenuOnFocus
-                openMenuOnClick
                 closeMenuOnSelect
                 defaultMenuIsOpen={false}
                 inputId={`measure-type-${index}`}
+                openMenuOnClick={false}
               />
               <AnimatePresence>
                 {recipeIngredients[index] && recipeIngredients[index].measureTypeError && (
