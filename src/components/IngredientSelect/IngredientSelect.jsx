@@ -1,6 +1,6 @@
 import { AnimatePresence } from "framer-motion";
 import PropTypes from "prop-types";
-import { memo, useRef } from "react";
+import { memo, useCallback, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import Select from "react-select";
@@ -25,21 +25,34 @@ const IngredientSelectComponent = ({
   const ingredientRef = useRef(null);
   const measureRef = useRef(null);
 
-  const handleRemoveIngredient = (index) => {
-    if (recipeIngredients[index]) {
-      dispatch(removeIngredient(index));
-    }
-  };
+  const handleRemoveIngredient = useCallback(
+    (index) => {
+      if (recipeIngredients[index]) {
+        dispatch(removeIngredient(index));
+      }
+    },
+    [dispatch, recipeIngredients]
+  );
 
-  const handleIngredientClick = (e) => {
-    e.preventDefault();
-    ingredientRef.current.focus();
-  };
+  const handleIngredientClick = useCallback(
+    (e) => {
+      e.preventDefault();
+      if (document.activeElement !== ingredientRef.current) {
+        ingredientRef.current.focus();
+      }
+    },
+    [ingredientRef]
+  );
 
-  const handleMeasureClick = (e) => {
-    e.preventDefault();
-    measureRef.current.focus();
-  };
+  const handleMeasureClick = useCallback(
+    (e) => {
+      e.preventDefault();
+      if (document.activeElement !== measureRef.current) {
+        measureRef.current.focus();
+      }
+    },
+    [measureRef]
+  );
 
   return (
     <StyledDiv
