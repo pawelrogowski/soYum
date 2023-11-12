@@ -1,6 +1,5 @@
 import { AnimatePresence } from "framer-motion";
 import PropTypes from "prop-types";
-import { useMemo } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 
@@ -18,11 +17,7 @@ export const IngredientList = ({ className }) => {
   const { validate } = useValidation();
   const dispatch = useDispatch();
 
-  const { fields } = useMemo(() => {
-    return {
-      fields: ["ingredient", "measureType", "amount"],
-    };
-  }, []);
+  const fields = ["ingredient", "measureType", "amount"];
 
   const handleValidationOnBlur = (e) => {
     if (e.currentTarget.contains(e.relatedTarget)) {
