@@ -18,6 +18,7 @@ const MyRecipesPage = lazy(() => import("../pages/MyRecipesPage/MyRecipesPage.js
 const AddRecipePage = lazy(() => import("../pages/AddRecipePage/AddRecipePage"));
 const FavoritesPage = lazy(() => import("../pages/FavoritesPage/FavoritesPage.jsx"));
 const SearchPage = lazy(() => import("../pages/SearchPage/SearchPage.jsx"));
+const ShoppingListPage = lazy(() => import("../pages/ShoppingListPage/ShoppingListPage.jsx"));
 const NotFoundPage = lazy(() => import("../pages/NotFoundPage/NotFoundPage.jsx"));
 
 export const AppRoutes = () => {
@@ -40,6 +41,7 @@ export const AppRoutes = () => {
     { to: "/add", component: "AddRecipePage" },
     { to: "/favorites", component: "FavoritesPage" },
     { to: "/search", component: "SearchPage" },
+    { to: "/shoppinglist", component: "ShoppingListPage" },
   ]);
 
   return (
@@ -64,6 +66,7 @@ export const AppRoutes = () => {
               <Route path=":page" element={<FavoritesPage />} />
             </Route>
             <Route path="/search" element={<SearchPage />} />
+            <Route path="/shoppinglist" element={<ShoppingListPage />} />
             <Route path="/notfound" element={<NotFoundPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
