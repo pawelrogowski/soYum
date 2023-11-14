@@ -55,7 +55,7 @@ export const GlobalStyles = createGlobalStyle`
 
 
 
-.main-content {
+main {
   min-height: calc(100dvh - 62px);
 }
   div[id="root"] {

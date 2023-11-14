@@ -11,9 +11,9 @@ import { CallToAction } from "../CallToAction/CallToAction";
 import { SearchForm } from "../Forms/SearchForm/SearchForm";
 import { Heading } from "../Heading/Heading";
 import { SquareBackground } from "../SquareBackground/SquareBackground";
-import { StyledDiv } from "./Hero.styled";
+import { StyledDiv } from "./HeroHome.styled";
 
-export const Hero = () => {
+export const HeroHome = () => {
   const isMobileSize = useMediaQuery({ maxWidth: breakpoints.mobileMax });
   const isAtLeastTabletSize = useMediaQuery({
     minWidth: breakpoints.tablet,

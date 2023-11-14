@@ -20,7 +20,6 @@ export const inputErrorMotion = {
     },
   },
 };
-
 export const ingredientListItemMotion = {
   initial: {
     opacity: 0,
@@ -45,14 +44,12 @@ export const ingredientListItemMotion = {
     },
   },
 };
-
 export const mobileMenuMotion = {
   initial: { left: "-100%", opacity: 0 },
   animate: { left: 0, opacity: 1 },
   exit: { left: "-100%", transition: { duration: 0.2 } },
   transition: { duration: 0.3 },
 };
-
 export const prepStepMotion = {
   initial: {
     opacity: 0,
@@ -75,7 +72,6 @@ export const prepStepMotion = {
     },
   },
 };
-
 export const routeChangeMotion = {
   initial: { opacity: 0, y: 0, scale: 1 },
   animate: { opacity: 1, y: 0, scale: 1 },
@@ -100,7 +96,6 @@ export const galleryMotion = {
   exit: { opacity: 0, scale: 0.8, transition: { duration: 0.05 } },
   transition: { duration: 0.05 },
 };
-
 export const logoMotion = {
   initial: { scale: 1, borderRadius: "1.2rem" },
   animate: { scale: 1 },
@@ -130,18 +125,15 @@ export const logoMotion = {
     },
   },
 };
-
 export const simpleOpacityMotion = {
   initial: { opacity: 0 },
   animate: { opacity: 1 },
   exit: { opacity: 0 },
   transition: { duration: 0.2 },
 };
-
 export const startPageMotion = {
   ...simpleOpacityMotion,
 };
-
 export const baseButtonMotion = {
   whileHover: {
     scale: 1.02,
@@ -162,7 +154,6 @@ export const baseButtonMotion = {
     },
   },
 };
-
 export const socialIconMotion = {
   whileHover: {
     scale: 1.3,
@@ -183,7 +174,6 @@ export const socialIconMotion = {
     },
   },
 };
-
 export const baseIconMotion = {
   whileHover: {
     scale: 1.3,
@@ -204,7 +194,6 @@ export const baseIconMotion = {
     },
   },
 };
-
 export const userMenuMotion = {
   initial: { scale: 0.2, opacity: 0 },
   animate: { scale: 1, opacity: 1 },
@@ -224,22 +213,20 @@ export const userMenuMotion = {
     damping: 30,
   },
 };
-
 export const editUserModalMotion = {
   initial: { opacity: 0 },
-  animate: { opacity: 1 },
+  animate: {
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 420,
+      damping: 30,
+    },
+  },
   exit: {
     opacity: 0,
     transition: {
-      type: "spring",
-      stiffness: 260,
-      damping: 20,
-      duration: 50,
+      duration: 0.2,
     },
-  },
-  transition: {
-    type: "spring",
-    stiffness: 420,
-    damping: 30,
   },
 };

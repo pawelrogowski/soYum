@@ -27,11 +27,11 @@ export const MainLayout = () => {
     <>
       <AnimatePresence>{isMobileMenuOpen && <NavigationMobile />}</AnimatePresence>
       <Header />
-      <div className="main-content">
-        <Suspense fallback={<LoaderLine isGlobal />}>
-          <Outlet />
-        </Suspense>
-      </div>
+
+      <Suspense fallback={<LoaderLine isGlobal />}>
+        <Outlet />
+      </Suspense>
+
       <Footer variant={isMobileSize ? "mobile" : isTabletSize ? "tablet" : "desktop"} />
       <AnimatePresence>{isProfileUpdateMenuOpen && <EditUserModal />}</AnimatePresence>
       <AnimatePresence>{isLogoutModalOpen && <LogoutModal />}</AnimatePresence>

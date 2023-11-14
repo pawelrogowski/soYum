@@ -8,7 +8,7 @@ import img1 from "../../assets/images/food/thick-pancakes.jpg";
 import { baseButtonMotion, routeChangeMotion } from "../../common/animations";
 import { Button } from "../../components/Button/Button";
 import { CardGallery } from "../../components/CardGallery/CardGallery";
-import { Hero } from "../../components/Hero/Hero";
+import { HeroHome } from "../../components/HeroHome/HeroHome";
 import { breakpoints } from "../../styles/themes";
 import { MainContainer } from "./HomePage.styled";
 
@@ -28,7 +28,7 @@ const HomePage = () => {
   return (
     <MainContainer {...routeChangeMotion}>
       <section className="section-hero">
-        <Hero />
+        <HeroHome />
       </section>
       <CardGallery
         data={images}

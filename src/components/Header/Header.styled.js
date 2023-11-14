@@ -5,7 +5,7 @@ export const StyledHeader = styled.header`
   ${({ $fixed }) =>
     $fixed
       ? css`
-          position: fixed;
+          position: absolute;
           top: 0;
           left: 50%;
           transform: translateX(-50%);
