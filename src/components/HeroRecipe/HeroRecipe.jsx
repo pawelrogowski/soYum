@@ -9,6 +9,6 @@ export const HeroRecipe = () => (
     <source type="image/avif" srcSet={srcSetAvif} />
     <source type="image/webp" srcSet={srcSetWebp} />
     <source type="image/png" srcSet={srcSetPng} />
-    <img src={heroFallback} />
+    <img src={heroFallback} alt="nicely sorted vegetables" loading="eager" />
   </StyledPicture>
 );
