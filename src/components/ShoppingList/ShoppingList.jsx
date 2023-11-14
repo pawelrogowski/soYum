@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import productPlaceholder from "../../assets/images/productPlaceholder.avif";
 import { Icon } from "../Icon/Icon";
 import { StyledShoppingList } from "./ShoppingList.styled";
+import { AnimatePresence, motion } from "framer-motion";
+import { ingredientListItemMotion } from "../../common/animations";
 
 // Mockup
 const initialProducts = [
@@ -40,35 +42,36 @@ export const ShoppingList = () => {
 
   return (
     <StyledShoppingList>
-      <li className="head-product-name">Products</li>
-      <li className="head-amount">Amount</li>
-      <li className="head-remove">Remove</li>
-
-      {products.map((product) => (
-        <React.Fragment key={product.id}>
-          <li className="product__name">
-            <picture>
-              <source srcSet={product.image} />
-              <img
-                src={productPlaceholder}
-                alt="an ingredient image"
-                width="48px"
-                height="48px"
-                loading="lazy"
-              />
-            </picture>
-            <span>{product.name}</span>
-          </li>
-          <li className="product__amount">
-            <span>{product.amount + " " + product.measureType}</span>
-          </li>
-          <li className="product__remove">
-            <button type="button" onClick={() => handleRemove(product.id)}>
-              <Icon icon="x" />
-            </button>
-          </li>
-        </React.Fragment>
-      ))}
+      <motion.li className="head-product-name">Products</motion.li>
+      <motion.li className="head-amount">Amount</motion.li>
+      <motion.li className="head-remove">Remove</motion.li>
+      <AnimatePresence>
+        {products.map((product) => (
+          <React.Fragment key={product.id}>
+            <motion.li className="product__name" {...ingredientListItemMotion}>
+              <picture>
+                <source srcSet={product.image} />
+                <img
+                  src={productPlaceholder}
+                  alt="an ingredient image"
+                  width="48px"
+                  height="48px"
+                  loading="lazy"
+                />
+              </picture>
+              <span>{product.name}</span>
+            </motion.li>
+            <motion.li className="product__amount" {...ingredientListItemMotion}>
+              <span>{product.amount + " " + product.measureType}</span>
+            </motion.li>
+            <motion.li className="product__remove" {...ingredientListItemMotion}>
+              <button type="button" onClick={() => handleRemove(product.id)}>
+                <Icon icon="x" />
+              </button>
+            </motion.li>
+          </React.Fragment>
+        ))}
+      </AnimatePresence>
     </StyledShoppingList>
   );
 };

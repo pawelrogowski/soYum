@@ -498,6 +498,18 @@ export const lightTheme = {
   noItemFound: {
     fontIdle: "rgba(0, 0, 0, 0.5)",
   },
+  shoppingList: {
+    fontHead: "#fafafa",
+    fontProduct: "#3E4462",
+    fontAmount: "#fafafa",
+    iconRemoveIdle: "#3E4462",
+    iconRemoveActive: "rgba(231, 74, 59, 1)",
+    bgHead: brandColors.main,
+    bgAmount: brandColors.main,
+    bgPicture: "#EBF3D4",
+    borderItemIdle: "#E0E0E0",
+    borderItemActive: brandColors.main,
+  },
 };
 
 export const darkTheme = {
@@ -922,5 +934,17 @@ export const darkTheme = {
   },
   noItemFound: {
     fontIdle: "rgba(250, 250, 250, 0.5)",
+  },
+  shoppingList: {
+    fontHead: "#fafafa",
+    fontProduct: "#fafafa",
+    fontAmount: "#fafafa",
+    iconRemoveIdle: "#fafafa",
+    iconRemoveActive: "rgba(231, 74, 59, 1)",
+    bgHead: brandColors.main,
+    bgAmount: brandColors.main,
+    bgPicture: "#2A2C36",
+    borderItemIdle: "#606167",
+    borderItemActive: brandColors.main,
   },
 };

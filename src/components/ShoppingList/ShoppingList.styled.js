@@ -2,6 +2,17 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const StyledShoppingList = styled(motion.ul)`
+  --color-font-head: ${({ theme: t }) => t.shoppingList.fontHead};
+  --color-font-product: ${({ theme: t }) => t.shoppingList.fontProduct};
+  --color-font-amount: ${({ theme: t }) => t.shoppingList.fontAmount};
+  --color-icon-idle: ${({ theme: t }) => t.shoppingList.iconRemoveIdle};
+  --color-icon-active: ${({ theme: t }) => t.shoppingList.iconRemoveActive};
+  --color-bg-head: ${({ theme: t }) => t.shoppingList.bgHead};
+  --color-bg-amount: ${({ theme: t }) => t.shoppingList.bgAmount};
+  --color-bg-picture: ${({ theme: t }) => t.shoppingList.bgPicture};
+  --color-border-item-idle: ${({ theme: t }) => t.shoppingList.borderItemIdle};
+  --color-border-item-active: ${({ theme: t }) => t.shoppingList.borderItemActive};
+
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 0.3fr 0.2fr;
@@ -26,12 +37,12 @@ export const StyledShoppingList = styled(motion.ul)`
     &-amount,
     &-remove,
     &-product-name {
-      color: #fafafa;
+      color: var(--color-font-head);
       font-size: 1.2rem;
       font-weight: 600;
       line-height: 1.5;
       margin-bottom: 0.8rem;
-      background: #8baa36;
+      background: var(--color-bg-head);
       padding: 1rem;
       @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         font-size: 1.8rem;
@@ -56,7 +67,7 @@ export const StyledShoppingList = styled(motion.ul)`
         max-width: 12rem;
         word-break: break-all;
         text-wrap: pretty;
-        color: #3e4462;
+        color: var(--color-font-product);
         font-size: 1rem;
         font-weight: 500;
         line-height: 1.2;
@@ -70,7 +81,7 @@ export const StyledShoppingList = styled(motion.ul)`
         height: auto;
         aspect-ratio: 1 / 1;
         border-radius: 0.6rem;
-        background: #ebf3d4;
+        background: var(--color-bg-picture);
         padding: 0.6rem;
         display: flex;
         justify-content: center;
@@ -95,9 +106,9 @@ export const StyledShoppingList = styled(motion.ul)`
         align-items: center;
         max-height: 2.3rem;
         padding: 0 1.4rem;
-        background: #8baa36;
+        background: var(--color-bg-amount);
         border-radius: 0.4rem;
-        color: #fafafa;
+        color: var(--color-font-amount);
         text-align: center;
         font-size: 1rem;
         font-style: normal;
@@ -131,12 +142,12 @@ export const StyledShoppingList = styled(motion.ul)`
         > svg {
           width: 1.4rem;
           height: 1.4rem;
-          stroke: #000;
+          stroke: var(--color-icon-idle);
         }
         &:focus,
         &:hover {
           > svg {
-            stroke: red;
+            stroke: var(--color-icon-active);
           }
         }
         @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
@@ -167,7 +178,7 @@ export const StyledShoppingList = styled(motion.ul)`
     &__amount,
     &__remove {
       padding-bottom: 2.4rem;
-      border-bottom: 1px solid #e0e0e0;
+      border-bottom: 1px solid var(--color-border-item-idle);
       color: #fafafa;
       @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         padding-bottom: 4.2rem;

@@ -10,7 +10,9 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
 		padding: 0;
   }
-
+  * {
+    outline: 1px dotted lightskyblue;
+  }
 	html, body {
 		margin: 0;
 		padding: 0;
