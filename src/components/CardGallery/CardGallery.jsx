@@ -18,9 +18,14 @@ export const CardGallery = ({
     <StyledGallery>
       {showHeading && <Heading as="h2">{headingText}</Heading>}
       <ul>
-        {data.slice(0, limit).map((item, index) => (
-          <li key={index}>
-            <Card img={item.img} caption={item.caption} placeholder={item.placeholder} />
+        {data.slice(0, limit).map((item) => (
+          <li key={item.id}>
+            <Card
+              itemId={item.id}
+              img={item.img}
+              caption={item.caption}
+              placeholder={item.placeholder}
+            />
           </li>
         ))}
       </ul>

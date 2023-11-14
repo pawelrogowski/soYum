@@ -11,10 +11,10 @@ import { Heading } from "../../components/Heading/Heading";
 import { MainContainer } from "./CategoriesPage.styled";
 
 const images = [
-  { placeholder: placeholder, img: img1, caption: "Banana Pancakes" },
-  { placeholder: placeholder, img: img2, caption: "Ham Hock Colcannon" },
-  { placeholder: placeholder, img: img3, caption: "Polish Pancakes" },
-  { placeholder: placeholder, img: img1, caption: "Banana Pancakes" },
+  { id: "1", placeholder: placeholder, img: img1, caption: "Banana Pancakes" },
+  { id: "2", placeholder: placeholder, img: img2, caption: "Ham Hock Colcannon" },
+  { id: "3", placeholder: placeholder, img: img3, caption: "Polish Pancakes" },
+  { id: "4", placeholder: placeholder, img: img1, caption: "Banana Pancakes" },
 ];
 
 const CategoriesPage = () => {
