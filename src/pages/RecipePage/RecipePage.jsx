@@ -1,5 +1,4 @@
 import { routeChangeMotion } from "../../common/animations";
-import { Heading } from "../../components/Heading/Heading";
 import { HeroRecipe } from "../../components/HeroRecipe/HeroRecipe";
 import { HeroRecipeText } from "../../components/HeroRecipeText/HeroRecipeText";
 import { MainContainer } from "./RecipePage.styled";

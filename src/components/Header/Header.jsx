@@ -22,8 +22,9 @@ export const Header = () => {
   const isMobileMenuOpen = useSelector((state) => state.modal.isMobileMenuOpen);
   const isAtLeastDesktopSize = useMediaQuery({ minWidth: breakpoints.desktop });
 
-  const fixed = pathname.startsWith("/recipe");
-
+  const isRecipePage = pathname.startsWith("/recipe");
+  const fixed = isRecipePage;
+  const altFontColors = isRecipePage;
   const handleMenuToggle = () => {
     dispatch(setIsMobileMenuOpen(!isMobileMenuOpen));
   };
@@ -32,7 +33,7 @@ export const Header = () => {
   };
 
   return (
-    <StyledHeader $addDecor={shouldUseDecor} $fixed={fixed}>
+    <StyledHeader $addDecor={shouldUseDecor} $altFontColors={altFontColors} $fixed={fixed}>
       <Link to="/home" aria-label="navigate to homepage">
         <Logo variant="header" onClick={handleCloseMenu} />
       </Link>

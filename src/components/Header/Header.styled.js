@@ -74,4 +74,24 @@ export const StyledHeader = styled.header`
       outline: 0.2rem solid black;
     }
   }
+  ${({ $altFontColors }) =>
+    $altFontColors &&
+    css`
+      a {
+        color: #23262a !important;
+        &:hover,
+        &:focus {
+          color: var(--color-navigation-hover) !important;
+        }
+      }
+      nav {
+        svg {
+          stroke: #23262a !important;
+          &:hover,
+          &:focus {
+            stroke: var(--color-navigation-hover) !important;
+          }
+        }
+      }
+    `}
 `;
