@@ -1,13 +1,13 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useState } from "react";
+import React from "react";
 
 import productPlaceholder from "../../assets/images/productPlaceholder.avif";
 import { ingredientListItemMotion } from "../../common/animations";
 import { Icon } from "../Icon/Icon";
-import { StyledShoppingList } from "./ShoppingList.styled";
+import { StyledProductList } from "./ProductList.styled";
 
 // Mockup
-const initialProducts = [
+const products = [
   {
     id: "1",
     name: "Product 1",
@@ -33,18 +33,16 @@ const initialProducts = [
   { id: "17", name: "Product 3", amount: 1, measureType: "kg", image: "" },
 ];
 
-export const ShoppingList = () => {
-  const [products, setProducts] = useState(initialProducts);
-
-  const handleRemove = (id) => {
-    setProducts(products.filter((product) => product.id !== id));
+export const ProductList = () => {
+  const handleCheckboxChange = (id) => (event) => {
+    console.log(id, event.target.checked);
   };
 
   return (
-    <StyledShoppingList>
-      <motion.li className="head-product-name">Products</motion.li>
+    <StyledProductList>
+      <motion.li className="head-product-name">Ingredients</motion.li>
       <motion.li className="head-amount">Amount</motion.li>
-      <motion.li className="head-remove">Remove</motion.li>
+      <motion.li className="head-add">Add to list</motion.li>
       <AnimatePresence>
         {products.map((product) => (
           <React.Fragment key={product.id}>
@@ -64,14 +62,21 @@ export const ShoppingList = () => {
             <motion.li className="product__amount" {...ingredientListItemMotion}>
               <span>{product.amount + " " + product.measureType}</span>
             </motion.li>
-            <motion.li className="product__remove" {...ingredientListItemMotion}>
-              <button type="button" onClick={() => handleRemove(product.id)}>
-                <Icon icon="x" />
-              </button>
+            <motion.li className="product__add" {...ingredientListItemMotion}>
+              <label className="checkbox-container">
+                <input
+                  name="add-ingredient"
+                  type="checkbox"
+                  onChange={handleCheckboxChange(product.id)}
+                />
+                <div className="checkbox-custom">
+                  <Icon icon="checkbox" />
+                </div>
+              </label>
             </motion.li>
           </React.Fragment>
         ))}
       </AnimatePresence>
-    </StyledShoppingList>
+    </StyledProductList>
   );
 };

@@ -30,6 +30,9 @@ export const StyledDiv = styled.div`
       letter-spacing: -0.088rem;
       max-width: 50.6rem;
     }
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
+      max-width: 58.6rem;
+    }
   }
   > p {
     margin-bottom: 2.4rem;
@@ -46,6 +49,9 @@ export const StyledDiv = styled.div`
       font-size: 1.8rem;
       letter-spacing: -0.036rem;
       max-width: 50.6rem;
+    }
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
+      max-width: 58.6rem;
     }
   }
   > button {

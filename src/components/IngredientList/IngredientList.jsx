@@ -5,7 +5,7 @@ import { useSelector } from "react-redux/es/hooks/useSelector";
 
 import { ingredientListItemMotion } from "../../common/animations";
 import { useValidation } from "../../hooks/useValidation";
-import { setField, setFieldError } from "../../redux/slices/addRecipeFormSlice";
+import { setField, setFieldError } from "../../redux/slices/addRecipeFormSlice.js";
 import { addRecipeSchema } from "../../validation/addRecipeSchema.js";
 import { IngredientCounter } from "../Counter/IngredientCounter";
 import { Heading } from "../Heading/Heading";

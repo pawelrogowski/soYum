@@ -77,10 +77,12 @@ export const StyledHeader = styled.header`
   ${({ $altFontColors }) =>
     $altFontColors &&
     css`
-      a {
+      a:not(:hover),
+      button:not(:hover) > span {
         color: #23262a !important;
         &:hover,
-        &:focus {
+        &:focus,
+        &:focus-within {
           color: var(--color-navigation-hover) !important;
         }
       }

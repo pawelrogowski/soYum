@@ -1,9 +1,26 @@
+import { useParams } from "react-router-dom";
 import { routeChangeMotion } from "../../common/animations";
 import { HeroRecipe } from "../../components/HeroRecipe/HeroRecipe";
 import { HeroRecipeText } from "../../components/HeroRecipeText/HeroRecipeText";
+import { ProductList } from "../../components/ProductList/ProductList";
 import { MainContainer } from "./RecipePage.styled";
 
+const RecipeList = [
+  {
+    id: "1",
+    title: "",
+    ImageUrl: "",
+    categories: ["", ""],
+    about: "",
+    cookingTime: "",
+    ingedients: [{ ingredient: "", amount: "", measureType: "" }],
+    preparationSteps: ["", "", ""],
+  },
+];
+
 const RecipePage = () => {
+  const { recipeId } = useParams();
+  console.log("recipeId " + recipeId);
   return (
     <MainContainer {...routeChangeMotion}>
       <section className="hero-section">
@@ -15,6 +32,9 @@ const RecipePage = () => {
           cookingTime="20 min"
         />
         ;
+      </section>
+      <section className="list-section">
+        <ProductList />
       </section>
     </MainContainer>
   );

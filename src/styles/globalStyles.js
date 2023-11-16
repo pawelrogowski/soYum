@@ -10,11 +10,7 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
 		padding: 0;
   }
-  ${
-    "" /* * {
-    outline: 1px dotted lightskyblue;
-  } */
-  }
+
 	html, body {
 		margin: 0;
 		padding: 0;
@@ -55,9 +51,13 @@ export const GlobalStyles = createGlobalStyle`
 
 
 
-main {
-  min-height: calc(100dvh - 62px);
-}
+  main {
+    min-height: calc(100dvh - 62px);
+  }
+
+  span+footer {
+    visibility: hidden;
+  }
   div[id="root"] {
       display: flex;
       flex-direction: column;
