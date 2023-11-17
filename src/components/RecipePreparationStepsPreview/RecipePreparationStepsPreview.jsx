@@ -35,7 +35,7 @@ export const RecipePreparationStepsPreview = () => {
 
   return (
     <StyledDiv>
-      <Heading as="h2">Steps</Heading>
+      <Heading as="h2">Steps Preview</Heading>
       <AnimatePresence>
         {recipePreparationStepsError && (
           <InputErrorSpan

@@ -5,35 +5,10 @@ import productPlaceholder from "../../assets/images/productPlaceholder.avif";
 import { ingredientListItemMotion } from "../../common/animations";
 import { Icon } from "../Icon/Icon";
 import { StyledProductList } from "./ProductList.styled";
-
+import PropTypes from "prop-types";
 // Mockup
-const products = [
-  {
-    id: "1",
-    name: "Product 1",
-    amount: 2,
-    measureType: "tsp",
-    image: "",
-  },
-  { id: "2", name: "Product 2", amount: 3, measureType: "g", image: "" },
-  { id: "3", name: "Product 3", amount: 1, measureType: "kg", image: "" },
-  { id: "4", name: "Product 2", amount: 3, measureType: "g", image: "" },
-  { id: "5", name: "Product 3", amount: 1, measureType: "kg", image: "" },
-  { id: "6", name: "Product 2", amount: 3, measureType: "g", image: "" },
-  { id: "7", name: "Product 3", amount: 1, measureType: "kg", image: "" },
-  { id: "8", name: "Product 2", amount: 3, measureType: "g", image: "" },
-  { id: "9", name: "Product 3", amount: 1, measureType: "kg", image: "" },
-  { id: "10", name: "Product 2", amount: 3, measureType: "g", image: "" },
-  { id: "11", name: "Product 3", amount: 1, measureType: "kg", image: "" },
-  { id: "12", name: "Product 2", amount: 3, measureType: "g", image: "" },
-  { id: "13", name: "Product 3", amount: 1, measureType: "kg", image: "" },
-  { id: "14", name: "Product 2", amount: 3, measureType: "g", image: "" },
-  { id: "15", name: "Product 3", amount: 1, measureType: "kg", image: "" },
-  { id: "16", name: "Product 2", amount: 3, measureType: "g", image: "" },
-  { id: "17", name: "Product 3", amount: 1, measureType: "kg", image: "" },
-];
 
-export const ProductList = () => {
+export const ProductList = ({ productArr }) => {
   const handleCheckboxChange = (id) => (event) => {
     console.log(id, event.target.checked);
   };
@@ -44,11 +19,11 @@ export const ProductList = () => {
       <motion.li className="head-amount">Amount</motion.li>
       <motion.li className="head-add">Add to list</motion.li>
       <AnimatePresence>
-        {products.map((product) => (
+        {productArr.map((product) => (
           <React.Fragment key={product.id}>
             <motion.li className="product__name" {...ingredientListItemMotion}>
               <picture>
-                <source srcSet={product.image} />
+                <source srcSet="" />
                 <img
                   src={productPlaceholder}
                   alt="an ingredient image"
@@ -57,7 +32,7 @@ export const ProductList = () => {
                   loading="lazy"
                 />
               </picture>
-              <span>{product.name}</span>
+              <span>{product.ingredient}</span>
             </motion.li>
             <motion.li className="product__amount" {...ingredientListItemMotion}>
               <span>{product.amount + " " + product.measureType}</span>
@@ -79,4 +54,8 @@ export const ProductList = () => {
       </AnimatePresence>
     </StyledProductList>
   );
+};
+
+ProductList.propTypes = {
+  productArr: PropTypes.array.isRequired,
 };
