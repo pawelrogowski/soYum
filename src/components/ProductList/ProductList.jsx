@@ -1,11 +1,11 @@
 import { AnimatePresence, motion } from "framer-motion";
+import PropTypes from "prop-types";
 import React from "react";
 
 import productPlaceholder from "../../assets/images/productPlaceholder.avif";
 import { ingredientListItemMotion } from "../../common/animations";
 import { Icon } from "../Icon/Icon";
 import { StyledProductList } from "./ProductList.styled";
-import PropTypes from "prop-types";
 // Mockup
 
 export const ProductList = ({ productArr }) => {

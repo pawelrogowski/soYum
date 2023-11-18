@@ -4,12 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 
 import avatar from "../../../assets/images/avatar.avif";
 import { baseButtonMotion, baseIconMotion } from "../../../common/animations";
-import { cloudinarySettings } from "../../../common/CloudinarySettings";
+import { getCloudinarySettings } from "../../../common/CloudinarySettings";
 import { useDisableBodyScroll } from "../../../hooks/useDisableBodyScroll";
 import useUploadWidget from "../../../hooks/useUploadWidget";
 import {
   setIsImageUploadModalLoading,
   setIsImageUploadModalOpen,
+  setIsProfileUpdateMenuOpen,
 } from "../../../redux/slices/modalSlice";
 import { userEditSchema } from "../../../validation/userEditSchema";
 import { Button } from "../../Button/Button";
@@ -22,6 +23,7 @@ const initialValues = {
 };
 
 export const UserUpdateForm = () => {
+  const { isDarkTheme } = useSelector((state) => state.global);
   useUploadWidget();
   useDisableBodyScroll();
 
@@ -52,25 +54,28 @@ export const UserUpdateForm = () => {
   }, [isUsernameEditable]);
 
   const widget = useCallback(() => {
-    return window.cloudinary.createUploadWidget(cloudinarySettings, (error, result) => {
-      if (result.info === "shown") {
-        dispatch(setIsImageUploadModalOpen(true));
-      }
+    return window.cloudinary.createUploadWidget(
+      getCloudinarySettings(isDarkTheme, false),
+      (error, result) => {
+        if (result.info === "shown") {
+          dispatch(setIsImageUploadModalOpen(true));
+        }
 
-      if (result.event === "close") {
-        const widgetInstance = widget();
-        widgetInstance.destroy();
-        dispatch(setIsImageUploadModalOpen(false));
-      }
+        if (result.event === "close") {
+          const widgetInstance = widget();
+          widgetInstance.destroy();
+          dispatch(setIsImageUploadModalOpen(false));
+        }
 
-      if (!error && result.event === "success") {
-        setAvatarPreview(result.info.secure_url);
-      } else if (error) {
-        dispatch(setIsImageUploadModalOpen(false));
-        console.log(error);
+        if (!error && result.event === "success") {
+          setAvatarPreview(result.info.secure_url);
+        } else if (error) {
+          dispatch(setIsImageUploadModalOpen(false));
+          console.log(error);
+        }
       }
-    });
-  }, [dispatch]);
+    );
+  }, [dispatch, isDarkTheme]);
 
   const handleAvatarClick = () => {
     const { open: openWidget } = widget();
@@ -92,8 +97,10 @@ export const UserUpdateForm = () => {
       }
 
       setSubmitting(false);
+      dispatch(setIsProfileUpdateMenuOpen(false));
     },
-    [avatarPreview, usernameValue]
+
+    [avatarPreview, usernameValue, dispatch]
   );
 
   const resetUsername = useCallback(() => {

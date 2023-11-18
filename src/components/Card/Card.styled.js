@@ -45,6 +45,9 @@ export const StyledFigure = styled(motion.figure)`
     transition: border-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms,
       color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms,
       background cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   img {

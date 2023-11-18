@@ -63,6 +63,7 @@ export const CategorySelect = () => {
         placeholder="Categories"
         classNamePrefix="Select"
         closeMenuOnSelect
+        isSearchable
       />
       <AnimatePresence>
         {recipeCategoriesError && (

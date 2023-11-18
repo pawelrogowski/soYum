@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useDevCssOutline = () => {
+export const useDevCssTools = () => {
   const [outline, setOutline] = useState(false);
   const [color, setColor] = useState("lightskyblue");
 

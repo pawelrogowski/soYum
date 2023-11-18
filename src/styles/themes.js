@@ -46,6 +46,14 @@ export const lightTheme = {
       borderActive: brandColors.main,
     },
   },
+  cardGallery: {
+    buttonBgIdle: "transparent",
+    buttonBgActive: brandColors.main,
+    buttonBorderIdle: brandColors.main,
+    buttonBorderActive: brandColors.main,
+    buttonTextIdle: "#22252A",
+    buttonTextActive: "#fafafa",
+  },
   callToAction: {
     bg: "rgb(255, 255, 255)",
     textHightlight: brandColors.main,
@@ -550,6 +558,14 @@ export const darkTheme = {
       borderIdle: "#000",
       borderActive: brandColors.main,
     },
+  },
+  cardGallery: {
+    buttonBgIdle: "transparent",
+    buttonBgActive: brandColors.main,
+    buttonBorderIdle: brandColors.main,
+    buttonBorderActive: brandColors.main,
+    buttonTextIdle: "#fafafa",
+    buttonTextActive: "#22252A",
   },
   callToAction: {
     bg: "rgb(42, 44, 54)",

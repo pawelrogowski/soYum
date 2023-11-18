@@ -1,5 +1,5 @@
 import { useMediaQuery } from "react-responsive";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import placeholder from "../../assets/icons/food-placeholder.svg";
 import img2 from "../../assets/images/food/M6A1135.jpg";
@@ -20,6 +20,7 @@ const images = [
 ];
 
 const HomePage = () => {
+  const navigate = useNavigate();
   const isAtLeastTabletSize = useMediaQuery({ minWidth: breakpoints.tablet });
   const isAtLeastDesktopSize = useMediaQuery({ minWidth: breakpoints.desktop });
 
@@ -37,6 +38,7 @@ const HomePage = () => {
         headingText="Breakfast"
         buttonText="See All"
         limit={imgNumPerCategory}
+        onButtonClick={() => navigate("/categories/breakfast")}
       />
 
       <CardGallery
@@ -45,7 +47,7 @@ const HomePage = () => {
         showButton
         headingText="Miscellaneous"
         buttonText="See All"
-        limit={imgNumPerCategory}
+        onButtonClick={() => navigate("/categories/miscellaneous")}
       />
       <CardGallery
         data={images}
@@ -54,6 +56,7 @@ const HomePage = () => {
         headingText="Chicken"
         buttonText="See All"
         limit={imgNumPerCategory}
+        onButtonClick={() => navigate("/categories/chicken")}
       />
       <CardGallery
         data={images}
@@ -62,8 +65,9 @@ const HomePage = () => {
         headingText="Desserts"
         buttonText="See All"
         limit={imgNumPerCategory}
+        onButtonClick={() => navigate("/categories/desserts")}
       />
-      <Link to="/categories">
+      <Link to="/categories/beef">
         <Button variant="outlineBig" {...baseButtonMotion}>
           Other Categories
         </Button>

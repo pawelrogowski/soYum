@@ -2,6 +2,12 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const StyledGallery = styled(motion.section)`
+  --color-button-bg-idle: ${({ theme: t }) => t.cardGallery.buttonBgIdle};
+  --color-button-bg-active: ${({ theme: t }) => t.cardGallery.buttonBgActive};
+  --color-button-border-idle: ${({ theme: t }) => t.cardGallery.buttonBorderIdle};
+  --color-button-border-active: ${({ theme: t }) => t.cardGallery.buttonBorderActive};
+  --color-button-text-idle: ${({ theme: t }) => t.cardGallery.buttonTextIdle};
+  --color-button-text-active: ${({ theme: t }) => t.cardGallery.buttonTextActive};
   display: flex;
   flex-direction: column;
   margin-bottom: 3.2rem;
@@ -21,15 +27,32 @@ export const StyledGallery = styled(motion.section)`
     margin-bottom: 0;
   }
   > button {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    justify-content: center;
     align-self: flex-end;
-    max-width: 9.4rem;
+    max-width: 11.4rem;
     max-height: 3.8rem;
     font-size: 1.4rem;
     line-height: 1.285;
+    color: var(--color-button-text-idle);
+    border-color: var(--color-button-border-idle);
+    background-color: var(--color-button-bg-idle);
     &:hover,
     &:focus,
     &:active {
-      border-color: #8baa36;
+      background-color: var(--color-button-bg-active);
+      border-color: var(--color-button-border-active);
+      color: var(--color-button-text-active);
+      > svg {
+        stroke: var(--color-button-text-active);
+      }
+    }
+    > svg {
+      stroke: var(--color-button-text-idle);
+      width: 1.4rem;
+      height: 1.4rem;
     }
   }
 
