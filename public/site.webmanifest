@@ -52,5 +52,8 @@
   "display": "standalone",
   "background_color": "#fafafa",
   "theme_color": "#86aa43",
-  "categories": ["food", "lifestyle"]
+  "categories": [
+    "food",
+    "lifestyle"
+  ]
 }
