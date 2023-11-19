@@ -144,6 +144,7 @@ export const UserUpdateForm = () => {
               innerRef={usernameInputRef}
               value={usernameValue}
               onChange={(e) => setUsernameValue(e.target.value)}
+              autoComplete="off"
             />
             {isUsernameEditable && !errors.username && values.username !== "" && (
               <button

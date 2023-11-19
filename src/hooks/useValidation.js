@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef } from "react";
 import * as yup from "yup";
 
 /**
@@ -19,7 +19,7 @@ export const useValidation = () => {
    * State to store validation errors.
    * @type {Object.<string, string>}
    */
-  const [errors, setErrors] = useState({});
+  const errors = useRef({});
 
   /**
    * Validates a form field using Yup schema.
@@ -37,10 +37,10 @@ export const useValidation = () => {
       const fieldSchema = yup.reach(validationSchema, fieldName);
       fieldSchema.validateSync(value, { ...parentFields });
 
-      setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: "" }));
+      errors.current = { ...errors.current, [fieldName]: "" };
       return { isValid: true, errorMessage: "" };
     } catch (error) {
-      setErrors((prevErrors) => ({ ...prevErrors, [fieldName]: error.message }));
+      errors.current = { ...errors.current, [fieldName]: error.message };
       return { isValid: false, errorMessage: error.message };
     }
   };

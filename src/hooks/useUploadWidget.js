@@ -10,6 +10,7 @@ function useUploadWidget() {
       const script = document.createElement("script");
       script.src = scriptUrl;
       script.async = true;
+      script.defer = true;
       document.head.appendChild(script);
     }
 

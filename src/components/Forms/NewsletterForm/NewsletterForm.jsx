@@ -58,7 +58,7 @@ export const NewsletterForm = ({ layout }) => {
                 motionObject={warnIconMotion}
                 errors={errors}
                 touched={touched}
-                autocomplete="off"
+                autoComplete="off"
               />
             </div>
             <Button variant="rectBig" type="submit" aria-label="Submit form" {...baseButtonMotion}>

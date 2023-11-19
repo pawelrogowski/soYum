@@ -90,6 +90,7 @@ export const RecipePreparationTextArea = ({ className }) => {
       <Heading as="h2">Recipe Preparation</Heading>
       <div>
         <textarea
+          name="preparation-step-textarea"
           placeholder="Enter preparation steps"
           value={currentTextAreaValue}
           onKeyDown={handleKeyDown}
