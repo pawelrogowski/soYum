@@ -50,7 +50,7 @@
   ],
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#86aa43",
+  "background_color": "#fafafa",
   "theme_color": "#86aa43",
   "categories": ["food", "lifestyle"]
 }
