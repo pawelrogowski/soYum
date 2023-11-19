@@ -70,7 +70,7 @@ export const AppRoutes = () => {
               <Route path=":page" element={<FavoritesPage />} />
             </Route>
             <Route path="/recipe" element={<RecipePage />}>
-              <Route path=":recipeId" element={<RecipePage  />} />
+              <Route path=":recipeId" element={<RecipePage />} />
             </Route>
             <Route path="/search" element={<SearchPage />} />
             <Route path="/shoppinglist" element={<ShoppingListPage />} />
