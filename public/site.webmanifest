@@ -18,7 +18,7 @@
       "src": "public/manifest-icon-512.maskable.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "public/manifest-icon-512.maskable.png",
@@ -29,7 +29,8 @@
     {
       "src": "/apple-icon-180.png",
       "sizes": "180x180",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/favicon-16x16.png",
