@@ -1,10 +1,10 @@
+import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
 
 import productPlaceholder from "../../assets/images/productPlaceholder.avif";
+import { ingredientListItemMotion } from "../../common/animations";
 import { Icon } from "../Icon/Icon";
 import { StyledShoppingList } from "./ShoppingList.styled";
-import { AnimatePresence, motion } from "framer-motion";
-import { ingredientListItemMotion } from "../../common/animations";
 
 // Mockup
 const initialProducts = [

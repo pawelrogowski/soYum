@@ -1,5 +1,3 @@
-import { store } from "../redux/store";
-
 const lightPallete = {
   window: "#fafafa",
   sourceBg: "#fafafa",
@@ -32,22 +30,19 @@ const darkPallete = {
   textLight: "#000",
 };
 
-let cloudinarySettings = getCloudinarySettings(store.getState().global.isDarkTheme);
-
-store.subscribe(() => {
-  const isDarkTheme = store.getState().global.isDarkTheme;
-  cloudinarySettings = getCloudinarySettings(isDarkTheme);
-});
-
-function getCloudinarySettings(isDarkTheme) {
+export const getCloudinarySettings = (isDarkTheme, isRecipeImage) => {
   return {
     cloudName: "dd9oa9bwd",
-    uploadPreset: "so-yummy",
+    uploadPreset: isRecipeImage ? "recipe" : "avatar",
     sources: ["local", "camera"],
     cropping: false,
     multiple: false,
     defaultSource: "local",
-    eager: [{ width: 44, height: 44, crop: "scale", format: "webp" }],
+    tags: isRecipeImage ? ["recipe", "food"] : ["avatar", "user"],
+    context: { alt: "user_uploaded" },
+    clientAllowedFormats: ["avif", "webp", "jpg", "png", "jpeg", "", ""],
+    maxImageFileSize: 2000000,
+    maxImageWidth: 2000,
     styles: {
       frame: { background: "rgba(0,0,0,0.2)" },
       palette: {
@@ -62,6 +57,4 @@ function getCloudinarySettings(isDarkTheme) {
       },
     },
   };
-}
-
-export { cloudinarySettings };
+};

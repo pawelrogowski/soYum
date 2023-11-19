@@ -19,6 +19,7 @@ const AddRecipePage = lazy(() => import("../pages/AddRecipePage/AddRecipePage"))
 const FavoritesPage = lazy(() => import("../pages/FavoritesPage/FavoritesPage.jsx"));
 const SearchPage = lazy(() => import("../pages/SearchPage/SearchPage.jsx"));
 const ShoppingListPage = lazy(() => import("../pages/ShoppingListPage/ShoppingListPage.jsx"));
+const RecipePage = lazy(() => import("../pages/RecipePage/RecipePage.jsx"));
 const NotFoundPage = lazy(() => import("../pages/NotFoundPage/NotFoundPage.jsx"));
 
 export const AppRoutes = () => {
@@ -26,8 +27,11 @@ export const AppRoutes = () => {
   console.log(location.pathname);
 
   useEffect(() => {
-    if (location.pathname.split("/").length === 2) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    const noScrollBlacklist = ["/recipes/1", "/recipes/2"];
+    if (!noScrollBlacklist.includes(location.pathname)) {
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 0);
     }
   }, [location]);
 
@@ -64,6 +68,9 @@ export const AppRoutes = () => {
             </Route>
             <Route path="/favorites" element={<FavoritesPage />}>
               <Route path=":page" element={<FavoritesPage />} />
+            </Route>
+            <Route path="/recipe" element={<RecipePage />}>
+              <Route path=":recipeId" element={<RecipePage />} />
             </Route>
             <Route path="/search" element={<SearchPage />} />
             <Route path="/shoppinglist" element={<ShoppingListPage />} />

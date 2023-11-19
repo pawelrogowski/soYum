@@ -14,7 +14,7 @@ export const CallToAction = ({ text, highlightedText, linkText, icon }) => {
         <span>{highlightedText} </span>
         {text}
       </p>
-      <Link to="#">
+      <Link to="/categories/beef">
         <span>{linkText}</span>
         <Icon icon={icon} {...baseIconMotion} />
       </Link>

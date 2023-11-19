@@ -46,6 +46,14 @@ export const lightTheme = {
       borderActive: brandColors.main,
     },
   },
+  cardGallery: {
+    buttonBgIdle: "transparent",
+    buttonBgActive: brandColors.main,
+    buttonBorderIdle: brandColors.main,
+    buttonBorderActive: brandColors.main,
+    buttonTextIdle: "#22252A",
+    buttonTextActive: "#fafafa",
+  },
   callToAction: {
     bg: "rgb(255, 255, 255)",
     textHightlight: brandColors.main,
@@ -510,6 +518,18 @@ export const lightTheme = {
     borderItemIdle: "#E0E0E0",
     borderItemActive: brandColors.main,
   },
+  productList: {
+    fontHead: "#fafafa",
+    fontProduct: "#3E4462",
+    fontAmount: "#fafafa",
+    iconRemoveIdle: "#3E4462",
+    iconRemoveActive: brandColors.main,
+    bgRow: "#EBF3D4",
+    bgHead: brandColors.main,
+    bgAmount: brandColors.main,
+    bgPicture: "#EBF3D4",
+    checkbox: "#b4b8a9",
+  },
 };
 
 export const darkTheme = {
@@ -538,6 +558,14 @@ export const darkTheme = {
       borderIdle: "#000",
       borderActive: brandColors.main,
     },
+  },
+  cardGallery: {
+    buttonBgIdle: "transparent",
+    buttonBgActive: brandColors.main,
+    buttonBorderIdle: brandColors.main,
+    buttonBorderActive: brandColors.main,
+    buttonTextIdle: "#fafafa",
+    buttonTextActive: "#22252A",
   },
   callToAction: {
     bg: "rgb(42, 44, 54)",
@@ -946,5 +974,16 @@ export const darkTheme = {
     bgPicture: "#2A2C36",
     borderItemIdle: "#606167",
     borderItemActive: brandColors.main,
+  },
+  productList: {
+    fontHead: "#fafafa",
+    fontProduct: "#fafafa",
+    fontAmount: "#fafafa",
+    iconRemoveActive: brandColors.main,
+    bgRow: "#2A2C36",
+    bgHead: brandColors.main,
+    bgAmount: brandColors.main,
+    bgPicture: "#2A2C36",
+    checkbox: "#b4b8a9",
   },
 };

@@ -12,8 +12,10 @@ export const ThemeSwitch = () => {
   };
 
   return (
-    <StyledLabel htmlFor="theme-switch">
+    <StyledLabel htmlFor="theme-switch" id="theme-switch-label">
       <input
+        aria-labelledby="theme-switch-label"
+        aria-label="theme switch"
         name="theme-switch"
         id="theme-switch"
         type="checkbox"

@@ -2,11 +2,21 @@ import { css, styled } from "styled-components";
 
 export const StyledHeader = styled.header`
   --color-decoration: ${({ theme: t }) => t.backgroundDecoration.primary};
+  ${({ $fixed }) =>
+    $fixed
+      ? css`
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 1;
+        `
+      : css`
+          position: relative;
+        `}
 
-  position: relative;
   max-width: ${({ theme: t }) => t.breakpoints.maxContent};
   min-width: ${({ theme: t }) => t.breakpoints.minContent};
-  position: relative;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -64,4 +74,26 @@ export const StyledHeader = styled.header`
       outline: 0.2rem solid black;
     }
   }
+  ${({ $altFontColors }) =>
+    $altFontColors &&
+    css`
+      a:not(:hover),
+      button:not(:hover) > span {
+        color: #23262a !important;
+        &:hover,
+        &:focus,
+        &:focus-within {
+          color: var(--color-navigation-hover) !important;
+        }
+      }
+      nav {
+        svg {
+          stroke: #23262a !important;
+          &:hover,
+          &:focus {
+            stroke: var(--color-navigation-hover) !important;
+          }
+        }
+      }
+    `}
 `;

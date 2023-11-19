@@ -4,6 +4,7 @@ import { baseButtonMotion } from "../../common/animations.js";
 import { Button } from "../Button/Button";
 import { Card } from "../Card/Card";
 import { Heading } from "../Heading/Heading.jsx";
+import { Icon } from "../Icon/Icon.jsx";
 import { StyledGallery } from "./CardGallery.styled";
 
 export const CardGallery = ({
@@ -13,20 +14,27 @@ export const CardGallery = ({
   showButton = false,
   headingText = "your heading",
   buttonText = "your button",
+  onButtonClick,
 }) => {
   return (
     <StyledGallery>
       {showHeading && <Heading as="h2">{headingText}</Heading>}
       <ul>
-        {data.slice(0, limit).map((item, index) => (
-          <li key={index}>
-            <Card img={item.img} caption={item.caption} placeholder={item.placeholder} />
+        {data.slice(0, limit).map((item) => (
+          <li key={item.id}>
+            <Card
+              itemId={item.id}
+              img={item.img}
+              caption={item.caption}
+              placeholder={item.placeholder}
+            />
           </li>
         ))}
       </ul>
       {showButton && (
-        <Button variant="rectSmall" {...baseButtonMotion}>
+        <Button variant="outlineSmall" {...baseButtonMotion} onClick={onButtonClick}>
           {buttonText}
+          <Icon icon="arrow_long" />
         </Button>
       )}
     </StyledGallery>
@@ -40,4 +48,5 @@ CardGallery.propTypes = {
   buttonText: PropTypes.string,
   showHeading: PropTypes.bool,
   showButton: PropTypes.bool,
+  onButtonClick: PropTypes.func,
 };

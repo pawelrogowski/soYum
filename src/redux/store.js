@@ -4,6 +4,7 @@ import storage from "redux-persist/lib/storage";
 
 import addRecipeFormReducer from "./slices/addRecipeFormSlice";
 import authReducer from "./slices/authSlice";
+import currentRecipeReducer from "./slices/currentRecipeSlice";
 import globalReducer from "./slices/globalSlice";
 import modalReducer from "./slices/modalSlice";
 
@@ -27,6 +28,7 @@ export const store = configureStore({
     global: persistedGlobalReducer,
     modal: modalReducer,
     addRecipeForm: addRecipeFormReducer,
+    currentRecipe: currentRecipeReducer,
   },
   enhancers: (existingEnhancers) => {
     return existingEnhancers.concat(autoBatchEnhancer());
