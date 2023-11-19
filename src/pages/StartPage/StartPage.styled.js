@@ -129,4 +129,37 @@ export const StartPageContainer = styled(motion.main)`
       }
     }
   }
+  > a {
+    font-size: 1rem;
+    text-wrap: nowrap;
+    margin-top: 4rem;
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
+      font-size: 1.2rem;
+    }
+
+    color: ${({ theme: t }) => t.link.authNav};
+    transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
+    &:hover,
+    &:focus {
+      color: ${({ theme: t }) => t.link.authNav};
+      > svg {
+        stroke: ${({ theme: t }) => t.link.authNav};
+      }
+    }
+
+    > svg {
+      stroke: ${({ theme: t }) => t.link.authNav};
+      margin-bottom: 0.25rem;
+      width: 1.2rem;
+      height: 1.2rem;
+      @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
+        margin-bottom: 0rem;
+        width: 1.4rem;
+        height: 1.4rem;
+      }
+    }
+  }
 `;

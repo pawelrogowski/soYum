@@ -72,18 +72,51 @@ export const PageContent = styled.div`
     align-items: center;
     width: 100%;
     max-width: 50rem;
+  }
+  .auth-links {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    gap: 2rem;
     > a {
-      font-size: 1.4rem;
-
+      font-size: 1rem;
+      text-wrap: nowrap;
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
       @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
-        font-size: 1.6rem;
+        font-size: 1.2rem;
       }
-      text-decoration-line: underline;
+
       color: ${({ theme: t }) => t.link.authNav};
       transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
       &:hover,
       &:focus {
         color: ${({ theme: t }) => t.link.authNavActive};
+        > svg {
+          stroke: ${({ theme: t }) => t.link.authNavActive};
+        }
+      }
+      &:first-of-type {
+        font-size: 1.4rem;
+        @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
+          font-size: 1.6rem;
+        }
+        text-decoration-line: underline;
+      }
+      > svg {
+        stroke: ${({ theme: t }) => t.link.authNav};
+        margin-bottom: 0.25rem;
+        width: 1.2rem;
+        height: 1.2rem;
+        @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
+          margin-bottom: 0rem;
+          width: 1.4rem;
+          height: 1.4rem;
+        }
       }
     }
   }

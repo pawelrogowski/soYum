@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 import { baseButtonMotion, startPageMotion } from "../../common/animations";
 import { Button } from "../../components/Button/Button";
+import { Icon } from "../../components/Icon/Icon";
 import { Logo } from "../../components/Logo/Logo";
 import { StartPageContainer } from "./StartPage.styled";
 
@@ -32,6 +33,9 @@ export const StartPage = () => {
           </li>
         </ul>
       </nav>
+      <Link to="/home">
+        Continue without the account <Icon icon="arrow_long" />
+      </Link>
     </StartPageContainer>
   );
 };
