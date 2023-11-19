@@ -131,7 +131,7 @@ export const StyledFormikForm = styled(Form)`
       > svg {
         width: 1.6rem;
         height: 1.6rem;
-        fill: #8baa36;
+        fill: rgba(139, 170, 54, 1);
       }
       @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         right: 4.8rem;

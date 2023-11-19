@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const StyledDiv = styled(motion.div)`
   position: absolute;
-  background: rgb(234, 243, 214);
+  background: rgba(234, 243, 214, 1);
   width: 10rem;
   height: 10rem;
   border-radius: 6rem;

@@ -179,7 +179,7 @@ export const StyledShoppingList = styled(motion.ul)`
     &__remove {
       padding-bottom: 2.4rem;
       border-bottom: 1px solid var(--color-border-item-idle);
-      color: #fafafa;
+      color: rgba(250, 250, 250, 1);
       @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         padding-bottom: 4.2rem;
       }

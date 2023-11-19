@@ -37,7 +37,7 @@ export const StyledLabel = styled.label`
     width: 2.135rem;
     left: 0.305rem;
     bottom: 0.3rem;
-    background-color: #fafafa;
+    background-color: rgba(250, 250, 250, 1);
     transition: box-shadow 400ms, transform 400ms;
     border-radius: 50%;
   }

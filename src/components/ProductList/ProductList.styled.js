@@ -163,7 +163,7 @@ export const StyledProductList = styled(motion.ul)`
           width: 1.8rem;
           height: 1.8rem;
           border-radius: 0.4rem;
-          border: 1px solid #b4b8a9;
+          border: 1px solid rgba(180, 184, 169, 1);
           svg {
             position: absolute;
             top: 50%;

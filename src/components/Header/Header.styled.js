@@ -79,7 +79,7 @@ export const StyledHeader = styled.header`
     css`
       a:not(:hover),
       button:not(:hover) > span {
-        color: #23262a !important;
+        color: rgba(35, 38, 42, 1) !important;
         &:hover,
         &:focus,
         &:focus-within {
@@ -88,7 +88,7 @@ export const StyledHeader = styled.header`
       }
       nav {
         svg {
-          stroke: #23262a !important;
+          stroke: rgba(35, 38, 42, 1) !important;
           &:hover,
           &:focus {
             stroke: var(--color-navigation-hover) !important;

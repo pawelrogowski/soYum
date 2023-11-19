@@ -15,7 +15,7 @@ export const StyledSpan = styled(motion.span)`
     content: "";
     width: 15dvw;
     height: 3px;
-    background: rgb(139, 170, 54);
+    background: rgba(139, 170, 54, 1);
 
     position: ${({ isGlobal }) => (isGlobal ? css`fixed` : css`absolute`)};
     top: 0;

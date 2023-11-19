@@ -20,14 +20,14 @@ export const StyledDiv = styled(motion.div)`
   div {
     width: 14rem;
     height: 5.2rem;
-    background: #8baa36;
+    background: rgba(139, 170, 54, 1);
     border-radius: 5rem;
-    --c: no-repeat radial-gradient(farthest-side, #000 92%, #0000);
+    --c: no-repeat radial-gradient(farthest-side, rgba(0, 0, NaN, 1) 92%, rgba(0, 0, NaN, 1)0);
     --s: 3.6rem 3.6rem;
     mask: var(--c) left 0.4rem top 50%, var(--c) center, var(--c) right 0.4rem top 50%,
-      linear-gradient(#000 0 0);
+      linear-gradient(rgba(0, 0, NaN, 1) 0 0);
     -webkit-mask: var(--c) left 0.4rem top 50%, var(--c) center, var(--c) right 0.4rem top 50%,
-      linear-gradient(#000 0 0);
+      linear-gradient(rgba(0, 0, NaN, 1) 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     animation: l1 1.5s infinite;
@@ -72,7 +72,7 @@ export const StyledDiv = styled(motion.div)`
   p {
     margin-top: 3rem;
     font-size: 1.6rem;
-    color: #fafafa;
+    color: rgba(250, 250, 250, 1);
     opacity: 0;
 
     animation: fadeInText 0.5s ease-in-out 5s 1 forwards;

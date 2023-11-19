@@ -42,11 +42,11 @@ export const StyledForm = styled.form`
       font-size: 1.4rem;
       font-weight: 400;
       font-family: var(--font-input);
-      background-color: #22252a;
+      background-color: rgba(34, 37, 42, 1);
       &:focus,
       &:hover {
         border: 0.1rem solid var(--color-border-active);
-        background-color: #22252a;
+        background-color: rgba(34, 37, 42, 1);
       }
       &::placeholder {
         color: var(--color-font-idle);
@@ -94,7 +94,7 @@ export const StyledForm = styled.form`
       }
       > h2 {
         margin-bottom: 1.4rem;
-        color: #fafafa;
+        color: rgba(250, 250, 250, 1);
         font-family: Poppins;
         font-size: 1.8rem;
         font-weight: 700;
@@ -104,7 +104,7 @@ export const StyledForm = styled.form`
       }
       > p {
         margin-bottom: 2.8rem;
-        color: #fafafa;
+        color: rgba(250, 250, 250, 1);
         font-size: 1.4rem;
         font-style: normal;
         line-height: 1.28;

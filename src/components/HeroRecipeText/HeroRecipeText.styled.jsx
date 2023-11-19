@@ -15,7 +15,7 @@ export const StyledDiv = styled.div`
   }
   > h1 {
     margin-bottom: 1.8rem;
-    color: #8baa36;
+    color: rgba(139, 170, 54, 1);
     font-size: 2.4rem;
     font-weight: 600;
     line-height: 1;
@@ -36,7 +36,7 @@ export const StyledDiv = styled.div`
   }
   > p {
     margin-bottom: 2.4rem;
-    color: #22252a;
+    color: rgba(34, 37, 42, 1);
     text-align: center;
     text-wrap: balance;
     text-align: center;
@@ -45,7 +45,7 @@ export const StyledDiv = styled.div`
     letter-spacing: -0.024rem;
     max-width: 30rem;
     @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
-      color: #23262a;
+      color: rgba(35, 38, 42, 1);
       font-size: 1.8rem;
       letter-spacing: -0.036rem;
       max-width: 50.6rem;
@@ -55,7 +55,7 @@ export const StyledDiv = styled.div`
     }
   }
   > button {
-    color: #22252a;
+    color: rgba(34, 37, 42, 1);
     width: 15rem;
     height: 3.5rem;
     margin-bottom: 3.8rem;
@@ -79,7 +79,7 @@ export const StyledDiv = styled.div`
     > svg {
       width: 1.6rem;
       height: 1.6rem;
-      stroke: #000;
+      stroke: rgba(0, 0, NaN, 1);
       stroke-width: 3px;
       @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         width: 2.1rem;
@@ -88,13 +88,13 @@ export const StyledDiv = styled.div`
     }
     > span {
       margin-top: 0.1rem;
-      color: #23262a;
+      color: rgba(35, 38, 42, 1);
       font-size: 1rem;
       font-weight: 500;
       line-height: 1;
       letter-spacing: -0.024rem;
       @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
-        color: #23262a;
+        color: rgba(35, 38, 42, 1);
         font-size: 1.4rem;
       }
     }

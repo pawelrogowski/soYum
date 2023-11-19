@@ -11,7 +11,7 @@ export const StyledUl = styled.ul`
   }
 
   > li {
-    color: #fafafa;
+    color: rgba(250, 250, 250, 1);
     font-size: 1.4rem;
     font-weight: 500;
     line-height: 1.28;
