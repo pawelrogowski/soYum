@@ -1,5 +1,5 @@
+import { Scrollbars } from "rc-scrollbars";
 import React from "react";
-import { Scrollbars } from "react-custom-scrollbars";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
