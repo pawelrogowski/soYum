@@ -10,7 +10,7 @@ export const StyledAside = styled(motion.aside)`
   --color-mobileMenu-bg: ${({ theme: t }) => t.mobileMenu.bg};
   --breakpoint-tablet: ${({ theme: t }) => t.breakpoints.tablet};
   --color-brand: ${({ theme: t }) => t.brandColors.main};
-  position: absolute;
+  position: fixed;
   z-index: 3;
   top: 0;
   left: 0;
