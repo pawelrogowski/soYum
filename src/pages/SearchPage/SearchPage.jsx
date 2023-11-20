@@ -8,6 +8,7 @@ import { CardGallery } from "../../components/CardGallery/CardGallery";
 import { SearchForm } from "../../components/Forms/SearchForm/SearchForm";
 import { Heading } from "../../components/Heading/Heading";
 import { NoItemFound } from "../../components/NoItemFound/NoItemFound";
+import { usePageTitle } from "../../hooks/usePageTitle";
 import { MainContainer } from "./SearchPage.styled";
 const images = [
   // { placeholder: placeholder, img: img1, caption: "Banana Pancakes" },
@@ -17,6 +18,7 @@ const images = [
 ];
 
 const SearchPage = () => {
+  usePageTitle("Search");
   return (
     <MainContainer {...routeChangeMotion}>
       <section>

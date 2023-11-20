@@ -1,6 +1,5 @@
 // import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
 
 import { routeChangeMotion } from "../../common/animations";
 import { Heading } from "../../components/Heading/Heading";
@@ -8,12 +7,12 @@ import { HeroRecipe } from "../../components/HeroRecipe/HeroRecipe";
 import { HeroRecipeText } from "../../components/HeroRecipeText/HeroRecipeText";
 import { ProductList } from "../../components/ProductList/ProductList";
 import { RecipePreparationSteps } from "../../components/RecipePreparationStepsPreview copy/RecipePreparationSteps";
+import { usePageTitle } from "../../hooks/usePageTitle";
 import { MainContainer } from "./RecipePage.styled";
 
 const RecipePage = () => {
-  const { recipeId } = useParams();
   const currentRecipe = useSelector((state) => state.currentRecipe);
-  console.log("recipeId " + recipeId);
+  usePageTitle(currentRecipe[0].title);
   return (
     <MainContainer {...routeChangeMotion}>
       <section className="hero-section">

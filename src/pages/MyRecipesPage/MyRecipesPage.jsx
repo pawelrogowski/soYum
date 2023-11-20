@@ -7,6 +7,7 @@ import { routeChangeMotion } from "../../common/animations";
 import { Heading } from "../../components/Heading/Heading";
 import { PaginationFilter } from "../../components/PaginationFilter/PaginationFilter";
 import { RecipeList } from "../../components/RecipeList/RecipeList";
+import { usePageTitle } from "../../hooks/usePageTitle";
 import { breakpoints } from "../../styles/themes";
 import { MainContainer } from "./MyRecipesPage.styled";
 
@@ -40,7 +41,9 @@ const imageList = [
       "Apple Frangipane Tart is a classic and elegant treat fit for any dessert table. A crisp, sweet-crust is filled with rich almond frangipane filling, baked with sliced apples and finished with apricot preserves.",
   },
 ];
+
 const MyRecipesPage = () => {
+  usePageTitle("My Recipes");
   const { page } = useParams();
   const [currentPage, setCurrentPage] = useState(1);
   const isAtLeastDesktop = useMediaQuery({ minWidth: breakpoints.desktop });

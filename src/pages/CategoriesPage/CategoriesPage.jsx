@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 import placeholder from "../../assets/icons/food-placeholder.svg";
 import img2 from "../../assets/images/food/M6A1135.jpg";
@@ -8,6 +8,8 @@ import { routeChangeMotion } from "../../common/animations";
 import { CardGallery } from "../../components/CardGallery/CardGallery";
 import { CategoryFilter } from "../../components/CategoryFilter/CategoryFilter";
 import { Heading } from "../../components/Heading/Heading";
+import { usePageTitle } from "../../hooks/usePageTitle";
+import { capitalizeFirstLetter } from "../../utils/stringManipulation";
 import { MainContainer } from "./CategoriesPage.styled";
 
 const images = [
@@ -18,6 +20,9 @@ const images = [
 ];
 
 const CategoriesPage = () => {
+  const urlParam = useParams("category");
+  console.log(urlParam.category);
+  usePageTitle(capitalizeFirstLetter(urlParam.category));
   const location = useLocation();
   const shouldAnimate = location.pathname.split("/").length <= 2;
 

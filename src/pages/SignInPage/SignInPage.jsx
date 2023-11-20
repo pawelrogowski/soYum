@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 
 import { SignInForm } from "../../components/Forms/SignInForm/SignInForm";
 import { Icon } from "../../components/Icon/Icon";
+import { usePageTitle } from "../../hooks/usePageTitle";
 
 export const SignInPage = () => {
+  usePageTitle("Sign In");
   return (
     <>
       <SignInForm />

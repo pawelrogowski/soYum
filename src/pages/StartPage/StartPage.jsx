@@ -4,9 +4,11 @@ import { baseButtonMotion, startPageMotion } from "../../common/animations";
 import { Button } from "../../components/Button/Button";
 import { Icon } from "../../components/Icon/Icon";
 import { Logo } from "../../components/Logo/Logo";
+import { usePageTitle } from "../../hooks/usePageTitle";
 import { StartPageContainer } from "./StartPage.styled";
 
 export const StartPage = () => {
+  usePageTitle("Welcome");
   return (
     <StartPageContainer {...startPageMotion}>
       <Logo />

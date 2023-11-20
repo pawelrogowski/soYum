@@ -1,9 +1,11 @@
 import { routeChangeMotion } from "../../common/animations";
 import { Heading } from "../../components/Heading/Heading";
 import { ShoppingList } from "../../components/ShoppingList/ShoppingList";
+import { usePageTitle } from "../../hooks/usePageTitle";
 import { MainContainer } from "./ShoppingListPage.styled";
 
-const SearchPage = () => {
+const ShoppingListPage = () => {
+  usePageTitle("Shopping List");
   return (
     <MainContainer {...routeChangeMotion}>
       <section>
@@ -14,4 +16,4 @@ const SearchPage = () => {
   );
 };
 
-export default SearchPage;
+export default ShoppingListPage;

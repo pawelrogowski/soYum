@@ -24,7 +24,6 @@ const NotFoundPage = lazy(() => import("../pages/NotFoundPage/NotFoundPage.jsx")
 
 export const AppRoutes = () => {
   const location = useLocation();
-  console.log(location.pathname);
 
   useEffect(() => {
     const noScrollBlacklist = ["/recipes/1", "/recipes/2"];

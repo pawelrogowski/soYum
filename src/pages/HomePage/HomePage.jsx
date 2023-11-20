@@ -9,6 +9,7 @@ import { baseButtonMotion, routeChangeMotion } from "../../common/animations";
 import { Button } from "../../components/Button/Button";
 import { CardGallery } from "../../components/CardGallery/CardGallery";
 import { HeroHome } from "../../components/HeroHome/HeroHome";
+import { usePageTitle } from "../../hooks/usePageTitle";
 import { breakpoints } from "../../styles/themes";
 import { MainContainer } from "./HomePage.styled";
 
@@ -20,6 +21,7 @@ const images = [
 ];
 
 const HomePage = () => {
+  usePageTitle("Home");
   const navigate = useNavigate();
   const isAtLeastTabletSize = useMediaQuery({ minWidth: breakpoints.tablet });
   const isAtLeastDesktopSize = useMediaQuery({ minWidth: breakpoints.desktop });

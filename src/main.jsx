@@ -1,4 +1,5 @@
 import React from "react";
+import { Scrollbars } from "react-custom-scrollbars";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -12,7 +13,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <Router basename="/">
-          <App />
+          <Scrollbars style={{ width: "100vw", height: "100vh" }} autoHide autoHideTimeout={500}>
+            <App />
+          </Scrollbars>
         </Router>
       </PersistGate>
     </Provider>

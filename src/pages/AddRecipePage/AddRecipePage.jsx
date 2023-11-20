@@ -6,6 +6,7 @@ import { FollowUs } from "../../components/FollowUs/FollowUs";
 import { AddRecipeForm } from "../../components/Forms/AddRecipeForm/AddRecipeForm";
 import { Heading } from "../../components/Heading/Heading";
 import { PopularRecipeList } from "../../components/PopularRecipeList/PopularRecipeList";
+import { usePageTitle } from "../../hooks/usePageTitle.js";
 import { breakpoints } from "../../styles/themes";
 import { MainContainer } from "./AddRecipePage.styled";
 const imageList = [
@@ -39,6 +40,7 @@ const imageList = [
   },
 ];
 const AddRecipePage = () => {
+  usePageTitle("Add Recipe");
   const isDesktop = useMediaQuery({ minWidth: breakpoints.desktop });
   return (
     <MainContainer {...routeChangeMotion}>

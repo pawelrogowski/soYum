@@ -7,6 +7,7 @@ import { routeChangeMotion } from "../../common/animations";
 import { Heading } from "../../components/Heading/Heading";
 import { PaginationFilter } from "../../components/PaginationFilter/PaginationFilter";
 import { RecipeList } from "../../components/RecipeList/RecipeList";
+import { usePageTitle } from "../../hooks/usePageTitle";
 import { breakpoints } from "../../styles/themes";
 import { MainContainer } from "./FavoritesPage.styled";
 
@@ -41,6 +42,7 @@ const imageList = [
   },
 ];
 const FavoritesPage = () => {
+  usePageTitle("Favorites");
   const { page } = useParams();
   const [currentPage, setCurrentPage] = useState(1);
   const isAtLeastDesktop = useMediaQuery({ minWidth: breakpoints.desktop });
