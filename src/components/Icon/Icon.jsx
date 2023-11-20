@@ -38,6 +38,7 @@ export const Icon = ({ icon, hero = false, ...props }) => {
     <AnimatePresence>
       {hero ? (
         <StyledSvg
+          tabindex="-1"
           $icon={icon}
           {...props}
           viewBox={viewBoxAttr}

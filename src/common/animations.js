@@ -108,14 +108,7 @@ export const logoMotion = {
       borderRadius: { duration: 0.3 },
     },
   },
-  whileFocus: {
-    scale: 1.3,
-    borderRadius: "1.6rem",
-    transition: {
-      scale: { duration: 0.3 },
-      borderRadius: { duration: 0.3 },
-    },
-  },
+
   whileTap: {
     scale: 1.3,
     borderRadius: "1.6rem",
@@ -161,12 +154,7 @@ export const socialIconMotion = {
       background: { duration: 55, yoyo: Infinity, repeat: Infinity },
     },
   },
-  whileFocus: {
-    scale: 1.3,
-    transition: {
-      scale: { duration: 0.1 },
-    },
-  },
+
   whileTap: {
     scale: [0.95, 1.4],
     transition: {
@@ -181,12 +169,7 @@ export const baseIconMotion = {
       scale: { duration: 0.1 },
     },
   },
-  whileFocus: {
-    scale: 1.3,
-    transition: {
-      scale: { duration: 0.1 },
-    },
-  },
+
   whileTap: {
     scale: [0.8, 1.4],
     transition: {

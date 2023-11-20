@@ -20,19 +20,6 @@ export const StyledUl = styled.ul`
     justify-content: center;
     align-items: center;
   }
-
-  a {
-    display: flex;
-    align-items: center;
-    &:hover,
-    &:focus {
-      svg {
-        fill: var(--color-social-fillHover);
-        transition: fill cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
-      }
-    }
-  }
-
   svg {
     width: 1.8rem;
     height: 1.8rem;
@@ -41,6 +28,20 @@ export const StyledUl = styled.ul`
     @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
       width: 2rem;
       height: 2rem;
+    }
+  }
+  a {
+    display: flex;
+    align-items: center;
+    &:hover,
+    &:focus,
+    &:focus-within {
+      svg {
+        transform: scale(1.3);
+        fill: var(--color-social-fillHover);
+        transition: fill cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
+          transform cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
+      }
     }
   }
 `;

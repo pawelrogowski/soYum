@@ -27,7 +27,8 @@ export const StyledNav = styled.nav`
       transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
 
       &:hover,
-      &:focus {
+      &:focus,
+      &:focus-within {
         color: var(--color-navigation-footer-hover);
       }
       > a {

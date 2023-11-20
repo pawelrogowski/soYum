@@ -74,7 +74,6 @@ export const AppRoutes = () => {
             </Route>
             <Route path="/search" element={<SearchPage />} />
             <Route path="/shoppinglist" element={<ShoppingListPage />} />
-            <Route path="/notfound" element={<NotFoundPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>

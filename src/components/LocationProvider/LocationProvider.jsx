@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export const LocationProvider = ({ children }) => {
   return (
-    <AnimatePresence initial={false} mode="wait">
+    <AnimatePresence initial={true} mode="wait">
       {children}
     </AnimatePresence>
   );
