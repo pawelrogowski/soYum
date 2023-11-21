@@ -294,7 +294,7 @@ export const lightTheme = {
     secondary: "rgba(30, 31, 40, 1)",
   },
   notFound: {
-    text: "rgba(0, 0, NaN, 1)",
+    text: "rgba(0, 0, 0, 0.3)",
   },
   editProfilePopup: {
     bg: "rgba(255, 255, 255, 1)",
@@ -347,7 +347,7 @@ export const lightTheme = {
   paginationFilter: {
     bg: "rgba(250, 250, 250, 1)",
     boxShadow: "rgba(135, 135, 135, 0.2)",
-    switchLinkIdle: "rgba(0, 0, 0, 1)6b",
+    switchLinkIdle: "rgba(0, 0, 0, 0.4) ",
     switchLinkActive: brandColors.main,
     switchLinkDisabled: "rgba(217, 217, 217, 1)",
     pageLinkBgIdle: "none",
@@ -424,8 +424,8 @@ export const lightTheme = {
   recipeTextInput: {
     borderIdle: "rgba(224, 224, 224, 1)",
     borderActive: brandColors.main,
-    font: "rgba(0, 0, NaN, 1)",
-    fontPlaceholder: "rgba(0, 0, 0, 1) ",
+    font: "rgba(0, 0, 0, 1)",
+    fontPlaceholder: "rgba(0, 0, 0, 0.3) ",
     error: "rgba(231, 74, 59, 1)",
     errorBg: "rgba(250, 250, 250, 1)",
   },
@@ -433,7 +433,7 @@ export const lightTheme = {
     bg: "rgba(255, 255, 255, 1)",
     textIdle: "rgba(34, 37, 42, 1)",
     textActive: brandColors.main,
-    textPlaceholder: "rgba(0, 0, 0, 1) ",
+    textPlaceholder: "rgba(0, 0, 0, 0.3) ",
     iconIdle: "rgba(34, 37, 42, 1)",
     iconActive: brandColors.main,
     iconRemove: "rgba(231, 74, 59, 1)",
@@ -554,13 +554,13 @@ export const darkTheme = {
   },
   card: {
     bg: "rgba(42, 44, 54, 1)",
-    borderIdle: "rgba(0, 0, NaN, 1)",
+    borderIdle: "rgba(0, 0, 0, 0.3)",
     borderActive: brandColors.main,
     caption: {
       bgIdle: "rgba(42, 44, 54, 1)",
       textIdle: "rgba(250, 250, 250, 1)",
       textActive: brandColors.main,
-      borderIdle: "rgba(0, 0, NaN, 1)",
+      borderIdle: "rgba(0, 0, 0, 0.3)",
       borderActive: brandColors.main,
     },
   },

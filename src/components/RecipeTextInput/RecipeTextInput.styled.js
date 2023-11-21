@@ -34,7 +34,7 @@ export const StyledLabel = styled.label`
           ? css`var(--color-font-error)`
           : css`var(--color-border-active)`};
     }
-    &:placeholder-shown {
+    &::placeholder {
       color: var(--color-font-placeholder);
     }
     @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
