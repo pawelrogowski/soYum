@@ -53,8 +53,6 @@ export const CategorySelect = () => {
     <StyledDiv onClick={handleWrapperClick} $hasError={recipeCategoriesError && "true"}>
       <Select
         ref={ref}
-        openMenuOnFocus
-        openMenuOnClick
         isMulti
         unstyled
         options={categorySelectOptions}

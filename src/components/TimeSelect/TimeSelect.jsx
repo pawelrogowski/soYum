@@ -42,8 +42,6 @@ export const TimeSelect = () => {
       <span>Cooking Time</span>
       <Select
         ref={ref}
-        openMenuOnFocus
-        openMenuOnClick
         closeMenuOnSelect
         escapeClearsValue
         unstyled
