@@ -6,7 +6,7 @@ import { Heading } from "../../components/Heading/Heading";
 import { HeroRecipe } from "../../components/HeroRecipe/HeroRecipe";
 import { HeroRecipeText } from "../../components/HeroRecipeText/HeroRecipeText";
 import { ProductList } from "../../components/ProductList/ProductList";
-import { RecipePreparationSteps } from "../../components/RecipePreparationStepsPreview copy/RecipePreparationSteps";
+import { RecipePreparationSteps } from "../../components/RecipePreparationSteps/RecipePreparationSteps";
 import { usePageTitle } from "../../hooks/usePageTitle";
 import { MainContainer } from "./RecipePage.styled";
 

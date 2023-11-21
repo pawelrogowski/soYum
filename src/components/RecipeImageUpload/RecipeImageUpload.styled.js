@@ -9,6 +9,7 @@ export const StyledButton = styled.button`
       transform: translate(-50%, -50%) rotate(360deg);
     }
   }
+
   cursor: pointer;
   position: relative;
   width: 27.9rem;

@@ -44,7 +44,6 @@ export const StyledDiv = styled.div`
       line-height: 1.16;
       letter-spacing: -0.024rem;
       > p {
-        word-break: break-all;
         text-wrap: pretty;
       }
       &::before {

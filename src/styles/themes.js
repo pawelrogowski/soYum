@@ -275,6 +275,10 @@ export const lightTheme = {
   mobileMenu: {
     bg: "linear-gradient(200deg, rgba(235,243,212,1) 0%, rgba(235,243,212,1) 100%)",
     strokeIdle: "rgba(34, 37, 42, 1)",
+    strokeHomeMobile: "rgba(34, 37, 42, 1)",
+    strokeHomeTablet: "rgba(34, 37, 42, 1)",
+    strokeRecipeMobile: "rgba(34, 37, 42, 1)",
+    strokeRecipeTablet: "rgba(34, 37, 42, 1)",
     strokeHover: brandColors.main,
     strokeActive: brandColors.main,
     blend: "initial",
@@ -320,6 +324,7 @@ export const lightTheme = {
     bgImage: brandColors.main,
     fontHead: "rgba(62, 68, 98, 1)",
     fontArticle: "rgba(35, 38, 42, 1)",
+    boxShadow: "rgba(135, 135, 135, 0.1)",
     button: {
       delete: {
         bgIdle: brandColors.main,
@@ -732,9 +737,12 @@ export const darkTheme = {
   mobileMenu: {
     bg: "rgba(30, 31, 40, 1)",
     strokeIdle: "rgba(250, 250, 250, 1)",
+    strokeHomeMobile: "rgba(250, 250, 250, 1)",
+    strokeHomeTablet: "rgba(34, 37, 42, 1)",
+    strokeRecipeMobile: "rgba(34, 37, 42, 1)",
+    strokeRecipeTablet: "rgba(34, 37, 42, 1)",
     strokeHover: brandColors.main,
     strokeActive: brandColors.main,
-    blend: "difference",
   },
   footer: {
     logoTextIdle: "rgba(250, 250, 250, 1)",
@@ -777,6 +785,7 @@ export const darkTheme = {
     bgImage: brandColors.main,
     fontHead: "rgba(250, 250, 250, 1)",
     fontArticle: "rgba(250, 250, 250, 0.60)",
+    boxShadow: "transparent",
     button: {
       delete: {
         bgIdle: brandColors.main,

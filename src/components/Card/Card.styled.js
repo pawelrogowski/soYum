@@ -8,7 +8,7 @@ export const StyledFigure = styled(motion.figure)`
   --color-caption-text-idle: ${({ theme: t }) => t.card.caption.textIdle};
   --color-caption-text-active: ${({ theme: t }) => t.card.caption.textActive};
   --color-caption-bg-idle: ${({ theme: t }) => t.card.caption.bgIdle};
-
+  box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.13), 0 1px 4px 0 rgba(0, 0, 0, 0.11);
   position: relative;
   display: flex;
   border-radius: 0.8rem;

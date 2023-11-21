@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
 
 export const StyledButton = styled(motion.button)`
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.04);
   &:disabled {
     background: grey;
     pointer-events: none;

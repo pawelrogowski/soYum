@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const StyledListItem = styled.li`
   --color-background-card: ${({ theme: t }) => t.recipeCard.bgCard};
   --color-background-image: ${({ theme: t }) => t.recipeCard.bgImage};
+  --color-boxShadow: ${({ theme: t }) => t.recipeCard.boxShadow};
   --color-font-head: ${({ theme: t }) => t.recipeCard.fontHead};
   --color-font-article: ${({ theme: t }) => t.recipeCard.fontArticle};
   --color-button-delete-background-idle: ${({ theme: t }) => t.recipeCard.button.delete.bgIdle};
@@ -25,6 +26,7 @@ export const StyledListItem = styled.li`
   --color-button-seeRecipe-text-active: ${({ theme }) =>
     theme.recipeCard.button.seeRecipe.textActive};
 
+  box-shadow: 0px 4px 4px 0px var(--color-boxShadow);
   position: relative;
   display: flex;
   width: 100%;
