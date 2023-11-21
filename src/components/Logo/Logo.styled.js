@@ -16,7 +16,7 @@ export const LogoIcon = styled(Icon)`
   padding: 0.7rem 0.5rem 0.6rem 0.6rem;
   max-width: 4rem;
   max-height: 4rem;
-
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   ${({ variant }) =>
     variant === "header"
       ? css`

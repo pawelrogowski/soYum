@@ -6,7 +6,7 @@ export const StyledDiv = styled.div`
   --color-text-idle: ${({ theme: t }) => t.callToAction.text};
   --color-text-link-idle: ${({ theme: t }) => t.callToAction.link.textIdle};
   --color-text-link-active: ${({ theme: t }) => t.callToAction.link.textActive};
-
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   position: absolute;
   bottom: 9.1rem;
   right: 0.7rem;

@@ -17,6 +17,7 @@ export const StyledNav = styled.nav`
 
     > li > a,
     > span {
+      text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.05), 0px -4px 10px rgba(255, 255, 255, 0.05);
       color: var(--color-navigation-idle);
       font-size: 1.4rem;
       font-family: var(--font-navigation);
