@@ -7,11 +7,12 @@ import { PersistGate } from "redux-persist/integration/react";
 
 import { App } from "./components/App.jsx";
 import { persistor, store } from "./redux/store";
+import { LoaderLine } from "./components/LoaderLine/LoaderLine.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
+      <PersistGate loading={<LoaderLine isGlobal />} persistor={persistor}>
         <Router basename="/">
           <Scrollbars style={{ width: "100vw", height: "100vh" }} autoHide autoHideTimeout={500}>
             <App />
