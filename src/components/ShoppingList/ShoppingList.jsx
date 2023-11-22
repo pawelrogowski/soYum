@@ -65,7 +65,11 @@ export const ShoppingList = () => {
               <span>{product.amount + " " + product.measureType}</span>
             </motion.li>
             <motion.li className="product__remove" {...ingredientListItemMotion}>
-              <button type="button" onClick={() => handleRemove(product.id)}>
+              <button
+                type="button"
+                onClick={() => handleRemove(product.id)}
+                aria-label={"remove " + product.name}
+              >
                 <Icon icon="x" />
               </button>
             </motion.li>

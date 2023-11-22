@@ -53,6 +53,7 @@ export const SearchForm = ({
               options={filterOptions}
               placeholder={filterPlaceholder}
               onChange={(e) => onFilterChange(e)}
+              inputId="search-filter-select"
             />
           </div>
         </div>

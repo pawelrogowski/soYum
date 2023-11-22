@@ -38,7 +38,11 @@ export const ProductList = ({ productArr }) => {
               <span>{product.amount + " " + product.measureType}</span>
             </motion.li>
             <motion.li className="product__add" {...ingredientListItemMotion}>
-              <label className="checkbox-container">
+              <label
+                className="checkbox-container"
+                id={"product" + product.id}
+                htmlFor="add-ingredient"
+              >
                 <input
                   name="add-ingredient"
                   type="checkbox"

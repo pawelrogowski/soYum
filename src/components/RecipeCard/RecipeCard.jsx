@@ -10,10 +10,10 @@ export const RecipeCard = ({ name, description, cookingTime, image, variant }) =
     <StyledListItem $variant={variant}>
       <picture>
         <source />
-        <img src={image} width="124px" height="124px" />
+        <img src={image} width="124px" height="124px" alt="food" />
       </picture>
 
-      <Button variant="rectSmall" {...baseButtonMotion}>
+      <Button type="button" variant="rectSmall" {...baseButtonMotion} aria-label="remove ${name}">
         <Icon icon="trash" />
       </Button>
 
@@ -22,7 +22,7 @@ export const RecipeCard = ({ name, description, cookingTime, image, variant }) =
         <p>{shortenString(description, 150, "...")}</p>
         <div>
           <span>{cookingTime}</span>
-          <Button variant="base" {...baseButtonMotion}>
+          <Button type="button" variant="base" {...baseButtonMotion} aria-label="see ${name}">
             See recipe
           </Button>
         </div>
