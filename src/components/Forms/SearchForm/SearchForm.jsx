@@ -1,9 +1,12 @@
 import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
 import Select from "react-select";
 
 import { baseButtonMotion } from "../../../common/animations";
+import { setSearchFilter } from "../../../redux/slices/searchSlice";
 import { Button } from "../../Button/Button";
 import { StyledForm } from "./SearchForm.styled";
+
 export const SearchForm = ({
   onChange,
   onSubmit,
@@ -13,6 +16,12 @@ export const SearchForm = ({
   filterOptions,
   filterPlaceholder,
 }) => {
+  const dispatch = useDispatch();
+
+  const onFilterChange = (e) => {
+    dispatch(setSearchFilter(e.value));
+  };
+
   return (
     <StyledForm $variant={variant} onSubmit={onSubmit}>
       <div>
@@ -43,6 +52,7 @@ export const SearchForm = ({
               classNamePrefix="Select"
               options={filterOptions}
               placeholder={filterPlaceholder}
+              onChange={(e) => onFilterChange(e)}
             />
           </div>
         </div>

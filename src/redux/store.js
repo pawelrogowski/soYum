@@ -2,11 +2,15 @@ import { autoBatchEnhancer, configureStore } from "@reduxjs/toolkit";
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-import addRecipeFormReducer from "./slices/addRecipeFormSlice";
-import authReducer from "./slices/authSlice";
-import currentRecipeReducer from "./slices/currentRecipeSlice";
-import globalReducer from "./slices/globalSlice";
-import modalReducer from "./slices/modalSlice";
+import {
+  addRecipeFormReducer,
+  authReducer,
+  currentRecipeReducer,
+  globalReducer,
+  loadingReducer,
+  modalReducer,
+  searchReducer,
+} from "./slices";
 
 const generatePersistConfig = (key) => ({
   key,
@@ -27,6 +31,8 @@ export const store = configureStore({
     auth: persistedAuthReducer,
     global: persistedGlobalReducer,
     modal: modalReducer,
+    search: searchReducer,
+    loading: loadingReducer,
     addRecipeForm: addRecipeFormReducer,
     currentRecipe: currentRecipeReducer,
   },
