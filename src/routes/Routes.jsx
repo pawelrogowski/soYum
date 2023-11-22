@@ -24,14 +24,11 @@ const RecipePage = lazy(() => import("../pages/RecipePage/RecipePage.jsx"));
 const NotFoundPage = lazy(() => import("../pages/NotFoundPage/NotFoundPage.jsx"));
 
 export const AppRoutes = () => {
-  const location = useLocation();
+  const location = useLocation().pathname;
   useEffect(() => {
-    const noScrollBlacklist = ["/recipes/1", "/recipes/2"];
-    if (!noScrollBlacklist.includes(location.pathname)) {
-      setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }, 0);
-    }
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 0);
   }, [location]);
 
   usePreloadOnHover([

@@ -1,6 +1,5 @@
 import react from "@vitejs/plugin-react-swc";
 import fs from "fs";
-
 import { defineConfig } from "vite";
 import { imagetools } from "vite-imagetools";
 import { VitePWA } from "vite-plugin-pwa";
@@ -15,7 +14,7 @@ export default defineConfig({
       manifest: manifest,
       registerType: "autoUpdate",
       workbox: {
-        globPatterns: ["**/*.{js,css,html,png,jpg,jpeg,svg}"],
+        globPatterns: ["**/*.{js,css,html,png,svg}"],
       },
     }),
   ],
