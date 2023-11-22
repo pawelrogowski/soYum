@@ -59,3 +59,5 @@ Icon.propTypes = {
   icon: PropTypes.string.isRequired,
   hero: PropTypes.bool,
 };
+
+export default Icon;

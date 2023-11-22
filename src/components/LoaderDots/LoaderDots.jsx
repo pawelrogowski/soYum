@@ -17,3 +17,5 @@ export const LoaderDots = ({ variant }) => {
 LoaderDots.propTypes = {
   variant: PropTypes.string,
 };
+
+export default LoaderDots;

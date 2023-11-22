@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 import { baseIconMotion } from "../../common/animations";
 import { setIsLogoutModalOpen } from "../../redux/slices/modalSlice";
-import { Button } from "../Button/Button";
-import { Icon } from "../Icon/Icon";
+import { Button, Icon } from "..";
 import { StyledDiv } from "./LogoutModal.styled";
+
 export const LogoutModal = () => {
   const dispatch = useDispatch();
   const ref = useRef(null);
@@ -80,3 +80,5 @@ export const LogoutModal = () => {
     </StyledDiv>
   );
 };
+
+export default LogoutModal;

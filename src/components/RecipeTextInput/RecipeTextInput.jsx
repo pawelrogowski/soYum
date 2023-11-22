@@ -8,7 +8,7 @@ import { inputErrorMotion } from "../../common/animations";
 import { useValidation } from "../../hooks/useValidation";
 import { setField, setFieldError } from "../../redux/slices/addRecipeFormSlice.js";
 import { addRecipeSchema } from "../../validation/addRecipeSchema.js";
-import { InputErrorSpan } from "../InputErrorSpan/InputErrorSpan";
+import { InputErrorSpan } from "..";
 import { StyledLabel } from "./RecipeTextInput.styled";
 
 export const RecipeTextInput = ({ name, placeholder }) => {
@@ -60,3 +60,5 @@ RecipeTextInput.propTypes = {
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
 };
+
+export default RecipeTextInput;

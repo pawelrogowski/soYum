@@ -10,3 +10,5 @@ Logo.propTypes = {
   variant: PropTypes.string,
   onClick: PropTypes.func,
 };
+
+export default Logo;

@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 
 import { baseIconMotion } from "../../common/animations";
 import { breakpoints } from "../../styles/themes";
-import { Icon } from "../Icon/Icon";
+import { Icon } from "..";
 import { StyledDiv } from "./CallToAction.styled";
+
 export const CallToAction = ({ text, highlightedText, linkText, icon }) => {
   const isAtLeastTablet = useMediaQuery({ minWidth: breakpoints.tablet });
   return (
@@ -29,3 +30,5 @@ CallToAction.propTypes = {
   linkText: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
 };
+
+export default CallToAction;

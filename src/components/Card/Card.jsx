@@ -24,3 +24,5 @@ Card.propTypes = {
   img: PropTypes.string.isRequired,
   caption: PropTypes.string.isRequired,
 };
+
+export default Card;

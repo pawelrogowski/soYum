@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 import productPlaceholder from "../../assets/images/productPlaceholder.avif";
 import { ingredientListItemMotion } from "../../common/animations";
-import { Icon } from "../Icon/Icon";
+import { Icon } from "..";
 import { StyledShoppingList } from "./ShoppingList.styled";
 
 // Mockup
@@ -75,3 +75,5 @@ export const ShoppingList = () => {
     </StyledShoppingList>
   );
 };
+
+export default ShoppingList;

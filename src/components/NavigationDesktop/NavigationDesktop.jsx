@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-import { Icon } from "../Icon/Icon";
+import { Icon } from "..";
 import { StyledNav } from "./NavigationDesktop.styled";
 
 export const NavigationDesktop = () => {
@@ -34,3 +34,5 @@ export const NavigationDesktop = () => {
     </StyledNav>
   );
 };
+
+export default NavigationDesktop;

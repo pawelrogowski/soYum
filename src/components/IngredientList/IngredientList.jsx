@@ -7,9 +7,7 @@ import { ingredientListItemMotion } from "../../common/animations";
 import { useValidation } from "../../hooks/useValidation";
 import { setField, setFieldError } from "../../redux/slices/addRecipeFormSlice.js";
 import { addRecipeSchema } from "../../validation/addRecipeSchema.js";
-import { IngredientCounter } from "../IngredientCounter/IngredientCounter.jsx";
-import { Heading } from "../Heading/Heading";
-import { IngredientSelect } from "../IngredientSelect/IngredientSelect";
+import { Heading, IngredientCounter, IngredientSelect } from "..";
 import { StyledDiv } from "./IngredientList.styled";
 
 export const IngredientList = ({ className }) => {
@@ -163,3 +161,5 @@ export const IngredientList = ({ className }) => {
 IngredientList.propTypes = {
   className: PropTypes.string,
 };
+
+export default IngredientList;

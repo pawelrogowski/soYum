@@ -1,7 +1,7 @@
 import { ErrorMessage, Field } from "formik";
 import PropTypes from "prop-types";
 
-import { Icon } from "../Icon/Icon";
+import { Icon } from "..";
 
 export const CustomFormikInput = ({
   name,
@@ -26,10 +26,7 @@ export const CustomFormikInput = ({
       <Icon icon={icon} />
       {touched[name] &&
         (errors[name] ? (
-          <Icon
-            {...motionObject}
-            icon={errors[name].includes("required") ? "error" : "warning"}
-          />
+          <Icon {...motionObject} icon={errors[name].includes("required") ? "error" : "warning"} />
         ) : (
           <Icon {...motionObject} icon="no-error" />
         ))}
@@ -48,3 +45,5 @@ CustomFormikInput.propTypes = {
   touched: PropTypes.object.isRequired,
   autoComplete: PropTypes.string,
 };
+
+export default CustomFormikInput;

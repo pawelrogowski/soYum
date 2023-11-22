@@ -7,7 +7,7 @@ import { userMenuMotion } from "../../common/animations";
 import useShowDecorations from "../../hooks/useShowDecorations";
 import { setIsUserEditMenuOpen } from "../../redux/slices/modalSlice";
 import { shortenString } from "../../utils/stringManipulation";
-import { LoaderLine } from "../LoaderLine/LoaderLine";
+import { LoaderLine } from "..";
 import { StyledDiv } from "./UserAvatar.styled";
 
 const EditProfilePopup = lazy(() => import("../EditProfilePopup/EditProfilePopup"));
@@ -45,3 +45,5 @@ UserAvatar.propTypes = {
   placeholder: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
 };
+
+export default UserAvatar;

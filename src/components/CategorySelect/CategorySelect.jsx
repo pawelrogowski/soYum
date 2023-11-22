@@ -8,7 +8,7 @@ import { categorySelectOptions } from "../../common/selectOptions";
 import { useValidation } from "../../hooks/useValidation";
 import { setField, setFieldError } from "../../redux/slices/addRecipeFormSlice.js";
 import { addRecipeSchema } from "../../validation/addRecipeSchema.js";
-import { InputErrorSpan } from "../InputErrorSpan/InputErrorSpan.jsx";
+import { InputErrorSpan } from "..";
 import { StyledDiv } from "./CategorySelect.styled";
 
 export const CategorySelect = () => {
@@ -75,3 +75,5 @@ export const CategorySelect = () => {
     </StyledDiv>
   );
 };
+
+export default CategorySelect;

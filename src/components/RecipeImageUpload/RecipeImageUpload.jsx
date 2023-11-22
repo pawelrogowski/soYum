@@ -10,7 +10,7 @@ import {
   setIsImageUploadModalLoading,
   setIsImageUploadModalOpen,
 } from "../../redux/slices/modalSlice";
-import { Icon } from "../Icon/Icon";
+import { Icon } from "..";
 import { StyledButton } from "./RecipeImageUpload.styled";
 
 export const RecipeImageUpload = () => {
@@ -74,3 +74,5 @@ export const RecipeImageUpload = () => {
     </StyledButton>
   );
 };
+
+export default RecipeImageUpload;

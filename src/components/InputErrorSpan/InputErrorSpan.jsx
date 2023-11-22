@@ -16,3 +16,5 @@ InputErrorSpan.propTypes = {
   key: PropTypes.string,
   className: PropTypes.string,
 };
+
+export default InputErrorSpan;

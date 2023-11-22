@@ -26,3 +26,5 @@ PopularCard.propTypes = {
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
 };
+
+export default PopularCard;

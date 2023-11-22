@@ -12,3 +12,5 @@ export const LocationProvider = ({ children }) => {
 LocationProvider.propTypes = {
   children: PropTypes.element.isRequired,
 };
+
+export default LocationProvider;

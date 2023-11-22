@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 
-import { Button } from "../Button/Button";
-import { Icon } from "../Icon/Icon";
+import { Button, Icon } from "..";
 import { StyledDiv } from "./HeroRecipeText.styled";
 
 const handleAddToFavorites = (recipeId) => {
@@ -29,3 +28,5 @@ HeroRecipeText.propTypes = {
   about: PropTypes.string.isRequired,
   cookingTime: PropTypes.string.isRequired,
 };
+
+export default HeroRecipeText;

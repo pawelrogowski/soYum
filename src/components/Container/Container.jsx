@@ -6,9 +6,9 @@ export const Container = ({ children, as }) => {
   return <StyledDiv as={as}>{children}</StyledDiv>;
 };
 
-export default Container;
-
 Container.propTypes = {
   children: PropTypes.node,
   as: PropTypes.string,
 };
+
+export default Container;

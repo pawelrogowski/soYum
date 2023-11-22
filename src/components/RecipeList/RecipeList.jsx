@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import { RecipeCard } from "../RecipeCard/RecipeCard";
+import { RecipeCard } from "..";
 import { StyledSection } from "./RecipeList.styled";
 
 export const RecipeList = ({ data }) => {
@@ -31,3 +31,5 @@ RecipeList.propTypes = {
     })
   ).isRequired,
 };
+
+export default RecipeList;

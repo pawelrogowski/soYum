@@ -12,10 +12,7 @@ import {
   setFieldError,
 } from "../../redux/slices/addRecipeFormSlice.js";
 import { addRecipeSchema } from "../../validation/addRecipeSchema.js";
-import { Button } from "../Button/Button.jsx";
-import { Heading } from "../Heading/Heading";
-import { Icon } from "../Icon/Icon.jsx";
-import { InputErrorSpan } from "../InputErrorSpan/InputErrorSpan.jsx";
+import { Button, Heading, Icon, InputErrorSpan } from "../Button/Button.jsx";
 import { StyledDiv } from "./RecipePreparationTextArea.styled";
 
 export const RecipePreparationTextArea = ({ className }) => {
@@ -122,6 +119,9 @@ export const RecipePreparationTextArea = ({ className }) => {
     </StyledDiv>
   );
 };
+
 RecipePreparationTextArea.propTypes = {
   className: PropTypes.string,
 };
+
+export default RecipePreparationTextArea;

@@ -4,7 +4,7 @@ import React from "react";
 
 import productPlaceholder from "../../assets/images/productPlaceholder.avif";
 import { ingredientListItemMotion } from "../../common/animations";
-import { Icon } from "../Icon/Icon";
+import { Icon } from "..";
 import { StyledProductList } from "./ProductList.styled";
 // Mockup
 
@@ -59,3 +59,5 @@ export const ProductList = ({ productArr }) => {
 ProductList.propTypes = {
   productArr: PropTypes.array.isRequired,
 };
+
+export default ProductList;

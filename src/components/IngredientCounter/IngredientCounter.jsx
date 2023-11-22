@@ -4,7 +4,7 @@ import { useSelector } from "react-redux/es/hooks/useSelector";
 
 import { baseIconMotion } from "../../common/animations";
 import { addIngredient, removeLastIngredient } from "../../redux/slices/addRecipeFormSlice";
-import { Icon } from "../Icon/Icon";
+import { Icon } from "..";
 import { StyledDiv } from "./IngredientCounter.styled";
 
 export const IngredientCounter = ({ min = 0, max = Infinity }) => {
@@ -58,3 +58,5 @@ IngredientCounter.propTypes = {
   min: PropTypes.number,
   max: PropTypes.number,
 };
+
+export default IngredientCounter;

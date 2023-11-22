@@ -1,5 +1,6 @@
-import { Icon } from "../Icon/Icon";
+import { Icon } from "..";
 import { StyledMain } from "./NotFound.styled";
+
 export const NotFound = () => {
   return (
     <StyledMain>
@@ -9,3 +10,5 @@ export const NotFound = () => {
     </StyledMain>
   );
 };
+
+export default NotFound;

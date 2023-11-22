@@ -10,3 +10,5 @@ Heading.propTypes = {
   children: PropTypes.node.isRequired,
   as: PropTypes.string.isRequired,
 };
+
+export default Heading;

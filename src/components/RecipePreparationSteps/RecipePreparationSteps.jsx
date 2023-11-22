@@ -23,3 +23,5 @@ export const RecipePreparationSteps = ({ stepArr }) => {
 RecipePreparationSteps.propTypes = {
   stepArr: PropTypes.array.isRequired,
 };
+
+export default RecipePreparationSteps;

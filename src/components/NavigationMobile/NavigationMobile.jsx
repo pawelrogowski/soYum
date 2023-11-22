@@ -4,9 +4,7 @@ import { NavLink } from "react-router-dom";
 import { mobileMenuMotion } from "../../common/animations";
 import { useDisableBodyScroll } from "../../hooks/useDisableBodyScroll";
 import { setIsMobileMenuOpen } from "../../redux/slices/modalSlice";
-import { Icon } from "../Icon/Icon";
-import { MobileMenuButton } from "../MobileMenuButton/MobileMenuButton";
-import { ThemeSwitch } from "../ThemeSwitch/ThemeSwitch";
+import { Icon, MobileMenuButton, ThemeSwitch } from "..";
 import { StyledAside } from "./NavigationMobile.styled";
 
 export const NavigationMobile = () => {
@@ -60,3 +58,5 @@ export const NavigationMobile = () => {
     </StyledAside>
   );
 };
+
+export default NavigationMobile;

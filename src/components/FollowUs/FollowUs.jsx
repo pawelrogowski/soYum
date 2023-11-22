@@ -1,6 +1,6 @@
-import { Heading } from "../Heading/Heading";
-import { SocialIcons } from "../SocialIcons/SocialIcons";
+import { Heading, SocialIcons } from "..";
 import { StyledDiv } from "./FollowUs.styled";
+
 export const FollowUs = () => {
   return (
     <StyledDiv>
@@ -9,3 +9,5 @@ export const FollowUs = () => {
     </StyledDiv>
   );
 };
+
+export default FollowUs;

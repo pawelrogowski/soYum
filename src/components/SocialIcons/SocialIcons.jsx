@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-import { Icon } from "../Icon/Icon";
+import { Icon } from "..";
 import { StyledUl } from "./SocialIcons.styled";
 
 export const SocialIcons = () => {

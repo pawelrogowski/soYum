@@ -7,10 +7,8 @@ import srcsetWebp from "../../assets/images/hero.webp?w=320;480;640;768;896;1024
 import heroFallback from "../../assets/images/hero.webp?w=1520";
 import { simpleOpacityMotion } from "../../common/animations";
 import { breakpoints } from "../../styles/themes";
-import { CallToAction } from "../CallToAction/CallToAction";
+import { CallToAction, Heading, SquareBackground } from "..";
 import { SearchForm } from "../Forms/SearchForm/SearchForm";
-import { Heading } from "../Heading/Heading";
-import { SquareBackground } from "../SquareBackground/SquareBackground";
 import { StyledDiv } from "./HeroHome.styled";
 
 export const HeroHome = () => {
@@ -76,3 +74,5 @@ export const HeroHome = () => {
     </StyledDiv>
   );
 };
+
+export default HeroHome;

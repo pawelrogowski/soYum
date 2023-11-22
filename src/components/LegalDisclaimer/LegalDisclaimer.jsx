@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import Container from "../Container/Container.jsx";
+import { Container } from "..";
 import { StyledDiv } from "./LegalDisclaimer.styled.js";
 export const LegalDisclaimer = () => {
   return (
@@ -14,3 +14,5 @@ export const LegalDisclaimer = () => {
     </StyledDiv>
   );
 };
+
+export default LegalDisclaimer;

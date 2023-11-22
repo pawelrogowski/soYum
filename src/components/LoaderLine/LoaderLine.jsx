@@ -10,3 +10,5 @@ export const LoaderLine = ({ isGlobal }) => {
 LoaderLine.propTypes = {
   isGlobal: PropTypes.bool,
 };
+
+export default LoaderLine;

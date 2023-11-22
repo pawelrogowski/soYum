@@ -21,3 +21,5 @@ export const NoItemFound = () => (
     <StyledParagraph>Try looking for something else...</StyledParagraph>
   </>
 );
+
+export default NoItemFound;

@@ -17,3 +17,5 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   onClick: PropTypes.func,
 };
+
+export default Button;

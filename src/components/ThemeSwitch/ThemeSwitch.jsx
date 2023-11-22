@@ -26,3 +26,5 @@ export const ThemeSwitch = () => {
     </StyledLabel>
   );
 };
+
+export default ThemeSwitch;

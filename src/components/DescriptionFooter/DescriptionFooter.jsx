@@ -10,3 +10,5 @@ export const DescriptionFooter = () => {
     </StyledUl>
   );
 };
+
+export default DescriptionFooter;

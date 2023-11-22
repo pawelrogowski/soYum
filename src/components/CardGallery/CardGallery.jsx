@@ -1,10 +1,7 @@
 import PropTypes from "prop-types";
 
 import { baseButtonMotion } from "../../common/animations.js";
-import { Button } from "../Button/Button";
-import { Card } from "../Card/Card";
-import { Heading } from "../Heading/Heading.jsx";
-import { Icon } from "../Icon/Icon.jsx";
+import { Button, Card, Heading, Icon } from "..";
 import { StyledGallery } from "./CardGallery.styled";
 
 export const CardGallery = ({
@@ -50,3 +47,5 @@ CardGallery.propTypes = {
   showButton: PropTypes.bool,
   onButtonClick: PropTypes.func,
 };
+
+export default CardGallery;

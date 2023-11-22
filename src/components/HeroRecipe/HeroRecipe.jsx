@@ -12,3 +12,5 @@ export const HeroRecipe = () => (
     <img src={heroFallback} alt="nicely sorted vegetables" loading="eager" />
   </StyledPicture>
 );
+
+export default HeroRecipe;
