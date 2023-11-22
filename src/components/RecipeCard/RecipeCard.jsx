@@ -2,7 +2,8 @@ import PropTypes from "prop-types";
 
 import { baseButtonMotion } from "../../common/animations";
 import { shortenString } from "../../utils/stringManipulation";
-import { Button, Icon } from "..";
+import { Button } from "../Button/Button";
+import { Icon } from "../Icon/Icon";
 import { StyledListItem } from "./RecipeCard.styled";
 
 export const RecipeCard = ({ name, description, cookingTime, image, variant }) => {

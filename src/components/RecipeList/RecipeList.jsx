@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import { RecipeCard } from "..";
+import { RecipeCard } from "../RecipeCard/RecipeCard";
 import { StyledSection } from "./RecipeList.styled";
 
 export const RecipeList = ({ data }) => {

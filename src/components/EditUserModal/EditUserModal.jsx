@@ -8,8 +8,9 @@ import {
   setIsImageUploadModalOpen,
   setIsProfileUpdateMenuOpen,
 } from "../../redux/slices/modalSlice";
-import { Icon, LoaderLine } from "..";
 import { UserUpdateForm } from "../Forms/UserUpdateForm/UserUpdateForm";
+import { Icon } from "../Icon/Icon";
+import { LoaderLine } from "../LoaderLine/LoaderLine";
 import { StyledDiv } from "./EditUserModal.styled";
 
 export const EditUserModal = () => {

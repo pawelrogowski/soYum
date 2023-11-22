@@ -7,7 +7,9 @@ import {
   setField,
   setFieldError,
 } from "../../redux/slices/addRecipeFormSlice";
-import { Heading, Icon, InputErrorSpan } from "..";
+import { Heading } from "../Heading/Heading";
+import { Icon } from "../Icon/Icon";
+import { InputErrorSpan } from "../InputErrorSpan/InputErrorSpan";
 import { StyledDiv } from "./RecipePreparationStepsPreview.styled";
 
 export const RecipePreparationStepsPreview = () => {

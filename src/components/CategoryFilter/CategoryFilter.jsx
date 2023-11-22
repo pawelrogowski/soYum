@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { baseIconMotion } from "../../common/animations";
 import { useButtonScroll } from "../../hooks/useButtonScroll";
 import { useHorizontalScroll } from "../../hooks/useHorizontalScroll";
-import { Icon } from "..";
+import { Icon } from "../Icon/Icon";
 import { StyledNav } from "./CategoryFilter.styled";
 
 export const CategoryFilter = () => {

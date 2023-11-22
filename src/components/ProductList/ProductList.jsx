@@ -4,9 +4,8 @@ import React from "react";
 
 import productPlaceholder from "../../assets/images/productPlaceholder.avif";
 import { ingredientListItemMotion } from "../../common/animations";
-import { Icon } from "..";
+import { Icon } from "../Icon/Icon";
 import { StyledProductList } from "./ProductList.styled";
-// Mockup
 
 export const ProductList = ({ productArr }) => {
   const handleCheckboxChange = (id) => (event) => {

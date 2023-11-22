@@ -1,12 +1,14 @@
 import PropTypes from "prop-types";
 
-import { Button, Icon } from "..";
+import { Button } from "../Button/Button";
+import { Icon } from "../Icon/Icon";
 import { StyledDiv } from "./HeroRecipeText.styled";
 
-const handleAddToFavorites = (recipeId) => {
-  console.log(recipeId, "added to fav");
-};
 export const HeroRecipeText = ({ id, title, about, cookingTime }) => {
+  const handleAddToFavorites = (recipeId) => {
+    console.log(recipeId, "added to fav");
+  };
+
   return (
     <StyledDiv>
       <h1>{title}</h1>

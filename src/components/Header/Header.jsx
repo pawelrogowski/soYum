@@ -7,7 +7,11 @@ import avatarPlaceholder from "../../assets/images/avatar.avif";
 import useShowDecorations from "../../hooks/useShowDecorations";
 import { setIsMobileMenuOpen } from "../../redux/slices/modalSlice";
 import { breakpoints } from "../../styles/themes";
-import { Logo, MobileMenuButton, NavigationDesktop, ThemeSwitch, UserAvatar } from "..";
+import { Logo } from "../Logo/Logo";
+import { MobileMenuButton } from "../MobileMenuButton/MobileMenuButton";
+import { NavigationDesktop } from "../NavigationDesktop/NavigationDesktop";
+import { ThemeSwitch } from "../ThemeSwitch/ThemeSwitch";
+import { UserAvatar } from "../UserAvatar/UserAvatar";
 import { StyledHeader } from "./Header.styled";
 
 export const Header = () => {

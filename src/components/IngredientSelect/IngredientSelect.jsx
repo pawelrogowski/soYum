@@ -9,7 +9,8 @@ import Creatable from "react-select/creatable";
 import { baseIconMotion, inputErrorMotion } from "../../common/animations";
 import { ingredientSelectOptions, measureTypeSelectOptions } from "../../common/selectOptions";
 import { removeIngredient } from "../../redux/slices/addRecipeFormSlice";
-import { Icon, InputErrorSpan } from "..";
+import { Icon } from "../Icon/Icon";
+import { InputErrorSpan } from "../InputErrorSpan/InputErrorSpan";
 import { StyledDiv } from "./IngredientSelect.styled";
 
 const IngredientSelectComponent = ({

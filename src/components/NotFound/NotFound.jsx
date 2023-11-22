@@ -1,4 +1,4 @@
-import { Icon } from "..";
+import { Icon } from "../Icon/Icon";
 import { StyledMain } from "./NotFound.styled";
 
 export const NotFound = () => {

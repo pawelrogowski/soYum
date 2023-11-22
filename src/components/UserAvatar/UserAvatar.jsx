@@ -7,7 +7,7 @@ import { userMenuMotion } from "../../common/animations";
 import useShowDecorations from "../../hooks/useShowDecorations";
 import { setIsUserEditMenuOpen } from "../../redux/slices/modalSlice";
 import { shortenString } from "../../utils/stringManipulation";
-import { LoaderLine } from "..";
+import { LoaderLine } from "../LoaderLine/LoaderLine";
 import { StyledDiv } from "./UserAvatar.styled";
 
 const EditProfilePopup = lazy(() => import("../EditProfilePopup/EditProfilePopup"));

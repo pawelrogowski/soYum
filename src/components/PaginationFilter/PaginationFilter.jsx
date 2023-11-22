@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 import { baseIconMotion } from "../../common/animations";
-import { Icon } from "..";
+import { Icon } from "../Icon/Icon";
 import { StyledDiv } from "./PaginationFilter.styled";
 
 export const PaginationFilter = ({ currentPage, maxPages, onPageChange, maxPagesToDisplay }) => {

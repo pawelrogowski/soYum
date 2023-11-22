@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { baseIconMotion } from "../../common/animations";
 import { breakpoints } from "../../styles/themes";
-import { Icon } from "..";
+import { Icon } from "../Icon/Icon";
 import { StyledDiv } from "./CallToAction.styled";
 
 export const CallToAction = ({ text, highlightedText, linkText, icon }) => {

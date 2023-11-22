@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 import { baseIconMotion } from "../../common/animations";
 import { setIsLogoutModalOpen } from "../../redux/slices/modalSlice";
-import { Button, Icon } from "..";
+import { Button } from "../Button/Button";
+import { Icon } from "../Icon/Icon";
 import { StyledDiv } from "./LogoutModal.styled";
 
 export const LogoutModal = () => {

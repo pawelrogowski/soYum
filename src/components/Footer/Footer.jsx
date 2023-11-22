@@ -1,15 +1,13 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-import {
-  Container,
-  DescriptionFooter,
-  LegalDisclaimer,
-  Logo,
-  NavigationFooter,
-  SocialIcons,
-} from "..";
+import { Container } from "../Container/Container";
+import { DescriptionFooter } from "../DescriptionFooter/DescriptionFooter";
 import { NewsletterForm } from "../Forms/NewsletterForm/NewsletterForm";
+import { LegalDisclaimer } from "../LegalDisclaimer/LegalDisclaimer";
+import { Logo } from "../Logo/Logo";
+import { NavigationFooter } from "../NavigationFooter/NavigationFooter";
+import { SocialIcons } from "../SocialIcons/SocialIcons";
 import { StyledFooter } from "./Footer.styled";
 
 const Footer = ({ variant }) => {

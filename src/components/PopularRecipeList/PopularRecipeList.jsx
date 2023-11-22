@@ -3,7 +3,8 @@ import { useMediaQuery } from "react-responsive";
 
 import placeholder from "../../assets/images/transparent.avif";
 import { breakpoints } from "../../styles/themes";
-import { Heading, PopularCard } from "..";
+import { Heading } from "../Heading/Heading";
+import { PopularCard } from "../PopularCard/PopularCard";
 import { StyledSection } from "./PopularRecipeList.styled";
 
 export const PopularRecipeList = ({ data }) => {

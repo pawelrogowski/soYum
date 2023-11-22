@@ -8,7 +8,8 @@ import {
   setIsProfileUpdateMenuOpen,
   setIsUserEditMenuOpen,
 } from "../../redux/slices/modalSlice";
-import { Button, Icon } from "..";
+import { Button } from "../Button/Button";
+import { Icon } from "../Icon/Icon";
 import { StyledDiv } from "./EditProfilePopup.styled";
 
 const EditProfilePopup = ({ ...props }) => {

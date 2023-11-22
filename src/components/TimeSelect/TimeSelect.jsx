@@ -8,7 +8,7 @@ import { timeSelectOptions } from "../../common/selectOptions";
 import { useValidation } from "../../hooks/useValidation";
 import { setField, setFieldError } from "../../redux/slices/addRecipeFormSlice.js";
 import { addRecipeSchema } from "../../validation/addRecipeSchema.js";
-import { InputErrorSpan } from "..";
+import { InputErrorSpan } from "../InputErrorSpan/InputErrorSpan.jsx";
 import { StyledDiv } from "./TimeSelect.styled.js";
 
 export const TimeSelect = () => {

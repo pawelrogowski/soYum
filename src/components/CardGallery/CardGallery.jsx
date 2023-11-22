@@ -1,7 +1,10 @@
 import PropTypes from "prop-types";
 
 import { baseButtonMotion } from "../../common/animations.js";
-import { Button, Card, Heading, Icon } from "..";
+import { Button } from "../Button/Button";
+import { Card } from "../Card/Card";
+import { Heading } from "../Heading/Heading.jsx";
+import { Icon } from "../Icon/Icon.jsx";
 import { StyledGallery } from "./CardGallery.styled";
 
 export const CardGallery = ({
