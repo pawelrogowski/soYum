@@ -142,7 +142,7 @@ export const StyledForm = styled(Form)`
       max-height: 6rem;
       width: 100%;
       padding: 1.6rem 5rem;
-      outline: none;
+
       border-radius: 0.5rem;
       border: 0.1rem solid var(--color-borderIdle);
       color: var(--color-fontIdle);

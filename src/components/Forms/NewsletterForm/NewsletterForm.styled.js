@@ -31,7 +31,6 @@ export const StyledForm = styled.form`
       width: 100%;
       height: 100%;
       padding: 1.45rem 4rem 1.45rem 4.4rem;
-      outline: none;
       border-radius: 0.5rem;
       border: 0.1rem solid var(--color-border-idle);
       background-color: var(--color-background-idle);

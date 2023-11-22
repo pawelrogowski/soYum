@@ -304,7 +304,6 @@ export const StyledDiv = styled(motion.div)`
     flex: 0;
     &:hover,
     &:focus {
-      outline: none;
       > svg {
         stroke: var(--color-icon-remove);
       }
@@ -399,9 +398,6 @@ export const StyledDiv = styled(motion.div)`
           content: "";
         }
 
-        &:focus {
-          outline: none;
-        }
         &::placeholder {
           color: var(--color-text-placeholder);
         }

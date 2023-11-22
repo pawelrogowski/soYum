@@ -28,7 +28,6 @@ export const StyledLabel = styled.label`
 
     &:hover,
     &:focus {
-      outline: none;
       border-color: ${(props) =>
         props.$hasError === "true"
           ? css`var(--color-font-error)`

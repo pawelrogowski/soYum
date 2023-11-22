@@ -22,7 +22,6 @@ export const StyledButton = styled(motion.button)`
     transform cubic-bezier(0.17, 0.67, 1, 1.23) 50ms,
     border-radius cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
   cursor: pointer;
-  outline: none;
 
   &:hover,
   &:focus,

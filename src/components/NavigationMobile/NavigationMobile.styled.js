@@ -162,7 +162,6 @@ export const StyledAside = styled(motion.aside)`
       > a > li > button {
         background: none;
         border: none;
-        outline: none;
         cursor: pointer;
       }
     }

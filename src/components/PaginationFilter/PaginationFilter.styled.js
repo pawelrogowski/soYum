@@ -53,7 +53,6 @@ export const StyledDiv = styled.div`
     }
     &:hover,
     &:focus {
-      outline: none;
       > svg {
         fill: var(--color-link-switch-active);
         stroke: var(--color-link-switch-active);
@@ -99,7 +98,6 @@ export const StyledDiv = styled.div`
           background-color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
         &:hover,
         &:focus {
-          outline: none;
           color: var(--color-link-page-font-active);
           background-color: var(--color-link-page-bg-active);
         }

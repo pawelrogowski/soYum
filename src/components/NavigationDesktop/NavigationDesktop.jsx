@@ -27,9 +27,7 @@ export const NavigationDesktop = () => {
         ))}
         <li>
           <NavLink to="/search" className={({ isActive }) => (isActive ? "active-nav-link" : "")}>
-            <button type="button" aria-label="Search">
-              <Icon icon="search" />
-            </button>
+            <Icon icon="search" aria-label="search" />
           </NavLink>
         </li>
       </ul>

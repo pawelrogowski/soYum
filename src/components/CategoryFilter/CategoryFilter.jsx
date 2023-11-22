@@ -11,6 +11,22 @@ export const CategoryFilter = () => {
   const { scrollLeft, scrollRight, isAtLeft, isAtRight } = useButtonScroll(scrollRef);
   const scrollBy = 200;
 
+  const categories = [
+    "Beef",
+    "Breakfast",
+    "Chicken",
+    "Desserts",
+    "Goat",
+    "Lamb",
+    "Miscellaneous",
+    "Pasta",
+    "Seafood",
+    "Side",
+    "Starter",
+    "Vegan",
+    "Pork",
+  ];
+
   return (
     <StyledNav>
       <button
@@ -22,71 +38,22 @@ export const CategoryFilter = () => {
         <Icon icon="arrow_slim" {...baseIconMotion} />
       </button>
       <ul ref={scrollRef}>
-        <li>
-          <NavLink className={({ isActive }) => (isActive ? "active-link-extreme" : "")} to="beef">
-            Beef
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={({ isActive }) => (isActive ? "active-link" : "")} to="breakfast">
-            Breakfast
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={({ isActive }) => (isActive ? "active-link" : "")} to="chicken">
-            Chicken
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={({ isActive }) => (isActive ? "active-link" : "")} to="desserts">
-            Desserts
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={({ isActive }) => (isActive ? "active-link" : "")} to="goat">
-            Goat
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={({ isActive }) => (isActive ? "active-link" : "")} to="lamb">
-            Lamb
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={({ isActive }) => (isActive ? "active-link" : "")} to="miscellaneous">
-            Miscellaneous
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={({ isActive }) => (isActive ? "active-link" : "")} to="pasta">
-            Pasta
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={({ isActive }) => (isActive ? "active-link" : "")} to="seafood">
-            Seafood
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={({ isActive }) => (isActive ? "active-link" : "")} to="side">
-            Side
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={({ isActive }) => (isActive ? "active-link" : "")} to="starter">
-            Starter
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={({ isActive }) => (isActive ? "active-link" : "")} to="vegan">
-            Vegan
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={({ isActive }) => (isActive ? "active-link-extreme" : "")} to="pork">
-            Pork
-          </NavLink>
-        </li>
+        {categories.map((category, index) => (
+          <li key={category}>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? index === 0 || index === categories.length - 1
+                    ? "active-link-extreme"
+                    : "active-link"
+                  : ""
+              }
+              to={category.toLowerCase()}
+            >
+              {category}
+            </NavLink>
+          </li>
+        ))}
       </ul>
 
       <button

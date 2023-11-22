@@ -54,7 +54,6 @@ export const StyledForm = styled.form`
     border: 0.1rem solid var(--color-form-search-borderIdle);
     border-radius: 2.4rem 4.4rem 2.4rem 4.4rem;
     padding: 0 17rem 0rem 3rem;
-    outline: none;
     transition: border-color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
     color: var(--color-form-search-font);
     font-size: 1.6rem;

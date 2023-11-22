@@ -69,11 +69,6 @@ export const StyledHeader = styled.header`
     margin-right: auto;
   }
 
-  > a:focus-within {
-    > svg {
-      outline: 0.2rem solid black;
-    }
-  }
   ${({ $altFontColors }) =>
     $altFontColors &&
     css`

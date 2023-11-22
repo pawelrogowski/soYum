@@ -51,7 +51,7 @@ export const StyledDiv = styled.div`
     > textarea {
       resize: none;
       padding: 1rem 1.6rem;
-      outline: none;
+
       width: 100%;
       min-height: 16rem;
       color: var(--color-text-idle);

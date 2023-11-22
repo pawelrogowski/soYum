@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const StyledDiv = styled.div`
   max-width: 62rem;
-  outline: none;
   @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
     max-width: 120rem;
     width: 100%;

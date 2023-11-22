@@ -33,6 +33,7 @@ export const StyledNav = styled.nav`
       transform: rotate(180deg);
     }
     &:disabled {
+      pointer-events: none;
       > svg {
         stroke: var(--color-button-disabled);
         fill: var(--color-button-disabled);

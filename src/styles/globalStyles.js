@@ -11,6 +11,8 @@ export const GlobalStyles = createGlobalStyle`
 		padding: 0;
   }
 
+
+
 	html, body {
 		margin: 0;
 		padding: 0;
@@ -67,7 +69,6 @@ export const GlobalStyles = createGlobalStyle`
 	a {
 		text-decoration: none;
 		color: inherit;
-		outline: none;
 	}
 
 	table {
@@ -80,7 +81,7 @@ export const GlobalStyles = createGlobalStyle`
 		padding: 0;
 	}
 
-  button,svg {
+  svg {
     outline: none;
   }
 

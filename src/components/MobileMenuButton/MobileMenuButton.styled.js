@@ -49,7 +49,6 @@ export const StyledButton = styled.button`
 
   &:focus,
   &:hover {
-    outline: none;
     svg {
       stroke: var(--color-brand);
     }

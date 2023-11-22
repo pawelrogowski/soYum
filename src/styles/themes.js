@@ -23,6 +23,7 @@ const brandColors = {
 };
 
 export const lightTheme = {
+  focusOutline: "#000",
   breakpoints,
   brandColors: {
     ...brandColors,
@@ -538,6 +539,7 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
+  focusOutline: "#fff",
   breakpoints,
   brandColors: {
     ...brandColors,
@@ -883,7 +885,7 @@ export const darkTheme = {
     },
   },
   recipeTextInput: {
-    borderIdle: "rgba(123, 123, 123, 1)",
+    borderIdle: "rgba(255, 255, 255, 0.2)",
     borderActive: brandColors.main,
     font: "rgba(250, 250, 250, 1)",
     fontPlaceholder: "rgba(123, 123, 123, 1)",
@@ -898,7 +900,7 @@ export const darkTheme = {
     iconIdle: "rgba(250, 250, 250, 1)",
     iconActive: brandColors.main,
     iconRemove: "rgba(231, 74, 59, 1)",
-    borderIdle: "rgba(123, 123, 123, 1)",
+    borderIdle: "rgba(255, 255, 255, 0.2)",
     borderActive: brandColors.main,
     accent: brandColors.main,
     scrollbarBg: brandColors.main,
@@ -920,7 +922,7 @@ export const darkTheme = {
     iconIdle: "rgba(250, 250, 250, 1)",
     iconActive: brandColors.main,
     iconDisabled: "rgba(76, 76, 76, 1)",
-    border: "rgba(123, 123, 123, 1)",
+    border: "rgba(255, 255, 255, 0.2)",
   },
   recipePreparationTextArea: {
     bg: "transparent",

@@ -216,7 +216,6 @@ export const StyledFormikForm = styled(Form)`
       &:focus {
         border-color: var(--color-input-border-active);
         background: var(--color-input-bg-active);
-        outline: none;
       }
     }
     > button:last-of-type {
