@@ -13,7 +13,7 @@ export const RecipeCard = ({ name, description, cookingTime, image, variant }) =
         <img src={image} width="124px" height="124px" alt="food" />
       </picture>
 
-      <Button type="button" variant="rectSmall" {...baseButtonMotion} aria-label="remove ${name}">
+      <Button type="button" variant="rectSmall" {...baseButtonMotion} aria-label={"remove " + name}>
         <Icon icon="trash" />
       </Button>
 
@@ -22,7 +22,7 @@ export const RecipeCard = ({ name, description, cookingTime, image, variant }) =
         <p>{shortenString(description, 150, "...")}</p>
         <div>
           <span>{cookingTime}</span>
-          <Button type="button" variant="base" {...baseButtonMotion} aria-label="see ${name}">
+          <Button type="button" variant="base" {...baseButtonMotion} aria-label={"see " + name}>
             See recipe
           </Button>
         </div>
