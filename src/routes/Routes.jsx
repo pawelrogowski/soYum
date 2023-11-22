@@ -24,7 +24,7 @@ const RecipePage = lazy(() => import("../pages/RecipePage/RecipePage.jsx"));
 const NotFoundPage = lazy(() => import("../pages/NotFoundPage/NotFoundPage.jsx"));
 
 export const AppRoutes = () => {
-  const location = useLocation().pathname;
+  const location = useLocation();
   useEffect(() => {
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: "smooth" });

@@ -73,10 +73,19 @@ export const prepStepMotion = {
   },
 };
 export const routeChangeMotion = {
-  initial: { opacity: 0, y: 0, scale: 1 },
-  animate: { opacity: 1, y: 0, scale: 1 },
-  exit: { opacity: 0, y: 20, scale: 0.9, transition: { duration: 0.5 } },
-  transition: { duration: 0.5 },
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      opacity: { duration: 0.3, ease: [0.22, 0.68, 0, 1.71] },
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      opacity: { duration: 0.15, ease: [0.43, 0.13, 0.23, 0.96] },
+    },
+  },
 };
 export const loaderLineMotion = {
   initial: { opacity: 0 },
