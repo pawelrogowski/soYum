@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
-import Select from "react-select";
+const Select = lazy(() => import("react-select"));
 
 import { baseButtonMotion } from "../../../common/animations";
 import { setSearchFilter } from "../../../redux/slices/searchSlice";
 import { Button } from "../../Button/Button";
 import { StyledForm } from "./SearchForm.styled";
+import { lazy, Suspense } from "react";
 
 export const SearchForm = ({
   onChange,
@@ -42,19 +43,21 @@ export const SearchForm = ({
         <div className="select-container">
           <span>Search by:</span>
           <div>
-            <Select
-              openMenuOnFocus
-              openMenuOnClick
-              closeMenuOnSelect
-              escapeClearsValue
-              isSearchable={false}
-              unstyled
-              classNamePrefix="Select"
-              options={filterOptions}
-              placeholder={filterPlaceholder}
-              onChange={(e) => onFilterChange(e)}
-              inputId="search-filter-select"
-            />
+            <Suspense fallback={null}>
+              <Select
+                openMenuOnFocus
+                openMenuOnClick
+                closeMenuOnSelect
+                escapeClearsValue
+                isSearchable={false}
+                unstyled
+                classNamePrefix="Select"
+                options={filterOptions}
+                placeholder={filterPlaceholder}
+                onChange={(e) => onFilterChange(e)}
+                inputId="search-filter-select"
+              />
+            </Suspense>
           </div>
         </div>
       )}
