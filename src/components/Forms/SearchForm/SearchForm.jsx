@@ -1,12 +1,13 @@
 import PropTypes from "prop-types";
+import { lazy, Suspense } from "react";
 import { useDispatch } from "react-redux";
-const Select = lazy(() => import("react-select"));
 
 import { baseButtonMotion } from "../../../common/animations";
 import { setSearchFilter } from "../../../redux/slices/searchSlice";
 import { Button } from "../../Button/Button";
 import { StyledForm } from "./SearchForm.styled";
-import { lazy, Suspense } from "react";
+
+const Select = lazy(() => import("react-select"));
 
 export const SearchForm = ({
   onChange,
