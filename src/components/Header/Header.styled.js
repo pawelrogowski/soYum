@@ -91,8 +91,4 @@ export const StyledHeader = styled.header`
         }
       }
     `}
-  .theme-switch-placeholder {
-    width: 6.1rem;
-    height: 2.7rem;
-  }
 `;

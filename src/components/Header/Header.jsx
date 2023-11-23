@@ -1,4 +1,3 @@
-import { lazy, Suspense } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { Link, useLocation } from "react-router-dom";
@@ -11,10 +10,9 @@ import { breakpoints } from "../../styles/themes";
 import { Logo } from "../Logo/Logo";
 import { MobileMenuButton } from "../MobileMenuButton/MobileMenuButton";
 import { NavigationDesktop } from "../NavigationDesktop/NavigationDesktop";
+import { ThemeSwitch } from "../ThemeSwitch/ThemeSwitch";
 import { UserAvatar } from "../UserAvatar/UserAvatar";
 import { StyledHeader } from "./Header.styled";
-
-const ThemeSwitch = lazy(() => import("../ThemeSwitch/ThemeSwitch"));
 
 export const Header = () => {
   const shouldUseDecor = useShowDecorations();
@@ -41,11 +39,7 @@ export const Header = () => {
       </Link>
       {isAtLeastDesktopSize && <NavigationDesktop />}
       <UserAvatar image={avatar} placeholder={avatarPlaceholder} name="User Name" />
-      {isAtLeastDesktopSize && (
-        <Suspense fallback={<div className="theme-switch-placeholder" />}>
-          <ThemeSwitch />
-        </Suspense>
-      )}
+      {isAtLeastDesktopSize && <ThemeSwitch />}
 
       {!isAtLeastDesktopSize && <MobileMenuButton onClick={handleMenuToggle} variant="open" />}
     </StyledHeader>
