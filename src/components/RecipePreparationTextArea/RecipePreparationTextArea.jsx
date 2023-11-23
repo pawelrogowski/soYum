@@ -1,9 +1,9 @@
 import { AnimatePresence } from "framer-motion";
-import { debounce } from "lodash";
 import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 
 import { baseButtonMotion, inputErrorMotion } from "../../common/animations.js";
+import { useDebounce } from "../../hooks/useDebounce.js";
 import { useValidation } from "../../hooks/useValidation.js";
 import {
   addPreparationStep,
@@ -34,7 +34,7 @@ export const RecipePreparationTextArea = ({ className }) => {
       : dispatch(setFieldError({ field: "currentTextAreaValue", error: null }));
   };
 
-  const handleStepUpdate = debounce((value) => {
+  const handleStepUpdate = useDebounce((value) => {
     if (currentEditIndex !== null && currentEditIndex !== undefined) {
       dispatch(editPreparationStep({ index: currentEditIndex, text: value }));
       dispatch(setField({ field: "currentEditIndex", value: null }));

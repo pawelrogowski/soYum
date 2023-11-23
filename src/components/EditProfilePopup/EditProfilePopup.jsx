@@ -1,8 +1,8 @@
-import { throttle } from "lodash";
 import { useCallback, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 
 import { baseIconMotion } from "../../common/animations";
+import { useThrottle } from "../../hooks/useThrottle";
 import {
   setIsLogoutModalOpen,
   setIsProfileUpdateMenuOpen,
@@ -38,12 +38,12 @@ const EditProfilePopup = ({ ...props }) => {
     event.stopPropagation();
   }, []);
 
-  const throttledEditProfileOpen = throttle(() => {
+  const throttledEditProfileOpen = useThrottle(() => {
     dispatch(setIsUserEditMenuOpen(false));
     dispatch(setIsProfileUpdateMenuOpen(true));
   }, 300);
 
-  const throttledLogoutModalOpen = throttle(() => {
+  const throttledLogoutModalOpen = useThrottle(() => {
     dispatch(setIsLogoutModalOpen(true));
     dispatch(setIsUserEditMenuOpen(false));
   }, 300);

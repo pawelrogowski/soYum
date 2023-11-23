@@ -1,10 +1,10 @@
 import { AnimatePresence } from "framer-motion";
-import debounce from "lodash/debounce";
 import PropTypes from "prop-types";
 import { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { inputErrorMotion } from "../../common/animations";
+import { useDebounce } from "../../hooks/useDebounce.js";
 import { useValidation } from "../../hooks/useValidation";
 import { setField, setFieldError } from "../../redux/slices/addRecipeFormSlice.js";
 import { addRecipeSchema } from "../../validation/addRecipeSchema.js";
@@ -25,7 +25,7 @@ export const RecipeTextInput = ({ name, placeholder }) => {
     [isRecipeTitle, recipeTitleError, recipeAboutError]
   );
 
-  const handleChange = debounce((e) => {
+  const handleChange = useDebounce((e) => {
     const { isValid, errorMessage } = validate(addRecipeSchema, name, e.target.value);
     dispatch(setField({ field: field, value: isValid ? e.target.value : "" }));
     dispatch(setFieldError({ field: field, error: errorMessage || null }));

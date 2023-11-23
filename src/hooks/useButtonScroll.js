@@ -1,4 +1,3 @@
-import { debounce } from "lodash";
 import { useCallback, useEffect, useState } from "react";
 
 /**
@@ -32,14 +31,11 @@ export const useButtonScroll = (buttonScrollTarget) => {
   const [isAtRight, setIsAtRight] = useState(false);
 
   const checkScrollPosition = useCallback(() => {
-    const debouncedFunction = debounce(() => {
-      const scrollPos = buttonScrollTarget.current.scrollLeft;
-      setIsAtLeft(scrollPos < 1);
-      setIsAtRight(
-        scrollPos + buttonScrollTarget.current.offsetWidth >= buttonScrollTarget.current.scrollWidth
-      );
-    }, 200);
-    debouncedFunction();
+    const scrollPos = buttonScrollTarget.current.scrollLeft;
+    setIsAtLeft(scrollPos < 1);
+    setIsAtRight(
+      scrollPos + buttonScrollTarget.current.offsetWidth >= buttonScrollTarget.current.scrollWidth
+    );
   }, [buttonScrollTarget]);
 
   useEffect(() => {
