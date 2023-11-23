@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import * as yup from "yup";
+import { reach } from "yup";
 
 /**
  * React Hook `useValidation` for validating form fields using Yup.
@@ -34,7 +34,7 @@ export const useValidation = () => {
    */
   const validate = (validationSchema, fieldName, value, parentFields) => {
     try {
-      const fieldSchema = yup.reach(validationSchema, fieldName);
+      const fieldSchema = reach(validationSchema, fieldName);
       fieldSchema.validateSync(value, { ...parentFields });
 
       errors.current = { ...errors.current, [fieldName]: "" };

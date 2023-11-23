@@ -11,8 +11,6 @@ export const GlobalStyles = createGlobalStyle`
 		padding: 0;
   }
 
-
-
 	html, body {
 		margin: 0;
 		padding: 0;
@@ -56,6 +54,9 @@ export const GlobalStyles = createGlobalStyle`
     min-height: calc(100dvh - 62px);
   }
 
+  input,textarea,div {
+    outline: none;
+  }
   span+footer {
     visibility: hidden;
   }

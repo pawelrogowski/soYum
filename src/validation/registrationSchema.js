@@ -1,9 +1,9 @@
-import * as Yup from "yup";
+import { object, string } from "yup";
 
-export const validationSchema = Yup.object({
-  name: Yup.string().required("Name is required"),
-  email: Yup.string().email("Invalid email").required("Email is required"),
-  password: Yup.string()
+export const validationSchema = object({
+  name: string().required("Name is required"),
+  email: string().email("Invalid email").required("Email is required"),
+  password: string()
     .min(8, "Password must be at least 8 characters")
     .required("Password is required"),
 });

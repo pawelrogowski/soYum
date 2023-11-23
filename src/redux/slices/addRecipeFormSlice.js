@@ -1,5 +1,7 @@
 import { createSlice, prepareAutoBatched } from "@reduxjs/toolkit";
-import { uniqueId } from "lodash";
+import ShortUniqueId from "short-unique-id";
+
+const uid = new ShortUniqueId({ length: 10 });
 
 const initialState = {
   recipeImageUrl: "",
@@ -14,7 +16,7 @@ const initialState = {
   recipeCookingTimeError: "",
   recipeIngredients: [
     {
-      id: "0",
+      id: uid.rnd(),
       ingredient: "",
       measureType: "",
       amount: "",
@@ -64,7 +66,7 @@ export const addRecipeFormSlice = createSlice({
     addIngredient: {
       reducer(state) {
         const newIngredient = {
-          id: uniqueId(),
+          id: uid.rnd(),
           ingredient: "",
           measureType: "",
           amount: "",
@@ -94,7 +96,7 @@ export const addRecipeFormSlice = createSlice({
     addPreparationStep: {
       reducer(state, action) {
         const newStep = {
-          id: uniqueId(),
+          id: uid.rnd(),
           text: action.payload,
         };
         state.recipePreparationSteps.push(newStep);

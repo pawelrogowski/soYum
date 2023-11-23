@@ -1,8 +1,5 @@
-import * as Yup from "yup";
+import { object, string } from "yup";
 
-export const userEditSchema = Yup.object().shape({
-  username: Yup.string("User name must be a string").min(
-    3,
-    "User name must be at least 3 characters"
-  ),
+export const userEditSchema = object().shape({
+  username: string("User name must be a string").min(3, "User name must be at least 3 characters"),
 });
