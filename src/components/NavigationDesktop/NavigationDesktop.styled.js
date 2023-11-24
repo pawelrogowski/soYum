@@ -45,7 +45,7 @@ export const StyledNav = styled.nav`
         "50%",
         "2px",
         "ease-in-out",
-        "200ms"
+        "150ms"
       )}
     }
 
