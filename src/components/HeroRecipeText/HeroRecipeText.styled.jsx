@@ -79,7 +79,7 @@ export const StyledDiv = styled.div`
     > svg {
       width: 1.6rem;
       height: 1.6rem;
-      stroke: rgba(0, 0, NaN, 1);
+      stroke: rgba(35, 38, 42, 1);
       stroke-width: 3px;
       @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         width: 2.1rem;

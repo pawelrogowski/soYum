@@ -29,6 +29,7 @@ export const GlobalStyles = createGlobalStyle`
 
   .active-nav-link {
     color: ${({ theme: t }) => t.brandColors.main} !important;
+
     svg {
       stroke: ${({ theme: t }) => t.brandColors.main} !important;
     }

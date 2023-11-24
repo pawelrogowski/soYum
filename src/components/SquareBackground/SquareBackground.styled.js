@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
-import styled from "styled-components";
+import { styled } from "styled-components";
+
+import { fadeInAnimation } from "../../styles/mixins";
 
 export const StyledDiv = styled(motion.div)`
   position: absolute;
@@ -11,4 +13,5 @@ export const StyledDiv = styled(motion.div)`
   left: 50%;
   transform: translate(0, -50%);
   z-index: -1;
+  ${fadeInAnimation("450ms")}
 `;

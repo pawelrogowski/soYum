@@ -59,8 +59,8 @@ export const StyledFigure = styled(motion.figure)`
     aspect-ratio: 343 / 323;
     &:hover,
     &:focus {
-      transform: scale(1.3);
-      transition: transform cubic-bezier(0.17, 0.67, 1, 1.23) 60s;
+      transform: scale(1.2);
+      transition: transform cubic-bezier(0.17, 0.67, 1, 1.23) 300ms;
     }
   }
 `;

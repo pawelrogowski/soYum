@@ -29,6 +29,7 @@ export const StyledForm = styled.form`
   max-width: 50.1rem;
   position: relative;
   min-width: ${({ theme: t }) => t.breakpoints.minContent};
+
   ${({ $variant }) =>
     $variant === "page" &&
     css`

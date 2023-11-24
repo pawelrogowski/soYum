@@ -28,3 +28,15 @@ export const underlineHover = (
     width: ${width};
   }
 `;
+
+export const fadeInAnimation = (time = "450ms") => css`
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  animation: fade-in ${time} ease-in-out 1;
+`;

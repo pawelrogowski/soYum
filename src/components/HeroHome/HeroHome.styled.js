@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import heroLowRes from "../../assets/images/heroLowRes.avif";
 import leaves from "../../assets/images/leavesDecor.avif";
+import { fadeInAnimation } from "../../styles/mixins";
 export const StyledDiv = styled.div`
   --color-brand-highlight: ${({ theme: t }) => t.brandColors.main};
   --color-hero-text: ${({ theme: t }) => t.hero.text};
@@ -9,7 +10,7 @@ export const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  ${fadeInAnimation("150ms")}
   @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
     width: 100%;
     flex-direction: row;
