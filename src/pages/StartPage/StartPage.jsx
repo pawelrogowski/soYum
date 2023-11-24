@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { baseButtonMotion, startPageMotion } from "../../common/animations";
 import { Button } from "../../components/Button/Button";
@@ -9,6 +9,7 @@ import { StartPageContainer } from "./StartPage.styled";
 
 export const StartPage = () => {
   usePageTitle("Welcome");
+  const navigate = useNavigate();
   return (
     <StartPageContainer {...startPageMotion}>
       <Logo />
@@ -20,18 +21,24 @@ export const StartPage = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/register">
-              <Button variant="normal" aria-label="Registration" {...baseButtonMotion}>
-                Registration
-              </Button>
-            </Link>
+            <Button
+              variant="outlineBig"
+              aria-label="Registration"
+              onClick={() => navigate("register")}
+              {...baseButtonMotion}
+            >
+              Registration
+            </Button>
           </li>
           <li>
-            <Link to="/signin">
-              <Button variant="outlineBig" aria-label="Sign In" {...baseButtonMotion}>
-                Sign In
-              </Button>
-            </Link>
+            <Button
+              variant="outlineBig"
+              aria-label="Sign In"
+              onClick={() => navigate("signin")}
+              {...baseButtonMotion}
+            >
+              Sign In
+            </Button>
           </li>
         </ul>
       </nav>

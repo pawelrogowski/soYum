@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { styled } from "styled-components";
 
 import saladBg from "../../assets/images/saladBg.avif";
+import { underlineHover } from "../../styles/mixins";
 
 export const StartPageContainer = styled(motion.main)`
   display: flex;
@@ -102,6 +103,7 @@ export const StartPageContainer = styled(motion.main)`
             font-size: 1.6rem;
             width: 18.4rem;
             height: 6.7rem;
+            max-height: 6.7rem;
           }
         }
       }
@@ -140,11 +142,13 @@ export const StartPageContainer = styled(motion.main)`
       font-size: 1.2rem;
     }
 
+    ${underlineHover(({ theme: t }) => t.link.authNav)}
     color: ${({ theme: t }) => t.link.authNav};
     transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
     &:hover,
     &:focus {
       color: ${({ theme: t }) => t.link.authNav};
+
       > svg {
         stroke: ${({ theme: t }) => t.link.authNav};
       }

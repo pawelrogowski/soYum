@@ -1,5 +1,7 @@
 import { styled } from "styled-components";
 
+import { underlineHover } from "../../styles/mixins";
+
 export const StyledNav = styled.nav`
   --color-navigation-footer-idle: ${({ theme: t }) => t.navigation.footer.colorIdle};
   --color-navigation-footer-hover: ${({ theme: t }) => t.navigation.footer.colorHover};
@@ -25,6 +27,17 @@ export const StyledNav = styled.nav`
       line-height: 1.28;
       letter-spacing: -0.028rem;
       transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
+
+      ${underlineHover(
+        false,
+        ({ theme: t }) => t.navigation.footer.colorHover,
+        "100%",
+        "0",
+        "50%",
+        "2px",
+        "ease-in-out",
+        "200ms"
+      )}
 
       &:hover,
       &:focus,

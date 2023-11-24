@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { underlineHover } from "../../styles/mixins";
+
 export const PageContent = styled.div`
   max-width: 1860px;
   margin: 0 auto;
@@ -72,6 +74,7 @@ export const PageContent = styled.div`
     align-items: center;
     width: 100%;
     max-width: 50rem;
+    padding-bottom: 10rem;
   }
   .auth-links {
     display: flex;
@@ -87,6 +90,9 @@ export const PageContent = styled.div`
       display: flex;
       gap: 0.4rem;
       align-items: center;
+
+      ${underlineHover(true, ({ theme: t }) => t.link.authNavActive)}
+
       @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
         font-size: 1.2rem;
       }
@@ -105,7 +111,6 @@ export const PageContent = styled.div`
         @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
           font-size: 1.6rem;
         }
-        text-decoration-line: underline;
       }
       > svg {
         stroke: ${({ theme: t }) => t.link.authNav};
