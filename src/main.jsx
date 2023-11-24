@@ -14,7 +14,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <Provider store={store}>
       <PersistGate loading={<LoaderLine isGlobal />} persistor={persistor}>
         <Router basename="/">
-          <Scrollbars style={{ width: "100vw", height: "100vh" }} autoHide autoHideTimeout={500}>
+          <Scrollbars
+            style={{ width: "100vw", height: "100vh" }}
+            autoHide
+            autoHideTimeout={500}
+            id="root"
+          >
             <App />
           </Scrollbars>
         </Router>

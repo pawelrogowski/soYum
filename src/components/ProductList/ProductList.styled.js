@@ -109,7 +109,6 @@ export const StyledProductList = styled(motion.ul)`
         display: flex;
         justify-content: center;
         align-items: center;
-        max-height: 2.3rem;
         padding: 0.4rem 1.4rem;
         background: var(--color-bg-amount);
         border-radius: 0.4rem;
@@ -122,7 +121,6 @@ export const StyledProductList = styled(motion.ul)`
         @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
           font-size: 1.8rem;
           padding: 0 2.8rem;
-          max-height: 3.5rem;
           padding: 1.4rem 1.4rem;
         }
       }

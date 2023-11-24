@@ -34,7 +34,6 @@ export const GlobalStyles = createGlobalStyle`
       stroke: ${({ theme: t }) => t.brandColors.main} !important;
     }
   }
-
   .active-nav-link-mobile {
     color: ${({ theme: t }) => t.brandColors.main} !important;
     span {
@@ -118,6 +117,13 @@ export const GlobalStyles = createGlobalStyle`
     	scroll-behavior: auto !important;
   	}
 	}
+
+  .rc-scrollbars-track-h {
+    display: none;
+  }
+  .rc-scrollbars-view {
+    overflow-x: hidden !important
+  }
 
   .popup-box {
     width: 500px;
