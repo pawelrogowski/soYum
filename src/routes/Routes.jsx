@@ -27,7 +27,7 @@ export const AppRoutes = () => {
   const location = useLocation();
   useEffect(() => {
     setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      document.querySelector(".rc-scrollbars-view").scrollTop = 0;
     }, 0);
   }, [location]);
 

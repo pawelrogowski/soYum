@@ -122,7 +122,8 @@ export const GlobalStyles = createGlobalStyle`
     display: none;
   }
   .rc-scrollbars-view {
-    overflow-x: hidden !important
+    overflow-x: hidden !important;
+    scroll-behavior: smooth;
   }
 
   .popup-box {
