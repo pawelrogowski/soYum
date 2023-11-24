@@ -312,7 +312,7 @@ export const lightTheme = {
     },
   },
   categoryFilter: {
-    textIdle: "rgba(188, 188, 188, 1)",
+    textIdle: "rgb(102 102 102)",
     textActive: brandColors.main,
     decorationIdle: "rgba(188, 188, 188, 1)",
     decorationActive: brandColors.main,
