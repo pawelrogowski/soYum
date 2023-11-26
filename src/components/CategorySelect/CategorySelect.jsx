@@ -13,8 +13,11 @@ import { StyledDiv } from "./CategorySelect.styled";
 
 export const CategorySelect = () => {
   const { validate } = useValidation();
+
   const { recipeCategories, recipeCategoriesError } = useSelector((state) => state.addRecipeForm);
+
   const dispatch = useDispatch();
+
   const ref = useRef(null);
 
   const handleChange = useCallback(
