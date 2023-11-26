@@ -1,10 +1,10 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 
-import srcsetAvif from "../../assets/images/hero.webp?w=320;480;640;768;896;1024;1200;1440;1600;1800;1920;2048;2200;2300;2400;2500;2600;2700;2800;2900;3000&format=avif&as=srcset";
-import srcsetPng from "../../assets/images/hero.webp?w=320;480;640;768;896;1024;1200;1440;1600;1800;1920;2048;2200;2300;2400;2500;2600;2700;2800;2900;3000&format=png&as=srcset";
-import srcsetWebp from "../../assets/images/hero.webp?w=320;480;640;768;896;1024;1200;1440;1600;1800;1920;2048;2200;2300;2400;2500;2600;2700;2800;2900;3000&format=webp&as=srcset";
-import heroFallback from "../../assets/images/hero.webp?w=1520";
+import srcsetAvif from "../../assets/images/hero.avif?w=320;480;640;768;896;1024;1200;1440;1600;1800;1920;2048;2200;2300;2400;2500;2600;2700;2800;2900;3000&format=avif&as=srcset";
+import srcsetPng from "../../assets/images/hero.avif?w=320;480;640;768;896;1024;1200;1440;1600;1800;1920;2048;2200;2300;2400;2500;2600;2700;2800;2900;3000&format=png&as=srcset";
+import srcsetWebp from "../../assets/images/hero.avif?w=320;480;640;768;896;1024;1200;1440;1600;1800;1920;2048;2200;2300;2400;2500;2600;2700;2800;2900;3000&format=webp&as=srcset";
+import heroFallback from "../../assets/images/hero.avif?w=1520";
 import { simpleOpacityMotion } from "../../common/animations";
 import { breakpoints } from "../../styles/themes";
 import { CallToAction } from "../CallToAction/CallToAction";
