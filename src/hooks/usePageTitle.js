@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 const baseTitle = "SoYummy";
-const separator = "-";
+const separator = "•";
 
 export const usePageTitle = (subTitle) => {
   useEffect(() => {
