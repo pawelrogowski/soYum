@@ -13,8 +13,10 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
+    "axios": "^1.6.2",
     "formik": "^2.4.4",
     "framer-motion": "^10.16.4",
+    "million": "^2.6.4",
     "prop-types": "^15.8.1",
     "rc-scrollbars": "^1.1.6",
     "react": "^18.2.0",
@@ -25,6 +27,7 @@
     "react-select": "^5.7.7",
     "redux-persist": "^6.0.0",
     "short-unique-id": "^5.0.3",
+    "sonner": "^1.2.4",
     "styled-components": "^6.0.7",
     "yup": "^1.2.0"
   },

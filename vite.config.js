@@ -1,3 +1,4 @@
+import million from 'million/compiler';
 import react from "@vitejs/plugin-react-swc";
 import fs from "fs";
 import { defineConfig } from "vite";
@@ -6,7 +7,7 @@ import { VitePWA } from "vite-plugin-pwa";
 
 const manifest = JSON.parse(fs.readFileSync("./public/site.webmanifest", "utf8"));
 export default defineConfig({
-  plugins: [
+  plugins: [million.vite({ auto: true }), 
     react(),
     imagetools(),
 

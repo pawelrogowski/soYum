@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import { PersistGate } from "redux-persist/integration/react";
+import { Toaster } from "sonner";
 
 import { App } from "./components/App.jsx";
 import { LoaderLine } from "./components/LoaderLine/LoaderLine.jsx";
@@ -20,5 +21,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </Router>
       </PersistGate>
     </Provider>
+    <Toaster richColors />
   </React.StrictMode>
 );

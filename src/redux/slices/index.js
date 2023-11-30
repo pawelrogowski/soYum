@@ -5,3 +5,4 @@ export { default as globalReducer } from "./globalSlice";
 export { default as loadingReducer } from "./loadingSlice";
 export { default as modalReducer } from "./modalSlice";
 export { default as searchReducer } from "./searchSlice";
+export { default as userReducer } from "./userSlice";

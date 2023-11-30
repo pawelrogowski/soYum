@@ -1,16 +1,29 @@
 import { Formik } from "formik";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 import { baseButtonMotion } from "../../../common/animations";
+import { registerUser } from "../../../redux/api/userAPI";
 import { validationSchema } from "../../../validation/registrationSchema";
 import { Button } from "../../Button/Button";
 import { CustomFormikInput } from "../../CustomFormikInput/CustomFormikInput";
 import { StyledForm } from "./RegisterForm.styled";
 
 export const RegistrationForm = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const initialFormValues = { name: "", email: "", password: "" };
 
-  const handleSubmit = (values) => {
-    console.log("Form Submitted", values);
+  const handleSubmit = async (values) => {
+    try {
+      await dispatch(registerUser(values)).unwrap();
+      toast.success("Welcome to SoYummy! " + values.name);
+      navigate("/home");
+    } catch (error) {
+      toast.error(JSON.stringify(error.message));
+      console.error("Failed to register:", error);
+    }
   };
 
   const warnIconMotion = {

@@ -10,6 +10,7 @@ import {
   loadingReducer,
   modalReducer,
   searchReducer,
+  userReducer,
 } from "./slices";
 
 const generatePersistConfig = (key) => ({
@@ -35,6 +36,7 @@ export const store = configureStore({
     loading: loadingReducer,
     addRecipeForm: addRecipeFormReducer,
     currentRecipe: currentRecipeReducer,
+    user: userReducer,
   },
   enhancers: (existingEnhancers) => {
     return existingEnhancers.concat(autoBatchEnhancer());
