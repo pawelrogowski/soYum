@@ -73,7 +73,7 @@ export const userSlice = createSlice({
       })
       .addCase(updateName.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.user.name = action.payload.name; // update the name in the state
+        state.user.name = action.payload.name;
       })
       .addCase(updateName.rejected, (state, action) => {
         state.status = "failed";
