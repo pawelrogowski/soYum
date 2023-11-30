@@ -1,6 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { loginUser, registerUser } from "../api/userAPI";
+import {
+  changePassword,
+  loginUser,
+  logoutUser,
+  refreshToken,
+  registerUser,
+  updateName,
+} from "../api/userAPI";
 
 export const userSlice = createSlice({
   name: "user",
@@ -27,6 +34,48 @@ export const userSlice = createSlice({
         state.user = action.payload.user;
       })
       .addCase(registerUser.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      })
+      .addCase(refreshToken.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(refreshToken.fulfilled, (state) => {
+        state.status = "succeeded";
+      })
+      .addCase(refreshToken.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      })
+      .addCase(logoutUser.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(logoutUser.fulfilled, (state) => {
+        state.status = "succeeded";
+        state.user = null;
+      })
+      .addCase(logoutUser.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      })
+      .addCase(changePassword.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(changePassword.fulfilled, (state) => {
+        state.status = "succeeded";
+      })
+      .addCase(changePassword.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      })
+      .addCase(updateName.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(updateName.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.user.name = action.payload.name; // update the name in the state
+      })
+      .addCase(updateName.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
       });
