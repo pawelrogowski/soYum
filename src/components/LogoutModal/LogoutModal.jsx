@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { baseIconMotion } from "../../common/animations";
+import { logoutUser } from "../../redux/api/userAPI";
 import { setIsLogoutModalOpen } from "../../redux/slices/modalSlice";
 import { Button } from "../Button/Button";
 import { Icon } from "../Icon/Icon";
@@ -29,8 +30,14 @@ export const LogoutModal = () => {
     dispatch(setIsLogoutModalOpen(false));
   };
 
-  const handleLogoutClick = () => {
-    navigate("/signin");
+  const handleLogoutClick = async () => {
+    try {
+      await dispatch(logoutUser()).unwrap();
+      dispatch(setIsLogoutModalOpen(false));
+      navigate("/signin");
+    } catch (error) {
+      console.error("Failed to logout:", error);
+    }
   };
 
   useEffect(() => {
@@ -43,6 +50,7 @@ export const LogoutModal = () => {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   const modalMotion = {
     initial: { opacity: 0 },
     animate: { opacity: 1 },
