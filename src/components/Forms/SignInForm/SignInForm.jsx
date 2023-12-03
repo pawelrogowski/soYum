@@ -1,5 +1,5 @@
 import { Formik } from "formik";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
@@ -8,12 +8,14 @@ import { loginUser } from "../../../redux/api/userAPI";
 import { validationSchema } from "../../../validation/singInSchema";
 import { Button } from "../../Button/Button";
 import { CustomFormikInput } from "../../CustomFormikInput/CustomFormikInput";
+import LoaderLine from "../../LoaderLine/LoaderLine";
 import { StyledForm } from "./SignInForm.styled";
 
 export const SignInForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const initialFormValues = { email: "", password: "" };
+  const isLoginInProgress = useSelector((state) => state.user.login.loading);
 
   const handleSubmit = async (values) => {
     try {
@@ -58,6 +60,7 @@ export const SignInForm = () => {
 
         return (
           <StyledForm {...styledFormProps}>
+            {isLoginInProgress && <LoaderLine />}
             <h1>Sign In</h1>
             <ul>
               <li>

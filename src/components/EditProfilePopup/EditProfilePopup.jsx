@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import { baseIconMotion } from "../../common/animations";
 import { useThrottle } from "../../hooks/useThrottle";
@@ -14,7 +15,9 @@ import { StyledDiv } from "./EditProfilePopup.styled";
 
 const EditProfilePopup = ({ ...props }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const ref = useRef(null);
+  const name = useSelector((state) => state.user.user.name);
 
   const handleClickOutside = useCallback(
     (event) => {
@@ -38,9 +41,13 @@ const EditProfilePopup = ({ ...props }) => {
     event.stopPropagation();
   }, []);
 
-  const throttledEditProfileOpen = useThrottle(() => {
-    dispatch(setIsUserEditMenuOpen(false));
-    dispatch(setIsProfileUpdateMenuOpen(true));
+  const handleAvatarClick = useThrottle(() => {
+    if (name) {
+      dispatch(setIsUserEditMenuOpen(false));
+      dispatch(setIsProfileUpdateMenuOpen(true));
+    } else {
+      navigate("/signin");
+    }
   }, 300);
 
   const throttledLogoutModalOpen = useThrottle(() => {
@@ -49,10 +56,10 @@ const EditProfilePopup = ({ ...props }) => {
   }, 300);
 
   const handleEditProfileOpen = useCallback(() => {
-    throttledEditProfileOpen();
-  }, [throttledEditProfileOpen]);
+    handleAvatarClick();
+  }, [handleAvatarClick]);
 
-  const handleLogoutModalOpen = useCallback(() => {
+  const handleLogoutClick = useCallback(() => {
     throttledLogoutModalOpen();
   }, [throttledLogoutModalOpen]);
 
@@ -72,8 +79,8 @@ const EditProfilePopup = ({ ...props }) => {
         <span>Edit profile</span>
         <Icon icon="edit" {...baseIconMotion} />
       </div>
-      <Button type="button" onClick={handleLogoutModalOpen} aria-label="log out">
-        Log out
+      <Button type="button" onClick={handleLogoutClick} aria-label="log out">
+        {!name ? "Sign in" : "Log out"}
         <Icon icon="arrow_long" {...baseIconMotion} />
       </Button>
     </StyledDiv>

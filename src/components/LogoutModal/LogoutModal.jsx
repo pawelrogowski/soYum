@@ -32,9 +32,9 @@ export const LogoutModal = () => {
 
   const handleLogoutClick = async () => {
     try {
+      navigate("/signin");
       await dispatch(logoutUser()).unwrap();
       dispatch(setIsLogoutModalOpen(false));
-      navigate("/signin");
     } catch (error) {
       console.error("Failed to logout:", error);
     }

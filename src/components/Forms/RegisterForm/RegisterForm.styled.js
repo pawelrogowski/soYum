@@ -24,6 +24,8 @@ export const StyledForm = styled(Form)`
   --color-buttonBorderActive: ${({ theme: t }) => t.authForm.button.borderActive};
   --color-warning: ${({ theme: t }) => t.authForm.textInput.warning};
   --color-correct: ${({ theme: t }) => t.authForm.textInput.correct};
+  position: relative;
+  overflow: hidden;
   width: 100%;
   max-width: 50rem;
   min-width: 28rem;
@@ -33,7 +35,7 @@ export const StyledForm = styled(Form)`
   transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
     background-color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms,
     border cubic-bezier(0.17, 0.67, 1, 1.23) 100ms, fill cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
-
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   @media screen and (min-width: ${(props) => props.theme.breakpoints.tablet}) {
     padding: 4.4rem 5rem;
     min-width: 50rem;

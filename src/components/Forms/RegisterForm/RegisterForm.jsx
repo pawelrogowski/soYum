@@ -1,5 +1,5 @@
 import { Formik } from "formik";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
@@ -8,17 +8,19 @@ import { registerUser } from "../../../redux/api/userAPI";
 import { validationSchema } from "../../../validation/registrationSchema";
 import { Button } from "../../Button/Button";
 import { CustomFormikInput } from "../../CustomFormikInput/CustomFormikInput";
+import LoaderLine from "../../LoaderLine/LoaderLine";
 import { StyledForm } from "./RegisterForm.styled";
 
 export const RegistrationForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const isRegisterInProgress = useSelector((state) => state.user.register.loading);
   const initialFormValues = { name: "", email: "", password: "" };
 
   const handleSubmit = async (values) => {
     try {
       await dispatch(registerUser(values)).unwrap();
-      toast.success("Welcome to SoYummy! " + values.name);
+      toast.success("Welcome to SoYummy!");
       navigate("/home");
     } catch (error) {
       toast.error(JSON.stringify(error.message));
@@ -63,6 +65,7 @@ export const RegistrationForm = () => {
 
         return (
           <StyledForm {...styledFormProps}>
+            {isRegisterInProgress && <LoaderLine />}
             <h1>Registration</h1>
             <ul>
               <li>

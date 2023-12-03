@@ -20,10 +20,10 @@ export const Header = () => {
   const shouldUseDecor = useShowDecorations();
   const { pathname } = useLocation();
   const dispatch = useDispatch();
-
+  const name = useSelector((state) => state.user.user.name);
   const isMobileMenuOpen = useSelector((state) => state.modal.isMobileMenuOpen);
   const isAtLeastDesktopSize = useMediaQuery({ minWidth: breakpoints.desktop });
-
+  console.log(name);
   const isRecipePage = pathname.startsWith("/recipe");
   const fixed = isRecipePage;
   const altFontColors = isRecipePage;
@@ -40,7 +40,8 @@ export const Header = () => {
         <Logo variant="header" onClick={handleCloseMenu} />
       </Link>
       {isAtLeastDesktopSize && <NavigationDesktop />}
-      <UserAvatar image={avatar} placeholder={avatarPlaceholder} name="User Name" />
+      <UserAvatar image={avatar} placeholder={avatarPlaceholder} name={name || "Sign in"} />
+
       {isAtLeastDesktopSize && (
         <Suspense fallback={<div className="theme-switch-placeholder" />}>
           <ThemeSwitch />
