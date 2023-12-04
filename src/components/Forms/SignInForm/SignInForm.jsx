@@ -16,12 +16,13 @@ export const SignInForm = () => {
   const navigate = useNavigate();
   const initialFormValues = { email: "", password: "" };
   const isLoginInProgress = useSelector((state) => state.user.login.loading);
+  const { signInRedirectPath } = useSelector((state) => state.global);
 
   const handleSubmit = async (values) => {
     try {
       await dispatch(loginUser(values)).unwrap();
       toast.success("Welcome Back!");
-      navigate("/home");
+      navigate(signInRedirectPath);
     } catch (error) {
       toast.error(JSON.stringify(error.message));
       console.error("Failed to register:", error);
@@ -87,7 +88,7 @@ export const SignInForm = () => {
                   autoComplete="off"
                 />
               </li>
-            </ul>{" "}
+            </ul>
             <Button variant="rectBig" type="submit" aria-label="Submit form" {...baseButtonMotion}>
               Sign up
             </Button>
