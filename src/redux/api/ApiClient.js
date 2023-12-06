@@ -31,7 +31,7 @@ api.interceptors.response.use(
     if (
       error.response.status === 401 &&
       !originalRequest._retry &&
-      error.response.data.message === "Token Expired"
+      error.response.data.message === "Token expired"
     ) {
       originalRequest._retry = true;
       await store.dispatch(refreshToken());
