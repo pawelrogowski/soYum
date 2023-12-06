@@ -758,6 +758,7 @@ export const darkTheme = {
   },
   notFound: {
     text: "rgba(250, 250, 250, 1)",
+    textAccent: brandColors.main,
   },
   editProfilePopup: {
     bg: "rgba(19, 20, 24, 1)",

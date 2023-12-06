@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { useParams } from "react-router-dom";
 
 import image from "../../assets/images/transparent.avif";
 import { routeChangeMotion } from "../../common/animations";
 import { Heading } from "../../components/Heading/Heading";
+import LoginRequiredInfo from "../../components/LoginRequiredInfo/LoginRequiredInfo";
 import { PaginationFilter } from "../../components/PaginationFilter/PaginationFilter";
 import { RecipeList } from "../../components/RecipeList/RecipeList";
 import { usePageTitle } from "../../hooks/usePageTitle";
@@ -47,7 +49,7 @@ const MyRecipesPage = () => {
   const { page } = useParams();
   const [currentPage, setCurrentPage] = useState(1);
   const isAtLeastDesktop = useMediaQuery({ minWidth: breakpoints.desktop });
-
+  const isLoggedIn = useSelector((state) => state.user.user.name);
   const dynamicMaxPages = isAtLeastDesktop ? 9 : 5;
 
   useEffect(() => {
@@ -59,14 +61,20 @@ const MyRecipesPage = () => {
   }, [page]);
   return (
     <MainContainer {...routeChangeMotion}>
-      <Heading as="h1">My Recipes</Heading>
-      <RecipeList data={imageList} />
-      <PaginationFilter
-        currentPage={currentPage}
-        maxPages={50}
-        maxPagesToDisplay={dynamicMaxPages}
-        onPageChange={() => console.log("siuuu")}
-      />
+      {isLoggedIn ? (
+        <>
+          <Heading as="h1">My Recipes</Heading>
+          <RecipeList data={imageList} />
+          <PaginationFilter
+            currentPage={currentPage}
+            maxPages={50}
+            maxPagesToDisplay={dynamicMaxPages}
+            onPageChange={() => console.log("siuuu")}
+          />
+        </>
+      ) : (
+        <LoginRequiredInfo />
+      )}
     </MainContainer>
   );
 };
