@@ -5,6 +5,7 @@ import { toast } from "sonner";
 
 import { baseButtonMotion } from "../../../common/animations";
 import { loginUser } from "../../../redux/api/userAPI";
+import { setSignInRedirectPatch } from "../../../redux/slices/globalSlice";
 import { validationSchema } from "../../../validation/singInSchema";
 import { Button } from "../../Button/Button";
 import { CustomFormikInput } from "../../CustomFormikInput/CustomFormikInput";
@@ -21,11 +22,12 @@ export const SignInForm = () => {
   const handleSubmit = async (values) => {
     try {
       await dispatch(loginUser(values)).unwrap();
+      dispatch(setSignInRedirectPatch("/home"));
       toast.success("Welcome Back!");
       navigate(signInRedirectPath);
     } catch (error) {
       toast.error(JSON.stringify(error.message));
-      console.error("Failed to register:", error);
+      console.error("Failed to sign in:", error);
     }
   };
 
