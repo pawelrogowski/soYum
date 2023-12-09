@@ -1,5 +1,6 @@
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { toast } from "sonner";
 
 import {
   getRefreshToken,
@@ -48,6 +49,7 @@ export const logoutUser = createAsyncThunk("user/logout", async (_, { rejectWith
     const response = await api.get(`/user/logout`);
     removeAccessToken();
     removeRefreshToken();
+    toast.success(response.data.message);
     return response.data;
   } catch (err) {
     if (err.response && err.response.data) {
@@ -56,6 +58,24 @@ export const logoutUser = createAsyncThunk("user/logout", async (_, { rejectWith
     return rejectWithValue(err.message);
   }
 });
+
+export const logoutAllSessions = createAsyncThunk(
+  "user/logoutAll",
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await api.get(`/user/logout-all`);
+      removeAccessToken();
+      removeRefreshToken();
+      toast.success(response.data.message);
+      return response.data;
+    } catch (err) {
+      if (err.response && err.response.data) {
+        return rejectWithValue(err.response.data);
+      }
+      return rejectWithValue(err.message);
+    }
+  }
+);
 
 export const refreshToken = createAsyncThunk(
   "user/refreshToken",

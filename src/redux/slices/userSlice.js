@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import {
   changePassword,
   loginUser,
+  logoutAllSessions,
   logoutUser,
   refreshToken,
   registerUser,
@@ -97,6 +98,25 @@ export const userSlice = createSlice({
         };
       })
       .addCase(logoutUser.rejected, (state, action) => {
+        state.logout.loading = false;
+        state.logout.message = null;
+        state.logout.error = action.payload.message;
+      })
+      .addCase(logoutAllSessions.pending, (state) => {
+        state.logout.loading = true;
+      })
+      .addCase(logoutAllSessions.fulfilled, (state) => {
+        state.logout.loading = false;
+        state.logout.message = "Logout from all sessions successful";
+        state.logout.error = null;
+        state.user = {
+          name: null,
+          email: null,
+          avatarUrl: null,
+          isEmailConfirmed: null,
+        };
+      })
+      .addCase(logoutAllSessions.rejected, (state, action) => {
         state.logout.loading = false;
         state.logout.message = null;
         state.logout.error = action.payload.message;

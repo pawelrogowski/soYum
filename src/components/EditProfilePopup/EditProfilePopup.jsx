@@ -79,7 +79,7 @@ const EditProfilePopup = ({ ...props }) => {
         <span>Edit profile</span>
         <Icon icon="edit" {...baseIconMotion} />
       </div>
-      <Button type="button" onClick={handleLogoutClick} aria-label="log out">
+      <Button type="button" variant="outlineSmall" onClick={handleLogoutClick} aria-label="log out">
         {!name ? "Sign in" : "Log out"}
         <Icon icon="arrow_long" {...baseIconMotion} />
       </Button>

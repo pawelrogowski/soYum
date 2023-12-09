@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
+import { underlineHover } from "../../styles/mixins";
+
 export const StyledDiv = styled(motion.div)`
   --color-bg: ${({ theme: t }) => t.logoutModal.bg};
   --color-icon-idle: ${({ theme: t }) => t.logoutModal.iconIdle};
   --color-icon-active: ${({ theme: t }) => t.logoutModal.iconActive};
   --color-text: ${({ theme: t }) => t.logoutModal.text};
+  --color-text-logout-all: ${({ theme: t }) => t.logoutModal.textLogoutAll};
   --color-button-logout-bg-idle: ${({ theme: t }) => t.logoutModal.buttons.logoutBgIdle};
   --color-button-logout-bg-active: ${({ theme: t }) => t.logoutModal.buttons.logoutBgActive};
   --color-button-logout-border-idle: ${({ theme: t }) => t.logoutModal.buttons.logoutBorderIdle};
@@ -32,12 +35,14 @@ export const StyledDiv = styled(motion.div)`
   align-items: flex-start;
   padding-top: 10vh;
   z-index: 5;
+
   > div {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 2.4rem;
     position: relative;
-    padding: 4.4rem 2.4rem;
+    padding: 4.4rem 2.4rem 2rem 2.4rem;
     border-radius: 2.4rem;
     min-width: 32rem;
 
@@ -45,12 +50,12 @@ export const StyledDiv = styled(motion.div)`
     box-shadow: 0px 4px 48px 0px rgba(0, 0, 0, 0.1);
     @media screen and (min-width: ${({ theme: t }) => t.breakpoints.tablet}) {
       gap: 3.2rem;
-      padding: 5rem 4rem;
+      padding: 5rem 4rem 3rem 4rem;
     }
     @media screen and (min-width: ${({ theme: t }) => t.breakpoints.desktop}) {
-      padding: 5rem 5rem;
+      padding: 5rem 5rem 3rem 5rem;
     }
-    > button {
+    > button:first-of-type {
       cursor: pointer;
       position: absolute;
       right: 2rem;
@@ -121,6 +126,15 @@ export const StyledDiv = styled(motion.div)`
           }
         }
       }
+    }
+    > button:last-of-type {
+      ${underlineHover(true, ({ theme: t }) => t.logoutModal.textLogoutAll)};
+      width: 11rem;
+      background: none;
+      border: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+      color: var(--color-text-logout-all);
     }
   }
 `;

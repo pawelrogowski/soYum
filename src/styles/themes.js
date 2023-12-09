@@ -305,6 +305,8 @@ export const lightTheme = {
     iconActive: brandColors.main,
     textActive: brandColors.main,
     button: {
+      bg: brandColors.main,
+      border: brandColors.main,
       text: "rgba(250, 250, 250, 1)",
       icon: "rgba(250, 250, 250, 1)",
       iconActive: brandColors.main,
@@ -363,6 +365,7 @@ export const lightTheme = {
     iconIdle: "rgba(35, 38, 42, 1)",
     iconActive: brandColors.main,
     text: "rgba(35, 38, 42, 1)",
+    textLogoutAll: "rgba(231, 74, 59, 1)",
     buttons: {
       logoutBgIdle: brandColors.main,
       logoutBgActive: "rgba(35, 38, 42, 1)",
@@ -768,6 +771,8 @@ export const darkTheme = {
     iconActive: brandColors.main,
     textActive: brandColors.main,
     button: {
+      bg: brandColors.main,
+      border: brandColors.main,
       text: "rgba(250, 250, 250, 1)",
       icon: "rgba(250, 250, 250, 1)",
       iconActive: brandColors.main,
@@ -826,16 +831,17 @@ export const darkTheme = {
     iconIdle: "rgba(250, 250, 250, 1)",
     iconActive: brandColors.main,
     text: "rgba(250, 250, 250, 1)",
+    textLogoutAll: "rgba(231, 74, 59, 1)",
     buttons: {
       logoutBgIdle: brandColors.main,
-      logoutBgActive: "rgba(35, 38, 42, 1)",
+      logoutBgActive: "rgba(22, 24, 26, 1)",
       logoutBorderIdle: brandColors.main,
       logoutBorderActive: brandColors.main,
       logoutTextIdle: "rgba(250, 250, 250, 1)",
       logoutTextActive: brandColors.main,
 
       cancelBgIdle: "rgba(217, 217, 217, 1)",
-      cancelBgActive: "rgba(35, 38, 42, 1)",
+      cancelBgActive: "rgba(22, 24, 26, 1)",
       cancelBorderIdle: "rgba(217, 217, 217, 1)",
       cancelBorderActive: brandColors.main,
       cancelTextIdle: "rgba(35, 38, 42, 1)",

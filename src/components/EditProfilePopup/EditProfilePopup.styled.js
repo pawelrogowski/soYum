@@ -7,6 +7,8 @@ export const StyledDiv = styled(motion.div)`
   --color-icon: ${({ theme: t }) => t.editProfilePopup.icon};
   --color-border: ${({ theme: t }) => t.editProfilePopup.border};
   --color-button-text: ${({ theme: t }) => t.editProfilePopup.button.text};
+  --color-button-bg: ${({ theme: t }) => t.editProfilePopup.button.bg};
+  --color-button-border: ${({ theme: t }) => t.editProfilePopup.button.border};
   --color-button-icon: ${({ theme: t }) => t.editProfilePopup.button.icon};
   --color-button-icon-active: ${({ theme: t }) => t.editProfilePopup.button.iconActive};
   --color-button-text-active: ${({ theme: t }) => t.editProfilePopup.button.textActive};
@@ -54,10 +56,10 @@ export const StyledDiv = styled(motion.div)`
     &:focus,
     &:focus-within {
       > span {
-        color: var(--color-button-text-active);
+        color: var(--color-text-active);
       }
       > svg {
-        stroke: var(--color-button-icon-active);
+        stroke: var(--color-text-active);
       }
     }
   }
@@ -72,11 +74,18 @@ export const StyledDiv = styled(motion.div)`
     height: 4.3rem;
     font-size: 1.4rem;
     line-height: 2.1rem;
-
+    background: var(--color-button-bg);
+    border: 1px solid var(--color-button-border);
     > svg {
       width: 1.8rem;
       height: 1.8rem;
       stroke: var(--color-button-icon);
+    }
+    &:hover,
+    &:focus {
+      border: 1px solid var(--color-border);
+      background: var(--color-border);
+      color: var(--color-button-text);
     }
   }
 `;
