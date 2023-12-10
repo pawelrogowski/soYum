@@ -74,7 +74,6 @@ export const PageContent = styled.div`
     align-items: center;
     width: 100%;
     max-width: 50rem;
-    padding-bottom: 10rem;
   }
   .auth-links {
     display: flex;

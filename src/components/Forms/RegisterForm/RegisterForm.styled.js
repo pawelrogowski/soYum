@@ -113,15 +113,16 @@ export const StyledForm = styled(Form)`
       transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 100ms;
       position: absolute;
       left: 0.1rem;
-      bottom: -1.5rem;
-      color: var(--color-header);
+      top: calc(100% + 6%);
+      color: var(--color-error);
       font-size: 1rem;
       font-family: var(--family-font);
       line-height: 1rem;
       font-weight: 400;
+      font-style: normal;
 
       @media screen and (min-width: ${(props) => props.theme.breakpoints.tablet}) {
-        bottom: -1.9rem;
+        top: calc(100% + 5%);
         font-size: 1.4rem;
         line-height: 1.4rem;
       }
@@ -219,7 +220,7 @@ export const StyledForm = styled(Form)`
               }
             }
           `
-        : props.$passwordInfo === "Password must be at least 8 characters"
+        : props.$passwordInfo && props.$passwordInfo.includes("should contain")
         ? css`
             li {
               input[name="password"] {
@@ -267,7 +268,10 @@ export const StyledForm = styled(Form)`
 
   ${(props) =>
     props.$nameTouched
-      ? props.$nameInfo === "Name is required"
+      ? props.$nameInfo &&
+        (props.$nameInfo.includes("Name is required") ||
+          props.$nameInfo.includes("at least 2") ||
+          props.$nameInfo.includes("less than 30"))
         ? css`
             li {
               input[name="name"] {

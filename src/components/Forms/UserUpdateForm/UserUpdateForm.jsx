@@ -7,26 +7,27 @@ import { baseButtonMotion, baseIconMotion } from "../../../common/animations";
 import { getCloudinarySettings } from "../../../common/CloudinarySettings";
 import { useDisableBodyScroll } from "../../../hooks/useDisableBodyScroll";
 import useUploadWidget from "../../../hooks/useUploadWidget";
+import { updateAvatar, updateName } from "../../../redux/api/userAPI";
 import {
   setIsImageUploadModalLoading,
   setIsImageUploadModalOpen,
   setIsProfileUpdateMenuOpen,
 } from "../../../redux/slices/modalSlice";
+import { setUser } from "../../../redux/slices/userSlice";
 import { userEditSchema } from "../../../validation/userEditSchema";
 import { Button } from "../../Button/Button";
 import { Icon } from "../../Icon/Icon";
 import { StyledFormikForm } from "./UserUpdateForm.styled";
 
-const initialValues = {
-  avatar: "",
-  username: "Current User Name",
-};
-
 export const UserUpdateForm = () => {
   const { isDarkTheme } = useSelector((state) => state.global);
   useUploadWidget();
   useDisableBodyScroll();
-
+  const user = useSelector((state) => state.user.user);
+  const initialValues = {
+    avatar: user.avatarUrl || "",
+    username: user.name || "Current User Name",
+  };
   const { isImageUploadModalOpen, isImageUploadModalLoading } = useSelector((state) => state.modal);
   const [usernameValue, setUsernameValue] = useState(initialValues.username);
   const [isUsernameEditable, setIsUsernameEditable] = useState(false);
@@ -34,6 +35,11 @@ export const UserUpdateForm = () => {
   const [avatarPreview, setAvatarPreview] = useState(null);
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    setUsernameValue(user.name || "Current User Name");
+    setAvatarPreview(user.avatarUrl || "");
+  }, [user.name, user.avatarUrl]);
 
   useEffect(() => {
     if (isUsernameEditable) {
@@ -83,29 +89,41 @@ export const UserUpdateForm = () => {
     dispatch(setIsImageUploadModalLoading(true));
   };
 
-  const handleSubmit = useCallback(
-    (values, { setSubmitting }) => {
-      const changedValues = {
-        ...values,
-        username: usernameValue,
-      };
+  const handleSubmit = async (values, { setSubmitting }) => {
+    const changedValues = {
+      ...values,
+      username: usernameValue,
+    };
 
-      if (avatarPreview === null) {
-        delete changedValues.avatar;
-      } else {
-        changedValues.avatar = avatarPreview;
+    if (avatarPreview === null) {
+      delete changedValues.avatar;
+    } else {
+      changedValues.avatar = avatarPreview;
+    }
+
+    if (changedValues.username !== initialValues.username) {
+      const updateNameResult = await dispatch(updateName({ name: changedValues.username }));
+
+      if (updateNameResult.type === updateName.fulfilled.type) {
+        dispatch(setUser({ ...user, name: changedValues.username }));
       }
+    }
 
-      setSubmitting(false);
-      dispatch(setIsProfileUpdateMenuOpen(false));
-    },
+    if (changedValues.avatar !== initialValues.avatar) {
+      const updateAvatarResult = await dispatch(updateAvatar({ avatarUrl: changedValues.avatar }));
 
-    [avatarPreview, usernameValue, dispatch]
-  );
+      if (updateAvatarResult.type === updateAvatar.fulfilled.type) {
+        dispatch(setUser({ ...user, avatarUrl: changedValues.avatar }));
+      }
+    }
 
-  const resetUsername = useCallback(() => {
+    setSubmitting(false);
+    dispatch(setIsProfileUpdateMenuOpen(false));
+  };
+
+  const resetUsername = () => {
     setUsernameValue(initialValues.username);
-  }, []);
+  };
 
   return (
     <Formik

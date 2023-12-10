@@ -1,6 +1,5 @@
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { toast } from "sonner";
 
 import {
   getRefreshToken,
@@ -49,7 +48,6 @@ export const logoutUser = createAsyncThunk("user/logout", async (_, { rejectWith
     const response = await api.get(`/user/logout`);
     removeAccessToken();
     removeRefreshToken();
-    toast.success(response.data.message);
     return response.data;
   } catch (err) {
     if (err.response && err.response.data) {
@@ -66,7 +64,6 @@ export const logoutAllSessions = createAsyncThunk(
       const response = await api.get(`/user/logout-all`);
       removeAccessToken();
       removeRefreshToken();
-      toast.success(response.data.message);
       return response.data;
     } catch (err) {
       if (err.response && err.response.data) {
@@ -115,6 +112,22 @@ export const updateName = createAsyncThunk(
   async (nameData, { rejectWithValue }) => {
     try {
       const response = await api.patch(`${API_BASE_URL}/user/update-name`, nameData);
+      console.log(response.data);
+      return response.data;
+    } catch (err) {
+      if (err.response && err.response.data) {
+        return rejectWithValue(err.response.data);
+      }
+      return rejectWithValue(err.message);
+    }
+  }
+);
+
+export const updateAvatar = createAsyncThunk(
+  "user/updateAvatar",
+  async (avatarData, { rejectWithValue }) => {
+    try {
+      const response = await api.patch(`${API_BASE_URL}/user/update-avatar`, avatarData);
       return response.data;
     } catch (err) {
       if (err.response && err.response.data) {

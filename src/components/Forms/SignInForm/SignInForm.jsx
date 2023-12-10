@@ -1,7 +1,6 @@
 import { Formik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { toast } from "sonner";
 
 import { baseButtonMotion } from "../../../common/animations";
 import { loginUser } from "../../../redux/api/userAPI";
@@ -23,10 +22,8 @@ export const SignInForm = () => {
     try {
       await dispatch(loginUser(values)).unwrap();
       dispatch(setSignInRedirectPatch("/home"));
-      toast.success("Welcome Back!");
       navigate(signInRedirectPath);
     } catch (error) {
-      toast.error(JSON.stringify(error.message));
       console.error("Failed to sign in:", error);
     }
   };

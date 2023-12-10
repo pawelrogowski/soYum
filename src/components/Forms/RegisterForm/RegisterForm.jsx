@@ -1,7 +1,6 @@
 import { Formik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { toast } from "sonner";
 
 import { baseButtonMotion } from "../../../common/animations";
 import { registerUser } from "../../../redux/api/userAPI";
@@ -20,10 +19,8 @@ export const RegistrationForm = () => {
   const handleSubmit = async (values) => {
     try {
       await dispatch(registerUser(values)).unwrap();
-      toast.success("Welcome to SoYummy!");
       navigate("/home");
     } catch (error) {
-      toast.error(JSON.stringify(error.message));
       console.error("Failed to register:", error);
     }
   };

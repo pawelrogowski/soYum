@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { Link, useLocation } from "react-router-dom";
 
-import avatar from "../../assets/images/avatar.avif";
 import avatarPlaceholder from "../../assets/images/avatar.avif";
 import useShowDecorations from "../../hooks/useShowDecorations";
 import { setIsMobileMenuOpen } from "../../redux/slices/modalSlice";
@@ -21,6 +20,7 @@ export const Header = () => {
   const { pathname } = useLocation();
   const dispatch = useDispatch();
   const name = useSelector((state) => state.user.user.name);
+  const { avatarUrl } = useSelector((state) => state.user.user);
   const isMobileMenuOpen = useSelector((state) => state.modal.isMobileMenuOpen);
   const isAtLeastDesktopSize = useMediaQuery({ minWidth: breakpoints.desktop });
   console.log(name);
@@ -40,7 +40,7 @@ export const Header = () => {
         <Logo variant="header" onClick={handleCloseMenu} />
       </Link>
       {isAtLeastDesktopSize && <NavigationDesktop />}
-      <UserAvatar image={avatar} placeholder={avatarPlaceholder} name={name || "Sign in"} />
+      <UserAvatar image={avatarUrl} placeholder={avatarPlaceholder} name={name || "Sign in"} />
 
       {isAtLeastDesktopSize && (
         <Suspense fallback={<div className="theme-switch-placeholder" />}>

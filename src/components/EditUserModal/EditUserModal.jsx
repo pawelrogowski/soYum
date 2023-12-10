@@ -17,6 +17,7 @@ export const EditUserModal = () => {
   const dispatch = useDispatch();
   const ref = useRef(null);
   const { isImageUploadModalLoading } = useSelector((state) => state.modal);
+
   const handleClickOutside = (event) => {
     if (ref.current && !ref.current.contains(event.target)) {
       dispatch(setIsProfileUpdateMenuOpen(false));
