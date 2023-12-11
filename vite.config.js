@@ -6,6 +6,7 @@ import { VitePWA } from "vite-plugin-pwa";
 
 const manifest = JSON.parse(fs.readFileSync("./public/site.webmanifest", "utf8"));
 export default defineConfig({
+  base: "./",
   plugins: [
     react(),
     imagetools(),
