@@ -24,8 +24,8 @@ const configureMiddleware = (getDefaultMiddleware) =>
   });
 
 const persistedAuthReducer = persistReducer(generatePersistConfig("auth"), authReducer);
-
 const persistedGlobalReducer = persistReducer(generatePersistConfig("global"), globalReducer);
+const persistedUserReducer = persistReducer(generatePersistConfig("user"), userReducer);
 
 export const store = configureStore({
   reducer: {
@@ -36,7 +36,7 @@ export const store = configureStore({
     loading: loadingReducer,
     addRecipeForm: addRecipeFormReducer,
     currentRecipe: currentRecipeReducer,
-    user: userReducer,
+    user: persistedUserReducer,
   },
   enhancers: (existingEnhancers) => {
     return existingEnhancers.concat(autoBatchEnhancer());

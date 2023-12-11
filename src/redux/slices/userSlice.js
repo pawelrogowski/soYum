@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "sonner";
 
 import {
   changePassword,
@@ -10,7 +11,6 @@ import {
   updateAvatar,
   updateName,
 } from "../api/userAPI";
-import { toast } from "sonner";
 
 const initialState = {
   user: {
