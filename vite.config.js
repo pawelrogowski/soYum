@@ -15,7 +15,13 @@ export default defineConfig({
       manifest: manifest,
       registerType: "autoUpdate",
       workbox: {
-        globPatterns: ["**/*.{css,html,avif,svg}"],
+        globPatterns: ["**/*.{js,css,html,avif,svg}"],
+        runtimeCaching: [
+          {
+            urlPattern: "**/*",
+            handler: "StaleWhileRevalidate",
+          },
+        ],
       },
     }),
   ],
