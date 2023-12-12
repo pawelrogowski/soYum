@@ -28,14 +28,17 @@ api.interceptors.response.use(
   },
   async (error) => {
     const originalRequest = error.config;
-    if (
-      error.response.status === 401 &&
-      !originalRequest._retry &&
-      error.response.data.message === "Token expired"
-    ) {
+    if (error.response.status === 401 && !originalRequest._retry) {
       originalRequest._retry = true;
-      await store.dispatch(refreshToken());
-      return api(originalRequest);
+      console.log("Refreshing token...");
+      const result = await store.dispatch(refreshToken());
+      if (refreshToken.fulfilled.match(result)) {
+        console.log("Refresh token result:", result);
+        return api(originalRequest);
+      } else {
+        console.log("Failed to refresh token:", result.error.message);
+        return Promise.reject(result.error);
+      }
     }
     return Promise.reject(error);
   }

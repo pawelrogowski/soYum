@@ -143,17 +143,15 @@ export const userSlice = createSlice({
       .addCase(refreshToken.pending, (state) => {
         state.refreshToken.loading = true;
       })
-      .addCase(refreshToken.fulfilled, (state, action) => {
+      .addCase(refreshToken.fulfilled, (state) => {
         state.refreshToken.loading = false;
         state.refreshToken.message = "Token refresh successful";
         state.refreshToken.error = null;
-        toast.success(action.payload.message);
       })
       .addCase(refreshToken.rejected, (state, action) => {
         state.refreshToken.loading = false;
         state.refreshToken.message = null;
         state.refreshToken.error = action.payload.message;
-        toast.error(action.payload.message);
       })
       .addCase(changePassword.pending, (state) => {
         state.changePassword.loading = true;

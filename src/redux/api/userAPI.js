@@ -78,12 +78,17 @@ export const refreshToken = createAsyncThunk(
   "user/refreshToken",
   async (_, { rejectWithValue }) => {
     try {
+      console.log("Inside refreshToken action");
       const refreshToken = getRefreshToken();
+      if (!refreshToken) {
+        throw new Error("Refresh token not found");
+      }
       const response = await api.post(`/user/refresh-token`, { refreshToken });
       const { accessToken } = response.data;
       setAccessToken(accessToken);
       return response.data;
     } catch (err) {
+      console.log("Error in refreshToken action:", err);
       if (err.response && err.response.data) {
         return rejectWithValue(err.response.data);
       }
