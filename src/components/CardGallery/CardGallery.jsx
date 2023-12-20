@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 
+import placeholder from "../../assets/icons/food-placeholder.svg";
 import { baseButtonMotion } from "../../common/animations.js";
 import { Button } from "../Button/Button";
 import { Card } from "../Card/Card";
@@ -21,12 +22,12 @@ export const CardGallery = ({
       {showHeading && <Heading as="h2">{headingText}</Heading>}
       <ul>
         {data.slice(0, limit).map((item) => (
-          <li key={item.id}>
+          <li key={item.recipe.id}>
             <Card
-              itemId={item.id}
-              img={item.img}
-              caption={item.caption}
-              placeholder={item.placeholder}
+              itemId={item.recipe.id}
+              img={item.recipe.image}
+              caption={item.recipe.label}
+              placeholder={placeholder}
             />
           </li>
         ))}

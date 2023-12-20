@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { useMemo } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -10,6 +13,7 @@ import { Button } from "../../components/Button/Button";
 import { CardGallery } from "../../components/CardGallery/CardGallery";
 import { HeroHome } from "../../components/HeroHome/HeroHome";
 import { usePageTitle } from "../../hooks/usePageTitle";
+import { searchRecipes } from "../../redux/api/recipeAPI";
 import { breakpoints } from "../../styles/themes";
 import { MainContainer } from "./HomePage.styled";
 
@@ -25,50 +29,35 @@ const HomePage = () => {
   const navigate = useNavigate();
   const isAtLeastTabletSize = useMediaQuery({ minWidth: breakpoints.tablet });
   const isAtLeastDesktopSize = useMediaQuery({ minWidth: breakpoints.desktop });
-
+  const dispatch = useDispatch();
   const imgNumPerCategory = isAtLeastDesktopSize ? 4 : isAtLeastTabletSize ? 2 : 1;
+  const searchResults = useSelector((state) => state.search.results);
+
+  const categories = useMemo(() => ["breakfast", "brunch", "lunch", "dinner", "snack"], []);
+
+  useEffect(() => {
+    categories.forEach((category) => {
+      dispatch(searchRecipes({ mealType: category }));
+    });
+  }, [dispatch, categories]);
 
   return (
     <MainContainer {...routeChangeMotion}>
       <section className="section-hero">
         <HeroHome />
       </section>
-      <CardGallery
-        data={images}
-        showHeading
-        showButton
-        headingText="Breakfast"
-        buttonText="See All"
-        limit={imgNumPerCategory}
-        onButtonClick={() => navigate("/categories/breakfast")}
-      />
-
-      <CardGallery
-        data={images}
-        showHeading
-        showButton
-        headingText="Miscellaneous"
-        buttonText="See All"
-        onButtonClick={() => navigate("/categories/miscellaneous")}
-      />
-      <CardGallery
-        data={images}
-        showHeading
-        showButton
-        headingText="Chicken"
-        buttonText="See All"
-        limit={imgNumPerCategory}
-        onButtonClick={() => navigate("/categories/chicken")}
-      />
-      <CardGallery
-        data={images}
-        showHeading
-        showButton
-        headingText="Desserts"
-        buttonText="See All"
-        limit={imgNumPerCategory}
-        onButtonClick={() => navigate("/categories/desserts")}
-      />
+      {categories.map((category) => (
+        <CardGallery
+          key={category}
+          data={searchResults[category]?.hits || []}
+          showHeading
+          showButton
+          headingText={category}
+          buttonText="See All"
+          limit={imgNumPerCategory}
+          onButtonClick={() => navigate(`/categories/${category}`)}
+        />
+      ))}
       <Link to="/categories/beef">
         <Button variant="outlineBig" {...baseButtonMotion}>
           Other Categories
