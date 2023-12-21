@@ -7,6 +7,7 @@ import {
   authReducer,
   currentRecipeReducer,
   globalReducer,
+  homePageReducer,
   loadingReducer,
   modalReducer,
   searchReducer,
@@ -37,6 +38,7 @@ export const store = configureStore({
     addRecipeForm: addRecipeFormReducer,
     currentRecipe: currentRecipeReducer,
     user: persistedUserReducer,
+    homePage: homePageReducer,
   },
   enhancers: (existingEnhancers) => {
     return existingEnhancers.concat(autoBatchEnhancer());
