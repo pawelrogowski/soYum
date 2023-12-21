@@ -6,7 +6,7 @@ export const getHomePageRecipes = createAsyncThunk(
   "homepage/fetch-recipes",
   async (searchParams, { rejectWithValue }) => {
     try {
-      const response = await api.get(`/recipe/search`, { params: searchParams });
+      const response = await api.get(`/api/recipe/homepage`, { params: searchParams });
       return response.data;
     } catch (err) {
       if (err.response && err.response.data) {
