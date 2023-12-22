@@ -5,6 +5,7 @@ import storage from "redux-persist/lib/storage";
 import {
   addRecipeFormReducer,
   authReducer,
+  categoryPageReducer,
   currentRecipeReducer,
   globalReducer,
   homePageReducer,
@@ -39,6 +40,7 @@ export const store = configureStore({
     currentRecipe: currentRecipeReducer,
     user: persistedUserReducer,
     homePage: homePageReducer,
+    categoryPage: categoryPageReducer,
   },
   enhancers: (existingEnhancers) => {
     return existingEnhancers.concat(autoBatchEnhancer());

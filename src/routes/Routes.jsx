@@ -36,7 +36,7 @@ export const AppRoutes = () => {
     { to: "/register", component: "RegistrationPage" },
     { to: "/", component: "StartPage" },
     { to: "/home", component: "HomePage" },
-    { to: "/categories/beef", component: "CategoriesPage" },
+    { to: "/categories?category=beef", component: "CategoriesPage" },
     { to: "/myrecipes", component: "MyRecipesPage" },
     { to: "/add", component: "AddRecipePage" },
     { to: "/favorites", component: "FavoritesPage" },

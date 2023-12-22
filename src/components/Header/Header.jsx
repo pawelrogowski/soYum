@@ -40,7 +40,11 @@ export const Header = () => {
         <Logo variant="header" onClick={handleCloseMenu} />
       </Link>
       {isAtLeastDesktopSize && <NavigationDesktop />}
-      <UserAvatar image={avatarUrl} placeholder={avatarPlaceholder} name={name || "Sign in"} />
+      <UserAvatar
+        image={avatarUrl || avatarPlaceholder}
+        placeholder={avatarPlaceholder}
+        name={name || "Sign in"}
+      />
 
       {isAtLeastDesktopSize && (
         <Suspense fallback={<div className="theme-switch-placeholder" />}>

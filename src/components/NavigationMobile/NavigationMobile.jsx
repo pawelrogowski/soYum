@@ -19,7 +19,7 @@ export const NavigationMobile = () => {
   };
 
   const navItems = [
-    { path: "/categories/beef", text: "Categories" },
+    { path: "/categories?category=beef", text: "Categories" },
     { path: "/add", text: "Add recipes" },
     { path: "/myrecipes", text: "My recipes" },
     { path: "/favorites", text: "Favorites" },

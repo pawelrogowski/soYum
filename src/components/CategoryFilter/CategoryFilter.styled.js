@@ -76,6 +76,7 @@ export const StyledNav = styled.nav`
         font-size: 1.4rem;
         line-height: 1;
         transition: color cubic-bezier(0.17, 0.67, 1, 1.23) 200ms;
+        white-space: nowrap;
         &:hover,
         &:focus {
           color: var(--color-button-active);

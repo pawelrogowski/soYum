@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 import { baseIconMotion } from "../../common/animations";
 import { useButtonScroll } from "../../hooks/useButtonScroll";
@@ -15,7 +15,7 @@ export const CategoryFilter = () => {
     "Beef",
     "Breakfast",
     "Chicken",
-    "Desserts",
+    "Dessert",
     "Goat",
     "Lamb",
     "Miscellaneous",
@@ -25,7 +25,104 @@ export const CategoryFilter = () => {
     "Starter",
     "Vegan",
     "Pork",
+    "Vegetarian",
+    "Gluten-Free",
+    "Dairy-Free",
+    "Nut-Free",
+    "Egg-Free",
+    "Soy-Free",
+    "Fish",
+    "Shellfish",
+    "Salad",
+    "Soup",
+    "Beverage",
+    "Appetizer",
+    "Bread",
+    "Cake",
+    "Cookie",
+    "Pie",
+    "Poultry",
+    "Pizza",
+    "Sandwich",
+    "Sauce",
+    "Snack",
+    "Tofu",
+    "Turkey",
+    "Burger",
+    "Cheese",
+    "Chocolate",
+    "Coffee",
+    "Tea",
+    "Fruit",
+    "Grains",
+    "Rice",
+    "Potato",
+    "Vegetable",
+    "Mushroom",
+    "Noodles",
+    "Pancake",
+    "Quiche",
+    "Ribs",
+    "Sausage",
+    "Smoothie",
+    "Stew",
+    "Taco",
+    "Wrap",
+    "Asian",
+    "Italian",
+    "Mexican",
+    "French",
+    "Indian",
+    "Chinese",
+    "Japanese",
+    "Korean",
+    "Thai",
+    "Vietnamese",
+    "Mediterranean",
+    "Greek",
+    "Spanish",
+    "German",
+    "Moroccan",
+    "American",
+    "Southern",
+    "Cajun",
+    "English",
+    "Irish",
+    "Jewish",
+    "Middle Eastern",
+    "BBQ",
+    "Grilling",
+    "Roasting",
+    "Baking",
+    "Frying",
+    "Slow Cooker",
+    "Microwave",
+    "No-Cook",
+    "Pickling",
+    "Pressure Cooker",
+    "Stir-Fry",
+    "Kid-Friendly",
+    "Quick & Easy",
+    "Make Ahead",
+    "Picnic",
+    "Potluck",
+    "Camping",
+    "Tailgating",
+    "Birthday",
+    "Christmas",
+    "Thanksgiving",
+    "New Year",
+    "Super Bowl",
+    "Easter",
+    "Halloween",
+    "Hanukkah",
+    "Passover",
+    "Ramadan",
+    "Valentine's Day",
   ];
+
+  const location = useLocation();
+  const currentCategory = new URLSearchParams(location.search).get("category");
 
   return (
     <StyledNav>
@@ -41,21 +138,20 @@ export const CategoryFilter = () => {
         {categories.map((category, index) => (
           <li key={category}>
             <NavLink
-              className={({ isActive }) =>
-                isActive
+              className={
+                category.toLowerCase() === currentCategory
                   ? index === 0 || index === categories.length - 1
                     ? "active-link-extreme"
                     : "active-link"
                   : ""
               }
-              to={category.toLowerCase()}
+              to={`/categories?category=${category.toLowerCase()}`}
             >
               {category}
             </NavLink>
           </li>
         ))}
       </ul>
-
       <button
         type="button"
         aria-label="scroll right"

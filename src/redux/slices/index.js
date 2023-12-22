@@ -1,5 +1,6 @@
 export { default as addRecipeFormReducer } from "./addRecipeFormSlice";
 export { default as authReducer } from "./authSlice";
+export { default as categoryPageReducer } from "./categoryPageSlice";
 export { default as currentRecipeReducer } from "./currentRecipeSlice";
 export { default as globalReducer } from "./globalSlice";
 export { default as homePageReducer } from "./homePageSlice";

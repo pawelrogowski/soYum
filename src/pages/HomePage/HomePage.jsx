@@ -91,7 +91,7 @@ const HomePage = () => {
           onButtonClick={() => navigate(`/categories/${category}`)}
         />
       ))}
-      <Link to="/categories/beef">
+      <Link to="/categories?category=beef">
         <Button variant="outlineBig" {...baseButtonMotion}>
           Other Categories
         </Button>
