@@ -55,9 +55,7 @@ export const AppRoutes = () => {
           </Route>
           <Route element={<MainLayout />}>
             <Route path="/home" element={<HomePage />} />
-            <Route path="/categories" element={<CategoriesPage />}>
-              <Route path=":category" element={<CategoriesPage />} />
-            </Route>
+            <Route path="/categories" element={<CategoriesPage />} />
             <Route path="/add" element={<AddRecipePage />} />
             <Route path="/myrecipes" element={<MyRecipesPage />}>
               <Route path=":page" element={<MyRecipesPage />} />
