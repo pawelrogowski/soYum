@@ -88,7 +88,7 @@ const HomePage = () => {
           headingText={capitalizeFirstLetter(category)}
           buttonText="See All"
           limit={imgNumPerCategory}
-          onButtonClick={() => navigate(`/categories/${category}`)}
+          onButtonClick={() => navigate(`/categories?category=${category}`)}
         />
       ))}
       <Link to="/categories?category=beef">

@@ -30,6 +30,10 @@ const persistedGlobalReducer = persistReducer(generatePersistConfig("global"), g
 const persistedUserReducer = persistReducer(generatePersistConfig("user"), userReducer);
 
 export const store = configureStore({
+  devTools: {
+    maxAge: 100,
+    trace: true,
+  },
   reducer: {
     auth: persistedAuthReducer,
     global: persistedGlobalReducer,

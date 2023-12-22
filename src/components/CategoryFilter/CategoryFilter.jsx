@@ -12,8 +12,12 @@ export const CategoryFilter = () => {
   const scrollBy = 200;
 
   const categories = [
-    "Beef",
     "Breakfast",
+    "Brunch",
+    "Lunch",
+    "Dinner",
+    "Snack",
+    "Beef",
     "Chicken",
     "Dessert",
     "Goat",
@@ -45,7 +49,6 @@ export const CategoryFilter = () => {
     "Pizza",
     "Sandwich",
     "Sauce",
-    "Snack",
     "Tofu",
     "Turkey",
     "Burger",
